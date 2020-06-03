@@ -1,0 +1,23 @@
+.sidebar-link.active, .sidebar-link:focus {
+    background: #FFCCE1!important;
+    color: #fff !important;
+    text-decoration: none;
+}
+a.badge-edit {
+    background-color: #F7EF64;
+    color: #000;
+}
+a.badge-edit:hover {
+    color: #000;
+}
+a.badge-ifgreen {
+    background-color: #87DCC0;
+    color: #fff;
+}
+a.badge-ifgreen:hover {
+    color:#fff;
+}
+a.badge-del {
+    background-color: #F9665E;
+    color:#fff;
+}
