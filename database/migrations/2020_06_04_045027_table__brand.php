@@ -13,9 +13,11 @@ class TableBrand extends Migration
      */
     public function up()
     {
-        Schema::create('Brand', function (Blueprint $table) {
-            $table->increments('ID');       //Primary key
-            $table->string('Brand_Name');
+        Schema::create('brand', function (Blueprint $table) {
+            $table->increments('id');       //Primary key
+            $table->string('brand_name');
+            $table->string('brand_image');
+            $table->longText('description');
         });
     }
 
@@ -26,6 +28,6 @@ class TableBrand extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Brand');
+        Schema::dropIfExists('brand');
     }
 }

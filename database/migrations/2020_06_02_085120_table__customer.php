@@ -13,16 +13,14 @@ class TableCustomer extends Migration
      */
     public function up()
     {
-        Schema::create('Customer', function (Blueprint $table) {
-            $table->increments('ID');  //primary key
-            $table->string('Customer_Name',256)->nullable();
-            $table->date('DOB')->nullable();
-            $table->string('Gender')->nullable();
-            $table->integer('Phone')->nullable();
-            $table->string('Address')->nullable();
-            $table->integer('Users_ID')->unsigned();     //foreign key
-            $table->integer('News_ID')->unsigned();     //foreign key
-            $table->integer('Feedback_ID')->unsigned();     //foreign key
+        Schema::create('customer', function (Blueprint $table) {
+            $table->increments('id');  //primary key
+            $table->string('customer_name',256)->nullable();
+            $table->date('dob')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('phone',12)->nullable();
+            $table->string('address')->nullable();
+            $table->integer('users_id')->unsigned();     //foreign key
             $table->timestamps();
         });
     }
@@ -34,6 +32,6 @@ class TableCustomer extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Customer');
+        Schema::dropIfExists('customer');
     }
 }

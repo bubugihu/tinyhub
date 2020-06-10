@@ -13,10 +13,8 @@ class ConstantKeyCustomer extends Migration
      */
     public function up()
     {
-        Schema::table('Customer', function (Blueprint $table) {
-            $table->foreign('Users_ID')->references('ID')->on('Users');
-            $table->foreign('News_ID')->references('ID')->on('News');
-            $table->foreign('Feedback_ID')->references('ID')->on('Feedback');
+        Schema::table('customer', function (Blueprint $table) {
+            $table->foreign('users_id')->references('id')->on('users');
         });
     }
 
@@ -27,10 +25,8 @@ class ConstantKeyCustomer extends Migration
      */
     public function down()
     {
-        Schema::table('Customer', function (Blueprint $table) {
-            $table->dropForeign('Users_ID');
-            $table->dropForeign('News_ID');
-            $table->dropForeign('Feedback_ID');
+        Schema::table('customer', function (Blueprint $table) {
+            $table->dropForeign('customer_users_id_foreign');
         });
     }
 }

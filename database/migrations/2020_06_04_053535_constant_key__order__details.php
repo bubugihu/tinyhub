@@ -13,10 +13,9 @@ class ConstantKeyOrderDetails extends Migration
      */
     public function up()
     {
-        Schema::table('Order_Details', function (Blueprint $table) {
-            $table->foreign('Order_ID')->references('ID')->on('Order');
-            $table->foreign('Product_SKU')->references('SKU')->on('Product');
-            $table->foreign('Payment_ID')->references('ID')->on('Payment');
+        Schema::table('order_details', function (Blueprint $table) {
+            $table->foreign('order_id')->references('id')->on('order');
+            $table->foreign('product_id')->references('id')->on('product');
         });
     }
 
@@ -27,10 +26,9 @@ class ConstantKeyOrderDetails extends Migration
      */
     public function down()
     {
-        Schema::table('Order_Details', function (Blueprint $table) {
-            $table->dropForeign('Order_ID');
-            $table->dropForeign('Product_SKU');
-            $table->dropForeign('Payment_ID');
+        Schema::table('order_details', function (Blueprint $table) {
+            $table->dropForeign('order_details_order_id_foreign');
+            $table->dropForeign('order_details_product_id_foreign');
         });
     }
 }

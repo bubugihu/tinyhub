@@ -13,13 +13,13 @@ class TableComments extends Migration
      */
     public function up()
     {
-        Schema::create('Comments', function (Blueprint $table) {
-            $table->string('cmt_Title',256);
-            $table->text('cmt_Content');
-            $table->integer('cmt_Status');
-            $table->dateTime('cmt_Date');
-            $table->integer('Product_SKU')->unsigned();     //Foreign key
-            $table->integer('Customer_ID')->unsigned();     //Foreign key
+        Schema::create('comments', function (Blueprint $table) {
+            $table->string('cmt_title',256);
+            $table->text('cmt_content');
+            $table->integer('cmt_status');
+            $table->dateTime('cmt_date');
+            $table->integer('product_id')->unsigned();     //Foreign key
+            $table->integer('customer_id')->unsigned();     //Foreign key
         });
     }
 
@@ -30,6 +30,6 @@ class TableComments extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Comments');
+        Schema::dropIfExists('comments');
     }
 }

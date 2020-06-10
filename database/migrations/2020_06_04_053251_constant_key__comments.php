@@ -13,9 +13,9 @@ class ConstantKeyComments extends Migration
      */
     public function up()
     {
-        Schema::table('Comments', function (Blueprint $table) {
-            $table->foreign('Product_SKU')->references('SKU')->on('Product');
-            $table->foreign('Customer_ID')->references('ID')->on('Customer');
+        Schema::table('comments', function (Blueprint $table) {
+            $table->foreign('product_id')->references('id')->on('product');
+            $table->foreign('customer_id')->references('id')->on('customer');
         });
     }
 
@@ -26,9 +26,9 @@ class ConstantKeyComments extends Migration
      */
     public function down()
     {
-        Schema::table('Comments', function (Blueprint $table) {
-            $table->dropForeign('Product_SKU');
-            $table->dropForeign('Customer_ID');
+        Schema::table('comments', function (Blueprint $table) {
+            $table->dropForeign('comments_product_id_foreign');
+            $table->dropForeign('comments_customer_id_foreign');
         });
     }
 }

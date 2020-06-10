@@ -13,12 +13,15 @@ class TableFeedback extends Migration
      */
     public function up()
     {
-        Schema::create('Feedback', function (Blueprint $table) {
-            $table->increments('ID');       //Primary key
-            $table->string('Fee_Title')->nullable();
-            $table->string('Fee_Content')->nullable();
-            $table->integer('Fee_Status')->nullable();
-            $table->dateTime('Fee_Date')->nullable();
+        Schema::create('feedback', function (Blueprint $table) {
+            $table->increments('id');       //Primary key
+            $table->string('feed_title',255)->nullable();
+            $table->string('feed_content',255)->nullable();
+            $table->string('feed_phone',12)->nullable();
+            $table->integer('feed_status')->nullable();
+            $table->string('feed_email')->nullable();
+            $table->dateTime('feed_date')->nullable();
+            $table->integer('feed_rep')->default('0');
         });
     }
 
@@ -29,6 +32,6 @@ class TableFeedback extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Feedback');
+        Schema::dropIfExists('feedback');
     }
 }

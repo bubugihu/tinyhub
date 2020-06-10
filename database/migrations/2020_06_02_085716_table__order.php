@@ -13,11 +13,11 @@ class TableOrder extends Migration
      */
     public function up()
     {
-        Schema::create('Order', function (Blueprint $table) {
-            $table->increments('ID');     //primary key
-            $table->dateTime('Order_Date_Time')->nullable();
-            $table->integer('Status')->nullable();
-            $table->integer('Customer_ID')->unsigned();     //Foreign key
+        Schema::create('order', function (Blueprint $table) {
+            $table->increments('id');     //primary key
+            $table->dateTime('order_date_time')->nullable();
+            $table->integer('status')->nullable();
+            $table->integer('customer_id')->unsigned();     //Foreign key
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class TableOrder extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Order');
+        Schema::dropIfExists('order');
     }
 }

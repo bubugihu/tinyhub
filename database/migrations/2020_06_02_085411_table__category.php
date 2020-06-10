@@ -13,9 +13,10 @@ class TableCategory extends Migration
      */
     public function up()
     {
-        Schema::create('Category', function (Blueprint $table) {
-            $table->increments('ID');  //primary key
-            $table->string('Category_Name')->nullable();
+        Schema::create('category', function (Blueprint $table) {
+            $table->increments('id');  //primary key
+            $table->string('category_name')->nullable();
+            $table->longText('description');
         });
     }
 
@@ -26,6 +27,6 @@ class TableCategory extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Category');
+        Schema::dropIfExists('category');
     }
 }

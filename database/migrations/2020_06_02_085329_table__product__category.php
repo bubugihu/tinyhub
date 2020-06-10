@@ -13,9 +13,9 @@ class TableProductCategory extends Migration
      */
     public function up()
     {
-        Schema::create('Product_Category', function (Blueprint $table) {
-            $table->integer('Product_SKU')->unsigned();   //foreign key
-            $table->integer('Category_ID')->unsigned();   //foreign key
+        Schema::create('product_category', function (Blueprint $table) {
+            $table->integer('product_id')->unsigned();   //foreign key
+            $table->integer('category_id')->unsigned();   //foreign key
         });
     }
 
@@ -26,6 +26,6 @@ class TableProductCategory extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Product_Category');
+        Schema::dropIfExists('product_category');
     }
 }

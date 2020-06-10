@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TablePayment extends Migration
+class TableBanner extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class TablePayment extends Migration
      */
     public function up()
     {
-        Schema::create('Payment', function (Blueprint $table) {
-            $table->increments('ID');
-            $table->string('Payment_Name')->nullable();
+        Schema::create('banner', function (Blueprint $table) {
+            $table->increments('id');       //Primary key
+            $table->string('ban_title')->nullable();
+            $table->String('ban_image')->nullable();
+            $table->dateTime('ban_date')->nullable();
         });
     }
 
@@ -26,6 +28,6 @@ class TablePayment extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Payment');
+        Schema::dropIfExists('banner');
     }
 }

@@ -13,8 +13,8 @@ class ConstantKeyOrder extends Migration
      */
     public function up()
     {
-        Schema::table('Order', function (Blueprint $table) {
-            $table->foreign('Customer_ID')->references('ID')->on('Customer');
+        Schema::table('order', function (Blueprint $table) {
+            $table->foreign('customer_id')->references('id')->on('customer');
         });
     }
 
@@ -25,8 +25,8 @@ class ConstantKeyOrder extends Migration
      */
     public function down()
     {
-        Schema::table('Order', function (Blueprint $table) {
-            $table->dropForeign('Customer_ID');
+        Schema::table('order', function (Blueprint $table) {
+            $table->dropForeign('order_customer_id_foreign');
         });
     }
 }

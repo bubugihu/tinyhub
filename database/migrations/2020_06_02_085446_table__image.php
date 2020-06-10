@@ -13,9 +13,9 @@ class TableImage extends Migration
      */
     public function up()
     {
-        Schema::create('Image', function (Blueprint $table) {
-            $table->increments('ID');   //primary key
-            $table->string('Product_Gallery');
+        Schema::create('image', function (Blueprint $table) {
+            $table->increments('id');   //primary key
+            $table->string('product_gallery');
         });
     }
 
@@ -26,6 +26,6 @@ class TableImage extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Image');
+        Schema::dropIfExists('image');
     }
 }

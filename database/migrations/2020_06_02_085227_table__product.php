@@ -13,18 +13,18 @@ class TableProduct extends Migration
      */
     public function up()
     {
-        Schema::create('Product', function (Blueprint $table) {
-            $table->increments('SKU');   //primary key
-            $table->string('Product_Title')->nullable();
-            $table->float('Price',8,2)->nullable();
-            $table->integer('Stock')->nullable();
-            $table->longText('Short_Desciptions')->nullable();
-            $table->longText('Long_Descriptions')->nullable();
-            $table->integer('Status')->nullable();
-            $table->integer('Best_Buy')->nullable();
-            $table->string('Feature_Image')->nullable();
-            $table->integer('Image_ID')->unsigned();   //foreign key
-            $table->integer('Brand_ID')->unsigned();   //foreign key
+        Schema::create('product', function (Blueprint $table) {
+            $table->increments('id');   //primary key
+            $table->string('product_title')->nullable();
+            $table->float('price',8,2)->nullable();
+            $table->longText('short_desciptions')->nullable();
+            $table->longText('long_descriptions')->nullable();
+            $table->integer('status')->nullable();
+            $table->integer('sold_out')->nullable();
+            $table->string('feature_image')->nullable();
+            $table->date('warranty_period');
+            $table->integer('image_id')->unsigned();   //foreign key
+            $table->integer('brand_id')->unsigned();    //foreign key
             $table->timestamps();
         });
     }
@@ -36,6 +36,6 @@ class TableProduct extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Product');
+        Schema::dropIfExists('product');
     }
 }

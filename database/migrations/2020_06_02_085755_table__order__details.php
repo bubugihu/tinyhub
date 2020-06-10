@@ -13,13 +13,13 @@ class TableOrderDetails extends Migration
      */
     public function up()
     {
-        Schema::create('Order_Details', function (Blueprint $table) {
-            $table->integer('Quantity')->nullable();
-            $table->double('Total',10,3)->nullable();
-            $table->longText('Comments');
-            $table->integer('Order_ID')->unsigned();        //Foreign key
-            $table->integer('Product_SKU')->unsigned();        //Foreign key
-            $table->integer('Payment_ID')->unsigned();        //Foreign key
+        Schema::create('order_details', function (Blueprint $table) {
+            $table->integer('quantity')->nullable();
+            $table->double('total',10,3)->nullable();
+            $table->longText('comments');
+            $table->string('payment')->nullable();
+            $table->integer('order_id')->unsigned();        //Foreign key
+            $table->integer('product_id')->unsigned();        //Foreign key
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class TableOrderDetails extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Order_Details');
+        Schema::dropIfExists('order_details');
     }
 }
