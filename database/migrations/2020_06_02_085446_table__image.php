@@ -15,7 +15,8 @@ class TableImage extends Migration
     {
         Schema::create('image', function (Blueprint $table) {
             $table->increments('id');   //primary key
-            $table->string('product_gallery');
+            $table->integer('product_id');
+            $table->string('galary_image');
         });
     }
 

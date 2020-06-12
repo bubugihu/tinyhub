@@ -22,9 +22,11 @@ class TableProduct extends Migration
             $table->integer('status')->nullable();
             $table->integer('sold_out')->nullable();
             $table->string('feature_image')->nullable();
-            $table->date('warranty_period');
-            $table->integer('image_id')->unsigned();   //foreign key
-            $table->integer('brand_id')->unsigned();    //foreign key
+            $table->dateTime('warranty_period');
+            $table->dateTime('create_product');
+            $table->integer('image_id')->unsigned();        //foreign key
+            $table->integer('category_id')->unsigned();        //foreign key
+            $table->integer('brand_id')->unsigned();       //foreign key
             $table->timestamps();
         });
     }

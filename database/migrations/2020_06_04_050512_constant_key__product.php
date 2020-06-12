@@ -16,6 +16,7 @@ class ConstantKeyProduct extends Migration
         Schema::table('product', function (Blueprint $table) {
             $table->foreign('image_id')->references('id')->on('image');
             $table->foreign('brand_id')->references('id')->on('brand');
+            $table->foreign('category_id')->references('id')->on('category');
         });
     }
 
@@ -27,8 +28,9 @@ class ConstantKeyProduct extends Migration
     public function down()
     {
         Schema::table('product', function (Blueprint $table) {
-            $table->dropForeign('product_image_id_foreign');
             $table->dropForeign('product_brand_id_foreign');
+            $table->dropForeign('product_image_id_foreign');
+            $table->dropForeign('product_category_id_foreign');
         });
     }
 }

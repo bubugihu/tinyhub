@@ -15,9 +15,11 @@ class TableOrderDetails extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->integer('quantity')->nullable();
-            $table->double('total',10,3)->nullable();
             $table->longText('comments');
             $table->string('payment')->nullable();
+            $table->string('shipping_address');
+            $table->string('receiver');
+            $table->string('phone_consignee');
             $table->integer('order_id')->unsigned();        //Foreign key
             $table->integer('product_id')->unsigned();        //Foreign key
             $table->timestamps();
