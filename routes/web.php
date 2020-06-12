@@ -33,4 +33,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('auth/login' , 'HomeController@auLogin');
 Route::post('tinyhub', 'RoleController@role' );
+<<<<<<< HEAD
 Route::get('tinyhub')->middleware('auth')->middleware('role');
+=======
+>>>>>>> ba9cdf2b385ce13c78f3c2cbf0152d3c44e321da

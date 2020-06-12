@@ -68,7 +68,11 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
+<<<<<<< HEAD
                 <a href="{{ url('/home') }}">{{ Auth::user()->name }}</a>
+=======
+                        <a href="{{ url('/home') }}">Home</a>
+>>>>>>> ba9cdf2b385ce13c78f3c2cbf0152d3c44e321da
                         <a  href="{{ route('logout') }}"
           onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
@@ -93,6 +97,10 @@
                     @auth
                       @if (Auth::user()->role == 0)
                           You are User
+<<<<<<< HEAD
+=======
+                      
+>>>>>>> ba9cdf2b385ce13c78f3c2cbf0152d3c44e321da
                       @else 
                       You are admin/mod
                       @endif
