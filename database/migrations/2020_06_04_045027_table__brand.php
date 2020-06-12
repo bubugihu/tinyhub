@@ -15,8 +15,8 @@ class TableBrand extends Migration
     {
         Schema::create('brand', function (Blueprint $table) {
             $table->increments('id');       //Primary key
-            $table->string('brand_name');
-            $table->string('brand_image');
+            $table->string('brand_name',256)->unique();
+            $table->string('brand_image')->unique();
             $table->longText('description');
         });
     }

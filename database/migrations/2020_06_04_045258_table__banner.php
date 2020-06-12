@@ -15,9 +15,9 @@ class TableBanner extends Migration
     {
         Schema::create('banner', function (Blueprint $table) {
             $table->increments('id');       //Primary key
-            $table->string('ban_title')->nullable();
-            $table->String('ban_image')->nullable();
-            $table->dateTime('ban_date')->nullable();
+            $table->string('ban_title');
+            $table->String('ban_image');
+            $table->dateTime('ban_date');
         });
     }
 

@@ -15,8 +15,8 @@ class TableOrder extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->increments('id');     //primary key
-            $table->dateTime('order_date_time')->nullable();
-            $table->integer('status')->nullable();
+            $table->dateTime('order_date_time');
+            $table->binary('status')->default(0);           //tiếp nhận hay ko? 0-không tiếp nhận, 1-ngược lại
             $table->integer('customer_id')->unsigned();     //Foreign key
             $table->timestamps();
         });

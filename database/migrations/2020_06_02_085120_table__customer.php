@@ -15,11 +15,11 @@ class TableCustomer extends Migration
     {
         Schema::create('customer', function (Blueprint $table) {
             $table->increments('id');  //primary key
-            $table->string('customer_name',256)->nullable();
-            $table->date('dob')->nullable();
-            $table->string('gender')->nullable();
-            $table->string('phone',12)->nullable();
-            $table->string('address')->nullable();
+            $table->string('customer_name',256);
+            $table->date('dob');
+            $table->string('gender')->default('Male');
+            $table->string('phone',12);
+            $table->string('address');
             $table->integer('users_id')->unsigned();     //foreign key
             $table->timestamps();
         });

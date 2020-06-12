@@ -14,12 +14,12 @@ class TableOrderDetails extends Migration
     public function up()
     {
         Schema::create('order_details', function (Blueprint $table) {
-            $table->integer('quantity')->nullable();
-            $table->longText('comments');
-            $table->string('payment')->nullable();
+            $table->integer('quantity')->unsigned();
+            $table->longText('note');
+            $table->string('payment');
             $table->string('shipping_address');
             $table->string('receiver');
-            $table->string('phone_consignee');
+            $table->string('phone_consignee',12);
             $table->integer('order_id')->unsigned();        //Foreign key
             $table->integer('product_id')->unsigned();        //Foreign key
             $table->timestamps();

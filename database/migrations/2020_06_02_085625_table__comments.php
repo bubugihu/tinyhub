@@ -16,7 +16,7 @@ class TableComments extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->string('cmt_title',256);
             $table->text('cmt_content');
-            $table->integer('cmt_status');
+            $table->binary('cmt_status')->default(0);           //được duyệt hay ko? 0 không được, 1 được
             $table->dateTime('cmt_date');
             $table->integer('product_id')->unsigned();     //Foreign key
             $table->integer('customer_id')->unsigned();     //Foreign key
