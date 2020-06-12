@@ -25,6 +25,9 @@
         @include('admin.layout.side-bar')
         <!-- CONTENT WRAPPER CONTAINS PAGE --->
 
+        @include('flash-message')
+
+        
         @yield('content')
 
         <!-- FOOTER --->

@@ -68,7 +68,15 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                <a href="{{ url('/home') }}">{{ Auth::user()->name }}</a>
+                        <a  href="{{ route('logout') }}"
+          onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+           {{ __('Logout') }}
+       </a>
+           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -80,8 +88,20 @@
             @endif
 
             <div class="content">
+                @include('flash-message')
                 <div class="title m-b-md">
-                    Laravel
+                    @auth
+                      @if (Auth::user()->role == 0)
+                          You are User
+                      @else 
+                      You are admin/mod
+                      @endif
+                    @endauth
+                    @guest
+                    You are Guest
+                    @endguest
+                        
+
                 </div>
 
                 <div class="links">
