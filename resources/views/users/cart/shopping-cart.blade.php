@@ -16,10 +16,10 @@
                 <div class="basket-body">
                     <!-- Product -->
                     <div class="item">
-                        <div class="row d-flex align-items-center">
+                        <div class="row d-flex align-items-center mt-4">
                             <div class="col-5">
                                 <div class="d-flex align-items-center">
-                                    <img src="{{url("img/3.jpg")}}" alt="" width="120" class="img-fluid">
+                                    <img src="{{url("img/3.jpg")}}" alt="" width="60" class="img-fluid">
                                     <div class="title" style="padding-left: 20px">
                                         <a href="#">
                                             <h5>Kitty headphone</h5>
@@ -30,21 +30,21 @@
                             </div>
                             <div class="col-2">
                                 <div class="d-flex align-items-center">
-                                <span>$65.00</span>
+                                <span >$</span> <input class="quantity" value="65.00" type="number" id="price">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="d-flex align-items-center ">
                                     <div class="quantity d-flex align-items-center ">
-                                        <div class="dec-btn">-</div>
-                                        <input type="text" value="2" class="quantity-no">
-                                        <div class="inc-btn">+</div>
+                                        <button class="dec-btn" onclick="decre()">-</button>
+                                        <input type="number" value="1" id="quantity" max="99" min="0" class="quantity-no">
+                                        <button class="inc-btn" onclick="incre()">+</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-2" style="padding-left: 0">
                                 <div class="d-flex align-items-center">
-                                <span>$325.00</span>
+                                    <span >$</span> <input class="quantity"  type="number" id="total">
                                 </div>
                             </div>
                             <div class="col-1 text-center">
@@ -75,7 +75,7 @@
                     <div class="block-header">
                         <h6 class="uppercase">INSTRUCTIONS FOR SELLER</h6>
                     </div>
-                    <div class="block-body">
+                    <div class="block-body mt-3">
                         <p>If you have some information for the seller you can leave them in the box below</p>
                         <form action="#">
                             <textarea class="form-control"  rows="3"></textarea>
@@ -88,7 +88,7 @@
                     <div class="block-header">
                         <h6 class="uppercase">Order Summary</h6>
                     </div>
-                    <div class="block-body">
+                    <div class="block-body mt-3">
                         <p>Shipping and additional costs are calculated based on values you have entered.</p>
                         <ul class="order-menu list-unstyled">
                             <li class="d-flex justify-content-between">
@@ -119,5 +119,26 @@
         </div>
     </div>
 </section>
+
+<script>
+        var quantity = document.getElementById("quantity").value;
+        var price = document.getElementById("price").value;
+        var total = quantity*price;
+        document.getElementById("total").value=total;
+    function incre(){
+        document.getElementById("quantity").stepUp(1);
+        var quantity = document.getElementById("quantity").value;
+        var price = document.getElementById("price").value;
+        var total = quantity*price;
+        document.getElementById("total").value=total;
+    }
+    function decre(){
+        document.getElementById("quantity").stepDown(1);   
+        var quantity = document.getElementById("quantity").value;
+        var price = document.getElementById("price").value;
+        var total = quantity*price;
+        document.getElementById("total").value=total;
+    }
+    </script>
 @endsection
 

@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{asset("css/style.default.css")}}">
 
     <style>
+        /* Cart */
         body{
             background: #fff!important;
         }
@@ -41,8 +42,8 @@
             border-radius: 50px;
             font-weight: 500;
         }
-        .quantity input{
-            width: 30px;
+        input.quantity, .quantity input{
+            width: 50px;
             height: 30px;
             border: none;
             text-align: center;
@@ -56,7 +57,7 @@
             height: 30px;
             border-radius: 50%;
             line-height: 30px;
-            border: 1px solid #999;
+            border: 1px solid;
             text-align: center;
             cursor: pointer;
         }
@@ -90,8 +91,55 @@
             font-weight: 700;
             font-size: 1.2em;
         }
-        .btn.wide, .wide
+        strong{
+            font-weight: 100;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }   
+        /* Check out */
+        section.checkout .nav-pill{
+            background: #f5f5f5;
+            border-radius: 50px;
+            padding: 0;
+            border: none!important;
+            overflow: hidden;
+            height: 50px;
+        }
+        section.checkout .nav-item{
+            width: 25%!important;
+            height: 100%;
+        }
+        section.checkout .tab-content{
+            padding: 40px 0 0 ;
+        }
+        .tab-content>.active{
+            display: block;
+        }
+        @media(min-width: 992px){
+        .flex-lg-row{
+            flex-direction: row!important;
+        }}
+        .justify-content-between{
+            justify-content: space-between!important;
+        }
+        section.checkout .block-body{
+            border: 1px solid #ddd;
+            padding: 40px 30px;
+        }
+        section.checkout ul.order-menu{
+            margin-bottom: 0;
+            font-weight: 400;
+            font-size: 1.2em;
+            line-height: 2;
+        }
+        section.checkout strong{
+            font-weight: 100;
+        }
     </style>
+        
 </head>
 <body>
     <div id="app">
@@ -100,7 +148,8 @@
         
         <main class="py-4">
             @yield('shopping-cart')
-            
+            @yield('checkout')
+            @yield('invoice')
         </main>
     </div>
     <!-- JQUERY --->
@@ -111,5 +160,7 @@
     <script src="{{asset("plugin/popper.js/umd/popper.min.js")}}"></script>
     <!-- TINY HUB JS -->
     <script src="{{asset("js/front.js")}}"></script>
+
+    
 </body>
 </html>

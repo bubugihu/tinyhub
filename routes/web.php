@@ -38,3 +38,9 @@ Route::get('admin')->middleware('auth')->middleware('role');
 
 
 Route::get('cart' , 'CartController@cart');
+Route::get('checkout' , function(){
+    return view('users.cart.checkout');
+});
+Route::get('invoice' , function(){
+    return view('users.cart.invoice');
+});

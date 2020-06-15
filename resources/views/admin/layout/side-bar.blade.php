@@ -11,7 +11,7 @@
                     <li class="sidebar-list-item"><a href="{{url("admin/product/categories")}}" class="sidebar-link text-muted pl-lg-5">Categories</a></li>
                     </ul>
                 </div>
-            </li>
+                </li>
         @endif
         @if($role  == 1 || $role  == 3)
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages2" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3"></i><span>Customers</span></a>
