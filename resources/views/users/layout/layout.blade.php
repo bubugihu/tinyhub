@@ -138,6 +138,15 @@
         section.checkout strong{
             font-weight: 100;
         }
+        @media (max-width: 992px){
+        .shopping-cart .container:first-of-type {
+            width: 100% !important;
+            overflow-x: scroll;
+        }}
+        @media (max-width: 992px){
+        .shopping-cart .container:first-of-type .basket-holder {
+        min-width: 991px;
+        }}
     </style>
         
 </head>
