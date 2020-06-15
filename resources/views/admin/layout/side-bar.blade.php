@@ -2,6 +2,8 @@
     <div id="sidebar" class="sidebar py-3">
       <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">Admin</div>
       <ul class="sidebar-menu list-unstyled">
+            <li class="sidebar-list-item"><a href="{{url("admin/index")}}" class="sidebar-link text-muted"><i class="o-home-1 mr-3"></i><span>Dashboard</span></a>
+            </li>
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages1" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3"></i><span>Products</span></a>
                 <div id="pages1" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
@@ -30,6 +32,14 @@
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
                     <li class="sidebar-list-item"><a href="{{url("admin/listUsers")}}" class="sidebar-link text-muted pl-lg-5">List Users</a></li>
                     <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Create New User</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages5" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-paper-stack-1 mr-3"></i><span>Comment</span></a>
+                <div id="pages5" class="collapse">
+                    <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
+                    <li class="sidebar-list-item"><a href="{{url("admin/listUsers")}}" class="sidebar-link text-muted pl-lg-5">View Comment</a></li>
+                    <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">View Feedback</a></li>
                     </ul>
                 </div>
             </li>

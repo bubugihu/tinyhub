@@ -19,16 +19,16 @@
 </head>
 <body>
 
-        <!-- NAV BAR --->
-        @include('admin.layout.nav-bar')
-        <!-- SIDE BAR --->
-        @include('admin.layout.side-bar')
-        <!-- CONTENT WRAPPER CONTAINS PAGE --->
+    <!-- NAV BAR --->
+    @include('admin.layout.nav-bar')
+    <!-- SIDE BAR --->
+    @include('admin.layout.side-bar')
+    <!-- CONTENT WRAPPER CONTAINS PAGE --->
 
-        @yield('content')
+    @yield('content')
 
-        <!-- FOOTER --->
-        @include('admin.layout.footer')
+    <!-- FOOTER --->
+    @include('admin.layout.footer')
 
 
     <!-- JQUERY --->
@@ -39,6 +39,8 @@
     <script src="{{asset("plugin/popper.js/umd/popper.min.js")}}"></script>
     <!-- TINY HUB JS -->
     <script src="{{asset("js/front.js")}}"></script>
+    <!-- CKediotr -->
+    <script src="{{asset("editor/ckeditor/ckeditor.js")}}"></script>
     @yield('script-section')
 </body>
 </html>

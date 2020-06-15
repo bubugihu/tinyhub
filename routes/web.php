@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
+
+Route::get('admin/index', 'IndexController@indexAdmin');
 
 Route::get('admin/product/listProduct', 'ProductController@listProduct');
 Route::get('admin/product/createProduct', 'ProductController@createProduct');
@@ -27,3 +30,8 @@ Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
 
 Route::get('admin/listUsers', 'UserController@listUsers');
+
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
