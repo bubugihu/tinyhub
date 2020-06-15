@@ -15,11 +15,11 @@
           </div>
           <div class="basket-body">
             <!-- Product-->
-            <div class="item">
+            <div class="item mt-4">
               <div class="row d-flex align-items-center">
                 <div class="col-5">
                   <div class="d-flex align-items-center"><img src="https://d19m59y37dris4.cloudfront.net/hub/1-4-2/img/shirt.png" alt="..." class="img-fluid" width="80">
-                    <div class="title"><a href="detail.html">
+                    <div class="title ml-4"><a href="detail.html">
                         <h5>Loose Oversised Shirt</h5><span class="text-muted">Size: Large</span></a></div>
                   </div>
                 </div>
@@ -27,9 +27,7 @@
                 <div class="col-3">
                   <div class="d-flex align-items-center">
                     <div class="quantity d-flex align-items-center">
-                      <div class="dec-btn">-</div>
                       <input type="text" value="4" class="quantity-no">
-                      <div class="inc-btn">+</div>
                     </div>
                   </div>
                 </div>

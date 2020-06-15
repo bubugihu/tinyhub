@@ -1,23 +1,12 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@yield('title')</title>
+    <!-- FONT AWESOME--->
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset("plugin/fontawesome-free/css/all.min.css")}}">
     <!-- BOOTSTRAP--->
     <link rel="stylesheet" href="{{asset("plugin/bootstrap/css/bootstrap.min.css")}}">
@@ -151,16 +140,17 @@
         
 </head>
 <body>
-    <div id="app">
+    
         
 
         
-        <main class="py-4">
+            @include('users.layout.nav-bar')
+            @yield('content')
             @yield('shopping-cart')
             @yield('checkout')
             @yield('invoice')
-        </main>
-    </div>
+            @include('users.layout.footer')
+    
     <!-- JQUERY --->
     <script src="{{asset("plugin/jquery/jquery.min.js")}}"></script>
     <!-- BS4 --->
@@ -170,6 +160,9 @@
     <!-- TINY HUB JS -->
     <script src="{{asset("js/front.js")}}"></script>
 
-    
+    <!-- Testimonial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    @yield('script-section')
+
 </body>
 </html>

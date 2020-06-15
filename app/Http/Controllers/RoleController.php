@@ -17,7 +17,7 @@ class RoleController extends Controller
             if ($role == 1 || $role == 2 || $role == 3) {
                 return view('admin.product.listProduct')->with(['role' => $role]);
             } else
-                return view('welcome');
+                return view('homepage');
         }
     }
 }

@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/homepage', function () {
+    return view('homepage');
 });
 
 Route::get('admin/product/listProduct', 'ProductController@listProduct')->name('listProduct');

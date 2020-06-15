@@ -38,6 +38,14 @@
                     </ul>
                 </div>
             </li>
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages5" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-paper-stack-1 mr-3"></i><span>Comment</span></a>
+                <div id="pages5" class="collapse">
+                    <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
+                    <li class="sidebar-list-item"><a href="{{url("admin/listUsers")}}" class="sidebar-link text-muted pl-lg-5">View Comment</a></li>
+                    <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">View Feedback</a></li>
+                    </ul>
+                </div>
+            </li>
             <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-imac-screen-1 mr-3"></i><span>Banner</span></a>
             </li>
       </ul>
