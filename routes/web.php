@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/homepage', function () {
+Route::get('/tinyhub', function () {
     return view('homepage');
-});
+})->name('homepage');
 
 Route::get('admin/product/listProduct', 'ProductController@listProduct')->name('listProduct');
 Route::get('admin/product/createProduct', 'ProductController@createProduct');
@@ -34,7 +34,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('auth/login' , 'HomeController@auLogin');
 Route::post('admin', 'RoleController@role' );
 
-Route::get('admin')->middleware('auth')->middleware('role');
+Route::get('admin', function(){
+    return redirect()->route('listProduct');
+})->middleware('auth')->middleware('role');
 
 
 Route::get('cart' , 'CartController@cart');
@@ -43,4 +45,9 @@ Route::get('checkout' , function(){
 });
 Route::get('invoice' , function(){
     return view('users.cart.invoice');
+});
+
+Route::get('logout', function () {
+    Auth::logout();
+    return redirect()->route('homepage');
 });

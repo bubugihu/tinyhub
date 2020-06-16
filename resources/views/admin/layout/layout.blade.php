@@ -25,20 +25,8 @@
     @include('admin.layout.side-bar')
     <!-- CONTENT WRAPPER CONTAINS PAGE --->
 
-<<<<<<< HEAD
-
-      
-
-        
-        @yield('content')
-
-    
-
-
-=======
     @yield('content')
 
->>>>>>> origin
     <!-- FOOTER --->
     @include('admin.layout.footer')
 

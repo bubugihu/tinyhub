@@ -23,17 +23,17 @@
                         <h5>Loose Oversised Shirt</h5><span class="text-muted">Size: Large</span></a></div>
                   </div>
                 </div>
-                <div class="col-2"><span>$65.00</span></div>
+                <div class="col-2"><span>$</span><input type="number" class="quantity" value="65.00" id="price"></div>
                 <div class="col-2">
                   <div class="d-flex align-items-center">
                     <div class="quantity d-flex align-items-center">
-                      <div class="dec-btn">-</div>
-                      <input type="text" value="4" class="quantity-no">
-                      <div class="inc-btn">+</div>
+                      <button class="dec-btn" onclick="decre()">-</button>
+                      <input type="number" value="1" class="quantity-no" id="quantity" min="0">
+                      <button class="inc-btn" onclick="incre()">+</button>
                     </div>
                   </div>
                 </div>
-                <div class="col-2"><span>$325.00</span></div>
+                <div class="col-2"><span>$</span><input type="number" class="quantity" id="total" step="0.01"></div>
                 <div class="col-1 text-center"><i class="delete fa fa-trash"></i></div>
               </div>
             </div>  
@@ -77,7 +77,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-12 text-center CTAs"><a href="checkout1.html" class="btn btn-template btn-lg wide">Proceed to checkout<i class="fa fa-long-arrow-right"></i></a></div>
+        <div class="col-lg-12 text-center CTAs"><a href="{{ url('checkout') }}" class="btn btn-template btn-lg wide">Proceed to checkout<i class="fa fa-long-arrow-right"></i></a></div>
       </div>
     </div>
 </section>
@@ -101,6 +101,7 @@
         var total = quantity*price;
         document.getElementById("total").value=total;
     }
+    
     </script>
 @endsection
 

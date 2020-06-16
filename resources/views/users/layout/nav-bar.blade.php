@@ -11,7 +11,10 @@
             @if (Route::has('login'))
                 <div class="top-right links py-1 shadow">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                <a href="
+                {{ url('/home') }}
+                    "> {{ Auth::user()->name }} </a>
+                <a href="{{ url('/logout') }}">Log Out</a>
                     @else
                         <a class="btn btn-success" href="{{ route('login') }}">Login</a>
 
@@ -43,7 +46,7 @@
           <!-- Search Button-->
           <div class="search"><i class="fas fa-search"></i></div>
           <!-- Cart Dropdown-->
-            <div class="cart-no">1</div></a><a href="#" class="view-cart">View Cart</a>
+            <div class="cart-no">1</div></a><a href="{{ url('cart') }}" class="view-cart">View Cart</a>
             </div>
           </div>
         </div>

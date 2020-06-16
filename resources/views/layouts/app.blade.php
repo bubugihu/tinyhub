@@ -3,25 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-=======
     <!-- FONT AWESOME--->
->>>>>>> origin
     <link rel="stylesheet" href="{{asset("plugin/fontawesome-free/css/all.min.css")}}">
     <!-- BOOTSTRAP--->
     <link rel="stylesheet" href="{{asset("plugin/bootstrap/css/bootstrap.min.css")}}">
@@ -31,24 +13,20 @@
     <!-- OWN CSS--->
     <link rel="stylesheet" href="{{asset("css/custom.css")}}">
     <link rel="stylesheet" href="{{asset("css/style.default.css")}}">
-<<<<<<< HEAD
-=======
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>TinyHub</title>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
->>>>>>> origin
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                <a href="{{ url('/tinyhub') }}" class="navbar-brand-homepage"><img src="{{url("img/tinyhub-logo.png")}}" alt="tinyhub logo" width="170" height="auto"></a>
+      <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -95,24 +73,9 @@
             </div>
         </nav>
 
-<<<<<<< HEAD
-        
-=======
->>>>>>> origin
         <main class="py-4">
             @yield('content')
         </main>
     </div>
-<<<<<<< HEAD
-    <!-- JQUERY --->
-    <script src="{{asset("plugin/jquery/jquery.min.js")}}"></script>
-    <!-- BS4 --->
-    <script src="{{asset("plugin/bootstrap/js/bootstrap.min.js")}}"></script>
-    <!-- Popper -->
-    <script src="{{asset("plugin/popper.js/umd/popper.min.js")}}"></script>
-    <!-- TINY HUB JS -->
-    <script src="{{asset("js/front.js")}}"></script>
-=======
->>>>>>> origin
 </body>
 </html>

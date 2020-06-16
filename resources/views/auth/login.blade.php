@@ -7,11 +7,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-<<<<<<< HEAD
                     <form method="POST" action="{{ url('admin') }}">
-=======
-                    <form method="POST" action="{{ route('login') }}">
->>>>>>> origin
                         @csrf
 
                         <div class="form-group row">
