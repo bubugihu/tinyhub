@@ -8,19 +8,35 @@
           </ul>
         </div>
         <div class="col-lg-6 d-flex justify-content-end">
-            @if (Route::has('login'))
-                <div class="top-right links py-1 shadow">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a class="btn btn-success" href="{{ route('login') }}">Login</a>
+             <!-- Authentication Links -->
+             @guest
+             <li class="nav-item">
+                 <a class="btn btn-success mr-2 log-info" href="{{ route('login') }}">{{ __('Login') }}</a>
+             </li>
+             @if (Route::has('register'))
+                 <li class="nav-item">
+                     <a class="btn btn-danger log-info" href="{{ route('register') }}">{{ __('Register') }}</a>
+                 </li>
+             @endif
+         @else
+             <li class="nav-item dropdown">
+                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                     {{ Auth::user()->name }} <span class="caret"></span>
+                 </a>
 
-                        @if (Route::has('register'))
-                            <a class="btn btn-danger" href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                         {{ __('Logout') }}
+                     </a>
+
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                         @csrf
+                     </form>
+                 </div>
+             </li>
+         @endguest
         </div>
       </div>
     </div>
@@ -33,10 +49,10 @@
       <!-- Navbar Collapse -->
       <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item dropdown"><a id="navbarHomeLink" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Categories</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Brands </a></li>
-          <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="about-us" class="nav-link">About Us</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
         </ul>
         <div class="right-col d-flex align-items-lg-center flex-column flex-lg-row">

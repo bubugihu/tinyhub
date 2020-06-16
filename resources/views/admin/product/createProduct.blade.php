@@ -44,10 +44,22 @@
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Short Description</label>
                         <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" name="sdescription"rows="3"></textarea>
+                        <script>
+                            CKEDITOR.replace( 'sdescription', {
+                                language: 'en',
+                                uiColor: '#9AB8F3',
+                            });
+                        </script>
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Long Description</label>
-                        <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" name="ldescription" rows="3"></textarea>
+                        <script>
+                            CKEDITOR.replace( 'ldescription', {
+                                language: 'en',
+                                uiColor: '#9AB8F3'
+                            });
+                        </script>
                       </div>
                       <label class="form-control-label text-uppercase">Upload Feature Image</label>
                       <div class="input-group mb-3">

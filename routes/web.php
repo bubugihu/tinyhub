@@ -35,3 +35,9 @@ Route::get('admin/listUsers', 'UserController@listUsers');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+// Blank Page Route Section
+Route::get('/about-us', 'BlankPageController@about')->name('about-us');
+Route::get('/shipping-policy', 'BlankPageController@shippingPolicy')->name('shipping-policy');
+
+
