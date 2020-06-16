@@ -23,10 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         return view('homepage');
     }
     public function auLogin()
     {
         return view('auth.login');
+=======
+        return view('home');
+>>>>>>> origin
     }
 }

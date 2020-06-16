@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -18,6 +19,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+=======
+    <!-- FONT AWESOME--->
+>>>>>>> origin
     <link rel="stylesheet" href="{{asset("plugin/fontawesome-free/css/all.min.css")}}">
     <!-- BOOTSTRAP--->
     <link rel="stylesheet" href="{{asset("plugin/bootstrap/css/bootstrap.min.css")}}">
@@ -27,6 +31,16 @@
     <!-- OWN CSS--->
     <link rel="stylesheet" href="{{asset("css/custom.css")}}">
     <link rel="stylesheet" href="{{asset("css/style.default.css")}}">
+<<<<<<< HEAD
+=======
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+>>>>>>> origin
 </head>
 <body>
     <div id="app">
@@ -81,11 +95,15 @@
             </div>
         </nav>
 
+<<<<<<< HEAD
         
+=======
+>>>>>>> origin
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+<<<<<<< HEAD
     <!-- JQUERY --->
     <script src="{{asset("plugin/jquery/jquery.min.js")}}"></script>
     <!-- BS4 --->
@@ -94,5 +112,7 @@
     <script src="{{asset("plugin/popper.js/umd/popper.min.js")}}"></script>
     <!-- TINY HUB JS -->
     <script src="{{asset("js/front.js")}}"></script>
+=======
+>>>>>>> origin
 </body>
 </html>

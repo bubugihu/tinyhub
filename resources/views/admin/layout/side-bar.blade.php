@@ -2,7 +2,12 @@
     <div id="sidebar" class="sidebar py-3">
       <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">Admin</div>
       <ul class="sidebar-menu list-unstyled">
+<<<<<<< HEAD
           @if($role  == 1 || $role  == 2)
+=======
+            <li class="sidebar-list-item"><a href="{{url("admin/index")}}" class="sidebar-link text-muted"><i class="o-home-1 mr-3"></i><span>Dashboard</span></a>
+            </li>
+>>>>>>> origin
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages1" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3"></i><span>Products</span></a>
                 <div id="pages1" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
