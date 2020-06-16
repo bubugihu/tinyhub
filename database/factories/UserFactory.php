@@ -37,16 +37,16 @@ $factory->define(App\Category::class, function (Faker $faker) {
 $factory->define(App\Product::class, function(Faker $faker){
     return [
         'product_title'=>implode('A',$faker->words(3)),
-        'price'=>$faker->numberBetween(0,999999),
-        'short_desciptions'=>$faker->text(),
+        'price'=>$faker->numberBetween(0,99999),
+        'short_descriptions'=>$faker->text(),
         'long_descriptions'=>$faker->text(),
         'status'=>0,
-        'sold_out'=>$faker->numberBetween(0,),
+        'sold_out'=>$faker->numberBetween(0,99999),
         'feature_image'=>$faker->text(),
         'warranty_period'=>$faker->dateTime(),
         'create_product'=>$faker->dateTime(),
-        'image_id'=>null,
-        'category_id'=>null,
-        'brand_id'=>null,
+        'gallery_id'=>1,
+        'category_id'=>1,
+        'brand_id'=>1,
     ];
 });
