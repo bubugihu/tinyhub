@@ -53,3 +53,11 @@ Route::get('logout', function () {
     Auth::logout();
     return redirect()->route('homepage');
 });
+
+//nana
+Route::get('productDetails', function(){
+    return view('users.products.in-ear.productDetails');
+});
+route::get('productList',function(){
+    return view('users.products.productList');
+});
