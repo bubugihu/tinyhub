@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
 
 Route::get('admin/product/listProduct', 'ProductController@listProduct')->name('listProduct');
