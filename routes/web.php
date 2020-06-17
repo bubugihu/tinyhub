@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', function() {
+    return redirect()->route('homepage');
+});
 Route::get('/tinyhub', function () {
     return view('homepage');
 })->name('homepage');
@@ -36,13 +38,13 @@ Route::post('admin', 'RoleController@role' );
 
 Route::get('admin', function(){
     return redirect()->route('listProduct');
-})->middleware('auth')->middleware('role');
+})->middleware('role')->middleware('auth');
 
 
 Route::get('cart' , 'CartController@cart');
 Route::get('checkout' , function(){
     return view('users.cart.checkout');
-});
+})->middleware('auth');
 Route::get('invoice' , function(){
     return view('users.cart.invoice');
 });
