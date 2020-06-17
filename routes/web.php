@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
 
 Route::get('admin/product/listProduct', 'ProductController@listProduct')->name('listProduct');
@@ -28,7 +28,7 @@ Route::get('admin/order/listOrder', 'OrderController@listOrder');
 
 Route::get('admin/listUsers', 'UserController@listUsers');
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('auth/login' , 'HomeController@auLogin');
