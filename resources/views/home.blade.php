@@ -15,7 +15,7 @@
                     @endif
                     <ul>
                         <li>{{ Auth::user()->name }}</li>
-                        
+                    
                     </ul>
                 
                 </div>

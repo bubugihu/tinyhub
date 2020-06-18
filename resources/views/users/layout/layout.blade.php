@@ -19,6 +19,10 @@
     <!-- TESTIMONIAL -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <!-- Na --->
+    <link rel="stylesheet" href="{{asset("css/product-details.css")}}">
+    <link rel="stylesheet" href="{{asset("css/product-list.css")}}">
+    <link rel="stylesheet" href="{{asset("css/google-fonts-poppins.css")}}">
     <style>
         /* Cart */
         body{

@@ -4,7 +4,7 @@
      {{Auth::user()->name  }}   
         </div>
       <ul class="sidebar-menu list-unstyled">
-          @if($role  == 1 || $role  == 2)
+          @if(Auth::user()->role  == 1 || Auth::user()->role  == 2)
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages1" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3"></i><span>Products</span></a>
                 <div id="pages1" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
@@ -15,7 +15,7 @@
                 </div>
                 </li>
         @endif
-        @if($role  == 1 || $role  == 3)
+        @if(Auth::user()->role == 1 || Auth::user()->role  == 3)
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages2" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3"></i><span>Customers</span></a>
                 <div id="pages2" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">

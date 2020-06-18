@@ -4,7 +4,7 @@
       <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
       <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="{{url("img/quang.jpg")}}" alt="Jason Dang" width="30" class="img-fluid rounded-circle shadow"></a>
           <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">Mark Stephen</strong><small>Web Developer</small></a>
-            <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log    </a>
+          <div class="dropdown-divider"></div><a href="{{ url('home')}}" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log    </a>
           <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ url('/logout') }}">
            Log Out
        </a>
