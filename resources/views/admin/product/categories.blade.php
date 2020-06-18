@@ -22,8 +22,22 @@
                         <div class="modal-body">
                           <form action="" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
-                              <label>Category</label>
+                              <label class="form-control-label text-uppercase">Category Title</label>
                               <input type="text" name="" class="form-control" required>
+                            </div>
+                            <label class="form-control-label text-uppercase">Category Image</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text">Upload</span>
+                                </div>
+                                <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label text-uppercase">Description</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
                             <div class="form-group">
                               <input type="submit" value="Create" class="btn btn-primary">
@@ -38,13 +52,17 @@
                   <thead>
                     <tr>
                       <th>Categories ID</th>
-                      <th>Categories Name</th>
+                      <th>Categories Image</th>
+                      <th>Categories Title</th>
+                      <th>Description</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <th scope="row">1</th>
+                      <td>Test</td>
+                      <td>Test</td>
                       <td>Test</td>
                       <td><a href="#" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                         <a href="#" class="badge badge-danger p-2"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a></td>
