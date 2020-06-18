@@ -61,3 +61,9 @@ Route::get('productDetails', function(){
 route::get('productList',function(){
     return view('users.products.productList');
 });
+
+// Blank Page Route Section
+Route::get('/about-us', 'BlankPageController@about')->name('about-us');
+Route::get('/shipping-policy', 'BlankPageController@shippingPolicy')->name('shipping-policy');
+
+
