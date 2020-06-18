@@ -1,9 +1,12 @@
 body {
     background-color: #fff !important;
 }
+<<<<<<< HEAD
 p {
     font-size: 17px;
 }
+=======
+>>>>>>> 7150e0f4ff9d7f47a5c9e7239b338c184ebf8721
 /* .top-right.links a {
     padding: 7px 25px;
     border-radius: 40px;
@@ -14,12 +17,15 @@ p {
 .top-right.links a:hover {
     text-decoration: none;
 }
+<<<<<<< HEAD
 a.log-info {
     font-size: 13px !important;
 }
 .nav-item {
     display: inline-block;
 }
+=======
+>>>>>>> 7150e0f4ff9d7f47a5c9e7239b338c184ebf8721
 li.nav-item a {
     font-size: 15px;
     color: #222;
