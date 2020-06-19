@@ -22,7 +22,9 @@ Route::get('/tinyhub', function () {
 Route::get('admin/product/listProduct', 'ProductController@listProduct')->name('listProduct');
 Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::get('admin/product/categories', 'ProductController@categories');
-
+Route::get('admin/index', function(){
+    return view('admin.index');
+});
 
 Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');
 
@@ -48,7 +50,9 @@ Route::get('checkout' , function(){
 Route::get('invoice' , function(){
     return view('users.cart.invoice');
 });
-
+Route::get('print' , function(){
+    return view('users.cart.print');
+})->name('print');
 Route::get('logout', function () {
     Auth::logout();
     return redirect()->route('homepage');
@@ -61,3 +65,11 @@ Route::get('productDetails', function(){
 route::get('productList',function(){
     return view('users.products.productList');
 });
+
+// Blank Page Route Section
+Route::get('/about-us', 'BlankPageController@about')->name('about-us');
+Route::get('/shipping-policy', 'BlankPageController@shippingPolicy')->name('shipping-policy');
+Route::get('/feedback', function (){
+    return view('contact-us');
+})->name('contact-us');
+

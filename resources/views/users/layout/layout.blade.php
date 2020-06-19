@@ -133,6 +133,9 @@
         section.checkout strong{
             font-weight: 100;
         }
+        .print-invoice-title{
+            text-align: center;
+        }
         @media (max-width: 992px){
         .shopping-cart .container:first-of-type {
             width: 100% !important;
@@ -153,7 +156,9 @@
         @yield('content')
         @yield('shopping-cart')
         @yield('checkout')
-        @yield('invoice')
+        @yield('order-review')
+        @yield('print')
+        @yield('contact-us')
         <!-- FOOTER --->
         @include('users.layout.footer')
 

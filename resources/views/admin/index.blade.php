@@ -46,6 +46,7 @@
           </section>
           <section>
             <div class="row">
+              @if(Auth::user()->role  == 1 || Auth::user()->role  == 2)
                 <div class="col-lg-3 mb-4 mb-lg-0">
                     <div class="row align-items-center mb-3 flex-row">
                         <div class="col-lg-12">
@@ -53,6 +54,8 @@
                         </div>
                     </div>
                 </div>
+              @endif
+              @if(Auth::user()->role == 1 || Auth::user()->role  == 3)
                 <div class="col-lg-3 mb-4 mb-lg-0">
                     <div class="row align-items-center mb-3 flex-row">
                         <div class="col-lg-12">
@@ -60,6 +63,7 @@
                         </div>
                     </div>
                 </div>
+              @endif
                 <div class="col-lg-3 mb-4 mb-lg-0">
                     <div class="row align-items-center mb-3 flex-row">
                         <div class="col-lg-12">
@@ -67,6 +71,7 @@
                         </div>
                     </div>
                 </div>
+                @if(Auth::user()->role == 1)
                 <div class="col-lg-3 mb-4 mb-lg-0">
                     <div class="row align-items-center mb-3 flex-row">
                         <div class="col-lg-12">
@@ -74,6 +79,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 <div class="col-lg-3 mb-4 mb-lg-0">
                     <div class="row align-items-center mb-3 flex-row">
                         <div class="col-lg-12">

@@ -23,7 +23,7 @@
             <div class="site-links col-lg-2 col-md-6">
               <h5 class="text-uppercase">About Us</h5>
               <ul class="list-unstyled">
-                <li> <a href="#">Shipping Policy</a></li>
+                <li> <a href="shipping-policy">Shipping Policy</a></li>
                 <li> <a href="#">Payment</a></li>
                 <li> <a href="#">Guarantee</a></li>
                 <li> <a href="#">Contact Us</a></li>

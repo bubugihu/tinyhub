@@ -1,8 +1,22 @@
 @extends('users.layout.layout')
-@section('order-review')
+@section('print')
 <section class="shopping-cart">
+    <h3 class="print-invoice-title">Invoice</h3>
+    <h6 class="print-invoice-title">Order-ID: abc</h6>
     <div class="container">
-      <h3 class="print-invoice-title">Order Review</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Thong tin khach hang</h5>
+                <p>ten</p>
+                <p>so dt</p>
+                <p>dia chi giao hang</p>
+            </div>
+            <div class="col-md-6">
+                <h5>Thong tin don hang</h5>
+                <p>ngay dat hang</p>
+                <p>phuong thuc thanh toan</p>
+            </div>
+        </div>
       <div class="basket">
         <div class="basket-holder">
           <div class="basket-header">
@@ -41,7 +55,7 @@
       </div>
     </div>
     <div class="container">
-    <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row"><a href="{{ route('homepage') }}" class="btn btn-template-outlined wide">Back to Homepage</a><a href="{{ route('print')}}" class="btn btn-template wide">Print Invoice</a></div>
+      <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row"><a href="{{ route('homepage') }}" class="btn btn-template-outlined wide">Back to Homepage</a><a href="#" class="btn btn-template wide">Print Invoice</a></div>
     </div>
 </section>
 @endsection
