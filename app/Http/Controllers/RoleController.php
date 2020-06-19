@@ -15,9 +15,9 @@ class RoleController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             $role = Auth::user()->role;
             if ($role == 1 || $role == 2 || $role == 3) {
-                return view('admin.product.listProduct')->with(['role' => $role]);
+                return view('admin.index');
             } else
-                return view('welcome');
+                return redirect()->route('homepage');
         }
     }
 }

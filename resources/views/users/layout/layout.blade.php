@@ -1,23 +1,11 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@yield('title')</title>
+    <!-- FONT AWESOME--->
     <link rel="stylesheet" href="{{asset("plugin/fontawesome-free/css/all.min.css")}}">
     <!-- BOOTSTRAP--->
     <link rel="stylesheet" href="{{asset("plugin/bootstrap/css/bootstrap.min.css")}}">
@@ -25,9 +13,16 @@
     <!-- GOOGLE FONT--->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap" rel="stylesheet">
     <!-- OWN CSS--->
+    <link rel="stylesheet" href="{{asset("css/custom-frontpage.css")}}">
     <link rel="stylesheet" href="{{asset("css/custom.css")}}">
     <link rel="stylesheet" href="{{asset("css/style.default.css")}}">
-
+    <!-- TESTIMONIAL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <!-- Na --->
+    <link rel="stylesheet" href="{{asset("css/product-details.css")}}">
+    <link rel="stylesheet" href="{{asset("css/product-list.css")}}">
+    <link rel="stylesheet" href="{{asset("css/google-fonts-poppins.css")}}">
     <style>
         /* Cart */
         body{
@@ -138,6 +133,9 @@
         section.checkout strong{
             font-weight: 100;
         }
+        .print-invoice-title{
+            text-align: center;
+        }
         @media (max-width: 992px){
         .shopping-cart .container:first-of-type {
             width: 100% !important;
@@ -148,19 +146,23 @@
         min-width: 991px;
         }}
     </style>
-        
 </head>
 <body>
-    <div id="app">
-        
 
-        
-        <main class="py-4">
-            @yield('shopping-cart')
-            @yield('checkout')
-            @yield('invoice')
-        </main>
-    </div>
+        <!-- NAV BAR --->
+        @include('users.layout.nav-bar')
+
+        <!-- CONTENT WRAPPER CONTAINS PAGE --->
+        @yield('content')
+        @yield('shopping-cart')
+        @yield('checkout')
+        @yield('order-review')
+        @yield('print')
+        @yield('contact-us')
+        <!-- FOOTER --->
+        @include('users.layout.footer')
+
+
     <!-- JQUERY --->
     <script src="{{asset("plugin/jquery/jquery.min.js")}}"></script>
     <!-- BS4 --->
@@ -169,7 +171,8 @@
     <script src="{{asset("plugin/popper.js/umd/popper.min.js")}}"></script>
     <!-- TINY HUB JS -->
     <script src="{{asset("js/front.js")}}"></script>
-
-    
+    <!-- Testimonial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    @yield('script-section')
 </body>
 </html>

@@ -12,15 +12,19 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
-Route::get('/', function () {
-    return view('homepage');
+Route::get('/', function() {
+    return redirect()->route('homepage');
 });
+Route::get('/tinyhub', function () {
+    return view('homepage');
+})->name('homepage');
 
 Route::get('admin/product/listProduct', 'ProductController@listProduct')->name('listProduct');
 Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::get('admin/product/categories', 'ProductController@categories');
-
+Route::get('admin/index', function(){
+    return view('admin.index');
+});
 
 Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');
 
@@ -34,13 +38,38 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('auth/login' , 'HomeController@auLogin');
 Route::post('admin', 'RoleController@role' );
 
-Route::get('admin')->middleware('auth')->middleware('role');
+Route::get('admin', function(){
+    return redirect()->route('listProduct');
+})->middleware('role')->middleware('auth');
 
 
 Route::get('cart' , 'CartController@cart');
 Route::get('checkout' , function(){
     return view('users.cart.checkout');
-});
+})->middleware('auth');
 Route::get('invoice' , function(){
     return view('users.cart.invoice');
 });
+Route::get('print' , function(){
+    return view('users.cart.print');
+})->name('print');
+Route::get('logout', function () {
+    Auth::logout();
+    return redirect()->route('homepage');
+});
+
+//nana
+Route::get('productDetails', function(){
+    return view('users.products.in-ear.productDetails');
+});
+route::get('productList',function(){
+    return view('users.products.productList');
+});
+
+// Blank Page Route Section
+Route::get('/about-us', 'BlankPageController@about')->name('about-us');
+Route::get('/shipping-policy', 'BlankPageController@shippingPolicy')->name('shipping-policy');
+Route::get('/feedback', function (){
+    return view('contact-us');
+})->name('contact-us');
+

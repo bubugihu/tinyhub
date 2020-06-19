@@ -47,8 +47,8 @@
                                     </div>
                                 </div>
                                 <div class="CTAs d-flex justify-content-between flex-column flex-lg-row">
-                                    <a href="#" class="btn btn-template-outlined wide prev">Back to basket</a>
-                                    <a href="#" class="btn btn-template wide next">Continue to Order Review</a>
+                                    <a href="{{ url('cart') }}" class="btn btn-template-outlined wide prev">Back to basket</a>
+                                    <a href="{{ url('invoice') }}" class="btn btn-template wide next">Continue to Order Review</a>
                                 </div>
                             </form>
                         </div>

@@ -16,7 +16,7 @@ class Role
     public function handle($request, Closure $next)
     {   
         if(Auth::user()->role == 0){
-            return redirect()->route('home');
+            return redirect()->route('homepage');
         }
         else
         return $next($request);

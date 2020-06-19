@@ -23,11 +23,16 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Price</label>
-                        <input type="number" placeholder="Price" class="form-control">
+                        <input type="number" placeholder="Price" class="form-control" min="0" max="20000">
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Stock</label>
-                        <input type="number" placeholder="Stock" class="form-control">
+                        <label class="form-control-label text-uppercase">Category</label>
+                          <select name="account" class="form-control">
+                            <option>None</option>
+                            <option>In Ear</option>
+                            <option>On Ear</option>
+                            <option>True-Wireless</option>
+                          </select>
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Status</label><br>
@@ -37,21 +42,56 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">BestBuy</label><br>
-                        <div class="custom-control custom-checkbox">
-                            <input id="customCheck2" type="checkbox" class="custom-control-input">
-                            <label for="customCheck2" class="custom-control-label">Active</label>
-                        </div>
-                      </div>
-                      <div class="form-group">
                         <label class="form-control-label text-uppercase">Short Description</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" name="sdescription"rows="3"></textarea>
+                        <script>
+                            CKEDITOR.replace( 'sdescription', {
+                                language: 'en',
+                                uiColor: '#9AB8F3',
+                            });
+                        </script>
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Long Description</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" name="ldescription" rows="3"></textarea>
+                        <script>
+                            CKEDITOR.replace( 'ldescription', {
+                                language: 'en',
+                                uiColor: '#9AB8F3'
+                            });
+                        </script>
                       </div>
-                      <label class="form-control-label text-uppercase">Upload Image</label>
+                      <label class="form-control-label text-uppercase">Upload Feature Image</label>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="inputGroupFile01">
+                          <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
+                        </div>
+                      </div>
+                      <label class="form-control-label text-uppercase">Relate Image 1</label>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="inputGroupFile01">
+                          <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
+                        </div>
+                      </div>
+                      <label class="form-control-label text-uppercase">Relate Image 2</label>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="inputGroupFile01">
+                          <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
+                        </div>
+                      </div>
+                      <label class="form-control-label text-uppercase">Relate Image 3</label>
                       <div class="input-group mb-3">
                         <div class="input-group-prepend">
                           <span class="input-group-text">Upload</span>
