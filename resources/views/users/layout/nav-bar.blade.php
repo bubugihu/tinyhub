@@ -50,7 +50,7 @@
       <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Categories</a></li>
+          <li class="nav-item"><a href="products" class="nav-link">Categories</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Brands </a></li>
           <li class="nav-item"><a href="about-us" class="nav-link">About Us</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
