@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\Role;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -35,7 +36,12 @@ Route::get('admin/listUsers', 'UserController@listUsers');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('auth/login' , 'HomeController@auLogin');
+Route::get('login' , function(){
+    return view('auth.login');
+})->name('login');
+Route::get('register' , function (){
+    return view('auth.register');
+})->name('register');
 Route::post('admin', 'RoleController@role' );
 
 Route::get('admin', function(){
@@ -62,14 +68,14 @@ Route::get('logout', function () {
 Route::get('productDetails', function(){
     return view('users.products.in-ear.productDetails');
 });
-route::get('productList',function(){
+Route::get('productList',function(){
     return view('users.products.productList');
 });
 
 // Blank Page Route Section
 Route::get('/about-us', 'BlankPageController@about')->name('about-us');
 Route::get('/shipping-policy', 'BlankPageController@shippingPolicy')->name('shipping-policy');
-Route::get('/feedback', function (){
-    return view('contact-us');
-})->name('contact-us');
+route::get('/guarantee',function(){
+    return view("guarantee");
+})->name('guarantee');
 
