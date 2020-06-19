@@ -72,21 +72,13 @@
                 <div class="col-xl-4">
                     <div class="product_grid card-body card">
                         <div class="product_image">
-<<<<<<< HEAD
                         <a href="{{ url('productDetails')}}" class="image ">
-=======
-                            <a href="" class="image ">
->>>>>>> 7150e0f4ff9d7f47a5c9e7239b338c184ebf8721
                                 <img class="pic_1 rounded" src="img/1.jpg" alt="">
                                 <img class="pic_2 rounded" src="img/5.jpg" alt="">
                             </a>
                         </div>
                         <div class="product_content">
-<<<<<<< HEAD
                             <h3 class="title"><a href="{{ url('productDetails')}}">Heaphone TinyHub</a></h3>
-=======
-                            <h3 class="title"><a href="#">Heaphone TinyHub</a></h3>
->>>>>>> 7150e0f4ff9d7f47a5c9e7239b338c184ebf8721
                             <div class="price">$18.50</div>
                         </div>
                     </div>

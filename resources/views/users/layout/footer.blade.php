@@ -25,7 +25,7 @@
               <ul class="list-unstyled">
                 <li> <a href="shipping-policy">Shipping Policy</a></li>
                 <li> <a href="#">Payment</a></li>
-                <li> <a href="#">Guarantee</a></li>
+                <li> <a href="guarantee">Guarantee</a></li>
                 <li> <a href="#">Contact Us</a></li>
               </ul>
             </div>

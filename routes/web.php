@@ -71,5 +71,7 @@ Route::get('productList',function(){
 // Blank Page Route Section
 Route::get('/about-us', 'BlankPageController@about')->name('about-us');
 Route::get('/shipping-policy', 'BlankPageController@shippingPolicy')->name('shipping-policy');
-
+route::get('/guarantee',function(){
+    return view("guarantee");
+})->name('guarantee');
 
