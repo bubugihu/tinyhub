@@ -11,11 +11,11 @@
              <!-- Authentication Links -->
              @guest
              <li class="nav-item">
-                 <a class="btn btn-success mr-2 log-info" href="{{ route('login') }}">{{ __('Login') }}</a>
+                 <a class="log-info badge mr-4" href="{{ route('login') }}">{{ __('Login') }}</a>
              </li>
              @if (Route::has('register'))
                  <li class="nav-item">
-                     <a class="btn btn-danger log-info" href="{{ route('register') }}">{{ __('Register') }}</a>
+                     <a class="res-info badge" href="{{ route('register') }}">{{ __('Register') }}</a>
                  </li>
              @endif
          @else
@@ -44,12 +44,11 @@
 <nav class="navbar navbar-expand-lg bg-light sticky-top">
     <div class="container">
     <!-- Navbar Header  -->
-    <a href="#" class="navbar-brand-homepage"><img src="{{url("img/tinyhub-logo.png")}}" alt="tinyhub logo" width="170" height="auto"></a>
-      <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+    <a href="homepage" class="navbar-brand-homepage"><img src="{{url("img/tinyhub-logo.png")}}" alt="tinyhub logo" width="170" height="auto"></a>
       <!-- Navbar Collapse -->
       <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="homepage" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="products" class="nav-link">Categories</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Brands </a></li>
           <li class="nav-item"><a href="about-us" class="nav-link">About Us</a></li>
@@ -57,9 +56,12 @@
         </ul>
         <div class="right-col d-flex align-items-lg-center flex-column flex-lg-row">
           <!-- Search Button-->
-          <div class="search"><i class="fas fa-search"></i></div>
+          <div class="search mr-4"><i class="fas fa-search"></i></div>
           <!-- Cart Dropdown-->
-            <div class="cart-no">1</div></a><a href="#" class="view-cart">View Cart</a>
+          <div class="cart">
+            <a href="#" class="view-cart"><i class="fa fa-shopping-basket" aria-hidden="true"></i>
+            </a>
+          </div>
             </div>
           </div>
         </div>

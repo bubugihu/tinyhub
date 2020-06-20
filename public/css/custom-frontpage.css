@@ -14,11 +14,16 @@ p {
 .top-right.links a:hover {
     text-decoration: none;
 }
-a.log-info {
-    font-size: 12px !important;
+a.log-info, a.res-info {
+    font-size: 13px !important;
+    color: #fff!important;
 }
 .nav-item {
     display: inline-block;
+    
+}
+li.nav-item a:hover {
+    color: #f47635;
 }
 ul li {
     font-size: 17px;
@@ -53,6 +58,14 @@ a.nav-link {
     padding: 0 15px;
     border-right: 1px solid #555;
     margin-right: 0 !important;
+}
+.search {
+    font-size: 20px;
+}
+.cart i {
+    font-size: 20px;
+    color: #000;
+    
 }
 .row.inner-box {
     padding-top: 5em;
@@ -699,7 +712,7 @@ ul.payment-list.list-inline-item.pull-right {
 
 .product_details .col-lg-6>.row>.col-lg-6>ul>li,
 .col-lg-6>ul>li {
-    color: #9d9d9d;
+    color: #fff;
     line-height: 2;
 }
 
@@ -798,3 +811,12 @@ p.price-dt {
     background-size: cover;
     background-origin: border-box;
 }
+
+/*** LOGIN PAGE ***/
+button.btn.login-btn {
+    background: #f47635;
+}
+button.btn.res-btn {
+    background: #f47635;
+}
+/*** END LOGIN PAGE ***/
