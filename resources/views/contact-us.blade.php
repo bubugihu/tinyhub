@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Email</label>
-                                      <input type="number" placeholder="Email" class="form-control" min="0" max="20000">
+                                      <input type="number" placeholder="Email" class="form-control" min="0" max="20000" required>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label text-uppercase">Title</label>

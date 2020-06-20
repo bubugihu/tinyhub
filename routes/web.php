@@ -48,7 +48,9 @@ Route::get('admin', function(){
     return redirect()->route('listProduct');
 })->middleware('role')->middleware('auth');
 
-
+Route::get('feedback', function(){
+    return view('contact-us');
+})->name('feedback');
 Route::get('cart' , 'CartController@cart');
 Route::get('checkout' , function(){
     return view('users.cart.checkout');
@@ -62,7 +64,7 @@ Route::get('print' , function(){
 Route::get('logout', function () {
     Auth::logout();
     return redirect()->route('homepage');
-});
+})->name('logout');
 
 //nana
 Route::get('productDetails', function(){
