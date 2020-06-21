@@ -24,9 +24,11 @@
               <h5 class="text-uppercase">About Us</h5>
               <ul class="list-unstyled">
                 <li> <a href="shipping-policy">Shipping Policy</a></li>
-                <li> <a href="#">Payment</a></li>
+                
                 <li> <a href="guarantee">Guarantee</a></li>
-                <li> <a href="#">Contact Us</a></li>
+                <li> <a href="payment">Payment</a></li>
+                
+                <li> <a href="feedback">Contact Us</a></li>
               </ul>
             </div>
             <div class="newsletter col-lg-4">
@@ -45,7 +47,7 @@
             <div class="payment col-md-6 clearfix">
               <ul class="payment-list list-inline-item pull-right">
                 <li class="list-inline-item"><img src="https://d19m59y37dris4.cloudfront.net/hub/1-4-3/img/visa.svg" alt="..." width="50" height="auto"></li>
-                <li class="list-inline-item"><img src="https://d19m59y37dris4.cloudfront.net/hub/1-4-3/img/mastercard.svg" alt="..." width="50" height="auto"</li>
+                <li class="list-inline-item"><img src="https://d19m59y37dris4.cloudfront.net/hub/1-4-3/img/mastercard.svg" alt="..." width="50" height="auto"></li>
                 <li class="list-inline-item"><img src="https://d19m59y37dris4.cloudfront.net/hub/1-4-3/img/paypal.svg" alt="..." width="50" height="auto"></li>
                 <li class="list-inline-item"><img src="https://d19m59y37dris4.cloudfront.net/hub/1-4-3/img/western-union.svg" alt="..." width="50" height="auto"	></li>
               </ul>

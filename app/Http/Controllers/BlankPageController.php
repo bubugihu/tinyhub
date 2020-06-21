@@ -13,4 +13,8 @@ class BlankPageController extends Controller
     public function shippingPolicy(){
         return view("shipping-policy");
     }
+
+    public function payment(){
+        return view("payment");
+    }
 }

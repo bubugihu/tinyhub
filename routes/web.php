@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Middleware\Role;
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -13,13 +13,10 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 Route::get('/', function() {
-    return redirect()->route('homepage');
-});
-Route::get('/tinyhub', function () {
     return view('homepage');
 })->name('homepage');
-
 Route::get('admin/product/listProduct', 'ProductController@listProduct')->name('listProduct');
 Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::get('admin/product/categories', 'ProductController@categories');
@@ -36,19 +33,14 @@ Route::get('admin/listUsers', 'UserController@listUsers');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('login' , function(){
-    return view('auth.login');
-})->name('login');
-Route::get('register' , function (){
-    return view('auth.register');
-})->name('register');
+
 Route::post('admin', 'RoleController@role' );
 
 Route::get('admin', function(){
     return redirect()->route('listProduct');
 })->middleware('role')->middleware('auth');
 
-Route::get('feedback', function(){
+Route::get('contact-us', function(){
     return view('contact-us');
 })->name('feedback');
 Route::get('cart' , 'CartController@cart');
@@ -81,3 +73,11 @@ route::get('/guarantee',function(){
     return view("guarantee");
 })->name('guarantee');
 
+Route::get('/payment', 'BlankPageController@payment')->name('payment');
+
+route::get('products',function(){
+    return view('users.in-ear.products');
+});
+Route::get('product-detail', function(){
+    return view('users.in-ear.product-detail');
+});

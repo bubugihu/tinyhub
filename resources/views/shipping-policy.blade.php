@@ -8,7 +8,7 @@
                         <h1>Shipping Policy</h1>
                         <hr>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12  m-3">
                         <h4>TinyHub transports goods to all parts of the country.</h4>
                         <p><b>1. For customers in Ho Chi Minh City:</b></p>
                         <ul>
