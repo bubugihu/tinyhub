@@ -33,8 +33,8 @@ Route::get('admin/listUsers', 'UserController@listUsers');
 
 Route::get('profile', function(){
     return view('home');
-})->middleware('auth');
-Route::get('/home', 'HomeController@index')->name('home')->middleware('role');
+});
+Route::get('home', 'RoleController@role');
 
 Route::post('admin', 'RoleController@role' );
 
@@ -92,5 +92,9 @@ route::get('products',function(){
 });
 Route::get('product-detail', function(){
     return view('users.in-ear.product-detail');
+});
+
+Route::get('report-product' , function(){
+    return view('users.products.report');
 });
 

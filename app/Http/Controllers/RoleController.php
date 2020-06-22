@@ -12,7 +12,7 @@ class RoleController extends Controller
             if ($role == 1 || $role == 2 || $role == 3) {
                 return view('admin.index');
             } else
-                return redirect()->route('homepage');
+                return view('home');
         }
-    }
 }
+
