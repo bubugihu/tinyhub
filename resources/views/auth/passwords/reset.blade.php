@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-dark text-white">
                     {{-- {{ __('Login') }} --}}
                     <h3 class="text-center">Reset Password</h3>
                 </div>

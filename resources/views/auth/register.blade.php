@@ -5,7 +5,7 @@
     <div class="row justify-content-center py-5">
         <div class="col-md-7">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-dark text-white">
                     {{-- {{ __('Login') }} --}}
                     <h3 class="text-center">Register</h3>
                 </div>
