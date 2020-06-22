@@ -1,15 +1,25 @@
 @extends('users.layout.layout')
+@section('title','Shopping-Cart')
 @section('shopping-cart')
-<section class="shopping-cart">
+<div class="hero hero-page padding-small">
+  <div class="container">
+      <div class="row d-flex">
+          <div class="col-lg-9 ">
+              <h1>Cart</h1>
+          </div>
+      </div>
+  </div>
+</div>
+<section class="cart">
     <div class="container">
       <div class="basket">
         <div class="basket-holder">
-          <div class="basket-header">
+          <div class="basket-header ">
             <div class="row">
               <div class="col-5">Product</div>
               <div class="col-2">Price</div>
               <div class="col-2">Quantity</div>
-              <div class="col-2">Total</div>
+              <div class="col-2">Amount</div>
               <div class="col-1 text-center">Remove</div>
             </div>
           </div>
@@ -18,9 +28,9 @@
             <div class="item">
               <div class="row d-flex align-items-center">
                 <div class="col-5">
-                  <div class="d-flex align-items-center"><img src="https://d19m59y37dris4.cloudfront.net/hub/1-4-2/img/shirt.png" alt="..." class="img-fluid" width="80">
+                  <div class="d-flex align-items-center"><img src="{{asset('img/gallery/true-wireless-jbl-4-4.png')}}" alt="..." class="img-fluid" width="80">
                     <div class="title"><a href="detail.html">
-                        <h5>Loose Oversised Shirt</h5><span class="text-muted">Size: Large</span></a></div>
+                        <h5>True wireless JBL</h5><span class="text-muted">Color: Black</span></a></div>
                   </div>
                 </div>
                 <div class="col-2"><span>$</span><input type="number" class="quantity" value="65.00" id="price"></div>
@@ -42,7 +52,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row"><a href="shop.html" class="btn btn-template-outlined wide">Continue Shopping</a><a href="#" class="btn btn-template wide">Update Cart</a></div>
+      <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row"><a href="{{ url('productList')}}" class="btn btn-template-outlined wide">Continue Shopping</a><a href="#" class="btn btn-template wide">Update Cart</a></div>
     </div>
 </section>
 <section class="order-details no-padding-top"> 

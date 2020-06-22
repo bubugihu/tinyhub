@@ -61,7 +61,7 @@
 	<script>
 		$(document).ready(function(){
 			$(window).scroll(function () {
-					if ($(this).scrollTop() > 50) {
+					if ($(this).scrollTop() > 100) {
 						$('#back-to-top').fadeIn();
 					} else {
 						$('#back-to-top').fadeOut();
@@ -103,5 +103,27 @@
                 ]
                 });
             })
-	</script>
+  </script>
+  <script>
+    var city = document.querySelector('#city');
+    var district = document.querySelector('#district');
+    var options2 = district.querySelectorAll('option');
+
+    function giveSelection(selValue) {
+        district.innerHTML = ''; //onchange
+        for (var i = 0; i < options2.length; i++) {
+            if (options2[i].dataset.option === selValue) {
+                district.appendChild(options2[i]);
+            }
+        }
+    }
+    giveSelection(city.value);
+</script>
+
+<script>
+$(document).ready(function () {
+  $('#dtBasicExample').DataTable();
+  $('.dataTables_length').addClass('bs-select');
+});
+</script>
 @endsection

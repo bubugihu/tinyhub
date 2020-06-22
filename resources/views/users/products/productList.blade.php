@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- Product Title -->
-<div class="hero hero-page gray-bg padding-small">
+<div class="hero hero-page padding-small">
     <div class="container">
         <div class="row d-flex">
             <div class="col-lg-9 ">

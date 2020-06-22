@@ -19,6 +19,8 @@
     <!-- TESTIMONIAL -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <!--data table -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
     <!-- Na --->
     <link rel="stylesheet" href="{{asset("css/product-details.css")}}">
     <link rel="stylesheet" href="{{asset("css/product-list.css")}}">
@@ -28,9 +30,7 @@
         body{
             background: #fff!important;
         }
-        section{
-            padding:50px;
-        }
+       
         .basket-header{
             padding: 25px 20px;
             background: #f5f5f5;
@@ -59,9 +59,9 @@
         .delete fa fa-trash::before{
             content: '';
         }
-        .btn-template{
-            background-color: #9055A2;
-            border-color: #9055A2;
+        .btn-template {
+            background-color: #f47635;
+            border-color: #f47635;
         }
         .block-header{
             padding: 20px 30px;
@@ -70,6 +70,7 @@
         }
         .CTAs{
             margin-top: 40px;
+            margin-bottom: 30px;
         }
         dl , ol , ul{
             margin-top: 0;
@@ -80,7 +81,7 @@
             list-style: none;
         }
         .text-primary{
-            color:#9055A2!important;
+            color:#f47635!important;
         }
         ul.order-menu, strong.price-total{
             font-weight: 700;
@@ -95,6 +96,9 @@
         margin: 0;
         }   
         /* Check out */
+        section.cart{
+            margin-top: 40px;
+        }
         section.checkout .nav-pill{
             background: #f5f5f5;
             border-radius: 50px;
@@ -174,5 +178,7 @@
     <!-- Testimonial -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     @yield('script-section')
+    <!-- data table -->
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 </body>
 </html>

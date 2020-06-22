@@ -8,22 +8,18 @@
           </ul>
         </div>
         <div class="col-lg-6 d-flex justify-content-end">
-          @if (Route::has('login'))
               <div class="top-right links py-1 shadow">
                   @auth
-              <a href="
-              {{ url('/home') }}
-                  "> {{ Auth::user()->name }} </a>
-              <a href="{{ url('/logout') }}">Log Out</a>
-                  @else
-                      <a class="btn btn-success" href="{{ route('login') }}">Login</a>
-
-                      @if (Route::has('register'))
-                          <a class="btn btn-danger" href="{{ route('register') }}">Register</a>
-                      @endif
-                  @endauth
+              <a href="{{ url('/home') }}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a>
+              <a href="{{ url('/logout') }}" class="res-info badge" >Log Out</a>
+                @endauth
+                  @guest
+                 <a class="log-info badge mr-4" href="{{ route('login') }}">{{ __('Login') }}</a>
+                 <li class="nav-item">
+                     <a class="res-info badge" href="{{ route('register') }}">{{ __('Register') }}</a>
+                 </li>
+             @endguest
               </div>
-          @endif
       </div>
       </div>
     </div>
@@ -38,15 +34,20 @@
         <ul class="navbar-nav mx-auto">
           <li class="nav-item dropdown"><a id="navbarHomeLink" href="{{ route('homepage')}}"  aria-haspopup="true" aria-expanded="false" class="nav-link active">Home</a></li>
         <li class="nav-item"><a href="{{ url('productList')}}" class="nav-link">Categories</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Brands </a></li>
+        <li class="nav-item"><a href="{{ url('brands')}}" class="nav-link">Brands </a></li>
         <li class="nav-item"><a href="{{ url('about-us')}}" class="nav-link">About Us</a></li>
-        <li class="nav-item"><a href="{{ url('feedback')}}" class="nav-link">Contact Us</a></li>
+        <li class="nav-item"><a href="{{ url('contact-us')}}" class="nav-link">Contact Us</a></li>
         </ul>
         <div class="right-col d-flex align-items-lg-center flex-column flex-lg-row">
           <!-- Search Button-->
-          <div class="search"><i class="fas fa-search"></i></div>
+          <div class="search mr-4">
+          <a href="{{ url('search')}}"><i style="color: black" class="fas fa-search"></i></a>
+        </div>
           <!-- Cart Dropdown-->
-            <div class="cart-no">1</div></a><a href="{{ url('cart') }}" class="view-cart">View Cart</a>
+          <div class="cart">
+            <a href="{{ url('cart') }}" class="view-cart"><i class="fa fa-shopping-basket" aria-hidden="true"></i>
+            </a>
+          </div>
             </div>
           </div>
         </div>

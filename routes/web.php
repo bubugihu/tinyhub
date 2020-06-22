@@ -42,13 +42,13 @@ Route::get('admin', function(){
 
 Route::get('contact-us', function(){
     return view('contact-us');
-})->name('feedback');
+})->name('contact-us');
 Route::get('cart' , 'CartController@cart');
 Route::get('checkout' , function(){
     return view('users.cart.checkout');
 })->middleware('auth');
-Route::get('invoice' , function(){
-    return view('users.cart.invoice');
+Route::get('order-review' , function(){
+    return view('users.cart.order-review');
 });
 Route::get('print' , function(){
     return view('users.cart.print');
@@ -58,6 +58,13 @@ Route::get('logout', function () {
     return redirect()->route('homepage');
 })->name('logout');
 
+Route::get('brands', function(){
+    return view('brands');
+});
+
+Route::get('search' , function(){
+    return view('search');
+});
 //nana
 Route::get('productDetails', function(){
     return view('users.products.in-ear.productDetails');
@@ -81,3 +88,4 @@ route::get('products',function(){
 Route::get('product-detail', function(){
     return view('users.in-ear.product-detail');
 });
+
