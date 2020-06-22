@@ -44,9 +44,9 @@
             </div>
             <div class="row d-flex justify-content-around align-items-center" style="margin: 15px 0;">
                 <div class=" col-md-3 quantity d-flex align-items-center justify-content-center" style="padding: 10px;">
-                    <div class="dec-btn">-</div>
-                    <input type="text" value="1" class="quantity-no rounded">
-                    <div class="inc-btn">+</div>
+                    <div id="asd" class="box">
+                        <input type="number" value="1">
+                    </div>
                 </div>
                 <div class="col-md-5" style="padding: 10px;">
                     <a href="#" class="btn btn-success wide btn-md btn-block"><b>Buy Now</b></a>
@@ -204,4 +204,36 @@
         </div>
     </div>
 </div>
+<style>
+    .box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    input {
+        border: none;
+        outline: none;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px black;
+    }
+
+    input:hover,
+    input:focus {
+        background: pink;
+        color: #fff;
+    }
+</style>
+<link href="jquery.nice-number.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="jquery.nice-number.js"></script>
+<script>
+    $('.asd',function(){
+        $('input[type="number"]').niceNumber();
+    })
+    
+</script>
+
 @endsection

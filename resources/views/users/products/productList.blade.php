@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- Product Title -->
-<div class="hero hero-page gray-bg padding-small">
+<div class="hero gray-bg padding-small">
     <div class="container">
         <div class="row d-flex">
             <div class="col-lg-9 ">
@@ -16,7 +16,7 @@
 <div class="container">
     <div class="row">
         <!-- Sidebara-->
-        <div class="sidebara col-xl-3 col-lg-4" style="margin: 28px 0 0 0;">
+        <div class="sidebara col-xl-3 col-lg-4">
             <!-- Headphone Type -->
             <div class="block">
                 <h6 class="text-uppercase">Headphone Type</h6>
