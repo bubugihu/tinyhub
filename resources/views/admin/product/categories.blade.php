@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col-lg-12 mb-5">
             <div class="card">
-              <div class="card-header">
+              <div class="card-header bg-dark text-white">
                 <h6 class="text-uppercase mb-0">Categories List</h6>
               </div>
               <div class="card-body">

@@ -1,6 +1,16 @@
 @extends('users.layout.layout')
 @section('title', 'Product Details')
 @section('content')
+<div class="hero hero-page padding-small">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-lg-9 ">
+                <h1>Product Detail</h1>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container product_details py-5">
     <div class="row">
         <!-- Hình sản phẩm -->
@@ -52,13 +62,13 @@
                     <a href="#" class="btn btn-success wide btn-md btn-block"><b>Buy Now</b></a>
                 </div>
                 <div class="col-md-4">
-                    <a href="#" class="btn btn-outline-primary wide btn-md btn-block"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    <a href="#" class="btn btn-dark wide btn-md btn-block"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 py-3">
                     <h6 class="text-uppercase"><i class="fas fa-truck"></i> SHIPPING & DELIVERY</h6>
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled list-detail-prd">
                         <li><i class="fas fa-check-circle" style="color: green;"></i> Free Shipping Over $300</li>
                         <li><i class="fas fa-check-circle" style="color: green;"></i> Ships in 24 Hours</li>
                         <li><i class="fas fa-check-circle" style="color: green;"></i> 24 Months Warranty</li>
@@ -66,7 +76,7 @@
                 </div>
                 <div class="col-lg-6 py-3">
                     <h6 class="text-uppercase"><i class="fas fa-exchange-alt"></i> RETURNS</h6>
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled list-detail-prd">
                         <li><i class="fas fa-check-circle" style="color: green;"></i> 7 Days Replacement Only</li>
                         <li><i class="fas fa-check-circle" style="color: green;"></i> Certified By TinyHub</li>
                     </ul>
@@ -79,7 +89,7 @@
 <div class="container product-description bg-white card mb-5">
     <div class="row py-3">
         <div class="col m-3">
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-pills">
                 <li class="nav-item"><a data-toggle="tab" href="#description" class="nav-link active" aria-selected="true">Description</a></li>
                 <li class="nav-item"><a data-toggle="tab" href="#additional-information" class="nav-link" aria-selected="false">Additional Information</a></li>
                 <li class="nav-item"><a data-toggle="tab" href="#reviews" class="nav-link" aria-selected="false">Reviews</a></li>

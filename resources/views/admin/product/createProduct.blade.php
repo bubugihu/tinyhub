@@ -7,7 +7,7 @@
         <div class="row" style="justify-content: center;">
           <div class="col-lg-8 mb-5">
             <div class="card">
-              <div class="card-header">
+              <div class="card-header bg-dark text-white">
                 <h6 class="text-uppercase mb-0">Create new product</h6>
               </div>
               <div class="card-body">

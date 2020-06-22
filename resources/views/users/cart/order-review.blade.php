@@ -65,7 +65,7 @@
     <div class="container">
     <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row">
       <a href="{{ route('homepage') }}" class="btn btn-template-outlined wide">Back to Homepage</a>
-    <a href="{{ route('print')}}" class="btn btn-template wide" >Print Invoice</a>
+    <a href="{{ url('report')}}" class="btn btn-template wide" >Print Invoice</a>
     </div>
     </div>
 </section>

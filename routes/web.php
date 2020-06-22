@@ -44,7 +44,7 @@ Route::get('admin', function(){
 
 Route::get('contact-us', function(){
     return view('contact-us');
-})->name('contact-us');
+});
 Route::get('cart' , 'CartController@cart');
 Route::get('checkout' , function(){
     return view('users.cart.checkout');
@@ -52,16 +52,16 @@ Route::get('checkout' , function(){
 Route::get('order-review' , function(){
     return view('users.cart.order-review');
 });
-Route::get('print' , function(){
-    return view('users.cart.print');
+Route::get('report' , function(){
+    return view('users.cart.report');
 })->name('print');
 Route::get('logout', function () {
     Auth::logout();
     return redirect()->route('homepage');
 })->name('logout');
 
-Route::get('brands', function(){
-    return view('brands');
+Route::get('brand', function(){
+    return view('brand');
 });
 
 Route::get('search' , function(){
@@ -76,14 +76,17 @@ Route::get('productList',function(){
 });
 
 // Blank Page Route Section
-Route::get('/about-us', 'BlankPageController@about')->name('about-us');
-Route::get('/shipping-policy', 'BlankPageController@shippingPolicy')->name('shipping-policy');
-route::get('/guarantee',function(){
-    return view("guarantee");
+Route::get('about-us', 'BlankPageController@about')->name('about-us');
+Route::get('shipping-policy', function(){
+    return view('shipping-policy');
+});
+Route::get('guarantee',function(){
+    return view('guarantee');
 })->name('guarantee');
 
-Route::get('/payment', 'BlankPageController@payment')->name('payment');
-
+Route::get('payment', function(){
+    return view('payment');
+});
 route::get('products',function(){
     return view('users.in-ear.products');
 });

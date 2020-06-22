@@ -1,13 +1,18 @@
 @extends('users.layout.layout')
 @section('content')
-<section class="shipping py-5">
+<div class="hero hero-page padding-small">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-lg-9 ">
+                <h1>Guarantee</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="guarantee py-5">
     <div class="container">
         <div class="row">
             <div class="row justify-content-center">
-                <div class="col-md-12">
-                    <h1>Guarantee</h1>
-                    <hr>
-                </div>
                 <div class="col-md-12">
                     <h4>Warranty and Returns</h4>
                     <p>We are official retailers for virtually all well-known brands and products. In spite of the high quality products that we have in our range, it can occur that you receive a product that is not perfect. In that case we will be happy to provide you with a suitable solution as quickly as possible.</p>

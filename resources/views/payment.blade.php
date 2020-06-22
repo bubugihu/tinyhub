@@ -1,13 +1,16 @@
 @extends('users.layout.layout')
 @section('content')
-    <section class="payment py-5">
+    <div class="hero hero-page padding-small">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
+            <div class="row d-flex">
+                <div class="col-lg-9 ">
                     <h1>Payment</h1>
-                    <hr>
                 </div>
             </div>
+        </div>
+    </div>
+    <section class="payment py-3">
+        <div class="container">
             <div class="row py-3">
                 <div class="col-md-7">
                     <h5><em>You can pay by cash, bank card, or bank transfer.</em></h5>

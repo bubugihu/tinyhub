@@ -1352,11 +1352,11 @@ button {
 
 .sidebar-link:hover {
   text-decoration: none;
-  background: #f5f5f5;
+  background: #EDEDF0;
 }
 
 .sidebar-link.active, .sidebar-link:focus {
-  background: #799FCB!important;
+  background: #f47435!important;
   color: #fff !important;
   text-decoration: none;
 }

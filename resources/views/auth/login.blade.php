@@ -73,6 +73,9 @@
                             </div>
                         </div>
                     </form>
+                    <div class="col-md-8 offset-md-4 mt-4">
+                        <span style="font-size: 14px;">Don't have an account ?</span> <span><a href="{{ route('register') }}">{{ __('Register') }}</a></span> 
+                    </div>
                 </div>
             </div>
         </div>

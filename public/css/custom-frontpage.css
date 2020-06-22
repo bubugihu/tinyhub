@@ -11,6 +11,9 @@ p {
     color: #fff;
     font-size: 15px;
 } */
+.sticky-top {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
 .top-right.links a:hover {
     text-decoration: none;
 }
@@ -44,7 +47,10 @@ li.nav-item a {
     display: inline-block;
     font-size: 13px;
 }
-a.nav-link {
+/* a.nav-link {
+    padding-right: 2rem !important;
+} */
+.navbar-nav a{
     padding-right: 2rem !important;
 }
 .top-bar {
@@ -496,7 +502,7 @@ section.hm-5 {
     width: 8px;
     height: 8px;
     padding: 0;
-    background: #c3edee;
+    background: #F28D5D;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -526,6 +532,19 @@ section.hm-5 {
 }
 .main-block a {
     color: #ddd;
+    font-size: 15px;
+    line-height: 2;
+}
+.main-block a:hover {
+    color: #f47635;
+    font-size: 15px;
+    text-decoration: none;
+}
+.text p {
+    font-size: 14px;
+}
+.text a {
+    color: #f47635;
 }
 .main-block h5 {
     color: #f47635;
@@ -648,6 +667,11 @@ ul.payment-list.list-inline-item.pull-right {
 .product-slider {
     margin: 10px 0;
 }
+ul.list-unstyled.list-detail-prd li {
+    color: #777!important;
+    font-size: 15px;
+}
+/*** End Product Detail ***/
 
 /* Border */
 .product-slider #CarouselProduct {
