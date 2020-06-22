@@ -4,7 +4,7 @@
     <div class="row justify-content-center py-5">
         <div class="col-md-7">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header bg-dark text-white">
                     {{-- {{ __('Login') }} --}}
                     <h3 class="text-center">Login</h3>
                 </div>
@@ -62,10 +62,13 @@
                                     <a class="btn btn-dark" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
-                                @endif
+                                @endif                               
                             </div>
                         </div>
                     </form>
+                    <div class="col-md-8 offset-md-4 mt-4">
+                        <span style="font-size: 14px;">Don't have an account ?</span> <span><a href="{{ route('register') }}">{{ __('Register') }}</a></span> 
+                    </div>
                 </div>
             </div>
         </div>

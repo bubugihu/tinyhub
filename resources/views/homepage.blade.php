@@ -7,8 +7,7 @@
           <div class="container">
             <div class="row align-items-center">
               <div class="col-md-7 col-12 order-md-1 order-2">
-                <h4>Dang Xuan Quang<br>
-                  awesome product</h4>
+                <h4>Slider 1</h4>
                 <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
                   necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
                 <a class="btn" href="#">BUY NOW</a> </div>
@@ -22,8 +21,7 @@
           <div class="container">
             <div class="row align-items-center">
               <div class="col-md-7 col-12 order-md-1 order-2">
-                <h4>Nguyen Duc Anh <br>
-                  awesome product</h4>
+                <h4>Slider 2</h4>
                 <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
                   necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
                 <a class="btn" href="#">BUY NOW</a> </div>
@@ -37,8 +35,7 @@
           <div class="container">
             <div class="row align-items-center">
               <div class="col-md-7 col-12 order-md-1 order-2">
-                <h4>Bui Gia Hung <br>
-                  awesome product</h4>
+                <h4>Slider 3</h4>
                 <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
                   necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
                 <a class="btn" href="#">BUY NOW</a> </div>
@@ -262,19 +259,19 @@
                 <!-- Rounded tabs -->
                      <ul id="myTab" role="tablist" class="nav nav-tabs nav-pills flex-column flex-sm-row text-center border-0 rounded-nav">
                         <li class="nav-item flex-sm-fill">
-                           <a id="first-tab" data-toggle="tab" href="#first" role="tab" aria-controls="first" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active"><img src="https://i.pinimg.com/originals/8d/f5/0d/8df50d880b4c2d2cfc2aad147068cf72.png" alt="" width="50" height="auto"> </a>
+                           <a id="first-tab" data-toggle="tab" href="#first" role="tab" aria-controls="first" aria-selected="true" class="nav-link active"><img src="https://i.pinimg.com/originals/8d/f5/0d/8df50d880b4c2d2cfc2aad147068cf72.png" alt="" width="50" height="auto"></a>
                         </li>
                         <li class="nav-item flex-sm-fill">
-                          <a id="second-tab" data-toggle="tab" href="#second" role="tab" aria-controls="second" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold"><img src="https://promptvideoservices.files.wordpress.com/2018/03/1024px-bang_and_olufsen_logo-svg-copy1.png" alt="" width="48" height="auto"></a>
+                          <a id="second-tab" data-toggle="tab" href="#second" role="tab" aria-controls="second" aria-selected="false" class="nav-link"><img src="https://promptvideoservices.files.wordpress.com/2018/03/1024px-bang_and_olufsen_logo-svg-copy1.png" alt="" width="48" height="auto"></a>
                         </li>
                         <li class="nav-item flex-sm-fill">
-                          <a id="third-tab" data-toggle="tab" href="#third" role="tab" aria-controls="third" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold"><img src="https://logodownload.org/wp-content/uploads/2016/10/jbl-logo-6-1.png" alt="" width="60" height="auto"></a>
+                          <a id="third-tab" data-toggle="tab" href="#third" role="tab" aria-controls="third" aria-selected="false" class="nav-link"> <img src="https://logodownload.org/wp-content/uploads/2016/10/jbl-logo-6-1.png" alt="" width="60" height="auto"></a>
                         </li>
                         <li class="nav-item flex-sm-fill">
-                            <a id="fouth-tab" data-toggle="tab" href="#fouth" role="tab" aria-controls="fouth" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold"><img src="https://pluspng.com/img-png/sony-logo-eps-png-sony-logo-png-1269.png" alt="" width="60" height="auto"></a>
+                            <a id="fouth-tab" data-toggle="tab" href="#fouth" role="tab" aria-controls="fouth" aria-selected="false" class="nav-link"><img src="https://pluspng.com/img-png/sony-logo-eps-png-sony-logo-png-1269.png" alt="" width="60" height="auto"></a>
                         </li>
                         <li class="nav-item flex-sm-fill">
-                          <a id="fith-tab" data-toggle="tab" href="#fith" role="tab" aria-controls="fith" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold"><img src="https://cdn.freebiesupply.com/logos/large/2x/westone-audio-1-logo-png-transparent.png" alt="" width="100" height="40"></a>
+                          <a id="fith-tab" data-toggle="tab" href="#fith" role="tab" aria-controls="fith" aria-selected="false" class="nav-link"><img src="https://cdn.freebiesupply.com/logos/large/2x/westone-audio-1-logo-png-transparent.png" alt="" width="100" height="40"></a>
                       </li>
                      </ul>
     <div id="myTabContent" class="tab-content">

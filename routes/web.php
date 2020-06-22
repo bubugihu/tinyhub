@@ -37,10 +37,24 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 // Blank Page Route Section
-Route::get('/about-us', 'BlankPageController@about')->name('about-us');
-Route::get('/shipping-policy', 'BlankPageController@shippingPolicy')->name('shipping-policy');
-Route::get('/payment', 'BlankPageController@payment')->name('payment');
-
+Route::get('/about-us', function(){
+    return view('about-us');
+});
+Route::get('/shipping-policy', function(){
+    return view('shipping-policy');
+});
+Route::get('/payment', function(){
+    return view('payment');
+});
+Route::get('/guarantee', function(){
+    return view('guarantee');
+});
+Route::get('/contact-us', function(){
+    return view('contact-us');
+});
+Route::get('/brand', function(){
+    return view('brand');
+});
 route::get('products',function(){
     return view('users.in-ear.products');
 });

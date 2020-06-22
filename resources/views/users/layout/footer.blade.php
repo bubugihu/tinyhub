@@ -2,36 +2,52 @@
 	<div class="main-block">
         <div class="container">
           <div class="row">
-            <div class="info col-lg-4">
-              <div class="logo"><img src="{{url("img/tinyhub-logo.png")}}" alt="tinyhub logo" width="180" height="auto"></div>
-              <ul class="social-menu list-inline">
-                <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
-                <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
-                <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
-                <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
-                <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
-              </ul>
+            <div class="info col-lg-3">
+              <div class="logo"><img src="{{url("img/tinyhub-logo-footer.png")}}" alt="tinyhub logo" width="180" height="auto"></div>
+              <ul class="list-unstyled mb-0 py-3">
+                <!-- Facebook -->
+                <a href="#" class="p-2 fa-lg fb-ic text-center">
+                    <i class="fab fa-facebook-f blue-text" style="font-size:20px;"></i>
+                </a>
+                <!-- Twitter -->
+                <a href="#" class="p-2 fa-lg tw-ic text-center">
+                    <i class="fab fa-twitter blue-text" style="font-size:20px;"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="#" class="p-2 fa-lg ins-ic text-center">
+                    <i class="fab fa-instagram blue-text" style="font-size:20px;"></i>
+                </a>
+            </ul>
             </div>
-            <div class="site-links col-lg-2 col-md-6">
+            <div class="site-links col-lg-3 col-md-6">
               <h5 class="text-uppercase">Categories</h5>
+              <br>
               <ul class="list-unstyled">
                 <li> <a href="#">In Ear</a></li>
                 <li> <a href="#">On Ear</a></li>
                 <li> <a href="#">True-Wireless</a></li>
               </ul>
             </div>
-            <div class="site-links col-lg-2 col-md-6">
+            <div class="site-links col-lg-3 col-md-6">
               <h5 class="text-uppercase">About Us</h5>
+              <br>
               <ul class="list-unstyled">
                 <li> <a href="shipping-policy">Shipping Policy</a></li>
                 <li> <a href="payment">Payment</a></li>
-                <li> <a href="#">Guarantee</a></li>
-                <li> <a href="#">Contact Us</a></li>
+                <li> <a href="guarantee">Guarantee</a></li>
+                <li> <a href="contact-us">Contact Us</a></li>
               </ul>
             </div>
-            <div class="newsletter col-lg-4">
-              <h5 class="text-uppercase">Daily Offers &amp; Discounts</h5>
-              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
+            <div class="newsletter col-lg-3">
+              <h5 class="text-uppercase">Our Brands</h5>
+              <br>
+              <ul class="list-unstyled">
+                <li> <a href="#">Beats</a></li>
+                <li> <a href="#">Bang & Olufsen</a></li>
+                <li> <a href="#">JBL</a></li>
+                <li> <a href="#">Sony</a></li>
+                <li> <a href="#">Westone</a></li>
+              </ul>
             </div>
           </div>
         </div>

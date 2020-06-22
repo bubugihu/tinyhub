@@ -1,11 +1,17 @@
 @extends('users.layout.layout')
 @section('content')
+<div class="hero hero-page padding-small">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-lg-9 ">
+                    <h1>About Us</h1>
+            </div>
+        </div>
+    </div>
+</div>
     <section class="about-us py-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-12">
-                    <h1>About Us</h1>
-                </div>
                 <div class="col-md-6">
                     <p style="text-align: justify">In Vietnam’s fast growing retail industry filled with crowded hyper markets, monotonous electronic chains and absent music outlets, comes an innovative concept store that combines fashion, technology and entertainment. TinyHub is Vietnam’s first exclusive online store for headphones, earphones and personal Audio devices featuring the world's finest headphones from brands renowned for their sound, design and style. </p><br>
                     <p style="text-align: justify">Tiny Team started TinyHub in 2020 after realising that most big retailers had little to no understanding of electronic accessories such as headphones or earphones and consumers had little understanding or options. And so, it is our commitment to personalize your listening experience as much as possible.</p>
