@@ -10,7 +10,7 @@
         <div class="col-lg-6 d-flex justify-content-end">
               <div class="top-right links py-1 shadow">
                   @auth
-              <a href="{{ url('/home') }}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a>
+              <a href="{{ url('/profile') }}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a>
               <a href="{{ url('/logout') }}" class="res-info badge" >Log Out</a>
                 @endauth
                   @guest

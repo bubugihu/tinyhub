@@ -1,6 +1,16 @@
 @extends('users.layout.layout')
 @section('title', 'Product Details')
 @section('content')
+<div class="hero hero-page padding-small">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-lg-9 ">
+                <h1>Product Details</h1>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container product_details" style="margin-bottom: 40px;">
     <div class="row">
         <!-- Hình sản phẩm -->

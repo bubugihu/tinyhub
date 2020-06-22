@@ -31,8 +31,10 @@ Route::get('admin/order/listOrder', 'OrderController@listOrder');
 Route::get('admin/listUsers', 'UserController@listUsers');
 
 
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('profile', function(){
+    return view('home');
+})->middleware('auth');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('role');
 
 Route::post('admin', 'RoleController@role' );
 

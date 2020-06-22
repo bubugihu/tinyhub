@@ -19,6 +19,6 @@ class Role
             return redirect()->route('homepage');
         }
         else
-        return $next($request);
+        return redirect('admin/index');
     }
 }
