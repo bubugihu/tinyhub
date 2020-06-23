@@ -103,7 +103,7 @@
                     <table class="table">
                         <tbody>
                             <tr>
-                                <th class="border-0">Material:</th>
+                                <th class="border-0" width="250">Material:</th>
                                 <td class="border-0">Cotton</td>
                             </tr>
                             <tr>

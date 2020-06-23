@@ -13,6 +13,7 @@ class ProductController extends Controller {
     }
 
     public function createProduct(){
+        
         return view('admin.product.createProduct');
     }
 

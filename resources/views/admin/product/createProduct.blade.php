@@ -14,16 +14,12 @@
                     <form action="" method="POST" enctype="multipart/form-data">
                       {{ csrf_field() }}
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">SKU</label>
-                        <input type="text" placeholder="Sku" class="form-control">
-                      </div>
-                      <div class="form-group">
                         <label class="form-control-label text-uppercase">Product Name</label>
-                        <input type="text" placeholder="Product Name" class="form-control">
+                        <input type="text" placeholder="Product Name" class="form-control" name="prdname">
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Price</label>
-                        <input type="number" placeholder="Price" class="form-control" min="0" max="20000">
+                        <input type="number" placeholder="Price" class="form-control" min="0" max="20000" name="prdprice">
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Category</label>
