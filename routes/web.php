@@ -16,19 +16,30 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('homepage');
-});
+})->name('homepage');
 
 Route::get('admin/index', 'IndexController@indexAdmin');
 
+// Product Route
 Route::get('admin/product/listProduct', 'ProductController@listProduct');
 Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::get('admin/product/categories', 'ProductController@categories');
 
+// Brands Route
+Route::get('admin/brands/listBrands', 'BrandsController@listBrands');
+Route::get('admin/brands/createBrands', 'BrandsController@createBrands');
 
+// Comment & Feedback Route
+Route::get('admin/comment/commentList', 'CommentController@commentList');
+Route::get('admin/comment/feedbackList', 'CommentController@feedbackList');
+
+// Customer Route
 Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');
 
+// Oders Route
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
 
+// Users Route
 Route::get('admin/listUsers', 'UserController@listUsers');
 
 

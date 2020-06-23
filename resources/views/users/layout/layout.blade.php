@@ -24,7 +24,7 @@
 <body>
 
         <!-- NAV BAR --->
-        @include('users.layout.nav-bar')
+        @include('users.layout.nav-bar') 
 
         <!-- CONTENT WRAPPER CONTAINS PAGE --->
         @yield('content')

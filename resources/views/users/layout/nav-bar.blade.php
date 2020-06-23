@@ -44,14 +44,14 @@
 <nav class="navbar navbar-expand-lg bg-light sticky-top">
     <div class="container">
     <!-- Navbar Header  -->
-    <a href="homepage" class="navbar-brand-homepage"><img src="{{url("img/tinyhub-logo.png")}}" alt="tinyhub logo" width="170" height="auto"></a>
+    <a href="{{route("homepage")}}" class="navbar-brand-homepage"><img src="{{url("img/tinyhub-logo.png")}}" alt="tinyhub logo" width="170" height="auto"></a>
     <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
       <!-- Navbar Collapse -->
       <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a href="homepage" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="{{route("homepage")}}" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="products" class="nav-link">Categories</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Brands </a></li>
+          <li class="nav-item"><a href="brand" class="nav-link">Brands </a></li>
           <li class="nav-item"><a href="about-us" class="nav-link">About Us</a></li>
           <li class="nav-item"><a href="contact-us" class="nav-link">Contact Us</a></li>
         </ul>
