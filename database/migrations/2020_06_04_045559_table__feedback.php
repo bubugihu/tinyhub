@@ -19,10 +19,10 @@ class TableFeedback extends Migration
             $table->string('feed_title',255)->nullable();
             $table->longText('feed_content');
             $table->string('feed_phone',12);
-            $table->binary('feed_status')->default(0);          //được duyệt hay ko? 0-không được duyệt, 1-ngược lại
+            $table->integer('feed_status')->default(0);          //được duyệt hay ko? 0-không được duyệt, 1-ngược lại
             $table->string('feed_email');
             $table->dateTime('feed_date')->default(Carbon::now());
-            $table->binary('feed_rep')->default('0');           //được admin trả lời hay ko? 0-không được, 1-ngược lại
+            $table->integer('feed_rep')->default('0');           //được admin trả lời hay ko? 0-không được, 1-ngược lại
         });
     }
 

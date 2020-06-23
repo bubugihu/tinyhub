@@ -21,7 +21,7 @@ class TableProduct extends Migration
             $table->double('price',8,2);
             $table->longText('short_descriptions')->nullable()->default('Not Description');
             $table->longText('long_descriptions')->default('Not Description');
-            $table->binary('status')->default(0);           //còn hàng hay ko ? 0 hết, 1 còn
+            $table->integer('status')->default(0);           //còn hàng hay ko ? 0 hết, 1 còn
             $table->integer('sold_out')->default(0);        //số lượng đã bán
             $table->string('feature_image');
             $table->dateTime('warranty_period');

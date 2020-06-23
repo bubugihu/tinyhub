@@ -17,7 +17,7 @@ class TableOrder extends Migration
         Schema::create('order', function (Blueprint $table) {
             $table->increments('id');     //primary key
             $table->dateTime('order_date_time')->default(Carbon::now());
-            $table->binary('status')->default(0);           //tiếp nhận hay ko? 0-không tiếp nhận, 1-ngược lại
+            $table->integer('status')->default(0);           //tiếp nhận hay ko? 0-không tiếp nhận, 1-ngược lại
             $table->integer('customer_id')->unsigned();     //Foreign key
             $table->timestamps();
         });
