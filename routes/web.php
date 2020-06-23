@@ -1,8 +1,9 @@
 <?php
 
-
+use App\Category;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Product;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,7 @@ Auth::routes();
 Route::get('/', function() {
     return view('homepage');
 })->name('homepage');
-Route::get('admin/product/listProduct', 'ProductController@listProduct')->name('listProduct');
+Route::get('admin/product/listProduct', 'ProductController@listProduct');
 Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::get('admin/product/categories', 'ProductController@categories');
 Route::get('admin/index', function(){
@@ -64,16 +65,14 @@ Route::get('brand', function(){
     return view('brand');
 });
 
-Route::get('search' , function(){
-    return view('search');
-});
+Route::get('search' , 'SearchController@search');
+
 //nana
 Route::get('productDetails', function(){
     return view('users.products.in-ear.productDetails');
 });
-Route::get('productList',function(){
-    return view('users.products.productList');
-});
+Route::get('productlist', 'ProductController@productlist');
+
 
 // Blank Page Route Section
 Route::get('about-us', 'BlankPageController@about')->name('about-us');
@@ -98,3 +97,11 @@ Route::get('report-product' , function(){
     return view('users.products.report');
 });
 
+/////////
+Route::get('searchInEar/{in}', function($in){
+     $category = Category::where('category_name',$in)->first();
+    // $product = Product::where('category_id',$category->id)->get();
+    $product = Category::find($category->id)->roleProduct()->get();
+   // return view('abc', compact('product'));
+    return view('users.products.productList', compact('product'));
+});

@@ -33,7 +33,7 @@
       <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item dropdown"><a id="navbarHomeLink" href="{{ route('homepage')}}"  aria-haspopup="true" aria-expanded="false" class="nav-link active">Home</a></li>
-        <li class="nav-item"><a href="{{ url('productList')}}" class="nav-link">Categories</a></li>
+        <li class="nav-item"><a href="{{ url('productlist')}}" class="nav-link">Categories</a></li>
         <li class="nav-item"><a href="{{ url('brand')}}" class="nav-link">Brands </a></li>
         <li class="nav-item"><a href="{{ url('about-us')}}" class="nav-link">About Us</a></li>
         <li class="nav-item"><a href="{{ url('contact-us')}}" class="nav-link">Contact Us</a></li>

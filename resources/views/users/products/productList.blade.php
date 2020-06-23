@@ -22,9 +22,9 @@
                 <h6 class="text-uppercase">Headphone Type</h6>
                 <hr width="100%" style="margin-left: 0;">
                 <ul class="list-unstyled" style="margin: 20px auto;">
-                    <li> <a href="#">In Ear</a></li>
-                    <li> <a href="#">On Ear</a></li>
-                    <li> <a href="#">True Wireless</a></li>
+                <li> <a href="{{url('searchInEar/In Ear')}}">In Ear</a> </li>
+                    <li> <a href="{{url('searchInEar/On Ear')}}">On Ear</a></li>
+                    <li> <a href="{{url('searchInEar/True Wireless')}}">True Wireless</a></li>
                 </ul>
             </div>
 
@@ -69,137 +69,23 @@
         <div class="col-xl-9 col-lg-8">
             <!-- Row 1 -->
             <div class="row product_list">
+                @foreach($product as $product)
                 <div class="col-xl-4">
                     <div class="product_grid card-body card">
                         <div class="product_image">
                         <a href="{{ url('productDetails')}}" class="image ">
-                                <img class="pic_1 rounded" src="img/1.jpg" alt="">
                                 <img class="pic_2 rounded" src="img/5.jpg" alt="">
+                                <img class="pic_1 rounded" src="{{asset("img/feature/$product->feature_image")}}" alt="">
                             </a>
                         </div>
                         <div class="product_content">
-                            <h3 class="title"><a href="{{ url('productDetails')}}">Heaphone TinyHub</a></h3>
-                            <div class="price">$18.50</div>
+                        <h3 class="title"><a href="{{ url('productDetails')}}">{{$product->product_title}}</a></h3>
+                        <div class="price">{{$product->price}}</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4">
-                    <div class="product_grid card-body card">
-                        <div class="product_image">
-                            <a href="" class="image ">
-                                <img class="pic_1 rounded" src="img/1.jpg" alt="">
-                                <img class="pic_2 rounded" src="img/5.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product_content">
-                            <h3 class="title"><a href="#">Heaphone TinyHub</a></h3>
-                            <div class="price">$18.50</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="product_grid card-body card">
-                        <div class="product_image">
-                            <a href="" class="image ">
-                                <img class="pic_1 rounded" src="img/1.jpg" alt="">
-                                <img class="pic_2 rounded" src="img/5.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product_content">
-                            <h3 class="title"><a href="#">Heaphone TinyHub</a></h3>
-                            <div class="price">$18.50</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- </div> -->
-                <!-- Row 2 -->
-                <!-- <div class="row product_list"> -->
-                <div class="col-xl-4">
-                    <div class="product_grid card-body card">
-                        <div class="product_image">
-                            <a href="" class="image ">
-                                <img class="pic_1 rounded" src="img/1.jpg" alt="">
-                                <img class="pic_2 rounded" src="img/5.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product_content">
-                            <h3 class="title"><a href="#">Heaphone TinyHub</a></h3>
-                            <div class="price">$18.50</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="product_grid card-body card">
-                        <div class="product_image">
-                            <a href="" class="image ">
-                                <img class="pic_1 rounded" src="img/1.jpg" alt="">
-                                <img class="pic_2 rounded" src="img/5.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product_content">
-                            <h3 class="title"><a href="#">Heaphone TinyHub</a></h3>
-                            <div class="price">$18.50</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="product_grid card-body card">
-                        <div class="product_image">
-                            <a href="" class="image ">
-                                <img class="pic_1 rounded" src="img/1.jpg" alt="">
-                                <img class="pic_2 rounded" src="img/5.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product_content">
-                            <h3 class="title"><a href="#">Heaphone TinyHub</a></h3>
-                            <div class="price">$18.50</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Row 3 -->
-                <!-- <div class="row product_list"> -->
-                <div class="col-xl-4">
-                    <div class="product_grid card-body card">
-                        <div class="product_image">
-                            <a href="" class="image ">
-                                <img class="pic_1 rounded" src="img/1.jpg" alt="">
-                                <img class="pic_2 rounded" src="img/5.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product_content">
-                            <h3 class="title"><a href="#">Heaphone TinyHub</a></h3>
-                            <div class="price">$18.50</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="product_grid card-body card">
-                        <div class="product_image">
-                            <a href="" class="image ">
-                                <img class="pic_1 rounded" src="img/1.jpg" alt="">
-                                <img class="pic_2 rounded" src="img/5.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product_content">
-                            <h3 class="title"><a href="#">Heaphone TinyHub</a></h3>
-                            <div class="price">$18.50</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="product_grid card-body card">
-                        <div class="product_image">
-                            <a href="" class="image ">
-                                <img class="pic_1 rounded" src="img/1.jpg" alt="">
-                                <img class="pic_2 rounded" src="img/5.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="product_content">
-                            <h3 class="title"><a href="#">Heaphone TinyHub</a></h3>
-                            <div class="price">$18.50</div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                
             </div>
         </div>
         <!-- /Content end -->

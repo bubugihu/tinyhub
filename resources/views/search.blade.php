@@ -13,114 +13,24 @@
 </div>
 
 <div class="container" style="margin-top: 20px">
-<table id="dtBasicExample" class="table mt-10" width="100%">
-  <thead>
-    <tr>
-      <th class="th-sm">No
-      </th>
-      <th class="th-sm">Image
-      </th>
-      <th class="th-sm">Name
-      </th>
-      <th class="th-sm">Brands
-      </th>
-      <th class="th-sm">Category
-      </th>
-      <th class="th-sm">Price
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td><img src="{{asset('img/gallery/true-wireless-jbl-4-4.png')}}" alt=""></td>
-      <td>Sony</td>
-      <td>Sony</td>
-      <td>On Ear</td>
-      <td>$120</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td><img src="{{asset('img/gallery/true-wireless-jbl-4-4.png')}}" alt=""></td>
-      <td>Sony</td>
-      <td>Sony</td>
-      <td>On Ear</td>
-      <td>$120</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td><img src="{{asset('img/gallery/true-wireless-jbl-4-4.png')}}" alt=""></td>
-      <td>Sony</td>
-      <td>Sony</td>
-      <td>On Ear</td>
-      <td>$120</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td><img src="{{asset('img/gallery/true-wireless-jbl-4-4.png')}}" alt=""></td>
-      <td>Sony</td>
-      <td>Sony</td>
-      <td>On Ear</td>
-      <td>$120</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td><img src="{{asset('img/gallery/true-wireless-jbl-4-4.png')}}" alt=""></td>
-      <td>Sony</td>
-      <td>Sony</td>
-      <td>On Ear</td>
-      <td>$120</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td><img src="{{asset('img/gallery/true-wireless-jbl-4-4.png')}}" alt=""></td>
-      <td>Sony</td>
-      <td>Sony</td>
-      <td>On Ear</td>
-      <td>$120</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td><img src="{{asset('img/gallery/true-wireless-jbl-4-4.png')}}" alt=""></td>
-      <td>Sony</td>
-      <td>Sony</td>
-      <td>On Ear</td>
-      <td>$120</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td><img src="{{asset('img/gallery/true-wireless-jbl-4-4.png')}}" alt=""></td>
-      <td>Sony</td>
-      <td>Sony</td>
-      <td>On Ear</td>
-      <td>$120</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td><img src="{{asset('img/gallery/true-wireless-jbl-4-4.png')}}" alt=""></td>
-      <td>Sony</td>
-      <td>Sony</td>
-      <td>On Ear</td>
-      <td>$120</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <th>Name
-      </th>
-      <th>Position
-      </th>
-      <th>Office
-      </th>
-      <th>Age
-      </th>
-      <th>Start date
-      </th>
-      <th>Salary
-      </th>
-    </tr>
-  </tfoot>
-</table>
+  
+  <div class="row">  
+    @foreach( $product as $product)
+    <div class="col-3 border">
+      <div class="row">
+        <img src="{{asset("img/feature/$product->feature_image")}}" alt="">
+      </div>
+      <div class="row">
+        {{$product->product_title}}
+      </div>
+      <div class="row">
+        {{$product->price}}
+      </div>
+    </div>
+    @endforeach
+  </div>
+ 
+
 </div>
 @endsection
 

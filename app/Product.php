@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model {
     // Declare table in DB match with model
-    protected $table = "products";
+    protected $table = "product";
 
-    // Declare primary key on table
-    protected $primaryKey = "id";
+    
 
-    // Set default primary key auto increment
-    public $incrementing = false;
-    //
     public $timestamps=true;
     //
-    protected $fillable = ['id', 'product_name', 'price', 'stock', 'status', 'bestbuy', 'short_description', 'long_description', 'created_at', 'updated_at'];
+    protected $fillable = ['id', 'product_title', 'price', 'sold_out', 'status', 'short_description', 'long_description','feature_image','warranty_period','category_id', 'created_at','brand_id', 'updated_at'];
+    //
+    public function roleCategory(){
+        return $this->belongsTo(Category::class,'category_id','id');
+    }
 }

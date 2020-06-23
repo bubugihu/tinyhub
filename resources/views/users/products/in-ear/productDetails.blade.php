@@ -11,28 +11,28 @@
         </div>
     </div>
 </div>
-<div class="container product_details" style="margin-bottom: 40px;">
+<div class="container product_details py-5">
     <div class="row">
         <!-- Hình sản phẩm -->
         <div class="col-lg-6">
             <div class="product-slider">
                 <div id="CarouselProduct" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item  active"> <img class="rounded" src="img/1.jpg" height="auto" width="90%"> </div>
-                        <div class="carousel-item "> <img class="rounded" src="img/2.jpg" height="auto" width="90%"> </div>
-                        <div class="carousel-item "> <img class="rounded" src="img/3.jpg" height="auto" width="90%"> </div>
-                        <div class="carousel-item "> <img class="rounded" src="img/4.jpg" height="auto" width="90%"> </div>
-                        <div class="carousel-item "> <img class="rounded" src="img/5.jpg" height="auto" width="90%"> </div>
+                        <div class="carousel-item  active"> <img class="rounded" src="{{url("img/headphone-slider2.png")}}" height="auto" width="90%"> </div>
+                        <div class="carousel-item "> <img class="rounded" src="{{url("img/headphone-slider1.png")}}" height="auto" width="90%"> </div>
+                        <div class="carousel-item "> <img class="rounded" src="{{url("img/headphone-slider2.png")}}" height="auto" width="90%"> </div>
+                        <div class="carousel-item "> <img class="rounded" src="{{url("img/headphone-slider1.png")}}" height="auto" width="90%"> </div>
+                        <div class="carousel-item "> <img class="rounded" src="{{url("img/headphone-slider2.png")}}" height="auto" width="90%"> </div>
                     </div>
                 </div>
                 <div id="ThumbProduct" class="carousel slide" data-interval="false">
                     <div class="carousel-inner">
                         <div class="item active">
-                            <div data-target="#CarouselProduct" data-slide-to="0" class="SubThumbProduct rounded"><img src="img/1.jpg" class="rounded"></div>
-                            <div data-target="#CarouselProduct" data-slide-to="1" class="SubThumbProduct rounded"><img src="img/2.jpg" class="rounded"></div>
-                            <div data-target="#CarouselProduct" data-slide-to="2" class="SubThumbProduct rounded"><img src="img/3.jpg" class="rounded"></div>
-                            <div data-target="#CarouselProduct" data-slide-to="3" class="SubThumbProduct rounded"><img src="img/4.jpg" class="rounded"></div>
-                            <div data-target="#CarouselProduct" data-slide-to="4" class="SubThumbProduct rounded"><img src="img/5.jpg" class="rounded"></div>
+                            <div data-target="#CarouselProduct" data-slide-to="0" class="SubThumbProduct rounded"><img src="{{url("img/headphone-slider2.png")}}" class="rounded"></div>
+                            <div data-target="#CarouselProduct" data-slide-to="1" class="SubThumbProduct rounded"><img src="{{url("img/headphone-slider1.png")}}" class="rounded"></div>
+                            <div data-target="#CarouselProduct" data-slide-to="2" class="SubThumbProduct rounded"><img src="{{url("img/headphone-slider2.png")}}" class="rounded"></div>
+                            <div data-target="#CarouselProduct" data-slide-to="3" class="SubThumbProduct rounded"><img src="{{url("img/headphone-slider1.png")}}" class="rounded"></div>
+                            <div data-target="#CarouselProduct" data-slide-to="4" class="SubThumbProduct rounded"><img src="{{url("img/headphone-slider2.png")}}" class="rounded"></div>
                         </div>
                     </div>
                 </div>
@@ -52,31 +52,31 @@
             <div class="row">
                 <p class="product_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
             </div>
-            <div class="row d-flex justify-content-around align-items-center" style="margin: 15px 0;">
-                <div class=" col-md-3 quantity d-flex align-items-center justify-content-center" style="padding: 10px;">
+            <div class="row d-flex justify-content-around align-items-center py-4">
+                <div class=" col-md-3 quantity d-flex align-items-center justify-content-center">
                     <div class="dec-btn">-</div>
                     <input type="text" value="1" class="quantity-no rounded">
                     <div class="inc-btn">+</div>
                 </div>
-                <div class="col-md-5" style="padding: 10px;">
+                <div class="col-md-5">
                     <a href="#" class="btn btn-success wide btn-md btn-block"><b>Buy Now</b></a>
                 </div>
-                <div class="col-md-4" style="padding: 10px;">
-                    <a href="#" class="btn btn-outline-primary wide btn-md btn-block"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                <div class="col-md-4">
+                    <a href="#" class="btn btn-dark wide btn-md btn-block"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 py-3">
                     <h6 class="text-uppercase"><i class="fas fa-truck"></i> SHIPPING & DELIVERY</h6>
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled list-detail-prd">
                         <li><i class="fas fa-check-circle" style="color: green;"></i> Free Shipping Over $300</li>
                         <li><i class="fas fa-check-circle" style="color: green;"></i> Ships in 24 Hours</li>
                         <li><i class="fas fa-check-circle" style="color: green;"></i> 24 Months Warranty</li>
                     </ul>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 py-3">
                     <h6 class="text-uppercase"><i class="fas fa-exchange-alt"></i> RETURNS</h6>
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled list-detail-prd">
                         <li><i class="fas fa-check-circle" style="color: green;"></i> 7 Days Replacement Only</li>
                         <li><i class="fas fa-check-circle" style="color: green;"></i> Certified By TinyHub</li>
                     </ul>
@@ -86,10 +86,10 @@
     </div>
 
 </div>
-<div class="container product-description bg-white shadow">
-    <div class="row" style="margin-bottom: 40px;">
-        <div class="col" style="margin:30px 20px;">
-            <ul class="nav nav-tabs">
+<div class="container product-description bg-white card mb-5">
+    <div class="row py-3">
+        <div class="col m-3">
+            <ul class="nav nav-pills">
                 <li class="nav-item"><a data-toggle="tab" href="#description" class="nav-link active" aria-selected="true">Description</a></li>
                 <li class="nav-item"><a data-toggle="tab" href="#additional-information" class="nav-link" aria-selected="false">Additional Information</a></li>
                 <li class="nav-item"><a data-toggle="tab" href="#reviews" class="nav-link" aria-selected="false">Reviews</a></li>
@@ -103,7 +103,7 @@
                     <table class="table">
                         <tbody>
                             <tr>
-                                <th class="border-0">Material:</th>
+                                <th class="border-0" width="250">Material:</th>
                                 <td class="border-0">Cotton</td>
                             </tr>
                             <tr>
@@ -155,13 +155,13 @@
     </div>
 </div>
 <div class="container">
-    <div class="row product_list">
+    <div class="row py-5">
         <div class="col-xl-3">
             <div class="product_grid card-body card">
                 <div class="product_image">
                     <a href="" class="image ">
-                        <img class="pic_1 rounded" src="img/1.jpg" alt="">
-                        <img class="pic_2 rounded" src="img/5.jpg" alt="">
+                        <img class="pic_1 rounded" src="{{url("img/headphone-slider1.png")}}" alt="">
+                        <img class="pic_2 rounded" src="{{url("img/headphone-slider2.png")}}" alt="">
                     </a>
                 </div>
                 <div class="product_content">
@@ -174,8 +174,8 @@
             <div class="product_grid card-body card">
                 <div class="product_image">
                     <a href="" class="image ">
-                        <img class="pic_1 rounded" src="img/1.jpg" alt="">
-                        <img class="pic_2 rounded" src="img/5.jpg" alt="">
+                        <img class="pic_1 rounded" src="{{url("img/headphone-slider1.png")}}" alt="">
+                        <img class="pic_2 rounded" src="{{url("img/headphone-slider2.png")}}" alt="">
                     </a>
                 </div>
                 <div class="product_content">
@@ -188,8 +188,8 @@
             <div class="product_grid card-body card">
                 <div class="product_image">
                     <a href="" class="image ">
-                        <img class="pic_1 rounded" src="img/1.jpg" alt="">
-                        <img class="pic_2 rounded" src="img/5.jpg" alt="">
+                        <img class="pic_1 rounded" src="{{url("img/headphone-slider1.png")}}" alt="">
+                        <img class="pic_2 rounded" src="{{url("img/headphone-slider2.png")}}" alt="">
                     </a>
                 </div>
                 <div class="product_content">
@@ -202,8 +202,8 @@
             <div class="product_grid card-body card">
                 <div class="product_image">
                     <a href="" class="image ">
-                        <img class="pic_1 rounded" src="img/1.jpg" alt="">
-                        <img class="pic_2 rounded" src="img/5.jpg" alt="">
+                        <img class="pic_1 rounded" src="{{url("img/headphone-slider1.png")}}" alt="">
+                        <img class="pic_2 rounded" src="{{url("img/headphone-slider2.png")}}" alt="">
                     </a>
                 </div>
                 <div class="product_content">

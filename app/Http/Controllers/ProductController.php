@@ -7,9 +7,10 @@ use App\Product;
 
 class ProductController extends Controller {
 
-    public function listProduct(){
-        $products = Product::all();
-        return view('admin.product.listProduct') -> with(['products' => $products]);
+    //ProductList page
+    public function productlist(){
+        $product = Product::all();
+        return view('users.products.productList', compact('product'));
     }
 
     public function createProduct(){

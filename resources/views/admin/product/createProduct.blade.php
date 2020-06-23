@@ -14,16 +14,12 @@
                     <form action="" method="POST" enctype="multipart/form-data">
                       {{ csrf_field() }}
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">SKU</label>
-                        <input type="text" placeholder="Sku" class="form-control">
-                      </div>
-                      <div class="form-group">
                         <label class="form-control-label text-uppercase">Product Name</label>
-                        <input type="text" placeholder="Product Name" class="form-control">
+                        <input type="text" placeholder="Product Name" class="form-control" name="prdname">
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Price</label>
-                        <input type="number" placeholder="Price" class="form-control" min="0" max="20000">
+                        <input type="number" placeholder="Price" class="form-control" min="0" max="20000" name="prdprice">
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Category</label>
@@ -44,7 +40,6 @@
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Short Description</label>
                         <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" name="sdescription"rows="3"></textarea>
-<<<<<<< HEAD
                         <script>
                             CKEDITOR.replace( 'sdescription', {
                                 language: 'en',
@@ -61,12 +56,6 @@
                                 uiColor: '#9AB8F3'
                             });
                         </script>
-=======
-                      </div>
-                      <div class="form-group">
-                        <label class="form-control-label text-uppercase">Long Description</label>
-                        <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" rows="3"></textarea>
->>>>>>> 5baa6165504f446469d0de84b49eb7cb95c66749
                       </div>
                       <label class="form-control-label text-uppercase">Upload Feature Image</label>
                       <div class="input-group mb-3">
