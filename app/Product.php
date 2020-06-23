@@ -13,6 +13,8 @@ class Product extends Model {
 
     // Set default primary key auto increment
     public $incrementing = false;
-
+    //
+    public $timestamps=true;
+    //
     protected $fillable = ['id', 'product_name', 'price', 'stock', 'status', 'bestbuy', 'short_description', 'long_description', 'created_at', 'updated_at'];
 }

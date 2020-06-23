@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
 class TableBanner extends Migration
@@ -15,9 +16,10 @@ class TableBanner extends Migration
     {
         Schema::create('banner', function (Blueprint $table) {
             $table->increments('id');       //Primary key
-            $table->string('ban_title');
-            $table->String('ban_image');
-            $table->dateTime('ban_date');
+            $table->string('ban_title')->nullable();
+            $table->string('ban_content')->nullable();
+            $table->string('ban_image');
+            $table->dateTime('ban_date')->default(Carbon::now());
         });
     }
 

@@ -16,7 +16,7 @@ class TableCategory extends Migration
         Schema::create('category', function (Blueprint $table) {
             $table->increments('id');  //primary key
             $table->string('category_name')->unique();
-            $table->longText('description')->nullable();
+            $table->longText('description')->nullable()->default('Not Description');
         });
     }
 

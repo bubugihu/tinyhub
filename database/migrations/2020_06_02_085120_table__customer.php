@@ -20,6 +20,7 @@ class TableCustomer extends Migration
             $table->string('gender')->default('Male');
             $table->string('phone',12);
             $table->string('address');
+            $table->string('feature')->default('Not Image');
             $table->integer('users_id')->unsigned();     //foreign key
             $table->timestamps();
         });

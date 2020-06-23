@@ -14,7 +14,6 @@ class ConstantKeyProduct extends Migration
     public function up()
     {
         Schema::table('product', function (Blueprint $table) {
-            $table->foreign('gallery_id')->references('id')->on('gallery');
             $table->foreign('brand_id')->references('id')->on('brand');
             $table->foreign('category_id')->references('id')->on('category');
         });

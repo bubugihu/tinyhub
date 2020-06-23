@@ -36,7 +36,11 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
+<<<<<<< HEAD
                                 <button type="submit" class="btn login-btn">
+=======
+                                <button type="submit" class="btn btn-primary">
+>>>>>>> 5baa6165504f446469d0de84b49eb7cb95c66749
                                     {{ __('Send Password Reset Link') }}
                                 </button>
                             </div>

@@ -44,6 +44,7 @@
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Short Description</label>
                         <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" name="sdescription"rows="3"></textarea>
+<<<<<<< HEAD
                         <script>
                             CKEDITOR.replace( 'sdescription', {
                                 language: 'en',
@@ -60,6 +61,12 @@
                                 uiColor: '#9AB8F3'
                             });
                         </script>
+=======
+                      </div>
+                      <div class="form-group">
+                        <label class="form-control-label text-uppercase">Long Description</label>
+                        <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" rows="3"></textarea>
+>>>>>>> 5baa6165504f446469d0de84b49eb7cb95c66749
                       </div>
                       <label class="form-control-label text-uppercase">Upload Feature Image</label>
                       <div class="input-group mb-3">
