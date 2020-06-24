@@ -12,7 +12,7 @@ class Category extends Model
     protected $primaryKey = "id";
 
     // Set default primary key auto increment
-    public $incrementing = false;
+    public $incrementing = true;
 
     protected $fillable = ['id', 'category_name', 'description'];
 }

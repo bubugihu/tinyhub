@@ -23,7 +23,8 @@ Route::get('admin/index', 'IndexController@indexAdmin');
 // Product Route
 Route::get('admin/product/listProduct', 'ProductController@listProduct');
 Route::get('admin/product/createProduct', 'ProductController@createProduct');
-Route::get('admin/product/categories', 'ProductController@categories');
+Route::post('admin/product/postCreate', 'ProductController@postCreate');
+Route::get('admin/product/categories', 'ProductController@getCategories');
 
 // Brands Route
 Route::get('admin/brands/listBrands', 'BrandsController@listBrands');
@@ -72,3 +73,13 @@ route::get('products',function(){
 Route::get('product-detail', function(){
     return view('users.in-ear.product-detail');
 });
+
+Route::get('search', [
+		'as' => 'search',
+		'uses' => 'SearchKeyController@getSearch'
+]);
+
+Route::get('categories/{cate}', [
+        'as' => 'categories',
+        'uses' => 'ProdutController@getCategories'
+]);

@@ -57,7 +57,9 @@
         </ul>
         <div class="right-col d-flex align-items-lg-center flex-column flex-lg-row">
           <!-- Search Button-->
-          <div class="search mr-4"><i class="fas fa-search"></i></div>
+          <div class="search-box mr-4">
+            <a href="#search"><i class="fas fa-search"></i></a>
+          </div>
           <!-- Cart Dropdown-->
           <div class="cart">
             <a href="#" class="view-cart"><i class="fa fa-shopping-basket" aria-hidden="true"></i>
@@ -69,3 +71,10 @@
       </div>
     </div>
   </nav>
+  <div id="search">
+    <button type="button" class="close">X</button>
+    <form action="{{route('search')}}" method="GET">
+        <input type="search" value="" name="searchKey" placeholder="Which products do you want to search ?" required/>
+        <button type="submit" class="btn login-btn">Search</button>
+    </form>
+</div>

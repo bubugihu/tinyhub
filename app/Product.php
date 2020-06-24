@@ -8,11 +8,10 @@ class Product extends Model {
     // Declare table in DB match with model
     protected $table = "product";
 
-    // Declare primary key on table
-    protected $primaryKey = "id";
+    protected $fillable = ['id', 'product_title', 'price', 'short_descriptions', 'long_descriptions', 'status', 'sold_out', 'feature_image', 'warranty_period', 'created_product', 'category_id', 'brand_id'];
 
-    // Set default primary key auto increment
-    public $incrementing = false;
+    public function roleCategory(){
+        return $this->belongsTo(Category::class,'category_id','id');
+    }
 
-    protected $fillable = ['id', 'product_title', 'short_descriptions', 'long_descriptions', 'status', 'sold_out', 'feature_image', 'warranty_period', 'created_product', 'category_id', 'brand_id'];
 }

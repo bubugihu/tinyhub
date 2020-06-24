@@ -14,5 +14,6 @@ class Customers extends Model
     // Set default primary key auto increment
     public $incrementing = false;
 
-    protected $fillable = ['id', 'customer_name', 'dob', 'gender', 'phone', 'address', 'feature'];
+    protected $fillable = ['id', 'customer_name', 'dob', 'gender', 'phone', 'address', 'feature', 'users_id', 
+    'created_at', 'updated_at'];
 }
