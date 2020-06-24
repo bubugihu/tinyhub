@@ -25,16 +25,16 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
-                                        <label for="firstname" class="form-label">First Name</label>
+                                        <label for="firstname" class="form-label">Full Name</label>
                                         <input type="text" id="firstname" name="first-name" placeholder="Enter your first name" class="form-control">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="lastname" class="form-label">Last Name</label>
-                                        <input type="text" id="lastname" name="last-name" placeholder="Enter your last name" class="form-control">
+                                        <label for="lastname" class="form-label">Birthday</label>
+                                        <input type="text" id="lastname" name="last-name" placeholder="Birthday" class="form-control">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="email" class="form-label">Email Address</label>
-                                        <input type="text" id="email" name="email" placeholder="Enter your email address" class="form-control">
+                                        <label for="email" class="form-label">Note</label>
+                                        <input type="text" id="note" name="note" placeholder="Note" class="form-control">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="street" class="form-label">Street</label>

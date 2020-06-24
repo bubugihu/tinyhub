@@ -9,10 +9,10 @@ class Customers extends Model
     protected $table = "customer";
 
     // Declare primary key on table
-    protected $primaryKey = "id";
 
-    // Set default primary key auto increment
-    
+    protected $fillable = ['id', 'customer_name', 'dob', 'gender', 'phone', 'address', 'feature', 'users_id'];
 
-    protected $fillable = ['id', 'customer_name', 'dob', 'gender', 'phone', 'address', 'feature'];
+    public function roleUser(){
+        return $this->belongsTo(User::class,'users_id','id');
+    }
 }

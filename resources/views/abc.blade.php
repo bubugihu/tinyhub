@@ -1,3 +1,1 @@
-    @foreach($product as $product)
-    {{$product->id}}
-    @endforeach
+  {{var_dump($product)}}

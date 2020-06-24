@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Customers;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -64,10 +65,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        
+        $user =   User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        
+         $user->roleCustomer =   Customers::create([
+            'customer_name' =>  $data['fullname'],
+            'dob'           =>  $data['dob'],
+            'gender'        =>  $data['gender'],
+            'phone'         =>  $data['phone'],
+            'address'       =>  $data['address'],
+            'feature'       =>  'in-ear-jbl-1-1.jpg',
+            'users_id'      =>  $user->id,
+        ]);
+        return $user;
+        
     }
 }

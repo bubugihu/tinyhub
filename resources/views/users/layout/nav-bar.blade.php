@@ -10,7 +10,11 @@
         <div class="col-lg-6 d-flex justify-content-end">
               <div class="top-right links py-1 shadow">
                   @auth
+                  @if(Auth::user()->role == 0)
               <a href="{{ url('home') }}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a>
+                  @else
+              <a href="{{ url('admin/index') }}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a> 
+                  @endif   
               <a href="{{ url('/logout') }}" class="res-info badge" >Log Out</a>
                 @endauth
                   @guest

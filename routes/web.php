@@ -4,6 +4,7 @@ use App\Category;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Product;
+use App\Brands;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,8 @@ Auth::routes();
 Route::get('/', function() {
     return view('homepage');
 })->name('homepage');
+
+//admin
 Route::get('admin/product/listProduct', 'ProductController@listProduct');
 Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::get('admin/product/categories', 'ProductController@categories');
@@ -31,7 +34,9 @@ Route::get('admin/order/listOrder', 'OrderController@listOrder');
 
 Route::get('admin/listUsers', 'UserController@listUsers');
 
+Route::get('admin/createUser', 'UserController@createUser');
 
+Route::get('admin/customer/listCustomer', 'UserController@listCustomer');
 Route::get('profile', function(){
     return view('home');
 });
@@ -43,6 +48,8 @@ Route::get('admin', function(){
     return redirect()->route('listProduct');
 })->middleware('role')->middleware('auth');
 
+Route::get('admin/comment/feedbackList', 'UserController@feedbackList');
+//end admin
 Route::get('contact-us', function(){
     return view('contact-us');
 });
@@ -71,7 +78,7 @@ Route::get('search' , 'SearchController@search');
 Route::get('productDetails', function(){
     return view('users.products.in-ear.productDetails');
 });
-Route::get('productlist', 'ProductController@productlist');
+
 
 
 // Blank Page Route Section
@@ -98,10 +105,12 @@ Route::get('report-product' , function(){
 });
 
 /////////
-Route::get('searchInEar/{in}', function($in){
-     $category = Category::where('category_name',$in)->first();
-    // $product = Product::where('category_id',$category->id)->get();
-    $product = Category::find($category->id)->roleProduct()->get();
-   // return view('abc', compact('product'));
-    return view('users.products.productList', compact('product'));
-});
+Route::get('productlist', 'ProductController@productlist');
+//search cate
+Route::get('searchCate/{in}', 'ProductController@filterCate');
+//search brands
+Route::get('searchBrand/{in}', 'ProductController@filterBrand');
+//search Price
+Route::get('searchPrice', 'ProductController@filterPrice' );
+//Search Price Incre
+Route::get('searchPriceAsc/{products}','ProductController@sortPrice');

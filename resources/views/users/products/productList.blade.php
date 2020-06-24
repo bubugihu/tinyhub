@@ -22,9 +22,9 @@
                 <h6 class="text-uppercase">Headphone Type</h6>
                 <hr width="100%" style="margin-left: 0;">
                 <ul class="list-unstyled" style="margin: 20px auto;">
-                <li> <a href="{{url('searchInEar/In Ear')}}">In Ear</a> </li>
-                    <li> <a href="{{url('searchInEar/On Ear')}}">On Ear</a></li>
-                    <li> <a href="{{url('searchInEar/True Wireless')}}">True Wireless</a></li>
+                <li> <a href="{{url('searchCate/In Ear')}}">In Ear</a> </li>
+                    <li> <a href="{{url('searchCate/On Ear')}}">On Ear</a></li>
+                    <li> <a href="{{url('searchCate/True Wireless')}}">True Wireless</a></li>
                 </ul>
             </div>
 
@@ -33,19 +33,21 @@
                 <h6 class="text-uppercase">Brand</h6>
                 <hr width="100%" style="margin-left: 0;">
                 <ul class="list-unstyled">
-                    <li> <a href="#">AAA</a></li>
-                    <li> <a href="#">BBB</a></li>
-                    <li> <a href="#">CCC</a></li>
+                    <li> <a href="{{url('searchBrand/Sony')}}">Sony</a></li>
+                    <li> <a href="{{url('searchBrand/JBL')}}">JBL</a></li>
+                    <li> <a href="{{url('searchBrand/Westone')}}">Westone</a></li>
+                    <li> <a href="{{url('searchBrand/Beats')}}">Beats</a></li>
+                    <li> <a href="{{url('searchBrand/Bang & Olufsen')}}">Bang & Olufsen</a></li>
                 </ul>
             </div>
             <!-- Price -->
             <div class="block">
                 <h6 class="text-uppercase">Price</h6>
                 <hr width="100%" style="margin-left: 0;">
-                <form action="">
+            <form action="{{url('searchPrice')}}">
                     <div class="form-group d-flex justify-content-center">
-                        <input type="text" class="form-control" placeholder="0" min="0" style="color: black; margin-right: 10px;">
-                        <input type="text" class="form-control" placeholder="100000" style="color: black; margin-left: 10px;">
+                        <input type="text" name="fromPrice" class="form-control" placeholder="0" min="0" style="color: black; margin-right: 10px;">
+                        <input type="text" name="toPrice" class="form-control" placeholder="100000" style="color: black; margin-left: 10px;">
                     </div>
                     <div class="form-group d-flex justify-content-center">
                         <input type="submit" class="form-control btn btn-dark" value="Filter" style="color: black;">
@@ -57,7 +59,7 @@
                 <h6 class="text-uppercase">Sorted By</h6>
                 <hr width="100%" style="margin-left: 0;">
                 <ul class="list-unstyled">
-                    <li> <a href="#"><i class="fas fa-sort-amount-down-alt"></i> Price Increase</a></li>
+                <li> <a href="{{url('searchPriceAsc/'.$product)}}"><i class="fas fa-sort-amount-down-alt"></i> Price Ascending</a></li>
                     <li> <a href="#"><i class="fas fa-sort-amount-down"></i> Price Descending</a></li>
                     <li> <a href="#"><i class="fas fa-sort-alpha-down"></i> A - Z</a></li>
                     <li> <a href="#"><i class="fas fa-sort-alpha-down-alt"></i> Z - A</a></li>
@@ -68,6 +70,12 @@
         <!-- Content -->
         <div class="col-xl-9 col-lg-8">
             <!-- Row 1 -->
+            @if($message ?? ''  == 'Price is invalid')
+            <h2 class="text-center py-5  basket-header mt-5" style="color: rgb(240, 62, 77)" role="alert">
+                <strong>{{ $message  ?? ''  }}</strong>
+            </h2>
+            @else
+
             <div class="row product_list">
                 @foreach($product as $product)
                 <div class="col-xl-4">
@@ -85,7 +93,7 @@
                     </div>
                 </div>
                 @endforeach
-                
+             @endif  
             </div>
         </div>
         <!-- /Content end -->
