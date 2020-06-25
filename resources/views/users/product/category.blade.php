@@ -1,5 +1,5 @@
 @extends('users.layout.layout')
-@section('title', 'Product List')
+@section('title', 'Category')
 @section('content')
 
 <!-- Product Title -->

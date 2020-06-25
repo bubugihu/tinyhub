@@ -67,14 +67,9 @@
                                 @endif     
                             </div>
                         </div>
-                        <div class="form-group row mb-0 mt-2 ml-3">
-                            <div class="col-md-8 offset-md-4">
-                                <p style="font-size: 14px">New Customer ? <a href="{{ route('register')}}">Start here.</a></p>
-                            </div>
-                        </div>
                     </form>
                     <div class="col-md-8 offset-md-4 mt-4">
-                        <span style="font-size: 14px;">Don't have an account ?</span> <span><a href="{{ route('register') }}">{{ __('Register') }}</a></span> 
+                        <span style="font-size: 14px;">New Customer ? </span> <span><a href="{{ route('register')}}">Start here.</a></span> 
                     </div>
                 </div>
             </div>

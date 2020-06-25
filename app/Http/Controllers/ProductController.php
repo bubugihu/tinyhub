@@ -8,7 +8,11 @@ use App\Category;
 use App\Brands;
 class ProductController extends Controller {
 
-    //ProductList page
+    //user category
+    public function category(){
+        $product = Product::all();
+        return view('users.product.category', compact('product'));
+    }
     public function listProduct(){
         $product = Product::all();
         return view('admin.product.listProduct', compact('product'));

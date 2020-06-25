@@ -1,4 +1,5 @@
 @extends('users.layout.layout')
+@section('title', 'Contact-us')
 @section('content')
 <div class="hero hero-page padding-small">
   <div class="container">
