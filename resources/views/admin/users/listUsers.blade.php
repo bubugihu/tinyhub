@@ -12,7 +12,7 @@
             </div>
             <div class="card-body">
               <!-- List User -->
-              <table class="table card-text">
+              <table class="table card-text text-center">
                 <thead>
                   <tr>
                     <th>User ID</th>
@@ -30,16 +30,31 @@
                     <td>Test</td>
                     <td>Test</td>
                     <td>Test</td>
-                    <!-- <td><a href="#" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
-                      <a href="#" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
-                      <a href="#" class="badge badge-danger p-2"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
-                    </td> -->
                     <td>
+                      <a href="#" class="badge badge-warning p-2" data-toggle="modal" data-target="#Modal-Users-Update"><i class="fas fa-edit" style="font-size: 16px; font-weight:100;"></i></a>
                       <a href="#" class="badge badge-danger p-2" data-toggle="modal" data-target="#Modal-Users-Delete"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
                     </td>
                   </tr>
                 </tbody>
               </table>
+              <!-- Modal Update Users -->
+              <div id="Modal-Users-Update" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade bd-example-modal-lg text-left">
+                <div role="document" class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 id="exampleModalLabel" class="modal-title">Delete User</h4>
+                      <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body text-center">
+                      <h2>Are you sure you want to delete?</h2>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Yes</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <!-- Modal Delete Users -->
               <div id="Modal-Users-Delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade bd-example-modal-lg text-left">
                 <div role="document" class="modal-dialog modal-lg">
