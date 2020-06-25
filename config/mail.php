@@ -36,13 +36,8 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-<<<<<<< HEAD
             'host' => env('MAIL_HOST', 'smtp.gmail.com'),
             'port' => env('MAIL_PORT', 465 ),
-=======
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
->>>>>>> 5baa6165504f446469d0de84b49eb7cb95c66749
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),

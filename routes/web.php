@@ -108,21 +108,23 @@ Route::get('order-review' , function(){
 
 
 //nana
-Route::get('productDetails', function(){
-    return view('users.products.in-ear.productDetails');
-});
+// Route::get('productDetails', function(){
+//     return view('users.products.in-ear.productDetails');
+// });
 
 route::get('products',function(){
     return view('users.in-ear.products');
 });
 Route::get('product-detail', function(){
-    return view('users.in-ear.product-detail');
+    return view('users.product.in-ear.productDetails');
 });
 
 Route::get('report-product' , function(){
-    return view('users.products.report');
+    return view('users.product.report');
 });
-
+Route::get('users/profile' , function(){
+    return view('users.profile.profile');
+});
 
 
 ///////// du thua chua dung den
