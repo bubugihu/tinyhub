@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use App\Http\Requests\CreateProductRequest;
+use App\Http\Requests\CreateProductRequest;
 use App\Product;
 
 class ProductController extends Controller {
@@ -22,15 +22,15 @@ class ProductController extends Controller {
             $request,
             [
                 'prdname'      => 'bail|required|string|min:3|max:255',
-                'prdprice'     => 'bail|required|double|min:0|max:20000',
-                'prdcate'      => 'bail|required',
-                'prdbrand'     => 'bail|required',
+                'prdprice'     => 'bail|required|integer|min:0|max:20000',
+                'category'      => 'required|in:1,2,3',
+                'prdbrand'     => 'required|in:1,2,3,4,5',
                 'sdescription' => 'required',
                 'ldescription' => 'required',
-                'featureimg'   => 'bail|required|file|image|mimes:jpeg,png,jpg|max:10240',
-                'relateimg1'   => 'bail|file|image|mimes:jpeg,png,jpg|max:10240',
-                'relateimg2'   => 'bail|file|image|mimes:jpeg,png,jpg|max:10240',
-                'relateimg3'   => 'bail|file|image|mimes:jpeg,png,jpg|max:10240'
+                'featureimg'   => 'required|file|image|mimes:jpeg,png,jpg|max:10240',
+                'relateimg1'   => 'file|image|mimes:jpeg,png,jpg|max:10240',
+                'relateimg2'   => 'file|image|mimes:jpeg,png,jpg|max:10240',
+                'relateimg3'   => 'file|image|mimes:jpeg,png,jpg|max:10240'
             ],
             [
                 'prdname.required'            => 'Product title can not be blank !',
@@ -38,9 +38,10 @@ class ProductController extends Controller {
                 'prdname.min'                 => 'Product title has min 3 characters !',
                 'prdname.max'                 => 'Product title has min 255 characters !',
                 'prdprice.required'           => 'Price can not be blank !',
+                'prdprice.integer'            => 'Price must be integer number !',
                 'prdprice.min'                => 'Price has min >= 0 !',
                 'prdprice.max'                => 'Price has max <= 20000 !',
-                'prdcate.required'            => 'Please choose one of them !',
+                'category.required'            => 'Please choose one of them !',
                 'prdbrand.required'           => 'Please choose one of them !',
                 'sdescription.required'       => 'Short Description can not be blank !',
                 'ldescription.required'       => 'Long Description can not be blank !',

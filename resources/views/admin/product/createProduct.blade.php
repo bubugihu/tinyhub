@@ -11,6 +11,7 @@
                 <h6 class="text-uppercase mb-0">Create new product</h6>
               </div>
               <div class="card-body">
+                    {{-- @include('admin.product.form-error') --}}
                     <form role="form" action="{{url("admin/product/postCreate/")}}" method="POST" enctype="multipart/form-data">
                       {{ csrf_field() }}
                       <div class="form-group">
@@ -22,23 +23,26 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Price</label>
-                        <input type="text" class="form-control" name="prdprice">
+                        <input type="number" class="form-control" name="prdprice">
                         @if($errors->has('prdprice'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdprice')}}</small>
                         @endif
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Category</label>
-                          <select name="prdcate" class="form-control">
+                          <select name="category" class="form-control">
                             <option value="0">None</option>
                             <option value="1">In Ear</option>
                             <option value="2">On Ear</option>
                             <option value="3">True-Wireless</option>
                           </select>
+                          @if($errors->has('category'))
+                           <small style="color:red;font-size:14px;">{{$errors->first('category')}}</small>
+                          @endif
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Brands</label>
-                          <select name="prdbrand" class="form-control">
+                          <select name="brand" class="form-control">
                             <option value="0">None</option>
                             <option value="1">Sony</option>
                             <option value="2">JBL</option>
@@ -46,6 +50,9 @@
                             <option value="4">Beats</option>
                             <option value="5">Bang & Olufsen</option>
                           </select>
+                          @if($errors->has('prdbrand'))
+                           <small style="color:red;font-size:14px;">{{$errors->first('prdbrand')}}</small>
+                          @endif
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Status</label><br>
@@ -82,6 +89,9 @@
                         <div class="custom-file">
                           <input type="file" class="custom-file-input" name="featureimg" id="inputGroupFile01">
                           <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
+                          @if($errors->has('featureimg'))
+                            <small style="color:red;font-size:14px;">{{$errors->first('featureimg')}}</small>
+                          @endif
                         </div>
                       </div>
                       <label class="form-control-label text-uppercase">Relate Image 1</label>
