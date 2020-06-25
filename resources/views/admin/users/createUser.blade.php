@@ -17,15 +17,15 @@
                       <div class="col-md-6">
                         <div class="form-group">
                             <label class="form-control-label text-uppercase">User Name</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="name">
                           </div>
                           <div class="form-group">
                             <label class="form-control-label text-uppercase">Email</label>
-                            <input type="email" class="form-control">
+                            <input type="email" class="form-control" name="email">
                           </div>
                           <div class="form-group">
                             <label class="form-control-label text-uppercase">Password</label>
-                            <input type="password" class="form-control" >
+                            <input type="password" class="form-control" name="password" >
                           </div>
                           <div class="form-group">
                             <label class="form-control-label text-uppercase">Role</label>
@@ -45,7 +45,7 @@
                           </div>
                           <div class="form-group">
                             <label class="form-control-label text-uppercase">BirthDay</label>
-                            <input type="email" class="form-control">
+                            <input type="date" class="form-control" max="2006-01-01">
                           </div>
                           <div class="form-group">
                             <label class="form-control-label text-uppercase">Gender</label>
