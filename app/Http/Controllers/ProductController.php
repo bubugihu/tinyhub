@@ -13,6 +13,7 @@ class ProductController extends Controller {
         $product = Product::all();
         return view('users.product.category', compact('product'));
     }
+    //admin product list
     public function listProduct(){
         $product = Product::all();
         return view('admin.product.listProduct', compact('product'));

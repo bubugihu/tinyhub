@@ -37,7 +37,7 @@ Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::get('admin/category/categories', 'CategoryController@categories');
 
 //brands
-
+Route::get('admin/brands/listBrands' , 'BrandsController@listBrands');
 //order
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
 

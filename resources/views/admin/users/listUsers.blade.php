@@ -24,12 +24,22 @@
                   </tr>
                 </thead>
                 <tbody>
+
+                  @foreach($user as $user)
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Test</td>
-                    <td>Test</td>
-                    <td>Test</td>
-                    <td>Test</td>
+                    <th scope="row">{{$user->id}}</th>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>
+                    @if($user->role == 1)
+                    Admin 
+                    @elseif($user->role == 2)
+                    Mod Product
+                    @else 
+                    Mod Customer
+                    @endif
+                    </td>
+                    <td>{{$user->created_at}}</td>
                     <!-- <td><a href="#" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                       <a href="#" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                       <a href="#" class="badge badge-danger p-2"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
@@ -38,6 +48,8 @@
                       <a href="#" class="badge badge-danger p-2" data-toggle="modal" data-target="#Modal-Users-Delete"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
                     </td>
                   </tr>
+                  @endforeach
+
                 </tbody>
               </table>
               <!-- Modal Delete Users -->
