@@ -9,7 +9,8 @@ use App\User;
 class UserController extends Controller
 {
     public function listUsers(){
-        return view("admin.users.listUsers");
+        $user = User::all();
+        return view("admin.users.listUsers", compact('user'));
     }
     public function createUser(){
         return view('admin.users.createUser');

@@ -50,15 +50,19 @@
                   </tr>
                 </thead>
                 <tbody>
+
+                  @foreach($cate as $cate)
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Test</td>
-                    <td>Test</td>
+                    <th scope="row">{{$cate->id}}</th>
+                    <td>{{$cate->category_name}}</td>
+                    <td>{{$cate->description}}</td>
                     <td>
                       <a href="#" class="badge badge-warning p-2" data-toggle="modal" data-target="#Modal-Update-Category"><i class="fas fa-edit" style="font-size: 16px; font-weight:100;"></i></a>
                       <a href="#" class="badge badge-danger p-2" data-toggle="modal" data-target="#Modal-Delete-Category"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
                     </td>
                   </tr>
+                  @endforeach
+
                 </tbody>
               </table>
 

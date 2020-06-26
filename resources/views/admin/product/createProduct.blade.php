@@ -97,9 +97,9 @@
                           <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <button type="submit" class="btn btn-dark">Create</button>
-                        <button type="reset" class="btn btn-warning">Reset</button>
+                      <div class="form-group d-flex justify-content-center">
+                        <button type="submit" class="btn btn-dark" style="margin-right: 10px;">Create</button>
+                        <button type="reset" class="btn btn-warning" style="margin-left: 10px;">Reset</button>
                       </div>
                     </form>
               </div>

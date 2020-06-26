@@ -40,7 +40,7 @@
                               <div class="form-group row">
                                     <div class="col-6">
                                         <label class="form-control-label text-uppercase">BirthDay</label>
-                                        <input type="date" name="dob" class="form-control " max="2006-01-01">
+                                        <input type="date" name="dob" class="form-control " max="2006-31-01">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-control-label text-uppercase">Gender</label>

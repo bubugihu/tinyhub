@@ -76,8 +76,8 @@
                   </div>
                 </div>
                 <div class="form-group text-center">
-                  <button type="submit" class="btn btn-warning">SUBMIT</button>
-                  <button type="reset" class="btn btn-dark">RESET</button>
+                  <button type="submit" class="btn btn-warning">Create</button>
+                  <button type="reset" class="btn btn-dark">Reset</button>
                 </div>
               </form>
             </div>
