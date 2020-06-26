@@ -12,7 +12,12 @@ class Brands extends Model
     protected $primaryKey = "id";
 
     // Set default primary key auto increment
-    public $incrementing = false;
+    
 
     protected $fillable = ['id', 'brand_name', 'brand_iamge', 'description'];
+
+    public function roleProduct(){
+        return $this->hasMany(Product::class,'brand_id','id');
+    }
+
 }

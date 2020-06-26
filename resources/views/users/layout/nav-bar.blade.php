@@ -8,36 +8,25 @@
           </ul>
         </div>
         <div class="col-lg-6 d-flex justify-content-end">
-             <!-- Authentication Links -->
-             @guest
-             <li class="nav-item">
-                 <a class="log-info badge mr-4" href="{{ route('login') }}">{{ __('Login') }}</a>
-             </li>
-             @if (Route::has('register'))
+              <div class="top-right links py-1 shadow">
+                  @auth
+                  @if(Auth::user()->role == 0)
+              <a href="{{ url('home') }}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a>
+                  @else
+              <a href="{{ url('admin/index') }}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a> 
+                  @endif   
+              <a href="{{ url('/logout') }}" class="res-info badge" >Log Out</a>
+                @endauth
+                  @guest
+                  <li class="nav-item">
+                    <a class="log-info badge mr-4" href="{{ route('login') }}">{{ __('Login') }}</a>
+                  </li>
                  <li class="nav-item">
                      <a class="res-info badge" href="{{ route('register') }}">{{ __('Register') }}</a>
                  </li>
-             @endif
-         @else
-             <li class="nav-item dropdown">
-                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                     {{ Auth::user()->name }} <span class="caret"></span>
-                 </a>
-
-                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                     <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                      document.getElementById('logout-form').submit();">
-                         {{ __('Logout') }}
-                     </a>
-
-                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                         @csrf
-                     </form>
-                 </div>
-             </li>
-         @endguest
-        </div>
+             @endguest
+              </div>
+      </div>
       </div>
     </div>
 </div>
@@ -50,7 +39,7 @@
       <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item"><a href="{{route("homepage")}}" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="products" class="nav-link">Categories</a></li>
+          <li class="nav-item"><a href="{{ url('category')}}" class="nav-link">Categories</a></li>
           <li class="nav-item"><a href="brand" class="nav-link">Brands </a></li>
           <li class="nav-item"><a href="about-us" class="nav-link">About Us</a></li>
           <li class="nav-item"><a href="contact-us" class="nav-link">Contact Us</a></li>
@@ -62,7 +51,7 @@
           </div>
           <!-- Cart Dropdown-->
           <div class="cart">
-            <a href="#" class="view-cart"><i class="fa fa-shopping-basket" aria-hidden="true"></i>
+            <a href="{{ url('cart') }}" class="view-cart"><i class="fa fa-shopping-basket" aria-hidden="true"></i>
             </a>
           </div>
             </div>

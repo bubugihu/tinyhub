@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row d-flex">
             <div class="col-lg-9 ">
-                <h1>Product Detail</h1>
+                <h1>Product Details</h1>
                 </p>
             </div>
         </div>

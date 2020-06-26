@@ -32,10 +32,11 @@
               <h5 class="text-uppercase">About Us</h5>
               <br>
               <ul class="list-unstyled">
-                <li> <a href="shipping-policy">Shipping Policy</a></li>
-                <li> <a href="payment">Payment</a></li>
-                <li> <a href="guarantee">Guarantee</a></li>
-                <li> <a href="contact-us">Contact Us</a></li>
+              <li> <a href="{{ url('shipping-policy')}}">Shipping Policy</a></li>
+                
+              <li> <a href="{{url('guarantee')}}">Guarantee</a></li>
+              <li> <a href="{{url('payment')}}">Payment</a></li>
+              <li> <a href="{{url('contact-us')}}">Contact Us</a></li>
               </ul>
             </div>
             <div class="newsletter col-lg-3">
@@ -75,7 +76,7 @@
 	<script>
 		$(document).ready(function(){
 			$(window).scroll(function () {
-					if ($(this).scrollTop() > 50) {
+					if ($(this).scrollTop() > 100) {
 						$('#back-to-top').fadeIn();
 					} else {
 						$('#back-to-top').fadeOut();

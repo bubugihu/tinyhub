@@ -12,7 +12,7 @@
               </div>
               <div class="card-body">
                     {{-- @include('admin.product.form-error') --}}
-                    <form role="form" action="{{url("admin/product/postCreate/")}}" method="POST" enctype="multipart/form-data">
+                    <form role="form" action="{{url("admin/product/postCreate")}}" method="POST" enctype="multipart/form-data">
                       {{ csrf_field() }}
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Product Title</label>

@@ -6,69 +6,81 @@
         <div class="col-md-7">
             <div class="card">
                 <div class="card-header bg-dark text-white">
-                    {{-- {{ __('Register') }} --}}
+                    
                     <h3 class="text-center">Register</h3>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-7">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                        {{--userName --}}
+                              <div class="form-group row">
+                                <div class="col-6">
+                                    <label class="form-control-label text-uppercase">User Name</label>
+                                    <input type="text" name="name" class="form-control">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-control-label text-uppercase">Full Name</label>
+                                    <input type="text" name="fullname" class="form-control">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                    <div class="col-6">
+                                        <label class="form-control-label text-uppercase">BirthDay</label>
+                                        <input type="date" name="dob" class="form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-control-label text-uppercase">Gender</label>
+                                        <div class="row">
+                                            <div class="col-12 mt-1 ml-0">
+                                                <input type="radio"   name="gender" id="male" value="male" checked><label for="male" class="form-check-label">Male
+                                                <input type="radio"   name="gender" id="female" value="female"><label for="female" class="form-check-label">Female
+                                                <input type="radio"   name="gender" id="other" value="other"><label for="other" class="form-check-label">Other
+                                            </div>
+                                        </div>
+                                    </div>
+                              </div>
+                              <div class="form-group row">
+                                  <div class="col-8">
+                                    <label class="form-control-label text-uppercase">Email</label>
+                                    <input type="email" name="email" class="form-control">         
+                                  </div>
+                                  <div class="col-4">
+                                    <label class="form-control-label text-uppercase">Phone Number</label>
+                                    <input type="text" name="phone" class="form-control">
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <div class="col-6">
+                                    <label class="form-control-label text-uppercase">Password</label>
+                                    <input type="password" name="password" class="form-control">
+                                  </div>
+                                  <div class="col-6">
+                                    <label class="form-control-label text-uppercase">Confirm Password</label>
+                                    <input type="password" name="password_confirmation" class="form-control">
+                                  </div>                            
+                              </div>
+                              <div class="form-group">
+                                <label class="form-control-label text-uppercase">Address</label>
+                                <input type="text" name="address" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                <label class="form-control-label text-uppercase">Avatar</label>
+                              </div>
+                            <div class="custom-file ">
+                                <input type="file" class="custom-file-input" name="feature" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-7">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-7">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                            <div class="form-group row mb-0">
+                                <div class="col-md-12 offset-md-4">
+                                    <button type="reset" class="btn btn-dark">
+                                        {{ __('Reset') }}
+                                    </button>
+                                    <button type="submit" class="btn login-btn">
+                                        {{ __('Register') }}
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-7">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-12 offset-md-4">
-                                <button type="submit" class="btn res-btn">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
                     </form>
                 </div>
             </div>

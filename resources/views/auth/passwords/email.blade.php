@@ -5,8 +5,8 @@
     <div class="row justify-content-center py-5">
         <div class="col-md-7">
             <div class="card">
-                <div class="card-header text-center bg-dark text-white">
-                    {{-- {{ __('Reset Password') }} --}}
+                <div class="card-header bg-dark text-white">
+                    {{-- {{ __('Login') }} --}}
                     <h3 class="text-center">Reset Password</h3>
                 </div>
 
@@ -36,7 +36,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn res-btn">
+                                <button type="submit" class="btn login-btn">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
                             </div>

@@ -6,13 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $table = "category";
+    protected $table="category";
+    public $timestamps=false;
+    public $fillable =['id' , 'category_name', 'description'];
 
-    // Declare primary key on table
-    protected $primaryKey = "id";
-
-    // Set default primary key auto increment
-    public $incrementing = true;
-
-    protected $fillable = ['id', 'category_name', 'description'];
+    public function roleProduct(){
+        return $this->hasMany(Product::class,'category_id','id');
+    }
 }
