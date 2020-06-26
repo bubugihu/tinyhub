@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'product list')
+@section('title', 'Brands')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
     <div class="container-fluid px-xl-5">
@@ -22,16 +22,20 @@
                     </tr>
                   </thead>
                   <tbody>
+
+                    @foreach($brand as $brand)
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Test</td>
-                      <td>Test</td>
-                      <td>Test</td>
+                      <th scope="row">{{$brand->id}}</th> 
+                      <td><img src="{{asset($brand->brand_image)}}" alt=""></td>
+                      <td>{{$brand->brand_name}}</td>
+                      <td>{{$brand->description}}</td>
                       <td>
                         <a href="#" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                         <a href="#" class="badge badge-danger p-2"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
                       </td>
                     </tr>
+                    @endforeach
+
                   </tbody>
                 </table>
               </div>

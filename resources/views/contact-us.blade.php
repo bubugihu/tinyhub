@@ -35,6 +35,19 @@
                                       <input type="number" class="form-control" min="0" max="20000">
                                     </div>
                                     <div class="form-group">
+                                      <label class="form-control-label text-uppercase">Title</label>
+                                      <select name="title" class="form-control" id="">
+                                        <option value="Product">Product</option>
+                                        <option value="Order">Order</option>
+                                        <option value="Shipping">Shipping</option>
+                                        <option value="Price">Price</option>
+                                        <option value="Guarantee">Guarantee</option>
+                                        <option value="Payment">Payment</option>
+                                        <option value="Website">Website</option>
+                                        <option value="Others">Others</option>
+                                      </select>
+                                    </div>
+                                    <div class="form-group">
                                       <label class="form-control-label text-uppercase">Message</label>
                                       <textarea class="form-control" id="exampleFormControlTextarea1" name="ldescription" rows="3"></textarea>
                                     </div>

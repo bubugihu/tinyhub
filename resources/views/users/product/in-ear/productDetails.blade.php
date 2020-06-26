@@ -13,7 +13,7 @@
 </div>
 <div class="container product_details py-5">
     <div class="row">
-        <!-- Hình sản phẩm -->
+        <!-- Product Image -->
         <div class="col-lg-6">
             <div class="product-slider">
                 <div id="CarouselProduct" class="carousel slide" data-ride="carousel">
@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <!-- Thông tin sản phẩm -->
+        <!-- Product Info-->
         <div class="col-lg-6">
             <div class="row">
                 <p class="product_cate"><a href="#">In Ear</a></p>
@@ -84,7 +84,6 @@
             </div>
         </div>
     </div>
-
 </div>
 <div class="container product-description bg-white card mb-5">
     <div class="row py-3">
@@ -136,6 +135,23 @@
                             <h6>Quang Dang</h6>
                             <hr width="100%">
                             <p>The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream.</p>
+                        </div>
+                    </div>
+                    <div class="row review">
+                        <div class="col-3 text-center"><img src="img/quang.jpg" alt="Quang Dang" class="review-image"><span>Dec 2018</span></div>
+                        <div class="col-9 review-text">
+                            <form action="">
+                                <div>
+                                    <h6>Quang Dang</h6>
+                                    <hr width="100%">
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="" id="" class="form-control" placeholder="Looks like you want to share something ?"></textarea>
+                                </div>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" class="btn btn-success" value="Post">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

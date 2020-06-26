@@ -38,13 +38,14 @@ Route::post('admin/product/postCreate', 'ProductController@postCreate');
 Route::get('admin/category/categories', 'CategoryController@categories');
 
 //brands
-
+Route::get('admin/brands/listBrands' , 'BrandsController@listBrands');
 //order
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
 
 //comment
-
+Route::get('admin/comment/listComment', 'CommentController@listComment');
 //banner
+Route::get('admin/banners/listBanner' , 'BannerController@listBanner');
 //index
 Route::get('admin/index', function(){
     return view('admin.index');
@@ -113,21 +114,27 @@ Route::get('order-review' , function(){
 
 
 //nana
-Route::get('productDetails', function(){
-    return view('users.products.in-ear.productDetails');
-});
+// Route::get('productDetails', function(){
+//     return view('users.products.in-ear.productDetails');
+// });
 
 route::get('products',function(){
     return view('users.in-ear.products');
 });
 Route::get('product-detail', function(){
-    return view('users.in-ear.product-detail');
+    return view('users.product.in-ear.productDetails');
 });
 
 Route::get('search', [
 		'as' => 'search',
 		'uses' => 'SearchKeyController@getSearch'
 ]);
+Route::get('report-product' , function(){
+    return view('users.product.report');
+});
+Route::get('users/profile' , function(){
+    return view('users.profile.profile');
+});
 
 Route::get('categories/{cate}', [
         'as' => 'categories',

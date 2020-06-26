@@ -9,6 +9,6 @@ class FeedbackController extends Controller
 {
     public function feedbackList(){
         $feedback = Feedback::all();
-        return view('admin/comment/feedbackList', compact('feedback'));
+        return view('admin/feedback/feedbackList', compact('feedback'));
     }
 }

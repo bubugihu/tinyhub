@@ -15,4 +15,6 @@ class Banner extends Model
     
 
     protected $fillable = ['id', 'ban_title', 'ban_content', 'ban_image', 'ban_date'];
+
+    
 }

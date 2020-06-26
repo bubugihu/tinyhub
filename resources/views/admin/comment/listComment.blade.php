@@ -8,33 +8,29 @@
           <div class="col-lg-12 mb-5">
             <div class="card">
               <div class="card-header bg-dark text-white">
-                <h6 class="text-uppercase mb-0">Product List</h6>
+                <h6 class="text-uppercase mb-0">Comment List</h6>
               </div>
               <div class="card-body">
                 <table class="table card-text">
                   <thead>
                     <tr>
-                      <th>ID</th>
-                      <th>Image</th>
+                      <th>User Name</th>
+                      <th>Category</th>
+                      <th>Brand</th>
                       <th>Product Name</th>
-                      <th>Price</th>
-                      <th>Sold out</th>
-                      <th>Status</th>
-                      <th>Created At</th>
+                      <th>Comment</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
 
-                    @foreach($product as $product)
+                    @foreach($comments as $comment)
                     <tr>
-                      <th scope="row">{{$product->id}}</th>
-                      <td><img src="{{asset('img/feature/'.$product->feature_image)}}" alt=""></td>
-                      <td>{{$product->product_title}}</td>
-                      <td>{{$product->price}}</td>
-                      <td>{{$product->sold_out}}</td>
-                      <td>{{$product->status}}</td>
-                      <td>{{$product->created_product}}</td>
+                      <th>{{$comment->name}}</th>
+                      <th>{{$comment->category_name}}</th>
+                      <th>{{$comment->brand_name}}</th>
+                      <td>{{$comment->product_title}}</td>
+                      <td>{{$comment->cmt_content}}</td>
                       <td><a href="#" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                         <a href="#" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                         <a href="#" class="badge badge-danger p-2"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>

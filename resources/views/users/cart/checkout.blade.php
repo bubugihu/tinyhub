@@ -21,70 +21,31 @@
                             <form action="">
                                 <!--Invoice Address -->
                                 <div class="block-header mb-5">
-                                    <h6>Invoice address</h6>
+                                    <h6>Delivery Address</h6>
                                 </div>
                                 <div class="row">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-12">
                                         <label for="firstname" class="form-label">Full Name</label>
                                         <input type="text" id="firstname" name="first-name" placeholder="Enter your first name" class="form-control">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="lastname" class="form-label">Birthday</label>
-                                        <input type="text" id="lastname" name="last-name" placeholder="Birthday" class="form-control">
+                                        <label for="lastname" class="form-label">Phone</label>
+                                        <input type="text" id="lastname" name="last-name" placeholder="Phone" class="form-control">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="email" class="form-label">Note</label>
-                                        <input type="text" id="note" name="note" placeholder="Note" class="form-control">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="street" class="form-label">Street</label>
-                                        <input type="text" id="street" name="address" placeholder="Your street name" class="form-control">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="country" class="form-label pl-2">Country</label>
-                                        <input type="text" id="country" name="country" value="Việt Nam" readonly class="form-control">
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                        <label for="city" class="form-label pl-2">City</label>
-                                        <select id="city" class="form-control" onchange="giveSelection(this.value)">
-                                            <option value="0" selected> City</option>
-                                            <option value="a">Hồ Chí Minh</option>
-                                            <option value="b">Đà Nẵng</option>
-                                            <option value="c">Hà Nội</option>
+                                        <label for="country" class="form-label pl-2">Payment</label>
+                                        <select class="form-control" name="" id="">
+                                            <option value="">CoD</option>
+                                            <option value="">Credit Card</option>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-3">
-                                        <label for="district" class="form-label pl-2"> District</label>
-                                        <select id="district" class="form-control ">
-                                            <option data-option="0" selected>District</option>
-                                            <option data-option="a">Quận 1</option>
-                                            <option data-option="a">Quận 2</option>
-                                            <option data-option="a">Quận 3</option>
-                                            <option data-option="a">Quận 4</option>
-                                            <option data-option="a">Quận 5</option>
-                                            <option data-option="a">Quận 6</option>
-                                            <option data-option="a">Quận 7</option>
-                                            <option data-option="a">Quận 8</option>
-                                            <option data-option="a">Quận 9</option>
-                                            <option data-option="a">Quận 10</option>
-                                            <option data-option="a">Quận 11</option>
-                                            <option data-option="a">Quận 12</option>
-                                            <option data-option="a">Bình Tân</option>
-                                            <option data-option="a">Phú Nhuận</option>
-                                            <option data-option="a">Thủ Đức</option>
-                                            <option data-option="a">Tân Bình</option>
-                                            <option data-option="a">Tân Phú</option>
-                                            <option data-option="a">Gò Vấp</option>
-                                            <option data-option="b">Hải Châu</option>
-                                            <option data-option="b">Trà Sơn</option>
-                                            <option data-option="c">Thanh Xuân</option>
-                                            <option data-option="c">Hai Bà Trưng</option>
-                                            <option data-option="c">Hoàn Kiếm</option> 
-                                        </select>
+                                    <div class="form-group col-md-12">
+                                        <label for="email" class="form-label">Address</label>
+                                        <input type="text" id="note" name="note" placeholder="Address" class="form-control">
                                     </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="city" class="form-label pl-2">Phone</label>
-                                        <input type="text" id="phone" name="phone" placeholder="Phone" class="form-control">
+                                    <div class="form-group col-md-12">
+                                        <label for="street" class="form-label">Note</label>
+                                        <input type="text" id="street" name="address" placeholder="Note" class="form-control">
                                     </div>
                                 </div>
                                 <div class="CTAs d-flex justify-content-between flex-column flex-lg-row">

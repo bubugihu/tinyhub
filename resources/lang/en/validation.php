@@ -118,6 +118,8 @@ return [
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
 
+
+    
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -133,8 +135,14 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'phone' => [
+            'regex' => 'Phone must be 10 digits.'
+        ],
+        'name' => [
+            'required' => 'User name is required.'
+            
+        ]
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes
@@ -148,4 +156,5 @@ return [
 
     'attributes' => [],
     
+
 ];

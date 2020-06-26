@@ -26,12 +26,14 @@
                     </tr>
                   </thead>
                   <tbody>
+
+                    @foreach( $orders as $order)
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Test</td>
-                      <td>Test</td>
-                      <td>Test</td>
-                      <td>Test</td>
+                      <th scope="row">{{$order->id}}</th>
+                      <td>{{$order->payment}}</td>
+                      <td>{{$order->email}}</td>
+                      <td>{{$order->name}}</td>
+                      <td>{{$order->price}}</td>
                       <td>Test</td>
                       <td>Test</td>
                       <td><p class="badge badge-success p-2">ON</p></td>
@@ -39,58 +41,8 @@
                         <a href="#" class="badge badge-danger  p-2"><i class="fas fa-window-close" style="font-size: 16px;font-weight:100;"></i> Cancel</a>
                       </td>
                     </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td><p class="badge badge-success p-2">ON</p></td>
-                        <td><a href="#" class="badge badge-info p-2"><i class="far fa-check-circle" style="font-size: 16px; font-weight:100;"></i> Confirm</a>
-                          <a href="#" class="badge badge-danger  p-2"><i class="fas fa-window-close" style="font-size: 16px;font-weight:100;"></i> Cancel</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td><p class="badge badge-success p-2">ON</p></td>
-                        <td><a href="#" class="badge badge-info p-2"><i class="far fa-check-circle" style="font-size: 16px; font-weight:100;"></i> Confirm</a>
-                          <a href="#" class="badge badge-danger  p-2"><i class="fas fa-window-close" style="font-size: 16px;font-weight:100;"></i> Cancel</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td><p class="badge badge-success p-2">ON</p></td>
-                        <td><a href="#" class="badge badge-info p-2"><i class="far fa-check-circle" style="font-size: 16px; font-weight:100;"></i> Confirm</a>
-                          <a href="#" class="badge badge-danger  p-2"><i class="fas fa-window-close" style="font-size: 16px;font-weight:100;"></i> Cancel</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td>Test</td>
-                        <td><p class="badge badge-success p-2">ON</p></td>
-                        <td><a href="#" class="badge badge-info p-2"><i class="far fa-check-circle" style="font-size: 16px; font-weight:100;"></i> Confirm</a>
-                          <a href="#" class="badge badge-danger  p-2"><i class="fas fa-window-close" style="font-size: 16px;font-weight:100;"></i> Cancel</a>
-                        </td>
-                      </tr>
+                    @endforeach
+
                   </tbody>
                 </table>
               </div>

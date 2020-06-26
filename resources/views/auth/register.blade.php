@@ -16,17 +16,31 @@
                               <div class="form-group row">
                                 <div class="col-6">
                                     <label class="form-control-label text-uppercase">User Name</label>
-                                    <input type="text" name="name" class="form-control">
+                                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror">
+                                    
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                                 </div>
                                 <div class="col-6">
                                     <label class="form-control-label text-uppercase">Full Name</label>
-                                    <input type="text" name="fullname" class="form-control">
+                                    <input type="text" name="fullname" class="form-control  @error('fullname') is-invalid @enderror">
+
+                                @error('fullname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                                 </div>
                               </div>
                               <div class="form-group row">
                                     <div class="col-6">
                                         <label class="form-control-label text-uppercase">BirthDay</label>
-                                        <input type="date" name="dob" class="form-control">
+                                        <input type="date" name="dob" class="form-control " max="2006-31-01">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-control-label text-uppercase">Gender</label>
@@ -42,17 +56,38 @@
                               <div class="form-group row">
                                   <div class="col-8">
                                     <label class="form-control-label text-uppercase">Email</label>
-                                    <input type="email" name="email" class="form-control">         
+                                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror        
+
                                   </div>
                                   <div class="col-4">
                                     <label class="form-control-label text-uppercase">Phone Number</label>
-                                    <input type="text" name="phone" class="form-control">
+                                    <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror">
+
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                                   </div>
                               </div>
                               <div class="form-group row">
                                   <div class="col-6">
                                     <label class="form-control-label text-uppercase">Password</label>
-                                    <input type="password" name="password" class="form-control">
+                                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                                   </div>
                                   <div class="col-6">
                                     <label class="form-control-label text-uppercase">Confirm Password</label>
@@ -61,14 +96,28 @@
                               </div>
                               <div class="form-group">
                                 <label class="form-control-label text-uppercase">Address</label>
-                                <input type="text" name="address" class="form-control">
+                                <input type="text" name="address" class="form-control @error('address') is-invalid @enderror">
+
+                                @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                               </div>
                               <div class="form-group">
                                 <label class="form-control-label text-uppercase">Avatar</label>
                               </div>
                             <div class="custom-file ">
-                                <input type="file" class="custom-file-input" name="feature" aria-describedby="inputGroupFileAddon01">
+                                <input type="file" class="custom-file-input @error('file') is-invalid @enderror" name="feature" aria-describedby="inputGroupFileAddon01">
                                 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+
+                                @error('file')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                             </div>
                             </div>
                             <div class="form-group row mb-0">
