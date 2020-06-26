@@ -15,4 +15,12 @@ class Customers extends Model
     public function roleUser(){
         return $this->belongsTo(User::class,'users_id','id');
     }
+
+    public function roleOrder(){
+        return $this->hasMany(Order::class);
+    }
+
+    public function roleComment(){
+        return $this->hasMany(Comment::class);
+    }
 }

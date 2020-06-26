@@ -23,17 +23,21 @@
                     </tr>
                   </thead>
                   <tbody>
+
+                    @foreach($comments as $comment)
                     <tr>
-                      <th scope="row">1</th>
-                      <th>Test</th>
-                      <th>Test</th>
-                      <td>Test</td>
-                      <td>Test</td>
+                      <th>{{$comment->name}}</th>
+                      <th>{{$comment->category_name}}</th>
+                      <th>{{$comment->brand_name}}</th>
+                      <td>{{$comment->product_title}}</td>
+                      <td>{{$comment->cmt_content}}</td>
                       <td><a href="#" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                         <a href="#" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                         <a href="#" class="badge badge-danger p-2"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
                       </td>
                     </tr>
+                    @endforeach
+
                   </tbody>
                 </table>
               </div>

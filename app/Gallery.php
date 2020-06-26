@@ -14,5 +14,8 @@ class Gallery extends Model
     
 
     protected $fillable = ['id', 'product_id', 'product_gallery'];
-
+    
+    public function roleProduct(){
+        return $this->belongsTo(Product::class);
+    }
 }
