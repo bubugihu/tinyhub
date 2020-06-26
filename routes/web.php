@@ -97,7 +97,16 @@ Route::get('logout', function () {
     return redirect()->route('homepage');
 })->name('logout');
 
-//
+////// User cart
+//category
+Route::get('category', 'ProductController@category');
+
+//example product
+Route::get('product-detail', function(){
+    return view('users.product.in-ear.productDetails');
+});
+
+
 Route::get('cart' , 'CartController@cart');
 Route::get('checkout' , function(){
     return view('users.cart.checkout');
@@ -108,10 +117,7 @@ Route::get('order-review' , function(){
 
 
 
-//nana
-// Route::get('productDetails', function(){
-//     return view('users.products.in-ear.productDetails');
-// });
+
 
 route::get('products',function(){
     return view('users.in-ear.products');
