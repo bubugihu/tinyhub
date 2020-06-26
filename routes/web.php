@@ -42,8 +42,9 @@ Route::get('admin/brands/listBrands' , 'BrandsController@listBrands');
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
 
 //comment
-
+Route::get('admin/comment/listComment', 'CommentController@listComment');
 //banner
+Route::get('admin/banners/listBanner' , 'BannerController@listBanner');
 //index
 Route::get('admin/index', function(){
     return view('admin.index');
