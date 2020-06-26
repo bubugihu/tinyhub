@@ -17,4 +17,12 @@ class Product extends Model {
     public function roleCategory(){
         return $this->belongsTo(Category::class,'category_id','id');
     }
+    //
+    public function roleBrand(){
+        return $this->belongsTo(Brands::class);
+    }
+    //
+    public function roleGallery(){
+        return $this->hasMany(Gallery::class);
+    }
 }

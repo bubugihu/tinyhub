@@ -16,7 +16,8 @@
         <div class="basket-holder">
           <div class="basket-header ">
             <div class="row">
-              <div class="col-5">Product</div>
+              <div class="col-1"> <h6 class="text-center">No.</h6></div>
+              <div class="col-4">Product</div>
               <div class="col-2">Price</div>
               <div class="col-2">Quantity</div>
               <div class="col-2">Amount</div>
@@ -25,15 +26,18 @@
           </div>
           <div class="basket-body">
             <!-- Product-->
+
+            @foreach($carts as $cart)
             <div class="item">
               <div class="row d-flex align-items-center">
-                <div class="col-5">
-                  <div class="d-flex align-items-center"><img src="{{asset('img/gallery/true-wireless-jbl-4-4.png')}}" alt="..." class="img-fluid" width="80">
+                <div class="col-1"><h6 class="text-center ml-4">1</h6></div>
+                <div class="col-4">
+                  <div class="d-flex align-items-center"><img src="{{asset('img/feature/'.$cart->feature_image)}}" alt="..." class="img-fluid" width="80">
                     <div class="title"><a href="detail.html">
-                        <h5>True wireless JBL</h5><span class="text-muted">Color: Black</span></a></div>
+                      <h5>{{$cart->product_title}}</h5><span class="text-muted">{{$cart->category_name}}</span></a></div>
                   </div>
                 </div>
-                <div class="col-2"><span>$</span><input type="number" class="quantity" value="65.00" id="price"></div>
+                <div class="col-2"><span>$</span><input type="number" class="quantity" value="{{$cart->price}}" id="price"></div>
                 <div class="col-2">
                   <div class="d-flex align-items-center">
                     <div class="quantity d-flex align-items-center">
@@ -47,6 +51,8 @@
                 <div class="col-1 text-center"><i class="delete fa fa-trash"></i></div>
               </div>
             </div>  
+            @endforeach
+
           </div>
         </div>
       </div>
@@ -64,7 +70,7 @@
               <h6 class="text-uppercase">Instructions for seller</h6>
             </div>
             <div class="block-body">
-              <p>If you have some information for the seller you can leave them in the box below</p>
+              <p>If you have some information for Us you can leave them in the box below</p>
               <form action="#">
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
               </form>
