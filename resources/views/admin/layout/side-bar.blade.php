@@ -64,8 +64,8 @@
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages7" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-imac-screen-1 mr-3"></i><span>Banner</span></a>
                 <div id="pages7" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
-                    <li class="sidebar-list-item"><a href="{{url("admin/brands/listBanners")}}" class="sidebar-link text-muted pl-lg-5">List Banners</a></li>
-                    <li class="sidebar-list-item"><a href="{{url("admin/brands/createBanner")}}" class="sidebar-link text-muted pl-lg-5">Create New Banner</a></li>
+                    <li class="sidebar-list-item"><a href="{{url("admin/banners/listBanner")}}" class="sidebar-link text-muted pl-lg-5">List Banners</a></li>
+                    <li class="sidebar-list-item"><a href="{{url("admin/banners/createBanner")}}" class="sidebar-link text-muted pl-lg-5">Create New Banner</a></li>
                     </ul>
                 </div>
             </li>
@@ -84,7 +84,7 @@
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages9" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-paper-stack-1 mr-3"></i><span>Comment</span></a>
                 <div id="pages9" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
-                    <li class="sidebar-list-item"><a href="{{url("admin/comment/commentList")}}" class="sidebar-link text-muted pl-lg-5">List Comments</a></li>
+                    <li class="sidebar-list-item"><a href="{{url("admin/comment/listComment")}}" class="sidebar-link text-muted pl-lg-5">List Comments</a></li>
                     <li class="sidebar-list-item"><a href="{{url("admin/comment/comment")}}" class="sidebar-link text-muted pl-lg-5">Comments Pending</a></li>
                     </ul>
                 </div>

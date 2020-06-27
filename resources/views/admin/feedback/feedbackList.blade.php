@@ -31,8 +31,7 @@
                     <th scope="row">{{ $feedback->id}}</th>
                     <td>{{ $feedback->feed_title}}</td>
                     <td>
-                      <!-- <a href="#Modal-Feedback-Details{{$feedback->id}}" class="badge badge-info p-2" data-toggle="modal"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a> -->
-                      <button type="button" data-toggle="modal" data-target="#Modal-Feedback-Content{{ $feedback->id}}" class="btn btn-info">Read</button>
+                      <a href="#Modal-Feedback-Content{{ $feedback->id}}" class="badge badge-info p-2" data-toggle="modal"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                     </td>
                     <td>{{ $feedback->feed_phone}}</td>
                     <td>{{ $feedback->feed_email}}</td>
@@ -57,10 +56,9 @@
                       <a href="#Modal-Feedback-Delete{{$feedback->id}}" class="badge badge-danger p-2" data-toggle="modal"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
                     </td>
                   </tr>
-                  {{--Modal content--}}
                   <!-- Modal Content Feedback -->
                   <div id="Modal-Feedback-Content{{ $feedback->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
-                    <div role="document" class="modal-dialog">
+                    <div role="document" class="modal-dialog modal-lg">
                       <div class="modal-content">
                         <div class="modal-header">
                           <h4 id="exampleModalLabel" class="modal-title">{{$feedback->feed_title}}</h4>
@@ -68,11 +66,11 @@
                         </div>
                         <div class="modal-body">
                           <div class="form-group">
-                            <textarea name="" id="" class="form-control" readonly>{{$feedback->feed_content}} </textarea>
+                            <textarea name="" id="" class="form-control" rows="10" readonly>{{$feedback->feed_content}} </textarea>
                           </div>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                         </div>
                       </div>
                     </div>
@@ -140,7 +138,7 @@
                           </div>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                         </div>
                       </div>
                     </div>
@@ -199,7 +197,7 @@
                                 <div class="form-group ">
                                   <button type="submit" class="btn btn-warning">Update</button>
                                   <button type="reset" class="btn btn-info">Reset</button>
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                 </div>
                               </div>
                             </form>
@@ -220,8 +218,8 @@
                           <h2>Are you sure you want to delete?</h2>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-primary">Yes</button>
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-warning">Yes</button>
+                          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                         </div>
                       </div>
                     </div>

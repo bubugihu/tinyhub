@@ -7,8 +7,13 @@ use Illuminate\Http\Request;
 
 class BrandsController extends Controller
 {
-    public function listBrands(){
+    public function listBrands()
+    {
         $brand = Brands::all();
         return view('admin.brands.listBrands', compact('brand'));
+    }
+    public function createBrands()
+    {
+        return view('admin.brands.createBrands');
     }
 }

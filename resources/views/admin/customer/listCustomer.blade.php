@@ -56,10 +56,6 @@
                                       <input type="text" class="form-control" value="{{$customer->email}}" readonly>
                                     </div>
                                     <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Password</label>
-                                      <input type="text" class="form-control" value="{{$customer->password}}" readonly>
-                                    </div>
-                                    <div class="form-group">
                                       <label class="form-control-label text-uppercase">Role</label>
                                       <input type="text" class="form-control" value="{{$customer->role}}" readonly>
                                     </div>
@@ -85,12 +81,15 @@
                                       <label class="form-control-label text-uppercase">Phone</label>
                                       <input type="text" class="form-control" value="{{$customer->phone}}" readonly>
                                     </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-12">
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Picture</label>
                                       <input type="text" class="form-control" value="{{$customer->feature}}" readonly>
                                     </div>
                                   </div>
-
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -122,10 +121,6 @@
                                       <div class="form-group">
                                         <label class="form-control-label text-uppercase">Email</label>
                                         <input type="email" class="form-control" placeholder="{{$customer->email}}" required>
-                                      </div>
-                                      <div class="form-group">
-                                        <label class="form-control-label text-uppercase">Password</label>
-                                        <input type="password" class="form-control" placeholder="{{$customer->password}}" required>
                                       </div>
                                       <div class="form-group">
                                         <label class="form-control-label text-uppercase">Role</label>
@@ -161,6 +156,10 @@
                                         <label class="form-control-label text-uppercase">Phone</label>
                                         <input type="number" class="form-control" placeholder="{{$customer->phone}}" required>
                                       </div>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-md-12">
                                       <div class="form-group">
                                         <label class="form-control-label text-uppercase">Picture</label>
                                         <div class="input-group mb-3">
@@ -178,7 +177,7 @@
                                   <div class="modal-footer d-flex justify-content-center">
                                     <div class="form-group ">
                                       <button type="submit" class="btn btn-warning">SUBMIT</button>
-                                      <button type="reset" class="btn btn-info">RESET</button>
+                                      <button type="reset" class="btn btn-info" style="margin: 0px 10px;">RESET</button>
                                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
                                   </div>

@@ -15,7 +15,11 @@ class ProductController extends Controller {
     }
     //admin product list
     public function listProduct(){
-        $product = Product::all();
+        $product = Product::join('category', 'category.id', '=', 'product.category_id')
+            ->join('brand', 'brand.id', '=', 'product.brand_id')
+            ->join('gallery', 'product.id', '=', 'gallery.product_id')
+            ->select('product.*', 'gallery.*', 'category.*','brand.*')
+            ->get();
         return view('admin.product.listProduct', compact('product'));
     }
 

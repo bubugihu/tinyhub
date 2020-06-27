@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    protected $table = "comment";
+    protected $table = "comments";
 
     protected $fillable = ['cmt_title', 'cmt_content', 'cmt_status', 'cmt_date', 'product_id', 'customer_id'];
 }

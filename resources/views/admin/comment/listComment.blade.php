@@ -14,17 +14,19 @@
                 <table class="table card-text">
                   <thead>
                     <tr>
-                      <th>Comment Title</th>
-                      <th>Comment Date</th>
-                      <th>Comment Status</th>
-                      <th>Comment Date</th>
+                      <th>User Name</th>
+                      <th>Category</th>
+                      <th>Brand</th>
+                      <th>Product Name</th>
+                      <th>Comment</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <th scope="row">1</th>
-                      <td>Test</td>
+                      <th>Test</th>
+                      <th>Test</th>
                       <td>Test</td>
                       <td>Test</td>
                       <td><a href="#" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>

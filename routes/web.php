@@ -39,12 +39,16 @@ Route::get('admin/category/categories', 'CategoryController@categories');
 
 //brands
 Route::get('admin/brands/listBrands' , 'BrandsController@listBrands');
+Route::get('admin/brands/createBrands' , 'BrandsController@createBrands');
 //order
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
 
 //comment
-
+Route::get('admin/comment/listComment', 'CommentController@listComment');
 //banner
+Route::get('admin/banners/listBanner' , 'BannerController@listBanner');
+Route::get('admin/banners/createBanner' , 'BannerController@createBanner');
+
 //index
 Route::get('admin/index', function(){
     return view('admin.index');
