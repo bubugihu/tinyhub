@@ -20,7 +20,7 @@ class CartController extends Controller
                             ->get();
         // $total = OrderDetail::selectRaw('product_id, Sum(quantity) as quantity')->groupBy('product_id')->first();                    
                            
-        return view('users.cart.shopping-cart', compact('carts','total'));
+        return view('users.cart.shopping-cart', compact('carts'));
         }else{
             $carts = OrderDetail::join('product','product.id','=','order_details.product_id')
             ->join('category','category.id','=','product.category_id')

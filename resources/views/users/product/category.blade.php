@@ -53,12 +53,12 @@
                         <label class="custom-control-label" for="brand3">Westone</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="brand3" name="BrandBeats" value="Beats">
-                        <label class="custom-control-label" for="brand3">Beats</label>
+                        <input type="checkbox" class="custom-control-input" id="brand4" name="BrandBeats" value="Beats">
+                        <label class="custom-control-label" for="brand4">Beats</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="brand3" name="BrandBang" value="Bang & Olufsen">
-                        <label class="custom-control-label" for="brand3">Bang & Olufsen</label>
+                        <input type="checkbox" class="custom-control-input" id="brand5" name="BrandBang" value="Bang & Olufsen">
+                        <label class="custom-control-label" for="brand5">Bang & Olufsen</label>
                     </div>
                 </div>
                 <!-- Sorted By -->
