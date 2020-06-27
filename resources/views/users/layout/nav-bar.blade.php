@@ -50,10 +50,47 @@
             <a href="#search"><i class="fas fa-search"></i></a>
           </div>
           <!-- Cart Dropdown-->
-          <div class="cart">
+          {{-- <div class="cart">
             <a href="{{ url('cart') }}" class="view-cart"><i class="fa fa-shopping-basket" aria-hidden="true"></i>
             </a>
-          </div>
+          </div> --}}
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" style="padding-right: 0!important;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i data-count="3" class="fa fa-shopping-basket fa-2x fa-border icon-dark badge-cart"></i></a>
+              <ul class="dropdown-menu dropdown-cart mt-3 py-3" role="menu">
+                  <li>
+                      <span class="item mb-3">
+                        <span class="item-left">
+                          <img src="{{url("img/headphone-slider2.png")}}" alt="" width="50"/>
+                            <span class="item-info">
+                                <span>Item name</span>
+                                <span>23$</span>
+                            </span>
+                        </span>
+                        <span class="item-right">
+                          <a href=""><button class="badge badge-danger pull-right">X</button></a>
+                        </span>
+                    </span>
+                  </li>
+                  <li>
+                      <span class="item">
+                        <span class="item-left">
+                          <img src="{{url("img/headphone-slider2.png")}}" alt="" width="50"/>
+                            <span class="item-info">
+                                <span>Item name</span>
+                                <span>23$</span>
+                            </span>
+                        </span>
+                        <span class="item-right">
+                            <a href=""><button class="badge badge-danger pull-right">X</button></a>
+                        </span>
+                    </span>
+                  </li>
+                  <li class="divider"></li>
+                  <li class="text-center mt-4"><a class="btn btn-dark" href="#">View Cart</a></li>
+              </ul>
+            </li>
+          </ul>
             </div>
           </div>
         </div>

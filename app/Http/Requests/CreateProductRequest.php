@@ -26,11 +26,11 @@ class CreateProductRequest extends FormRequest
         return [
             'prdname'      => 'bail|required|string|min:3|max:255',
             'prdprice'     => 'bail|required|double|min:0|max:20000',
-            'prdcate'      => 'bail|required',
-            'prdbrand'     => 'bail|required',
+            'prdcate'      => 'bail|required|not_in:0',
+            'prdbrand'     => 'bail|required|not_in:0',
             'sdescription' => 'required',
             'ldescription' => 'required',
-            'featureimg'   => 'bail|required|file|image|mimes:jpeg,png,jpg|max:10240',
+            'featureimg'   => 'required|file|image|mimes:jpeg,png,jpg|max:10240',
             'relateimg1'   => 'bail|required||file|image|mimes:jpeg,png,jpg|max:10240',
             'relateimg2'   => 'bail|required||file|image|mimes:jpeg,png,jpg|max:10240',
             'relateimg3'   => 'bail|required||file|image|mimes:jpeg,png,jpg|max:10240'
@@ -67,6 +67,18 @@ class CreateProductRequest extends FormRequest
             'relateimg3.file'             => 'Image must be image file !',
             'relateimg3.max'              => 'Image size can not over 10MB !',
             'relateimg3.required'         => 'Image can not be blank !'
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'prdname'       => 'Product Title',
+            'prdprice'      => 'Product Price',
+            'prdcate'       => 'Categories',
+            'prdbrand'      => 'Brands',
+            'sdescription'  => 'Short Description',
+            'ldescription'  => 'Long Description',
         ];
     }
 }

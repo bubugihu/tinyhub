@@ -23,26 +23,26 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Price</label>
-                        <input type="number" class="form-control" name="prdprice">
+                        <input type="number" class="form-control" name="prdprice" min="0">
                         @if($errors->has('prdprice'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdprice')}}</small>
                         @endif
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Category</label>
-                          <select name="category" class="form-control">
+                          <select name="prdcate" class="form-control">
                             <option value="0">None</option>
                             <option value="1">In Ear</option>
                             <option value="2">On Ear</option>
                             <option value="3">True-Wireless</option>
                           </select>
-                          @if($errors->has('category'))
-                           <small style="color:red;font-size:14px;">{{$errors->first('category')}}</small>
+                          @if($errors->has('prdcate'))
+                           <small style="color:red;font-size:14px;">{{$errors->first('prdcate')}}</small>
                           @endif
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Brands</label>
-                          <select name="brand" class="form-control">
+                          <select name="prdbrand" class="form-control">
                             <option value="0">None</option>
                             <option value="1">Sony</option>
                             <option value="2">JBL</option>

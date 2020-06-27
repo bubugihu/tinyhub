@@ -15,7 +15,8 @@
               <table class="table card-text">
                 <thead>
                   <tr>
-                    <th>User ID</th>
+                    <th>No.</th>
+                    <th>ID</th>
                     <th>Username</th>
                     <th>Email</th>
                     <th>Role</th>
@@ -27,7 +28,8 @@
 
                   @foreach($user as $user)
                   <tr>
-                    <th scope="row">{{$user->id}}</th>
+                    <th scope="row">{{++$stt}}</th>
+                    <th>{{$user->id}}</th>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>

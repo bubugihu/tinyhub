@@ -39,6 +39,7 @@ Route::get('admin/category/categories', 'CategoryController@categories');
 
 //brands
 Route::get('admin/brands/listBrands' , 'BrandsController@listBrands');
+Route::get('admin/brands/createBrands' , 'BrandsController@createBrand');
 //order
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
 
@@ -102,7 +103,13 @@ Route::get('logout', function () {
     return redirect()->route('homepage');
 })->name('logout');
 
-//
+////// User cart
+//category
+Route::get('category', 'CategoryController@category');
+Route::post('category/search', 'CategoryController@search');
+//example product
+Route::get('product-detail/{id}', 'ProductController@productDetails');
+
 Route::get('cart' , 'CartController@cart');
 Route::get('checkout' , function(){
     return view('users.cart.checkout');
@@ -111,19 +118,9 @@ Route::get('order-review' , function(){
     return view('users.cart.order-review');
 });
 
+Route::get('cart/{id}', 'CartController@cart');
 
 
-//nana
-// Route::get('productDetails', function(){
-//     return view('users.products.in-ear.productDetails');
-// });
-
-route::get('products',function(){
-    return view('users.in-ear.products');
-});
-Route::get('product-detail', function(){
-    return view('users.product.in-ear.productDetails');
-});
 
 Route::get('search', [
 		'as' => 'search',
@@ -142,4 +139,14 @@ Route::get('categories/{cate}', [
 ]);
 
 ///////// du thua chua dung den
-Route::get('category', 'ProductController@category');
+//Route::get('category', 'ProductController@category');
+
+//search cate
+Route::get('searchCate/{in}', 'ProductController@filterCate');
+//search brands
+Route::get('searchBrand/{in}', 'ProductController@filterBrand');
+//search Price
+Route::get('searchPrice', 'ProductController@filterPrice' );
+//Search Price Incre
+Route::get('searchPriceAsc/{products}','ProductController@sortPrice');
+//Route::get('search' , 'SearchController@search');
