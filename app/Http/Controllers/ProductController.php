@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateProductRequest;
 use App\Category;
 use App\Brands;
 use App\Gallery;
@@ -18,10 +19,36 @@ class ProductController extends Controller {
     }
 
     public function createProduct(){
-        return view('admin.product.createProduct');
+        return view("admin.product.createProduct");
     }
 
-    public function categories(){
+    public function postCreate(CreateProductRequest $request){ 
+
+        $product = $request -> all();
+
+        if ($request -> hasFile('featureimg')) {
+            $file = $request -> file('featureimg');
+            $extension = $file -> getClientOriginalExtension();
+
+            if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
+                return redirect("admin/product/createProduct") -> with('Message', 'You can only upload image with file jpg/png/jpeg');
+            }
+            $imageName = $file -> getClientOriginalName();
+            $file -> move("img/feature", $imageName);
+
+        } else {
+            $imageName = null;
+        }
+
+        $p = new Product($product);
+        $p -> featureimg = $imageName;
+        $p ->save();
+
+        return redirect() -> action('ProductController@listProduct');
+        // return view('admin.product.createProduct');
+    }
+
+    public function getCategories(){
         return view('admin.product.categories');
     }
 

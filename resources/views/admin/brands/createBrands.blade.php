@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'product list')
+@section('title', 'Create new brand')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
     <div class="container-fluid px-xl-5">
@@ -15,15 +15,17 @@
                       {{ csrf_field() }}
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Brand Title</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="brandTitle">
+                        @if($errors->has('brandTitle'))
+                           <small style="color:red;font-size:14px;">{{$errors->first('brandTitle')}}</small>
+                        @endif
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Description</label>
-                        <input type="text" class="form-control">
-                      </div>
-                      <div class="form-group">
-                        <label class="form-control-label text-uppercase">SKU</label>
-                        <input type="text" placeholder="Sku" class="form-control">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="brandDescription"rows="3"></textarea>
+                        @if($errors->has('brandDescription'))
+                           <small style="color:red;font-size:14px;">{{$errors->first('brandDescription')}}</small>
+                        @endif
                       </div>
                       <label class="form-control-label text-uppercase">Upload Brand Image</label>
                       <div class="input-group mb-3">

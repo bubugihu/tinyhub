@@ -47,8 +47,7 @@
         <div class="row py-5">
             <div class="col-md-8">
                 <h1 class="text-uppercase">JBL</h1>
-                <p style="text-align: justify;">JBL is an American company that manufactures audio equipment, including loudspeakers and headphones. There are two independent divisions within the company; JBL Consumer produces audio equipment for the consumer home market, while the JBL Professional produces professional equipment for the studio, installed sound, tour sound, portable sound (production and DJ), and cinema markets. JBL is owned by Harman International Industries, a subsidiary of South Korean company Samsung Electronics.
-                    JBL was founded by James Bullough Lansing (1902–1949) who was an American audio engineer and loudspeaker designer most notable for establishing two audio companies that bear his name, Altec Lansing and JBL, the latter taken from his initials.</p>
+                <p style="text-align: justify;">JBL is an American company that manufactures audio equipment, including loudspeakers and headphones. There are two independent divisions within the company; JBL Consumer produces audio equipment for the consumer home market, while the JBL Professional produces professional equipment for the studio, installed sound, tour sound, portable sound (production and DJ), and cinema markets. JBL is owned by Harman International Industries, a subsidiary of South Korean company Samsung Electronics. JBL was founded by James Bullough Lansing (1902–1949) who was an American audio engineer and loudspeaker designer most notable for establishing two audio companies that bear his name, Altec Lansing and JBL, the latter taken from his initials.</p>
             </div>
             <div class="col-md-4 text-center"><img class="img-fluid" src="{{asset("img/jbl-logo.png")}}" width="100%" alt=""></div>
         </div>

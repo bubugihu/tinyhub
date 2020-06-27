@@ -141,7 +141,32 @@ return [
         'name' => [
             'required' => 'User name is required.'
             
-        ]
+        ],
+        'prdname' => [
+            'required' => 'Product title can not be blank !'
+            
+        ],
+        'prdprice' => [
+            'required' => 'Product price can not be blank !'
+            
+        ],
+        'prdcate' => [
+            'not_in' => 'Product category can not be blank, please choose one of them !'
+            
+        ],
+        'prdbrand' => [
+            'not_in' => 'Product brand can not be blank, please choose one of them !'
+            
+        ],
+        'sdescription' => [
+            'required' => 'Short description can not be blank !'
+            
+        ],
+        'ldescription' => [
+            'required' => 'Long description can not be blank !'
+            
+        ],
+    
     ],
     /*
     |--------------------------------------------------------------------------
@@ -154,7 +179,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+
+    ],
     
 
 ];

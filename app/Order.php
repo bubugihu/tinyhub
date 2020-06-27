@@ -11,8 +11,6 @@ class Order extends Model
     // Declare primary key on table
     protected $primaryKey = "id";
 
-    
-
     protected $fillable = ['id', 'order_date_time', 'status', 'customer_id', 'created_at', 'updated_at'];
 
     public function roleOrderDetails(){

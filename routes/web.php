@@ -33,11 +33,13 @@ Route::get('admin/feedback/feedbackList', 'FeedbackController@feedbackList');
 //product
 Route::get('admin/product/listProduct', 'ProductController@listProduct');
 Route::get('admin/product/createProduct', 'ProductController@createProduct');
+Route::post('admin/product/postCreate', 'ProductController@postCreate');
 //category
 Route::get('admin/category/categories', 'CategoryController@categories');
 
 //brands
 Route::get('admin/brands/listBrands' , 'BrandsController@listBrands');
+Route::get('admin/brands/createBrands' , 'BrandsController@createBrand');
 //order
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
 
@@ -86,6 +88,10 @@ Route::get('guarantee',function(){
 Route::get('brand', function(){
     return view('brand');
 })->name('brand');
+//thank-you
+Route::get('thank-you', function(){
+    return view('thank-you');
+})->name('thank-you');
 //report
 Route::get('report' , function(){
     return view('users.cart.report');
@@ -118,10 +124,10 @@ Route::get('cart/{id}', 'CartController@cart');
 Route::post('cart/addCart/{id}', 'CartController@addCart');
 
 
-
-
-
-
+Route::get('search', [
+		'as' => 'search',
+		'uses' => 'SearchKeyController@getSearch'
+]);
 Route::get('report-product' , function(){
     return view('users.product.report');
 });
@@ -129,8 +135,13 @@ Route::get('users/profile' , function(){
     return view('users.profile.profile');
 });
 
+Route::get('categories/{cate}', [
+        'as' => 'categories',
+        'uses' => 'ProductController@getCategories'
+]);
 
 ///////// du thua chua dung den
+//Route::get('category', 'ProductController@category');
 
 //search cate
 Route::get('searchCate/{in}', 'ProductController@filterCate');

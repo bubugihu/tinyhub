@@ -11,8 +11,6 @@ class Gallery extends Model
     // Declare primary key on table
     protected $primaryKey = "id";
 
-    
-
     protected $fillable = ['id', 'product_id', 'product_gallery'];
     
     public function roleProduct(){

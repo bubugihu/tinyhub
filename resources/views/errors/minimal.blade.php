@@ -57,9 +57,6 @@
             <div class="message" style="padding: 10px;">
                 @yield('message')
             </div>
-            <div class="content">
-                @yield('image')
-            </div>
         </div>
     </body>
 </html>
