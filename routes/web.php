@@ -112,8 +112,10 @@ Route::get('order-review' , function(){
     return view('users.cart.order-review');
 });
 
+//buy now
 Route::get('cart/{id}', 'CartController@cart');
-
+//add cart
+Route::post('cart/addCart/{id}', 'CartController@addCart');
 
 
 

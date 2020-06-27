@@ -31,7 +31,8 @@ class ProductController extends Controller {
         $product = Product::find($id);
         $gallery = Gallery::where('product_id', $id)->get();
         $div = $gallery;
-        return view('users.product.productDetails', compact('product','gallery'));
+        $category = Category::find($product->category_id);
+        return view('users.product.productDetails', compact('product','gallery','category'));
     }
 
 

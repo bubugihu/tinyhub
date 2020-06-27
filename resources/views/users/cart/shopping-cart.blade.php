@@ -42,7 +42,7 @@
                   <div class="d-flex align-items-center">
                     <div class="quantity d-flex align-items-center">
                       <button class="dec-btn" onclick="decre()">-</button>
-                      <input type="number" value="1" class="quantity-no" id="quantity" min="0">
+                      <input type="number" value="{{$cart->quantity}}" class="quantity-no" id="quantity" min="0">
                       <button class="inc-btn" onclick="incre()">+</button>
                     </div>
                   </div>
@@ -85,7 +85,7 @@
             <div class="block-body">
               <p>Shipping and additional costs are calculated based on values you have entered.</p>
               <ul class="order-menu list-unstyled">
-                <li class="d-flex justify-content-between"><span>Order Subtotal </span><strong>$390.00</strong></li>
+              <li class="d-flex justify-content-between"><span>Order Subtotal </span><strong>123</strong></li>
                 <li class="d-flex justify-content-between"><span>Shipping and handling</span><strong>$10.00</strong></li>
                 <li class="d-flex justify-content-between"><span>Tax</span><strong>$0.00</strong></li>
                 <li class="d-flex justify-content-between"><span>Total</span><strong class="text-primary price-total">$400.00</strong></li>

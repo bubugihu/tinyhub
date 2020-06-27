@@ -11,6 +11,6 @@ class Category extends Model
     public $fillable =['id' , 'category_name', 'description'];
 
     public function roleProduct(){
-        return $this->hasMany(Product::class,'category_id','id');
+        return $this->hasMany(Product::class);
     }
 }

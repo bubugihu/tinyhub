@@ -45,7 +45,7 @@
         <!-- Product Info-->
         <div class="col-lg-6">
             <div class="row">
-                <p class="product_cate"><a href="#">{{$product->roleCategory->category_name}}</a></p>
+                <p class="product_cate"><a href="#">{{$category->category_name}}</a></p>
             </div>
             <div class="row">
                 <p class="product_name">{{$product->product_title}}</p>
@@ -56,19 +56,25 @@
             <div class="row">
                 <p class="product_description">{{$product->short_descriptions}}</p>
             </div>
+
+            {{--Form Cart--}}
+            <form action="{{url('cart/addCart/'.$product->id)}}" method="post">
             <div class="row d-flex justify-content-around align-items-center py-4">
                 <div class=" col-md-3 quantity d-flex align-items-center justify-content-center">
                     <div class="dec-btn">-</div>
-                    <input type="text" value="1" class="quantity-no rounded">
+                    <input type="text" value="1" name="quantity" class="quantity-no rounded">
                     <div class="inc-btn">+</div>
                 </div>
                 <div class="col-md-5">
-                    <a href="{{url('cart/'.$product->id)}}" class="btn btn-success wide btn-md btn-block"><b>Buy Now</b></a>
+                    <button  type="submit" class="btn btn-success wide btn-md btn-block"><b>Buy Now</b></button>
                 </div>
                 <div class="col-md-4">
-                    <a href="#" class="btn btn-dark wide btn-md btn-block"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    <button type="submit" class="btn btn-dark wide btn-md btn-block"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
                 </div>
             </div>
+            </form>
+            {{--End Form--}}
+
             <div class="row">
                 <div class="col-lg-6 py-3">
                     <h6 class="text-uppercase"><i class="fas fa-truck"></i> SHIPPING & DELIVERY</h6>
