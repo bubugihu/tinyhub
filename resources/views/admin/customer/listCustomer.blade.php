@@ -27,13 +27,13 @@
                 <tbody>
                   @foreach($customer as $customer)
                   <tr>
-                    <th scope="row">{{$customer->id}}</th>
-                    <td>{{$customer->customer_name}}</td>
-                    <td>{{$customer->dob}}</td>
-                    <td>{{$customer->gender}}</td>
-                    <td>{{$customer->email}}</td>
-                    <td>{{$customer->phone}}</td>
-                    <td>
+                    <th scope="row" class="align-middle">{{$customer->id}}</th>
+                    <td class="align-middle">{{$customer->customer_name}}</td>
+                    <td class="align-middle">{{$customer->dob}}</td>
+                    <td class="align-middle">{{$customer->gender}}</td>
+                    <td class="align-middle">{{$customer->email}}</td>
+                    <td class="align-middle">{{$customer->phone}}</td>
+                    <td class="align-middle">
                       <a href="#Modal-Customer-Details{{$customer->id}}" class="badge badge-info p-2" data-toggle="modal"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                       <!-- Modal Details Customer -->
                       <div id="Modal-Customer-Details{{$customer->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade bd-example-modal-lg text-left">
@@ -92,7 +92,7 @@
                                   </div>
                                 </div>
                                 <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                 </div>
                               </div>
                             </div>
@@ -176,9 +176,9 @@
                                   </div>
                                   <div class="modal-footer d-flex justify-content-center">
                                     <div class="form-group ">
-                                      <button type="submit" class="btn btn-warning">SUBMIT</button>
-                                      <button type="reset" class="btn btn-info" style="margin: 0px 10px;">RESET</button>
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <button type="submit" class="btn btn-warning">Update</button>
+                                      <button type="reset" class="btn btn-info" style="margin: 0px 15px;">Reset</button>
+                                      <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                     </div>
                                   </div>
                                 </form>
@@ -200,8 +200,8 @@
                               <h2>Are you sure you want to delete?</h2>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-primary">Yes</button>
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-warning">Yes</button>
+                              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                             </div>
                           </div>
                         </div>

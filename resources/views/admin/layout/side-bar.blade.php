@@ -75,7 +75,6 @@
                 <div id="pages8" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
                     <li class="sidebar-list-item"><a href="{{url("admin/order/listOrder")}}" class="sidebar-link text-muted pl-lg-5">List orders</a></li>
-                    <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Orders Pending</a></li>
                     </ul>
                 </div>
             </li>
@@ -85,7 +84,6 @@
                 <div id="pages9" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
                     <li class="sidebar-list-item"><a href="{{url("admin/comment/listComment")}}" class="sidebar-link text-muted pl-lg-5">List Comments</a></li>
-                    <li class="sidebar-list-item"><a href="{{url("admin/comment/comment")}}" class="sidebar-link text-muted pl-lg-5">Comments Pending</a></li>
                     </ul>
                 </div>
             </li>

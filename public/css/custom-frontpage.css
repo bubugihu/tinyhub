@@ -843,6 +843,13 @@ p.price-dt {
     background-origin: border-box;
 }
 
+/* input arrow*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /*** LOGIN PAGE ***/
 button.btn.login-btn {
     background: #f47635;

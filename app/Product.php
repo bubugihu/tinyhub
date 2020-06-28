@@ -15,6 +15,16 @@ class Product extends Model {
     protected $fillable = ['id', 'product_title', 'price', 'sold_out', 'status', 'short_description', 'long_description','feature_image','warranty_period','category_id', 'created_at','brand_id', 'updated_at'];
     //
     public function roleCategory(){
-        return $this->belongsTo(Category::class,'category_id','id');
+        return $this->belongsTo(Category::class);
     }
+    //
+    public function roleBrand(){
+        return $this->belongsTo(Brands::class);
+    }
+    //
+    public function roleGallery(){
+        return $this->hasMany(Gallery::class);
+    }
+    //
+    
 }

@@ -9,8 +9,9 @@ use App\User;
 class UserController extends Controller
 {
     public function listUsers(){
-        $user = User::all();
-        return view("admin.users.listUsers", compact('user'));
+        $user = User::join('customer','customer.id','=','users.id')->select('users.*','customer.*')->get();
+        $stt= 0;
+        return view("admin.users.listUsers", compact('user','stt'));
     }
     public function createUser(){
         return view('admin.users.createUser');

@@ -12,10 +12,9 @@ class Gallery extends Model
     protected $primaryKey = "id";
 
 
-
     protected $fillable = ['id', 'product_id', 'product_gallery'];
-    public function roleProduct()
-    {
-        return $this->belongsTo(Product::class, 'product_id', 'id');
+    
+    public function roleProduct(){
+        return $this->belongsTo(Product::class);
     }
 }

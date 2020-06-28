@@ -51,7 +51,7 @@
                     <div role="document" class="modal-dialog modal-lg">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h4 id="exampleModalLabel" class="modal-title">Details Feedback</h4>
+                          <h4 id="exampleModalLabel" class="modal-title">Details Orders</h4>
                           <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                         </div>
                         <div class="modal-body">

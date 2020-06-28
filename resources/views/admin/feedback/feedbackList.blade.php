@@ -28,29 +28,27 @@
                 <tbody>
                   @foreach( $feedback as $feedback)
                   <tr>
-                    <th scope="row">{{ $feedback->id}}</th>
-                    <td>{{ $feedback->feed_title}}</td>
-                    <td>
-                      <a href="#Modal-Feedback-Content{{ $feedback->id}}" class="badge badge-info p-2" data-toggle="modal"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
-                    </td>
-                    <td>{{ $feedback->feed_phone}}</td>
-                    <td>{{ $feedback->feed_email}}</td>
-                    <td>
+                    <th scope="row" class="align-middle">{{ $feedback->id}}</th>
+                    <td class="align-middle">{{ $feedback->feed_title}}</td>
+                    <td class="align-middle"><a href="#Modal-Feedback-Content{{ $feedback->id}}" class="badge badge-info p-2" data-toggle="modal"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a></td>
+                    <td class="align-middle">{{ $feedback->feed_phone}}</td>
+                    <td class="align-middle">{{ $feedback->feed_email}}</td>
+                    <td class="align-middle">
                       @if($feedback->feed_status == 0 )
                       <a href="#" class="badge badge-success p-2"><i class="fa fa-check-circle" aria-hidden="true" style="font-size:16px; font-weight:100;"></i></a>
                       @else
                       <a href="#" class="badge badge-danger p-2"><i class="fa fa-power-off" aria-hidden="true" style="font-size:12px; font-weight:100;"></i></a>>
                       @endif
                     </td>
-                    <td>
+                    <td class="align-middle">
                       @if($feedback->feed_rep == 0 )
                       <a href="mailto:{{$feedback->feed_email}}?subject={{$feedback->feed_title}}" class="badge badge-danger p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                       @else
                       <a href="#" class="badge badge-success p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                       @endif
                     </td>
-                    <td>{{ $feedback->feed_date}}</td>
-                    <td>
+                    <td class="align-middle">{{ $feedback->feed_date}}</td>
+                    <td class="align-middle">
                       <a href="#Modal-Feedback-Details{{$feedback->id}}" class="badge badge-info p-2" data-toggle="modal"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                       <a href="#Modal-Feedback-Update{{$feedback->id}}" class="badge badge-warning p-2" data-toggle="modal"><i class="fas fa-edit" style="font-size: 16px; font-weight:100;"></i></a>
                       <a href="#Modal-Feedback-Delete{{$feedback->id}}" class="badge badge-danger p-2" data-toggle="modal"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>

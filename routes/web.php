@@ -101,7 +101,13 @@ Route::get('logout', function () {
     return redirect()->route('homepage');
 })->name('logout');
 
-//
+////// User cart
+//category
+Route::get('category', 'CategoryController@category');
+Route::post('category/search', 'CategoryController@search');
+//example product
+Route::get('product-detail/{id}', 'ProductController@productDetails');
+
 Route::get('cart' , 'CartController@cart');
 Route::get('checkout' , function(){
     return view('users.cart.checkout');
@@ -110,19 +116,15 @@ Route::get('order-review' , function(){
     return view('users.cart.order-review');
 });
 
+//buy now
+Route::get('cart/{id}', 'CartController@cart');
+//add cart
+Route::post('cart/addCart/{id}', 'CartController@addCart');
 
 
-//nana
-// Route::get('productDetails', function(){
-//     return view('users.products.in-ear.productDetails');
-// });
 
-route::get('products',function(){
-    return view('users.in-ear.products');
-});
-Route::get('product-detail', function(){
-    return view('users.product.in-ear.productDetails');
-});
+
+
 
 Route::get('report-product' , function(){
     return view('users.product.report');
@@ -133,7 +135,7 @@ Route::get('users/profile' , function(){
 
 
 ///////// du thua chua dung den
-Route::get('category', 'ProductController@category');
+
 //search cate
 Route::get('searchCate/{in}', 'ProductController@filterCate');
 //search brands
