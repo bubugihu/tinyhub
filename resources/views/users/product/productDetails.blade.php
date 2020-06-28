@@ -58,22 +58,30 @@
             </div>
 
             {{--Form Cart--}}
-            <form action="{{url('cart/addCart/'.$product->id)}}" method="post">
+            <form action="{{url('cart/addCart/'.$product->id)}}" method="POST">
+                @csrf
             <div class="row d-flex justify-content-around align-items-center py-4">
                 <div class=" col-md-3 quantity d-flex align-items-center justify-content-center">
-                    <div class="dec-btn">-</div>
-                    <input type="text" value="1" name="quantity" class="quantity-no rounded">
-                    <div class="inc-btn">+</div>
+                    <button type="button" class="dec-btn"  onclick="decre()" >-</button>
+                    <input type="number" id="1" value="{{$quantity}}" name="quantityNumber" class="quantity-no rounded" >
+                    <button type="button" class="inc-btn"  onclick="incre()" >+</button>
                 </div>
                 <div class="col-md-5">
-                    <button  type="submit" class="btn btn-success wide btn-md btn-block"><b>Buy Now</b></button>
-                </div>
-                <div class="col-md-4">
                     <button type="submit" class="btn btn-dark wide btn-md btn-block"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
                 </div>
-            </div>
             </form>
             {{--End Form--}}
+            {{--Form--}}
+            <form action="{{url('cart/shopping')}}" method="POST">
+                {{csrf_field()}}
+                <input type="hidden" name="idProduct" value="{{$product->id}}">
+                <input type="number" id="2" name="addQuantity" style="display:none" value="{{$quantity}}">
+                    <button type="submit" class="btn btn-success wide btn-md btn-block"><b>Buy Now</b></button>
+                
+            </form>
+                {{--End Form--}}
+            </div>
+            
 
             <div class="row">
                 <div class="col-lg-6 py-3">
@@ -146,12 +154,15 @@
                             <p>The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream.</p>
                         </div>
                     </div>
+
+                    {{-- Check Auth--}}
+                    @auth
                     <div class="row review">
                         <div class="col-3 text-center"><img src="img/quang.jpg" alt="Quang Dang" class="review-image"><span>Dec 2018</span></div>
                         <div class="col-9 review-text">
                             <form action="">
                                 <div>
-                                    <h6>Quang Dang</h6>
+                                    <h6>{{Auth::user()->name}}</h6>
                                     <hr width="100%">
                                 </div>
                                 <div class="form-group">
@@ -163,6 +174,9 @@
                             </form>
                         </div>
                     </div>
+                    @endauth
+                    {{--End auth--}}
+
                 </div>
             </div>
         </div>
@@ -240,3 +254,15 @@
     </div>
 </div>
 @endsection
+
+<script>
+function incre(){
+    document.getElementById("1").stepUp(1);
+    document.getElementById("2").stepUp(1);
+}
+function decre(){
+    document.getElementById("1").stepDown(1);
+    document.getElementById("2").stepDown(1);
+}
+
+</script>

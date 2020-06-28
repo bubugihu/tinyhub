@@ -119,7 +119,8 @@ Route::get('order-review' , function(){
 });
 
 //buy now
-Route::get('cart/{id}', 'CartController@cart');
+Route::post('cart/shopping', 'CartController@shoppingCart');
+Route::get('cart/shopping','CartController@cart');
 //add cart
 Route::post('cart/addCart/{id}', 'CartController@addCart');
 

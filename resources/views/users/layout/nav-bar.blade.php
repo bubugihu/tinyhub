@@ -56,7 +56,7 @@
           </div> --}}
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" style="padding-right: 0!important;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i data-count="3" class="fa fa-shopping-basket fa-2x fa-border icon-dark badge-cart"></i></a>
+              <a href="#" style="padding-right: 0!important;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i data-count="{{Cart::count()}}" class="fa fa-shopping-basket fa-2x fa-border icon-dark badge-cart"></i></a>
               <ul class="dropdown-menu dropdown-cart mt-3 py-3" role="menu">
                   <li>
                       <span class="item mb-3">
@@ -87,7 +87,7 @@
                     </span>
                   </li>
                   <li class="divider"></li>
-                  <li class="text-center mt-4"><a class="btn btn-dark" href="#">View Cart</a></li>
+                  <li class="text-center mt-4"><a class="btn btn-dark" href="{{url('cart/shopping')}}">View Cart</a></li>
               </ul>
             </li>
           </ul>

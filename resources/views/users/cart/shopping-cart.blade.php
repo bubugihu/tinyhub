@@ -27,14 +27,14 @@
           <div class="basket-body">
             <!-- Product-->
 
-            @foreach($carts as $cart)
+            @foreach(Cart::content() as $cart)
             <div class="item">
               <div class="row d-flex align-items-center">
-                <div class="col-1"><h6 class="text-center ml-4">1</h6></div>
+                <div class="col-1"><h6 class="text-center ml-4">{{++$stt}}</h6></div>
                 <div class="col-4">
-                  <div class="d-flex align-items-center"><img src="{{asset('img/feature/'.$cart->feature_image)}}" alt="..." class="img-fluid" width="80">
+                  <div class="d-flex align-items-center"><img src="{{asset('img/feature/'.$cart->options->image)}}" alt="..." class="img-fluid" width="80">
                     <div class="title"><a href="detail.html">
-                      <h5>{{$cart->product_title}}</h5><span class="text-muted">{{$cart->category_name}}</span></a></div>
+                      <h5>{{$cart->name}}</h5><span class="text-muted">{{$cart->options->category}}</span></a></div>
                   </div>
                 </div>
                 <div class="col-2"><span>$</span><input type="number" class="quantity" value="{{$cart->price}}" id="price"></div>
@@ -42,12 +42,12 @@
                   <div class="d-flex align-items-center">
                     <div class="quantity d-flex align-items-center">
                       <button class="dec-btn" onclick="decre()">-</button>
-                      <input type="number" value="{{$cart->quantity}}" class="quantity-no" id="quantity" min="0">
+                      <input type="number" value="{{$cart->qty}}" class="quantity-no" id="quantity" min="0">
                       <button class="inc-btn" onclick="incre()">+</button>
                     </div>
                   </div>
                 </div>
-                <div class="col-2"><span>$</span><input type="number" class="quantity" id="total" step="0.01"></div>
+                <div class="col-2"><span>$</span><span>{{number_format($cart->price*$cart->qty, 0, '.', ',')}}</span></div>
                 <div class="col-1 text-center"><i class="delete fa fa-trash"></i></div>
               </div>
             </div>  
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row"><a href="{{ url('productList')}}" class="btn btn-template-outlined wide">Continue Shopping</a><a href="#" class="btn btn-template wide">Update Cart</a></div>
+      <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row"><button href="#" class="btn login-btn mr-10">SubTotal</button><strong class="mr-200 ml-70" style="color: #fd7e14; font-weight: 600; margin-left: 70px;margin-right: 200px">${{Cart::pricetotal()}}</strong></div>
     </div>
 </section>
 <section class="order-details no-padding-top"> 
@@ -85,10 +85,10 @@
             <div class="block-body">
               <p>Shipping and additional costs are calculated based on values you have entered.</p>
               <ul class="order-menu list-unstyled">
-              <li class="d-flex justify-content-between"><span>Order Subtotal </span><strong>123</strong></li>
-                <li class="d-flex justify-content-between"><span>Shipping and handling</span><strong>$10.00</strong></li>
-                <li class="d-flex justify-content-between"><span>Tax</span><strong>$0.00</strong></li>
-                <li class="d-flex justify-content-between"><span>Total</span><strong class="text-primary price-total">$400.00</strong></li>
+              <li class="d-flex justify-content-between"><span>Order Subtotal </span><strong>{{Cart::pricetotal()}}</strong></li>
+                <li class="d-flex justify-content-between"><span>Shipping and handling</span><strong>{{number_format($ship,0,'.',',')}}</strong></li>
+                <li class="d-flex justify-content-between"><span>Tax</span><strong>{{Cart::tax()}}</strong></li>
+                <li class="d-flex justify-content-between"><span>Total</span><strong class="text-primary price-total">{{number_format($total,0,'.',',')}}</strong></li>
               </ul>
             </div>
           </div>
@@ -97,27 +97,5 @@
       </div>
     </div>
 </section>
-
-<script>
-        var quantity = document.getElementById("quantity").value;
-        var price = document.getElementById("price").value;
-        var total = quantity*price;
-        document.getElementById("total").value=total;
-    function incre(){
-        document.getElementById("quantity").stepUp(1);
-        var quantity = document.getElementById("quantity").value;
-        var price = document.getElementById("price").value;
-        var total = quantity*price;
-        document.getElementById("total").value=total;
-    }
-    function decre(){
-        document.getElementById("quantity").stepDown(1);   
-        var quantity = document.getElementById("quantity").value;
-        var price = document.getElementById("price").value;
-        var total = quantity*price;
-        document.getElementById("total").value=total;
-    }
-    
-    </script>
 @endsection
 
