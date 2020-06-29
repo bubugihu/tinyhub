@@ -36,7 +36,8 @@ Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::post('admin/product/postCreate', 'ProductController@postCreate');
 //category
 Route::get('admin/category/categories', 'CategoryController@categories');
-
+Route::get('admin/category/createCategories', 'CategoryController@createCate');
+Route::post('admin/category/postCate', 'CategoryController@postCate');
 //brands
 Route::get('admin/brands/listBrands' , 'BrandsController@listBrands');
 Route::get('admin/brands/createBrands' , 'BrandsController@createBrand');

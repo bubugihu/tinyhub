@@ -33,7 +33,10 @@ class CreateProductRequest extends FormRequest
             'featureimg'   => 'required|file|image|mimes:jpeg,png,jpg|max:10240',
             'relateimg1'   => 'bail|required||file|image|mimes:jpeg,png,jpg|max:10240',
             'relateimg2'   => 'bail|required||file|image|mimes:jpeg,png,jpg|max:10240',
-            'relateimg3'   => 'bail|required||file|image|mimes:jpeg,png,jpg|max:10240'
+            'relateimg3'   => 'bail|required||file|image|mimes:jpeg,png,jpg|max:10240',
+
+            'cateTitle'         => 'bail|required|string|min:3|max:90',
+            'cateDescription'   => 'bail|required|max:150'
         ];
     }
 
@@ -66,7 +69,14 @@ class CreateProductRequest extends FormRequest
             'relateimg3.mimes'            => 'Image must be .JPEG or .PNG or .JPG !',
             'relateimg3.file'             => 'Image must be image file !',
             'relateimg3.max'              => 'Image size can not over 10MB !',
-            'relateimg3.required'         => 'Image can not be blank !'
+            'relateimg3.required'         => 'Image can not be blank !',
+
+            'cateTitle.required'         => 'Category title can not be blank !',
+            'cateTitle.string'           => 'Category title title must be string !',
+            'cateTitle.min'              => 'Category title has min 3 character !',
+            'cateTitle.max'              => 'Category title has max 90 character !',
+            'cateDescription.required'   => 'Category description can not be blank !',
+            'cateDescription.max'        => 'Category description has max 120 character !',
         ];
     }
 

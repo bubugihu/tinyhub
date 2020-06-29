@@ -3,23 +3,46 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Middleware\Admin;
+use App\Http\Requests\CreateProductRequest;
 use Illuminate\Http\Request;
 use App\Product;
 class CategoryController extends Controller
 {   
-    //admin category
+    //Admin Category
     public function categories(){
         $cate = Category::all();
         return view('admin.category.categories', compact('cate'));
     }
 
-    //user category
+    public function createCate(){
+        return view('admin.category.createCategories');
+    }
+
+    // Post Create Categories
+    public function postCate(Request $request){
+
+        $c = new Category();
+        $c->category_name = $request->cateTitle;
+        $c->description = $request->cateDescription;
+        $c->save();
+       
+        // $cate=Category::create([
+        //     'category_name' => $request['cateTitle'],
+        //     'description'   => $request['cateDescription']
+        // ]);
+        // $cate->save();
+        return back()->with('alert', 'Create Category Successful !');
+
+    }
+
+    //User Category
     public function category(){
         $product = Product::all();
         return view('users.product.category', compact('product'));
     }
     
-    //user search category
+    //User Search Category
     public function search(Request $request){
         $inEar = $request->input('CateInEar');
         $onEar = $request->input('CateOnEar');
