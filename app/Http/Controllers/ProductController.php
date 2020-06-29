@@ -59,6 +59,9 @@ class ProductController extends Controller {
         $gallery = Gallery::where('product_id', $id)->get();
         $category = Category::find($product->category_id);
         $quantity = 1;
+        //comment
+
+        //end comment
         return view('users.product.productDetails', compact('product','gallery','category','quantity'));
     }
 

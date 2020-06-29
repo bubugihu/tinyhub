@@ -80,23 +80,6 @@
 <section class="order-details no-padding-top"> 
     <div class="container">
       <div class="row">                         
-
-        {{-- <div class="col-lg-6">
-          <div class="block">
-            <div class="block-header">
-              <h6 class="text-uppercase">Order Summary</h6>
-            </div>
-            <div class="block-body">
-              <p>Shipping and additional costs are calculated based on values you have entered.</p>
-              <ul class="order-menu list-unstyled">
-              <li class="d-flex justify-content-between"><span>Order Subtotal </span><strong>{{Cart::pricetotal()}}</strong></li>
-                <li class="d-flex justify-content-between"><span>Shipping and handling</span><strong>{{number_format($ship,0,'.',',')}}</strong></li>
-                <li class="d-flex justify-content-between"><span>Tax</span><strong>{{Cart::tax()}}</strong></li>
-                <li class="d-flex justify-content-between"><span>Total</span><strong class="text-primary price-total">{{number_format($total,0,'.',',')}}</strong></li>
-              </ul>
-            </div>
-          </div>
-        </div> --}}
         <div class="col-lg-12 text-center CTAs"><a href="{{ url('checkout') }}" class="btn btn-template btn-lg wide">Proceed to checkout<i class="fa fa-long-arrow-right"></i></a></div>
       </div>
     </div>

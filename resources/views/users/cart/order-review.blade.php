@@ -25,39 +25,55 @@
           </div>
           <div class="basket-body">
             <!-- Product-->
+            @foreach($orderDetails as $cart )
             <div class="item mt-4">
               <div class="row d-flex align-items-center">
                 <div class="col-5">
-                  <div class="d-flex align-items-center"><img src="{{asset('img/gallery/true-wireless-jbl-4-4.png')}}" alt="..." class="img-fluid" width="80">
+                  <div class="d-flex align-items-center"><img src="{{asset('img/feature/'.$cart->feature_image)}}" alt="..." class="img-fluid" width="80">
                     <div class="title ml-4"><a href="detail.html">
-                        <h5>True wireless JBL</h5><span class="text-muted">Color: Black</span></a></div>
+                        <h5>{{$cart->product_title}}</h5><span class="text-muted">{{$cart->category_name}}</span></a></div>
                   </div>
                 </div>
-                <div class="col-2"><span>$65.00</span></div>
+                <div class="col-2"><span>${{$cart->price}}</span></div>
                 <div class="col-3">
                   <div class="d-flex align-items-center">
                     <div class="quantity d-flex align-items-center">
-                      <input type="text" value="4" class="quantity-no">
+                      <input type="text" value="{{$cart->quantity}}" class="quantity-no">
                     </div>
                   </div>
                 </div>
-                <div class="col-2"><span>$325.00</span></div>
+                <div class="col-2"><span>${{$cart->price*$cart->quantity}}</span></div>
               </div>
+              @endforeach
+
               <div class="row d-flex align-items-center">
-                <div class="col-5">
+                <div class="col-4">
                 </div>
-                <div class="col-2"></div>
-                
-                <div class="col-3">
-                  <div class="d-flex align-items-center">
-                    <div class="title text-primary">
-                      Order Total
-                    </div>
+                <div class="col-lg-4 tab-content">
+                  <div class="block-body order-summary">
+                      <ul class="order-menu list-unstyled">
+                          <li class="d-flex justify-content-between">
+                              <span>Order Subtotal</span>
+                              <strong>${{$subtotal}}</strong>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                              <span>Shipping and handling</span>
+                              <strong>$0.00</strong>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                              <span>Tax</span>
+                              <strong>${{$tax}}</strong>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                              <span>Total</span>
+                              <strong class="text-primary price-total">${{$total}}</strong>
+                          </li>
+                      </ul>
                   </div>
-                </div>
-                <div class="col-2"><span class="text-primary">$325.00</span></div>
               </div>
-            </div>  
+                <div class="col-4"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -56,14 +56,18 @@ Route::get('admin/profile', function(){
     return view('admin.profile.profile');
 });
 //role
-Route::get('home', 'RoleController@role');
-Route::post('admin', 'RoleController@role' );
-Route::get('admin', function(){
-    return redirect()->route('listProduct');
-})->middleware('role')->middleware('auth');
+// Route::get('home', 'RoleController@role');
+// Route::post('admin', 'RoleController@role' );
+// Route::get('admin', function(){
+//     return redirect()->route('listProduct');
+// })->middleware('role')->middleware('auth');
 //end admin
 
 ///////////////////////////Users
+//profile
+Route::get('users/profile', function(){
+    return view('users.profile.profile');
+});
 //Feedback
 Route::get('contact-us', function(){
     return view('contact-us');
@@ -109,19 +113,9 @@ Route::get('category', 'CategoryController@category');
 Route::post('category/search', 'CategoryController@search');
 //example product
 Route::get('product-detail/{id}', 'ProductController@productDetails');
-// Route::get('product-detail/{a}', function(){
-//     return abort(404);
-// })->where('a','[A-Za-z0-9]+');
 
-
+//Check cart
 Route::get('cart' , 'CartController@cart');
-Route::get('checkout' , function(){
-    return view('users.cart.checkout');
-})->middleware('auth');
-Route::get('order-review' , function(){
-    return view('users.cart.order-review');
-});
-
 //buy now
 Route::post('cart/shopping', 'CartController@shoppingCart');
 Route::get('cart/shopping','CartController@cart');
@@ -141,10 +135,16 @@ Route::get('cart/shopping/removeItem/{a}', function(){
     })->where('a','[A-Za-z0-9]+');
 
 //check out cart
-Route::post('cart/shopping/checkout', 'CartController@checkoutCart');
-Route::get('cart/shopping/checkout', function(){
+Route::get('checkout' , function(){
+    return view('users.cart.checkout');
+})->middleware('auth');
+Route::post('cart/shopping/order-review', 'CartController@orderReview');
+Route::get('cart/shopping/order-review', function(){
     return abort(404);
 });
+
+//order review 
+Route::get('cart/shopping/order-review', 'CartController@orderDetails');
 
 
 
