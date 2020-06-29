@@ -49,7 +49,7 @@ class CartController extends Controller
             $ship = 0;
         }
         $total = str_replace(',', '', Cart::total());
-        $total = $total + $tax + $ship;
+        $total = $total  + $ship;
         return view('users.cart.shopping-cart',compact('stt','ship','total'));
     }
 
@@ -74,5 +74,36 @@ class CartController extends Controller
         return back();
     }
 
+
+    //incre Cart
+    public function increCart(Request $request){
+        $qtyNew = $request->qtyItemCart + 1;
+        $idItem = $request->idIncreCart;
+        Cart::update($idItem,[
+            'qty' =>$qtyNew
+        ]);
+        return back();
+    }
+
+    //decre Cart
+    public function decreCart(Request $request){
+        $qtyNew = $request->qtyItemCart - 1;
+        $idItem = $request->idDecreCart;
+        Cart::update($idItem,[
+            'qty' =>$qtyNew,
+        ]);
+        return back();
+    }
+
+    //remove Item
+    public function removeItem(Request $request, $id){
+        Cart::remove($id);
+        return back();        
+    }
+
+    //check out cart
+    public function checkoutCart(Request $request){
+        return back();
+    }
     
 }

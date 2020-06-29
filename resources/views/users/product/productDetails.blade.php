@@ -63,7 +63,7 @@
             <div class="row d-flex justify-content-around align-items-center py-4">
                 <div class=" col-md-3 quantity d-flex align-items-center justify-content-center">
                     <button type="button" class="dec-btn"  onclick="decre()" >-</button>
-                    <input type="number" id="1" value="{{$quantity}}" name="quantityNumber" class="quantity-no rounded" >
+                    <input type="number" id="1" value="{{$quantity}}" name="quantityNumber" min="1" class="quantity-no rounded" >
                     <button type="button" class="inc-btn"  onclick="incre()" >+</button>
                 </div>
                 <div class="col-md-5">
@@ -75,7 +75,7 @@
             <form action="{{url('cart/shopping')}}" method="POST">
                 {{csrf_field()}}
                 <input type="hidden" name="idProduct" value="{{$product->id}}">
-                <input type="number" id="2" name="addQuantity" style="display:none" value="{{$quantity}}">
+                <input type="number" id="2" name="addQuantity" style="display:none" min="1" value="{{$quantity}}">
                     <button type="submit" class="btn btn-success wide btn-md btn-block"><b>Buy Now</b></button>
                 
             </form>

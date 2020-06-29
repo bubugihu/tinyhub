@@ -79,4 +79,6 @@ class CategoryController extends Controller
                 return view('users.product.category', compact('product','message'));    
     }
     }
+
+    
 }

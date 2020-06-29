@@ -36,7 +36,7 @@ Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::post('admin/product/postCreate', 'ProductController@postCreate');
 //category
 Route::get('admin/category/categories', 'CategoryController@categories');
-
+Route::post('admin/category/createCate', 'CategoryController@createCategory');
 //brands
 Route::get('admin/brands/listBrands' , 'BrandsController@listBrands');
 Route::get('admin/brands/createBrands' , 'BrandsController@createBrand');
@@ -103,12 +103,16 @@ Route::get('logout', function () {
     return redirect()->route('homepage');
 })->name('logout');
 
-////// User cart
-//category
+//////////////////////////// User cart
+//////////////category
 Route::get('category', 'CategoryController@category');
 Route::post('category/search', 'CategoryController@search');
 //example product
 Route::get('product-detail/{id}', 'ProductController@productDetails');
+// Route::get('product-detail/{a}', function(){
+//     return abort(404);
+// })->where('a','[A-Za-z0-9]+');
+
 
 Route::get('cart' , 'CartController@cart');
 Route::get('checkout' , function(){
@@ -123,8 +127,29 @@ Route::post('cart/shopping', 'CartController@shoppingCart');
 Route::get('cart/shopping','CartController@cart');
 //add cart
 Route::post('cart/addCart/{id}', 'CartController@addCart');
+Route::get('cart/addCart/{a}', function(){
+    return abort(404);
+})->where('a','[A-Za-z0-9]+');
+// incre item
+Route::post('cart/shopping/increItem', 'CartController@increCart');
+//decre item
+Route::post('cart/shopping/decreItem','CartController@decreCart');
+//remove item
+Route::post('cart/shopping/removeItem/{id}', 'CartController@removeItem');
+Route::get('cart/shopping/removeItem/{a}', function(){
+        return abort(404);
+    })->where('a','[A-Za-z0-9]+');
+
+//check out cart
+Route::post('cart/shopping/checkout', 'CartController@checkoutCart');
+Route::get('cart/shopping/checkout', function(){
+    return abort(404);
+});
 
 
+
+
+/////////////////////////end cart
 Route::get('search', [
 		'as' => 'search',
 		'uses' => 'SearchKeyController@getSearch'

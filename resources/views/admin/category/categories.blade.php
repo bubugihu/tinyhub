@@ -21,20 +21,24 @@
                       <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                     </div>
                     <div class="modal-body">
-                      <form action="" method="POST" enctype="multipart/form-data">
+
+                      {{--Form create cate--}}
+                      <form action="{{url('admin/category/createCate')}}" method="post" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
                           <label class="form-control-label text-uppercase">Category Title</label>
-                          <input type="text" name="" class="form-control" required>
+                          <input type="text" name="title" class="form-control" required>
                         </div>
                         <div class="form-group">
                           <label class="form-control-label text-uppercase">Description</label>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                          <textarea class="form-control" name="descript" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                         <div class="form-group d-flex bd-highlight">
-                          <input type="submit" value="Update" class="btn btn-primary  flex-fill bd-highlight">
+                          <input type="submit" value="Create" class="btn btn-primary  flex-fill bd-highlight">
                           <input type="reset" value="Reset" class="btn btn-warning flex-fill  bd-highlight" style="margin-left: 15px;">
                         </div>
                       </form>
+                      {{-- end Form create cate--}}
                     </div>
                   </div>
                 </div>

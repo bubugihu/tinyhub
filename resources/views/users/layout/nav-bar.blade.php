@@ -15,7 +15,7 @@
                   @else
               <a href="{{ url('admin/index') }}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a> 
                   @endif   
-              <a href="{{ url('/logout') }}" class="res-info badge" >Log Out</a>
+              <a href="{{ url('/logout') }}" class="res-info badge" onclick="return confirm('Do you want log out ?');" >Log Out</a>
                 @endauth
                   @guest
                   <li class="nav-item">
