@@ -97,6 +97,7 @@
                 <strong>{{ $message  ?? ''  }}</strong>
             </h2>
             @else
+            
             <div class="row product_list">
                 @foreach($product as $product)
                 <div class="col-xl-4">
@@ -109,7 +110,7 @@
                         </div>
                         <div class="product_content">
                             <h3 class="title"><a href="{{ url('product-detail/'.$product->id)}}">{{$product->product_title}}</a></h3>
-                            <div class="price">{{$product->price}}</div>
+                            <div class="price">$ {{$product->price}}</div>
                         </div>
                     </div>
                 </div>

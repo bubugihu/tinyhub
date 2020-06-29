@@ -118,27 +118,24 @@
                 ]
                 });
             })
+
+        $(function () {
+            $('a[href="#search"]').on('click', function(event) {
+                event.preventDefault();
+                $('#search').addClass('open');
+                $('#search > form > input[type="search"]').focus();
+            });
+            
+            $('#search, #search button.close').on('click keyup', function(event) {
+                if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+                    $(this).removeClass('open');
+                }
+            }); 
+        });
   </script>
   <script>
-    var city = document.querySelector('#city');
-    var district = document.querySelector('#district');
-    var options2 = district.querySelectorAll('option');
-
-    function giveSelection(selValue) {
-        district.innerHTML = ''; //onchange
-        for (var i = 0; i < options2.length; i++) {
-            if (options2[i].dataset.option === selValue) {
-                district.appendChild(options2[i]);
-            }
-        }
+    if ( window.history.replaceState ) {
+      window.history.replaceState( null, null, window.location.href );
     }
-    giveSelection(city.value);
-</script>
-
-<script>
-$(document).ready(function () {
-  $('#dtBasicExample').DataTable();
-  $('.dataTables_length').addClass('bs-select');
-});
-</script>
+    </script>
 @endsection

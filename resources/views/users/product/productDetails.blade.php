@@ -47,18 +47,33 @@
             <div class="row">
                 <p class="product_description">{{$product->short_descriptions}}</p>
             </div>
-            <!-- <form action="{{url('cart/addCart/'.$product->id)}}" method="POST">
+
+            {{--Form Cart--}}
+            <form action="{{url('cart/addCart/'.$product->id)}}" method="POST">
                 @csrf
-                <div class="row d-flex justify-content-around align-items-center py-4">
-                    <div class=" col-md-3 quantity d-flex align-items-center justify-content-center">
-                        <button type="button" class="dec-btn" onclick="decre()">-</button>
-                        <input type="number" id="1" value="" name="quantityNumber" min="1" class="quantity-no rounded">
-                        <button type="button" class="inc-btn" onclick="incre()">+</button>
-                    </div>
-                    <div class="col-md-5">
-                        <button type="submit" class="btn btn-dark wide btn-md btn-block"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                    </div>
-            </form> -->
+            <div class="row d-flex justify-content-around align-items-center py-4">
+                <div class=" col-md-3 quantity d-flex align-items-center justify-content-center">
+                    <button type="button" class="dec-btn"  onclick="decre()" >-</button>
+                    <input type="number" id="1" value="{{$quantity}}" name="quantityNumber" min="1" class="quantity-no rounded" >
+                    <button type="button" class="inc-btn"  onclick="incre()" >+</button>
+                </div>
+                <div class="col-md-5">
+                    <button type="submit" class="btn btn-dark wide btn-md btn-block"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                </div>
+            </form>
+            {{--End Form--}}
+            {{--Form--}}
+            <form action="{{url('cart/shopping')}}" method="POST">
+                {{csrf_field()}}
+                <input type="hidden" name="idProduct" value="{{$product->id}}">
+                <input type="number" id="2" name="addQuantity" style="display:none" min="1" value="{{$quantity}}">
+                    <button type="submit" class="btn btn-success wide btn-md btn-block"><b>Buy Now</b></button>
+                
+            </form>
+                {{--End Form--}}
+            </div>
+            
+
             <div class="row">
                 <div class="col-lg-6 py-3">
                     <h6 class="text-uppercase"><i class="fas fa-truck"></i> SHIPPING & DELIVERY</h6>
@@ -101,14 +116,23 @@
                             <p></p>
                         </div>
                     </div>
-                     -->
-                     {{--@auth--}}
-                    <!--<div class="row review">
+                    <div class="row review">
+                        <div class="col-3 text-center"><img src="img/quang.jpg" alt="Quang Dang" class="review-image"><span>Dec 2018</span></div>
+                        <div class="col-9 review-text">
+                            <h6>Quang Dang</h6>
+                            <hr width="100%">
+                            <p>The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream.</p>
+                        </div>
+                    </div>
+
+                    {{-- Check Auth--}}
+                    @auth
+                    <div class="row review">
                         <div class="col-3 text-center"><img src="img/quang.jpg" alt="Quang Dang" class="review-image"><span>Dec 2018</span></div>
                         <div class="col-9 review-text">
                             <form action="">
                                 <div>
-                                    <h6></h6>
+                                    <h6>{{Auth::user()->name}}</h6>
                                     <hr width="100%">
                                 </div>
                                 <div class="form-group">
@@ -119,8 +143,10 @@
                                 </div>
                             </form>
                         </div>
-                    </div>-->
-                    {{--@endauth --}}
+                    </div>
+                    @endauth
+                    {{--End auth--}}
+
                 </div>
             </div>
         </div>
@@ -198,62 +224,16 @@
         </div>
     </div>
 </div>
-
-<script>
-    $(document).ready(function() {
-        $("#content-slider").lightSlider({
-            loop: true,
-            keyPress: true
-        });
-        $('#image-gallery').lightSlider({
-            gallery: true,
-            item: 1,
-            thumbItem: 9,
-            slideMargin: 0,
-            speed: 500,
-            auto: true,
-            loop: true,
-            onSliderLoad: function() {
-                $('#image-gallery').removeClass('cS-hidden');
-            }
-        });
-    });
-</script>
-
-<style>
-    ul {
-        list-style: none outside none;
-    }
-
-    /* .demo .item {
-        margin-bottom: 60px;
-    }
-
-    .content-slider li {
-        background-color: #ed3020;
-        text-align: center;
-        color: #FFF;
-    }
-
-    .content-slider h3 {
-        margin: 0;
-        padding: 70px 0;
-    }
-
-    .demo {
-        width: 800px;
-    } */
-</style>
-
-<script>
-    function incre() {
-        document.getElementById("1").stepUp(1);
-        document.getElementById("2").stepUp(1);
-    }
-
-    function decre() {
-        document.getElementById("1").stepDown(1);
-        document.getElementById("2").stepDown(1);
-    }
-</script>
 @endsection
+
+<script>
+function incre(){
+    document.getElementById("1").stepUp(1);
+    document.getElementById("2").stepUp(1);
+}
+function decre(){
+    document.getElementById("1").stepDown(1);
+    document.getElementById("2").stepDown(1);
+}
+
+</script>

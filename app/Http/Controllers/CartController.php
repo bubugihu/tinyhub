@@ -5,39 +5,105 @@ namespace App\Http\Controllers;
 use App\OrderDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Cart;
+use App\Product;
+use App\Category;
+use Closure;
 class CartController extends Controller
 {   
-    //in cart
+    //see cart
     public function cart(){
-        if(Auth::check()){
-        $carts = OrderDetail::join('product','product.id','=','order_details.product_id')
-                            ->join('category','category.id','=','product.category_id')
-                            ->join('order', 'order.id', '=', 'order_details.order_id')
-                            ->join('customer', 'customer.id', '=' , 'order.customer_id')
-                            ->join('users', 'users.id', '=', 'customer.users_id')
-                            ->where('users.id', Auth::user()->id)
-                            ->select('product.*','category.category_name')
-                            ->get();
-        // $total = OrderDetail::selectRaw('product_id, Sum(quantity) as quantity')->groupBy('product_id')->first();                    
-                           
-        return view('users.cart.shopping-cart', compact('carts'));
-        }else{
-            $carts = OrderDetail::join('product','product.id','=','order_details.product_id')
-            ->join('category','category.id','=','product.category_id')
-            ->join('order', 'order.id', '=', 'order_details.order_id')
-            ->join('customer', 'customer.id', '=' , 'order.customer_id')
-            ->join('users', 'users.id', '=', 'customer.users_id')
-            ->select('users.*', 'customer.*', 'order.*','order_details.*','product.*','category.*')
-            ->get();
-                    
-        return view('users.cart.shopping-cart', compact('carts'));
+        $stt = 0;
+        $ship = 100;
+        $subtotal = str_replace(',', '', Cart::subtotal());
+        if($subtotal >= 3000){
+            $ship = 0;
         }
+        $total = str_replace(',', '', Cart::total());
+        $total = $total + $ship;
+        
+        return view('users.cart.shopping-cart', compact('stt','ship','total'));
+    }
+    //in cart
+    public function shoppingCart(Request $request){
+        $id= $request->idProduct;
+        $quantity = $request->addQuantity;
+        $stt = 0;                     
+        $product = Product::find($id);
+        $category = Category::find($product->category_id)->category_name;
+        Cart::setGlobalTax(10);
+            Cart::add([
+                'id' => $id,
+                'name' => $product->product_title,
+                'qty' => $quantity,
+                'price' => $product->price,
+                'weight' => 0,
+                'options'=>[
+                    'cate' => $category,
+                    'image'=> $product->feature_image
+                ],
+            ]);
+        $ship = 100;
+        $subtotal = str_replace(',', '', Cart::subtotal());
+        if($subtotal >= 3000){
+            $ship = 0;
+        }
+        $total = str_replace(',', '', Cart::total());
+        $total = $total  + $ship;
+        return view('users.cart.shopping-cart',compact('stt','ship','total'));
     }
 
     //add cart
     public function addCart(Request $request,$id){
-        if(Auth::check()){
-            
-        }
+        $quantity = $request->quantityNumber;
+        $product = Product::find($id);
+        $category = Category::find($product->category_id)->category_name;
+        Cart::add([
+                'id' => $id,
+                'name' => $product->product_title,
+                'qty' => $quantity,
+                'price' => $product->price,
+                'weight' => 0,
+                'options'=>[
+                    'cate' => $category,
+                    'image'=> $product->feature_image
+                ],
+        ]);
+        
+        // return view('users.cart.shopping-cart',compact('stt'));
+        return back();
     }
+
+
+    //incre Cart
+    public function increCart(Request $request){
+        $qtyNew = $request->qtyItemCart + 1;
+        $idItem = $request->idIncreCart;
+        Cart::update($idItem,[
+            'qty' =>$qtyNew
+        ]);
+        return back();
+    }
+
+    //decre Cart
+    public function decreCart(Request $request){
+        $qtyNew = $request->qtyItemCart - 1;
+        $idItem = $request->idDecreCart;
+        Cart::update($idItem,[
+            'qty' =>$qtyNew,
+        ]);
+        return back();
+    }
+
+    //remove Item
+    public function removeItem(Request $request, $id){
+        Cart::remove($id);
+        return back();        
+    }
+
+    //check out cart
+    public function checkoutCart(Request $request){
+        return back();
+    }
+    
 }
