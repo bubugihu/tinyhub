@@ -45,6 +45,7 @@ Route::get('admin/order/listOrder', 'OrderController@listOrder');
 
 //comment
 Route::get('admin/comment/listComment', 'CommentController@listComment');
+
 //banner
 Route::get('admin/banners/listBanner' , 'BannerController@listBanner');
 Route::get('admin/banners/createBanner' , 'BannerController@createBanner');
@@ -100,13 +101,17 @@ Route::get('logout', function () {
     Auth::logout();
     return redirect()->route('homepage');
 })->name('logout');
-
+//comments
+Route::get('product-comments', 'CommentController@productComment');
 ////// User cart
 //category
 Route::get('category', 'CategoryController@category');
 Route::post('category/search', 'CategoryController@search');
 //example product
 Route::get('product-detail/{id}', 'ProductController@productDetails');
+
+// //example image product
+// Route::get('product-detail/{id}', 'ProductController@imageProduct');
 
 Route::get('cart' , 'CartController@cart');
 Route::get('checkout' , function(){
@@ -126,9 +131,8 @@ Route::post('cart/addCart/{id}', 'CartController@addCart');
 
 
 
-Route::get('report-product' , function(){
-    return view('users.product.report');
-});
+Route::get('reportProduct' , 'ProductController@reportProduct');
+
 Route::get('users/profile' , function(){
     return view('users.profile.profile');
 });

@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="{{asset("css/product-details.css")}}">
     <link rel="stylesheet" href="{{asset("css/product-list.css")}}">
     <link rel="stylesheet" href="{{asset("css/google-fonts-poppins.css")}}">
+    <!-- lightSlider -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{asset("css/lightslider.css")}}">
     <style>
         /* Cart */
         body{
@@ -180,5 +183,7 @@
     @yield('script-section')
     <!-- data table -->
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <!-- light Slider -->
+    <script src="{{asset("js/lightslider.js")}}"></script>
 </body>
 </html>

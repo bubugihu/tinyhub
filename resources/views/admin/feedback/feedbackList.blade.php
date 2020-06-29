@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'product list')
+@section('title', 'Feedback list')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
   <div class="container-fluid px-xl-5">
@@ -231,4 +231,5 @@
       </div>
     </section>
   </div>
-  @endsection
+</div>
+@endsection

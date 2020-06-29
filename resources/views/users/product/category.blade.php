@@ -24,8 +24,8 @@
                     <h6 class="text-uppercase">Headphone Type</h6>
                     <hr width="100%" style="margin-left: 0;">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="category1" name="CateInEar" value="In Ear" >
-                        <label class="custom-control-label" for="category1" >In Ear</label>
+                        <input type="checkbox" class="custom-control-input" id="category1" name="CateInEar" value="In Ear">
+                        <label class="custom-control-label" for="category1">In Ear</label>
                     </div>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="category2" name="CateOnEar" value="On Ear">
@@ -97,9 +97,7 @@
                 <strong>{{ $message  ?? ''  }}</strong>
             </h2>
             @else
-
             <div class="row product_list">
-
                 @foreach($product as $product)
                 <div class="col-xl-4">
                     <div class="product_grid card-body card">

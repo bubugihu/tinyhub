@@ -26,5 +26,7 @@ class Product extends Model {
         return $this->hasMany(Gallery::class);
     }
     //
-    
+    public function roleComment(){
+        return $this->hasMany(Comment::class);
+    }
 }

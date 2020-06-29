@@ -1,6 +1,7 @@
 @extends('users.layout.layout')
 @section('title', 'Product Details')
 @section('content')
+<!-- Product Title: Peoduct Details -->
 <div class="hero hero-page padding-small">
     <div class="container">
         <div class="row d-flex">
@@ -11,35 +12,25 @@
         </div>
     </div>
 </div>
+<!-- Product Details -->
 <div class="container product_details py-5">
     <div class="row">
         <!-- Product Image -->
         <div class="col-lg-6">
             <div class="product-slider">
-
-
-                <div id="CarouselProduct" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item  active"> <img class="rounded" src="{{url("img/headphone-slider2.png")}}" height="auto" width="90%"> </div>
-                        <div class="carousel-item "> <img class="rounded" src="{{url("img/headphone-slider1.png")}}" height="auto" width="90%"> </div>
-                        <div class="carousel-item "> <img class="rounded" src="{{url("img/headphone-slider2.png")}}" height="auto" width="90%"> </div>
-                        <div class="carousel-item "> <img class="rounded" src="{{url("img/headphone-slider1.png")}}" height="auto" width="90%"> </div>
-                        <div class="carousel-item "> <img class="rounded" src="{{url("img/headphone-slider2.png")}}" height="auto" width="90%"> </div>
-                    </div>
-                </div>
-                <div id="ThumbProduct" class="carousel slide" data-interval="false">
-                    <div class="carousel-inner">
-                        <div class="item active">
-
-                            @foreach( $gallery as $gallery)
-                            <div data-target="#CarouselProduct{{$gallery->product_gallery}}" data-slide-to="0" class="SubThumbProduct rounded"><img src="{{asset("img/gallery/$gallery->product_gallery")}}" class="rounded"></div>
-                            @endforeach
-
+                <div class="demo">
+                    <div class="item d-flex justify-content-center">
+                        <div class="clearfix " style="width:70%; height: auto;">
+                            <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+                                @foreach( $gallery as $gallery)
+                                <li data-thumb="{{asset("img/gallery/$gallery->product_gallery")}}">
+                                    <img src="{{asset("img/gallery/$gallery->product_gallery")}}" class="rounded mx-auto d-block" />
+                                </li>
+                                @endforeach
+                            </ul>
                         </div>
                     </div>
                 </div>
-
-                
             </div>
         </div>
         <!-- Product Info-->
@@ -56,25 +47,18 @@
             <div class="row">
                 <p class="product_description">{{$product->short_descriptions}}</p>
             </div>
-
-            {{--Form Cart--}}
-            <form action="{{url('cart/addCart/'.$product->id)}}" method="post">
-            <div class="row d-flex justify-content-around align-items-center py-4">
-                <div class=" col-md-3 quantity d-flex align-items-center justify-content-center">
-                    <div class="dec-btn">-</div>
-                    <input type="text" value="1" name="quantity" class="quantity-no rounded">
-                    <div class="inc-btn">+</div>
-                </div>
-                <div class="col-md-5">
-                    <button  type="submit" class="btn btn-success wide btn-md btn-block"><b>Buy Now</b></button>
-                </div>
-                <div class="col-md-4">
-                    <button type="submit" class="btn btn-dark wide btn-md btn-block"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-                </div>
-            </div>
-            </form>
-            {{--End Form--}}
-
+            <!-- <form action="{{url('cart/addCart/'.$product->id)}}" method="POST">
+                @csrf
+                <div class="row d-flex justify-content-around align-items-center py-4">
+                    <div class=" col-md-3 quantity d-flex align-items-center justify-content-center">
+                        <button type="button" class="dec-btn" onclick="decre()">-</button>
+                        <input type="number" id="1" value="" name="quantityNumber" min="1" class="quantity-no rounded">
+                        <button type="button" class="inc-btn" onclick="incre()">+</button>
+                    </div>
+                    <div class="col-md-5">
+                        <button type="submit" class="btn btn-dark wide btn-md btn-block"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+            </form> -->
             <div class="row">
                 <div class="col-lg-6 py-3">
                     <h6 class="text-uppercase"><i class="fas fa-truck"></i> SHIPPING & DELIVERY</h6>
@@ -95,63 +79,36 @@
         </div>
     </div>
 </div>
+<!-- Product Description-->
 <div class="container product-description bg-white card mb-5">
     <div class="row py-3">
-        <div class="col m-3">
-            <ul class="nav nav-pills">
-                <li class="nav-item"><a data-toggle="tab" href="#description" class="nav-link active" aria-selected="true">Description</a></li>
-                <li class="nav-item"><a data-toggle="tab" href="#additional-information" class="nav-link" aria-selected="false">Additional Information</a></li>
-                <li class="nav-item"><a data-toggle="tab" href="#reviews" class="nav-link" aria-selected="false">Reviews</a></li>
+        <div class="col m-3 ">
+            <ul class="nav nav-pills d-flex justify-content-center">
+                <li class="nav-item"><a data-toggle="tab" href="#description" class="nav-link active" aria-selected="true" style="margin-right: 15px;">Description</a></li>
+                <li class="nav-item"><a data-toggle="tab" href="#reviews" class="nav-link" aria-selected="false" style="margin-left: 15px;">Reviews</a></li>
             </ul>
             <div class="tab-content">
                 <div id="description" class="tab-pane active">
-                   <p>{{$product->long_descriptions}}</p>
-                </div>
-                <div id="additional-information" class="tab-pane">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <th class="border-0" width="250">Material:</th>
-                                <td class="border-0">Cotton</td>
-                            </tr>
-                            <tr>
-                                <th>Styles:</th>
-                                <td>Casual</td>
-                            </tr>
-                            <tr>
-                                <th>Properties:</th>
-                                <td>Short Sleeve</td>
-                            </tr>
-                            <tr>
-                                <th>Brand:</th>
-                                <td>Calvin Klein</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <p>{{$product->long_descriptions}}</p>
                 </div>
                 <div id="reviews" class="tab-pane">
+                    <!-- 
                     <div class="row review">
-                        <div class="col-3 text-center"><img src="img/na.jpg" alt="Na Nguyen" class="review-image"><span>Dec 2018</span></div>
+                        <div class="col-3 text-center"><img src="" alt="Na Nguyen" class="review-image"><span></span></div>
                         <div class="col-9 review-text">
                             <h6>Na Nguyen</h6>
                             <hr width="100%">
-                            <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections</p>
+                            <p></p>
                         </div>
                     </div>
-                    <div class="row review">
-                        <div class="col-3 text-center"><img src="img/quang.jpg" alt="Quang Dang" class="review-image"><span>Dec 2018</span></div>
-                        <div class="col-9 review-text">
-                            <h6>Quang Dang</h6>
-                            <hr width="100%">
-                            <p>The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought. It wasn't a dream.</p>
-                        </div>
-                    </div>
-                    <div class="row review">
+                     -->
+                     {{--@auth--}}
+                    <!--<div class="row review">
                         <div class="col-3 text-center"><img src="img/quang.jpg" alt="Quang Dang" class="review-image"><span>Dec 2018</span></div>
                         <div class="col-9 review-text">
                             <form action="">
                                 <div>
-                                    <h6>Quang Dang</h6>
+                                    <h6></h6>
                                     <hr width="100%">
                                 </div>
                                 <div class="form-group">
@@ -162,13 +119,14 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div>-->
+                    {{--@endauth --}}
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Product Title -->
+<!-- Product Title: You May Also Like -->
 <div class="hero hero-page gray-bg padding-small">
     <div class="container">
         <div class="row d-flex">
@@ -179,6 +137,7 @@
         </div>
     </div>
 </div>
+<!-- Similar Product -->
 <div class="container">
     <div class="row py-5">
         <div class="col-xl-3">
@@ -239,4 +198,62 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $("#content-slider").lightSlider({
+            loop: true,
+            keyPress: true
+        });
+        $('#image-gallery').lightSlider({
+            gallery: true,
+            item: 1,
+            thumbItem: 9,
+            slideMargin: 0,
+            speed: 500,
+            auto: true,
+            loop: true,
+            onSliderLoad: function() {
+                $('#image-gallery').removeClass('cS-hidden');
+            }
+        });
+    });
+</script>
+
+<style>
+    ul {
+        list-style: none outside none;
+    }
+
+    /* .demo .item {
+        margin-bottom: 60px;
+    }
+
+    .content-slider li {
+        background-color: #ed3020;
+        text-align: center;
+        color: #FFF;
+    }
+
+    .content-slider h3 {
+        margin: 0;
+        padding: 70px 0;
+    }
+
+    .demo {
+        width: 800px;
+    } */
+</style>
+
+<script>
+    function incre() {
+        document.getElementById("1").stepUp(1);
+        document.getElementById("2").stepUp(1);
+    }
+
+    function decre() {
+        document.getElementById("1").stepDown(1);
+        document.getElementById("2").stepDown(1);
+    }
+</script>
 @endsection
