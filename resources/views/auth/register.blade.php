@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        {{--userName --}}
+                        
                               <div class="form-group row">
                                 <div class="col-6">
                                     <label class="form-control-label text-uppercase">User Name</label>

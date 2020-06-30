@@ -11,7 +11,7 @@
                 <h6 class="text-uppercase mb-0">Order List</h6>
               </div>
               <div class="card-body">
-                <table class="table card-text">
+                <table class="table card-text" id="dbtable">
                   <thead>
                     <tr>
                       <th>Order ID</th>

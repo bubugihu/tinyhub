@@ -3,25 +3,46 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Middleware\Admin;
+use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 use App\Product;
 
 class CategoryController extends Controller
 {   
-    //admin category
+    //Admin Category
     public function categories(){
-        $cate = Category::all();
-        return view('admin.category.categories', compact('cate'));
+        $cates = Category::paginate(5);
+        return view('admin.category.categories', compact('cates'));
     }
 
-    //user category
+    public function createCate(){
+        return view('admin.category.createCategories');
+    }
+
+    // Post Create Categories
+    public function postCate(CategoryRequest $request){
+
+        // $category = $request->all();
+        $c = new Category();
+        $c->category_name = $request->cateTitle;
+        $c->description = $request->cateDescription;
+        $c->save();
+        
+        //session()->put('alert', 'Create Category Successful !');
+        // return redirect('admin/category/postCate')-;
+        return redirect()->action('CategoryController@categories')->with(['flash_level' => 'success','flash_message' => 'Created Successfully !' ]);
+
+    }
+
+    //User Category
     public function category(){
         $product = Product::all();
         return view('users.product.category', compact('product'));
     }
     
-    //user search category
-    public function search(Request $request){    
+    //User Search Category
+    public function search(Request $request){
         $inEar = $request->input('CateInEar');
         $onEar = $request->input('CateOnEar');
         $trueWireless = $request->input(('CateTrueWire'));

@@ -23,7 +23,8 @@ Route::get('/', function() {
 //////////////////admin
 //users
 Route::get('admin/users/listUsers', 'UserController@listUsers');
-Route::get('admin/users/createUser', 'UserController@createUser');
+Route::get('admin/users/createUser', 'UserController@createUserForm');
+Route::post('admin/users/createUser', 'UserController@createUser');
 Route::get('admin/users/updateUser' , 'UserController@updateUser');
 //customer
 Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');
@@ -36,7 +37,8 @@ Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::post('admin/product/postCreate', 'ProductController@postCreate');
 //category
 Route::get('admin/category/categories', 'CategoryController@categories');
-Route::post('admin/category/createCate', 'CategoryController@createCategory');
+Route::get('admin/category/createCategories', 'CategoryController@createCate');
+Route::post('admin/category/postCate', 'CategoryController@postCate');
 //brands
 Route::get('admin/brands/listBrands' , 'BrandsController@listBrands');
 Route::get('admin/brands/createBrands' , 'BrandsController@createBrand');

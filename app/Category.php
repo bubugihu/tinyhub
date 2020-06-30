@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $table="category";
-    public $timestamps=false;
-    public $fillable =['id' , 'category_name', 'description'];
 
+    public $fillable =['id' , 'category_name', 'description'];
+    public $timestamps = false; // Force to have
+    public $incrementing = true; // Force to have
     public function roleProduct(){
         return $this->hasMany(Product::class);
     }

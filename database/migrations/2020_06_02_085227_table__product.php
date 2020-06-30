@@ -24,8 +24,7 @@ class TableProduct extends Migration
             $table->integer('status')->default(0);           //còn hàng hay ko ? 0 hết, 1 còn
             $table->integer('sold_out')->default(0);        //số lượng đã bán
             $table->string('feature_image');
-            $table->dateTime('warranty_period');
-            $table->dateTime('create_product')->default(Carbon::now());
+            $table->integer('warranty_period');
             $table->integer('category_id')->unsigned();        //foreign key
             $table->integer('brand_id')->unsigned();       //foreign key
             $table->timestamps();
