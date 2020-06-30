@@ -6,13 +6,12 @@
         <div class="col-md-7">
             <div class="card">
                 <div class="card-header bg-dark text-white">
-                    
                     <h3 class="text-center">Register</h3>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        {{--userName --}}
+                        
                               <div class="form-group row">
                                 <div class="col-6">
                                     <label class="form-control-label text-uppercase">User Name</label>
@@ -40,7 +39,7 @@
                               <div class="form-group row">
                                     <div class="col-6">
                                         <label class="form-control-label text-uppercase">BirthDay</label>
-                                        <input type="date" name="dob" class="form-control " max="2006-31-01">
+                                        <input type="date" name="dob" class="form-control "  min="1900-01-01" max="2006-12-31">
                                     </div>
                                     <div class="col-6">
                                         <label class="form-control-label text-uppercase">Gender</label>
@@ -105,21 +104,9 @@
                                 @enderror
 
                               </div>
-                              <div class="form-group">
-                                <label class="form-control-label text-uppercase">Avatar</label>
-                              </div>
-                            <div class="custom-file ">
-                                <input type="file" class="custom-file-input @error('file') is-invalid @enderror" name="feature" aria-describedby="inputGroupFileAddon01">
-                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-
-                                @error('file')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                            </div>
-                            </div>
+                              
+                            
+                </div>
                             <div class="form-group row mb-0">
                                 <div class="col-md-12 offset-md-4">
                                     <button type="reset" class="btn btn-dark">
@@ -131,9 +118,9 @@
                                 </div>
                             </div>
                     </form>
-                </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

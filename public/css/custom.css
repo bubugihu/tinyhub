@@ -21,3 +21,12 @@ a.badge-del {
     background-color: #F9665E;
     color:#fff;
 }
+
+/*** Pagination ***/
+ul.pagination li a {
+    color: #000;
+}
+.page-item.active .page-link {
+    background: #000!important;
+    border-color: #000!important;
+}

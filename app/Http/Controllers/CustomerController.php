@@ -10,10 +10,16 @@ use App\User;
 
 class CustomerController extends Controller
 {
-    public function listCustomer(){
-        $customer = Customers::join('users','users.id','=','customer.users_id')
-        ->select('users.*','customer.*')
-        ->get();
+    public function listCustomer()
+    {
+        $customer = Customers::join('users', 'users.id', '=', 'customer.users_id')
+            ->select('users.*', 'customer.*')
+            ->get();
         return view('admin/customer/listCustomer', compact('customer'));
+    }
+    public function updateCustomer($id)
+    {
+        $customer = Customers::find($id);
+        return view('admin.customer.updateCustomer', compact('customer'));
     }
 }

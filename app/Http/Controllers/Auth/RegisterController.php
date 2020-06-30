@@ -81,7 +81,7 @@ class RegisterController extends Controller
             'gender'        =>  $data['gender'],
             'phone'         =>  $data['phone'],
             'address'       =>  $data['address'],
-            'feature'       =>  'in-ear-jbl-1-1.jpg',
+            'feature'       =>  'tinyhub-logo-footer.png',
             'users_id'      =>  $user->id,
         ]);
         return $user;

@@ -118,26 +118,26 @@
                     @auth
                     <div class="row review d-flex justify-content-center">
                         <div class="col-3 text-center"><img src="{{asset("$customer")}}" alt="{{Auth::user()->name}}" class="review-image"><span></span></div>
-                        <div class="col-9 review-text" style="padding-right: 65px;>
+                        <div class="col-9 review-text" style="padding-right: 65px;">
                             <form action="">
                                 <div>
                                     <h6>{{Auth::user()->name}}</h6>
                                     <hr width=" 100%">
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="" id="" class="form-control" placeholder="Looks like you want to share something ?"></textarea>
+                                </div>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" class="btn btn-success" value="Post">
+                                </div>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <textarea name="" id="" class="form-control" placeholder="Looks like you want to share something ?"></textarea>
-                        </div>
-                        <div class="form-group d-flex justify-content-center">
-                            <input type="submit" class="btn btn-success" value="Post">
-                        </div>
-                        </form>
                     </div>
+                    @endauth
                 </div>
-                @endauth
             </div>
         </div>
     </div>
-</div>
 </div>
 <!-- Product Title: You May Also Like -->
 <div class="hero hero-page gray-bg padding-small">

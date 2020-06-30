@@ -1,7 +1,7 @@
 @extends('users.layout.layout')
 @section('title','Checkout')
 @section('checkout')
-    <!-- check out form -->
+    
     <div class="hero hero-page padding-small">
         <div class="container">
             <div class="row d-flex">
@@ -18,19 +18,18 @@
                 <div class="col-lg-8">
                     <div class="tab-content">
                         <div id="address" class="active tab-block">
-                            <form action="">
                                 <!--Invoice Address -->
                                 <div class="block-header mb-5">
                                     <h6>Delivery Address</h6>
                                 </div>
 
                                 {{--Form Check out--}}
-                                <form action="cart/shopping/checkout" method="post">
+                                <form action="{{url('cart/shopping/order-review')}}" method="post">
                                     @csrf
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label for="firstname" class="form-label">Full Name</label>
-                                        <input type="text" id="firstname" name="consignee_name" placeholder="Enter your first name" class="form-control">
+                                        <input type="text" id="firstname" name="consignee_name" placeholder="Enter your name" class="form-control">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="lastname" class="form-label">Phone</label>
@@ -49,16 +48,16 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="note" class="form-label">Note</label>
-                                        <input type="text" id="street" name="note" placeholder="Note" class="form-control">
-                                        <input type="hidden" name="status" value="0">
+                                        <input type="text" id="note" name="note" placeholder="Note" class="form-control">
                                     </div>
                                 </div>
                                 <div class="CTAs d-flex justify-content-between flex-column flex-lg-row">
                                     <a href="{{ url('cart') }}" class="btn btn-template-outlined wide prev">Back to Cart</a>
                                     <button type="submit" class="btn btn-template wide next">Continue to Order Review</button>
                                 </div>
-                            </form>
+                                </form>
                             {{--end form Check out--}}
+
                         </div>
                     </div>
                 </div>
@@ -69,7 +68,7 @@
                         <ul class="order-menu list-unstyled">
                             <li class="d-flex justify-content-between">
                                 <span>Order Subtotal</span>
-                                <strong>{{Cart::pricetotal()}}</strong>
+                                <strong>${{Cart::pricetotal()}}</strong>
                             </li>
                             <li class="d-flex justify-content-between">
                                 <span>Shipping and handling</span>
@@ -77,11 +76,11 @@
                             </li>
                             <li class="d-flex justify-content-between">
                                 <span>Tax</span>
-                                <strong>{{Cart::tax()}}</strong>
+                                <strong>${{Cart::tax()}}</strong>
                             </li>
                             <li class="d-flex justify-content-between">
                                 <span>Total</span>
-                                <strong class="text-primary price-total">{{Cart::total()}}</strong>
+                                <strong class="text-primary price-total">${{Cart::total()}}</strong>
                             </li>
                         </ul>
                     </div>

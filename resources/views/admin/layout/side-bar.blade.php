@@ -42,10 +42,11 @@
             </li>
             <!-- End Product Module -->
             <!-- Category Module -->
-            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages5" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3"></i><span>Categories</span></a>
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages5" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-archive-folder-1 mr-3"></i><span>Categories</span></a>
                 <div id="pages5" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
-                        <li class="sidebar-list-item"><a href="{{url("admin/category/categories")}}" class="sidebar-link text-muted pl-lg-5">Categories</a></li>
+                    <li class="sidebar-list-item"><a href="{{url("admin/category/categories")}}" class="sidebar-link text-muted pl-lg-5">Categories</a></li>
+                    <li class="sidebar-list-item"><a href="{{url("admin/category/createCategories")}}" class="sidebar-link text-muted pl-lg-5">Create New Categories</a></li>
                     </ul>
                 </div>
             </li>

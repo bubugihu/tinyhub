@@ -10,6 +10,8 @@
     <!-- BOOTSTRAP--->
     <link rel="stylesheet" href="{{asset("plugin/bootstrap/css/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("css/orionicon.css")}}">
+    <!-- DATATABLE--->
+   <link rel="stylesheet" href="{{asset("plugin/DataTables/datatable-source/css/dataTables.bootstrap4.css")}}">
     <!-- GOOGLE FONT--->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap" rel="stylesheet">
     <!-- OWN CSS--->
@@ -39,8 +41,25 @@
     <script src="{{asset("plugin/popper.js/umd/popper.min.js")}}"></script>
     <!-- TINY HUB JS -->
     <script src="{{asset("js/front.js")}}"></script>
+    <!-- DATATABLE --->
+    <script src="{{asset("plugin/DataTables/datatable-source/js/jquery.dataTables.js")}}"></script>
+    <script src="{{asset("plugin/DataTables/datatable-source/js/dataTables.bootstrap4.js")}}"></script>
     <!-- CKediotr -->
     <script src="{{asset("editor/ckeditor/ckeditor.js")}}"></script>
     @yield('script-section')
+    <script>
+        $(function(){
+           $('#dbtable').DataTable({
+              "paging":false,
+              "lengthChange":true,
+              "searching":true,
+              "ordering":true,
+              "info":true,
+              "autoWidth":true,
+              "responsive": true,
+              
+           });
+        });
+     </script>
 </body>
 </html>

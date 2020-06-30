@@ -102,10 +102,11 @@
       <strong class="mr-200 ml-70" style="color: #fd7e14; font-weight: 600; margin-left: 70px;margin-right: 200px">${{Cart::pricetotal()}}</strong></div>
   </div>
 </section>
-<section class="order-details no-padding-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center CTAs"><a href="{{ url('checkout') }}" class="btn btn-template btn-lg wide">Proceed to checkout<i class="fa fa-long-arrow-right"></i></a></div>
+<section class="order-details no-padding-top"> 
+    <div class="container">
+      <div class="row">                         
+        <div class="col-lg-12 text-center CTAs"><a href="{{ url('checkout') }}" class="btn btn-template btn-lg wide">Proceed to checkout<i class="fa fa-long-arrow-right"></i></a></div>
+      </div>
     </div>
     <div class="col-lg-12 text-center CTAs"><a href="{{ url('checkout') }}" class="btn btn-template btn-lg wide">Proceed to checkout<i class="fa fa-long-arrow-right"></i></a></div>
   </div>

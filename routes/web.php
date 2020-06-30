@@ -15,20 +15,22 @@ use App\Brands;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes();
-Route::get('/', function() {
+Route::get('/', function () {
     return view('homepage');
 })->name('homepage');
 
 //////////////////admin
 //users
 Route::get('admin/users/listUsers', 'UserController@listUsers');
+// Route::get('admin/users/createUser', 'UserController@createUserForm');
 Route::get('admin/users/createUser', 'UserController@createUser');
+Route::get('admin/users/updateUser/{id}', 'UserController@updateUser');
 
-Route::get('admin/users/updateUser/{id}' , 'UserController@updateUser');
 //customer
-Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');
-// Route::get('admin/customer/listCustomer', 'CustomerController@detailsCustomer');
+Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');;
+Route::get('admin/customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
 
 //feedback
 Route::get('admin/feedback/feedbackList', 'FeedbackController@feedbackList');
@@ -38,10 +40,11 @@ Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::post('admin/product/postCreate', 'ProductController@postCreate');
 //category
 Route::get('admin/category/categories', 'CategoryController@categories');
-Route::post('admin/category/createCate', 'CategoryController@createCategory');
+Route::get('admin/category/createCategories', 'CategoryController@createCate');
+Route::post('admin/category/postCate', 'CategoryController@postCate');
 //brands
-Route::get('admin/brands/listBrands' , 'BrandsController@listBrands');
-Route::get('admin/brands/createBrands' , 'BrandsController@createBrand');
+Route::get('admin/brands/listBrands', 'BrandsController@listBrands');
+Route::get('admin/brands/createBrands', 'BrandsController@createBrand');
 //order
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
 
@@ -49,56 +52,60 @@ Route::get('admin/order/listOrder', 'OrderController@listOrder');
 Route::get('admin/comment/listComment', 'CommentController@listComment');
 
 //banner
-Route::get('admin/banners/listBanner' , 'BannerController@listBanner');
-Route::get('admin/banners/createBanner' , 'BannerController@createBanner');
+Route::get('admin/banners/listBanner', 'BannerController@listBanner');
+Route::get('admin/banners/createBanner', 'BannerController@createBanner');
 
 //index
-Route::get('admin/index', function(){
+Route::get('admin/index', function () {
     return view('admin.index');
 });
 //profile
-Route::get('admin/profile', function(){
+Route::get('admin/profile', function () {
     return view('admin.profile.profile');
 });
 //role
-Route::get('home', 'RoleController@role');
-Route::post('admin', 'RoleController@role' );
-Route::get('admin', function(){
-    return redirect()->route('listProduct');
-})->middleware('role')->middleware('auth');
+// Route::get('home', 'RoleController@role');
+// Route::post('admin', 'RoleController@role' );
+// Route::get('admin', function(){
+//     return redirect()->route('listProduct');
+// })->middleware('role')->middleware('auth');
 //end admin
 
 ///////////////////////////Users
+//profile
+Route::get('users/profile', function () {
+    return view('users.profile.profile');
+});
 //Feedback
-Route::get('contact-us', function(){
+Route::get('contact-us', function () {
     return view('contact-us');
 })->name('contact-us');
 //about-us
-Route::get('about-us', function(){
+Route::get('about-us', function () {
     return view('about-us');
 })->name('about-us');
 //shipping-policy
-Route::get('shipping-policy', function(){
+Route::get('shipping-policy', function () {
     return view('shipping-policy');
 })->name('shipping-policy');
 //payment
-Route::get('payment', function(){
+Route::get('payment', function () {
     return view('payment');
 })->name('payment');
 //guarantee
-Route::get('guarantee',function(){
+Route::get('guarantee', function () {
     return view('guarantee');
 })->name('guarantee');
 //brand
-Route::get('brand', function(){
+Route::get('brand', function () {
     return view('brand');
 })->name('brand');
 //thank-you
-Route::get('thank-you', function(){
+Route::get('thank-you', function () {
     return view('thank-you');
 })->name('thank-you');
 //report
-Route::get('report' , function(){
+Route::get('report', function () {
     return view('users.cart.report');
 })->name('print');
 
@@ -114,64 +121,59 @@ Route::get('category', 'CategoryController@category');
 Route::post('category/search', 'CategoryController@search');
 //example product
 Route::get('product-detail/{id}', 'ProductController@productDetails');
-// Route::get('product-detail/{a}', function(){
-//     return abort(404);
-// })->where('a','[A-Za-z0-9]+');
-
 
 // //example image product
 // Route::get('product-detail/{id}', 'ProductController@imageProduct');
-
-Route::get('cart' , 'CartController@cart');
-Route::get('checkout' , function(){
-    return view('users.cart.checkout');
-})->middleware('auth');
-Route::get('order-review' , function(){
-    return view('users.cart.order-review');
-});
-
+// check cart
+Route::get('cart', 'CartController@cart');
 //buy now
 Route::post('cart/shopping', 'CartController@shoppingCart');
-Route::get('cart/shopping','CartController@cart');
+Route::get('cart/shopping', 'CartController@cart');
 //add cart
 Route::post('cart/addCart/{id}', 'CartController@addCart');
-Route::get('cart/addCart/{a}', function(){
+Route::get('cart/addCart/{a}', function () {
     return abort(404);
-})->where('a','[A-Za-z0-9]+');
+})->where('a', '[A-Za-z0-9]+');
 // incre item
 Route::post('cart/shopping/increItem', 'CartController@increCart');
 //decre item
-Route::post('cart/shopping/decreItem','CartController@decreCart');
+Route::post('cart/shopping/decreItem', 'CartController@decreCart');
 //remove item
 Route::post('cart/shopping/removeItem/{id}', 'CartController@removeItem');
-Route::get('cart/shopping/removeItem/{a}', function(){
-        return abort(404);
-    })->where('a','[A-Za-z0-9]+');
+Route::get('cart/shopping/removeItem/{a}', function () {
+    return abort(404);
+})->where('a', '[A-Za-z0-9]+');
 
 //check out cart
-Route::post('cart/shopping/checkout', 'CartController@checkoutCart');
-Route::get('cart/shopping/checkout', function(){
+Route::get('checkout', function () {
+    return view('users.cart.checkout');
+})->middleware('auth');
+Route::post('cart/shopping/order-review', 'CartController@orderReview');
+Route::get('cart/shopping/order-review', function () {
     return abort(404);
 });
+
+//order review 
+Route::get('cart/shopping/order-review', 'CartController@orderDetails');
 
 
 
 
 /////////////////////////end cart
 Route::get('search', [
-		'as' => 'search',
-		'uses' => 'SearchKeyController@getSearch'
+    'as' => 'search',
+    'uses' => 'SearchKeyController@getSearch'
 ]);
-Route::get('report-product' , function(){
+Route::get('report-product', function () {
     return view('users.product.report');
 });
-Route::get('users/profile' , function(){
+Route::get('users/profile', function () {
     return view('users.profile.profile');
 });
 
 Route::get('categories/{cate}', [
-        'as' => 'categories',
-        'uses' => 'ProductController@getCategories'
+    'as' => 'categories',
+    'uses' => 'ProductController@getCategories'
 ]);
 
 ///////// du thua chua dung den
@@ -182,7 +184,7 @@ Route::get('searchCate/{in}', 'ProductController@filterCate');
 //search brands
 Route::get('searchBrand/{in}', 'ProductController@filterBrand');
 //search Price
-Route::get('searchPrice', 'ProductController@filterPrice' );
+Route::get('searchPrice', 'ProductController@filterPrice');
 //Search Price Incre
-Route::get('searchPriceAsc/{products}','ProductController@sortPrice');
+Route::get('searchPriceAsc/{products}', 'ProductController@sortPrice');
 //Route::get('search' , 'SearchController@search');

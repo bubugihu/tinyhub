@@ -12,7 +12,7 @@
             </div>
             <div class="card-body">
               <!-- List User -->
-              <table class="table card-text text-center">
+              <table class="table card-text text-center" id="dbtable">
                 <thead>
                   <tr>
                     <th>No.</th>
@@ -43,9 +43,10 @@
                     </td>
                     <td class="align-middle">{{$user->created_at}}</td>
                     <td class="align-middle">
+                      <!-- Page Update Users -->
                       <a href="{{ url('admin/users/updateUser/'.$user->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px; font-weight:100;"></i></a>
-                      <a href="#Modal-Users-Delete{{$user->id}}" class="badge badge-danger p-2" data-toggle="modal" data-target=""><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
                       <!-- Modal Delete Users -->
+                      <a href="#Modal-Users-Delete{{$user->id}}" class="badge badge-danger p-2" data-toggle="modal" data-target=""><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
                       <div id="Modal-Users-Delete{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade bd-example-modal-lg text-left">
                         <div role="document" class="modal-dialog modal-lg">
                           <div class="modal-content">
