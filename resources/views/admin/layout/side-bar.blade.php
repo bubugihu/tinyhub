@@ -9,7 +9,6 @@
                 <div id="pages1" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
                     <li class="sidebar-list-item"><a href="{{url("admin/users/listUsers")}}" class="sidebar-link text-muted pl-lg-5">List Users</a></li>
-                    <li class="sidebar-list-item"><a href="{{url('admin/users/createUser')}}" class="sidebar-link text-muted pl-lg-5">Create New User</a></li>
                     </ul>
                 </div>
             </li>

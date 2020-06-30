@@ -11,14 +11,14 @@
                     <h3 class="text-center">Update Account</h3>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="post" action="{{url('admin/users/updateUser')}}">
                         @csrf
                         
                               <div class="form-group row">
                                 <div class="col-12">
                                     <label class="form-control-label text-uppercase">User Name</label>
                                     <input type="text" name="name" value="{{$users->name}}" class="form-control @error('name') is-invalid @enderror">
-                                    
+                                    <input type="hidden" name="id" value="{{$users->id}}">
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -62,9 +62,7 @@
                                     <input type="password" name="password_confirmation" class="form-control">
                                   </div>                            
                               </div>
-                              
-                              
-                            
+                                       
                 </div>
                             <div class="form-group row mb-0">
                                 <div class="col-md-12 offset-md-4">

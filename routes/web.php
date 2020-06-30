@@ -28,7 +28,7 @@ Route::get('admin/users/createUser', function(){
 });
 Route::post('admin/users/createUser', 'UserController@createUser');
 Route::get('admin/users/updateUser/{id}' , 'UserController@updateUserForm');
-// Route::post('admin/users/updateUser', 'UserController@updateUser');
+Route::post('admin/users/updateUser', 'UserController@updateUser');
 //customer
 Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');
 

@@ -55,14 +55,23 @@ class UserController extends Controller
     //go to update Form
     public function updateUserForm($id){
         $users = User::find($id);
-        return view('admin.users.updateUser',compact('users');)
+        return view('admin.users.updateUser',compact('users'));
     }    
 
     //update user
-    public function updateUser(Request $request, $id){
-        $user = User::find($id)->update([
+    public function updateUser(Request $request){
+        //validate
+        $this->validate(
+            $request,
+            [
+                'name'          => ['bail','required', 'string', 'max:255'],
+                'email'         => ['bail','required', 'string', 'email', 'max:255', 'unique:users'],
+                'password'      => ['bail','required', 'string', 'min:8', 'confirmed'],        
+            ]
+        );
+        //
+        $user = User::find($request->id)->update([
             'name'      => $request->name,
-            'email'     => $request->email,
             'role'      => $request->role,
             'password'  => $request->password,
         ]);
