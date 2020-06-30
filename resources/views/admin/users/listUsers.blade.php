@@ -34,9 +34,11 @@
                     @if($user->role == 1)
                     Admin 
                     @elseif($user->role == 2)
+                    Mod Customer
+                    @elseif($user->role == 2)
                     Mod Product
                     @else 
-                    Mod Customer
+                    User
                     @endif
                     </td>
                     <td>{{$user->created_at}}</td>

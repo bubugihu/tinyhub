@@ -61,7 +61,6 @@ class DatabaseSeeder extends Seeder
                 'product_title' => 'JBL LIVE 300TWS',
                 'price' => 2000,
                 'feature_image' => 'in-ear-jbl-1-1.jpg',
-                'warranty_period' => '2025_12_01',
                 'category_id' => 1,
                 'brand_id' => 2
             ],
@@ -70,7 +69,6 @@ class DatabaseSeeder extends Seeder
                 'product_title' => 'JBL Reflect Flow',
                 'price' => 2300,
                 'feature_image' => 'in-ear-jbl-2-1.jpg',
-                'warranty_period' => '2025_12_01',
                 'category_id' => 1,
                 'brand_id' => 2
             ],
@@ -79,7 +77,6 @@ class DatabaseSeeder extends Seeder
                 'product_title' => 'Sony XBA-N1AP',
                 'price' => 3200,
                 'feature_image' => 'in-ear-sony-1-1.jpg',
-                'warranty_period' => '2025_12_01',
                 'category_id' => 1,
                 'brand_id' => 1
             ],
@@ -88,7 +85,6 @@ class DatabaseSeeder extends Seeder
                 'product_title' => 'Sony WI-XB400',
                 'price' => 1000,
                 'feature_image' => 'in-ear-sony-2-1.jpg',
-                'warranty_period' => '2025_12_01',
                 'category_id' => 1,
                 'brand_id' => 1
             ],
@@ -97,7 +93,6 @@ class DatabaseSeeder extends Seeder
                 'product_title' => 'Westone W40',
                 'price' => 3200,
                 'feature_image' => 'in-ear-westone-1-1.jpeg',
-                'warranty_period' => '2025_12_01',
                 'category_id' => 1,
                 'brand_id' => 3
             ],
@@ -106,7 +101,6 @@ class DatabaseSeeder extends Seeder
                 'product_title' => 'Westone W60',
                 'price' => 1000,
                 'feature_image' => 'in-ear-westone-2-1.jpg',
-                'warranty_period' => '2025_12_01',
                 'category_id' => 1,
                 'brand_id' => 3
             ],

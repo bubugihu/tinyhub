@@ -12,18 +12,19 @@ use App\Gallery;
 class ProductController extends Controller {
 
     
-    //admin product list
+    //Function link to product list page
     public function listProduct(){
         $products = Product::paginate(5);
         return view('admin.product.listProduct', compact('products'));
     }
 
+    // Function link to create product page
     public function createProduct(){
         return view("admin.product.createProduct");
     }
 
+    // Function Create Product
     public function postCreate(Request $request){ 
-
 
         $this->validate(
             $request,
@@ -93,13 +94,97 @@ class ProductController extends Controller {
             $gallery->product_gallery = $nameGlImg;
         }
        
-        $gallery->product_id = $request = $p->product_id;
+        $gallery->product_id = $request = $p->id;
         $gallery->save();
 
-        return redirect() -> action('ProductController@listProduct')->with(['flash_level' => 'success','flash_message' => 'Created Successfully !' ]);;
+        return redirect() -> action('ProductController@listProduct')->with(['flash_level' => 'success','flash_message' => 'Created Successfully !' ]);
         // return view('admin.product.createProduct');
     }
 
+    // Function link to update page
+    public function updateProduct($id){
+        $p = Product::find($id);
+        $cates = Category::all();
+        $brand = Brands::all();
+        return view('admin.product.updateProduct', ['p' => $p, 'c' => $cates, 'b' => $brand]);
+    }
+    // Function Update Product
+    public function postUpdate(Request $request, $id){
+        $p  = Product::find($id);
+        $gallery = Gallery::find($id);
+
+        $this->validate(
+            $request,
+            [
+                'prdname'      => 'bail|required|min:3|max:255',
+                'prdprice'     => 'bail|required|min:0|max:20000',
+                'prdcate'      => 'bail|required|not_in:0',
+                'prdbrand'     => 'bail|required|not_in:0',
+                'prdWarranty'  => 'required',
+                'sdescription' => 'required',
+                'ldescription' => 'required',
+                'featureimg'   => 'required',
+            ],
+            [
+                'prdname.required'            => 'Product title can not be blank !',
+                'prdname.min'                 => 'Product title has min 3 characters !',
+                'prdname.max'                 => 'Product title has min 255 characters !',
+                'prdprice.required'           => 'Price can not be blank !',
+                'prdprice.min'                => 'Price has min >= 0 !',
+                'prdprice.max'                => 'Price has max <= 20000 !',
+                'prdcate.required'            => 'Please choose one of them !',
+                'prdbrand.required'           => 'Please choose one of them !',
+                'prdWarranty.required'        => 'Warranty Period can not be blank !',
+                'sdescription.required'       => 'Short Description can not be blank !',
+                'ldescription.required'       => 'Long Description can not be blank !',
+                'featureimg.required'         => 'Feature Image can not be blank !',
+            ]
+        );
+
+        $p->product_title = $request->prdname;
+        $p->price = $request->prdprice;
+        $p->brand_id = $request->prdbrand;
+        $p->category_id = $request->prdcate;
+        $p->warranty_period = $request->prdWarranty;
+        $p->short_descriptions = $request->sdescription;
+        $p->long_descriptions = $request->ldescription;
+
+
+        if ($request -> hasFile('featureimg')) {
+            $file = $request -> file('featureimg');
+            $extension = $file -> getClientOriginalExtension();
+
+            if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
+                return redirect("admin/product/updateProduct")->with('Message', 'You can only upload image with file jpg/png/jpeg');
+            }
+            $imageName = $file->getClientOriginalName();
+            $file->move("img/feature/", $imageName);    
+            $p->feature_image = $imageName;
+
+        } else {
+            $imageName = "";
+        }
+        $p ->save();
+
+        $gallery = new Gallery();
+        if ($request->hasFile('galleryimg')) {
+            $fileGL = $request->file('galleryimg');
+            $ext   = $fileGL->getClientOriginalExtension();
+            if($ext !='jpg' && $ext !='png' && $ext !='jpeg'){
+                return Redirect('admin/product/updateProduct')->with('Message', 'You can only upload image with file jpg/png/jpeg');
+            }
+            $nameGlImg =$fileGL->getClientOriginalName();
+            $fileGL->move("img/gallery", $nameGlImg);
+            $gallery->product_gallery = $nameGlImg;
+        }
+       
+        $gallery->product_id = $request = $p->id;
+        $gallery->save();
+
+        return redirect()->action('ProductController@listProduct')->with(['flash_level' => 'success','flash_message' => 'Update Successfully !' ]);
+    }
+
+    
     public function getCategories(){
         return view('admin.product.categories');
     }

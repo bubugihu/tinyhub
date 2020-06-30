@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\User;
 use App\Customers;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -53,29 +54,21 @@ class UserController extends Controller
     }
 
     //go to update Form
-    public function updateUserForm($id){
+    public function updateUser($id){
         $users = User::find($id);
         return view('admin.users.updateUser',compact('users'));
     }    
 
     //update user
-    public function updateUser(Request $request){
-        //validate
-        $this->validate(
-            $request,
-            [
+    public function postUpdateUser(Request $request,User $user){
+       // validate
+        Validator::make($request->all(), [
                 'name'          => ['bail','required', 'string', 'max:255'],
-                'email'         => ['bail','required', 'string', 'email', 'max:255', 'unique:users'],
-                'password'      => ['bail','required', 'string', 'min:8', 'confirmed'],        
-            ]
-        );
-        //
-        $user = User::find($request->id)->update([
-            'name'      => $request->name,
-            'role'      => $request->role,
-            'password'  => $request->password,
-        ]);
-        $user->save();
+        ])->validate();
+        $users = User::find($request->id);
+        $users->name         = $request->name;
+        $users->role          = $request->role;
+        $users->save();
         
         return redirect('admin/users/listUsers');
     }

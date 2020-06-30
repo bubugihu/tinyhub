@@ -13,14 +13,16 @@
                 </div>
             </li>
             <!-- End Users Module -->
-            <!-- Customers Module -->
-            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages2" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3"></i><span>Customers</span></a>
-                <div id="pages2" class="collapse">
+            <!-- Banner Module -->
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages7" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-imac-screen-1 mr-3"></i><span>Banner</span></a>
+                <div id="pages7" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
-                    <li class="sidebar-list-item"><a href="{{url("admin/customer/listCustomer")}}" class="sidebar-link text-muted pl-lg-5">List Customers</a></li>
+                    <li class="sidebar-list-item"><a href="{{url("admin/banners/listBanner")}}" class="sidebar-link text-muted pl-lg-5">List Banners</a></li>
+                    <li class="sidebar-list-item"><a href="{{url("admin/banners/createBanner")}}" class="sidebar-link text-muted pl-lg-5">Create New Banner</a></li>
+                    </ul>
                 </div>
             </li>
-            <!-- End Customers Module -->
+            <!-- End Banner Module -->
             <!-- Feedback Module -->
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages3" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-paper-stack-1 mr-3"></i><span>FeedBack</span></a>
                 <div id="pages3" class="collapse">
@@ -60,16 +62,14 @@
                 </div>
             </li>
             <!-- End Brand Module -->
-            <!-- Banner Module -->
-            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages7" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-imac-screen-1 mr-3"></i><span>Banner</span></a>
-                <div id="pages7" class="collapse">
+            <!-- Customers Module -->
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages2" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3"></i><span>Customers</span></a>
+                <div id="pages2" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
-                    <li class="sidebar-list-item"><a href="{{url("admin/banners/listBanner")}}" class="sidebar-link text-muted pl-lg-5">List Banners</a></li>
-                    <li class="sidebar-list-item"><a href="{{url("admin/banners/createBanner")}}" class="sidebar-link text-muted pl-lg-5">Create New Banner</a></li>
-                    </ul>
+                    <li class="sidebar-list-item"><a href="{{url("admin/customer/listCustomer")}}" class="sidebar-link text-muted pl-lg-5">List Customers</a></li>
                 </div>
             </li>
-            <!-- End Banner Module -->
+            <!-- End Customers Module -->
             <!-- Orders Module -->
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages8" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-survey-1 mr-3"></i><span>Orders</span></a>
                 <div id="pages8" class="collapse">

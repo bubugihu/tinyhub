@@ -27,17 +27,24 @@ Route::get('admin/users/createUser', function(){
     return view('admin.users.createUser');
 });
 Route::post('admin/users/createUser', 'UserController@createUser');
-Route::get('admin/users/updateUser/{id}' , 'UserController@updateUserForm');
-Route::post('admin/users/updateUser', 'UserController@updateUser');
+Route::get('admin/users/updateUser/{id}' , 'UserController@updateUser');
+Route::post('admin/users/postUpdateUser', 'UserController@postUpdateUser');
 //customer
 Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');
 
 //feedback
 Route::get('admin/feedback/feedbackList', 'FeedbackController@feedbackList');
+Route::get('admin/feedback/deleteFeedback/{id}', 'FeedbackController@deleteFeedback');
+Route::get('admin/feedback/doneFeedback/{id}' , 'FeedbackController@doneFeedback');
+Route::get('admin/feedback/pendingFeedback/{id}', 'FeedbackController@pendingFeedback');
+Route::get('admin/feedback/onStatusFeedback/{id}', 'FeedbackController@onStatus');
+Route::get('admin/feedback/offStatusFeedback/{id}', 'FeedbackController@offStatus');
 //product
 Route::get('admin/product/listProduct', 'ProductController@listProduct');
 Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::post('admin/product/postCreate', 'ProductController@postCreate');
+Route::get('admin/product/updateProduct/{id}', 'ProductController@updateProduct');
+Route::post('admin/product/postUpdate/{id}', 'ProductController@postUpdate');
 //category
 Route::get('admin/category/categories', 'CategoryController@categories');
 Route::get('admin/category/createCategories', 'CategoryController@createCate');
@@ -52,6 +59,13 @@ Route::get('admin/order/listOrder', 'OrderController@listOrder');
 Route::get('admin/comment/listComment', 'CommentController@listComment');
 //banner
 Route::get('admin/banners/listBanner' , 'BannerController@listBanner');
+Route::get('admin/banners/deleteBanners/{id}', 'BannerController@deleteBanners');
+Route::get('admin/banners/createBanner', function (){
+    return view('admin.banners.createBanner');
+});
+Route::post('admin/banners/postCreateBanners', 'BannerController@postCreateBanners');
+Route::get('admin/banners/updateBanners/{id}', 'BannerController@updateBanners');
+Route::post('admin/banners/postUpdateBanners', 'BannerController@postUpdateBanners');
 //index
 Route::get('admin/index', function(){
     return view('admin.index');
@@ -60,13 +74,7 @@ Route::get('admin/index', function(){
 Route::get('admin/profile', function(){
     return view('admin.profile.profile');
 });
-//role
-// Route::get('home', 'RoleController@role');
-// Route::post('admin', 'RoleController@role' );
-// Route::get('admin', function(){
-//     return redirect()->route('listProduct');
-// })->middleware('role')->middleware('auth');
-//end admin
+
 
 ///////////////////////////Users
 //profile

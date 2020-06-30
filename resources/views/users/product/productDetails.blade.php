@@ -253,16 +253,16 @@
         </div>
     </div>
 </div>
-@endsection
 
 <script>
-function incre(){
-    document.getElementById("1").stepUp(1);
-    document.getElementById("2").stepUp(1);
-}
-function decre(){
-    document.getElementById("1").stepDown(1);
-    document.getElementById("2").stepDown(1);
-}
+    function incre(){
+        document.getElementById("1").stepUp(1);
+        document.getElementById("2").stepUp(1);
+    }
+    function decre(){
+        document.getElementById("1").stepDown(1);
+        document.getElementById("2").stepDown(1);
+    }
+    </script>
+@endsection
 
-</script>

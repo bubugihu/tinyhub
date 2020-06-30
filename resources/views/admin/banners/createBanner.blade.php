@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'product list')
+@section('title', 'Banners')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
     <div class="container-fluid px-xl-5">
@@ -11,25 +11,32 @@
                 <h6 class="text-uppercase mb-0">Create new Banner/h6>
               </div>
               <div class="card-body">
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="{{url('admin/banners/postCreateBanners')}}" method="post" enctype="multipart/form-data">
                       {{ csrf_field() }}
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">BannerTitle</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title">
+                        @error('title')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Banner Content</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control @error('content') is-invalid @enderror" name="content">
+                        @error('content')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                       </div>
-                      <label class="form-control-label text-uppercase">Upload Banner Image</label>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Upload</span>
-                        </div>
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="inputGroupFile01">
-                          <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
-                        </div>
+                      <div class="form-group">
+                        <label class="form-control-label text-uppercase">Upload Feature Image:</label><br>
+                        <input type="file" name="files">
+                          @error('files')
+                            <strong style="color:red;font-size:14px;">{{$message}}</strong>
+                          @enderror
                       </div>
                       <div class="form-group">
                         <button type="submit" class="btn btn-dark">Create</button>
