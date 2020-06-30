@@ -23,9 +23,12 @@ Route::get('/', function() {
 //////////////////admin
 //users
 Route::get('admin/users/listUsers', 'UserController@listUsers');
-Route::get('admin/users/createUser', 'UserController@createUserForm');
+Route::get('admin/users/createUser', function(){
+    return view('admin.users.createUser');
+});
 Route::post('admin/users/createUser', 'UserController@createUser');
-Route::get('admin/users/updateUser' , 'UserController@updateUser');
+Route::get('admin/users/updateUser/{id}' , 'UserController@updateUserForm');
+// Route::post('admin/users/updateUser', 'UserController@updateUser');
 //customer
 Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');
 

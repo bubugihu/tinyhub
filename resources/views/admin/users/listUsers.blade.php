@@ -16,12 +16,11 @@
                 <thead>
                   <tr>
                     <th>No.</th>
-                    <th>ID</th>
                     <th>Username</th>
                     <th>Email</th>
                     <th>Role</th>
                     <th>Created At</th>
-                    <th>Action</th>
+                    <th>Update</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -29,7 +28,6 @@
                   @foreach($user as $user)
                   <tr>
                     <th scope="row">{{++$stt}}</th>
-                    <th>{{$user->id}}</th>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>
@@ -42,36 +40,16 @@
                     @endif
                     </td>
                     <td>{{$user->created_at}}</td>
-                    <!-- <td><a href="#" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
-                      <a href="#" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
-                      <a href="#" class="badge badge-danger p-2"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
-                    </td> -->
                     <td>
-                      <a href="#" class="badge badge-danger p-2" data-toggle="modal" data-target="#Modal-Users-Delete"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
-                    </td>
+                      <a href="{{url('admin/users/updateUser/'.$user->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
+                    </td> 
                   </tr>
                   @endforeach
 
                 </tbody>
               </table>
-              <!-- Modal Delete Users -->
-              <div id="Modal-Users-Delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade bd-example-modal-lg text-left">
-                <div role="document" class="modal-dialog modal-lg">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h4 id="exampleModalLabel" class="modal-title">Delete User</h4>
-                      <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                    </div>
-                    <div class="modal-body text-center">
-                      <h2>Are you sure you want to delete?</h2>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-primary">Yes</button>
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
+              
             </div>
           </div>
         </div>
