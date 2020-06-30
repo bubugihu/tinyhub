@@ -16,12 +16,11 @@
                 <thead>
                   <tr>
                     <th>No.</th>
-                    <th>ID</th>
                     <th>Username</th>
                     <th>Email</th>
                     <th>Role</th>
                     <th>Created At</th>
-                    <th>Action</th>
+                    <th>Update</th>
                   </tr>
                 </thead>
                 <tbody>

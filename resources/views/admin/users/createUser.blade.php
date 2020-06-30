@@ -123,8 +123,8 @@
                 </div>
 
                 <div class="form-group text-center">
-                  <button type="submit" class="btn btn-warning">Create</button>
-                  <button type="reset" class="btn btn-dark">Reset</button>
+                  <button type="submit" class="btn login-btn" style="background-color: #f47635" onclick="return confirm('Do you want update ?');">Create</button>
+                  <button type="reset" class="btn btn-dark">RESET</button>
                 </div>
               </form>
             </div>

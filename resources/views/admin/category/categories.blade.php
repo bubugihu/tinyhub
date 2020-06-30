@@ -11,36 +11,6 @@
               <h6 class="text-uppercase mb-0">Categories List</h6>
             </div>
             <div class="card-body">
-              <!-- Modal Create Category -->
-              <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-dark">Create category</button><br><br>
-              <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="createcategory" aria-hidden="true" class="modal fade text-left">
-                <div role="document" class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h4 id="createcategory" class="modal-title">Create Category</h4>
-                      <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                    </div>
-                    <div class="modal-body">
-
-                      {{--Form create cate--}}
-                      <form action="{{url('admin/category/createCate')}}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                          <label class="form-control-label text-uppercase">Category Title</label>
-                          <input type="text" name="title" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                          <label class="form-control-label text-uppercase">Description</label>
-                          <textarea class="form-control" name="descript" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-                        <div class="form-group d-flex bd-highlight">
-                          <input type="submit" value="Create" class="btn btn-primary  flex-fill bd-highlight">
-                          <input type="reset" value="Reset" class="btn btn-warning flex-fill  bd-highlight" style="margin-left: 15px;">
-                        </div>
-                      </form>
-                      {{-- end Form create cate--}}
-                    </div>
-                  </div>
               @if(Session::has('flash_message'))
                 <div class="alert alert-{!! Session::get('flash_level') !!}">
                     {!!Session::get('flash_message')!!}
