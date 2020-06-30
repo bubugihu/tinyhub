@@ -11,8 +11,13 @@
               <h6 class="text-uppercase mb-0">Categories List</h6>
             </div>
             <div class="card-body">
+              @if(Session::has('flash_message'))
+                <div class="alert alert-{!! Session::get('flash_level') !!}">
+                    {!!Session::get('flash_message')!!}
+                </div>
+              @endif 
               <!-- List Category -->
-              <table class="table card-text">
+              <table class="table card-text" id="dbtable">
                 <thead>
                   <tr>
                     <th>Categories ID</th>
@@ -22,8 +27,7 @@
                   </tr>
                 </thead>
                 <tbody>
-
-                  @foreach($cate as $cate)
+                  @foreach($cates as $cate)
                   <tr>
                     <th scope="row">{{$cate->id}}</th>
                     <td>{{$cate->category_name}}</td>
@@ -34,10 +38,11 @@
                     </td>
                   </tr>
                   @endforeach
-
                 </tbody>
-              </table>
-
+              </table><br>
+              <nav aria-label="Page navigation">
+                {{ $cates->links() }}
+              </nav>
               <!-- Modal Update Category -->
               <div id="Modal-Update-Category" tabindex="-1" role="dialog" aria-labelledby="updatecategory" aria-hidden="true" class="modal fade text-left">
                 <div role="document" class="modal-dialog">
@@ -91,3 +96,5 @@
     </section>
   </div>
   @endsection
+  @section('script-section')
+@endsection

@@ -11,7 +11,12 @@
                 <h6 class="text-uppercase mb-0">Product List</h6>
               </div>
               <div class="card-body">
-                <table class="table card-text">
+                @if(Session::has('flash_message'))
+                  <div class="alert alert-{!! Session::get('flash_level') !!}">
+                      {!!Session::get('flash_message')!!}
+                  </div>
+                @endif 
+                <table class="table card-text" id="dbtable">
                   <thead>
                     <tr>
                       <th>ID</th>
@@ -26,10 +31,10 @@
                   </thead>
                   <tbody>
 
-                    @foreach($product as $product)
+                    @foreach($products as $product)
                     <tr>
                       <th scope="row">{{$product->id}}</th>
-                      <td><img src="{{asset('img/feature/'.$product->feature_image)}}" alt=""></td>
+                      <td><img src="{{asset('img/feature/'.$product->feature_image)}}" alt="" width="60"></td>
                       <td>{{$product->product_title}}</td>
                       <td>{{$product->price}}</td>
                       <td>{{$product->sold_out}}</td>
@@ -42,7 +47,10 @@
                     </tr>
                     @endforeach
                   </tbody>
-                </table>
+                </table><br>
+                <nav aria-label="Page navigation">
+                  {{ $products->links() }}
+                </nav>
               </div>
             </div>
           </div>

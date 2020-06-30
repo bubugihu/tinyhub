@@ -10,7 +10,7 @@ class Category extends Model
 
     public $fillable =['id' , 'category_name', 'description'];
     public $timestamps = false; // Force to have
-    public $incrementing = true;
+    public $incrementing = true; // Force to have
     public function roleProduct(){
         return $this->hasMany(Product::class,'category_id','id');
     }

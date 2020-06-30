@@ -12,7 +12,7 @@
             </div>
             <div class="card-body">
               <!-- List Customer -->
-              <table class="table card-text">
+              <table class="table card-text" id="dbtable">
                 <thead>
                   <tr>
                     <th>Customer ID</th>

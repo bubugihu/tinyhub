@@ -55,11 +55,11 @@
                           @endif
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Status</label><br>
-                        <div class="custom-control custom-checkbox">
-                            <input id="customCheck1" type="checkbox" class="custom-control-input">
-                            <label for="customCheck1" class="custom-control-label">Active</label>
-                        </div>
+                        <label class="form-control-label text-uppercase">Warranty_Period</label>
+                        <input type="date" class="form-control" name="prdWarranty" min="0">
+                        @if($errors->has('prdWarranty'))
+                           <small style="color:red;font-size:14px;">{{$errors->first('prdWarranty')}}</small>
+                        @endif
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Short Description</label>
@@ -81,49 +81,20 @@
                             });
                         </script>
                       </div>
-                      <label class="form-control-label text-uppercase">Upload Feature Image</label>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Upload</span>
-                        </div>
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" name="featureimg" id="inputGroupFile01">
-                          <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
+                      <div class="form-group">
+                        <label class="form-control-label text-uppercase">Upload Feature Image:</label><br>
+                        <input type="file" name="featureimg">
                           @if($errors->has('featureimg'))
                             <small style="color:red;font-size:14px;">{{$errors->first('featureimg')}}</small>
                           @endif
-                        </div>
                       </div>
-                      <label class="form-control-label text-uppercase">Relate Image 1</label>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Upload</span>
-                        </div>
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" name="relateimg1" id="inputGroupFile01">
-                          <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
-                        </div>
-                      </div>
-                      <label class="form-control-label text-uppercase">Relate Image 2</label>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Upload</span>
-                        </div>
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" name="relateimg2" id="inputGroupFile01">
-                          <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
-                        </div>
-                      </div>
-                      <label class="form-control-label text-uppercase">Relate Image 3</label>
-                      <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text">Upload</span>
-                        </div>
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" name="relateimg3" id="inputGroupFile01">
-                          <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
-                        </div>
-                      </div>
+                      <div class="form-group">
+                        <label class="form-control-label text-uppercase">Please press Ctrl to choose multiple images:</label><br>
+                        <input type="file" name="galleryimg" multiple>
+                          @if($errors->has('galleryimg'))
+                            <small style="color:red;font-size:14px;">{{$errors->first('galleryimg')}}</small>
+                          @endif
+                      </div><br>
                       <div class="form-group">
                         <button type="submit" class="btn btn-dark">Create</button>
                         <button type="reset" class="btn btn-warning">Reset</button>

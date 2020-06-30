@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Middleware\Admin;
-use App\Http\Requests\CreateProductRequest;
+use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 use App\Product;
 class CategoryController extends Controller
 {   
     //Admin Category
     public function categories(){
-        $cate = Category::all();
-        return view('admin.category.categories', compact('cate'));
+        $cates = Category::paginate(5);
+        return view('admin.category.categories', compact('cates'));
     }
 
     public function createCate(){
@@ -20,19 +20,17 @@ class CategoryController extends Controller
     }
 
     // Post Create Categories
-    public function postCate(Request $request){
+    public function postCate(CategoryRequest $request){
 
+        // $category = $request->all();
         $c = new Category();
         $c->category_name = $request->cateTitle;
         $c->description = $request->cateDescription;
         $c->save();
-       
-        // $cate=Category::create([
-        //     'category_name' => $request['cateTitle'],
-        //     'description'   => $request['cateDescription']
-        // ]);
-        // $cate->save();
-        return back()->with('alert', 'Create Category Successful !');
+        
+        //session()->put('alert', 'Create Category Successful !');
+        // return redirect('admin/category/postCate')-;
+        return redirect()->action('CategoryController@categories')->with(['flash_level' => 'success','flash_message' => 'Created Successfully !' ]);
 
     }
 
