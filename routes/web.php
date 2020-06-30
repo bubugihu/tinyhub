@@ -40,6 +40,8 @@ Route::get('admin/feedback/feedbackList', 'FeedbackController@feedbackList');
 Route::get('admin/product/listProduct', 'ProductController@listProduct');
 Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::post('admin/product/postCreate', 'ProductController@postCreate');
+Route::get('admin/product/updateProduct/{id}', 'ProductController@updateProduct');
+Route::post('admin/product/postUpdate/{id}', 'ProductController@postUpdate');
 //category
 Route::get('admin/category/categories', 'CategoryController@categories');
 Route::get('admin/category/createCategories', 'CategoryController@createCate');
