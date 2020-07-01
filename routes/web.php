@@ -113,6 +113,7 @@ Route::get('logout', function () {
 ////// User cart
 //category
 Route::get('category', 'CategoryController@category');
+// Route::get('category', 'CategoryController@getcategories');
 Route::post('category/search', 'CategoryController@search');
 //example product
 Route::get('product-detail/{id}', 'ProductController@productDetails');

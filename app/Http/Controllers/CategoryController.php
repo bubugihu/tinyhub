@@ -15,6 +15,11 @@ class CategoryController extends Controller
         return view('admin.category.categories', compact('cates'));
     }
 
+    public function getcategories(){
+        $cates = Category::all();
+        return view('users.product.category', compact('cates'));
+    }
+
     public function createCate(){
         return view('admin.category.createCategories');
     }
@@ -89,12 +94,14 @@ class CategoryController extends Controller
 
     //User Category
     public function category(){
-        $product = Product::all()->where('status', '=', 0);
-        return view('users.product.category', compact('product'));
+        $cates = Category::all();
+        $products = Product::where('status', '=', 0)->paginate(9);
+        return view('users.product.category', compact('products', 'cates'));
     }
     
     //User Search Category
     public function search(Request $request){
+
         $inEar = $request->input('CateInEar');
         $onEar = $request->input('CateOnEar');
         $trueWireless = $request->input(('CateTrueWire'));

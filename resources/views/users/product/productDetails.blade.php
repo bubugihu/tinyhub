@@ -99,7 +99,7 @@
             </ul>
             <div class="tab-content">
                 <div id="description" class="tab-pane active">
-                   <p>{{$product->long_descriptions}}</p>
+                   <p>{!! $product->long_descriptions !!}</p>
                 </div>
                 <div id="additional-information" class="tab-pane">
                     <table class="table">

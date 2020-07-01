@@ -107,7 +107,6 @@ class BrandsController extends Controller
 
     public function getBrands(){
         $brands = Brands::all(); 
-
         return view("brand", ['b' => $brands]);
     }
 
