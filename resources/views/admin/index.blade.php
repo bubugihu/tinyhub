@@ -3,8 +3,8 @@
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
     <div class="container-fluid px-xl-5">
-        <section class="py-5">
-            <div class="row">
+        <section class="">
+            <div class="row mt-5">
               <div class="col-xl-3 col-lg-6 mb-4 mb-xl-0">
                 <div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
                   <div class="flex-grow-1 d-flex align-items-center">
@@ -18,7 +18,7 @@
                 <div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
                   <div class="flex-grow-1 d-flex align-items-center">
                     <div class="text">
-                      <h6 class="mb-0">Orders</h6><span class="text-gray">30 Orders</span>
+                      <h6 class="mb-0">Customers</h6><span class="text-gray">30 Customers</span>
                     </div>
                   </div>
                 </div>
@@ -35,9 +35,38 @@
               <div class="col-xl-3 col-lg-6 mb-4 mb-xl-0">
                 <div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
                   <div class="flex-grow-1 d-flex align-items-center">
+                    <div class="text">
+                      <h6 class="mb-0">Orders</h6><span class="text-gray">70</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-5 mb-5">
+              <div class="col-xl-3 col-lg-6 mb-4 mb-xl-0">
+                <div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
+                  <div class="flex-grow-1 d-flex align-items-center">
+                    <div class="text">
+                      <h6 class="mb-0">Comments</h6><span class="text-gray">100 Comments</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-6 mb-4 mb-xl-0">
+                <div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
+                  <div class="flex-grow-1 d-flex align-items-center">
+                    <div class="text">
+                      <h6 class="mb-0">Feedback</h6><span class="text-gray">30 Feedback</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-6 mb-4 mb-xl-0">
+                <div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
+                  <div class="flex-grow-1 d-flex align-items-center">
                     <div class="dot mr-3 bg-red"></div>
                     <div class="text">
-                      <h6 class="mb-0">Revenue</h6><span class="text-gray">$ 3400</span>
+                      <h3 class="mb-0">Revenue</h3><span class="text-gray" style="font-size:16px;">$ 3400</span>
                     </div>
                   </div>
                 </div>
@@ -49,7 +78,7 @@
                 <div class="col-lg-2 mb-4 mb-lg-0">
                     <div class="row align-items-center mb-3 flex-row">
                         <div class="col-lg-12">
-                         <a href=""><button class="col-lg-12 card-body card mb-3 align-items-center"><i class="o-profile-1" style="font-size: 40px;"></i><h5 class="mb-0 d-flex "><span>Users</span></h5></button></a>
+                         <a href=""><button class="col-lg-12 card-body card mb-3 align-items-center admin-btn"><i class="o-profile-1" style="font-size: 40px;"></i><h5 class="mb-0 d-flex "><span>Users</span></h5></button></a>
                         </div>
                     </div>
                 </div>

@@ -12,27 +12,57 @@
     </div>
 </div>
 <section class="brand py-5">
-    <div class="container">
-        <!-- Brand 1 -->
-        <div class="row py-5">
-            <div class="col-md-4 text-center"><img class="img-fluid" src="{{asset("img/beats-logo.png")}}" width="100%" alt=""></div>
-            <div class="col-md-8">
-                <h1 class="text-uppercase">BEATS</h1>
-                <p style="text-align: justify;">Beats Electronics LLC (also known as Beats by Dr. Dre, or simply Beats by Dre) is a subsidiary of Apple Inc. that produces audio products. Headquartered in Culver City, California, the company was founded by music producer and rapper Dr. Dre and Interscope Records co-founder Jimmy Iovine.
-                The subsidiary's product line is primarily focused on headphones and speakers. The company's original product line was manufactured in partnership with the AV equipment company Monster Cable Products. Following the end of its contract with the company, Beats took further development of its products in-house. In 2014, the company expanded into the online music market with the launch of a subscription-based streaming service, Beats Music.</p>
-            </div>
-        </div>
-        <!-- End Brand 1 -->
-        <!-- Brand 2 -->
-        <div class="row py-5">
-            <div class="col-md-8">
-                <h1 class="text-uppercase">SONY</h1>
-                <p style="text-align: justify;">Sony Corporation (ソニー株式会社, Sonī Kabushiki Kaisha, /ˈsoʊni/ SOH-nee, commonly known as Sony and stylized as SONY) is a Japanese multinational conglomerate corporation headquartered in Kōnan, Minato, Tokyo. Its diversified business includes consumer and professional electronics, semiconductors, gaming, entertainment and financial services. The company owns the largest music entertainment business in the world, the largest video game console business and one of the largest video game publishing businesses, and is one of the leading manufacturers of electronic products for the consumer and professional markets, and a leading player in the film and television entertainment industry. Sony was ranked 97th on the 2018 Fortune Global 500 lis</p>
-            </div>
-            <div class="col-md-4 text-center"><img class="img-fluid" src="{{asset("img/sony-logo.png")}}" width="100%" alt=""></div>
-        </div>
+    <div class="container card card-body py-5">
+        @foreach ($b as $b)
+            @if(($b->id % 2) != 0)
+                <div class="row py-5 p-4">
+                    <div class="col-md-12">
+                        <div class="row py-3">
+                            <div class="col-md-4 text-center">
+                                <img class="img-fluid" src="{{url("img/feature/". $b->brand_image)}}" width="100%" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <h1 class="text-uppercase">{{$b->brand_name}}</h1>
+                                <p style="text-align: justify;">{{$b->description}}</p>
+                            </div>
+                        </div>
+                    </div> 
+                @else
+                    <div class="col-md-12">
+                        <div class="row py-3">
+                            <div class="col-md-8">
+                                <h1 class="text-uppercase">{{$b->brand_name}}</h1>
+                                <p style="text-align: justify;">{{$b->description}}</p>
+                            </div>
+                            <div class="col-md-4 text-center"><img class="img-fluid" src="{{url("img/feature/". $b->brand_image)}}" width="100%" alt=""></div>
+                        </div>
+                    </div> 
+                </div>
+            @endif
+        @endforeach 
+
+        {{-- <!-- Brand 1 -->
+        @foreach ($b as $b)
+            @if(($b->id % 2) != 0)
+                <div class="row py-5">
+                    <div class="col-md-4 text-center">
+                        <img class="img-fluid" src="{{url("img/feature/". $b->brand_image)}}" width="100%" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <h1 class="text-uppercase">{{$b->brand_name}}</h1>
+                        <p style="text-align: justify;">{{$b->description}}</p>
+                    </div>
+                @else
+                    <div class="col-md-8">
+                        <h1 class="text-uppercase">{{$b->brand_name}}</h1>
+                        <p style="text-align: justify;">{{$b->description}}</p>
+                    </div>
+                    <div class="col-md-4 text-center"><img class="img-fluid" src="{{url("img/feature/". $b->brand_image)}}" width="100%" alt=""></div>
+                </div>
+            @endif
+        @endforeach --}}
         <!-- End Brand 2 -->
-        <!-- Brand 3 -->
+        {{-- <!-- Brand 3 -->
         <div class="row py-5">
             <div class="col-md-4 text-center"><img class="img-fluid" src="{{asset("img/bando.png")}}" width="100%" alt=""></div>
             <div class="col-md-8">
@@ -60,7 +90,7 @@
                 <p style="text-align: justify;">Established in 1959, Westone Laboratories has more than 55 years of experience delivering premium in-ear solutions for critical listening applications. Westone is the largest manufacturer of custom ear pieces in the world and was the first to design and manufacture a balanced armature driver earphone. With hearing healthcare and music specialists on our research and production teams, Westone invented the most ergonomic monitor design which provides the most comfortable, best fitting and quietest earphones on the market. The largest names in music turn to Westone in-ear monitors for on-stage use, just as U.S. Air Force fighter pilots depend on Westone’s ACCES® in-ear communications system for mission-critical noise isolation, hearing protection and two-way communication. It is our experience, our products, and our people that make Westone The In-Ear Experts®.</p>
             </div>
         </div>
-        <!-- End Brand 5 -->
+        <!-- End Brand 5 --> --}}
     </div>
 </section>
 @endsection

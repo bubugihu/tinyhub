@@ -71,14 +71,14 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Short Description</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="sdescription"rows="3">{{$p->short_descriptions}}</textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="sdescription"rows="6">{{$p->short_descriptions}}</textarea>
                         @if($errors->has('sdescription'))
                            <small style="color:red;font-size:14px;">{{$errors->first('sdescription')}}</small>
                         @endif
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Long Description</label>
-                        <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" name="ldescription" rows="3">{{$p->long_descriptions}}</textarea>
+                        <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" name="ldescription" rows="12">{{$p->long_descriptions}}</textarea>
                         @if($errors->has('ldescription'))
                            <small style="color:red;font-size:14px;">{{$errors->first('ldescription')}}</small>
                         @endif

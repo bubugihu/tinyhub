@@ -17,7 +17,10 @@ p {
 .top-right.links a:hover {
     text-decoration: none;
 }
-
+ul#homeTab.nav-pills .nav-link.active {
+    background: #fff!important;
+    border: 3px solid #000;
+}
 a.log-info {
     font-size: 12px !important;
 }
@@ -996,4 +999,8 @@ i.fa.fa-shopping-basket.fa-2x.fa-border.icon-dark.badge-cart {
     font-size: 25px;
     color: #000;
     border: 1px solid #000;
+}
+span.required {
+    color: red!important;
+    font-size: 15px;
 }

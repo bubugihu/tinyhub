@@ -12,7 +12,10 @@ class Brands extends Model
     protected $primaryKey = "id";
 
     // Set default primary key auto increment
-    
+
+    public $timestamps = false;
+
+    public $incrementing = true;
 
     protected $fillable = ['id', 'brand_name', 'brand_iamge', 'description'];
 

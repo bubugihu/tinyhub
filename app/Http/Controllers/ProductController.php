@@ -14,7 +14,8 @@ class ProductController extends Controller {
     
     //Function link to product list page
     public function listProduct(){
-        $products = Product::paginate(5);
+        $products = Product::where('status', '=', 0)->paginate(5);
+    
         return view('admin.product.listProduct', compact('products'));
     }
 
@@ -123,7 +124,6 @@ class ProductController extends Controller {
                 'prdWarranty'  => 'required',
                 'sdescription' => 'required',
                 'ldescription' => 'required',
-                'featureimg'   => 'required',
             ],
             [
                 'prdname.required'            => 'Product title can not be blank !',
@@ -137,7 +137,6 @@ class ProductController extends Controller {
                 'prdWarranty.required'        => 'Warranty Period can not be blank !',
                 'sdescription.required'       => 'Short Description can not be blank !',
                 'ldescription.required'       => 'Long Description can not be blank !',
-                'featureimg.required'         => 'Feature Image can not be blank !',
             ]
         );
 
@@ -184,11 +183,17 @@ class ProductController extends Controller {
         return redirect()->action('ProductController@listProduct')->with(['flash_level' => 'success','flash_message' => 'Update Successfully !' ]);
     }
 
-    
+    // Function delete product
+    public function deleteProduct($id) {
+        Product::where('id', $id)
+                ->update(['status'=> 1]);
+            
+        return back()->with(['flash_level' => 'success','flash_message' => 'Delete Successfully !' ]);
+    }
+   
     public function getCategories(){
         return view('admin.product.categories');
     }
-
 
     //user product details
     public function productDetails($id){
