@@ -77,6 +77,10 @@ Route::get('admin/profile', function(){
 
 
 ///////////////////////////Users
+//ajax Register
+Route::get('ajaxRegisterEmail/{email}', 'AjaxController@registerEmail');
+Route::get('ajaxRegisterPhone/{phone}', 'AjaxController@registerPhone');
+//
 //profile
 Route::get('users/profile', function(){
     return view('users.profile.profile');
@@ -125,6 +129,7 @@ Route::post('feedback/postFeedback', 'FeedbackController@postFeedback');
 //////////////category
 Route::get('category', 'CategoryController@category');
 Route::post('category/search', 'CategoryController@search');
+Route::get('category/search' ,'CategoryController@category' );
 //example product
 Route::get('product-detail/{id}', 'ProductController@productDetails');
 

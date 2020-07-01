@@ -38,20 +38,16 @@ class CategoryController extends Controller
     //User Category
     public function category(){
         $product = Product::all();
-        return view('users.product.category', compact('product'));
+        $message = 'a';
+        return view('users.product.category', compact('product','message'));
     }
     
     //User Search Category
     public function search(Request $request){
-        $inEar = $request->input('CateInEar');
-        $onEar = $request->input('CateOnEar');
-        $trueWireless = $request->input(('CateTrueWire'));
-        $sony = $request->input('BrandSony');
-        $jbl = $request->input('BrandJBL');
-        $westone = $request->input('BrandWestone');
-        $beats = $request->input('BrandBeats');
-        $bang = $request->input('BrandBang');
+        
+        $re = $request->all();
         $orderByPrice = $orderByName = 'asc';
+        $message = 'a';
 
         if($request->input('SortBy') == 2  ){
             $orderByPrice = 'desc';
@@ -61,43 +57,44 @@ class CategoryController extends Controller
         }
         $fromPrice = $request->input('fromPrice');
         $toPrice = $request->input('toPrice');
-    if(isset($inEar) || isset($onEar) || isset($trueWireless) || isset($sony) || isset($jbl) || isset($westone) || isset($beats) || isset($bang)){           
-                $product= Product::join('brand','product.brand_id','=','brand.id')
-                ->join('category','product.category_id','=','category.id')  
-                ->orWhereIn('category.category_name',[$inEar,$onEar,$trueWireless])   
-                ->orWhereIn('brand.brand_name',[$sony,$jbl,$westone,$beats,$bang])
-                ->whereBetween('product.price' , [$fromPrice,$toPrice])  
-                ->orderBy('product.price',$orderByPrice)
-                ->orderBy('product.product_title', $orderByName)
-                ->select('product.*', 'brand.brand_name', 'category.category_name')
-                ->get();
 
-            if($fromPrice > $toPrice){
-            $message = 'Price is invalid';
-            return view('users.product.category', compact('message','product'));
-            } 
-            if($product->count() > 0 )
-            return view('users.product.category', compact('product'));
-
-            $message = 'Not Found';
-            return view('users.product.category', compact('product','message'));    
-    }else{
-        $product= Product::join('brand','product.brand_id','=','brand.id')
-                            ->join('category','product.category_id','=','category.id')                                                         
-                            ->whereBetween('product.price' , [$fromPrice,$toPrice])  
-                            ->orderBy('product.price',$orderByPrice)
-                            ->orderBy('product.product_title', $orderByName)
-                            ->select('product.*', 'brand.brand_name', 'category.category_name') 
-                            ->get();
+        if($re != null){
+            $product= Product::join('brand','product.brand_id','=','brand.id')
+                    ->join('category','product.category_id','=','category.id')  
+                    ->orWhereIn('category.category_name',$re)   
+                    ->orWhereIn('brand.brand_name',$re)
+                    ->whereBetween('product.price' , [$fromPrice,$toPrice])  
+                    ->orderBy('product.price',$orderByPrice)
+                    ->orderBy('product.product_title', $orderByName)
+                    ->select('product.*', 'brand.brand_name', 'category.category_name')
+                    ->get();
+        
         if($fromPrice > $toPrice){
-            $message = 'Price is invalid';
-            return view('users.product.category', compact('message','product'));
-        } 
+            $message = 'Price is invalid !!!';
+            return view('users.product.category', compact('product','message'));
+        }
         if($product->count() > 0 )
-            return view('users.product.category', compact('product'));
+             return view('users.product.category', compact('product','message'));  
+            
+        $message = 'Not found !!!';
+        return view('users.product.category', compact('product','message'));
+    }else{
+            $product=   Product::join('brand','product.brand_id','=','brand.id')
+                                ->join('category','product.category_id','=','category.id')                                                         
+                                ->whereBetween('product.price' , [$fromPrice,$toPrice])  
+                                ->orderBy('product.price',$orderByPrice)
+                                ->orderBy('product.product_title', $orderByName)
+                                ->select('product.*', 'brand.brand_name', 'category.category_name') 
+                                ->get();
 
-        $message = 'Not Found';
-                return view('users.product.category', compact('product','message'));    
+        if($fromPrice > $toPrice){
+            $message = 'Price is invalid !!!';
+            return view('users.product.category', compact('product','message'));
+        }
+        if($product->count() > 0 )
+            return view('users.product.category', compact('product','message'));
+        $message = 'Not found !!!';
+        return view('users.product.category', compact('product','message'));
     }
     }
 

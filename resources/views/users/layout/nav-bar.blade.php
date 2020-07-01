@@ -40,9 +40,9 @@
         <ul class="navbar-nav mx-auto">
           <li class="nav-item"><a href="{{route("homepage")}}" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="{{ url('category')}}" class="nav-link">Categories</a></li>
-          <li class="nav-item"><a href="brand" class="nav-link">Brands </a></li>
-          <li class="nav-item"><a href="about-us" class="nav-link">About Us</a></li>
-          <li class="nav-item"><a href="contact-us" class="nav-link">Contact Us</a></li>
+          <li class="nav-item"><a href="{{url('brand')}}" class="nav-link">Brands </a></li>
+          <li class="nav-item"><a href="{{url('about-us')}}" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="{{url('contact-us')}}" class="nav-link">Contact Us</a></li>
         </ul>
         <div class="right-col d-flex align-items-lg-center flex-column flex-lg-row">
           <!-- Search Button-->
