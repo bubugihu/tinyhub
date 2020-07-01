@@ -7,6 +7,29 @@ use App\Feedback;
 
 class FeedbackController extends Controller
 {   
+
+    //user post feedback
+    public function postFeedback(Request $request){
+        $this->validate($request,
+        [
+            'feedbackName'          =>      'bail|required|string|min:2',
+            'feedbackPhone'         =>      'bail|nullable|regex:/^0[0-9]{9}$/i',
+            'feedbackEmail'         =>      'bail|required|regex:/^[a-zA-Z0-9.!#$%&]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+[.a-zA-Z0-9]*$/i',
+            'feedbackContent'       =>      'bail|required|min:2'
+        ]);
+
+        $feedback = new Feedback();
+        $feedback->feed_name    =   $request->feedbackName;
+        $feedback->feed_phone   =   $request->feedbackPhone;
+        $feedback->feed_email   =   $request->feedbackEmail;
+        $feedback->feed_title   =   $request->feedbackTitle;
+        $feedback->feed_content =   $request->feedbackContent;
+        $feedback->feed_status  =   0;
+        $feedback->save();
+        $alert= '';    
+        return redirect('contact-us')->with(['flash_level' => 'success','flash_message' => 'Feedback has been sent. Thank you !' ]);
+    } 
+
     //show feedback
     public function feedbackList(){
         $feedback = Feedback::orderBy('feed_status','asc')->get();

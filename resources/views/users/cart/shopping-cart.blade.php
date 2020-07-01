@@ -62,7 +62,9 @@
                   </div>
                 </div>
                 <div class="col-2"><span>$</span><span>{{number_format($cart->price*$cart->qty, 0, '.', ',')}}</span></div>
-                <div class="col-1 "><form action="{{url('cart/shopping/removeItem/'.$cart->rowId)}}" method="post"></form><button type="submit" onclick="return confirm('Do you want to remove ?');"><i class="delete fa fa-trash"></i></button></div>
+                <div class="col-1 ">
+                  <a href="{{url('cart/shopping/removeItem/'.$cart->rowId)}}" class="badge badge-danger p-2" onclick="return confirm('Do you want to remove ?');"><i class="delete fa fa-trash"></i></a>
+                </div>
               </div>
             </div>  
             @endforeach

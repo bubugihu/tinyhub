@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     protected $table = "comments";
-
-    protected $fillable = ['cmt_title', 'cmt_content', 'cmt_status', 'cmt_date', 'product_id', 'customer_id'];
+    public $timestamps=true;
+    protected $fillable = ['cmt_title', 'cmt_content', 'cmt_status', 'product_id', 'customer_id','created_at'];
 
     public function roleProduct(){
         return $this->belongsTo(Product::class);

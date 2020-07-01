@@ -39,7 +39,12 @@
                               <div class="form-group row">
                                     <div class="col-6">
                                         <label class="form-control-label text-uppercase">BirthDay</label>
-                                        <input type="date" name="dob" class="form-control "  min="1900-01-01" max="2006-12-31">
+                                        <input type="date" name="dob" class="form-control  @error('dob') is-invalid @enderror"  min="1900-01-01" max="2006-12-31">
+                                        @error('dob')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                          @enderror
                                     </div>
                                     <div class="col-6">
                                         <label class="form-control-label text-uppercase">Gender</label>
@@ -124,3 +129,6 @@
 </div>
 
 @endsection
+<script>
+
+</script>

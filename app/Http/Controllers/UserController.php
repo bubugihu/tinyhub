@@ -23,7 +23,7 @@ class UserController extends Controller
             $request,
             [
                 'name'          => ['bail','required', 'string', 'max:255'],
-                'email'         => ['bail','required', 'string', 'email', 'max:255', 'unique:users'],
+                'email'         => ['bail','required', 'string', 'regex:/^[a-zA-Z0-9.!#$%&]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+[.a-zA-Z0-9]*$/i', 'max:255', 'unique:users'],
                 'password'      => ['bail','required', 'string', 'min:8', 'confirmed'],
                 'fullname'      => ['bail','required','string','max:255'],
                 'phone'         => ['bail','required','regex:/^0[0-9]{9}$/i','unique:customer'],

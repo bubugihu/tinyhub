@@ -119,7 +119,8 @@ Route::get('logout', function () {
     Auth::logout();
     return redirect()->route('homepage');
 })->name('logout');
-
+//feedback
+Route::post('feedback/postFeedback', 'FeedbackController@postFeedback');
 //////////////////////////// User cart
 //////////////category
 Route::get('category', 'CategoryController@category');
@@ -142,11 +143,8 @@ Route::post('cart/shopping/increItem', 'CartController@increCart');
 //decre item
 Route::post('cart/shopping/decreItem','CartController@decreCart');
 //remove item
-Route::post('cart/shopping/removeItem/{id}', 'CartController@removeItem');
-Route::get('cart/shopping/removeItem/{a}', function(){
-        return abort(404);
-    })->where('a','[A-Za-z0-9]+');
-
+// Route::post('cart/shopping/removeItem', 'CartController@removeItem');
+Route::get('cart/shopping/removeItem/{id}', 'CartController@removeItem');
 //check out cart
 Route::get('checkout' , function(){
     return view('users.cart.checkout');
@@ -157,7 +155,7 @@ Route::get('cart/shopping/order-review', function(){
 });
 
 //order review 
-Route::get('cart/shopping/order-review', 'CartController@orderDetails');
+Route::get('cart/shopping/orderDetails/{id}', 'CartController@orderDetails');
 
 
 

@@ -34,9 +34,9 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Kien', 'email' => 'kien@gmail.com', 'password' => 'kien123']
         ]);
         DB::table('feedback')->insert([
-            ['feed_title' => 'Test Product 1', 'feed_content' => 'Thanh Test Product', 'feed_phone' => '0359875621', 'feed_email' => 'thanh@gmail.com'],
-            ['feed_title' => 'Test Product 2', 'feed_content' => 'Kien Test Product', 'feed_phone' => '03598456621', 'feed_email' => 'thanh@gmail.com'],
-            ['feed_title' => 'Test Product 3', 'feed_content' => 'Quang Coi Test Product', 'feed_phone' => '0378875621', 'feed_email' => 'thanh@gmail.com']
+            ['feed_title' => 'Test Product 1','feed_name' => 'nana', 'feed_content' => 'Thanh Test Product', 'feed_phone' => '0359875621', 'feed_email' => 'thanh@gmail.com'],
+            ['feed_title' => 'Test Product 2','feed_name' => 'bubu', 'feed_content' => 'Kien Test Product', 'feed_phone' => '03598456621', 'feed_email' => 'thanh@gmail.com'],
+            ['feed_title' => 'Test Product 3','feed_name' => 'QQ', 'feed_content' => 'Quang Coi Test Product', 'feed_phone' => '0378875621', 'feed_email' => 'thanh@gmail.com']
 
         ]);
         DB::table('banner')->insert([

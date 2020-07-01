@@ -12,7 +12,7 @@ class Order extends Model
     
     public $timestamps=true;
 
-    protected $fillable = ['id','consignee_name','shipping_address', 'phone_consignee','note','payment', 'status', 'customer_id'];
+    protected $fillable = ['id','consignee_name','shipping_address', 'phone_consignee','note','payment', 'status', 'customer_id','created_at','updated_at'];
 
     public function roleOrderDetails(){
         $this->hasOne(OrderDetail::class);

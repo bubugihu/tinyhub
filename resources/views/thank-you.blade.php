@@ -10,6 +10,7 @@
                     <p class="text-muted">You will recieve your orders as soon as possible</p>
                 </div>
             </div>
+            <div class="text-center"><a href="{{ route('homepage') }}" class="btn btn-success">Back to Homepage</a></div>
         </div>
     </section>
 @endsection

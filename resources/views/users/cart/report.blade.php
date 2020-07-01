@@ -14,26 +14,26 @@
             <div class="col-md-6 text-left" style="line-height: 0.7;">
               <h2 style="color: #f47535;">Invoice</h2><br>  
               <hr>
-              <p>Order Id: 09201</p>
-              <p>Created: 20/07/2020</p>
-              <p>Payment Method: COD</p>
+              <p>Order Id: {{$id}}</p>
+              <p>Created: {{$orderDetails->created_at}}</p>
+              <p>Payment Method: {{$orderDetails->payment}}</p>
             </div>
           </div>
           <div class="row p-4">
             <div class="col-md-6" style="line-height: 0.7;">
                 <h4>Customer Information</h4>
                 <hr>
-                <p>Fullname: Jason Dang</p>
-                <p>Email: jason@gmail.com</p>
-                <p>Phone: 0908099871</p>
-                <p>Address: 300 CMT8 Phuong 1 Quan 3</p>
+                <p>Fullname: {{$orderDetails->customer_name}}</p>
+                <p>Email: {{$orderDetails->email}}</p>
+                <p>Phone: {{$orderDetails->phone}}</p>
+                <p>Address: {{$orderDetails->address}}</p>
             </div>
             <div class="col-md-6" style="line-height: 0.7;">
                 <h4>Receiver Information</h4>
                 <hr>
-                <p>Fullname: Jason Dang</p>
-                <p>Phone: 0908099871</p>
-                <p>Receiving address: 300 CMT8 Phuong 1 Quan 3</p>
+                <p>Fullname: {{$orderDetails->consignee_name}}</p>
+                <p>Phone: {{$orderDetails->phone_consignee}}</p>
+                <p>Receiving address: {{$orderDetails->shipping_address}}</p>
             </div>
           </div>
           <div class="row p-4">
@@ -41,8 +41,7 @@
               <table class="table table-bordered">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Product ID</th>
+                    <th scope="col">No.</th>
                     <th scope="col">Product Title</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Price</th>
@@ -50,20 +49,23 @@
                   </tr>
                 </thead>
                 <tbody>
+
+                  @foreach($select as $s)
                   <tr>
-                    <th scope="row">1</th>
-                    <td>1</td>
-                    <td>JBL True-Wireless</td>
-                    <td>2</td>
-                    <td>$20</td>
-                    <td>$40</td>
+                    <th scope="row">{{++$stt}}</th>
+                    <td>{{$s->product_title}}</td>
+                    <td>{{$s->quantity}}</td>
+                    <td>${{$s->price}}</td>
+                    <td>${{$s->quantity * $s->price}}</td>
                   </tr>
+                  @endforeach
+
                 </tbody>
                 <tfoot>
                   <tr>
                     <th></th>
-                    <td colspan="4" class="text-right text-danger text-uppercase">Total</td>
-                    <td class="text-red">$40</td>
+                    <td colspan="3" class="text-right text-danger text-uppercase">Total</td>
+                    <td class="text-red">${{$total}}</td>
                   </tr>
                 </tfoot>
               </table>

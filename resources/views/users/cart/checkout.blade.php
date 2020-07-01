@@ -29,11 +29,21 @@
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label for="firstname" class="form-label">Full Name</label>
-                                        <input type="text" id="firstname" name="consignee_name" placeholder="Enter your name" class="form-control">
+                                        <input type="text" id="firstname" name="consignee_name" placeholder="Enter your name" class="form-control @error('consignee_name') is-invalid @enderror">
+                                        @error('consignee_name')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                        @enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="lastname" class="form-label">Phone</label>
-                                        <input type="text" id="lastname" name="phone_consignee" placeholder="Phone" class="form-control">
+                                        <input type="text" id="lastname" name="phone_consignee" placeholder="Phone" class="form-control @error('phone_consignee') is-invalid @enderror">
+                                        @error('phone_consignee')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                        @enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="country" class="form-label pl-2">Payment</label>
@@ -44,7 +54,12 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="address" class="form-label">Address</label>
-                                        <input type="text" id="address" name="shipping_address" placeholder="Address" class="form-control">
+                                        <input type="text" id="address" name="shipping_address" placeholder="Address" class="form-control @error('shipping_address') is-invalid @enderror">
+                                        @error('shipping_address')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
                                     <div class="form-group col-md-12">
                                         <label for="note" class="form-label">Note</label>

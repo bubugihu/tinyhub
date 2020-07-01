@@ -18,6 +18,7 @@ class TableBrand extends Migration
             $table->string('brand_name',256)->unique();
             $table->string('brand_image');
             $table->longText('description')->default('Not Description')->nullable();
+            $table->timestamps();
         });
     }
 
