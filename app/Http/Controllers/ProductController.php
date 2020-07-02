@@ -198,6 +198,7 @@ class ProductController extends Controller {
         $product = Product::find($id);
         $gallery = Gallery::where('product_id', $id)->get();
         $category = Category::find($product->category_id);
+        $brand= Brands::find($product->brand_id);
         $quantity = 1;
         //comment
         $comment = Comment::join('customer', 'comments.customer_id', '=', 'customer.id')
@@ -209,6 +210,11 @@ class ProductController extends Controller {
             $customer=Customers::find(Auth::user()->id)->feature;
         }
         //end comment
-        return view('users.product.productDetails', compact('product', 'gallery', 'category', 'quantity','comment','customer'));
+        //Similar Product
+        $similar=Product::where('id','<>',$id)->where('category_id',$product->category_id)
+        ->select('product.*')->take(4)->get();
+
+        //End Similar Product
+        return view('users.product.productDetails', compact('product', 'gallery', 'category','brand', 'quantity','comment','customer','similar'));
     }
 }

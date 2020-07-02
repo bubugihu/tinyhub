@@ -23,21 +23,6 @@
                     </tr>
                   </thead>
                   <tbody>
-
-                    @foreach($banners as $banner)
-                    <tr>
-                      <th scope="row">{{$banner->id}}</th>                      
-                      <td>{{$banner->ban_title}}</td>
-                      <td>{{$banner->ban_content}}</td>
-                      <td><img src="{{asset('img/'.$banner->ban_image)}}" alt="" width="60"></td>
-                      <td>{{$banner->ban_date}}</td>
-                      <td>
-                        <a href="#" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
-                        <a href="#" class="badge badge-danger p-2"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
-                      </td>
-                    </tr>
-                    @endforeach
-
                   @foreach($banners as $banner)
                   <tr>
                     <th scope="row" class="align-middle">{{$banner->id}}</th>

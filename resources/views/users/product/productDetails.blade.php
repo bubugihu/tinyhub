@@ -42,6 +42,9 @@
                 <p class="product_name">{{$product->product_title}}</p>
             </div>
             <div class="row">
+                <p class="product_cate">Brand: <a href="#">{{$brand->brand_name}}</a></p>
+            </div>
+            <div class="row">
                 <p class="product_price">$ {{$product->price}}</p>
             </div>
             <div class="row">
@@ -107,7 +110,7 @@
                 <div id="reviews" class="tab-pane">
                     @foreach($comment as $comment)
                     <div class="row review d-flex justify-content-center">
-                        <div class="col-3 text-center"><img src="{{asset("$comment->feature")}}" alt="{{$comment->name}}" class="review-image"><span>{{$comment->cmt_date}}</span></div>
+                        <div class="col-3 text-center"><img src="{{asset("img/$comment->feature")}}" alt="{{$comment->name}}" class="review-image"><span>{{$comment->cmt_date}}</span></div>
                         <div class="col-9 review-text" style="padding-right: 65px;">
                             <h6>{{$comment->name}}</h6>
                             <hr width="100%">
@@ -117,7 +120,7 @@
                     @endforeach
                     @auth
                     <div class="row review d-flex justify-content-center">
-                        <div class="col-3 text-center"><img src="{{asset("$customer")}}" alt="{{Auth::user()->name}}" class="review-image"><span></span></div>
+                        <div class="col-3 text-center"><img src="{{asset("img/$customer")}}" alt="{{Auth::user()->name}}" class="review-image"><span></span></div>
                         <div class="col-9 review-text" style="padding-right: 65px;">
                             <form action="">
                                 <div>
@@ -153,62 +156,22 @@
 <!-- Similar Product -->
 <div class="container">
     <div class="row py-5">
+        @foreach($similar as $similar)
         <div class="col-xl-3">
             <div class="product_grid card-body card">
                 <div class="product_image">
                     <a href="" class="image ">
-                        <img class="pic_1 rounded" src="{{url("img/headphone-slider1.png")}}" alt="">
-                        <img class="pic_2 rounded" src="{{url("img/headphone-slider2.png")}}" alt="">
+                        <img class="pic_1 rounded" src="{{asset('img/feature/'.$similar->feature_image)}}" alt="{{$similar->product_title}}">
+                        <img class="pic_2 rounded" src="" alt="{{$similar->product_title}}">
                     </a>
                 </div>
                 <div class="product_content">
-                    <h3 class="title"><a href="#">Heaphone TinyHub</a></h3>
-                    <div class="price">$18.50</div>
+                    <h3 class="title"><a href="#">{{$similar->product_title}}</a></h3>
+                    <div class="price">$ {{$similar->price}}</div>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3">
-            <div class="product_grid card-body card">
-                <div class="product_image">
-                    <a href="" class="image ">
-                        <img class="pic_1 rounded" src="{{url("img/headphone-slider1.png")}}" alt="">
-                        <img class="pic_2 rounded" src="{{url("img/headphone-slider2.png")}}" alt="">
-                    </a>
-                </div>
-                <div class="product_content">
-                    <h3 class="title"><a href="#">Heaphone TinyHub</a></h3>
-                    <div class="price">$18.50</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3">
-            <div class="product_grid card-body card">
-                <div class="product_image">
-                    <a href="" class="image ">
-                        <img class="pic_1 rounded" src="{{url("img/headphone-slider1.png")}}" alt="">
-                        <img class="pic_2 rounded" src="{{url("img/headphone-slider2.png")}}" alt="">
-                    </a>
-                </div>
-                <div class="product_content">
-                    <h3 class="title"><a href="#">Heaphone TinyHub</a></h3>
-                    <div class="price">$18.50</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3">
-            <div class="product_grid card-body card">
-                <div class="product_image">
-                    <a href="" class="image ">
-                        <img class="pic_1 rounded" src="{{url("img/headphone-slider1.png")}}" alt="">
-                        <img class="pic_2 rounded" src="{{url("img/headphone-slider2.png")}}" alt="">
-                    </a>
-                </div>
-                <div class="product_content">
-                    <h3 class="title"><a href="#">Heaphone TinyHub</a></h3>
-                    <div class="price">$18.50</div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 <!--  -->

@@ -11,56 +11,52 @@
                             <h6 class="text-uppercase mb-0">Update Customer</h6>
                         </div>
                         <div class="card-body">
-                            <form action="" id="{{ url('admin/customer/updateCustomer/'.$customer->id)}}" method="POST" enctype="multipart/form-data">
+                            <form role="form" action="{{url("admin/customer/postUpdateCustomer/" . $customer -> id)}}" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">User Name</label>
-                                            <input type="text" class="form-control" placeholder="{{$customer->name}}" required>
+                                            <label class="form-control-label text-uppercase">Full Name</label>
+                                            <input type="text" class="form-control" placeholder="{{$customer->customer_name}}" name="cus_customer_name">
+                                            @if($errors->has('cus_customer_name'))
+                                            <small style="color:red;font-size:14px;">{{$errors->first('cus_customer_name')}}</small>
+                                            @endif
                                         </div>
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Email</label>
-                                            <input type="email" class="form-control" placeholder="{{$customer->email}}" required>
+                                            <label class="form-control-label text-uppercase">BirthDay</label>
+                                            <input type="date" class="form-control" placeholder="{{$customer->dob}}" name="cus_dob">
+                                            @if($errors->has('cus_dob'))
+                                            <small style="color:red;font-size:14px;">{{$errors->first('cus_dob')}}</small>
+                                            @endif
                                         </div>
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Role</label>
-                                            <select class="form-control" required>
-                                                <option value="0">User</option>
-                                                <option value="1">Admin</option>
-                                                <option value="2">Mod</option>
+                                            <label class="form-control-label text-uppercase">Gender</label>
+                                            <select class="form-control" name="cus_gender">
+                                                <option value="0">None</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Other</option>
                                             </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Address</label>
-                                            <input type="text" class="form-control" placeholder="{{$customer->address}}" required>
+                                            @if($errors->has('cus_gender'))
+                                            <small style="color:red;font-size:14px;">{{$errors->first('cus_gender')}}</small>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Full Name</label>
-                                            <input type="text" class="form-control" placeholder="{{$customer->customer_name}}" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-control-label text-uppercase">BirthDay</label>
-                                            <input type="date" class="form-control" placeholder="{{$customer->dob}}" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Gender</label>
-                                            <select class="form-control" required>
-                                                <option value="">Male</option>
-                                                <option value="">Female</option>
-                                                <option value="">Other</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
                                             <label class="form-control-label text-uppercase">Phone</label>
-                                            <input type="number" class="form-control" placeholder="{{$customer->phone}}" required>
+                                            <input type="number" class="form-control" placeholder="{{$customer->phone}}" name="cus_phone">
+                                            @if($errors->has('cus_phone'))
+                                            <small style="color:red;font-size:14px;">{{$errors->first('cus_phone')}}</small>
+                                            @endif
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="form-control-label text-uppercase">Address</label>
+                                            <input type="text" class="form-control" placeholder="{{$customer->address}}" name="cus_address">
+                                            @if($errors->has('cus_address'))
+                                            <small style="color:red;font-size:14px;">{{$errors->first('cus_address')}}</small>
+                                            @endif
+                                        </div>
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Picture</label>
                                             <div class="input-group mb-3">
@@ -68,10 +64,13 @@
                                                     <span class="input-group-text">Upload</span>
                                                 </div>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="cus_feature">
                                                     <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
                                                 </div>
                                             </div>
+                                            @if($errors->has('cus_feature'))
+                                            <small style="color:red;font-size:14px;">{{$errors->first('cus_feature')}}</small>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

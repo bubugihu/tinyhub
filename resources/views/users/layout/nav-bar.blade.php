@@ -11,7 +11,7 @@
               <div class="top-right links py-1 shadow">
                   @auth
                   @if(Auth::user()->role == 0)
-              <a href="{{ url('users/profile') }}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a>
+              <a href="{{ url('users/profile/'.Auth::user()->id)}}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a>
                   @else
               <a href="{{ url('admin/index') }}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a> 
                   @endif   
