@@ -105,6 +105,14 @@ class CartController extends Controller
     }
 
     //check out cart
+    public function checkout(){
+        if(Cart::count() == 0)
+            return abort(404);
+        else 
+            return view('users.cart.checkout');
+    }
+
+    //order review
     public function orderReview(Request $request){
         //validate
         $this->validate($request,
@@ -138,27 +146,6 @@ class CartController extends Controller
         ]);
         }
         
-        // //show information 
-        // $orderDetails = OrderDetail::join('product', 'product.id', '=','order_details.product_id')
-        //                             ->join('order','order.id' ,'=', 'order_details.order_id')
-        //                             ->join('category','category.id','=','product.category_id')
-        //                             ->where('order.id','=',$order->id)
-        //                             ->select('product.*','order_details.quantity','category.category_name')
-        //                             ->get();
-        // // sum total
-        // $select = OrderDetail::join('product', 'product.id', '=','order_details.product_id')
-        //                         ->where('order_details.order_id',$order->id)
-        //                         ->select('order_details.quantity','product.price','order_details.order_id')
-        //                         ->get();  
-        // $subtotal=0;  
-        // foreach($select as $totals)
-        // {
-        //     $subtotal = $subtotal + $totals->quantity * $totals->price;
-        // }
-        // $tax = $subtotal *0.1;
-        // $total=$subtotal*1.1;
-        
-        // Cart::destroy();
         return view('users.cart.order-review', compact('consignee_name','phone_consignee','payment','shipping_address','note'));
     }
     

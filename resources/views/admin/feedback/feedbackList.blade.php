@@ -15,8 +15,8 @@
                   <thead>
                     <tr>
                       <th>No</th>
+                      <th>Name</th>
                       <th>Title</th>
-                      <th>Content</th>
                       <th>Phone</th>
                       <th>Email</th>
                       <th>Status</th>
@@ -28,7 +28,7 @@
                     @foreach( $feedback as $feedback)
                       <tr>
                       <th scope="row">{{ ++$stt}}</th>
-                        <td>{{ $feedback->feed_title}}</td>
+                        <td>{{ $feedback->feed_name}}</td>
                         <td><button type="button" data-toggle="modal" data-target="#a{{$stt}}" class="btn btn-info">Read</button></td>
                         <td>{{ $feedback->feed_phone}}</td>
                         <td>{{ $feedback->feed_email}}</td>

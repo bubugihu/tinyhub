@@ -155,9 +155,7 @@ Route::post('cart/shopping/decreItem','CartController@decreCart');
 // Route::post('cart/shopping/removeItem', 'CartController@removeItem');
 Route::get('cart/shopping/removeItem/{id}', 'CartController@removeItem');
 //check out cart
-Route::get('checkout' , function(){
-    return view('users.cart.checkout');
-})->middleware('auth');
+Route::get('checkout' , 'CartController@checkout')->middleware('auth');
 //order review
 Route::post('cart/shopping/order-review', 'CartController@orderReview');
 Route::get('cart/shopping/order-review', function(){
