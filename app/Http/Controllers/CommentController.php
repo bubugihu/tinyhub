@@ -36,9 +36,9 @@ class CommentController extends Controller
         return redirect()->action('CommentController@listComment');
     }
 
-    public function deleteComment($date)
+    public function deleteComment($id)
     {
-        $deleteComment = Comment::where('created_at',$date)->delete();
+        $deleteComment = Comment::find($id)->delete();
         return redirect()->action('CommentController@listComment')->with(['flash_level' => 'success', 'flash_message' => 'Delete Comment Successfully !']);
     }
 }

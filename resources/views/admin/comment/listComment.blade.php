@@ -158,7 +158,7 @@
                           </div>
                         </div>
                       </div>
-                      <a href="{{url('admin/comment/deleteComment/'.$comment->cmt_date)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
+                      <a href="{{url('admin/comment/deleteComment/'.$comment->id)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
                     </td>
                   </tr>
                   @endforeach

@@ -26,13 +26,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
-        $categoryCheckBox = Category::all();
-        $brandCheckBox = Brands::all();
-        View::share([
-            'categoryCheckBox'  => $categoryCheckBox,
-            'brandCheckBox'     => $brandCheckBox,
-        ]);
+        // Schema::defaultStringLength(191);
+        // $categoryCheckBox = Category::all();
+        // $brandCheckBox = Brands::all();
+        // View::share([
+        //     'categoryCheckBox'  => $categoryCheckBox,
+        //     'brandCheckBox'     => $brandCheckBox,
+        // ]);
         
     }
 }

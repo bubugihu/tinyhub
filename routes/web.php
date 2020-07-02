@@ -73,7 +73,7 @@ Route::get('admin/order/offOrderStatus/{id}', 'OrderController@offOrderStatus');
 Route::get('admin/comment/listComment', 'CommentController@listComment');
 Route::get('admin/comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
 Route::get('admin/comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
-Route::get('admin/comment/deleteComment/{date}', 'CommentController@deleteComment');
+Route::get('admin/comment/deleteComment/{id}', 'CommentController@deleteComment');
 
 //banner
 Route::get('admin/banners/listBanner' , 'BannerController@listBanner');
