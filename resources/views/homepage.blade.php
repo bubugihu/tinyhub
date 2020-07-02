@@ -257,7 +257,7 @@
                 </div>
                 <div class="col-md-12">
                 <!-- Rounded tabs -->
-                     <ul id="myTab" role="tablist" class="nav nav-tabs nav-pills flex-column flex-sm-row text-center border-0 rounded-nav">
+                     <ul id="homeTab" role="tablist" class="nav nav-tabs nav-pills flex-column flex-sm-row text-center border-0 rounded-nav">
                         <li class="nav-item flex-sm-fill">
                            <a id="first-tab" data-toggle="tab" href="#first" role="tab" aria-controls="first" aria-selected="true" class="nav-link active"><img src="https://i.pinimg.com/originals/8d/f5/0d/8df50d880b4c2d2cfc2aad147068cf72.png" alt="" width="50" height="auto"></a>
                         </li>
@@ -268,7 +268,7 @@
                           <a id="third-tab" data-toggle="tab" href="#third" role="tab" aria-controls="third" aria-selected="false" class="nav-link"> <img src="https://logodownload.org/wp-content/uploads/2016/10/jbl-logo-6-1.png" alt="" width="60" height="auto"></a>
                         </li>
                         <li class="nav-item flex-sm-fill">
-                            <a id="fouth-tab" data-toggle="tab" href="#fouth" role="tab" aria-controls="fouth" aria-selected="false" class="nav-link"><img src="https://pluspng.com/img-png/sony-logo-eps-png-sony-logo-png-1269.png" alt="" width="60" height="auto"></a>
+                            <a id="fouth-tab" data-toggle="tab" href="#fouth" role="tab" aria-controls="fouth" aria-selected="false" class="nav-link"><img src="https://pluspng.com/img-png/sony-logo-eps-png-sony-logo-png-1269.png" alt="" width="70" height="auto"></a>
                         </li>
                         <li class="nav-item flex-sm-fill">
                           <a id="fith-tab" data-toggle="tab" href="#fith" role="tab" aria-controls="fith" aria-selected="false" class="nav-link"><img src="https://cdn.freebiesupply.com/logos/large/2x/westone-audio-1-logo-png-transparent.png" alt="" width="100" height="40"></a>

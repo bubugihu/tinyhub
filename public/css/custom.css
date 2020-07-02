@@ -30,3 +30,7 @@ ul.pagination li a {
     background: #000!important;
     border-color: #000!important;
 }
+span.required {
+    color: red;
+    font-size: 15px;
+}

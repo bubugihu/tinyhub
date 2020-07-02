@@ -27,7 +27,7 @@ class TableProduct extends Migration
             $table->integer('warranty_period')->default(24);
             $table->integer('category_id')->unsigned();        //foreign key
             $table->integer('brand_id')->unsigned();       //foreign key
-            $table->timestamps();
+            $table->date('created_at')->default(Carbon::now());
         });
     }
 

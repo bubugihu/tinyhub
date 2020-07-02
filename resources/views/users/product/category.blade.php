@@ -82,7 +82,7 @@
             </div>
             @endif 
             <div class="row product_list">
-                @foreach($product as $product)
+                @foreach($products as $product)
                 <div class="col-xl-4">
                     <div class="product_grid card-body card">
                         <div class="product_image">
@@ -99,6 +99,13 @@
                 </div>
                 @endforeach
                 
+            </div><br>
+            <div class="row py-3">
+                <div class="col-md-12">
+                    <nav aria-label="Page navigation">
+                        {{ $products->links() }}
+                    </nav>
+                </div>
             </div>
         </div>
         <!-- /Content end -->

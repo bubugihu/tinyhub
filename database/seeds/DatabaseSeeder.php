@@ -132,18 +132,6 @@ class DatabaseSeeder extends Seeder
             ['product_gallery' => 'in-ear-sony-2-3.jpg', 'product_id' => 4],
             ['product_gallery' => 'in-ear-sony-2-4.jpg', 'product_id' => 4],
         ]);
-        DB::table('order')->insert([
-            ['shipping_address'=>'234 Le Hong Phong','consignee_name'=>'Nguyen Duc Anh','phone_consignee'=>'0359875621','status'=>1,'customer_id'=>1],
-            ['shipping_address'=>'234 3 thang 2','consignee_name'=>'Dang Xuan Quang','phone_consignee'=>'0359871221','status'=>0,'customer_id'=>2],
-            ['shipping_address'=>'234 Phan Van Tri','consignee_name'=>'Bui Gia Hung','phone_consignee'=>'0359875665','status'=>0,'customer_id'=>3],
-            ['shipping_address'=>'234 Nguyen Chi Thanh','consignee_name'=>'Nguyen Chi Thanh','phone_consignee'=>'0459875621','status'=>1,'customer_id'=>4],
-            
-        ]);
-        DB::table('order_details')->insert([
-            ['quantity'=>12,'order_id'=>1,'product_id'=>1],
-            ['quantity'=>22,'order_id'=>2,'product_id'=>4],
-            ['quantity'=>1,'order_id'=>3,'product_id'=>6],
-            ['quantity'=>12,'order_id'=>4,'product_id'=>2],
-        ]);
+        
     }
 }

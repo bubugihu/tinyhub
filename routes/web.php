@@ -45,13 +45,19 @@ Route::get('admin/product/createProduct', 'ProductController@createProduct');
 Route::post('admin/product/postCreate', 'ProductController@postCreate');
 Route::get('admin/product/updateProduct/{id}', 'ProductController@updateProduct');
 Route::post('admin/product/postUpdate/{id}', 'ProductController@postUpdate');
+Route::get('admin/product/deleteProduct/{id}', 'ProductController@deleteProduct');
 //category
 Route::get('admin/category/categories', 'CategoryController@categories');
 Route::get('admin/category/createCategories', 'CategoryController@createCate');
 Route::post('admin/category/postCate', 'CategoryController@postCate');
+Route::get('admin/category/updateCategories/{id}', 'CategoryController@updateCates');
+Route::post('admin/category/postUpdateCate/{id}', 'CategoryController@postUpdateCate');
 //brands
 Route::get('admin/brands/listBrands' , 'BrandsController@listBrands');
 Route::get('admin/brands/createBrands' , 'BrandsController@createBrand');
+Route::post('admin/brands/postBrands' , 'BrandsController@postBrands');
+Route::get('admin/brands/updateBrands/{id}' , 'BrandsController@updateBrands');
+Route::post('admin/brands/postUpdateBrands/{id}' , 'BrandsController@postUpdateBrands');
 //order
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
 
@@ -67,9 +73,8 @@ Route::post('admin/banners/postCreateBanners', 'BannerController@postCreateBanne
 Route::get('admin/banners/updateBanners/{id}', 'BannerController@updateBanners');
 Route::post('admin/banners/postUpdateBanners', 'BannerController@postUpdateBanners');
 //index
-Route::get('admin/index', function(){
-    return view('admin.index');
-});
+Route::get('admin/index', 'AdminController@index');
+
 //profile
 Route::get('admin/profile', function(){
     return view('admin.profile.profile');
@@ -106,9 +111,7 @@ Route::get('guarantee',function(){
     return view('guarantee');
 })->name('guarantee');
 //brand
-Route::get('brand', function(){
-    return view('brand');
-})->name('brand');
+Route::get('brand', 'BrandsController@getBrands');
 //thank-you
 Route::get('thank-you', function(){
     return view('thank-you');
@@ -128,6 +131,7 @@ Route::post('feedback/postFeedback', 'FeedbackController@postFeedback');
 //////////////////////////// User cart
 //////////////category
 Route::get('category', 'CategoryController@category');
+// Route::get('category', 'CategoryController@getcategories');
 Route::post('category/search', 'CategoryController@search');
 Route::get('category/search' ,'CategoryController@category' );
 //example product

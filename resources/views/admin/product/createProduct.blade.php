@@ -15,21 +15,21 @@
                     <form role="form" action="{{url("admin/product/postCreate")}}" method="POST" enctype="multipart/form-data">
                       {{ csrf_field() }}
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Product Title</label>
+                        <label class="form-control-label text-uppercase">Product Title <span class="required">*</span></label>
                         <input type="text" class="form-control" name="prdname">
                         @if($errors->has('prdname'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdname')}}</small>
                         @endif
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Price</label>
+                        <label class="form-control-label text-uppercase">Price <span class="required">*</span></label>
                         <input type="number" class="form-control" name="prdprice" min="0">
                         @if($errors->has('prdprice'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdprice')}}</small>
                         @endif
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Category</label>
+                        <label class="form-control-label text-uppercase">Category <span class="required">*</span></label>
                           <select name="prdcate" class="form-control">
                             <option value="0">None</option>
                             <option value="1">In Ear</option>
@@ -41,7 +41,7 @@
                           @endif
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Brands</label>
+                        <label class="form-control-label text-uppercase">Brands <span class="required">*</span></label>
                           <select name="prdbrand" class="form-control">
                             <option value="0">None</option>
                             <option value="1">Sony</option>
@@ -55,21 +55,21 @@
                           @endif
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Warranty_Period</label>
+                        <label class="form-control-label text-uppercase">Warranty_Period <span class="required">*</span></label>
                         <input type="date" class="form-control" name="prdWarranty" min="0">
                         @if($errors->has('prdWarranty'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdWarranty')}}</small>
                         @endif
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Short Description</label>
+                        <label class="form-control-label text-uppercase">Short Description <span class="required">*</span></label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" name="sdescription"rows="3"></textarea>
                         @if($errors->has('sdescription'))
                            <small style="color:red;font-size:14px;">{{$errors->first('sdescription')}}</small>
                         @endif
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Long Description</label>
+                        <label class="form-control-label text-uppercase">Long Description <span class="required">*</span></label>
                         <textarea class="form-control ckeditor" id="exampleFormControlTextarea1" name="ldescription" rows="3"></textarea>
                         @if($errors->has('ldescription'))
                            <small style="color:red;font-size:14px;">{{$errors->first('ldescription')}}</small>
@@ -82,8 +82,8 @@
                         </script>
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Upload Feature Image:</label><br>
-                        <input type="file" name="featureimg">
+                        <label class="form-control-label text-uppercase">Upload Feature Image: <span class="required">*</span></label><br>
+                        <input type="file" name="featureimg"><br>
                           @if($errors->has('featureimg'))
                             <small style="color:red;font-size:14px;">{{$errors->first('featureimg')}}</small>
                           @endif

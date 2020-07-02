@@ -16,14 +16,35 @@ class CategoryController extends Controller
         return view('admin.category.categories', compact('cates'));
     }
 
+    public function getcategories(){
+        $cates = Category::all();
+        return view('users.product.category', compact('cates'));
+    }
+
     public function createCate(){
         return view('admin.category.createCategories');
     }
 
     // Post Create Categories
-    public function postCate(CategoryRequest $request){
+    public function postCate(Request $request){
 
-        // $category = $request->all();
+        $this->validate(
+            $request,
+            [
+                'cateTitle'           => 'bail|required|unique:Category,category_name|min:3|max:255',
+                'cateDescription'     => 'required',
+               
+            ],
+            [
+                'cateTitle.required'          => 'Category Title can not be blank !',
+                'cateTitle.unique'            => 'Category Title has already existed !',
+                'cateTitle.min'               => 'Category Title has min 3 characters !',
+                'cateTitle.max'               => 'Category Title has min 255 characters !',
+                'cateDescription.required'    => 'Category Description can not be blank !',
+                
+            ]
+        );
+        
         $c = new Category();
         $c->category_name = $request->cateTitle;
         $c->description = $request->cateDescription;
@@ -35,11 +56,48 @@ class CategoryController extends Controller
 
     }
 
+    // Function link to update page
+    public function updateCates($id){
+        $cate = Category::find($id);
+        return view('admin.category.updateCategories', ['c' => $cate]);
+    }
+
+    // Post Create Categories
+    public function postUpdateCate(Request $request, $id){
+
+        $c = Category::find($id);
+
+        $this->validate(
+            $request,
+            [
+                'cateTitle'           => 'bail|required|min:3|max:255',
+                'cateDescription'     => 'required',
+               
+            ],
+            [
+                'cateTitle.required'          => 'Category Title can not be blank !',
+                'cateTitle.min'               => 'Category Title has min 3 characters !',
+                'cateTitle.max'               => 'Category Title has min 255 characters !',
+                'cateDescription.required'    => 'Category Description can not be blank !',
+                
+            ]
+        );
+        
+        $c->category_name = $request->cateTitle;
+        $c->description = $request->cateDescription;
+        $c->save();
+        
+        //session()->put('alert', 'Create Category Successful !');
+        // return redirect('admin/category/postCate')-;
+        return redirect()->action('CategoryController@categories')->with(['flash_level' => 'success','flash_message' => 'Update Successfully !' ]);
+
+    }
+
     //User Category
     public function category(){
-        $product = Product::all();
+        $products = Product::where('status', '=', 0)->paginate(9);
         $message = 'a';
-        return view('users.product.category', compact('product','message'));
+        return view('users.product.category', compact('products', 'message'));
     }
     
     //User Search Category
