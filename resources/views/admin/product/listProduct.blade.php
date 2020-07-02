@@ -39,7 +39,7 @@
                       <td>{{$product->price}}</td>
                       <td>{{$product->sold_out}}</td>
                       <td>{{$product->status}}</td>
-                      <td>{{$product->created_product}}</td>
+                      <td>{{$product->created_at}}</td>
                       <td><a href="#" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                         <a href="{{url("admin/product/updateProduct/" . $product -> id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                         <a href="#" class="badge badge-danger p-2" data-toggle="modal"  data-target="#Modal-Delete-Category"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
@@ -64,7 +64,7 @@
                       <h2>Are you sure you want to delete?</h2>
                     </div>
                     <div class="modal-footer">
-                      <a href="{{url("admin/product/deleteProduct" . $product -> id)}}"><button type="button" class="btn btn-danger">Delete</button></a>
+                      <a href="{{url("admin/product/deleteProduct/" . $product -> id)}}"><button type="button" class="btn btn-danger">Delete</button></a>
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                   </div>

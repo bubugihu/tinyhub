@@ -9,9 +9,10 @@ class Order extends Model
     protected $table = "order";
 
     // Declare primary key on table
-    protected $primaryKey = "id";
+    
+    public $timestamps=true;
 
-    protected $fillable = ['id', 'order_date_time', 'status', 'customer_id', 'created_at', 'updated_at'];
+    protected $fillable = ['id','consignee_name','shipping_address', 'phone_consignee','note','payment', 'status', 'customer_id','created_at','updated_at'];
 
     public function roleOrderDetails(){
         $this->hasOne(OrderDetail::class);

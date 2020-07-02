@@ -64,7 +64,7 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Warranty_Period</label>
-                        <input type="date" class="form-control" name="prdWarranty" min="0" value="{{$p->warranty_period}}">
+                        <input type="number" class="form-control" name="prdWarranty" min="0" value="{{$p->warranty_period}}">
                         @if($errors->has('prdWarranty'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdWarranty')}}</small>
                         @endif

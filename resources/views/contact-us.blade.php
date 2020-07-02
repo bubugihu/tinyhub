@@ -4,9 +4,14 @@
 <div class="hero hero-page padding-small">
   <div class="container">
       <div class="row d-flex">
-          <div class="col-lg-9 ">
-              <h1>FeedBack</h1>
+          <div class="col-lg-12">
+              <h1>Contact Us</h1>
           </div>
+          <div class="row">
+            <div class="col-md-12">
+                {{ Breadcrumbs::render('contact-us') }}
+            </div>
+        </div>
       </div>
   </div>
 </div>
@@ -20,23 +25,44 @@
                               <h5 class="text-uppercase mb-0 text-center">Contact Us</h5>
                             </div>
                             <div class="card-body">
-                                  <form action="" method="POST" enctype="multipart/form-data">
+
+                              @if(Session::has('flash_message'))
+                                <div class="alert alert-{!! Session::get('flash_level') !!}">
+                                  {!!Session::get('flash_message')!!}
+                                </div>
+                              @endif 
+                                  <form action="{{url('feedback/postFeedback')}}" method="POST" >
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Full Name</label>
-                                      <input type="text" class="form-control">
+                                      <input type="text" class="form-control @error('feedbackName') is-invalid @enderror" name="feedbackName">
+                                      @error('feedbackName')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                      @enderror 
                                     </div>
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Phone Number</label>
-                                      <input type="text" class="form-control">
+                                      <input type="text" class="form-control @error('feedbackPhone') is-invalid @enderror" name="feedbackPhone">
+                                      @error('feedbackPhone')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                      @enderror
                                     </div>
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Email</label>
-                                      <input type="number" class="form-control" min="0" max="20000">
+                                      <input type="email" class="form-control @error('feedbackEmail') is-invalid @enderror" name="feedbackEmail">
+                                      @error('feedbackEmail')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                      @enderror
                                     </div>
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Title</label>
-                                      <select name="title" class="form-control" id="">
+                                      <select name="feedbackTitle" class="form-control @error('feedbackTitle') is-invalid @enderror" id="">
                                         <option value="Product">Product</option>
                                         <option value="Order">Order</option>
                                         <option value="Shipping">Shipping</option>
@@ -46,10 +72,20 @@
                                         <option value="Website">Website</option>
                                         <option value="Others">Others</option>
                                       </select>
+                                      @error('feedbackTitle')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                      @enderror
                                     </div>
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Message</label>
-                                      <textarea class="form-control" id="exampleFormControlTextarea1" name="ldescription" rows="3"></textarea>
+                                      <textarea class="form-control @error('feedbackContent') is-invalid @enderror" id="exampleFormControlTextarea1" name="feedbackContent" rows="3"></textarea>
+                                      @error('feedbackContent')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                      @enderror
                                     </div>
                                     <div class="form-group text-center">
                                       <button type="submit" class="btn login-btn">SUBMIT</button>

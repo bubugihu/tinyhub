@@ -20,7 +20,7 @@ class TableCustomer extends Migration
             $table->string('gender')->default('Male');
             $table->string('phone',12);
             $table->string('address');
-            $table->string('feature')->default('img/ava-default.png');
+            $table->string('feature')->default('ava-default.png');
             $table->integer('users_id')->unsigned();     //foreign key
             $table->timestamps();
         });

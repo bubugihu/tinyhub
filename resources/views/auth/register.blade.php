@@ -6,13 +6,12 @@
         <div class="col-md-7">
             <div class="card">
                 <div class="card-header bg-dark text-white">
-                    
                     <h3 class="text-center">Register</h3>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        {{--userName --}}
+                        
                               <div class="form-group row">
                                 <div class="col-6">
                                     <label class="form-control-label text-uppercase">User Name</label>
@@ -40,7 +39,12 @@
                               <div class="form-group row">
                                     <div class="col-6">
                                         <label class="form-control-label text-uppercase">BirthDay</label>
-                                        <input type="date" name="dob" class="form-control " max="2006-31-01">
+                                        <input type="date" name="dob" class="form-control  @error('dob') is-invalid @enderror"  min="1900-01-01" max="2006-12-31">
+                                        @error('dob')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
                                     <div class="col-6">
                                         <label class="form-control-label text-uppercase">Gender</label>
@@ -54,9 +58,11 @@
                                     </div>
                               </div>
                               <div class="form-group row">
-                                  <div class="col-8">
+                                  <div class="col-7">
                                     <label class="form-control-label text-uppercase">Email</label>
-                                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror">
+                                    <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror">
+
+                                        <span id="alert1" class="text-red"></span>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -65,10 +71,10 @@
                                 @enderror        
 
                                   </div>
-                                  <div class="col-4">
+                                  <div class="col-5">
                                     <label class="form-control-label text-uppercase">Phone Number</label>
-                                    <input type="text" name="phone" class="form-control @error('phone') is-invalid @enderror">
-
+                                    <input type="text" name="phone" id="phone" class="form-control @error('phone') is-invalid @enderror">
+                                    <span id="alert2" class="text-red"></span>
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -92,6 +98,11 @@
                                   <div class="col-6">
                                     <label class="form-control-label text-uppercase">Confirm Password</label>
                                     <input type="password" name="password_confirmation" class="form-control">
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                   </div>                            
                               </div>
                               <div class="form-group">
@@ -105,21 +116,9 @@
                                 @enderror
 
                               </div>
-                              <div class="form-group">
-                                <label class="form-control-label text-uppercase">Avatar</label>
-                              </div>
-                            <div class="custom-file ">
-                                <input type="file" class="custom-file-input @error('file') is-invalid @enderror" name="feature" aria-describedby="inputGroupFileAddon01">
-                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-
-                                @error('file')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                            </div>
-                            </div>
+                              
+                            
+                </div>
                             <div class="form-group row mb-0">
                                 <div class="col-md-12 offset-md-4">
                                     <button type="reset" class="btn btn-dark">
@@ -131,9 +130,33 @@
                                 </div>
                             </div>
                     </form>
-                </div>
             </div>
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('script')
+<script>
+$(document).ready(function(){
+    $("#email").blur(function(){
+        var email = $(this).val();
+        $.get('ajaxRegisterEmail/'+email, function(data){
+            // alert(email);
+             $("#alert1").html(data);
+        });
+    });
+})
+
+$(document).ready(function(){
+    $("#phone").blur(function(){
+        var phone = $(this).val();
+        $.get('ajaxRegisterPhone/'+phone, function(data){
+            // alert(email);
+             $("#alert2").html(data);
+        });
+    });
+})
+</script>
 @endsection

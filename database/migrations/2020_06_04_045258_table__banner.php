@@ -19,7 +19,7 @@ class TableBanner extends Migration
             $table->string('ban_title')->nullable();
             $table->string('ban_content')->nullable();
             $table->string('ban_image');
-            $table->dateTime('ban_date')->default(Carbon::now());
+            $table->timestamps();
         });
     }
 

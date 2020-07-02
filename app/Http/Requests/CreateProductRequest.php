@@ -30,7 +30,6 @@ class CreateProductRequest extends FormRequest
             'prdbrand'     => 'bail|required|not_in:0',
             'sdescription' => 'required',
             'ldescription' => 'required',
-            'featureimg'   => 'required',
            
         ];
     }
@@ -49,7 +48,6 @@ class CreateProductRequest extends FormRequest
             'prdbrand.required'           => 'Please choose one of them !',
             'sdescription.required'       => 'Short Description can not be blank !',
             'ldescription.required'       => 'Long Description can not be blank !',
-            'featureimg.required'         => 'Feature Image can not be blank !',
             
         ];
     }

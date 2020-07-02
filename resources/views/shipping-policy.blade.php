@@ -4,8 +4,13 @@
 <div class="hero hero-page padding-small">
     <div class="container">
         <div class="row d-flex">
-            <div class="col-lg-9 ">
+            <div class="col-lg-12">
                 <h1>Shipping Policy</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    {{ Breadcrumbs::render('shipping-policy') }}
+                </div>
             </div>
         </div>
     </div>

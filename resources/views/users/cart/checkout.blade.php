@@ -1,7 +1,7 @@
 @extends('users.layout.layout')
 @section('title','Checkout')
 @section('checkout')
-    <!-- check out form -->
+    
     <div class="hero hero-page padding-small">
         <div class="container">
             <div class="row d-flex">
@@ -18,41 +18,61 @@
                 <div class="col-lg-8">
                     <div class="tab-content">
                         <div id="address" class="active tab-block">
-                            <form action="">
                                 <!--Invoice Address -->
                                 <div class="block-header mb-5">
                                     <h6>Delivery Address</h6>
                                 </div>
+
+                                {{--Form Check out--}}
+                                <form action="{{url('cart/shopping/order-review')}}" method="post">
+                                    @csrf
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label for="firstname" class="form-label">Full Name</label>
-                                        <input type="text" id="firstname" name="first-name" placeholder="Enter your first name" class="form-control">
+                                        <input type="text" id="firstname" name="consignee_name" placeholder="Enter your name" class="form-control @error('consignee_name') is-invalid @enderror">
+                                        @error('consignee_name')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                        @enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="lastname" class="form-label">Phone</label>
-                                        <input type="text" id="lastname" name="last-name" placeholder="Phone" class="form-control">
+                                        <input type="text" id="lastname" name="phone_consignee" placeholder="Phone" class="form-control @error('phone_consignee') is-invalid @enderror">
+                                        @error('phone_consignee')
+                                      <span class="invalid-feedback" role="alert">
+                                          <strong>{{ $message }}</strong>
+                                      </span>
+                                        @enderror
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="country" class="form-label pl-2">Payment</label>
-                                        <select class="form-control" name="" id="">
-                                            <option value="">CoD</option>
-                                            <option value="">Credit Card</option>
+                                        <select class="form-control" name="payment" id="">
+                                            <option value="CoD">CoD</option>
+                                            <option value="Credit Card">Credit Card</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="email" class="form-label">Address</label>
-                                        <input type="text" id="note" name="note" placeholder="Address" class="form-control">
+                                        <label for="address" class="form-label">Address</label>
+                                        <input type="text" id="address" name="shipping_address" placeholder="Address" class="form-control @error('shipping_address') is-invalid @enderror">
+                                        @error('shipping_address')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="street" class="form-label">Note</label>
-                                        <input type="text" id="street" name="address" placeholder="Note" class="form-control">
+                                        <label for="note" class="form-label">Note</label>
+                                        <input type="text" id="note" name="note" placeholder="Note" class="form-control">
                                     </div>
                                 </div>
                                 <div class="CTAs d-flex justify-content-between flex-column flex-lg-row">
-                                    <a href="{{ url('cart') }}" class="btn btn-template-outlined wide prev">Back to basket</a>
-                                    <a href="{{ url('order-review') }}" class="btn btn-template wide next">Continue to Order Review</a>
+                                    <a href="{{ url('cart') }}" class="btn btn-template-outlined wide prev">Back to Cart</a>
+                                    <button type="submit" class="btn btn-template wide next">Continue to Order Review</button>
                                 </div>
-                            </form>
+                                </form>
+                            {{--end form Check out--}}
+
                         </div>
                     </div>
                 </div>
@@ -63,19 +83,19 @@
                         <ul class="order-menu list-unstyled">
                             <li class="d-flex justify-content-between">
                                 <span>Order Subtotal</span>
-                                <strong>$390.00</strong>
+                                <strong>${{Cart::pricetotal()}}</strong>
                             </li>
                             <li class="d-flex justify-content-between">
                                 <span>Shipping and handling</span>
-                                <strong>$10.00</strong>
+                                <strong>$0.00</strong>
                             </li>
                             <li class="d-flex justify-content-between">
                                 <span>Tax</span>
-                                <strong>$00.00</strong>
+                                <strong>${{Cart::tax()}}</strong>
                             </li>
                             <li class="d-flex justify-content-between">
                                 <span>Total</span>
-                                <strong class="text-primary price-total">$400.00</strong>
+                                <strong class="text-primary price-total">${{Cart::total()}}</strong>
                             </li>
                         </ul>
                     </div>

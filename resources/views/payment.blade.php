@@ -4,8 +4,13 @@
     <div class="hero hero-page padding-small">
         <div class="container">
             <div class="row d-flex">
-                <div class="col-lg-9 ">
+                <div class="col-lg-12 ">
                     <h1>Payment</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ Breadcrumbs::render('payment') }}
+                    </div>
                 </div>
             </div>
         </div>

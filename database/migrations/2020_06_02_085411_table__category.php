@@ -17,6 +17,7 @@ class TableCategory extends Migration
             $table->increments('id');  //primary key
             $table->string('category_name')->unique();
             $table->longText('description')->nullable()->default('Not Description');
+            $table->timestamps();
         });
     }
 

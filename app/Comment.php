@@ -2,13 +2,14 @@
 
 namespace App;
 
+use Aws\Api\TimestampShape;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
     protected $table = "comments";
-
-    protected $fillable = ['cmt_title', 'cmt_content', 'cmt_status', 'cmt_date', 'product_id', 'customer_id'];
+    public $timestamps=false;
+    protected $fillable = ['id','cmt_title', 'cmt_content', 'cmt_status', 'product_id', 'customer_id'];
 
     public function roleProduct(){
         return $this->belongsTo(Product::class);
@@ -17,4 +18,5 @@ class Comment extends Model
     public function roleCustomer(){
         return $this->belongsTo(Customer::class);
     }
+    
 }

@@ -8,7 +8,8 @@ use App\Http\Requests\CreateProductRequest;
 
 class BrandsController extends Controller
 {
-    public function listBrands(){
+    public function listBrands()
+    {
         $brand = Brands::all();
         return view('admin.brands.listBrands', compact('brand'));
     }

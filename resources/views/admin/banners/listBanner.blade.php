@@ -16,7 +16,7 @@
                     <tr>
                       <th>BannerID</th>
                       <th>Banner Title</th>
-                      <th>Banner Content</th>
+                      <th width="200">Banner Content</th>
                       <th>Banner Image</th>
                       <th>Banner Date</th>
                       <th>Action</th>

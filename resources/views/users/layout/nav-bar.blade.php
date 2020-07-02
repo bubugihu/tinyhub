@@ -11,11 +11,11 @@
               <div class="top-right links py-1 shadow">
                   @auth
                   @if(Auth::user()->role == 0)
-              <a href="{{ url('users/profile') }}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a>
+              <a href="{{ url('users/profile/'.Auth::user()->id)}}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a>
                   @else
               <a href="{{ url('admin/index') }}" class="log-info badge mr-4"> {{ Auth::user()->name }} </a> 
                   @endif   
-              <a href="{{ url('/logout') }}" class="res-info badge" >Log Out</a>
+              <a href="{{ url('/logout') }}" class="res-info badge" onclick="return confirm('Do you want log out ?');" >Log Out</a>
                 @endauth
                   @guest
                   <li class="nav-item">
@@ -40,9 +40,9 @@
         <ul class="navbar-nav mx-auto">
           <li class="nav-item"><a href="{{route("homepage")}}" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="{{ url('category')}}" class="nav-link">Categories</a></li>
-          <li class="nav-item"><a href="brand" class="nav-link">Brands </a></li>
-          <li class="nav-item"><a href="about-us" class="nav-link">About Us</a></li>
-          <li class="nav-item"><a href="contact-us" class="nav-link">Contact Us</a></li>
+          <li class="nav-item"><a href="{{url('brand')}}" class="nav-link">Brands </a></li>
+          <li class="nav-item"><a href="{{url('about-us')}}" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="{{url('contact-us')}}" class="nav-link">Contact Us</a></li>
         </ul>
         <div class="right-col d-flex align-items-lg-center flex-column flex-lg-row">
           <!-- Search Button-->
@@ -56,38 +56,29 @@
           </div> --}}
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" style="padding-right: 0!important;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i data-count="3" class="fa fa-shopping-basket fa-2x fa-border icon-dark badge-cart"></i></a>
+              <a href="#" style="padding-right: 0!important;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i data-count="{{Cart::count()}}" class="fa fa-shopping-basket fa-2x fa-border icon-dark badge-cart"></i></a>
               <ul class="dropdown-menu dropdown-cart mt-3 py-3" role="menu">
+
+                @foreach(Cart::content() as $cart)
                   <li>
                       <span class="item mb-3">
                         <span class="item-left">
-                          <img src="{{url("img/headphone-slider2.png")}}" alt="" width="50"/>
+                          <img src="{{asset('img/feature/'.$cart->options->image)}}" alt="" width="50"/>
                             <span class="item-info">
-                                <span>Item name</span>
-                                <span>23$</span>
+                                <span>{{$cart->name}}</span>
+                                <span>${{$cart->price}} &nbsp; (x{{$cart->qty}})</span>
                             </span>
                         </span>
                         <span class="item-right">
-                          <a href=""><button class="badge badge-danger pull-right">X</button></a>
-                        </span>
-                    </span>
-                  </li>
-                  <li>
-                      <span class="item">
-                        <span class="item-left">
-                          <img src="{{url("img/headphone-slider2.png")}}" alt="" width="50"/>
-                            <span class="item-info">
-                                <span>Item name</span>
-                                <span>23$</span>
-                            </span>
-                        </span>
-                        <span class="item-right">
-                            <a href=""><button class="badge badge-danger pull-right">X</button></a>
+                          <a href="{{url('cart/shopping/removeItem/'.$cart->rowId)}}" onclick="return confirm('Do you want to remove ?');" ><button class="badge badge-danger pull-right">X</button></a>
                         </span>
                     </span>
                   </li>
                   <li class="divider"></li>
-                  <li class="text-center mt-4"><a class="btn btn-dark" href="#">View Cart</a></li>
+                @endforeach 
+
+                  
+                  <li class="text-center mt-4"><a class="btn btn-dark" href="{{url('cart/shopping')}}">View Cart</a></li>
               </ul>
             </li>
           </ul>

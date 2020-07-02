@@ -6,9 +6,13 @@
 <div class="hero hero-page padding-small">
     <div class="container">
         <div class="row d-flex">
-            <div class="col-lg-9 ">
+            <div class="col-lg-12">
                 <h1>Product Categories</h1>
-                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ Breadcrumbs::render('category') }}
+                </div>
             </div>
         </div>
     </div>
@@ -23,43 +27,27 @@
                 <div class="form-group">
                     <h6 class="text-uppercase">Headphone Type</h6>
                     <hr width="100%" style="margin-left: 0;">
+                    
+                    @foreach($categoryCheckBox as $c)
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="category1" name="CateInEar" value="In Ear" >
-                    <label class="custom-control-label" for="category1">In Ear</label>
+                        <input type="checkbox"  name="{{$c->category_name}}"  value="{{$c->category_name}}">
+                        <label >{{$c->category_name}}</label>
                     </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="category2" name="CateOnEar" value="On Ear">
-                        <label class="custom-control-label" for="category2">On Ear</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="category3" name="CateTrueWire" value="True Wireless">
-                        <label class="custom-control-label" for="category3">True Wireless</label>
-                    </div>
+                    @endforeach
+    
                 </div>
                 <!-- Brand -->
                 <div class="form-group">
                     <h6 class="text-uppercase">Brand</h6>
                     <hr width="100%" style="margin-left: 0;">
+
+                    @foreach($brandCheckBox as $b)
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="brand1" name="BrandSony" value="Sony">
-                        <label class="custom-control-label" for="brand1">Sony</label>
+                        <input type="checkbox"   name="{{$b->brand_name}}" value="{{$b->brand_name}}">
+                        <label >{{$b->brand_name}}</label>
                     </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="brand2" name="BrandJBL" value="JBL">
-                        <label class="custom-control-label" for="brand2">JBL</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="brand3" name="BrandWestone" value="Westone">
-                        <label class="custom-control-label" for="brand3">Westone</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="brand3" name="BrandBeats" value="Beats">
-                        <label class="custom-control-label" for="brand3">Beats</label>
-                    </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="brand3" name="BrandBang" value="Bang & Olufsen">
-                        <label class="custom-control-label" for="brand3">Bang & Olufsen</label>
-                    </div>
+                    @endforeach
+
                 </div>
                 <!-- Sorted By -->
                 <div class="form-group">
@@ -92,12 +80,11 @@
         <!-- Content -->
         <div class="col-xl-9 col-lg-8">
             <!-- Row 1 -->
-            @if($message ?? '' == 'Price is invalid')
-            <h2 class="text-center py-5  basket-header mt-5" style="color: #f47635" role="alert">
-                <strong>{{ $message  ?? ''  }}</strong>
-            </h2>
-            @else
-            
+            @if($message != 'a')
+            <div class="alert alert-danger mt-5">
+              <h5 class="text-center">{{$message}}</h5>
+            </div>
+            @endif 
             <div class="row product_list">
                 @foreach($products as $product)
                 <div class="col-xl-4">
@@ -115,7 +102,7 @@
                     </div>
                 </div>
                 @endforeach
-                @endif
+                
             </div><br>
             <div class="row py-3">
                 <div class="col-md-12">

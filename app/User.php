@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
-    protected $table ='users';
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id','name', 'email', 'password','role'
+        'id', 'name', 'email', 'password', 'role'
     ];
 
     /**
@@ -38,7 +38,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-        public function roleCustomer(){
-            return $this->hasOne(Customers::class,'users_id','id');
-        }
+    public function roleCustomer()
+    {
+        return $this->hasOne(Customers::class, 'users_id', 'id');
+    }
 }

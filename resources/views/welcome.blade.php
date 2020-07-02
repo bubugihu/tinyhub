@@ -56,11 +56,7 @@
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
-<<<<<<< HEAD
                 letter-spacing: 0.1rem;
-=======
-                letter-spacing: .1rem;
->>>>>>> 5baa6165504f446469d0de84b49eb7cb95c66749
                 text-decoration: none;
                 text-transform: uppercase;
             }
@@ -73,7 +69,6 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-<<<<<<< HEAD
             <div class="top-right links">
                 @auth
                 <!-- user -->
@@ -109,24 +104,6 @@
                     @auth @if (Auth::user()->role == 0) You are User @else You are admin/mod @endif
                     @endauth @guest You are Guest @endguest
 
-=======
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
->>>>>>> 5baa6165504f446469d0de84b49eb7cb95c66749
                 </div>
 
                 <div class="links">
@@ -142,8 +119,4 @@
             </div>
         </div>
     </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 5baa6165504f446469d0de84b49eb7cb95c66749
