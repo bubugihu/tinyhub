@@ -36,10 +36,11 @@ class AdminController extends Controller
             $total = $total + ($price->quantity * $price->price);
         }
 
-        
+        $year = date("Y");
+        $month = date("m");
         $orderThisMonth =   OrderDetail::join('product','product.id','=','order_details.product_id')
-                                        ->whereYear('created_at',date("Y"))
-                                        ->whereMonth('created_at', date("m"))
+                                        ->whereYear('order_details.created_at','=',$year)
+                                        ->whereMonth('order_details.created_at','=', $month)
                                         ->select('order_details.quantity','product.price')
                                         ->get();
         foreach($orderThisMonth as $priceMonth){
