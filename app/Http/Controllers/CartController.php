@@ -110,7 +110,7 @@ class CartController extends Controller
         $this->validate($request,
         [
             'consignee_name'        =>  'bail|required|string|min:2',
-            'phone_consignee'       =>  'bail|required|regex:/^0[0-9]{9}$/i',
+            'phone_consignee'       =>  'bail|required|regex:/^0[1-9][0-9]{8}$/i',
             'shipping_address'      =>  'bail|required|string|min:2',
         ]);
         $consignee_name = $request->consignee_name;
@@ -138,30 +138,67 @@ class CartController extends Controller
         ]);
         }
         
-        $orderDetails = OrderDetail::join('product', 'product.id', '=','order_details.product_id')
-                                    ->join('order','order.id' ,'=', 'order_details.order_id')
-                                    ->join('category','category.id','=','product.category_id')
-                                    ->where('order.id','=',$order->id)
-                                    ->select('product.*','order_details.quantity','category.category_name')
-                                    ->get();
-        // sum total
-        $select = OrderDetail::join('product', 'product.id', '=','order_details.product_id')
-                                ->where('order_details.order_id',$order->id)
-                                ->select('order_details.quantity','product.price','order_details.order_id')
-                                ->get();  
-        $subtotal=0;  
-        foreach($select as $totals)
-        {
-            $subtotal = $subtotal + $totals->quantity * $totals->price;
-        }
-        $tax = $subtotal *0.1;
-        $total=$subtotal*1.1;
+        // //show information 
+        // $orderDetails = OrderDetail::join('product', 'product.id', '=','order_details.product_id')
+        //                             ->join('order','order.id' ,'=', 'order_details.order_id')
+        //                             ->join('category','category.id','=','product.category_id')
+        //                             ->where('order.id','=',$order->id)
+        //                             ->select('product.*','order_details.quantity','category.category_name')
+        //                             ->get();
+        // // sum total
+        // $select = OrderDetail::join('product', 'product.id', '=','order_details.product_id')
+        //                         ->where('order_details.order_id',$order->id)
+        //                         ->select('order_details.quantity','product.price','order_details.order_id')
+        //                         ->get();  
+        // $subtotal=0;  
+        // foreach($select as $totals)
+        // {
+        //     $subtotal = $subtotal + $totals->quantity * $totals->price;
+        // }
+        // $tax = $subtotal *0.1;
+        // $total=$subtotal*1.1;
         
-        Cart::destroy();
-        return view('users.cart.order-review', compact('orderDetails','total','subtotal','tax'));
+        // Cart::destroy();
+        return view('users.cart.order-review', compact('consignee_name','phone_consignee','payment','shipping_address','note'));
     }
     
     
+
+    //Thank you
+    public function thankyou(Request $request){
+        
+        $consignee_name = $request->consignee_name;
+        $phone_consignee = $request->phone_consignee;
+        $payment = $request->payment;
+        $shipping_address = $request->shipping_address;
+        $note = $request->note;
+        $customer_id = Customers::where('users_id',(Auth::user()->id))->first()->id;
+        
+        $order = Order::create([
+            'consignee_name'    =>  $consignee_name,
+            'phone_consignee'   =>  $phone_consignee,
+            'payment'           =>  $payment,
+            'shipping_address'  =>  $shipping_address,
+            'note'              =>  $note,
+            'status'            =>  0,
+            'customer_id'       =>  $customer_id,
+        ]);
+        $order->save();
+
+        foreach(Cart::content() as $orderDetails){
+         OrderDetail::create([
+            'order_id'      => $order->id,
+            'product_id'    => $orderDetails->id ,
+            'quantity'      => $orderDetails->qty,
+        ]);
+        }
+
+        Cart::destroy();
+        return view('thank-you');
+    }
+
+
+
 
     //order details aka order review
     public function orderDetails($id){

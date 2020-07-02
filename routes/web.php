@@ -154,12 +154,14 @@ Route::get('cart/shopping/removeItem/{id}', 'CartController@removeItem');
 Route::get('checkout' , function(){
     return view('users.cart.checkout');
 })->middleware('auth');
+//order review
 Route::post('cart/shopping/order-review', 'CartController@orderReview');
 Route::get('cart/shopping/order-review', function(){
     return abort(404);
 });
-
-//order review 
+//thank you
+Route::post('thank-you' , 'CartController@thankyou');
+//check report
 Route::get('cart/shopping/orderDetails/{id}', 'CartController@orderDetails');
 
 
