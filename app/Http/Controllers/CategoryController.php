@@ -7,11 +7,13 @@ use App\Http\Middleware\Admin;
 use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Brands;
 
 class CategoryController extends Controller
-{   
+{
     //Admin Category
-    public function categories(){
+    public function categories()
+    {
         $cates = Category::paginate(5);
         return view('admin.category.categories', compact('cates'));
     }
@@ -49,11 +51,10 @@ class CategoryController extends Controller
         $c->category_name = $request->cateTitle;
         $c->description = $request->cateDescription;
         $c->save();
-        
+
         //session()->put('alert', 'Create Category Successful !');
         // return redirect('admin/category/postCate')-;
-        return redirect()->action('CategoryController@categories')->with(['flash_level' => 'success','flash_message' => 'Created Successfully !' ]);
-
+        return redirect()->action('CategoryController@categories')->with(['flash_level' => 'success', 'flash_message' => 'Created Successfully !']);
     }
 
     // Function link to update page
@@ -95,66 +96,70 @@ class CategoryController extends Controller
 
     //User Category
     public function category(){
-        $products = Product::where('status', '=', 0)->paginate(9);
+        $products = Product::where('status', '=', 0)->paginate(5);
         $message = 'a';
         return view('users.product.category', compact('products', 'message'));
     }
-    
-    //User Search Category
+
+    //User filter Category
     public function search(Request $request){
         
-        $re = $request->all();
         $orderByPrice = $orderByName = 'asc';
         $message = 'a';
-
-        if($request->input('SortBy') == 2  ){
-            $orderByPrice = 'desc';
-        }
-        if($request->input('SortBy') == 4  ){
-            $orderByName = 'desc';
-        }
         $fromPrice = $request->input('fromPrice');
         $toPrice = $request->input('toPrice');
-
-        if($re != null){
-            $product= Product::join('brand','product.brand_id','=','brand.id')
-                    ->join('category','product.category_id','=','category.id')  
-                    ->orWhereIn('category.category_name',$re)   
-                    ->orWhereIn('brand.brand_name',$re)
-                    ->whereBetween('product.price' , [$fromPrice,$toPrice])  
+        //search
+            $products= Product::join('brand','product.brand_id','=','brand.id')
+                    ->join('category','product.category_id','=','category.id')
+                    ->where('product.status','=',0)
+                    ->whereBetween('product.price' , [$fromPrice,$toPrice])
                     ->orderBy('product.price',$orderByPrice)
                     ->orderBy('product.product_title', $orderByName)
                     ->select('product.*', 'brand.brand_name', 'category.category_name')
-                    ->get();
-        
+                    ->paginate(5);
         if($fromPrice > $toPrice){
             $message = 'Price is invalid !!!';
-            return view('users.product.category', compact('product','message'));
+            return view('users.product.category', compact('products','message'));
         }
-        if($product->count() > 0 )
-             return view('users.product.category', compact('product','message'));  
-            
+        if($products->count() > 0 )
+            return view('users.product.category', compact('products','message'));    
         $message = 'Not found !!!';
-        return view('users.product.category', compact('product','message'));
-    }else{
-            $product=   Product::join('brand','product.brand_id','=','brand.id')
-                                ->join('category','product.category_id','=','category.id')                                                         
-                                ->whereBetween('product.price' , [$fromPrice,$toPrice])  
-                                ->orderBy('product.price',$orderByPrice)
-                                ->orderBy('product.product_title', $orderByName)
-                                ->select('product.*', 'brand.brand_name', 'category.category_name') 
-                                ->get();
-
-        if($fromPrice > $toPrice){
-            $message = 'Price is invalid !!!';
-            return view('users.product.category', compact('product','message'));
-        }
-        if($product->count() > 0 )
-            return view('users.product.category', compact('product','message'));
-        $message = 'Not found !!!';
-        return view('users.product.category', compact('product','message'));
-    }
+        return view('users.product.category', compact('products','message'));
     }
 
+
+    //filter Category
+    public function filterCate($in){
+        $message = 'a';
+        $category = Category::where('category_name',$in)->first();
+        $products = Product::where('category_id',$category->id)->where('status',0)->paginate(5);
+        return view('users.product.category', compact('products','message'));
+    }
+
+    //filter Brand
+    public function filterBrand($in){
+        $message = 'a';
+        $brand = Brands::where('brand_name',$in)->first();
+        $products = Product::where('brand_id',$brand->id)->where('status',0)->paginate(5);
+        return view('users.product.category', compact('products','message'));
+    }
+
+    //filter price name
+    public function filterPrice(Request $request){
+        $message = 'a';
+        $fromPrice = $request->input('fromPrice');
+        $toPrice = $request->input('toPrice');
+            if($fromPrice > $toPrice){
+                $message = 'Price is invalid';
+                $products = null;
+                return view('users.product.category', compact('message','products'));
+            } 
+            $products = Product::where('price','>=',$fromPrice)->where('price','<=',$toPrice)->where('status',0)->paginate(5);
+                if($products->count() > 0 )
+                return view('users.product.category', compact('products','message'));
+
+                $message = 'Not Found';
+                return view('users.product.category', compact('products','message'));    
+    }
     
 }

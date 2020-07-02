@@ -2,34 +2,34 @@
 @section('title', 'product list')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
-    <div class="container-fluid px-xl-5">
-      <section class="py-5">
-        <div class="row">
-          <div class="col-lg-12 mb-5">
-            <div class="card">
-              <div class="card-header bg-dark text-white">
-                <h6 class="text-uppercase mb-0">Product List</h6>
+  <div class="container-fluid px-xl-5">
+    <section class="py-5">
+      <div class="row">
+        <div class="col-lg-12 mb-5">
+          <div class="card">
+            <div class="card-header bg-dark text-white">
+              <h6 class="text-uppercase mb-0">Product List</h6>
+            </div>
+            <div class="card-body">
+              @if(Session::has('flash_message'))
+              <div class="alert alert-{!! Session::get('flash_level') !!}">
+                {!!Session::get('flash_message')!!}
               </div>
-              <div class="card-body">
-                @if(Session::has('flash_message'))
-                  <div class="alert alert-{!! Session::get('flash_level') !!}">
-                      {!!Session::get('flash_message')!!}
-                  </div>
-                @endif 
-                <table class="table card-text" id="dbtable">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Image</th>
-                      <th>Product Name</th>
-                      <th>Price</th>
-                      <th>Sold out</th>
-                      <th>Status</th>
-                      <th>Created At</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
+              @endif
+              <table class="table card-text" id="dbtable">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Sold out</th>
+                    <th>Status</th>
+                    <th>Created At</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
 
                     @foreach($products as $product)
                     <tr>
@@ -73,6 +73,7 @@
             </div>
           </div>
         </div>
-      </section>
-    </div>
-@endsection
+      </div>
+    </section>
+  </div>
+  @endsection

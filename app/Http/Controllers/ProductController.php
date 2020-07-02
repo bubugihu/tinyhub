@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CreateProductRequest;
 use App\Category;
 use App\Brands;
+use App\Comment;
+use App\Customers;
 use App\Gallery;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller {
 
@@ -67,30 +70,29 @@ class ProductController extends Controller {
         $p->long_descriptions = $request->ldescription;
 
 
-        if ($request -> hasFile('featureimg')) {
-            $file = $request -> file('featureimg');
-            $extension = $file -> getClientOriginalExtension();
+        if ($request->hasFile('featureimg')) {
+            $file = $request->file('featureimg');
+            $extension = $file->getClientOriginalExtension();
 
             if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
                 return redirect("admin/product/createProduct")->with('Message', 'You can only upload image with file jpg/png/jpeg');
             }
             $imageName = $file->getClientOriginalName();
-            $file->move("img/feature/", $imageName);    
+            $file->move("img/feature/", $imageName);
             $p->feature_image = $imageName;
-
         } else {
             $imageName = "";
         }
-        $p ->save();
+        $p->save();
 
         $gallery = new Gallery();
         if ($request->hasFile('galleryimg')) {
             $fileGL = $request->file('galleryimg');
             $ext   = $fileGL->getClientOriginalExtension();
-            if($ext !='jpg' && $ext !='png' && $ext !='jpeg'){
+            if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
                 return Redirect('admin/product/createProduct')->with('Message', 'You can only upload image with file jpg/png/jpeg');
             }
-            $nameGlImg =$fileGL->getClientOriginalName();
+            $nameGlImg = $fileGL->getClientOriginalName();
             $fileGL->move("img/gallery", $nameGlImg);
             $gallery->product_gallery = $nameGlImg;
         }
@@ -196,16 +198,28 @@ class ProductController extends Controller {
     }
 
     //user product details
-    public function productDetails($id){
+    public function productDetails($id)
+    {
         $product = Product::find($id);
         $gallery = Gallery::where('product_id', $id)->get();
         $category = Category::find($product->category_id);
+        $brand= Brands::find($product->brand_id);
         $quantity = 1;
         //comment
-
+        $comment = Comment::join('customer', 'comments.customer_id', '=', 'customer.id')
+            ->join('users', 'customer.users_id', '=', 'users.id')
+            ->join('product', 'comments.product_id', '=', 'product.id')
+            ->select('users.*', 'customer.*', 'product.*', 'comments.*')->where('product_id',$id)->get();
+        $customer='';
+        if(Auth::check()){
+            $customer=Customers::find(Auth::user()->id)->feature;
+        }
         //end comment
-        return view('users.product.productDetails', compact('product','gallery','category','quantity'));
+        //Similar Product
+        $similar=Product::where('id','<>',$id)->where('category_id',$product->category_id)
+        ->select('product.*')->take(4)->get();
+
+        //End Similar Product
+        return view('users.product.productDetails', compact('product', 'gallery', 'category','brand', 'quantity','comment','customer','similar'));
     }
-
-
 }

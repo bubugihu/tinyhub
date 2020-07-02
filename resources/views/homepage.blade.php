@@ -150,6 +150,8 @@
                         <h2 class="text-uppercase">Our Categories</h2>
                     </header>
                 </div>
+
+                @foreach($categoryGloban as $c)
                 <div class="col-sm-4">
                    <!-- Card -->
                     <div class="card">
@@ -198,30 +200,8 @@
                    </div>
                    <!-- Card -->
                 </div>
-                <div class="col-sm-4">
-                  <!-- Card -->
-                   <div class="card">
-                     <!-- Card image -->
-                     <div class="view overlay">
-                       <img class="card-img-top" src="https://cdn.cheatcc.com/dispatches/large/d0703191045.jpg"
-                         alt="Card image cap">
-                       <a href="#!">
-                         <div class="mask rgba-white-slight"></div>
-                       </a>
-                     </div>
-                     <!-- Card content -->
-                     <div class="card-body">
-                       <!-- Title -->
-                       <h4 class="card-title">TRUE-WIRELESS</h4>
-                       <!-- Text -->
-                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                         content.</p>
-                       <!-- Button -->
-                       <a href="#" class="btn btn-outline-dark">GO TO STORE</a>
-                     </div>
-                   </div>
-                   <!-- Card -->
-                </div>
+                @endforeach
+                
             </div>
          </div>
     </section>
@@ -258,25 +238,16 @@
                 <div class="col-md-12">
                 <!-- Rounded tabs -->
                      <ul id="homeTab" role="tablist" class="nav nav-tabs nav-pills flex-column flex-sm-row text-center border-0 rounded-nav">
-                        <li class="nav-item flex-sm-fill">
-                           <a id="first-tab" data-toggle="tab" href="#first" role="tab" aria-controls="first" aria-selected="true" class="nav-link active"><img src="https://i.pinimg.com/originals/8d/f5/0d/8df50d880b4c2d2cfc2aad147068cf72.png" alt="" width="50" height="auto"></a>
-                        </li>
-                        <li class="nav-item flex-sm-fill">
-                          <a id="second-tab" data-toggle="tab" href="#second" role="tab" aria-controls="second" aria-selected="false" class="nav-link"><img src="https://promptvideoservices.files.wordpress.com/2018/03/1024px-bang_and_olufsen_logo-svg-copy1.png" alt="" width="48" height="auto"></a>
-                        </li>
-                        <li class="nav-item flex-sm-fill">
-                          <a id="third-tab" data-toggle="tab" href="#third" role="tab" aria-controls="third" aria-selected="false" class="nav-link"> <img src="https://logodownload.org/wp-content/uploads/2016/10/jbl-logo-6-1.png" alt="" width="60" height="auto"></a>
-                        </li>
-                        <li class="nav-item flex-sm-fill">
-                            <a id="fouth-tab" data-toggle="tab" href="#fouth" role="tab" aria-controls="fouth" aria-selected="false" class="nav-link"><img src="https://pluspng.com/img-png/sony-logo-eps-png-sony-logo-png-1269.png" alt="" width="70" height="auto"></a>
-                        </li>
-                        <li class="nav-item flex-sm-fill">
-                          <a id="fith-tab" data-toggle="tab" href="#fith" role="tab" aria-controls="fith" aria-selected="false" class="nav-link"><img src="https://cdn.freebiesupply.com/logos/large/2x/westone-audio-1-logo-png-transparent.png" alt="" width="100" height="40"></a>
+                        
+                      @foreach($brandGlobal as $b)
+                      <li class="nav-item flex-sm-fill">
+                           <a id="first-tab" data-toggle="tab" href="{{url('homepageBrand/'.$b->id)}}" role="tab" aria-controls="first" aria-selected="true" class="nav-link active"><img src="{{asset('img/brands/'.$b->brand_image)}}" alt="" width="50" height="50"></a>
                       </li>
+                      @endforeach
                      </ul>
-    <div id="myTabContent" class="tab-content">
-                     <div id="first" role="tabpanel" aria-labelledby="first-tab" class="tab-pane fade py-5 show active">
-                        <div class="row">
+      <div id="myTabContent" class="tab-content">
+                <div  role="tabpanel" aria-labelledby="first-tab" class="tab-pane fade py-5 show active">
+                  <div class="row">
                            <div class="col-md-3">
                              <div class="item-hp card-body card mb-3">
                                  <div class="ribbon ribbon-success text-uppercase">Best</div>
@@ -288,44 +259,9 @@
                                       <a href="#"><button class="buynow">BUY NOW</button></a>
                                  </div>
                              </div>
-                               </div>
-                               <div class="col-md-3">
-                                   <div class="item-hp card-body card mb-3">
-                                       <div class="ribbon ribbon-success text-uppercase">Best</div>
-                                       <img src="{{url("img/headphone-slider1.png")}}" alt="" class="img-fluid" width="100%" height="auto">
-                                       <div class="item-pd-info m-2">
-                                           <h6 class="no-margin text-uppercase">Headphone 1</h6>
-                                           <p class="price-dt">$20.00</p>
-                                            <a href="#" class="cart-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                            <a href="#"><button class="buynow">BUY NOW</button></a>
-                                       </div>
-                                   </div>
-                               </div>
-                               <div class="col-md-3">
-                                   <div class="item-hp card-body card mb-3">
-                                       <div class="ribbon ribbon-success text-uppercase">Best</div>
-                                       <img src="{{url("img/headphone-slider2.png")}}" alt="" class="img-fluid" width="100%" height="auto">
-                                       <div class="item-pd-info m-2">
-                                           <h6 class="no-margin text-uppercase">Headphone 1</h6>
-                                           <p class="price-dt">$20.00</p>
-                                          <a href="#" class="cart-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                          <a href="#"><button class="buynow">BUY NOW</button></a>
-                                       </div>
-                                   </div>
-                               </div>
-                <div class="col-md-3">
-                    <div class="item-hp card-body card mb-3">
-                        <div class="ribbon ribbon-success text-uppercase">Best</div>
-                        <img src="{{url("img/headphone-slider1.png")}}" alt="" class="img-fluid" width="100%" height="auto">
-                        <div class="item-pd-info m-2">
-                            <h6 class="no-margin text-uppercase">Headphone 1</h6>
-                            <p class="price-dt">$20.00</p>
-                            <a href="#" class="cart-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                            <a href="#"><button class="buynow">BUY NOW</button></a>
-                        </div>
-                    </div>
-                </div>
-         </div>
+                          </div>
+                            
+                  </div>
       </div>
       <div id="second" role="tabpanel" aria-labelledby="second-tab" class="tab-pane fade py-5">
          <div class="row">
@@ -451,70 +387,22 @@
                         <div class="row ">
                             <div class="col-xl-12">
                                 <div class="row testimonial-carousel">
+
+                                  @foreach($feedbackHomepage as $f)
                                     <div class="col-lg-12">
                                         <div class="testimonial style-3 card-body card">
                                             <div class="testimonial-info">
-                                                <div class="testimonial-thumb">
-                                                    <img src="https://www.tolmatol.com/uploads-images/bootrap-snippets-our-team/1.jpg" alt="" />
-                                                </div>
                                                 <div class="testimonial-name">
-                                                    <h5>Alley soly</h5>
-                                                    <span>Profession</span>
+                                                    <h5>{{$f->feed_name}}</h5>
+                                                    <span>{{$f->feed_title}}</span>
                                                 </div>
                                             </div>
                                             <div class="testimonial-desc">
-                                                <p>"Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought”</p>
+                                                <p>{{$f->feed_content}}</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12">
-                                        <div class="testimonial style-3 card-body card">
-                                            <div class="testimonial-info">
-                                                <div class="testimonial-thumb">
-                                                    <img src="https://www.tolmatol.com/uploads-images/bootrap-snippets-our-team/2.jpg" alt="" />
-                                                </div>
-                                                <div class="testimonial-name">
-                                                    <h5>Alley soly</h5>
-                                                    <span>Profession</span>
-                                                </div>
-                                            </div>
-                                            <div class="testimonial-desc">
-                                                <p>"Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought”</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="testimonial style-3 card-body card">
-                                            <div class="testimonial-info">
-                                                <div class="testimonial-thumb">
-                                                    <img src="https://www.tolmatol.com/uploads-images/bootrap-snippets-our-team/3.jpg" alt="" />
-                                                </div>
-                                                <div class="testimonial-name">
-                                                    <h5>Alley soly</h5>
-                                                    <span>Profession</span>
-                                                </div>
-                                            </div>
-                                            <div class="testimonial-desc">
-                                                <p>"Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought”</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="testimonial style-3 card-body card">
-                                            <div class="testimonial-info">
-                                                <div class="testimonial-thumb">
-                                                    <img src="https://www.tolmatol.com/uploads-images/bootrap-snippets-our-team/3.jpg" alt="" />
-                                                </div>
-                                                <div class="testimonial-name">
-                                                    <h5>Alley soly</h5>
-                                                    <span>Profession</span>
-                                                </div>
-                                            </div>
-                                            <div class="testimonial-desc">
-                                                <p>"Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought”</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                  @endforeach 
                                 </div>
                             </div>
                         </div>

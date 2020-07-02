@@ -8,7 +8,7 @@
           <div class="col-lg-8 mb-5">
             <div class="card">
               <div class="card-header bg-dark text-white">
-                <h6 class="text-uppercase mb-0">Create new Banner/h6>
+                <h6 class="text-uppercase mb-0">Create new Banner</h6>
               </div>
               <div class="card-body">
                     <form action="{{url('admin/banners/postCreateBanners')}}" method="post" enctype="multipart/form-data">
@@ -45,8 +45,10 @@
                     </form>
               </div>
             </div>
+            </form>
           </div>
         </div>
-      </section>
-    </div>
-@endsection
+      </div>
+    </section>
+  </div>
+  @endsection

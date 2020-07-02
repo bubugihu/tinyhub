@@ -41,12 +41,7 @@
                         </td>
                         <td>
                           {{--Reply mail--}}
-                         @if($feedback->feed_rep == 0 )
-                        <a href="mailto:{{$feedback->feed_email}}?subject={{$feedback->feed_title}}" class="badge badge-danger p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
-                         @else 
-                         <a href="mailto:{{$feedback->feed_email}}?subject={{$feedback->feed_title}}" class="badge badge-success p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
-                         @endif
-
+                        <a href="mailto:{{$feedback->feed_email}}?subject={{$feedback->feed_title}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                             {{--Status reply--}}
                         @if($feedback->feed_rep == 1 )
                             <a href="{{url('admin/feedback/pendingFeedback/'.$feedback->id)}}" class="badge badge-success p-2">Done</a>

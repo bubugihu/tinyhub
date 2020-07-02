@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'Creat User')
+@section('title', 'Create User')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
   <div class="container-fluid px-xl-5">
@@ -11,19 +11,19 @@
               <h6 class="text-uppercase mb-0">Create Account</h6>
             </div>
             <div class="card-body">
-              <form action="{{url('admin/users/createUser')}}" method="post" >
+              <form action="{{url('admin/users/createUser')}}" method="post">
                 {{ csrf_field() }}
                 <div class="row">
                   <div class="col-md-6">
 
                     <div class="form-group">
                       <label class="form-control-label text-uppercase">User Name</label>
-                      <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" >
+                      <input type="text" name="name" class="form-control @error('name') is-invalid @enderror">
 
                       @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
                       @enderror
 
                     </div>
@@ -33,20 +33,20 @@
                       <input type="email" name="email" class="form-control @error('email') is-invalid @enderror">
 
                       @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
                       @enderror
                     </div>
 
                     <div class="form-group">
                       <label class="form-control-label text-uppercase">Password</label>
-                      <input type="password" name="password"  class="form-control @error('password') is-invalid @enderror" >
+                      <input type="password" name="password" class="form-control @error('password') is-invalid @enderror">
 
                       @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
                       @enderror
 
                     </div>
@@ -63,12 +63,12 @@
 
                     <div class="form-group">
                       <label class="form-control-label text-uppercase">Address</label>
-                      <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" >
+                      <input type="text" name="address" class="form-control @error('address') is-invalid @enderror">
 
                       @error('address')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
                       @enderror
 
                     </div>
@@ -78,12 +78,12 @@
 
                     <div class="form-group">
                       <label class="form-control-label text-uppercase">Full Name</label>
-                      <input type="text" name="fullname" class="form-control @error('fullname') is-invalid @enderror" >
+                      <input type="text" name="fullname" class="form-control @error('fullname') is-invalid @enderror">
 
                       @error('fullname')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
                       @enderror
 
                     </div>
@@ -100,7 +100,7 @@
 
                     <div class="form-group">
                       <label class="form-control-label text-uppercase">Confirm Password</label>
-                      <input type="password" name="password_confirmation" class="form-control" >
+                      <input type="password" name="password_confirmation" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -114,15 +114,15 @@
 
                     <div class="form-group">
                       <label class="form-control-label text-uppercase">Phone Number</label>
-                      <input type="number" name="phone" class="form-control" >
+                      <input type="number" name="phone" class="form-control">
 
                       @error('phone')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
                       @enderror
 
-                    </div> 
+                    </div>
 
                   </div>
                 </div>

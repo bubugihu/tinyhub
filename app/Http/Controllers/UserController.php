@@ -7,16 +7,23 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\User;
 use App\Customers;
-use Illuminate\Validation\Rule;
+use App\Order;
+use App\OrderDetail;
+use App\Product;
+use App\Comment;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function listUsers(){
-        $user = User::all();
-        $stt= 0;
-        return view("admin.users.listUsers", compact('user','stt'));
+    public function listUsers()
+    {
+        $user = User::join('customer', 'customer.id', '=', 'users.id')->select('users.*', 'customer.*')->get();
+        $stt = 0;
+        return view("admin.users.listUsers", compact('user', 'stt'));
     }
-    public function createUser(Request $request){
+    public function createUser(Request $request)
+    {
 
         //validate
         $this->validate(
@@ -39,8 +46,8 @@ class UserController extends Controller
             'role'          =>  $request->role,
             'password'      =>  Hash::make($request->password),
         ]);
-        
-         $user->roleCustomer =   Customers::create([
+
+        $user->roleCustomer =   Customers::create([
             'customer_name' =>  $request->fullname,
             'dob'           =>  $request->dob,
             'gender'        =>  $request->gender,
@@ -71,5 +78,64 @@ class UserController extends Controller
         $users->save();
         
         return redirect('admin/users/listUsers');
+    }
+
+    public function profileUser($id)
+    {
+        $user = User::find($id);
+        $customer = Customers::find($id);
+        $no = 0;
+        // $order = User::join('customer', 'users.id', '=', 'customer.users_id')
+        //     ->join('order', 'customer.id', '=', 'order.customer_id')
+        //     // ->join('order_details', 'order.id', '=', 'order_details.order_id')
+        //     // ->join('product', 'order_details.product_id', '=', 'product.id')
+        //     ->select('users.*', 'customer.*', 'order.*')
+        //     ->where('order.customer_id', $id)
+        //     ->get();
+
+        $order = Order::join('order_details', 'order.id', '=', 'order_details.order_id')
+            ->join('product', 'order_details.product_id', '=', 'product.id')
+            ->where('order.customer_id', $id)
+            ->groupBy('order_details.order_id', 'order.payment', 'order.created_at')
+            ->select('order_details.order_id', DB::raw('SUM(product.price * order_details.quantity) as total'), 'order.payment', 'order.created_at')
+            ->get();
+
+        $comment = Comment::join('customer', 'comments.customer_id', '=', 'customer.id')
+            ->join('product', 'comments.product_id', '=', 'product.id')
+            ->join('brand', 'product.brand_id', '=', 'brand.id')
+            ->join('category', 'product.category_id', '=', 'category.id')
+            ->where('comments.customer_id', $id)
+            ->select('product.*', 'comments.*')
+            ->get();
+
+        return view('users.profile.profile', compact('user', 'customer', 'order', 'comment', 'no'));
+    }
+
+    public function profileAdmin($id)
+    {
+        $user = User::find($id);
+        $customer = Customers::find($id);
+        $no = 0;
+
+        $order = Order::join('order_details', 'order.id', '=', 'order_details.order_id')
+            ->join('product', 'order_details.product_id', '=', 'product.id')
+            ->where('order.customer_id', $id)
+            ->groupBy('order_details.order_id', 'order.payment', 'order.created_at')
+            ->select('order_details.order_id', DB::raw('SUM(product.price * order_details.quantity) as total'), 'order.payment', 'order.created_at')
+            ->get();
+
+        $comment = Comment::join('customer', 'comments.customer_id', '=', 'customer.id')
+            ->join('product', 'comments.product_id', '=', 'product.id')
+            ->join('brand', 'product.brand_id', '=', 'brand.id')
+            ->join('category', 'product.category_id', '=', 'category.id')
+            ->where('comments.customer_id', $id)
+            ->select('product.*', 'comments.*')
+            ->get();
+        //Image Featru
+        // if (Auth::check()) {
+        //     $customer = Customers::find(Auth::user()->id)->feature;
+        // }
+        //end Image Featru
+        return view('admin.profile.profile', compact('user', 'customer', 'order', 'comment', 'no'));
     }
 }

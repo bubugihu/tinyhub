@@ -12,7 +12,7 @@
             </div>
             <div class="card-body">
               <!-- List User -->
-              <table class="table card-text" id="dbtable">
+              <table class="table card-text text-center" id="dbtable">
                 <thead>
                   <tr>
                     <th>No.</th>
@@ -21,6 +21,7 @@
                     <th>Role</th>
                     <th>Created At</th>
                     <th>Update</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -41,17 +42,10 @@
                     User
                     @endif
                     </td>
-                    <td>{{$user->created_at}}</td>
-                    <td>
-                      <a href="{{url('admin/users/updateUser/'.$user->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
-                    </td> 
                   </tr>
                   @endforeach
-
                 </tbody>
               </table>
-              
-              
             </div>
           </div>
         </div>

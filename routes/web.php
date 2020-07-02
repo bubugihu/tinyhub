@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Product;
 use App\Brands;
+use App\Customers;
+use App\Http\Middleware\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,22 +18,25 @@ use App\Brands;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes();
-Route::get('/', function() {
+Route::get('/', function () {
     return view('homepage');
 })->name('homepage');
 
 //////////////////admin
 //users
 Route::get('admin/users/listUsers', 'UserController@listUsers');
-Route::get('admin/users/createUser', function(){
+Route::get('admin/users/createUser', function () {
     return view('admin.users.createUser');
 });
 Route::post('admin/users/createUser', 'UserController@createUser');
 Route::get('admin/users/updateUser/{id}' , 'UserController@updateUser');
 Route::post('admin/users/postUpdateUser', 'UserController@postUpdateUser');
 //customer
-Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');
+Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');;
+Route::get('admin/customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
+Route::post('admin/customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
 
 //feedback
 Route::get('admin/feedback/feedbackList', 'FeedbackController@feedbackList');
@@ -60,9 +66,15 @@ Route::get('admin/brands/updateBrands/{id}' , 'BrandsController@updateBrands');
 Route::post('admin/brands/postUpdateBrands/{id}' , 'BrandsController@postUpdateBrands');
 //order
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
+Route::get('admin/order/onOrderStatus/{id}', 'OrderController@onOrderStatus');
+Route::get('admin/order/offOrderStatus/{id}', 'OrderController@offOrderStatus');
 
 //comment
 Route::get('admin/comment/listComment', 'CommentController@listComment');
+Route::get('admin/comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
+Route::get('admin/comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
+Route::get('admin/comment/deleteComment/{id}', 'CommentController@deleteComment');
+
 //banner
 Route::get('admin/banners/listBanner' , 'BannerController@listBanner');
 Route::get('admin/banners/deleteBanners/{id}', 'BannerController@deleteBanners');
@@ -76,10 +88,17 @@ Route::post('admin/banners/postUpdateBanners', 'BannerController@postUpdateBanne
 Route::get('admin/index', 'AdminController@index');
 
 //profile
-Route::get('admin/profile', function(){
-    return view('admin.profile.profile');
-});
-
+Route::get('admin/profile/{id}', 'UserController@profileAdmin');
+// Route::get('admin/profile', function () {
+//     return view('admin.profile.profile');
+// });
+//role
+// Route::get('home', 'RoleController@role');
+// Route::post('admin', 'RoleController@role' );
+// Route::get('admin', function(){
+//     return redirect()->route('listProduct');
+// })->middleware('role')->middleware('auth');
+//end admin
 
 ///////////////////////////Users
 //ajax Register
@@ -87,37 +106,36 @@ Route::get('ajaxRegisterEmail/{email}', 'AjaxController@registerEmail');
 Route::get('ajaxRegisterPhone/{phone}', 'AjaxController@registerPhone');
 //
 //profile
-Route::get('users/profile', function(){
-    return view('users.profile.profile');
-});
+// Route::get('profile/{id}', 'CustomerController@profileCustomer');
+Route::get('users/profile/{id}', 'UserController@profileUser');
 //Feedback
-Route::get('contact-us', function(){
+Route::get('contact-us', function () {
     return view('contact-us');
 })->name('contact-us');
 //about-us
-Route::get('about-us', function(){
+Route::get('about-us', function () {
     return view('about-us');
 })->name('about-us');
 //shipping-policy
-Route::get('shipping-policy', function(){
+Route::get('shipping-policy', function () {
     return view('shipping-policy');
 })->name('shipping-policy');
 //payment
-Route::get('payment', function(){
+Route::get('payment', function () {
     return view('payment');
 })->name('payment');
 //guarantee
-Route::get('guarantee',function(){
+Route::get('guarantee', function () {
     return view('guarantee');
 })->name('guarantee');
 //brand
 Route::get('brand', 'BrandsController@getBrands');
 //thank-you
-Route::get('thank-you', function(){
+Route::get('thank-you', function () {
     return view('thank-you');
 })->name('thank-you');
 //report
-Route::get('report' , function(){
+Route::get('report', function () {
     return view('users.cart.report');
 })->name('print');
 
@@ -134,23 +152,31 @@ Route::get('category', 'CategoryController@category');
 // Route::get('category', 'CategoryController@getcategories');
 Route::post('category/search', 'CategoryController@search');
 Route::get('category/search' ,'CategoryController@category' );
+//search cate
+Route::get('searchCate/{in}', 'CategoryController@filterCate');
+//search brands
+Route::get('searchBrand/{in}', 'CategoryController@filterBrand');
+//search Price
+Route::get('searchPrice', 'CategoryController@filterPrice');
 //example product
 Route::get('product-detail/{id}', 'ProductController@productDetails');
 
-//Check cart
-Route::get('cart' , 'CartController@cart');
+// //example image product
+//Route::get('product-detail/{id}', 'ProductController@imageProduct');
+// check cart
+Route::get('cart', 'CartController@cart');
 //buy now
 Route::post('cart/shopping', 'CartController@shoppingCart');
-Route::get('cart/shopping','CartController@cart');
+Route::get('cart/shopping', 'CartController@cart');
 //add cart
 Route::post('cart/addCart/{id}', 'CartController@addCart');
-Route::get('cart/addCart/{a}', function(){
+Route::get('cart/addCart/{a}', function () {
     return abort(404);
-})->where('a','[A-Za-z0-9]+');
+})->where('a', '[A-Za-z0-9]+');
 // incre item
 Route::post('cart/shopping/increItem', 'CartController@increCart');
 //decre item
-Route::post('cart/shopping/decreItem','CartController@decreCart');
+Route::post('cart/shopping/decreItem', 'CartController@decreCart');
 //remove item
 // Route::post('cart/shopping/removeItem', 'CartController@removeItem');
 Route::get('cart/shopping/removeItem/{id}', 'CartController@removeItem');
@@ -158,7 +184,7 @@ Route::get('cart/shopping/removeItem/{id}', 'CartController@removeItem');
 Route::get('checkout' , 'CartController@checkout')->middleware('auth');
 //order review
 Route::post('cart/shopping/order-review', 'CartController@orderReview');
-Route::get('cart/shopping/order-review', function(){
+Route::get('cart/shopping/order-review', function () {
     return abort(404);
 });
 //thank you
@@ -171,30 +197,30 @@ Route::get('cart/shopping/orderDetails/{id}', 'CartController@orderDetails');
 
 /////////////////////////end cart
 Route::get('search', [
-		'as' => 'search',
-		'uses' => 'SearchKeyController@getSearch'
+    'as' => 'search',
+    'uses' => 'SearchKeyController@getSearch'
 ]);
-Route::get('report-product' , function(){
+Route::get('report-product', function () {
     return view('users.product.report');
 });
-Route::get('users/profile' , function(){
+Route::get('users/profile', function () {
     return view('users.profile.profile');
 });
 
 Route::get('categories/{cate}', [
-        'as' => 'categories',
-        'uses' => 'ProductController@getCategories'
+    'as' => 'categories',
+    'uses' => 'ProductController@getCategories'
 ]);
 
 ///////// du thua chua dung den
 //Route::get('category', 'ProductController@category');
 
 //search cate
-Route::get('searchCate/{in}', 'ProductController@filterCate');
+Route::get('searchCate/{in}', 'CategoryController@filterCate');
 //search brands
-Route::get('searchBrand/{in}', 'ProductController@filterBrand');
+Route::get('searchBrand/{in}', 'CategoryController@filterBrand');
 //search Price
-Route::get('searchPrice', 'ProductController@filterPrice' );
+Route::get('searchPrice', 'CategoryController@filterPrice');
 //Search Price Incre
-Route::get('searchPriceAsc/{products}','ProductController@sortPrice');
+Route::get('searchPriceAsc/{products}', 'ProductController@sortPrice');
 //Route::get('search' , 'SearchController@search');

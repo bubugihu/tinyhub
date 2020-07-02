@@ -15,8 +15,8 @@ class TableFeedback extends Migration
     public function up()
     {
         Schema::create('feedback', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('feed_name');       //Primary key
+            $table->increments('id');       //Primary key
+            $table->string('feed_name')->default('No Name')->nullable();       
             $table->string('feed_title');
             $table->longText('feed_content');
             $table->string('feed_phone')->nullable();
