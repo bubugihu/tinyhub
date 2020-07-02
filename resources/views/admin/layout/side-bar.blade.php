@@ -1,9 +1,19 @@
 <div class="d-flex align-items-stretch">
     <div id="sidebar" class="sidebar py-3">
-        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">Admin</div>
-        <ul class="sidebar-menu list-unstyled">
+      <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">
+          @if(Auth::user()->role  == 1)
+          Admin
+          @elseif(Auth::user()->role  == 2)
+          Mod Product 
+          @else 
+          Mod Customer
+          @endif
+        </div>
+      <ul class="sidebar-menu list-unstyled">
             <li class="sidebar-list-item"><a href="{{url("admin/index")}}" class="sidebar-link text-muted"><i class="o-home-1 mr-3"></i><span>Dashboard</span></a>
             </li>
+
+            @if(Auth::user()->role  == 1)
             <!-- Users Module -->
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages1" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-profile-1 mr-3"></i><span>Users</span></a>
                 <div id="pages1" class="collapse">
@@ -32,6 +42,8 @@
                 </div>
             </li>
             <!-- End Feedback  Module -->
+            @endif
+            @if(Auth::user()->role  == 1 || Auth::user()->role  == 2)
             <!-- Product Module -->
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages4" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3"></i><span>Products</span></a>
                 <div id="pages4" class="collapse">
@@ -62,17 +74,13 @@
                 </div>
             </li>
             <!-- End Brand Module -->
+            @endif
+            @if(Auth::user()->role  == 1 || Auth::user()->role  == 3)
             <!-- Customers Module -->
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages2" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3"></i><span>Customers</span></a>
                 <div id="pages2" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
-<<<<<<< HEAD
-                        <li class="sidebar-list-item"><a href="{{url("admin/banners/listBanner")}}" class="sidebar-link text-muted pl-lg-5">List Banners</a></li>
-                        <li class="sidebar-list-item"><a href="{{url("admin/banners/createBanner")}}" class="sidebar-link text-muted pl-lg-5">Create New Banner</a></li>
-                    </ul>
-=======
                     <li class="sidebar-list-item"><a href="{{url("admin/customer/listCustomer")}}" class="sidebar-link text-muted pl-lg-5">List Customers</a></li>
->>>>>>> 6750d390fce2dd97df27c6721eb37082e6237db1
                 </div>
             </li>
             <!-- End Customers Module -->
@@ -94,5 +102,6 @@
                 </div>
             </li>
             <!-- End Comment  Module -->
-        </ul>
-    </div>
+            @endif
+      </ul>
+      </div>
