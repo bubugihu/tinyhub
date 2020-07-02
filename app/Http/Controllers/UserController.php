@@ -29,13 +29,13 @@ class UserController extends Controller
         $this->validate(
             $request,
             [
-                'name'          => ['bail', 'required', 'string', 'max:255'],
-                'email'         => ['bail', 'required', 'string', 'email', 'max:255', 'unique:users'],
-                'password'      => ['bail', 'required', 'string', 'min:8', 'confirmed'],
-                'fullname'      => ['bail', 'required', 'string', 'max:255'],
-                'phone'         => ['bail', 'required', 'regex:/^0[0-9]{9}$/i', 'unique:customer'],
-                'dob'           => ['bail', 'required'],
-                'address'       => ['bail', 'required', 'string', 'max:255'],
+                'name'          => ['bail','required', 'string', 'max:255'],
+                'email'         => ['bail','required', 'string', 'regex:/^[a-zA-Z0-9.!#$%&]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+[.a-zA-Z0-9]*$/i', 'max:255', 'unique:users'],
+                'password'      => ['bail','required', 'string', 'min:8', 'confirmed'],
+                'fullname'      => ['bail','required','string','max:255'],
+                'phone'         => ['bail','required','regex:/^0[0-9]{9}$/i','unique:customer'],
+                'dob'           => ['bail','required'],
+                'address'       => ['bail','required','string','max:255' ], 
             ]
         );
         //
@@ -61,23 +61,22 @@ class UserController extends Controller
     }
 
     //go to update Form
-    public function updateUserForm($id)
-    {
+    public function updateUser($id){
         $users = User::find($id);
-        return view('admin.users.updateUser', compact('users'));
-    }
+        return view('admin.users.updateUser',compact('users'));
+    }    
 
     //update user
-    public function updateUser(Request $request, $id)
-    {
-        $user = User::find($id)->update([
-            'name'      => $request->name,
-            'email'     => $request->email,
-            'role'      => $request->role,
-            'password'  => $request->password,
-        ]);
-        $user->save();
-
+    public function postUpdateUser(Request $request,User $user){
+       // validate
+        Validator::make($request->all(), [
+                'name'          => ['bail','required', 'string', 'max:255'],
+        ])->validate();
+        $users = User::find($request->id);
+        $users->name         = $request->name;
+        $users->role          = $request->role;
+        $users->save();
+        
         return redirect('admin/users/listUsers');
     }
 

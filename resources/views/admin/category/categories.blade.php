@@ -29,12 +29,11 @@
                 <tbody>
                   @foreach($cates as $cate)
                   <tr>
-                    <th scope="row" class="align-middle">{{$cate->id}}</th>
-                    <td class="align-middle">{{$cate->category_name}}</td>
-                    <td class="align-middle">{{$cate->description}}</td>
-                    <td class="align-middle">
-                      <a href="#Modal-Update-Category{{$cate->id}}" class="badge badge-warning p-2" data-toggle="modal"><i class="fas fa-edit" style="font-size: 16px; font-weight:100;"></i></a>
-                      <a href="#Modal-Delete-Category{{$cate->id}}" class="badge badge-danger p-2" data-toggle="modal"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
+                    <th scope="row">{{$cate->id}}</th>
+                    <td>{{$cate->category_name}}</td>
+                    <td>{{$cate->description}}</td>
+                    <td>
+                    <a href="{{url("admin/category/updateCategories/" . $cate->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px; font-weight:100;"></i></a>
                     </td>
                   </tr>
                   @endforeach

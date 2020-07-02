@@ -8,7 +8,7 @@ class Gallery extends Model
 {
     protected $table = "gallery";
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     public $incrementing = true;
 

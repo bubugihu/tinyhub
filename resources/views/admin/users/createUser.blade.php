@@ -90,7 +90,12 @@
 
                     <div class="form-group">
                       <label class="form-control-label text-uppercase">BirthDay</label>
-                      <input type="date" class="form-control" name="dob" min="1900-01-01" max="2006-12-31">
+                      <input type="date" class="form-control  @error('dob') is-invalid @enderror" name="dob" min="1900-01-01" max="2006-12-31" >
+                      @error('dob')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                      @enderror
                     </div>
 
                     <div class="form-group">

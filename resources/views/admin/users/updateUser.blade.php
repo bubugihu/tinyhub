@@ -11,14 +11,14 @@
                     <h3 class="text-center">Update Account</h3>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="post" action="{{url('admin/users/postUpdateUser')}}">
                         @csrf
                         
                               <div class="form-group row">
                                 <div class="col-12">
                                     <label class="form-control-label text-uppercase">User Name</label>
                                     <input type="text" name="name" value="{{$users->name}}" class="form-control @error('name') is-invalid @enderror">
-                                    
+                                    <input type="number" style="display: none" name="id" value="{{$users->id}}">
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -31,7 +31,7 @@
                               <div class="form-group row">
                                   <div class="col-6">
                                     <label class="form-control-label text-uppercase">Email</label>
-                                    <input type="email" name="email" value="{{$users->email}}" class="form-control " readonly>
+                                    <input type="email" name="email" value="{{$users->email}}" class="form-control">
                                   </div>
 
                                   <div class="col-6">
@@ -43,28 +43,7 @@
                                       <option value="3">Mod Product</option>
                                     </select>
                                   </div>
-    
-                              </div>
-                              <div class="form-group row">
-                                  <div class="col-6">
-                                    <label class="form-control-label text-uppercase">Password</label>
-                                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                                  </div>
-                                  <div class="col-6">
-                                    <label class="form-control-label text-uppercase">Confirm Password</label>
-                                    <input type="password" name="password_confirmation" class="form-control">
-                                  </div>                            
-                              </div>
-                              
-                              
-                            
+                              </div>   
                 </div>
                             <div class="form-group row mb-0">
                                 <div class="col-md-12 offset-md-4">

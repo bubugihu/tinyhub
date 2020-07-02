@@ -57,7 +57,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn login-btn">
+                                <button type="submit" id="login" class="btn login-btn">
                                     {{ __('Login') }}
                                 </button>
                                 @if (Route::has('password.request'))
@@ -88,6 +88,6 @@
       x.type = "password";
       y.className = "fa fa-eye eye";
     }
-  }
-
+  }  
 </script>
+

@@ -24,10 +24,10 @@ class TableProduct extends Migration
             $table->integer('status')->default(0);           //còn hàng hay ko ? 0 hết, 1 còn
             $table->integer('sold_out')->default(0);        //số lượng đã bán
             $table->string('feature_image');
-            $table->integer('warranty_period')->default(5)->nullable();
+            $table->integer('warranty_period')->default(24);
             $table->integer('category_id')->unsigned();        //foreign key
             $table->integer('brand_id')->unsigned();       //foreign key
-            $table->timestamps();
+            $table->date('created_at')->default(Carbon::now());
         });
     }
 

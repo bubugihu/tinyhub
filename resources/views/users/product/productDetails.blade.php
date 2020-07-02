@@ -105,7 +105,29 @@
             </ul>
             <div class="tab-content">
                 <div id="description" class="tab-pane active">
-                    <p>{{$product->long_descriptions}}</p>
+                   <p>{!! $product->long_descriptions !!}</p>
+                </div>
+                <div id="additional-information" class="tab-pane">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th class="border-0" width="250">Material:</th>
+                                <td class="border-0">Cotton</td>
+                            </tr>
+                            <tr>
+                                <th>Styles:</th>
+                                <td>Casual</td>
+                            </tr>
+                            <tr>
+                                <th>Properties:</th>
+                                <td>Short Sleeve</td>
+                            </tr>
+                            <tr>
+                                <th>Brand:</th>
+                                <td>Calvin Klein</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div id="reviews" class="tab-pane">
                     @foreach($comment as $comment)

@@ -17,6 +17,7 @@ class TableGallery extends Migration
             $table->increments('id');   //primary key
             $table->integer('product_id')->unsigned();
             $table->string('product_gallery')->nullable()->default('Not Image');
+            $table->timestamps();
         });
     }
 

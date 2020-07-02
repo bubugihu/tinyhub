@@ -25,54 +25,116 @@
           </div>
           <div class="basket-body">
             <!-- Product-->
-            @foreach($orderDetails as $cart )
+            @foreach(Cart::content() as $cart )
             <div class="item mt-4">
               <div class="row d-flex align-items-center">
                 <div class="col-5">
-                  <div class="d-flex align-items-center"><img src="{{asset('img/feature/'.$cart->feature_image)}}" alt="..." class="img-fluid" width="80">
+                  <div class="d-flex align-items-center"><img src="{{asset('img/feature/'.$cart->options->image)}}" alt="..." class="img-fluid" width="80">
                     <div class="title ml-4"><a href="detail.html">
-                        <h5>{{$cart->product_title}}</h5><span class="text-muted">{{$cart->category_name}}</span></a></div>
+                        <h5>{{$cart->name}}</h5><span class="text-muted">{{$cart->options->cate}}</span></a></div>
                   </div>
                 </div>
                 <div class="col-2"><span>${{$cart->price}}</span></div>
                 <div class="col-3">
                   <div class="d-flex align-items-center">
                     <div class="quantity d-flex align-items-center">
-                      <input type="text" value="{{$cart->quantity}}" class="quantity-no">
+                      <input type="text" value="{{$cart->qty}}" class="quantity-no">
                     </div>
                   </div>
                 </div>
-                <div class="col-2"><span>${{$cart->price*$cart->quantity}}</span></div>
+                <div class="col-2"><span>${{$cart->price*$cart->qty}}</span></div>
               </div>
               @endforeach
 
-              <div class="row d-flex align-items-center">
-                <div class="col-4">
-                </div>
-                <div class="col-lg-4 tab-content">
-                  <div class="block-body order-summary">
-                      <ul class="order-menu list-unstyled">
-                          <li class="d-flex justify-content-between">
-                              <span>Order Subtotal</span>
-                              <strong>${{$subtotal}}</strong>
-                          </li>
-                          <li class="d-flex justify-content-between">
-                              <span>Shipping and handling</span>
-                              <strong>$0.00</strong>
-                          </li>
-                          <li class="d-flex justify-content-between">
-                              <span>Tax</span>
-                              <strong>${{$tax}}</strong>
-                          </li>
-                          <li class="d-flex justify-content-between">
-                              <span>Total</span>
-                              <strong class="text-primary price-total">${{$total}}</strong>
-                          </li>
-                      </ul>
+              {{-- Open Row --}}
+              <div class="row container" style="margin-top: 100px">
+                    {{-- Information --}}
+                      <div class="col-md-6" style="line-height: 0.7;">
+                          <h4>Receiver Information</h4>
+                          <hr>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <p>Fullname: </p>
+                              </div>
+                              <div class="col-md-6">
+                                <p>{{$consignee_name}}</p>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <p>Phone: </p>
+                              </div>
+                              <div class="col-md-6">
+                                <p>{{$phone_consignee}}</p>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <p>Receiving address: </p>
+                              </div>
+                              <div class="col-md-6">
+                                <p>{{$shipping_address}}</p>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <p>Payment: </p>
+                              </div>
+                              <div class="col-md-6">
+                                <p>{{$payment}}</p>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <p>Note: </p>
+                              </div>
+                              <div class="col-md-6">
+                                <p>{{$note}}</p>
+                              </div>
+                            </div>
+                      </div>
+                      {{-- End Information --}}
+                      {{-- Order Summary --}}
+                    <div class="col-md-6" style="line-height: 0.7;">
+                      <h4>Order Summary</h4>
+                      <hr>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <p>Order SubTotal: </p>
+                          </div>
+                          <div class="col-md-6">
+                            <p>$<strong>{{Cart::subtotal()}}</strong></p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <p>Shipping and handling: </p>
+                          </div>
+                          <div class="col-md-6">
+                            <p><strong>$0.00</strong></p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <p>Tax: </p>
+                          </div>
+                          <div class="col-md-6">
+                            <p><strong>${{Cart::tax()}}</strong></p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <p>Total: </p>
+                          </div>
+                          <div class="col-md-6">
+                            <p><strong>${{Cart::total()}}</strong></p>
+                          </div>
+                        </div>
                   </div>
+                  {{-- End order summary --}}
               </div>
-                <div class="col-4"></div>
-              </div>
+              {{-- End row --}}
+
             </div>
           </div>
         </div>
@@ -80,9 +142,17 @@
     </div>
     <div class="container">
     <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row">
-      <a href="{{ route('homepage') }}" class="btn btn-template-outlined wide">Back to Homepage</a>
-    <a href="{{ url('report')}}" class="btn btn-template wide" >Print Invoice</a>
+      <a href="{{ url('checkout') }}" class="btn btn-template-outlined wide">Back to Checkout</a>
+      <form action="{{ url('thank-you')}}" method="post">
+        @csrf
+      <input type="text" style="display: none" name="consignee_name" value="{{$consignee_name}}">
+      <input type="text" style="display: none" name="phone_consignee" value="{{$phone_consignee}}">
+      <input type="text" style="display: none" name="payment" value="{{$payment}}">
+      <input type="text" style="display: none" name="shipping_address" value="{{$shipping_address}}">
+      <input type="text" style="display: none" name="note" value="{{$note}}"> 
+      <button type="submit" class="btn btn-template wide" >Confirm</button>
     </div>
+  </form>
     </div>
 </section>
 @endsection

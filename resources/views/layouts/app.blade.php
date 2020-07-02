@@ -20,6 +20,9 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- Styles -->
+    {{-- Ajax --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {{-- ajax --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
         .eye{
@@ -89,5 +92,8 @@
             @yield('content')
         </main>
     </div>
+
+    @yield('script')
+    
 </body>
 </html>
