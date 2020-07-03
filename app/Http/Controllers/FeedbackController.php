@@ -15,7 +15,7 @@ class FeedbackController extends Controller
             'feedbackName'          =>      'bail|required|string|min:2',
             'feedbackPhone'         =>      'bail|nullable|regex:/^0[1-9][0-9]{8}$/i',
             'feedbackEmail'         =>      'bail|required|regex:/^[a-zA-Z0-9.!#$%&]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+[.a-zA-Z0-9]*$/i',
-            'feedbackContent'       =>      'bail|required|min:2'
+            'feedbackContent'       =>      'bail|required|min:2|max:150',
         ]);
 
         $feedback = new Feedback();

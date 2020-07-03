@@ -166,6 +166,9 @@ return [
             'required' => 'Long description can not be blank !'
             
         ],
+        'feedbackContent'=> [
+            'max'       => 'Message just only max !50 characters.'
+        ]
     
     ],
     /*
