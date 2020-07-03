@@ -91,7 +91,7 @@
     <!-- Section-Homepage 3 -->
     <section class="hm-3 py-5">
          <div class="container">
-            <div class="row inner-box py-5">
+            <div class="row inner-box py-5 justify-content-center">
                 <div class="col-md-12 headtext">
                     <header class="text-center">
                         <h2 class="text-uppercase">Our Categories</h2>
@@ -151,24 +151,19 @@
     <!-- Section-Homepage 4 -->
     <section class="hm-4">
        <div class="container">
-          <div class="row inner-box">
+          <div class="row inner-box justify-content-center">
                 <div class="col-md-12 headtext">
                     <header class="text-center">
                         <h2 class="text-uppercase">Our Brands</h2>
                     </header>
                 </div>
-                <div class="col-md-12">
-                <!-- Rounded tabs -->
-                     <ul id="homeTab" role="tablist" class="nav nav-tabs nav-pills flex-column flex-sm-row text-center border-0 rounded-nav">
-                        
-                      @foreach($brandGlobal as $b)
-                      <li class="nav-item flex-sm-fill">
-                           <a id="first-tab" href="{{url('searchBrand/'.$b->brand_name)}}"  class="nav-link"><img src="{{asset('img/brands/'.$b->brand_image)}}" alt="" width="50" height="50"></a>
-                      </li>
-                      @endforeach
-                     </ul>
-               <!-- End rounded tabs -->
+
+                @foreach($brandGlobal as $b)
+                <div class="col-md-2 border border-dark m-2">
+                  <a href="{{url('searchBrand/'.$b->brand_name)}}"><img class="img-fluid" src="{{asset('img/brands/'.$b->brand_image)}}" alt="" width="100%" height="auto"></a>
                 </div>
+                @endforeach
+                
            </div>
        </div>
     </section>

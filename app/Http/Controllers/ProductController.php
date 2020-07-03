@@ -165,7 +165,7 @@ class ProductController extends Controller {
         } else {
             $imageName = "";
         }
-        $p ->save();
+        $p->save();
 
         $gallery = new Gallery();
         if ($request->hasFile('galleryimg')) {

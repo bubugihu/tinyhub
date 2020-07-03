@@ -33,7 +33,7 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Upload Feature Image:</label><br>
-                        <input type="file" name="files">
+                        <input type="file" name="files"><br>
                           @error('files')
                             <strong style="color:red;font-size:14px;">{{$message}}</strong>
                           @enderror
@@ -51,4 +51,6 @@
       </div>
     </section>
   </div>
-  @endsection
+</div>
+@endsection
+

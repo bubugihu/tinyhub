@@ -36,7 +36,7 @@ class BannerController extends Controller
         
         $file = $request -> file('files');
         $imageName = $file->getClientOriginalName();
-        $file->move("img/", $imageName);    
+        $file->move("img/banner/", $imageName);    
         $b->ban_image = $imageName;
         $b ->save();
 
@@ -65,7 +65,7 @@ class BannerController extends Controller
         $b->ban_content = $request->content;
         $file = $request -> file('files');
         $imageName = $file->getClientOriginalName();
-        $file->move("img/", $imageName);    
+        $file->move("img/banner/", $imageName);    
         $b->ban_image = $imageName;
         $b ->save();
 

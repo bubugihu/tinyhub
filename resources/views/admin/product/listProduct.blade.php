@@ -2,34 +2,34 @@
 @section('title', 'product list')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
-  <div class="container-fluid px-xl-5">
-    <section class="py-5">
-      <div class="row">
-        <div class="col-lg-12 mb-5">
-          <div class="card">
-            <div class="card-header bg-dark text-white">
-              <h6 class="text-uppercase mb-0">Product List</h6>
-            </div>
-            <div class="card-body">
-              @if(Session::has('flash_message'))
-              <div class="alert alert-{!! Session::get('flash_level') !!}">
-                {!!Session::get('flash_message')!!}
+    <div class="container-fluid px-xl-5">
+      <section class="py-5">
+        <div class="row">
+          <div class="col-lg-12 mb-5">
+            <div class="card">
+              <div class="card-header bg-dark text-white">
+                <h6 class="text-uppercase mb-0">Product List</h6>
               </div>
-              @endif
-              <table class="table card-text" id="dbtable">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Image</th>
-                    <th>Product Name</th>
-                    <th>Price</th>
-                    <th>Sold out</th>
-                    <th>Status</th>
-                    <th>Created At</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
+              <div class="card-body">
+                @if(Session::has('flash_message'))
+                  <div class="alert alert-{!! Session::get('flash_level') !!}">
+                      {!!Session::get('flash_message')!!}
+                  </div>
+                @endif 
+                <table class="table card-text" id="dbtable">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Image</th>
+                      <th>Product Name</th>
+                      <th>Price</th>
+                      <th>Sold out</th>
+                      <th>Status</th>
+                      <th>Created At</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
 
                     @foreach($products as $product)
                     <tr>
@@ -39,7 +39,7 @@
                       <td>{{$product->price}}</td>
                       <td>{{$product->sold_out}}</td>
                       <td>{{$product->status}}</td>
-                      <td>{{$product->created_product}}</td>
+                      <td>{{$product->created_at}}</td>
                       <td><a href="#" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                         <a href="{{url("admin/product/updateProduct/" . $product -> id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                         <a href="#" class="badge badge-danger p-2" data-toggle="modal"  data-target="#Modal-Delete-Category"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
@@ -64,7 +64,7 @@
                       <h2>Are you sure you want to delete?</h2>
                     </div>
                     <div class="modal-footer">
-                      <a href="{{url("admin/product/deleteProduct" . $product -> id)}}"><button type="button" class="btn btn-danger">Delete</button></a>
+                      <a href="{{url("admin/product/deleteProduct/" . $product -> id)}}"><button type="button" class="btn btn-danger">Delete</button></a>
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                   </div>

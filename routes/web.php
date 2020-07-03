@@ -129,7 +129,9 @@ Route::get('guarantee', function () {
     return view('guarantee');
 })->name('guarantee');
 //brand
-Route::get('brand', 'BrandsController@getBrands');
+Route::get('brand', [
+    'as' => 'brand',
+    'uses' => 'BrandsController@getBrands']);
 //thank-you
 Route::get('thank-you', function () {
     return view('thank-you');
@@ -148,7 +150,10 @@ Route::get('logout', function () {
 Route::post('feedback/postFeedback', 'FeedbackController@postFeedback');
 //////////////////////////// User cart
 //////////////category
-Route::get('category', 'CategoryController@category');
+Route::get('category',[ 
+    'as' => 'category',
+    'uses' => 'CategoryController@category']);
+    
 // Route::get('category', 'CategoryController@getcategories');
 Route::post('category/search', 'CategoryController@search');
 Route::get('category/search' ,'CategoryController@category' );
@@ -159,7 +164,9 @@ Route::get('searchBrand/{in}', 'CategoryController@filterBrand');
 //search Price
 Route::get('searchPrice', 'CategoryController@filterPrice');
 //example product
-Route::get('product-detail/{id}', 'ProductController@productDetails');
+Route::get('product-detail/{id}', [
+    'as' => 'product-detail',
+    'uses' => 'ProductController@productDetails']);
 
 // //example image product
 //Route::get('product-detail/{id}', 'ProductController@imageProduct');
