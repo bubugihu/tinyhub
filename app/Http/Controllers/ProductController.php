@@ -175,7 +175,7 @@ class ProductController extends Controller {
                 return Redirect('admin/product/updateProduct')->with('Message', 'You can only upload image with file jpg/png/jpeg');
             }
             $nameGlImg =$fileGL->getClientOriginalName();
-            $fileGL->move("img/gallery", $nameGlImg);
+            $fileGL->move("img/gallery/", $nameGlImg);
             $gallery->product_gallery = $nameGlImg;
         }
        
