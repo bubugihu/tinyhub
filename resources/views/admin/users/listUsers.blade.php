@@ -12,6 +12,11 @@
             </div>
             <div class="card-body">
               <!-- List User -->
+              @if(Session::has('flash_message'))
+              <div class="alert alert-{!! Session::get('flash_level') !!}">
+                {!!Session::get('flash_message')!!}
+              </div>
+              @endif
               <table class="table card-text text-center" id="dbtable">
                 <thead>
                   <tr>

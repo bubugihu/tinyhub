@@ -34,9 +34,9 @@
                         <td>{{ $feedback->feed_email}}</td>
                         <td>
                          @if($feedback->feed_status == 1 )
-                          <a href="{{url('admin/feedback/offStatusFeedback/'.$feedback->id)}}" class="badge badge-success p-2">Done</a>
+                          <a href="{{url('admin/feedback/offStatusFeedback/'.$feedback->id)}}" class="badge badge-success p-2">Active</a>
                          @else 
-                         <a href="{{url('admin/feedback/onStatusFeedback/'.$feedback->id)}}" class="badge badge-danger p-2">Pending</a>
+                         <a href="{{url('admin/feedback/onStatusFeedback/'.$feedback->id)}}" class="badge badge-danger p-2">Deactive</a>
                          @endif
                         </td>
                         <td>

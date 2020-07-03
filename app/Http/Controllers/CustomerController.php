@@ -79,11 +79,13 @@ class CustomerController extends Controller
         return redirect()->action('CustomerController@listCustomer')->with(['flash_level' => 'success', 'flash_message' => 'Update Customer Successfully !']);
     }
 
+    public function deleteCustomer($id)
+    {
+        $deleteCustomer=User::find($id)->delete();
+        $deleteCustomer = Customers::join('users', 'users.id', '=', 'customer.users_id')
+        ->where('customer.id',$id)->where('users.id','customer.users_id')->delete();
 
-
-    // public function profileCustomer($id)
-    // {
-    //     $customer = Customers::find($id);
-    //     return view('users.profile.profile', compact('customer'));
-    // }
+        return redirect()->action('CustomerController@listCustomer')->with(['flash_level' => 'success', 'flash_message' => 'Delete Customer Successfully !']);
+    }
 }
+

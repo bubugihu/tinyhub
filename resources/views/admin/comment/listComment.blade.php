@@ -67,9 +67,9 @@
                     <td class="align-middle">{{$comment->created_at}}</td>
                     <td class="align-middle">
                       @if($comment->cmt_status == 0)
-                      <a href="{{url('admin/comment/onCommentStatus/'.$no)}}"><span class="badge badge-pill badge-danger">OFF</span></a>
+                      <a href="{{url('admin/comment/onCommentStatus/'.$comment->id)}}"><span class="badge badge-pill badge-danger">OFF</span></a>
                       @else
-                      <a href="{{url('admin/comment/offCommentStatus/'.$no)}}"><span class="badge badge-pill badge-success">ON</span></a>
+                      <a href="{{url('admin/comment/offCommentStatus/'.$comment->id)}}"><span class="badge badge-pill badge-success">ON</span></a>
                       @endif
                     </td>
                     <td class="align-middle">

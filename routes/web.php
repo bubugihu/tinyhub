@@ -37,6 +37,7 @@ Route::post('admin/users/postUpdateUser', 'UserController@postUpdateUser');
 Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');;
 Route::get('admin/customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
 Route::post('admin/customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
+Route::get('admin/customer/deleteCustomer/{id}', 'CustomerController@deleteCustomer');
 
 //feedback
 Route::get('admin/feedback/feedbackList', 'FeedbackController@feedbackList');
@@ -52,6 +53,9 @@ Route::post('admin/product/postCreate', 'ProductController@postCreate');
 Route::get('admin/product/updateProduct/{id}', 'ProductController@updateProduct');
 Route::post('admin/product/postUpdate/{id}', 'ProductController@postUpdate');
 Route::get('admin/product/deleteProduct/{id}', 'ProductController@deleteProduct');
+Route::post('users/product/createCommentUser/{idProduct}/{idCustomer}', 'ProductController@postCommentUser');
+
+
 //category
 Route::get('admin/category/categories', 'CategoryController@categories');
 Route::get('admin/category/createCategories', 'CategoryController@createCate');
@@ -68,12 +72,14 @@ Route::post('admin/brands/postUpdateBrands/{id}' , 'BrandsController@postUpdateB
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
 Route::get('admin/order/onOrderStatus/{id}', 'OrderController@onOrderStatus');
 Route::get('admin/order/offOrderStatus/{id}', 'OrderController@offOrderStatus');
+Route::get('admin/order/listOrderDetails/{id}', 'CartController@orderDetails');
 
 //comment
 Route::get('admin/comment/listComment', 'CommentController@listComment');
 Route::get('admin/comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
 Route::get('admin/comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
 Route::get('admin/comment/deleteComment/{id}', 'CommentController@deleteComment');
+
 
 //banner
 Route::get('admin/banners/listBanner' , 'BannerController@listBanner');
@@ -89,15 +95,7 @@ Route::get('admin/index', 'AdminController@index');
 
 //profile
 Route::get('admin/profile/{id}', 'UserController@profileAdmin');
-// Route::get('admin/profile', function () {
-//     return view('admin.profile.profile');
-// });
-//role
-// Route::get('home', 'RoleController@role');
-// Route::post('admin', 'RoleController@role' );
-// Route::get('admin', function(){
-//     return redirect()->route('listProduct');
-// })->middleware('role')->middleware('auth');
+
 //end admin
 
 ///////////////////////////Users
@@ -108,6 +106,9 @@ Route::get('ajaxRegisterPhone/{phone}', 'AjaxController@registerPhone');
 //profile
 // Route::get('profile/{id}', 'CustomerController@profileCustomer');
 Route::get('users/profile/{id}', 'UserController@profileUser');
+route::get('users/profile/{id}/{idcommment}','UserController@deleteCommentUser');
+route::post('users/profileUpdate/{id}','UserController@postUpdateProfileUser');
+
 //Feedback
 Route::get('contact-us', function () {
     return view('contact-us');

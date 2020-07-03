@@ -16,7 +16,7 @@ class BannerController extends Controller
     //delete banner
     public function deleteBanners($id){
         Banner::find($id)->delete();
-        return redirect()->action('BannerController@listBanner');
+        return redirect()->action('BannerController@listBanner')->with(['flash_level' => 'success','flash_message' => 'Banner has been deleted !' ]);
     }
 
     //create banner
@@ -40,7 +40,7 @@ class BannerController extends Controller
         $b->ban_image = $imageName;
         $b ->save();
 
-        return redirect()->action('BannerController@listBanner');
+        return redirect()->action('BannerController@listBanner')->with(['flash_level' => 'success','flash_message' => 'Banner has been created !' ]);
     }
 
     //update banner form
@@ -57,18 +57,22 @@ class BannerController extends Controller
             [
                 'title'             => 'bail|required|string|min:3|max:100',
                 'content'           => 'bail|required|string|min:0|max:20000',
-                'files'             => 'bail|required|file|image|mimes:jpg,png,jpeg|max:10240',
+                'files'             => 'bail|file|image|mimes:jpg,png,jpeg|max:10240',
             ],
         );
         $b = Banner::find($request->id);
         $b->ban_title = $request->title;
         $b->ban_content = $request->content;
-        $file = $request -> file('files');
+        if($request->hasFile('files')){
+        $file = $request->file('files');
         $imageName = $file->getClientOriginalName();
         $file->move("img/banner/", $imageName);    
         $b->ban_image = $imageName;
         $b ->save();
+        }else
+        $b->save();
+        
 
-        return redirect()->action('BannerController@listBanner');
+        return redirect()->action('BannerController@listBanner')->with(['flash_level' => 'success','flash_message' => 'Banner has been updated !' ]);
     }
 }

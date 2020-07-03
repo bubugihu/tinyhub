@@ -204,25 +204,25 @@
               </thead>
               <tbody>
 
-                @foreach($select as $s)
-                <tr>
-                  <th scope="row">{{++$stt}}</th>
-                  <td>{{$s->product_title}}</td>
-                  <td>{{$s->quantity}}</td>
-                  <td>${{$s->price}}</td>
-                  <td>${{$s->quantity * $s->price}}</td>
-                </tr>
-                @endforeach
+                  @foreach($select as $s)
+                  <tr>
+                    <th scope="row">{{++$stt}}</th>
+                    <td>{{$s->product_title}}</td>
+                    <td>{{$s->quantity}}</td>
+                    <td>$ {{$s->price}}</td>
+                    <td>$ {{$s->quantity * $s->price}}</td>
+                  </tr>
+                  @endforeach
 
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th></th>
-                  <td colspan="3" class="text-right text-danger text-uppercase">Total</td>
-                  <td class="text-red">${{$total}}</td>
-                </tr>
-              </tfoot>
-            </table>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="4" class="text-right text-danger text-uppercase"><b>Total</b><small>(Included 10% Tax)</small></td>
+                    <td class="text-red"><b>$ {{$total}}</b></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
           </div>
         </div>
         <div class="row p-4">

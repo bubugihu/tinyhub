@@ -34,7 +34,7 @@
                       </div>
                       <div class="form-group">
                         <label for="">Old Banner</label><br>
-                        <img class="img-fluid" src="{{url("img/".$b->ban_image)}}" alt="" width="100">
+                        <img class="img-fluid" src="{{url("img/banner/".$b->ban_image)}}" alt="" width="100">
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Upload Feature Image:</label><br>
@@ -45,7 +45,7 @@
                       </div>
                       <div class="form-group">
                       <input type="number" style="display: none" name="id" value="{{$b->id}}">
-                        <button type="submit" class="btn btn-dark">Update</button>
+                        <button type="submit" class="btn btn-dark" onclick="return confirm('Do you want update?');">Update</button>
                         <button type="reset" class="btn btn-warning">Reset</button>
                       </div>
                     </form>
