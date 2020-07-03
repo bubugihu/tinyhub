@@ -148,7 +148,7 @@ class UserController extends Controller
     public function profileUser($id)
     {
         $user = User::find($id);
-        $customer = Customers::find($id);
+        $customer = Customers::where('users_id',$id)->first();
         $no = 0;
         $no1 = 0;
         // $order = User::join('customer', 'users.id', '=', 'customer.users_id')

@@ -51,15 +51,15 @@
                                 <div class="row">
                                     <div class="col-12 mt-1 ml-0">
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="customer-gender1" name="profile_gender" value="Male" checked>
+                                            <input type="radio" class="custom-control-input" id="customer-gender1" name="gender" value="Male" checked>
                                             <label class="custom-control-label" for="customer-gender1">Male</label>
                                         </div>
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="customer-gender2" name="profile_gender" value="Female">
+                                            <input type="radio" class="custom-control-input" id="customer-gender2" name="gender" value="Female">
                                             <label class="custom-control-label" for="customer-gender2">Female</label>
                                         </div>
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" class="custom-control-input" id="customer-gender3" name="profile_gender" value="Other">
+                                            <input type="radio" class="custom-control-input" id="customer-gender3" name="gender" value="Other">
                                             <label class="custom-control-label" for="customer-gender3">Other</label>
                                         </div>
                                     </div>

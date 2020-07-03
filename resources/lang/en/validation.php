@@ -136,7 +136,10 @@ return [
             'rule-name' => 'custom-message',
         ],
         'phone' => [
-            'regex' => 'Phone must be 10 digits.'
+            'regex' => 'Phone must begin 0 and have 10 or 11 digits.'
+        ],
+        'fullname' => [
+            'regex' => 'FullName must be String, no number, no space at first'
         ],
         'name' => [
             'required' => 'User name is required.'
@@ -168,7 +171,10 @@ return [
         ],
         'feedbackContent'=> [
             'max'       => 'Message just only max 150 characters.'
-        ]
+        ],
+        'feedbackPhone' => [
+            'regex' => 'Phone must begin 0 and have 10 or 11 digits.'
+        ],
     
     ],
     /*

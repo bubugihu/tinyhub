@@ -52,12 +52,12 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name'                      => ['bail','required', 'string', 'max:255'],
-            'email'                     => ['bail','required', 'string', 'regex:/^[a-zA-Z0-9.!#$%&]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+[.a-zA-Z0-9]*$/i', 'max:255', 'unique:users'],
+            'email'                     => ['bail','required', 'string', 'regex:/^\S+[a-zA-Z0-9.!#$%&]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+[.a-zA-Z0-9]*$/i', 'max:255', 'unique:users'],
             'password'                  => ['bail','required', 'string', 'min:8', 'confirmed'],
             'password_confirmation'     => ['bail','required'],
-            'fullname'                  => ['bail','required','string','max:255'],
+            'fullname'                  => ['bail','required','regex:/^\S+[a-zA-Z]{2,}$/i','max:255'],
             'dob'                       => ['bail','required'],
-            'phone'                     => ['bail','required','regex:/^0[1-9][0-9]{8}$/i','unique:customer'],
+            'phone'                     => ['bail','required','regex:/^\S+0[1-9][0-9]{8,9}$/i','unique:customer'],
             'address'                    => ['bail','required','string','max:255' ],
         ]);
     }

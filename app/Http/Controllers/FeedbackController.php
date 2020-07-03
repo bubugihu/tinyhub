@@ -12,8 +12,8 @@ class FeedbackController extends Controller
     public function postFeedback(Request $request){
         $this->validate($request,
         [
-            'feedbackName'          =>      'bail|required|string|min:2',
-            'feedbackPhone'         =>      'bail|nullable|regex:/^0[1-9][0-9]{8}$/i',
+            'feedbackName'          =>      'bail|required|regex:/^\S+[a-zA-Z]{2,}/i|max:255',
+            'feedbackPhone'         =>      'bail|nullable|regex:/^\S+0[1-9][0-9]{8,9}$/i',
             'feedbackEmail'         =>      'bail|required|regex:/^[a-zA-Z0-9.!#$%&]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+[.a-zA-Z0-9]*$/i',
             'feedbackContent'       =>      'bail|required|min:2|max:150',
         ]);
