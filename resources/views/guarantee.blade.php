@@ -4,15 +4,19 @@
 <div class="hero hero-page padding-small">
     <div class="container">
         <div class="row d-flex">
-            <div class="col-lg-9 ">
+            <div class="col-lg-12">
                 <h1>Guarantee</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ Breadcrumbs::render('guarantee') }}
+                </div>
             </div>
         </div>
     </div>
 </div>
 <section class="guarantee py-5">
     <div class="container">
-        <div class="row">
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <h4>Warranty and Returns</h4>
@@ -48,7 +52,6 @@
                         <li>Consumables (such as lightbulbs, valves and liquids)</li>
                     </ul>
                 </div>
-            </div>
         </div>
     </div>
 </section>

@@ -11,6 +11,7 @@
         "php": "^7.2.5",
         "bumbummen99/shoppingcart": "^2.9",
         "ckfinder/ckfinder-laravel-package": "v3.5.1.5",
+        "davejamesmiller/laravel-breadcrumbs": "5.3.2",
         "dompdf/dompdf": "^0.8.5",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",

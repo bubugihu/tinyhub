@@ -11,6 +11,11 @@
                 <h6 class="text-uppercase mb-0">Brands List</h6>
               </div>
               <div class="card-body">
+                @if(Session::has('flash_message'))
+                <div class="alert alert-{!! Session::get('flash_level') !!}">
+                    {!!Session::get('flash_message')!!}
+                </div>
+                @endif 
                 <table class="table card-text" id="dbtable">
                   <thead>
                     <tr>
@@ -22,7 +27,6 @@
                     </tr>
                   </thead>
                   <tbody>
-
                     @foreach($brand as $brand)
                     <tr>
                       <th scope="row">{{$brand->id}}</th> 
@@ -41,7 +45,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
-  @endsection
+      </section>
+    </div>
+@endsection

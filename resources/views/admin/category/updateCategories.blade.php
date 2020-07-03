@@ -8,7 +8,7 @@
         <div class="col-lg-8 mb-5">
           <div class="card">
             <div class="card-header bg-dark text-white">
-              <h6 class="text-uppercase mb-0"></h6>
+              <h6 class="text-uppercase mb-0">Update Category</h6>
             </div>
             <div class="card-body">
                 {{-- @include('admin.product.form-error') --}}
