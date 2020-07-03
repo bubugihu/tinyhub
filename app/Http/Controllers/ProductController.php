@@ -51,7 +51,7 @@ class ProductController extends Controller
                 'prdname.unique'              => 'Product title has already existed !',
                 'prdname.string'              => 'Product title must be string !',
                 'prdname.min'                 => 'Product title has min 3 characters !',
-                'prdname.max'                 => 'Product title has min 255 characters !',
+                'prdname.max'                 => 'Product title has max 255 characters !',
                 'prdprice.required'           => 'Price can not be blank !',
                 'prdprice.min'                => 'Price has min >= 0 !',
                 'prdprice.max'                => 'Price has max <= 20000 !',
@@ -136,7 +136,7 @@ class ProductController extends Controller
             [
                 'prdname.required'            => 'Product title can not be blank !',
                 'prdname.min'                 => 'Product title has min 3 characters !',
-                'prdname.max'                 => 'Product title has min 255 characters !',
+                'prdname.max'                 => 'Product title has max 255 characters !',
                 'prdprice.required'           => 'Price can not be blank !',
                 'prdprice.min'                => 'Price has min >= 0 !',
                 'prdprice.max'                => 'Price has max <= 20000 !',
@@ -230,5 +230,32 @@ class ProductController extends Controller
 
         //End Similar Product
         return view('users.product.productDetails', compact('product', 'gallery', 'category', 'brand', 'quantity', 'comment', 'customer', 'similar'));
+    }
+
+    public function postCommentUser(Request $request, $idProduct, $idCustomer)
+    {
+        $comment = Comment::where('customer_id', $idCustomer)
+                            ->where('product_id', $idProduct)->get();
+        $commentCustomer=$idCustomer;
+        $commentProduct=$idProduct;
+        $this->validate(
+            $request,
+            [
+                'postComment' => 'bail|required|min:1|max:150',
+            ],
+            [
+                'postComment.required' => 'Comment can not be blank !',
+                'postComment.min' => 'Product title has min 1 characters !',
+                'postComment.max' => 'Product title has max 150 characters !',
+            ]
+        );
+        $comment = new Comment();
+        $comment->cmt_content = $request->postComment;
+        $comment->customer_id= $commentCustomer;
+        $comment->product_id=$commentProduct;
+
+        $comment->save();
+
+        return redirect('product-detail/'.$idProduct);
     }
 }

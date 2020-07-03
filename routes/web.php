@@ -53,6 +53,9 @@ Route::post('admin/product/postCreate', 'ProductController@postCreate');
 Route::get('admin/product/updateProduct/{id}', 'ProductController@updateProduct');
 Route::post('admin/product/postUpdate/{id}', 'ProductController@postUpdate');
 Route::get('admin/product/deleteProduct/{id}', 'ProductController@deleteProduct');
+Route::post('users/product/createCommentUser/{idProduct}/{idCustomer}', 'ProductController@postCommentUser');
+
+
 //category
 Route::get('admin/category/categories', 'CategoryController@categories');
 Route::get('admin/category/createCategories', 'CategoryController@createCate');
@@ -76,6 +79,7 @@ Route::get('admin/comment/listComment', 'CommentController@listComment');
 Route::get('admin/comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
 Route::get('admin/comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
 Route::get('admin/comment/deleteComment/{id}', 'CommentController@deleteComment');
+
 
 //banner
 Route::get('admin/banners/listBanner' , 'BannerController@listBanner');

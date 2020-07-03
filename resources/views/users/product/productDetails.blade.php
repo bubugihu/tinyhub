@@ -105,7 +105,7 @@
             </ul>
             <div class="tab-content">
                 <div id="description" class="tab-pane active">
-                   <p>{!! $product->long_descriptions !!}</p>
+                    <p>{!! $product->long_descriptions !!}</p>
                 </div>
                 <div id="additional-information" class="tab-pane">
                     <table class="table">
@@ -144,13 +144,14 @@
                     <div class="row review d-flex justify-content-center">
                         <div class="col-3 text-center"><img src="{{asset("img/$customer")}}" alt="{{Auth::user()->name}}" class="review-image"><span></span></div>
                         <div class="col-9 review-text" style="padding-right: 65px;">
-                            <form role="form" action="{{url('users/profileUpdate/' . $customer -> id)}}" method="POST" enctype="multipart/form-data">
+                            <form role="form" action="{{url('users/product/createCommentUser/'.$product->id.'/'. Auth::user()->id)}}" method="POST" enctype="multipart/form-data">
+                                {{ csrf_field() }}
                                 <div>
                                     <h6>{{Auth::user()->name}}</h6>
                                     <hr width=" 100%">
                                 </div>
                                 <div class="form-group">
-                                    <textarea name="" id="" class="form-control" placeholder="Looks like you want to share something ?"></textarea>
+                                    <textarea name="postComment" id="" class="form-control" placeholder="Looks like you want to share something ?"></textarea>
                                 </div>
                                 <div class="form-group d-flex justify-content-center">
                                     <input type="submit" class="btn btn-success" value="Post">
