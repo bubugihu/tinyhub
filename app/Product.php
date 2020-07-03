@@ -8,7 +8,7 @@ class Product extends Model {
     // Declare table in DB match with model
     protected $table = "product";
 
-    public $timestamps = true;
+    public $timestamps = false;
 
     public $incrementing = true;
     //

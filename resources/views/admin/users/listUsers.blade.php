@@ -20,8 +20,8 @@
                     <th>Email</th>
                     <th>Role</th>
                     <th>Created At</th>
-                    <th>Update</th>
-                    <th>Action</th>
+                    <th>Updated At</th>
+                    <th>Update Info</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -42,6 +42,9 @@
                     User
                     @endif
                     </td>
+                    <td>{{$user->created_at}}</td>
+                    <td>{{$user->updated_at}}</td>
+                    <td><a href="{{url('admin/users/updateUser/'.$user->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px; font-weight:100;"></i></a></td>
                   </tr>
                   @endforeach
                 </tbody>

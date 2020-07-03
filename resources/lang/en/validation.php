@@ -167,7 +167,7 @@ return [
             
         ],
         'feedbackContent'=> [
-            'max'       => 'Message just only max !50 characters.'
+            'max'       => 'Message just only max 150 characters.'
         ]
     
     ],

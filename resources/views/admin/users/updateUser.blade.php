@@ -31,7 +31,7 @@
                               <div class="form-group row">
                                   <div class="col-6">
                                     <label class="form-control-label text-uppercase">Email</label>
-                                    <input type="email" name="email" value="{{$users->email}}" class="form-control">
+                                    <input type="email" name="email" value="{{$users->email}}" class="form-control" readonly>
                                   </div>
 
                                   <div class="col-6">
@@ -45,13 +45,13 @@
                                   </div>
                               </div>   
                 </div>
-                            <div class="form-group row mb-0">
-                                <div class="col-md-12 offset-md-4">
+                            <div class="form-group row mb-3">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" class="btn login-btn" style="background-color: #f47635" onclick="return confirm('Do you want update ?');">
+                                    {{ __('Update') }}
+                                    </button>
                                     <button type="reset" class="btn btn-dark">
                                         {{ __('Reset') }}
-                                    </button>
-                                    <button type="submit" class="btn login-btn" style="background-color: #f47635" onclick="return confirm('Do you want update ?');">
-                                        {{ __('Update') }}
                                     </button>
                                 </div>
                             </div>
