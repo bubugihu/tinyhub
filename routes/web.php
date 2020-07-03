@@ -39,7 +39,6 @@ Route::get('admin/customer/updateCustomer/{id}', 'CustomerController@updateCusto
 Route::post('admin/customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
 Route::get('admin/customer/deleteCustomer/{id}', 'CustomerController@deleteCustomer');
 
-
 //feedback
 Route::get('admin/feedback/feedbackList', 'FeedbackController@feedbackList');
 Route::get('admin/feedback/deleteFeedback/{id}', 'FeedbackController@deleteFeedback');
@@ -70,6 +69,7 @@ Route::post('admin/brands/postUpdateBrands/{id}' , 'BrandsController@postUpdateB
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
 Route::get('admin/order/onOrderStatus/{id}', 'OrderController@onOrderStatus');
 Route::get('admin/order/offOrderStatus/{id}', 'OrderController@offOrderStatus');
+Route::get('admin/order/listOrderDetails/{id}', 'CartController@orderDetails');
 
 //comment
 Route::get('admin/comment/listComment', 'CommentController@listComment');

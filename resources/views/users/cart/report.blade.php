@@ -55,17 +55,16 @@
                     <th scope="row">{{++$stt}}</th>
                     <td>{{$s->product_title}}</td>
                     <td>{{$s->quantity}}</td>
-                    <td>${{$s->price}}</td>
-                    <td>${{$s->quantity * $s->price}}</td>
+                    <td>$ {{$s->price}}</td>
+                    <td>$ {{$s->quantity * $s->price}}</td>
                   </tr>
                   @endforeach
 
                 </tbody>
                 <tfoot>
                   <tr>
-                    <th></th>
-                    <td colspan="3" class="text-right text-danger text-uppercase">Total</td>
-                    <td class="text-red">${{$total}}</td>
+                    <td colspan="4" class="text-right text-danger text-uppercase"><b>Total</b><small>(Included 10% Tax)</small></td>
+                    <td class="text-red"><b>$ {{$total}}</b></td>
                   </tr>
                 </tfoot>
               </table>

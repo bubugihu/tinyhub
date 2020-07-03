@@ -205,11 +205,6 @@ class UserController extends Controller
             ->where('comments.customer_id', $id)
             ->select('product.*', 'comments.*')
             ->get();
-        //Image Featru
-        // if (Auth::check()) {
-        //     $customer = Customers::find(Auth::user()->id)->feature;
-        // }
-        //end Image Featru
         return view('admin.profile.profile', compact('user', 'customer', 'order', 'comment', 'no'));
     }
 }

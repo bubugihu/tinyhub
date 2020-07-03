@@ -144,7 +144,7 @@
                     <div class="row review d-flex justify-content-center">
                         <div class="col-3 text-center"><img src="{{asset("img/$customer")}}" alt="{{Auth::user()->name}}" class="review-image"><span></span></div>
                         <div class="col-9 review-text" style="padding-right: 65px;">
-                            <form action="">
+                            <form role="form" action="{{url('users/profileUpdate/' . $customer -> id)}}" method="POST" enctype="multipart/form-data">
                                 <div>
                                     <h6>{{Auth::user()->name}}</h6>
                                     <hr width=" 100%">

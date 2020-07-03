@@ -9,7 +9,10 @@
       <li class="nav-item dropdown ml-auto">
         @auth
         <a id="" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">
-          <img src="" alt="{{Auth::user()->name}}" width="30" class="img-fluid rounded-circle shadow">
+        
+          <div class="text">
+            <h6 class="mb-0" style="color: black;">{{Auth::user()->name}}</h6>
+          </div>
         </a>
         <div aria-labelledby="userInfo" class="dropdown-menu">
           <a href="" class="dropdown-item">
