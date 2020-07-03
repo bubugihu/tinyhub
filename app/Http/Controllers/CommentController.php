@@ -41,4 +41,5 @@ class CommentController extends Controller
         $deleteComment = Comment::find($id)->delete();
         return redirect()->action('CommentController@listComment')->with(['flash_level' => 'success', 'flash_message' => 'Delete Comment Successfully !']);
     }
+
 }

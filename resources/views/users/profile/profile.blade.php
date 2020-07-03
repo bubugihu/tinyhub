@@ -4,7 +4,7 @@
 <div class="container py-5">
     <div class="row card-body py-5 mx-auto">
         <!-- Info Customer -->
-        <div class="col-md-3 card py-2">
+        <div class="col-md-4 card py-2">
             <div class="profile_feature">
                 <img src="{{asset('img/'.$customer->feature)}}" alt="{{$user->name}}" class="img-fluid rounded" width="100%" height="auto">
                 <div style="margin-top:20px ;">
@@ -19,9 +19,9 @@
                         <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-home" aria-hidden="true"></i> {{$customer->address}}</li>
                         <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-envelope" aria-hidden="true"></i> {{$user->email}}</li>
                     </ul>
-                    <div class="card-body d-flex justify-content-center">
+                    <!-- <div class="card-body d-flex justify-content-center">
                         <button type="button" data-toggle="modal" data-target="#UpdateProfile" class="btn btn-dark">Create category</button>
-                        <!-- Modal Edit Info Customer -->
+                        Modal Edit Info Customer
                         <div id="UpdateProfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
                             <div role="document" class="modal-dialog">
                                 <div class="modal-content">
@@ -31,12 +31,10 @@
                                     </div>
                                     <div class="modal-body">
                                         <form action="" method="POST" enctype="multipart/form-data">
-                                            <!-- Customer Name -->
                                             <div class="form-group">
                                                 <label class="form-control-label text-uppercase">Customer Name</label>
                                                 <input type="text" name="" class="form-control" required>
                                             </div>
-                                            <!-- Gender -->
                                             <div class="form-group">
                                                 <label class="form-control-label text-uppercase">Gender</label><br>
                                                 <div class="custom-control custom-radio custom-control-inline">
@@ -52,17 +50,14 @@
                                                     <label class="custom-control-label" for="customer-gender3">Other</label>
                                                 </div>
                                             </div>
-                                            <!-- DOB -->
                                             <div class="form-group">
                                                 <label class="form-control-label text-uppercase">DOB</label>
                                                 <input type="date" name="" class="form-control" required>
                                             </div>
-                                            <!-- Phone -->
                                             <div class="form-group">
                                                 <label class="form-control-label text-uppercase">Phone</label>
                                                 <input type="number" name="" class="form-control" min="10" max="12" required>
                                             </div>
-                                            <!-- Address -->
                                             <div class="form-group">
                                                 <label class="form-control-label text-uppercase">Address</label>
                                                 <input type="text" name="" class="form-control" required>
@@ -82,23 +77,31 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
         <!-- Info Order And Commnets -->
-        <div class="col-md-9 card py-2">
+        <div class="col-md-8 card py-2">
             <ul class="nav nav-pills mb-3 justify-content-center " id="pills-tab" role="tablist">
                 <li class="nav-item" style="margin: 10px 20px;">
-                    <a class="btn btn-lg btn-primary active" id="pills-order-tab" data-toggle="pill" href="#pills-order{{$customer->id}}" role="tab" aria-controls="pills-order" aria-selected="true">Order</a>
+                    <a class="btn btn-lg btn-primary " id="pills-order-tab" data-toggle="pill" href="#pills-order{{$customer->id}}" role="tab" aria-controls="pills-order" aria-selected="true">Order</a>
                 </li>
                 <li class="nav-item" style="margin: 10px 20px;">
                     <a class="btn btn-secondary btn-lg" id="pills-comments-tab" data-toggle="pill" href="#pills-comments{{$customer->id}}" role="tab" aria-controls="pills-comments" aria-selected="false">Comments</a>
                 </li>
+                <li class="nav-item" style="margin: 10px 20px;">
+                    <a class="btn btn-lg btn-warning active" id="pills-edit-tab" data-toggle="pill" href="#pills-edit{{$customer->id}}" role="tab" aria-controls="pills-edit" aria-selected="false">Update Profile</a>
+                </li>
             </ul>
             <div class="tab-content " id="pills-tabContent">
+                @if(Session::has('flash_message'))
+                <div class="alert alert-{!! Session::get('flash_level') !!}">
+                    {!!Session::get('flash_message')!!}
+                </div>
+                @endif
                 <!-- Table Order -->
-                <div class="tab-pane fade show active" id="pills-order{{$customer->id}}" role="tabpanel" aria-labelledby="pills-order-tab">
+                <div class="tab-pane fade " id="pills-order{{$customer->id}}" role="tabpanel" aria-labelledby="pills-order-tab">
                     <!-- Order Main -->
                     <table class="table text-center" class="align-middle">
                         <thead>
@@ -145,7 +148,7 @@
                         <tbody>
                             @foreach($comment as $comment)
                             <tr>
-                                <td class="align-middle">{{++$no}}</td>
+                                <td class="align-middle">{{++$no1}}</td>
                                 <td class="align-middle"><img src="{{asset('img/feature/'.$comment->feature_image)}}" alt="{{$comment->product_title}}" class="rounded" width="60" height="auto"></td>
                                 <td class="align-middle">{{$comment->product_title}}</td>
                                 <td class="align-middle">{{$comment->cmt_title}}</td>
@@ -171,12 +174,110 @@
                                 </td>
                                 <td class="align-middle">{{$comment->created_at}}</td>
                                 <td class="align-middle">
-                                    <a href="#myModal3Delete{{$customer->id}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
+                                    <a href="{{ url('users/profile/'.$customer->id.'/'.$comment->id)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+                <!-- Table Update Profile -->
+                <div class="tab-pane fade show active" id="pills-edit{{$customer->id}}" role="tabpanel" aria-labelledby="pills-edit-tab">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-9">
+                            <form role="form" action="{{url('users/profileUpdate/' . $customer -> id)}}" method="POST" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                                <!-- User Name -->
+                                <div class="form-group">
+                                    <label class="form-control-label text-uppercase">User Name</label>
+                                    <input type="text" name="profile_user_name" class="form-control">
+                                    @if($errors->has('profile_user_name'))
+                                    <small style="color:red;font-size:14px;">{{$errors->first('profile_user_name')}}</small>
+                                    @endif
+                                </div>
+                                <!-- Customer Name -->
+                                <div class="form-group">
+                                    <label class="form-control-label text-uppercase">Customer Name</label>
+                                    <input type="text" name="profile_customer_name" class="form-control">
+                                    @if($errors->has('profile_customer_name'))
+                                    <small style="color:red;font-size:14px;">{{$errors->first('profile_customer_name')}}</small>
+                                    @endif
+                                </div>
+                                <!-- Gender -->
+                                <div class="form-group">
+                                    <label class="form-control-label text-uppercase">Gender</label><br>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="customer-gender1" name="profile_gender" value="Male">
+                                        <label class="custom-control-label" for="customer-gender1">Male</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="customer-gender2" name="profile_gender" value="Female">
+                                        <label class="custom-control-label" for="customer-gender2">Female</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" id="customer-gender3" name="profile_gender" value="Other">
+                                        <label class="custom-control-label" for="customer-gender3">Other</label>
+                                    </div>
+                                    @if($errors->has('profile_gender'))
+                                    <small style="color:red;font-size:14px;">{{$errors->first('profile_gender')}}</small>
+                                    @endif
+                                </div>
+                                <!-- DOB -->
+                                <div class="form-group">
+                                    <label class="form-control-label text-uppercase">DOB</label>
+                                    <input type="date" name="profile_dob" class="form-control">
+                                    @if($errors->has('profile_dob'))
+                                    <small style="color:red;font-size:14px;">{{$errors->first('profile_dob')}}</small>
+                                    @endif
+                                </div>
+                                <!-- Phone -->
+                                <div class="form-group">
+                                    <label class="form-control-label text-uppercase">Phone</label>
+                                    <input type="number" name="profile_phone" class="form-control">
+                                    @if($errors->has('profile_phone'))
+                                    <small style="color:red;font-size:14px;">{{$errors->first('profile_phone')}}</small>
+                                    @endif
+                                </div>
+                                <!-- Address -->
+                                <div class="form-group">
+                                    <label class="form-control-label text-uppercase">Address</label>
+                                    <input type="text" name="profile_address" class="form-control">
+                                    @if($errors->has('profile_address'))
+                                    <small style="color:red;font-size:14px;">{{$errors->first('profile_address')}}</small>
+                                    @endif
+                                </div>
+                                <!-- Email -->
+                                <div class="form-group">
+                                    <label class="form-control-label text-uppercase">Email</label>
+                                    <input type="email" name="profile_email" class="form-control">
+                                    @if($errors->has('profile_email'))
+                                    <small style="color:red;font-size:14px;">{{$errors->first('profile_email')}}</small>
+                                    @endif
+                                </div>
+                                <!-- Feature -->
+                                <div class="form-group">
+                                    <label class="form-control-label text-uppercase">Picture</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="inputGroupFile01" name="profile_feature">
+                                            <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
+                                        </div>
+                                    </div>
+                                    @if($errors->has('profile_feature'))
+                                    <small style="color:red;font-size:14px;">{{$errors->first('profile_feature')}}</small>
+                                    @endif
+                                </div>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" value="Save Change" class="btn btn-warning" style="margin-right: 15px;">
+                                    <input type="reset" value="Reset" class="btn btn-info" style="margin-left: 15px;">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

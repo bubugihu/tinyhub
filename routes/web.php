@@ -37,6 +37,8 @@ Route::post('admin/users/postUpdateUser', 'UserController@postUpdateUser');
 Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');;
 Route::get('admin/customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
 Route::post('admin/customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
+Route::get('admin/customer/deleteCustomer/{id}', 'CustomerController@deleteCustomer');
+
 
 //feedback
 Route::get('admin/feedback/feedbackList', 'FeedbackController@feedbackList');
@@ -108,6 +110,9 @@ Route::get('ajaxRegisterPhone/{phone}', 'AjaxController@registerPhone');
 //profile
 // Route::get('profile/{id}', 'CustomerController@profileCustomer');
 Route::get('users/profile/{id}', 'UserController@profileUser');
+route::get('users/profile/{id}/{idcommment}','UserController@deleteCommentUser');
+route::post('users/profileUpdate/{id}','UserController@postUpdateProfileUser');
+
 //Feedback
 Route::get('contact-us', function () {
     return view('contact-us');

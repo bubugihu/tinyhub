@@ -97,6 +97,11 @@
                 </li>
             </ul>
             <div class="tab-content " id="pills-tabContent">
+                @if(Session::has('flash_message'))
+                <div class="alert alert-{!! Session::get('flash_level') !!}">
+                    {!!Session::get('flash_message')!!}
+                </div>
+                @endif
                 <!-- Table Order -->
                 <div class="tab-pane fade show active" id="pills-order{{$customer->id}}" role="tabpanel" aria-labelledby="pills-order-tab">
                     <!-- Order Main -->
@@ -145,7 +150,7 @@
                         <tbody>
                             @foreach($comment as $comment)
                             <tr>
-                                <td class="align-middle">{{++$no}}</td>
+                                <td class="align-middle">{{++$no1}}</td>
                                 <td class="align-middle"><img src="{{asset('img/feature/'.$comment->feature_image)}}" alt="{{$comment->product_title}}" class="rounded" width="60" height="auto"></td>
                                 <td class="align-middle">{{$comment->product_title}}</td>
                                 <td class="align-middle">{{$comment->cmt_title}}</td>
@@ -171,7 +176,7 @@
                                 </td>
                                 <td class="align-middle">{{$comment->created_at}}</td>
                                 <td class="align-middle">
-                                    <a href="#myModal3Delete{{$customer->id}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
+                                    <a href="{{ url('users/profile/'.$customer->id.'/'.$comment->id)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
                                 </td>
                             </tr>
                             @endforeach
