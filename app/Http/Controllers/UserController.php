@@ -85,7 +85,7 @@ class UserController extends Controller
     public function postUpdateProfileUser(Request $request, $id)
     {
         $use = User::find($id);
-        $cust = Customers::find($id);
+        $cust = Customers::where('users_id',$id)->first();
         $this->validate(
             $request,
             [
@@ -148,7 +148,7 @@ class UserController extends Controller
     public function profileUser($id)
     {
         $user = User::find($id);
-        $customer = Customers::find($id);
+        $customer = Customers::where('users_id',$id)->first();
         $no = 0;
         $no1 = 0;
         // $order = User::join('customer', 'users.id', '=', 'customer.users_id')
@@ -188,7 +188,7 @@ class UserController extends Controller
     public function profileAdmin($id)
     {
         $user = User::find($id);
-        $customer = Customers::find($id);
+        $customer = Customers::where('users_id',$id);
         $no = 0;
 
         $order = Order::join('order_details', 'order.id', '=', 'order_details.order_id')

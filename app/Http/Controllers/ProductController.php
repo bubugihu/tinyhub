@@ -217,11 +217,11 @@ class ProductController extends Controller
             ->join('users', 'customer.users_id', '=', 'users.id')
             ->join('product', 'comments.product_id', '=', 'product.id')
             ->where('comments.product_id', $id)
-            ->where('comments.cmt_status', '1')
+            ->where('comments.cmt_status', '0')
             ->select('users.*', 'customer.*', 'product.*', 'comments.*')->get();
         $customer = '';
         if (Auth::check()) {
-            $customer = Customers::find(Auth::user()->id)->feature;
+            $customer = Customers::where('users_id',Auth::user()->id)->first()->feature;
         }
         //end comment
         //Similar Product
@@ -234,8 +234,7 @@ class ProductController extends Controller
 
     public function postCommentUser(Request $request, $idProduct, $idCustomer)
     {
-        $comment = Comment::where('customer_id', $idCustomer)
-                            ->where('product_id', $idProduct)->get();
+        $comment = Comment::where('customer_id', $idCustomer)->where('product_id', $idProduct)->get();
         $commentCustomer=$idCustomer;
         $commentProduct=$idProduct;
         $this->validate(
