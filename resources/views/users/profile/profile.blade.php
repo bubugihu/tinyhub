@@ -1,5 +1,5 @@
 @extends('users.layout.layout')
-@section('title', 'Admin Profile')
+@section('title', 'User Profile')
 @section('content')
 <div class="container py-5">
     <div class="row card-body py-5 mx-auto">
@@ -63,7 +63,7 @@
                                 <td class="align-middle">{{$order->order_id}}</td>
                                 <td class="align-middle">{{$order->created_at}}</td>
                                 <td class="align-middle">{{$order->payment}}</td>
-                                <td class="align-middle">{{$order->total}}</td>
+                                <td class="align-middle">{{$order->total+$order->total*0.1}}</td>
                                 <td class="align-middle">
                                     <a href="#OrderDetails{{$customer->id}}" class="badge badge-info p-2" data-toggle="modal"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                                 </td>

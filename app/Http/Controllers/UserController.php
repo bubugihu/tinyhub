@@ -85,7 +85,7 @@ class UserController extends Controller
     public function postUpdateProfileUser(Request $request, $id)
     {
         $use = User::find($id);
-        $cust = Customers::where('users_id',$id)->first();
+        $cust = Customers::where('users_id', $id)->first();
         $this->validate(
             $request,
             [
@@ -95,7 +95,8 @@ class UserController extends Controller
                 'profile_dob' => 'bail|required|date',
                 'profile_phone' => 'bail|required|digits:10,12|unique:Customer,phone',
                 'profile_address' => 'bail|required',
-                'profile_email' => 'bail|required|email|unique:Users,email',
+                'profile_email' => 'bail|required|email',
+                'profile_email' => 'unique:users,email,' . $use->id,
                 'profile_feature' => 'bail|required|image',
 
             ],
@@ -148,7 +149,7 @@ class UserController extends Controller
     public function profileUser($id)
     {
         $user = User::find($id);
-        $customer = Customers::where('users_id',$id)->first();
+        $customer = Customers::find($id);
         $no = 0;
         $no1 = 0;
         // $order = User::join('customer', 'users.id', '=', 'customer.users_id')
@@ -188,7 +189,7 @@ class UserController extends Controller
     public function profileAdmin($id)
     {
         $user = User::find($id);
-        $customer = Customers::where('users_id',$id);
+        $customer = Customers::where('users_id', $id);
         $no = 0;
 
         $order = Order::join('order_details', 'order.id', '=', 'order_details.order_id')
