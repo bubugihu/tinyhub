@@ -89,16 +89,6 @@ Route::get('admin/index', 'AdminController@index');
 
 //profile
 Route::get('admin/profile/{id}', 'UserController@profileAdmin');
-// Route::get('admin/profile', function () {
-//     return view('admin.profile.profile');
-// });
-//role
-// Route::get('home', 'RoleController@role');
-// Route::post('admin', 'RoleController@role' );
-// Route::get('admin', function(){
-//     return redirect()->route('listProduct');
-// })->middleware('role')->middleware('auth');
-//end admin
 
 ///////////////////////////Users
 //ajax Register
@@ -156,7 +146,10 @@ Route::get('category',[
     
 // Route::get('category', 'CategoryController@getcategories');
 Route::post('category/search', 'CategoryController@search');
-Route::get('category/search' ,'CategoryController@category' );
+Route::get('category/search' ,[
+    'as' => 'search',
+    'uses' => 'CategoryController@category']);
+    
 //example product
 Route::get('product-detail/{id}', [
     'as' => 'product-detail',

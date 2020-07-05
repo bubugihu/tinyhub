@@ -3,8 +3,13 @@
     <div class="hero hero-page padding-small">
         <div class="container">
             <div class="row d-flex">
-                <div class="col-lg-9 ">
+                <div class="col-lg-12">
                     <h1>Search</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ Breadcrumbs::render('search') }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -21,11 +26,11 @@
                 @foreach($product as $new)
                     <div class="col-md-3">
                         <div class="item-hp card-body card mb-3">
-                            <img src="img/feature/{{$new->feature_image}}" alt="" class="img-fluid" width="300">
+                            <a href="{{ url('product-detail/'.$new->id)}}"><img src="img/feature/{{$new->feature_image}}" alt="" class="img-fluid" width="300"></a>
                             <div class="item-pd-info m-2">
-                                <h6 class="no-margin">{{$new->product_title}}</h6>
+                                <h6 class="no-margin"><a href="{{ url('product-detail/'.$new->id)}}">{{$new->product_title}}</a></h6>
                                 <p class="price-dt">$ {{$new->price}}</p>
-                                <a href="#" class="cart-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                                <a href="{{url('cart/addCart/'.$new->id)}}" class="cart-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                                 <a href="#"><button class="buynow">BUY NOW</button></a>
                             </div>
                         </div>
