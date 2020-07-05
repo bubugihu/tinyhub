@@ -16,7 +16,7 @@
                     {!!Session::get('flash_message')!!}
                 </div>
                 @endif 
-                <table class="table card-text" id="dbtable">
+                <table class="table card-text text-center" id="dbtable">
                   <thead>
                     <tr>
                       <th>Brand ID</th>
@@ -29,12 +29,12 @@
                   <tbody>
                     @foreach($brand as $brand)
                     <tr>
-                      <th scope="row">{{$brand->id}}</th> 
-                      <td><img src="{{url("img/feature/" .$brand->brand_image)}}" alt="" width="90"></td>
-                      <td>{{$brand->brand_name}}</td>
-                      <td row="2">{{ substr(strip_tags($brand->description), 0, 200)}}
+                      <th scope="row" class="align-middle">{{$brand->id}}</th> 
+                      <td class="align-middle"><img src="{{url("img/feature/" .$brand->brand_image)}}" alt="" width="90"></td>
+                      <td class="align-middle">{{$brand->brand_name}}</td>
+                      <td row="2" class="align-middle">{{ substr(strip_tags($brand->description), 0, 200)}}
                         {{ strlen(strip_tags($brand->description)) > 50 ? " ... ReadMore" : "" }}</td>
-                      <td>
+                      <td class="align-middle">
                         <a href="{{url("admin/brands/updateBrands/" . $brand->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                       </td>
                     </tr>

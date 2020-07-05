@@ -11,7 +11,12 @@
               <h6 class="text-uppercase mb-0">Order List</h6>
             </div>
             <div class="card-body">
-              <table class="table card-text text-center">
+              @if(Session::has('flash_message'))
+              <div class="text-center alert alert-{!! Session::get('flash_level') !!}">
+                {!!Session::get('flash_message')!!}
+              </div>
+              @endif
+              <table class="table card-text text-center" id="dbtable">
                 <thead>
                   <tr>
                     <th>Order ID</th>
@@ -28,23 +33,31 @@
                   <tr>
                     <td class="align-middle">{{$order->order_id}}</td>
                     <td class="align-middle">{{$order->consignee_name}}</td>
-                    <td class="align-middle">$ {{$order->total}}</td>
+                    <td class="align-middle">$ {{$order->total+$order->total*0.1}}</td>
                     <td class="align-middle">{{$order->payment}}</td>
                     <td class="align-middle">
                       @if($order->status == 0)
                       <a href="{{url('admin/order/onOrderStatus/'.$order->order_id)}}"><span class="badge badge-pill badge-danger">OFF</span></a>
                       @else
-                      <a href="{{url('admin/order/offOrderStatus/'.$order->order_id)}}"><span class="badge badge-pill badge-success">ON</span></a>
+                      <a href="#"><span class="badge badge-pill badge-success">ON</span></a>
                       @endif
                     </td>
                     <td class="align-middle">{{$order->created_at}}</td>
                     <td>
-                      <a href="{{url('admin/order/listOrderDetails/'.$order->order_id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
+                      <a href="{{url('cart/shopping/orderDetails/'.$order->order_id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
+                      <!-- Modal Delete Order With Status = 0 -->
+                      @if($order->status==0)
+                      <a href="{{url('admin/order/deleteOrder/'.$order->order_id)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
+                      @endif
                     </td>
                   </tr>
                   @endforeach
                 </tbody>
               </table>
+              <br>
+              <nav aria-label="Page navigation">
+                {{ $orders->links() }}
+              </nav>
             </div>
           </div>
         </div>

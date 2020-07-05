@@ -1,6 +1,6 @@
 @extends('users.layout.layout')
 @section('title','Order-Review')
-@section('order-review')
+@section('content')
 <div class="hero hero-page padding-small">
   <div class="container">
       <div class="row d-flex">

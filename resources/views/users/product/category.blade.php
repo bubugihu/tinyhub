@@ -21,18 +21,13 @@
     <div class="row">
         <!-- Sidebara-->
         <div class="sidebara col-xl-3 col-lg-4" style="margin: 28px 0 0 0;">
-            <form action="{{url('category/search')}}" method="POST">
-                @csrf
                 <!-- Headphone Type -->
                 <div class="form-group">
                     <h6 class="text-uppercase">Headphone Type</h6>
                     <hr width="100%" style="margin-left: 0;">
                     
-                    @foreach($categoryCheckBox as $c)
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox"  name="{{$c->category_name}}"  value="{{$c->category_name}}">
-                        <label >{{$c->category_name}}</label>
-                    </div>
+                    @foreach($categoryGlobal as $c)
+                    <h6><a href="{{url('searchCate/'.$c->category_name)}}">{{$c->category_name}}</a></h6><br/>
                     @endforeach
     
                 </div>
@@ -41,20 +36,19 @@
                     <h6 class="text-uppercase">Brand</h6>
                     <hr width="100%" style="margin-left: 0;">
 
-                    @foreach($brandCheckBox as $b)
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox"   name="{{$b->brand_name}}" value="{{$b->brand_name}}">
-                        <label >{{$b->brand_name}}</label>
-                    </div>
+                    @foreach($brandGlobal as $b)
+                    <h6><a href="{{url('searchBrand/'.$b->brand_name)}}">{{$b->brand_name}}</a></h6><br/>
                     @endforeach
 
                 </div>
                 <!-- Sorted By -->
+                <form action="{{url('category/search')}}" method="POST">
+                    @csrf
                 <div class="form-group">
                     <h6 class="text-uppercase">Sorted By</h6>
                     <hr width="100%" style="margin-left: 0;">
                     <select class="form-control" id="sortedBy" name="SortBy">
-                        <option value="0">Select sorting function</option>
+                        <option value="0" >Select sorting function</option>
                         <option value="1">Price Ascending</option>
                         <option value="2">Price Descending</option>
                         <option value="3">A - Z</option>
@@ -70,7 +64,7 @@
                         <input type="number" class="form-control" value="10000" max="10000" style="color: black; margin-left: 10px;" name="toPrice">
                     </div>
                 </div>
-                <!-- Buttom Filter -->
+                <!-- Button Filter -->
                 <div class="form-group d-flex justify-content-center">
                     <button type="submit" class="form-control btn login-btn">Filter</button>
                 </div>
@@ -91,8 +85,8 @@
                     <div class="product_grid card-body card">
                         <div class="product_image">
                             <a href="{{ url('product-detail/'.$product->id)}}" class="image ">
-                                <img class="pic_2 rounded" src="img/5.jpg" alt="">
-                                <img class="pic_1 rounded" src="{{asset("img/feature/$product->feature_image")}}" alt="">
+                                <!-- <img class="pic_2 rounded" src="img/5.jpg" alt=""> -->
+                                <img class="rounded" src="{{asset("img/feature/$product->feature_image")}}" alt="">
                             </a>
                         </div>
                         <div class="product_content">

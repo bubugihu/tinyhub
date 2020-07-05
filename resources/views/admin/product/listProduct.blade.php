@@ -12,7 +12,7 @@
             </div>
             <div class="card-body">
               @if(Session::has('flash_message'))
-              <div class="alert alert-{!! Session::get('flash_level') !!}">
+              <div class=" text-center alert alert-{!! Session::get('flash_level') !!}">
                 {!!Session::get('flash_message')!!}
               </div>
               @endif
@@ -40,35 +40,12 @@
                     <td>{{$product->status}}</td>
                     <td>{{$product->created_at}}</td>
                     <td>
-                      <a href="#" class="badge badge-info p-2" data-toggle="modal" data-target="#Modal-Details-Category"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
+                      <!-- Modal Details Product -->
+                      <a href="{{url("admin/product/detailsProduct/" . $product -> id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
+                      <!-- Modal Update Product -->
                       <a href="{{url("admin/product/updateProduct/" . $product -> id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
+                      <!-- Modal Delete Product -->
                       <a href="#" class="badge badge-danger p-2" data-toggle="modal" data-target="#Modal-Delete-Category"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
-                      <!-- Modal Details Category -->
-                      <div id="Modal-Details-Category" tabindex="-1" role="dialog" aria-labelledby="deletecategory" aria-hidden="true" class="modal fade bd-example-modal-lg text-left">
-                        <div role="document" class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h4 id="deletecategory" class="modal-title">Delete Product</h4>
-                              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                            </div>
-                            <div class="modal-body text-center">
-                              <div class="container">
-                                <div class="row">
-                                  <!-- Image Feature And Gallery -->
-                                  <div class="col-md-6"></div>
-                                  <!-- Info   -->
-                                  <div class="col-md-6"></div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <a href="{{url("admin/product/deleteProduct/" . $product -> id)}}"><button type="button" class="btn btn-danger">Delete</button></a>
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Modal Delete Category -->
                       <div id="Modal-Delete-Category" tabindex="-1" role="dialog" aria-labelledby="deletecategory" aria-hidden="true" class="modal fade bd-example-modal-lg text-left">
                         <div role="document" class="modal-dialog modal-lg">
                           <div class="modal-content">

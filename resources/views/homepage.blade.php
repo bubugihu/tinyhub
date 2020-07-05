@@ -2,50 +2,29 @@
 @section('content')
 <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
+
+      @foreach($bannerGlobal as $bG)
+      <div class="carousel-item @if($sttNo == 0) active @endif">
         <div class="mask flex-center">
           <div class="container">
             <div class="row align-items-center">
               <div class="col-md-7 col-12 order-md-1 order-2">
-                <h4>Slider 1</h4>
-                <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
-                  necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-                <a class="btn" href="#">BUY NOW</a> </div>
-                <div class="col-md-5 col-12 order-md-2 order-1"><img src="{{url("img/headphone-slider2.png")}}" class="mx-auto" alt="slide"></div>
+                <h4>{{$bG->ban_title}}</h4>
+                <p>{{$bG->description}}</p>
+                <a class="btn" href="{{ url('category')}}">BUY NOW</a> </div>
+                <div id="abc{{$sttNo++}}" class="col-md-5 col-12 order-md-2 order-1"><img src="{{url('img/banner/'.$bG->ban_image)}}" class="mx-auto" alt="slide"></div>
             </div>
           </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <div class="mask flex-center">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-md-7 col-12 order-md-1 order-2">
-                <h4>Slider 2</h4>
-                <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
-                  necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-                <a class="btn" href="#">BUY NOW</a> </div>
-              <div class="col-md-5 col-12 order-md-2 order-1"><img src="{{url("img/headphone-slider1.png")}}" class="mx-auto" alt="slide"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="mask flex-center">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-md-7 col-12 order-md-1 order-2">
-                <h4>Slider 3</h4>
-                <p>Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerum <br>
-                  necessitatibus praesentium voluptatum deleniti atque corrupti.</p>
-                <a class="btn" href="#">BUY NOW</a> </div>
-              <div class="col-md-5 col-12 order-md-2 order-1"><img src="https://i.imgur.com/DGkR4OQ.png" class="mx-auto" alt="slide"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      @endforeach
+      
     </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span></a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span></a>
+</div>
     <!-- Section-Homepage 1 -->
     <section class="hm-1">
         <div class="services-block">
@@ -89,54 +68,22 @@
                         <h2 class="text-uppercase">Best Selling</h2>
                     </header>
                 </div>
+
+                @foreach($productGlobal as $p)
                 <div class="col-md-3">
                     <div class="item-hp card-body card mb-3">
                         <div class="ribbon ribbon-success text-uppercase">Best</div>
-                        <img src="{{url("img/headphone-slider2.png")}}" alt="" class="img-fluid" width="100%" height="auto">
+                        <img src="{{url('img/feature/'.$p->feature_image)}}" alt="" class="img-fluid" width="100%" height="auto">
                         <div class="item-pd-info m-2">
-                            <h6 class="no-margin text-uppercase">Headphone 1</h6>
-                            <p class="price-dt">$20.00</p>
-                            <a href="#" class="cart-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                            <a href="#"><button class="buynow">BUY NOW</button></a>
+                            <h6 class="no-margin ">{{$p->product_title}}</h6>
+                            <p class="price-dt">${{$p->price}}</p>
+                            <a href="{{ url('product-detail/'.$p->id)}}" class="cart-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                            <a href="{{ url('product-detail/'.$p->id)}}"><button class="buynow">BUY NOW</button></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="item-hp card-body card mb-3">
-                        <div class="ribbon ribbon-success text-uppercase">Best</div>
-                        <img src="{{url("img/headphone-slider1.png")}}" alt="" class="img-fluid" width="100%" height="auto">
-                        <div class="item-pd-info m-2">
-                            <h6 class="no-margin text-uppercase">Headphone 1</h6>
-                            <p class="price-dt">$20.00</p>
-                            <a href="#" class="cart-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                            <a href="#"><button class="buynow">BUY NOW</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="item-hp card-body card mb-3">
-                        <div class="ribbon ribbon-success text-uppercase">Best</div>
-                        <img src="{{url("img/headphone-slider2.png")}}" alt="" class="img-fluid" width="100%" height="auto">
-                        <div class="item-pd-info m-2">
-                            <h6 class="no-margin text-uppercase">Headphone 1</h6>
-                            <p class="price-dt">$20.00</p>
-                            <a href="#" class="cart-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                            <a href="#"><button class="buynow">BUY NOW</button></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="item-hp card-body card mb-3">
-                        <div class="ribbon ribbon-success text-uppercase">Best</div>
-                        <img src="{{url("img/headphone-slider1.png")}}" alt="" class="img-fluid" width="100%" height="auto">
-                        <div class="item-pd-info m-2">
-                            <h6 class="no-margin text-uppercase">Headphone 1</h6>
-                            <p class="price-dt">$20.00</p>
-                            <a href="#" class="cart-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                            <a href="#"><button class="buynow">BUY NOW</button></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+            
             </div>
         </div>
     </section>
@@ -150,6 +97,8 @@
                         <h2 class="text-uppercase">Our Categories</h2>
                     </header>
                 </div>
+
+                @foreach($categoryGlobal as $c)
                 <div class="col-sm-4">
                    <!-- Card -->
                     <div class="card">
@@ -157,71 +106,24 @@
                       <div class="view overlay">
                         <img class="card-img-top" src="https://m.buro247.sg/images/lifestyle/Beoplay-H5-first-wireless-earbuds-BO-buro247-sg-CA_Buro247.sg-CR-2.jpg"
                           alt="Card image cap">
-                        <a href="#!">
+                        <a href="{{url('searchCate/'.$c->category_name)}}">
                           <div class="mask rgba-white-slight"></div>
                         </a>
                       </div>
                       <!-- Card content -->
                       <div class="card-body">
                         <!-- Title -->
-                        <h4 class="card-title">IN EAR</h4>
+                        <h4 class="card-title">{{$c->category_name}}</h4>
                         <!-- Text -->
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                          content.</p>
+                        <p class="card-text">{{$c->description}}</p>
                         <!-- Button -->
-                        <a href="#" class="btn btn-outline-dark">GO TO STORE</a>
+                        <a href="{{url('searchCate/'.$c->category_name)}}" class="btn btn-outline-dark">GO TO STORE</a>
                       </div>
                     </div>
                     <!-- Card -->
                  </div>
-                 <div class="col-sm-4">
-                  <!-- Card -->
-                   <div class="card">
-                     <!-- Card image -->
-                     <div class="view overlay">
-                       <img class="card-img-top" src="https://cdn.mos.cms.futurecdn.net/QhSx3j8k3UAjgvrqFvZB2Z.jpg"
-                         alt="Card image cap">
-                       <a href="#!">
-                         <div class="mask rgba-white-slight"></div>
-                       </a>
-                     </div>
-                     <!-- Card content -->
-                     <div class="card-body">
-                       <!-- Title -->
-                       <h4 class="card-title">ON EAR</h4>
-                       <!-- Text -->
-                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                         content.</p>
-                       <!-- Button -->
-                       <a href="#" class="btn btn-outline-dark">GO TO STORE</a>
-                     </div>
-                   </div>
-                   <!-- Card -->
-                </div>
-                <div class="col-sm-4">
-                  <!-- Card -->
-                   <div class="card">
-                     <!-- Card image -->
-                     <div class="view overlay">
-                       <img class="card-img-top" src="https://cdn.cheatcc.com/dispatches/large/d0703191045.jpg"
-                         alt="Card image cap">
-                       <a href="#!">
-                         <div class="mask rgba-white-slight"></div>
-                       </a>
-                     </div>
-                     <!-- Card content -->
-                     <div class="card-body">
-                       <!-- Title -->
-                       <h4 class="card-title">TRUE-WIRELESS</h4>
-                       <!-- Text -->
-                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                         content.</p>
-                       <!-- Button -->
-                       <a href="#" class="btn btn-outline-dark">GO TO STORE</a>
-                     </div>
-                   </div>
-                   <!-- Card -->
-                </div>
+                @endforeach
+                
             </div>
          </div>
     </section>
@@ -255,21 +157,13 @@
                         <h2 class="text-uppercase">Our Brands</h2>
                     </header>
                 </div>
+
+                @foreach($brandGlobal as $b)
                 <div class="col-md-2 border border-dark m-2">
-                  <a href=""><img class="img-fluid" src="{{url("img/jbl.png")}}" alt="" width="100%" height="auto"></a>
+                  <a href="{{url('searchBrand/'.$b->brand_name)}}"><img class="img-fluid" src="{{asset('img/brands/'.$b->brand_image)}}" alt="" width="100%" height="auto"></a>
                 </div>
-                <div class="col-md-2 border border-dark m-2">
-                  <a href=""><img class="img-fluid" src="{{url("img/beats.png")}}" alt="" width="100%" height="auto"></a>
-                </div>
-                <div class="col-md-2 border border-dark m-2">
-                  <a href=""><img class="img-fluid" src="{{url("img/sony.png")}}" alt="" width="100%" height="auto"></a>
-                </div>
-                <div class="col-md-2 border border-dark m-2">
-                  <a href=""><img class="img-fluid" src="{{url("img/westone.png")}}" alt="" width="100%" height="auto"></a>
-                </div>
-                <div class="col-md-2 border border-dark m-2">
-                  <a href=""><img class="img-fluid" src="{{url("img/bo.png")}}" alt=""  width="100%" height="auto"></a>
-                </div>
+                @endforeach
+                
            </div>
        </div>
     </section>
@@ -287,70 +181,22 @@
                         <div class="row ">
                             <div class="col-xl-12">
                                 <div class="row testimonial-carousel">
+
+                                  @foreach($feedbackHomepage as $f)
                                     <div class="col-lg-12">
                                         <div class="testimonial style-3 card-body card">
                                             <div class="testimonial-info">
-                                                <div class="testimonial-thumb">
-                                                    <img src="https://www.tolmatol.com/uploads-images/bootrap-snippets-our-team/1.jpg" alt="" />
-                                                </div>
                                                 <div class="testimonial-name">
-                                                    <h5>Alley soly</h5>
-                                                    <span>Profession</span>
+                                                    <h5>{{$f->feed_name}}</h5>
+                                                    <span>{{$f->feed_title}}</span>
                                                 </div>
                                             </div>
                                             <div class="testimonial-desc">
-                                                <p>"Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought”</p>
+                                                <p>{{$f->feed_content}}</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12">
-                                        <div class="testimonial style-3 card-body card">
-                                            <div class="testimonial-info">
-                                                <div class="testimonial-thumb">
-                                                    <img src="https://www.tolmatol.com/uploads-images/bootrap-snippets-our-team/2.jpg" alt="" />
-                                                </div>
-                                                <div class="testimonial-name">
-                                                    <h5>Alley soly</h5>
-                                                    <span>Profession</span>
-                                                </div>
-                                            </div>
-                                            <div class="testimonial-desc">
-                                                <p>"Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought”</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="testimonial style-3 card-body card">
-                                            <div class="testimonial-info">
-                                                <div class="testimonial-thumb">
-                                                    <img src="https://www.tolmatol.com/uploads-images/bootrap-snippets-our-team/3.jpg" alt="" />
-                                                </div>
-                                                <div class="testimonial-name">
-                                                    <h5>Alley soly</h5>
-                                                    <span>Profession</span>
-                                                </div>
-                                            </div>
-                                            <div class="testimonial-desc">
-                                                <p>"Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought”</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="testimonial style-3 card-body card">
-                                            <div class="testimonial-info">
-                                                <div class="testimonial-thumb">
-                                                    <img src="https://www.tolmatol.com/uploads-images/bootrap-snippets-our-team/3.jpg" alt="" />
-                                                </div>
-                                                <div class="testimonial-name">
-                                                    <h5>Alley soly</h5>
-                                                    <span>Profession</span>
-                                                </div>
-                                            </div>
-                                            <div class="testimonial-desc">
-                                                <p>"Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought”</p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                  @endforeach 
                                 </div>
                             </div>
                         </div>

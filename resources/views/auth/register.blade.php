@@ -82,7 +82,7 @@
                             </div>
                             <div class="col-6">
                                 <label class="form-control-label text-uppercase">Phone Number</label>
-                                <input type="text" name="phone" id="phone" class="form-control @error('phone') is-invalid @enderror">
+                                <input type="text" name="phone" placeholder="0909113114" id="phone" class="form-control @error('phone') is-invalid @enderror">
                                 <span id="alert2" class="text-red"></span>
                                 @error('phone')
                                 <span class="invalid-feedback" role="alert">

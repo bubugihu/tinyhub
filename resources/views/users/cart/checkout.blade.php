@@ -1,6 +1,6 @@
 @extends('users.layout.layout')
 @section('title','Checkout')
-@section('checkout')
+@section('content')
     
     <div class="hero hero-page padding-small">
         <div class="container">
@@ -20,7 +20,7 @@
                         <div id="address" class="active tab-block">
                                 <!--Invoice Address -->
                                 <div class="block-header mb-5">
-                                    <h6>Delivery Address</h6>
+                                    <h6 class="text-center">Delivery Address</h6>
                                 </div>
 
                                 {{--Form Check out--}}

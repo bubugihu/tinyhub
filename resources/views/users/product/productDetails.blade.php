@@ -26,6 +26,7 @@
                     <div class="item d-flex justify-content-center">
                         <div class="clearfix " style="width:70%; height: auto;">
                             <ul id="image-gallery" class="gallery list-unstyled cS-hidden" style="list-style: none outside none; padding-left: 0; margin: 0;">
+                                
                                 @foreach($gallery as $gallery)
                                 <li data-thumb="{{asset("img/gallery/$gallery->product_gallery")}}">
                                     <img src="{{asset("img/gallery/$gallery->product_gallery")}}" class="rounded mx-auto d-block" />
@@ -111,32 +112,10 @@
                 <div id="description" class="tab-pane active">
                     <p>{!! $product->long_descriptions !!}</p>
                 </div>
-                <div id="additional-information" class="tab-pane">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <th class="border-0" width="250">Material:</th>
-                                <td class="border-0">Cotton</td>
-                            </tr>
-                            <tr>
-                                <th>Styles:</th>
-                                <td>Casual</td>
-                            </tr>
-                            <tr>
-                                <th>Properties:</th>
-                                <td>Short Sleeve</td>
-                            </tr>
-                            <tr>
-                                <th>Brand:</th>
-                                <td>Calvin Klein</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
                 <div id="reviews" class="tab-pane">
                     @foreach($comment as $comment)
                     <div class="row review d-flex justify-content-center">
-                        <div class="col-3 text-center"><img src="{{asset("img/$comment->feature")}}" alt="{{$comment->name}}" class="review-image"><span>{{$comment->cmt_date}}</span></div>
+                        <div class="col-3 text-center"><img src="{{asset("img/$comment->feature")}}" alt="{{$comment->name}}" class="review-image"><span>{{$comment->created_at}}</span></div>
                         <div class="col-9 review-text" style="padding-right: 65px;">
                             <h6>{{$comment->name}}</h6>
                             <hr width="100%">
@@ -187,13 +166,12 @@
         <div class="col-xl-3">
             <div class="product_grid card-body card">
                 <div class="product_image">
-                    <a href="" class="image ">
-                        <img class="pic_1 rounded" src="{{asset('img/feature/'.$similar->feature_image)}}" alt="{{$similar->product_title}}">
-                        <img class="pic_2 rounded" src="" alt="{{$similar->product_title}}">
+                    <a href="{{ url('product-detail/'.$similar->id)}}" class="image ">
+                        <img class="rounded" src="{{asset('img/feature/'.$similar->feature_image)}}" alt="{{$similar->product_title}}">
                     </a>
                 </div>
                 <div class="product_content">
-                    <h3 class="title"><a href="#">{{$similar->product_title}}</a></h3>
+                    <h3 class="title"><a href="{{ url('product-detail/'.$similar->id)}}">{{$similar->product_title}}</a></h3>
                     <div class="price">$ {{$similar->price}}</div>
                 </div>
             </div>

@@ -20,7 +20,6 @@ class ProductController extends Controller
     public function listProduct()
     {
         $products = Product::where('status', '=', 0)->paginate(5);
-
         return view('admin.product.listProduct', compact('products'));
     }
 
@@ -116,6 +115,18 @@ class ProductController extends Controller
         $brand = Brands::all();
         return view('admin.product.updateProduct', ['p' => $p, 'c' => $cates, 'b' => $brand]);
     }
+
+    // Function link to update page
+    public function detailsProduct($id)
+    {
+        $pro = Product::join('category', 'product.category_id', '=', 'category.id')
+            ->join('brand', 'product.brand_id', '=', 'brand.id')
+            ->where('product.id', $id)
+            ->select('category.category_name', 'brand.brand_name', 'product.*')->first();
+        $gallery = Gallery::where('product_id', $id)->get();
+        return view('admin.product.detailsProduct', compact('pro', 'gallery'));
+    }
+
     // Function Update Product
     public function postUpdate(Request $request, $id)
     {
@@ -221,7 +232,7 @@ class ProductController extends Controller
             ->select('users.*', 'customer.*', 'product.*', 'comments.*')->get();
         $customer = '';
         if (Auth::check()) {
-            $customer = Customers::where('users_id',Auth::user()->id)->first()->feature;
+            $customer = Customers::where('users_id', Auth::user()->id)->first()->feature;
         }
         //end comment
         //Similar Product
@@ -235,8 +246,8 @@ class ProductController extends Controller
     public function postCommentUser(Request $request, $idProduct, $idCustomer)
     {
         $comment = Comment::where('customer_id', $idCustomer)->where('product_id', $idProduct)->get();
-        $commentCustomer=$idCustomer;
-        $commentProduct=$idProduct;
+        $commentCustomer = $idCustomer;
+        $commentProduct = $idProduct;
         $this->validate(
             $request,
             [
@@ -250,11 +261,11 @@ class ProductController extends Controller
         );
         $comment = new Comment();
         $comment->cmt_content = $request->postComment;
-        $comment->customer_id= $commentCustomer;
-        $comment->product_id=$commentProduct;
+        $comment->customer_id = $commentCustomer;
+        $comment->product_id = $commentProduct;
 
         $comment->save();
 
-        return redirect('product-detail/'.$idProduct);
+        return redirect('product-detail/' . $idProduct);
     }
 }

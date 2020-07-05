@@ -12,7 +12,7 @@ class Product extends Model {
 
     public $incrementing = true;
     //
-    protected $fillable = ['id', 'product_title', 'price', 'sold_out', 'status', 'short_descriptions', 'long_descriptions','feature_image','warranty_period','category_id', 'created_at', 'brand_id'];
+    protected $fillable = ['id', 'product_title', 'price', 'sold_out', 'status', 'short_descriptions', 'long_descriptions','feature_image','warranty_period','category_id', 'created_at','brand_id'];
     //
     public function roleCategory(){
         return $this->belongsTo(Category::class);
