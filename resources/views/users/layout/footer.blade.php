@@ -23,9 +23,11 @@
               <h5 class="text-uppercase">Categories</h5>
               <br>
               <ul class="list-unstyled">
-                <li> <a href="#">In Ear</a></li>
-                <li> <a href="#">On Ear</a></li>
-                <li> <a href="#">True-Wireless</a></li>
+
+                @foreach($categoryGlobal as $c)
+                <li> <a href="{{url('searchCate/'.$c->category_name)}}">{{$c->category_name}}</a></li>
+                @endforeach
+
               </ul>
             </div>
             <div class="site-links col-lg-3 col-md-6">
@@ -43,11 +45,9 @@
               <h5 class="text-uppercase">Our Brands</h5>
               <br>
               <ul class="list-unstyled">
-                <li> <a href="#">Beats</a></li>
-                <li> <a href="#">Bang & Olufsen</a></li>
-                <li> <a href="#">JBL</a></li>
-                <li> <a href="#">Sony</a></li>
-                <li> <a href="#">Westone</a></li>
+                  @foreach($brandGlobal as $b)
+                <li> <a href="{{url('searchBrand/'.$b->brand_name)}}">{{$b->brand_name}}</a></li>
+                  @endforeach
               </ul>
             </div>
           </div>

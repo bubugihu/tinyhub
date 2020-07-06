@@ -34,3 +34,13 @@ span.required {
     color: red;
     font-size: 15px;
 }
+button.admin-btn:hover {
+    background-color: #fdbc24;
+    transform: scale(1.1);
+}
+button.admin-btn {
+    transition: ease 0.3s;
+}
+.static {
+    border: 3px solid orange;
+}

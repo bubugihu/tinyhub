@@ -12,23 +12,27 @@ use App\Customers;
 use App\Gallery;
 use Illuminate\Support\Facades\Auth;
 
-class ProductController extends Controller {
+class ProductController extends Controller
+{
 
-    
+
     //Function link to product list page
-    public function listProduct(){
+    public function listProduct()
+    {
         $products = Product::where('status', '=', 0)->paginate(5);
-    
+
         return view('admin.product.listProduct', compact('products'));
     }
 
     // Function link to create product page
-    public function createProduct(){
+    public function createProduct()
+    {
         return view("admin.product.createProduct");
     }
 
     // Function Create Product
-    public function postCreate(Request $request){ 
+    public function postCreate(Request $request)
+    {
 
         $this->validate(
             $request,
@@ -47,7 +51,7 @@ class ProductController extends Controller {
                 'prdname.unique'              => 'Product title has already existed !',
                 'prdname.string'              => 'Product title must be string !',
                 'prdname.min'                 => 'Product title has min 3 characters !',
-                'prdname.max'                 => 'Product title has min 255 characters !',
+                'prdname.max'                 => 'Product title has max 255 characters !',
                 'prdprice.required'           => 'Price can not be blank !',
                 'prdprice.min'                => 'Price has min >= 0 !',
                 'prdprice.max'                => 'Price has max <= 20000 !',
@@ -96,23 +100,25 @@ class ProductController extends Controller {
             $fileGL->move("img/gallery", $nameGlImg);
             $gallery->product_gallery = $nameGlImg;
         }
-       
+
         $gallery->product_id = $request = $p->id;
         $gallery->save();
 
-        return redirect() -> action('ProductController@listProduct')->with(['flash_level' => 'success','flash_message' => 'Created Successfully !' ]);
+        return redirect()->action('ProductController@listProduct')->with(['flash_level' => 'success', 'flash_message' => 'Created Successfully !']);
         // return view('admin.product.createProduct');
     }
 
     // Function link to update page
-    public function updateProduct($id){
+    public function updateProduct($id)
+    {
         $p = Product::find($id);
         $cates = Category::all();
         $brand = Brands::all();
         return view('admin.product.updateProduct', ['p' => $p, 'c' => $cates, 'b' => $brand]);
     }
     // Function Update Product
-    public function postUpdate(Request $request, $id){
+    public function postUpdate(Request $request, $id)
+    {
         $p  = Product::find($id);
         $gallery = Gallery::find($id);
 
@@ -130,7 +136,7 @@ class ProductController extends Controller {
             [
                 'prdname.required'            => 'Product title can not be blank !',
                 'prdname.min'                 => 'Product title has min 3 characters !',
-                'prdname.max'                 => 'Product title has min 255 characters !',
+                'prdname.max'                 => 'Product title has max 255 characters !',
                 'prdprice.required'           => 'Price can not be blank !',
                 'prdprice.min'                => 'Price has min >= 0 !',
                 'prdprice.max'                => 'Price has max <= 20000 !',
@@ -151,17 +157,16 @@ class ProductController extends Controller {
         $p->long_descriptions = $request->ldescription;
 
 
-        if ($request -> hasFile('featureimg')) {
-            $file = $request -> file('featureimg');
-            $extension = $file -> getClientOriginalExtension();
+        if ($request->hasFile('featureimg')) {
+            $file = $request->file('featureimg');
+            $extension = $file->getClientOriginalExtension();
 
             if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
                 return redirect("admin/product/updateProduct")->with('Message', 'You can only upload image with file jpg/png/jpeg');
             }
             $imageName = $file->getClientOriginalName();
-            $file->move("img/feature/", $imageName);    
+            $file->move("img/feature/", $imageName);
             $p->feature_image = $imageName;
-
         } else {
             $imageName = "";
         }
@@ -171,29 +176,31 @@ class ProductController extends Controller {
         if ($request->hasFile('galleryimg')) {
             $fileGL = $request->file('galleryimg');
             $ext   = $fileGL->getClientOriginalExtension();
-            if($ext !='jpg' && $ext !='png' && $ext !='jpeg'){
+            if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
                 return Redirect('admin/product/updateProduct')->with('Message', 'You can only upload image with file jpg/png/jpeg');
             }
-            $nameGlImg =$fileGL->getClientOriginalName();
-            $fileGL->move("img/gallery/", $nameGlImg);
+            $nameGlImg = $fileGL->getClientOriginalName();
+            $fileGL->move("img/gallery", $nameGlImg);
             $gallery->product_gallery = $nameGlImg;
         }
-       
+
         $gallery->product_id = $request = $p->id;
         $gallery->save();
 
-        return redirect()->action('ProductController@listProduct')->with(['flash_level' => 'success','flash_message' => 'Update Successfully !' ]);
+        return redirect()->action('ProductController@listProduct')->with(['flash_level' => 'success', 'flash_message' => 'Update Successfully !']);
     }
 
     // Function delete product
-    public function deleteProduct($id) {
+    public function deleteProduct($id)
+    {
         Product::where('id', $id)
-                ->update(['status'=> 1]);
-            
-        return back()->with(['flash_level' => 'success','flash_message' => 'Delete Successfully !' ]);
+            ->update(['status' => 1]);
+
+        return back()->with(['flash_level' => 'success', 'flash_message' => 'Delete Successfully !']);
     }
-   
-    public function getCategories(){
+
+    public function getCategories()
+    {
         return view('admin.product.categories');
     }
 
@@ -203,23 +210,52 @@ class ProductController extends Controller {
         $product = Product::find($id);
         $gallery = Gallery::where('product_id', $id)->get();
         $category = Category::find($product->category_id);
-        $brand= Brands::find($product->brand_id);
+        $brand = Brands::find($product->brand_id);
         $quantity = 1;
         //comment
         $comment = Comment::join('customer', 'comments.customer_id', '=', 'customer.id')
             ->join('users', 'customer.users_id', '=', 'users.id')
             ->join('product', 'comments.product_id', '=', 'product.id')
-            ->select('users.*', 'customer.*', 'product.*', 'comments.*')->where('product_id',$id)->get();
-        $customer='';
-        if(Auth::check()){
-            $customer=Customers::find(Auth::user()->id)->feature;
+            ->where('comments.product_id', $id)
+            ->where('comments.cmt_status', '0')
+            ->select('users.*', 'customer.*', 'product.*', 'comments.*')->get();
+        $customer = '';
+        if (Auth::check()) {
+            $customer = Customers::where('users_id',Auth::user()->id)->first()->feature;
         }
         //end comment
         //Similar Product
-        $similar=Product::where('id','<>',$id)->where('category_id',$product->category_id)
-        ->select('product.*')->take(4)->get();
+        $similar = Product::where('id', '<>', $id)->where('category_id', $product->category_id)
+            ->select('product.*')->take(4)->get();
 
         //End Similar Product
-        return view('users.product.productDetails', compact('product', 'gallery', 'category','brand', 'quantity','comment','customer','similar'));
+        return view('users.product.productDetails', compact('product', 'gallery', 'category', 'brand', 'quantity', 'comment', 'customer', 'similar'));
+    }
+
+    public function postCommentUser(Request $request, $idProduct, $idCustomer)
+    {
+        $comment = Comment::where('customer_id', $idCustomer)
+                            ->where('product_id', $idProduct)->get();
+        $commentCustomer=$idCustomer;
+        $commentProduct=$idProduct;
+        $this->validate(
+            $request,
+            [
+                'postComment' => 'bail|required|min:1|max:150',
+            ],
+            [
+                'postComment.required' => 'Comment can not be blank !',
+                'postComment.min' => 'Product title has min 1 characters !',
+                'postComment.max' => 'Product title has max 150 characters !',
+            ]
+        );
+        $comment = new Comment();
+        $comment->cmt_content = $request->postComment;
+        $comment->customer_id= $commentCustomer;
+        $comment->product_id=$commentProduct;
+
+        $comment->save();
+
+        return redirect('product-detail/'.$idProduct);
     }
 }

@@ -81,7 +81,7 @@ a {
 
 .page-holder {
   overflow-x: hidden;
-  min-height: calc(100vh - 72px);
+  min-height: calc(120vh - 72px);
 }
 
 .icon {

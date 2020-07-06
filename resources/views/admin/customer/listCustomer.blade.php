@@ -107,31 +107,12 @@
                       <!-- Page Update Customer -->
                       <a href="{{ url('admin/customer/updateCustomer/'.$customer->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px; font-weight:100;"></i></a>
                       <!-- Modal Delete Customer -->
-                      <a href="#Modal-Customer-Delete{{$customer->id}}" class="badge badge-danger p-2" data-toggle="modal"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
-                      <div id="Modal-Customer-Delete{{$customer->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade bd-example-modal-lg text-left">
-                        <div role="document" class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h4 id="exampleModalLabel" class="modal-title">Delete Customer: {{$customer->customer_name}}</h4>
-                              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                            </div>
-                            <div class="modal-body text-center">
-                              <h2>Are you sure you want to delete?</h2>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-warning">Yes</button>
-                              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <a href="{{ url('admin/customer/deleteCustomer/'.$customer->id)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
                     </td>
                   </tr>
                   @endforeach
                 </tbody>
               </table>
-
-
             </div>
           </div>
         </div>

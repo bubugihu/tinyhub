@@ -37,6 +37,7 @@ Route::post('admin/users/postUpdateUser', 'UserController@postUpdateUser');
 Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');;
 Route::get('admin/customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
 Route::post('admin/customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
+Route::get('admin/customer/deleteCustomer/{id}', 'CustomerController@deleteCustomer');
 
 //feedback
 Route::get('admin/feedback/feedbackList', 'FeedbackController@feedbackList');
@@ -52,6 +53,9 @@ Route::post('admin/product/postCreate', 'ProductController@postCreate');
 Route::get('admin/product/updateProduct/{id}', 'ProductController@updateProduct');
 Route::post('admin/product/postUpdate/{id}', 'ProductController@postUpdate');
 Route::get('admin/product/deleteProduct/{id}', 'ProductController@deleteProduct');
+Route::post('users/product/createCommentUser/{idProduct}/{idCustomer}', 'ProductController@postCommentUser');
+
+
 //category
 Route::get('admin/category/categories', 'CategoryController@categories');
 Route::get('admin/category/createCategories', 'CategoryController@createCate');
@@ -68,12 +72,14 @@ Route::post('admin/brands/postUpdateBrands/{id}' , 'BrandsController@postUpdateB
 Route::get('admin/order/listOrder', 'OrderController@listOrder');
 Route::get('admin/order/onOrderStatus/{id}', 'OrderController@onOrderStatus');
 Route::get('admin/order/offOrderStatus/{id}', 'OrderController@offOrderStatus');
+Route::get('admin/order/listOrderDetails/{id}', 'CartController@orderDetails');
 
 //comment
 Route::get('admin/comment/listComment', 'CommentController@listComment');
 Route::get('admin/comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
 Route::get('admin/comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
 Route::get('admin/comment/deleteComment/{id}', 'CommentController@deleteComment');
+
 
 //banner
 Route::get('admin/banners/listBanner' , 'BannerController@listBanner');
@@ -98,6 +104,9 @@ Route::get('ajaxRegisterPhone/{phone}', 'AjaxController@registerPhone');
 //profile
 // Route::get('profile/{id}', 'CustomerController@profileCustomer');
 Route::get('users/profile/{id}', 'UserController@profileUser');
+route::get('users/profile/{id}/{idcommment}','UserController@deleteCommentUser');
+route::post('users/profileUpdate/{id}','UserController@postUpdateProfileUser');
+
 //Feedback
 Route::get('contact-us', function () {
     return view('contact-us');
@@ -150,6 +159,13 @@ Route::get('category/search' ,[
     'as' => 'search',
     'uses' => 'CategoryController@category']);
     
+Route::get('category/search' ,'CategoryController@category' );
+//search cate
+Route::get('searchCate/{in}', 'CategoryController@filterCate');
+//search brands
+Route::get('searchBrand/{in}', 'CategoryController@filterBrand');
+//search Price
+Route::get('searchPrice', 'CategoryController@filterPrice');
 //example product
 Route::get('product-detail/{id}', [
     'as' => 'product-detail',
@@ -175,9 +191,7 @@ Route::post('cart/shopping/decreItem', 'CartController@decreCart');
 // Route::post('cart/shopping/removeItem', 'CartController@removeItem');
 Route::get('cart/shopping/removeItem/{id}', 'CartController@removeItem');
 //check out cart
-Route::get('checkout', function () {
-    return view('users.cart.checkout');
-})->middleware('auth');
+Route::get('checkout' , 'CartController@checkout')->middleware('auth');
 //order review
 Route::post('cart/shopping/order-review', 'CartController@orderReview');
 Route::get('cart/shopping/order-review', function () {
@@ -212,11 +226,11 @@ Route::get('categories/{cate}', [
 //Route::get('category', 'ProductController@category');
 
 //search cate
-Route::get('searchCate/{in}', 'ProductController@filterCate');
+Route::get('searchCate/{in}', 'CategoryController@filterCate');
 //search brands
-Route::get('searchBrand/{in}', 'ProductController@filterBrand');
+Route::get('searchBrand/{in}', 'CategoryController@filterBrand');
 //search Price
-Route::get('searchPrice', 'ProductController@filterPrice');
+Route::get('searchPrice', 'CategoryController@filterPrice');
 //Search Price Incre
 Route::get('searchPriceAsc/{products}', 'ProductController@sortPrice');
 //Route::get('search' , 'SearchController@search');

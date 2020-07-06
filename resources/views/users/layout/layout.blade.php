@@ -161,11 +161,6 @@
 
         <!-- CONTENT WRAPPER CONTAINS PAGE --->
         @yield('content')
-        @yield('shopping-cart')
-        @yield('checkout')
-        @yield('order-review')
-        @yield('print')
-        @yield('contact-us')
         <!-- FOOTER --->
         @include('users.layout.footer')
 

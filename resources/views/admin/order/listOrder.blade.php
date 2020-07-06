@@ -16,8 +16,6 @@
                   <tr>
                     <th>Order ID</th>
                     <th>Consignee</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
                     <th>Total</th>
                     <th>Payment</th>
                     <th>Status</th>
@@ -28,116 +26,20 @@
                 <tbody>
                   @foreach($orders as $order)
                   <tr>
-                    <td class="align-middle">{{$order->id}}</td>
-                    <td class="align-middle">{{$order->customer_name}}</td>
-                    <td class="align-middle">$ {{$order->price}}</td>
-                    <td class="align-middle">{{$order->quantity}}</td>
-                    <td class="align-middle">$ {{$order->price*$order->quantity}}</td>
+                    <td class="align-middle">{{$order->order_id}}</td>
+                    <td class="align-middle">{{$order->consignee_name}}</td>
+                    <td class="align-middle">$ {{$order->total}}</td>
                     <td class="align-middle">{{$order->payment}}</td>
                     <td class="align-middle">
                       @if($order->status == 0)
-                      <a href="{{url('admin/order/onOrderStatus/'.$order->id)}}"><span class="badge badge-pill badge-danger">OFF</span></a>
+                      <a href="{{url('admin/order/onOrderStatus/'.$order->order_id)}}"><span class="badge badge-pill badge-danger">OFF</span></a>
                       @else
-                      <a href="{{url('admin/order/offOrderStatus/'.$order->id)}}"><span class="badge badge-pill badge-success">ON</span></a>
+                      <a href="{{url('admin/order/offOrderStatus/'.$order->order_id)}}"><span class="badge badge-pill badge-success">ON</span></a>
                       @endif
                     </td>
                     <td class="align-middle">{{$order->created_at}}</td>
                     <td>
-                      <a href="#Modal-Order-Details{{$order->id}}" class="badge badge-info p-2" data-toggle="modal"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
-                      <!-- Modal Details Order -->
-                      <div id="Modal-Order-Details{{$order->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade bd-example-modal-lg text-left">
-                        <div role="document" class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h4 id="exampleModalLabel" class="modal-title">Details Orders</h4>
-                              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                            </div>
-                            <div class="modal-body">
-                              <div class="container">
-                                <div class="row">
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Orderer</label>
-                                      <input type="text" class="form-control" value="" placeholder="{{$order->customer_name}}" readonly>
-                                    </div>
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Address</label>
-                                      <input type="text" class="form-control" value="" placeholder="{{$order->shipping_address}}" readonly>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Consignee</label>
-                                      <input type="text" class="form-control" value="" placeholder="{{$order->consignee_name}}" readonly>
-                                    </div>
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Phone</label>
-                                      <input type="text" class="form-control" value="" placeholder="{{$order->phone_consignee}}" readonly>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-md-4">
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Produt Name</label>
-                                      <input type="text" class="form-control" value="" placeholder="{{$order->product_title}}" readonly>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-4">
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Order Create</label>
-                                      <input type="text" class="form-control" value="" placeholder="{{$order->created_at}}" readonly>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-4">
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Payment</label>
-                                      <input type="text" class="form-control" value="" placeholder="{{$order->payment}}" readonly>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-md-3">
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Price</label>
-                                      <input type="text" class="form-control" value="" placeholder="$ {{$order->price}}" readonly>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Quantity</label>
-                                      <input type="text" class="form-control" value="" placeholder="{{$order->quantity}}" readonly>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Total</label>
-                                      <input type="text" class="form-control" value="" placeholder="$ {{$order->price*$order->quantity}}" readonly>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-3">
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Status</label>
-                                      <input type="text" class="form-control" value="" placeholder="{{$order->status}}" readonly>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Note</label>
-                                      <textarea name="" id="" class="form-control" placeholder="{{$order->note}}" readonly></textarea>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <a href="{{url('cart/shopping/orderDetails/'.$order->order_id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                     </td>
                   </tr>
                   @endforeach

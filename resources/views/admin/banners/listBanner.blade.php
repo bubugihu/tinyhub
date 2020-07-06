@@ -11,6 +11,11 @@
                 <h6 class="text-uppercase mb-0">BannerList</h6>
               </div>
               <div class="card-body">
+                @if(Session::has('flash_message'))
+                <div class="alert alert-{!! Session::get('flash_level') !!}">
+                  {!!Session::get('flash_message')!!}
+                </div>
+                @endif
                 <table class="table card-text" id="dbtable">
                   <thead>
                     <tr>
@@ -29,11 +34,11 @@
                       <th scope="row">{{$banner->id}}</th>                      
                       <td>{{$banner->ban_title}}</td>
                       <td>{{$banner->ban_content}}</td>
-                      <td><img src="{{asset('img/'.$banner->ban_image)}}" alt="" width="60"></td>
+                      <td><img src="{{asset('img/banner/'.$banner->ban_image)}}" alt="" width="60"></td>
                       <td>{{$banner->ban_date}}</td>
                       <td>
-                        <a href="#" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
-                        <a href="#" class="badge badge-danger p-2"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
+                        <a href="{{url('admin/banners/updateBanners/'.$banner->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
+                        <a href="{{url('admin/banners/deleteBanners/'.$banner->id)}}" class="badge badge-danger p-2" onclick="return confirm('Do you want delete?');"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
                       </td>
                     </tr>
                     @endforeach

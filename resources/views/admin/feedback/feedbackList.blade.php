@@ -15,8 +15,8 @@
                   <thead>
                     <tr>
                       <th>No</th>
+                      <th>Name</th>
                       <th>Title</th>
-                      <th>Content</th>
                       <th>Phone</th>
                       <th>Email</th>
                       <th>Status</th>
@@ -28,25 +28,20 @@
                     @foreach( $feedback as $feedback)
                       <tr>
                       <th scope="row">{{ ++$stt}}</th>
-                        <td>{{ $feedback->feed_title}}</td>
+                        <td>{{ $feedback->feed_name}}</td>
                         <td><button type="button" data-toggle="modal" data-target="#a{{$stt}}" class="btn btn-info">Read</button></td>
                         <td>{{ $feedback->feed_phone}}</td>
                         <td>{{ $feedback->feed_email}}</td>
                         <td>
                          @if($feedback->feed_status == 1 )
-                          <a href="{{url('admin/feedback/offStatusFeedback/'.$feedback->id)}}" class="badge badge-success p-2">Done</a>
+                          <a href="{{url('admin/feedback/offStatusFeedback/'.$feedback->id)}}" class="badge badge-success p-2">Active</a>
                          @else 
-                         <a href="{{url('admin/feedback/onStatusFeedback/'.$feedback->id)}}" class="badge badge-danger p-2">Pending</a>
+                         <a href="{{url('admin/feedback/onStatusFeedback/'.$feedback->id)}}" class="badge badge-danger p-2">Deactive</a>
                          @endif
                         </td>
                         <td>
                           {{--Reply mail--}}
-                         @if($feedback->feed_rep == 0 )
-                        <a href="mailto:{{$feedback->feed_email}}?subject={{$feedback->feed_title}}" class="badge badge-danger p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
-                         @else 
-                         <a href="mailto:{{$feedback->feed_email}}?subject={{$feedback->feed_title}}" class="badge badge-success p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
-                         @endif
-
+                        <a href="mailto:{{$feedback->feed_email}}?subject={{$feedback->feed_title}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                             {{--Status reply--}}
                         @if($feedback->feed_rep == 1 )
                             <a href="{{url('admin/feedback/pendingFeedback/'.$feedback->id)}}" class="badge badge-success p-2">Done</a>
