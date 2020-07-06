@@ -52,13 +52,13 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name'                      => ['bail','required', 'string', 'max:255'],
-            'email'                     => ['bail','required', 'string', 'regex:/^\S+[a-zA-Z0-9.!#$%&]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+[.a-zA-Z0-9]*$/i', 'max:255', 'unique:users'],
+            'email'                     => ['bail','required', 'string', 'regex:/^[a-zA-Z0-9\._]+@[a-zA-Z0-9_]+\.[a-zA-Z0-9]+[\.a-zA-Z0-9]*$/i', 'max:255', 'unique:users'],
             'password'                  => ['bail','required', 'string', 'min:8', 'confirmed'],
             'password_confirmation'     => ['bail','required'],
-            'fullname'                  => ['bail','required','regex:/^\S+[a-zA-Z]{2,}$/i','max:255'],
+            'fullname'                  => ['bail','required','regex:/^[a-zA-Z]{2,}$/i','max:255'],
             'dob'                       => ['bail','required'],
-            'phone'                     => ['bail','required','regex:/^\S+0[1-9][0-9]{8,9}$/i','unique:customer'],
-            'address'                    => ['bail','required','string','max:255' ],
+            'phone'                     => ['bail','required','regex:/^0[1-9]\d{8,9}$/i','unique:customer'],
+            'address'                   => ['bail','required','string','max:255' ],
         ]);
     }
 
@@ -72,17 +72,17 @@ class RegisterController extends Controller
     {
         
         $user =   User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'name' => trim($data['name']),
+            'email' => trim($data['email']),
             'password' => Hash::make($data['password']),
         ]);
         
          $user->roleCustomer =   Customers::create([
-            'customer_name' =>  $data['fullname'],
-            'dob'           =>  $data['dob'],
-            'gender'        =>  $data['gender'],
-            'phone'         =>  $data['phone'],
-            'address'       =>  $data['address'],
+            'customer_name' =>  trim($data['fullname']),
+            'dob'           =>  trim($data['dob']),
+            'gender'        =>  trim($data['gender']),
+            'phone'         =>  trim($data['phone']),
+            'address'       =>  trim($data['address']),
             'feature'       =>  'tinyhub-logo-footer.png',
             'users_id'      =>  $user->id,
         ]);

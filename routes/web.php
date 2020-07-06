@@ -149,7 +149,7 @@ Route::get('logout', function () {
 })->name('logout');
 //feedback
 Route::post('feedback/postFeedback', 'FeedbackController@postFeedback');
-//////////////////////////// User cart
+//////////////////////////// User 
 //////////////category
 Route::get('category',[ 
     'as' => 'category',
