@@ -136,14 +136,17 @@ return [
             'rule-name' => 'custom-message',
         ],
         'phone' => [
-            'regex' => 'Phone must begin 0 and have 10 or 11 digits.'
+            'regex' => 'Phone must begin 0 and has 10 or 11 digits.'
         ],
         'fullname' => [
-            'regex' => 'FullName must be String, no number, no space at first'
+            'regex' => 'FullName must be String, no number'
         ],
         'name' => [
             'required' => 'User name is required.'
             
+        ],
+        'email' => [
+            'regex' => 'Email has no special character !#$%^&*.'
         ],
         'prdname' => [
             'required' => 'Product title can not be blank !'
@@ -173,7 +176,10 @@ return [
             'max'       => 'Message just only max 150 characters.'
         ],
         'feedbackPhone' => [
-            'regex' => 'Phone must begin 0 and have 10 or 11 digits.'
+            'regex' => 'Phone must begin 0 and has 10 or 11 digits.'
+        ],
+        'feedbackEmail' => [
+            'regex' => 'Email has no special character !#$%^&* .'
         ],
     
     ],

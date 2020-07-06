@@ -22,43 +22,43 @@ class UserController extends Controller
         $stt = 0;
         return view("admin.users.listUsers", compact('user', 'stt'));
     }
-    public function createUser(Request $request)
-    {
+    // public function createUser(Request $request)
+    // {
 
-        //validate
-        $this->validate(
-            $request,
-            [
-                'name'          => ['bail', 'required', 'string', 'max:255'],
-                'email'         => ['bail', 'required', 'string', 'regex:/^[a-zA-Z0-9.!#$%&]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+[.a-zA-Z0-9]*$/i', 'max:255', 'unique:users'],
-                'password'      => ['bail', 'required', 'string', 'min:8', 'confirmed'],
-                'fullname'      => ['bail', 'required', 'string', 'max:255'],
-                'phone'         => ['bail', 'required', 'regex:/^0[0-9]{9}$/i', 'unique:customer'],
-                'dob'           => ['bail', 'required'],
-                'address'       => ['bail', 'required', 'string', 'max:255'],
-            ]
-        );
-        //
-        //create user
-        $user =   User::create([
-            'name'          =>  $request->name,
-            'email'         =>  $request->email,
-            'role'          =>  $request->role,
-            'password'      =>  Hash::make($request->password),
-        ]);
+    //     //validate
+    //     $this->validate(
+    //         $request,
+    //         [
+    //             'name'          => ['bail', 'required', 'string', 'max:255'],
+    //             'email'         => ['bail', 'required', 'string', 'regex:/^[a-zA-Z0-9.!#$%&]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+[.a-zA-Z0-9]*$/i', 'max:255', 'unique:users'],
+    //             'password'      => ['bail', 'required', 'string', 'min:8', 'confirmed'],
+    //             'fullname'      => ['bail', 'required', 'string', 'max:255'],
+    //             'phone'         => ['bail', 'required', 'regex:/^0[0-9]{9}$/i', 'unique:customer'],
+    //             'dob'           => ['bail', 'required'],
+    //             'address'       => ['bail', 'required', 'string', 'max:255'],
+    //         ]
+    //     );
+    //     //
+    //     //create user
+    //     $user =   User::create([
+    //         'name'          =>  $request->name,
+    //         'email'         =>  $request->email,
+    //         'role'          =>  $request->role,
+    //         'password'      =>  Hash::make($request->password),
+    //     ]);
 
-        $user->roleCustomer =   Customers::create([
-            'customer_name' =>  $request->fullname,
-            'dob'           =>  $request->dob,
-            'gender'        =>  $request->gender,
-            'phone'         =>  $request->phone,
-            'address'       =>  $request->address,
-            'feature'       =>  'tinyhub-logo-footer.png',
-            'users_id'      =>  $user->id,
-        ]);
+    //     $user->roleCustomer =   Customers::create([
+    //         'customer_name' =>  $request->fullname,
+    //         'dob'           =>  $request->dob,
+    //         'gender'        =>  $request->gender,
+    //         'phone'         =>  $request->phone,
+    //         'address'       =>  $request->address,
+    //         'feature'       =>  'tinyhub-logo-footer.png',
+    //         'users_id'      =>  $user->id,
+    //     ]);
 
-        return redirect('admin/users/listUsers');
-    }
+    //     return redirect('admin/users/listUsers');
+    // }
 
     //go to update Form
     public function updateUser($id)
@@ -75,7 +75,7 @@ class UserController extends Controller
             'name'          => ['bail', 'required', 'string', 'max:255'],
         ])->validate();
         $users = User::find($request->id);
-        $users->name         = $request->name;
+        $users->name         = trim($request->name);
         $users->role          = $request->role;
         $users->save();
 
@@ -94,7 +94,7 @@ class UserController extends Controller
                 'profile_customer_name' => 'bail|required|min:3|max:255',
                 'profile_gender' => 'bail|required|not_in:0',
                 'profile_dob' => 'bail|required|date',
-                'profile_phone' => 'bail|required|digits:10,12',
+                'profile_phone' => 'bail|required|regex:/^0[1-9]\d{8,9}$/i',
                 'profile_phone' => 'unique:Customer,phone,' . $cust->id,
                 'profile_address' => 'bail|required',
                 'profile_email' => 'bail|required|email',
@@ -113,7 +113,7 @@ class UserController extends Controller
                 'profile_dob.required' => 'Birthday can not blank !',
                 'profile_dob.date' => 'The date of birth must be of type DATE !',
                 'profile_phone.required' => 'Phone can not blank !',
-                'profile_phone.digits' => 'Phone numbers must have at least 10 numbers and at most 12 numbers !',
+                'profile_phone.regex' => 'Phone numbers must have at least 10 numbers and at most 11 numbers !',
                 'profile_phone.unique' => 'Phone has already existed !',
                 'profile_address.required' => 'Address can not blank !',
                 'profile_email.required' => 'Email can not blank !',
@@ -160,7 +160,7 @@ class UserController extends Controller
                 'profile_customer_name' => 'bail|required|min:3|max:255',
                 'profile_gender' => 'bail|required|not_in:0',
                 'profile_dob' => 'bail|required|date',
-                'profile_phone' => 'bail|required|digits:10,12',
+                'profile_phone' => 'bail|required|regex:/^0[1-9]\d{8,9}$/i',
                 'profile_phone' => 'unique:Customer,phone,' . $cust->id,
                 'profile_address' => 'bail|required',
                 'profile_email' => 'bail|required|email',
@@ -179,7 +179,7 @@ class UserController extends Controller
                 'profile_dob.required' => 'Birthday can not blank !',
                 'profile_dob.date' => 'The date of birth must be of type DATE !',
                 'profile_phone.required' => 'Phone can not blank !',
-                'profile_phone.digits' => 'Phone numbers must have at least 10 numbers and at most 12 numbers !',
+                'profile_phone.regex' => 'Phone numbers must have at least 10 numbers and at most 11 numbers !',
                 'profile_phone.unique' => 'Phone has already existed !',
                 'profile_address.required' => 'Address can not blank !',
                 'profile_email.required' => 'Email can not blank !',

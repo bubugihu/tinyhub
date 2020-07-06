@@ -12,18 +12,18 @@ class FeedbackController extends Controller
     public function postFeedback(Request $request){
         $this->validate($request,
         [
-            'feedbackName'          =>      'bail|required|regex:/^\S+[a-zA-Z]{2,}/i|max:255',
-            'feedbackPhone'         =>      'bail|nullable|regex:/^\S+0[1-9][0-9]{8,9}$/i',
-            'feedbackEmail'         =>      'bail|required|regex:/^[a-zA-Z0-9.!#$%&]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+[.a-zA-Z0-9]*$/i',
+            'feedbackName'          =>      'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255',
+            'feedbackPhone'         =>      'bail|nullable|regex:/^0[1-9][0-9]{8,9}$/i',
+            'feedbackEmail'         =>      'bail|required|regex:/^[a-zA-Z0-9\._]+@[a-zA-Z0-9_]+\.[a-zA-Z0-9]+[\.a-zA-Z0-9]*$/i',
             'feedbackContent'       =>      'bail|required|min:2|max:150',
         ]);
 
         $feedback = new Feedback();
-        $feedback->feed_name    =   $request->feedbackName;
-        $feedback->feed_phone   =   $request->feedbackPhone;
-        $feedback->feed_email   =   $request->feedbackEmail;
-        $feedback->feed_title   =   $request->feedbackTitle;
-        $feedback->feed_content =   $request->feedbackContent;
+        $feedback->feed_name    =   trim($request->feedbackName);
+        $feedback->feed_phone   =   trim($request->feedbackPhone);
+        $feedback->feed_email   =   trim($request->feedbackEmail);
+        $feedback->feed_title   =   trim($request->feedbackTitle);
+        $feedback->feed_content =   trim($request->feedbackContent);
         $feedback->feed_status  =   0;
         $feedback->save();
         $alert= '';    

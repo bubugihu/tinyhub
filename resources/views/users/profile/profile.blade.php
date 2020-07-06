@@ -1,5 +1,5 @@
 @extends('users.layout.layout')
-@section('title', 'User Profile')
+@section('title', 'Profile - User')
 @section('content')
 <div class="container py-5">
     <div class="row card-body py-5 mx-auto">
@@ -139,7 +139,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">User Name</label>
+                                            <label class="form-control-label text-uppercase">User Name<span class="required">*</span></label>
                                             <input type="text" name="profile_user_name" class="form-control">
                                             @if($errors->has('profile_user_name'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_user_name')}}</small>
@@ -148,7 +148,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Customer Name</label>
+                                            <label class="form-control-label text-uppercase">Customer Name<span class="required">*</span></label>
                                             <input type="text" name="profile_customer_name" class="form-control">
                                             @if($errors->has('profile_customer_name'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_customer_name')}}</small>
@@ -160,7 +160,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Gender</label><br>
+                                            <label class="form-control-label text-uppercase">Gender<span class="required">*</span></label><br>
                                             <div class="custom-control custom-radio custom-control-inline">
                                                 <input type="radio" class="custom-control-input" id="customer-gender1" name="profile_gender" value="Male">
                                                 <label class="custom-control-label" for="customer-gender1">Male</label>
@@ -180,7 +180,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">DOB</label>
+                                            <label class="form-control-label text-uppercase">DOB<span class="required">*</span></label>
                                             <input type="date" name="profile_dob" class="form-control">
                                             @if($errors->has('profile_dob'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_dob')}}</small>
@@ -192,7 +192,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Phone</label>
+                                            <label class="form-control-label text-uppercase">Phone<span class="required">*</span></label>
                                             <input type="number" name="profile_phone" class="form-control">
                                             @if($errors->has('profile_phone'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_phone')}}</small>
@@ -201,7 +201,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Email</label>
+                                            <label class="form-control-label text-uppercase">Email<span class="required">*</span></label>
                                             <input type="email" name="profile_email" class="form-control">
                                             @if($errors->has('profile_email'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_email')}}</small>
@@ -213,7 +213,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Address</label>
+                                            <label class="form-control-label text-uppercase">Address<span class="required">*</span></label>
                                             <textarea name="profile_address" class="form-control" rows="4"></textarea>
                                             @if($errors->has('profile_address'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_address')}}</small>
@@ -225,16 +225,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Picture</label>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">Upload</span>
-                                                </div>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="profile_feature">
-                                                    <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
-                                                </div>
-                                            </div>
+                                            <label class="form-control-label text-uppercase">Picture<span class="required">*</span></label><br>
+                                            <input type="file" name="profile_feature">
                                             @if($errors->has('profile_feature'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_feature')}}</small>
                                             @endif
