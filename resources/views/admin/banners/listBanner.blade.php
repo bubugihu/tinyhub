@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'Banner')
+@section('title', 'List-Banner')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
   <div class="container-fluid px-xl-5">
@@ -19,7 +19,7 @@
               <table class="table card-text text-center" id="dbtable">
                 <thead>
                   <tr>
-                    <th>BannerID</th>
+                    <th>No.</th>
                     <th>Banner Title</th>
                     <th width="200">Banner Content</th>
                     <th>Banner Image</th>
@@ -31,12 +31,12 @@
 
                   @foreach($banners as $banner)
                   <tr>
-                    <th scope="row" class="align-middle">{{$banner->id}}</th>
+                    <th scope="row" class="align-middle">{{$stt}}</th>
                     <td class="align-middle">{{$banner->ban_title}}</td>
                     <td class="align-middle">{{$banner->ban_content}}</td>
                     <td class="align-middle"><img src="{{asset('img/banner/'.$banner->ban_image)}}" alt="" width="60"></td>
                     <td class="align-middle">{{$banner->ban_date}}</td>
-                    <td class="align-middle">
+                    <td id="{{$stt++}}" class="align-middle">
                       <a href="{{url('admin/banners/updateBanners/'.$banner->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                       <a href="{{url('admin/banners/deleteBanners/'.$banner->id)}}" class="badge badge-danger p-2" onclick="return confirm('Do you want delete?');"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
                     </td>

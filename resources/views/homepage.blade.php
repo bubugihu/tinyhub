@@ -10,7 +10,7 @@
             <div class="row align-items-center">
               <div class="col-md-7 col-12 order-md-1 order-2">
                 <h4>{{$bG->ban_title}}</h4>
-                <p>{{$bG->description}}</p>
+                <p>{{$bG->ban_content}}</p>
                 <a class="btn" href="{{ url('category')}}">BUY NOW</a> </div>
                 <div id="abc{{$sttNo++}}" class="col-md-5 col-12 order-md-2 order-1"><img src="{{url('img/banner/'.$bG->ban_image)}}" class="mx-auto" alt="slide"></div>
             </div>
@@ -34,7 +34,7 @@
                   <div class="item d-flex align-items-center">
                     <div class="icon dx"><i class="fas fa-shipping-fast"></i></div>
                     <div class="text">
-                      <h6 class="no-margin text-uppercase">Free shipping &amp; return</h6><span>Free Shipping over $300</span>
+                      <h6 class="no-margin text-uppercase">Free shipping &amp; return</h6><span>Free Shipping over $30</span>
                     </div>
                   </div>
                 </div>

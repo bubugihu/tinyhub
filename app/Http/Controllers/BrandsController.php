@@ -107,8 +107,9 @@ class BrandsController extends Controller
     }
 
     public function getBrands(){
-        $brands = Brands::all(); 
-        return view("brand", ['b' => $brands]);
+        $brands = Brands::all();
+        $stt = 1; 
+        return view("brand", ['b' => $brands, 'stt' => $stt]);
     }
 
 

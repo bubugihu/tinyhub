@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-class User
+class Role
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,12 @@ class User
      */
     public function handle($request, Closure $next)
     {   
-        if(!Auth::check())
-        return abort(404);
-        else
+        if(!Auth::check()){
+            return abort(404);
+        }
+        elseif(Auth::user()->role == 1 || Auth::user()->role == 2 || Auth::user()->role == 3)
         return $next($request);
+        else
+        return back();
     }
 }
