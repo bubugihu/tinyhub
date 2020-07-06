@@ -1,7 +1,7 @@
 @extends('admin.layout.layout')
 @section('title', 'Create Brands')
 @section('content')
-<div class="page-holder w-100 d-flex flex-wrap">
+  <div class="page-holder w-100 d-flex flex-wrap">
     <div class="container-fluid px-xl-5">
       <section class="py-5">
         <div class="row" style="justify-content: center;">
@@ -42,8 +42,8 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  </div>
+        </div>   
+      </section>
+    </div>
+
   @endsection

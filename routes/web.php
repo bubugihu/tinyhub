@@ -1,12 +1,8 @@
 <?php
 
-use App\Category;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Product;
-use App\Brands;
-use App\Customers;
-use App\Http\Middleware\User;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,90 +21,94 @@ Route::get('/', function () {
 })->name('homepage');
 
 //////////////////admin
+Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
+    
 //users
-Route::get('admin/users/listUsers', 'UserController@listUsers');
-Route::get('admin/users/createUser', function () {
-    return view('admin.users.createUser');
-});
-Route::post('admin/users/createUser', 'UserController@createUser');
-Route::get('admin/users/updateUser/{id}' , 'UserController@updateUser');
-Route::post('admin/users/postUpdateUser', 'UserController@postUpdateUser');
+Route::get('users/listUsers', 'UserController@listUsers');
+Route::get('users/updateUser/{id}' , 'UserController@updateUser');
+Route::post('users/postUpdateUser', 'UserController@postUpdateUser');
+
 //customer
-Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');;
-Route::get('admin/customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
-Route::post('admin/customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
-Route::get('admin/customer/deleteCustomer/{id}', 'CustomerController@deleteCustomer');
+Route::get('customer/listCustomer', 'CustomerController@listCustomer');;
+Route::get('customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
+Route::post('customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
 
 //feedback
-Route::get('admin/feedback/feedbackList', 'FeedbackController@feedbackList');
-Route::get('admin/feedback/deleteFeedback/{id}', 'FeedbackController@deleteFeedback');
-Route::get('admin/feedback/doneFeedback/{id}' , 'FeedbackController@doneFeedback');
-Route::get('admin/feedback/pendingFeedback/{id}', 'FeedbackController@pendingFeedback');
-Route::get('admin/feedback/onStatusFeedback/{id}', 'FeedbackController@onStatus');
-Route::get('admin/feedback/offStatusFeedback/{id}', 'FeedbackController@offStatus');
+Route::get('feedback/feedbackList', 'FeedbackController@feedbackList');
+Route::get('feedback/deleteFeedback/{id}', 'FeedbackController@deleteFeedback');
+Route::get('feedback/doneFeedback/{id}' , 'FeedbackController@doneFeedback');
+Route::get('feedback/pendingFeedback/{id}', 'FeedbackController@pendingFeedback');
+Route::get('feedback/onStatusFeedback/{id}', 'FeedbackController@onStatus');
+Route::get('feedback/offStatusFeedback/{id}', 'FeedbackController@offStatus');
+
 //product
-Route::get('admin/product/listProduct', 'ProductController@listProduct');
-Route::get('admin/product/createProduct', 'ProductController@createProduct');
-Route::post('admin/product/postCreate', 'ProductController@postCreate');
-Route::get('admin/product/updateProduct/{id}', 'ProductController@updateProduct');
-Route::post('admin/product/postUpdate/{id}', 'ProductController@postUpdate');
-Route::get('admin/product/deleteProduct/{id}', 'ProductController@deleteProduct');
+Route::get('product/listProduct', 'ProductController@listProduct');
+Route::get('product/createProduct', 'ProductController@createProduct');
+Route::post('product/postCreate', 'ProductController@postCreate');
+Route::get('product/updateProduct/{id}', 'ProductController@updateProduct');
+Route::get('product/detailsProduct/{id}', 'ProductController@detailsProduct');
+Route::post('product/postUpdate/{id}', 'ProductController@postUpdate');
+Route::get('product/deleteProduct/{id}', 'ProductController@deleteProduct');
 Route::post('users/product/createCommentUser/{idProduct}/{idCustomer}', 'ProductController@postCommentUser');
 
-
 //category
-Route::get('admin/category/categories', 'CategoryController@categories');
-Route::get('admin/category/createCategories', 'CategoryController@createCate');
-Route::post('admin/category/postCate', 'CategoryController@postCate');
-Route::get('admin/category/updateCategories/{id}', 'CategoryController@updateCates');
-Route::post('admin/category/postUpdateCate/{id}', 'CategoryController@postUpdateCate');
+Route::get('category/categories', 'CategoryController@categories');
+Route::get('category/createCategories', 'CategoryController@createCate');
+Route::post('category/postCate', 'CategoryController@postCate');
+Route::get('category/updateCategories/{id}', 'CategoryController@updateCates');
+Route::post('category/postUpdateCate/{id}', 'CategoryController@postUpdateCate');
+
 //brands
-Route::get('admin/brands/listBrands' , 'BrandsController@listBrands');
-Route::get('admin/brands/createBrands' , 'BrandsController@createBrand');
-Route::post('admin/brands/postBrands' , 'BrandsController@postBrands');
-Route::get('admin/brands/updateBrands/{id}' , 'BrandsController@updateBrands');
-Route::post('admin/brands/postUpdateBrands/{id}' , 'BrandsController@postUpdateBrands');
+Route::get('brands/listBrands' , 'BrandsController@listBrands');
+Route::get('brands/createBrands' , 'BrandsController@createBrand');
+Route::post('brands/postBrands' , 'BrandsController@postBrands');
+Route::get('brands/updateBrands/{id}' , 'BrandsController@updateBrands');
+Route::post('brands/postUpdateBrands/{id}' , 'BrandsController@postUpdateBrands');
+
 //order
-Route::get('admin/order/listOrder', 'OrderController@listOrder');
-Route::get('admin/order/onOrderStatus/{id}', 'OrderController@onOrderStatus');
-Route::get('admin/order/offOrderStatus/{id}', 'OrderController@offOrderStatus');
-Route::get('admin/order/listOrderDetails/{id}', 'CartController@orderDetails');
+Route::get('order/listOrder', 'OrderController@listOrder');
+Route::get('order/onOrderStatus/{id}', 'OrderController@onOrderStatus');
+Route::get('order/listOrderDetails/{id}', 'CartController@orderDetails');
+Route::get('order/deleteOrder/{id}', 'OrderController@deleteOrder');
+Route::get('admin/order/onOrderStatus', 'OrderController@onOrderStatus111');
 
 //comment
-Route::get('admin/comment/listComment', 'CommentController@listComment');
-Route::get('admin/comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
-Route::get('admin/comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
-Route::get('admin/comment/deleteComment/{id}', 'CommentController@deleteComment');
-
+Route::get('comment/listComment', 'CommentController@listComment');
+Route::get('comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
+Route::get('comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
+Route::get('comment/deleteComment/{id}', 'CommentController@deleteComment');
 
 //banner
-Route::get('admin/banners/listBanner' , 'BannerController@listBanner');
-Route::get('admin/banners/deleteBanners/{id}', 'BannerController@deleteBanners');
-Route::get('admin/banners/createBanner', function (){
+Route::get('banners/listBanner' , 'BannerController@listBanner');
+Route::get('banners/deleteBanners/{id}', 'BannerController@deleteBanners');
+Route::get('banners/createBanner', function (){
     return view('admin.banners.createBanner');
 });
-Route::post('admin/banners/postCreateBanners', 'BannerController@postCreateBanners');
-Route::get('admin/banners/updateBanners/{id}', 'BannerController@updateBanners');
-Route::post('admin/banners/postUpdateBanners', 'BannerController@postUpdateBanners');
+Route::post('banners/postCreateBanners', 'BannerController@postCreateBanners');
+Route::get('banners/postCreateBanners', function(){
+    return abort(404);
+});
+Route::get('banners/updateBanners/{id}', 'BannerController@updateBanners');
+Route::post('banners/postUpdateBanners', 'BannerController@postUpdateBanners');
+Route::get('banners/postUpdateBanners', function(){
+    return abort(404);
+});
 //index
-Route::get('admin/index', 'AdminController@index');
+Route::get('index', 'AdminController@index');
 
-//profile
-Route::get('admin/profile/{id}', 'UserController@profileAdmin');
+//profile admin
+Route::get('profile/{id}', 'UserController@profileAdmin');
+route::get('profile/{id}/{idcommment}','UserController@deleteCommentAdmin');
+route::post('profileUpdate/{id}','UserController@postUpdateProfileAdmin');
 
-//end admin
-
-///////////////////////////Users
 //ajax Register
 Route::get('ajaxRegisterEmail/{email}', 'AjaxController@registerEmail');
 Route::get('ajaxRegisterPhone/{phone}', 'AjaxController@registerPhone');
-//
-//profile
-// Route::get('profile/{id}', 'CustomerController@profileCustomer');
-Route::get('users/profile/{id}', 'UserController@profileUser');
-route::get('users/profile/{id}/{idcommment}','UserController@deleteCommentUser');
-route::post('users/profileUpdate/{id}','UserController@postUpdateProfileUser');
 
+});
+//end admin
+
+/////////////Blank page
 //Feedback
 Route::get('contact-us', function () {
     return view('contact-us');
@@ -133,14 +133,12 @@ Route::get('guarantee', function () {
 Route::get('brand', [
     'as' => 'brand',
     'uses' => 'BrandsController@getBrands']);
-//thank-you
-Route::get('thank-you', function () {
-    return view('thank-you');
-})->name('thank-you');
-//report
-Route::get('report', function () {
-    return view('users.cart.report');
-})->name('print');
+
+//search
+Route::get('search', [
+        'as' => 'search',
+        'uses' => 'SearchKeyController@getSearch'
+]);
 
 //logout
 Route::get('logout', function () {
@@ -150,6 +148,12 @@ Route::get('logout', function () {
 //feedback
 Route::post('feedback/postFeedback', 'FeedbackController@postFeedback');
 //////////////////////////// User 
+//profile user
+Route::group(['prefix' => 'users/' ], function () {
+    Route::get('profile/{id}', 'UserController@profileUser');
+    Route::get('profile/{id}/{idcommment}','UserController@deleteCommentUser');
+    Route::post('profileUpdate/{id}','UserController@postUpdateProfileUser');
+    });
 //////////////category
 Route::get('category',[ 
     'as' => 'category',
@@ -200,35 +204,7 @@ Route::post('thank-you' , 'CartController@thankyou');
 //check report
 Route::get('cart/shopping/orderDetails/{id}', 'CartController@orderDetails');
 
-
-
-
 /////////////////////////end cart
-Route::get('search', [
-    'as' => 'search',
-    'uses' => 'SearchKeyController@getSearch'
-]);
-Route::get('report-product', function () {
-    return view('users.product.report');
-});
-Route::get('users/profile', function () {
-    return view('users.profile.profile');
-});
 
-Route::get('categories/{cate}', [
-    'as' => 'categories',
-    'uses' => 'ProductController@getCategories'
-]);
 
-///////// du thua chua dung den
-//Route::get('category', 'ProductController@category');
 
-//search cate
-Route::get('searchCate/{in}', 'CategoryController@filterCate');
-//search brands
-Route::get('searchBrand/{in}', 'CategoryController@filterBrand');
-//search Price
-Route::get('searchPrice', 'CategoryController@filterPrice');
-//Search Price Incre
-Route::get('searchPriceAsc/{products}', 'ProductController@sortPrice');
-//Route::get('search' , 'SearchController@search');

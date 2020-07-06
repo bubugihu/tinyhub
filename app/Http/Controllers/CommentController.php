@@ -16,7 +16,7 @@ class CommentController extends Controller
             ->join('brand', 'product.brand_id', '=', 'brand.id')
             ->join('category', 'product.category_id', '=', 'category.id')
             ->select('users.*', 'customer.*', 'brand.*', 'category.*', 'product.*', 'comments.*')
-            ->get();
+            ->paginate(10);
         return view('admin.comment.listComment', compact('comments', 'no'));
     }
 

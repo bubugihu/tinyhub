@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,17 +31,19 @@
     <link rel="stylesheet" href="{{asset("css/lightslider.css")}}">
     <style>
         /* Cart */
-        body{
-            background: #fff!important;
+        body {
+            background: #fff !important;
         }
-       
-        .basket-header{
+
+        .basket-header {
             padding: 25px 20px;
             background: #f5f5f5;
             border-radius: 50px;
             font-weight: 500;
         }
-        input.quantity, .quantity input{
+
+        input.quantity,
+        .quantity input {
             width: 50px;
             height: 30px;
             border: none;
@@ -50,7 +53,9 @@
             line-height: 30px;
             outline: none;
         }
-        .inc-btn , .dec-btn{
+
+        .inc-btn,
+        .dec-btn {
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -59,110 +64,140 @@
             text-align: center;
             cursor: pointer;
         }
-        .delete fa fa-trash::before{
+
+        .delete fa fa-trash::before {
             content: '';
         }
+
         .btn-template {
             background-color: #f47635;
             border-color: #f47635;
         }
-        .block-header{
+
+        .block-header {
             padding: 20px 30px;
             border-radius: 50px;
             background: #f5f5f5;
         }
-        .CTAs{
+
+        .CTAs {
             margin-top: 40px;
             margin-bottom: 30px;
         }
-        dl , ol , ul{
+
+        dl,
+        ol,
+        ul {
             margin-top: 0;
             margin-bottom: 1rem;
         }
-        .list-unstyled{
+
+        .list-unstyled {
             padding-left: 0;
             list-style: none;
         }
-        .text-primary{
-            color:#f47635!important;
+
+        .text-primary {
+            color: #f47635 !important;
         }
-        ul.order-menu, strong.price-total{
+
+        ul.order-menu,
+        strong.price-total {
             font-weight: 700;
             font-size: 1.2em;
         }
-        strong{
+
+        strong {
             font-weight: 100;
         }
+
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-        }   
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
         /* Check out */
-        section.cart{
+        section.cart {
             margin-top: 40px;
         }
-        section.checkout .nav-pill{
+
+        section.checkout .nav-pill {
             background: #f5f5f5;
             border-radius: 50px;
             padding: 0;
-            border: none!important;
+            border: none !important;
             overflow: hidden;
             height: 50px;
         }
-        section.checkout .nav-item{
-            width: 25%!important;
+
+        section.checkout .nav-item {
+            width: 25% !important;
             height: 100%;
         }
-        section.checkout .tab-content{
-            padding: 40px 0 0 ;
+
+        section.checkout .tab-content {
+            padding: 40px 0 0;
         }
-        .tab-content>.active{
+
+        .tab-content>.active {
             display: block;
         }
-        @media(min-width: 992px){
-        .flex-lg-row{
-            flex-direction: row!important;
-        }}
-        .justify-content-between{
-            justify-content: space-between!important;
+
+        @media(min-width: 992px) {
+            .flex-lg-row {
+                flex-direction: row !important;
+            }
         }
-        section.checkout .block-body{
+
+        .justify-content-between {
+            justify-content: space-between !important;
+        }
+
+        section.checkout .block-body {
             border: 1px solid #ddd;
             padding: 40px 30px;
         }
-        section.checkout ul.order-menu{
+
+        section.checkout ul.order-menu {
             margin-bottom: 0;
             font-weight: 400;
             font-size: 1.2em;
             line-height: 2;
         }
-        section.checkout strong{
+
+        section.checkout strong {
             font-weight: 100;
         }
-        .print-invoice-title{
+
+        .print-invoice-title {
             text-align: center;
         }
-        @media (max-width: 992px){
-        .shopping-cart .container:first-of-type {
-            width: 100% !important;
-            overflow-x: scroll;
-        }}
-        @media (max-width: 992px){
-        .shopping-cart .container:first-of-type .basket-holder {
-        min-width: 991px;
-        }}
+
+        @media (max-width: 992px) {
+            .shopping-cart .container:first-of-type {
+                width: 100% !important;
+                overflow-x: scroll;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .shopping-cart .container:first-of-type .basket-holder {
+                min-width: 991px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-        <!-- NAV BAR --->
-        @include('users.layout.nav-bar') 
+    <!-- NAV BAR --->
+    @include('users.layout.nav-bar')
 
-        <!-- CONTENT WRAPPER CONTAINS PAGE --->
-        @yield('content')
-        <!-- FOOTER --->
-        @include('users.layout.footer')
+    <!-- CONTENT WRAPPER CONTAINS PAGE --->
+    @yield('content')
+    <!-- FOOTER --->
+    @include('users.layout.footer')
 
 
     <!-- JQUERY --->
@@ -181,4 +216,5 @@
     <!-- light Slider -->
     <script src="{{asset("js/lightslider.js")}}"></script>
 </body>
+
 </html>

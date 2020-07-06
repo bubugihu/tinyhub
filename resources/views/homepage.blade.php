@@ -10,7 +10,7 @@
             <div class="row align-items-center">
               <div class="col-md-7 col-12 order-md-1 order-2">
                 <h4>{{$bG->ban_title}}</h4>
-                <p>{{$bG->description}}</p>
+                <p>{{$bG->ban_content}}</p>
                 <a class="btn" href="{{ url('category')}}">BUY NOW</a> </div>
                 <div id="abc{{$sttNo++}}" class="col-md-5 col-12 order-md-2 order-1"><img src="{{url('img/banner/'.$bG->ban_image)}}" class="mx-auto" alt="slide"></div>
             </div>

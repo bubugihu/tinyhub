@@ -154,7 +154,7 @@
     $(document).ready(function() {
         $("#email").blur(function() {
             var email = $(this).val();
-            $.get('ajaxRegisterEmail/' + email, function(data) {
+            $.get('admin/ajaxRegisterEmail/' + email, function(data) {
                 // alert(email);
                 $("#alert1").html(data);
             });
@@ -164,7 +164,7 @@
     $(document).ready(function() {
         $("#phone").blur(function() {
             var phone = $(this).val();
-            $.get('ajaxRegisterPhone/' + phone, function(data) {
+            $.get('admin/ajaxRegisterPhone/' + phone, function(data) {
                 // alert(email);
                 $("#alert2").html(data);
             });

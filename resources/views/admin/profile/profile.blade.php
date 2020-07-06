@@ -38,7 +38,7 @@
             <hr width="100%">
             <div class="tab-content " id="pills-tabContent">
                 @if(Session::has('flash_message'))
-                <div class="alert alert-{!! Session::get('flash_level') !!}">
+                <div class="text-center alert alert-{!! Session::get('flash_level') !!}">
                     {!!Session::get('flash_message')!!}
                 </div>
                 @endif
@@ -53,6 +53,7 @@
                                 <th scope="col">Order Date Time</th>
                                 <th scope="col">Payment</th>
                                 <th scope="col">Total</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Details</th>
                             </tr>
                         </thead>
@@ -63,7 +64,14 @@
                                 <td class="align-middle">{{$order->order_id}}</td>
                                 <td class="align-middle">{{$order->created_at}}</td>
                                 <td class="align-middle">{{$order->payment}}</td>
-                                <td class="align-middle">{{$order->total}}</td>
+                                <td class="align-middle">{{$order->total+$order->total*0.1}}</td>
+                                <td class="align-middle">
+                                    @if($order->status == 0)
+                                    <span class="badge badge-pill badge-danger">OFF</span>
+                                    @else
+                                    <span class="badge badge-pill badge-success">ON</span>
+                                    @endif
+                                </td>
                                 <td class="align-middle">
                                     <a href="{{url('cart/shopping/orderDetails/'.$order->order_id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                                 </td>
@@ -81,7 +89,6 @@
                                 <th scope="col">No.</th>
                                 <th scope="col" width="60"> Image</th>
                                 <th scope="col">Product</th>
-                                <th scope="col">Title</th>
                                 <th scope="col">Content</th>
                                 <th scope="col">Date</th>
                                 <th scope="col">Option</th>
@@ -93,7 +100,6 @@
                                 <td class="align-middle">{{++$no1}}</td>
                                 <td class="align-middle"><img src="{{asset('img/feature/'.$comment->feature_image)}}" alt="{{$comment->product_title}}" class="rounded" width="60" height="auto"></td>
                                 <td class="align-middle">{{$comment->product_title}}</td>
-                                <td class="align-middle">{{$comment->cmt_title}}</td>
                                 <td class="align-middle">
                                     <a href="#myModal3Content{{$customer->id}}{{$comment->id}}" class="badge badge-info p-2" data-toggle="modal"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                                     <!-- Modal 3 Content -->
@@ -101,14 +107,14 @@
                                         <div role="document" class="modal-dialog modal-lg">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h4 id="exampleModalLabel" class="modal-title">{{$comment->cmt_title}}</h4>
+                                                    <h4 id="exampleModalLabel" class="modal-title">{{$comment->product_title}} Product Commentary</h4>
                                                     <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                                                 </div>
                                                 <div class="modal-body">
                                                     <p>{{$comment->cmt_content}}</p>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -116,7 +122,7 @@
                                 </td>
                                 <td class="align-middle">{{$comment->created_at}}</td>
                                 <td class="align-middle">
-                                    <a href="{{ url('users/profile/'.$customer->id.'/'.$comment->id)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
+                                    <a href="{{ url('admin/profile/'.$customer->id.'/'.$comment->id)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
                                 </td>
                             </tr>
                             @endforeach
@@ -127,7 +133,7 @@
                 <div class="tab-pane fade show active" id="pills-edit{{$customer->id}}" role="tabpanel" aria-labelledby="pills-edit-tab">
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-11">
-                            <form role="form" action="{{url('users/profileUpdate/' . $customer -> id)}}" method="POST" enctype="multipart/form-data">
+                            <form role="form" action="{{url('admin/profileUpdate/' . $customer -> id)}}" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <!-- User Name And Customer Name -->
                                 <div class="row">

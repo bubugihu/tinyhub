@@ -9,7 +9,8 @@ class BannerController extends Controller
     //show banner
     public function listBanner(){
         $banners = Banner::all();
-        return view('admin.banners.listBanner', compact('banners'));
+        $stt = 1;
+        return view('admin.banners.listBanner', compact('banners', 'stt'));
     }
 
 

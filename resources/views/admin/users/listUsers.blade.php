@@ -33,23 +33,23 @@
 
                   @foreach($user as $user)
                   <tr>
-                    <th scope="row">{{++$stt}}</th>
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->email}}</td>
-                    <td>
-                    @if($user->role == 1)
-                    Admin 
-                    @elseif($user->role == 2)
-                    Mod Customer
-                    @elseif($user->role == 2)
-                    Mod Product
-                    @else 
-                    User
-                    @endif
+                    <th scope="row" class="align-middle">{{++$stt}}</th>
+                    <td class="align-middle">{{$user->name}}</td>
+                    <td class="align-middle">{{$user->email}}</td>
+                    <td class="align-middle">
+                      @if($user->role == 1)
+                      Admin
+                      @elseif($user->role == 2)
+                      Mod Customer
+                      @elseif($user->role == 2)
+                      Mod Product
+                      @else
+                      User
+                      @endif
                     </td>
-                    <td>{{$user->created_at}}</td>
-                    <td>{{$user->updated_at}}</td>
-                    <td><a href="{{url('admin/users/updateUser/'.$user->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px; font-weight:100;"></i></a></td>
+                    <td class="align-middle">{{$user->created_at}}</td>
+                    <td class="align-middle">{{$user->updated_at}}</td>
+                    <td class="align-middle"><a href="{{url('admin/users/updateUser/'.$user->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px; font-weight:100;"></i></a></td>
                   </tr>
                   @endforeach
                 </tbody>

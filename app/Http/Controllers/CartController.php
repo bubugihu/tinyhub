@@ -108,7 +108,7 @@ class CartController extends Controller
     public function removeItem($id)
     {
         Cart::remove($id);
-        return redirect('cart');
+        return back();
     }
 
     //check out cart
