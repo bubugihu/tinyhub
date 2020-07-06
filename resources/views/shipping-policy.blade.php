@@ -23,8 +23,8 @@
                         <h4>TinyHub transports goods to all parts of the country.</h4>
                         <p><b>1. For customers in Ho Chi Minh City:</b></p>
                         <ul>
-                            <li>Free shipping for orders with a value of $300 or more</li>
-                            <li>Orders under $300 will be charged depending on the distance.</li>
+                            <li>Free shipping for orders with a value of $30 or more</li>
+                            <li>Orders under $30 will be charged depending on the distance.</li>
                             <li>Suburban districts: transport fees will be calculated according to the distance.</li>
                             <li>Note: Customers wishing to experience the product, please go to the store, we do not support the experience of products outside the store area.</li>
                         </ul>

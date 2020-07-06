@@ -4,7 +4,7 @@
         <div class="col-lg-6 hidden-lg-down text-col">
           <ul class="list-inline">
             <li class="list-inline-item"><i class="fas fa-phone-alt"></i> 020-800-456-747</li>
-            <li class="list-inline-item">Free shipping on orders over $300</li>
+            <li class="list-inline-item">Free shipping on orders over $30</li>
           </ul>
         </div>
         <div class="col-lg-6 d-flex justify-content-end">

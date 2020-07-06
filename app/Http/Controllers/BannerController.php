@@ -27,7 +27,7 @@ class BannerController extends Controller
             [
                 'title'             => 'bail|required|string|min:3|max:100',
                 'content'           => 'bail|required|string|min:0|max:20000',
-                'files'             => 'bail|required|file|image|mimes:jpeg|max:10240',
+                'files'             => 'bail|required|file|image|mimes:png,jpg,jpeg|max:10240',
             ],
         );
 

@@ -94,8 +94,8 @@
                                 <strong>${{Cart::tax()}}</strong>
                             </li>
                             <li class="d-flex justify-content-between">
-                                <span>Total</span>
-                                <strong class="text-primary price-total">${{Cart::total()}}</strong>
+                                <span><strong style="font-size: 20px">Total</strong> </span>
+                                <strong class="text-cart price-total">${{Cart::total()}}</strong>
                             </li>
                         </ul>
                     </div>
