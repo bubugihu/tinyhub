@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'Update Banner')
+@section('title', 'Update Banner - Admin')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
     <div class="container-fluid px-xl-5">

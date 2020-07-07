@@ -4,9 +4,14 @@
 <div class="hero hero-page padding-small">
   <div class="container">
     <div class="row d-flex">
-      <div class="col-lg-9 ">
+      <div class="col-lg-12 ">
         <h1>Cart</h1>
       </div>
+      <div class="row">
+        <div class="col-md-12">
+            {{ Breadcrumbs::render('cart') }}
+        </div>
+    </div>
     </div>
   </div>
 </div>
@@ -79,7 +84,7 @@
                 </div>
                 <div class="col-2"><span>$</span><span>{{number_format($cart->price*$cart->qty, 0, '.', ',')}}</span></div>
                 <div class="col-1 ">
-                      <a href="{{url('cart/shopping/removeItem/'.$cart->rowId)}}" class="badge badge-warning p-2" onclick="return confirm('Do you want to remove ?');"><i class="delete fa fa-trash"></i></a>
+                      <a href="{{url('cart/shopping/removeItem/'.$cart->rowId)}}" class="badge badge-danger p-2" onclick="return confirm('Do you want to remove ?');"><i class="delete fa fa-trash text-white"></i></a>
                 </div>
             </div>
           </div>
@@ -89,8 +94,8 @@
   </div>
   </div>
   <div class="container">
-    <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row">
-      <strong style="color: #fd7e14; font-weight: 600" class="btn login-btn mr-10">SubTotal:</strong>
+    <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row py-5">
+      <strong style="color: #fd7e14; font-weight: 600" class="login-btn mr-10">SubTotal:</strong>
       <strong class="mr-200 ml-70" style="color: #fd7e14; font-weight: 600; margin-left: 70px;margin-right: 200px">${{Cart::pricetotal()}}</strong></div>
   </div>
 </section>
@@ -98,7 +103,7 @@
     <div class="container">
       <div class="row">                         
         <div class="col-lg-12 text-center CTAs">
-          <a href="{{route('homepage')}}" style="margin-right: 30px" >Back to HomePage</a>
+          <a href="{{route('homepage')}}" class="btn btn-dark btn-lg wide" style="margin-right: 30px" >Back to Homepage</a>
           <a href="{{ url('checkout') }}" class="btn btn-template btn-lg wide">Proceed to checkout</a></div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 @extends('users.layout.layout')
-@section('title', 'Product Details')
+@section('title', 'Product Details - Tinyhub')
 @section('content')
 <!-- Product Title: Peoduct Details -->
 <div class="hero hero-page padding-small">

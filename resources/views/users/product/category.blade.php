@@ -1,5 +1,5 @@
 @extends('users.layout.layout')
-@section('title', 'Category')
+@section('title', 'Category - Tinyhub')
 @section('content')
 
 <!-- Product Title -->
@@ -27,7 +27,7 @@
                     <hr width="100%" style="margin-left: 0;">
                     
                     @foreach($categoryGlobal as $c)
-                    <h6><a href="{{url('searchCate/'.$c->category_name)}}">{{$c->category_name}}</a></h6><br/>
+                    <h6><i class="fas fa-chevron-right"></i>&nbsp; <a class="filter-li" href="{{url('searchCate/'.$c->category_name)}}">{{$c->category_name}}</a></h6><br/>
                     @endforeach
     
                 </div>
@@ -37,7 +37,7 @@
                     <hr width="100%" style="margin-left: 0;">
 
                     @foreach($brandGlobal as $b)
-                    <h6><a href="{{url('searchBrand/'.$b->brand_name)}}">{{$b->brand_name}}</a></h6><br/>
+                    <h6><i class="fas fa-chevron-right"></i> &nbsp;<a class="filter-li" href="{{url('searchBrand/'.$b->brand_name)}}">{{$b->brand_name}}</a></h6><br/>
                     @endforeach
 
                 </div>

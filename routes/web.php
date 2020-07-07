@@ -147,7 +147,7 @@ Route::get('logout', function () {
 })->name('logout');
 //feedback
 Route::post('feedback/postFeedback', 'FeedbackController@postFeedback');
-//////////////////////////// User cart
+//////////////////////////// User 
 //////////////category
 Route::get('category',[ 
     'as' => 'category',
@@ -174,7 +174,9 @@ Route::get('product-detail/{id}', [
 // //example image product
 //Route::get('product-detail/{id}', 'ProductController@imageProduct');
 // check cart
-Route::get('cart', 'CartController@cart');
+Route::get('cart', [
+    'as' => 'cart',
+    'uses' => 'CartController@cart']);
 //buy now
 Route::post('cart/shopping', 'CartController@shoppingCart');
 Route::get('cart/shopping', 'CartController@cart');

@@ -1,5 +1,5 @@
 @extends('users.layout.layout')
-@section('title', 'Thank You')
+@section('title', 'Thank You - Tinyhub')
 @section('content')
     <section class="thanyou">
         <div class="container py-5">

@@ -1,5 +1,5 @@
 @extends('users.layout.layout')
-@section('title', 'Contact-us')
+@section('title', 'Contact us - Tinyhub')
 @section('content')
 <div class="hero hero-page padding-small">
   <div class="container">
@@ -34,7 +34,7 @@
                                   <form action="{{url('feedback/postFeedback')}}" method="POST" >
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Full Name</label>
+                                      <label class="form-control-label text-uppercase">Full Name <span class="required">*</span></label>
                                       <input type="text" class="form-control @error('feedbackName') is-invalid @enderror" name="feedbackName">
                                       @error('feedbackName')
                                       <span class="invalid-feedback" role="alert">
@@ -52,7 +52,7 @@
                                       @enderror
                                     </div>
                                     <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Email</label>
+                                      <label class="form-control-label text-uppercase">Email <span class="required">*</span></label>
                                       <input type="email" class="form-control @error('feedbackEmail') is-invalid @enderror" name="feedbackEmail">
                                       @error('feedbackEmail')
                                       <span class="invalid-feedback" role="alert">
@@ -79,7 +79,7 @@
                                       @enderror
                                     </div>
                                     <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Message</label>
+                                      <label class="form-control-label text-uppercase">Message <span class="required">*</span></label>
                                       <textarea class="form-control @error('feedbackContent') is-invalid @enderror" id="exampleFormControlTextarea1" name="feedbackContent" rows="3"></textarea>
                                       @error('feedbackContent')
                                       <span class="invalid-feedback" role="alert">

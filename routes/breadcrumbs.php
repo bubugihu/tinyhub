@@ -58,3 +58,9 @@
         $trail->parent('home');
         $trail->push('Search Products', route('search'));
     }); 
+
+    // Home > Cart 
+    Breadcrumbs::for('cart', function ($trail) {
+        $trail->parent('home');
+        $trail->push('Cart', route('cart'));
+    });

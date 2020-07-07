@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'Create new banner')
+@section('title', 'Create New Banner - Admin')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
     <div class="container-fluid px-xl-5">
@@ -14,7 +14,7 @@
                     <form action="{{url('admin/banners/postCreateBanners')}}" method="post" enctype="multipart/form-data">
                       {{ csrf_field() }}
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">BannerTitle</label>
+                        <label class="form-control-label text-uppercase">BannerTitle <span class="required">*</span></label>
                         <input type="text" class="form-control @error('title') is-invalid @enderror" name="title">
                         @error('title')
                             <span class="invalid-feedback" role="alert">
@@ -23,7 +23,7 @@
                         @enderror
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Banner Content</label>
+                        <label class="form-control-label text-uppercase">Banner Content <span class="required">*</span></label>
                         <input type="text" class="form-control @error('content') is-invalid @enderror" name="content">
                         @error('content')
                             <span class="invalid-feedback" role="alert">
@@ -32,7 +32,7 @@
                         @enderror
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Upload Feature Image:</label><br>
+                        <label class="form-control-label text-uppercase">Upload Feature Image: <span class="required">*</span></label><br>
                         <input type="file" name="files"><br>
                           @error('files')
                             <strong style="color:red;font-size:14px;">{{$message}}</strong>

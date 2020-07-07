@@ -37,8 +37,8 @@ class ProductController extends Controller
         $this->validate(
             $request,
             [
-                'prdname'      => 'bail|required|unique:Product,product_title|min:3|max:255',
-                'prdprice'     => 'bail|required|min:0|max:20000',
+                'prdname'      => 'bail|required|unique:Product,product_title|regex:/^[a-zA-Z]{2,}/i|max:255',
+                'prdprice'     => 'bail|required|min:0|max:10000',
                 'prdcate'      => 'bail|required|not_in:0',
                 'prdbrand'     => 'bail|required|not_in:0',
                 'prdWarranty'  => 'required',
@@ -49,12 +49,12 @@ class ProductController extends Controller
             [
                 'prdname.required'            => 'Product title can not be blank !',
                 'prdname.unique'              => 'Product title has already existed !',
-                'prdname.string'              => 'Product title must be string !',
+                'prdname.regex'               => 'Product title has 2 character and must be string, can not start with number !',
                 'prdname.min'                 => 'Product title has min 3 characters !',
                 'prdname.max'                 => 'Product title has max 255 characters !',
                 'prdprice.required'           => 'Price can not be blank !',
                 'prdprice.min'                => 'Price has min >= 0 !',
-                'prdprice.max'                => 'Price has max <= 20000 !',
+                'prdprice.max'                => 'Price has max <= 10000 !',
                 'prdcate.required'            => 'Please choose one of them !',
                 'prdbrand.required'           => 'Please choose one of them !',
                 'prdWarranty.required'        => 'Warranty Period can not be blank !',
@@ -65,13 +65,13 @@ class ProductController extends Controller
         );
 
         $p = new Product();
-        $p->product_title = $request->prdname;
-        $p->price = $request->prdprice;
-        $p->brand_id = $request->prdbrand;
-        $p->category_id = $request->prdcate;
-        $p->warranty_period = $request->prdWarranty;
-        $p->short_descriptions = $request->sdescription;
-        $p->long_descriptions = $request->ldescription;
+        $p->product_title       = trim($request->prdname);
+        $p->price               = trim($request->prdprice);
+        $p->brand_id            = trim($request->prdbrand);
+        $p->category_id         = trim($request->prdcate);
+        $p->warranty_period     = trim($request->prdWarranty);
+        $p->short_descriptions  = trim($request->sdescription);
+        $p->long_descriptions   = trim($request->ldescription);
 
 
         if ($request->hasFile('featureimg')) {
@@ -79,7 +79,7 @@ class ProductController extends Controller
             $extension = $file->getClientOriginalExtension();
 
             if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
-                return redirect("admin/product/createProduct")->with('Message', 'You can only upload image with file jpg/png/jpeg');
+                return redirect("admin/product/createProduct")->with(['flash_level' => 'danger', 'flash_message' => 'You can only upload image with file jpg/png/jpeg !']);
             }
             $imageName = $file->getClientOriginalName();
             $file->move("img/feature/", $imageName);
@@ -88,13 +88,13 @@ class ProductController extends Controller
             $imageName = "";
         }
         $p->save();
-
+        
         $gallery = new Gallery();
         if ($request->hasFile('galleryimg')) {
             $fileGL = $request->file('galleryimg');
             $ext   = $fileGL->getClientOriginalExtension();
             if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
-                return Redirect('admin/product/createProduct')->with('Message', 'You can only upload image with file jpg/png/jpeg');
+                return Redirect('admin/product/createProduct')->with(['flash_level' => 'danger', 'flash_message' => 'You can only upload image with file jpg/png/jpeg !']);
             }
             $nameGlImg = $fileGL->getClientOriginalName();
             $fileGL->move("img/gallery", $nameGlImg);
@@ -125,8 +125,8 @@ class ProductController extends Controller
         $this->validate(
             $request,
             [
-                'prdname'      => 'bail|required|min:3|max:255',
-                'prdprice'     => 'bail|required|min:0|max:20000',
+                'prdname'      => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255',
+                'prdprice'     => 'bail|required|min:0|max:10000',
                 'prdcate'      => 'bail|required|not_in:0',
                 'prdbrand'     => 'bail|required|not_in:0',
                 'prdWarranty'  => 'required',
@@ -135,11 +135,11 @@ class ProductController extends Controller
             ],
             [
                 'prdname.required'            => 'Product title can not be blank !',
-                'prdname.min'                 => 'Product title has min 3 characters !',
+                'prdname.regex'               => 'Product title has 2 character and must be string, can not start with number !',
                 'prdname.max'                 => 'Product title has max 255 characters !',
                 'prdprice.required'           => 'Price can not be blank !',
                 'prdprice.min'                => 'Price has min >= 0 !',
-                'prdprice.max'                => 'Price has max <= 20000 !',
+                'prdprice.max'                => 'Price has max <= 10000 !',
                 'prdcate.required'            => 'Please choose one of them !',
                 'prdbrand.required'           => 'Please choose one of them !',
                 'prdWarranty.required'        => 'Warranty Period can not be blank !',
@@ -148,13 +148,13 @@ class ProductController extends Controller
             ]
         );
 
-        $p->product_title = $request->prdname;
-        $p->price = $request->prdprice;
-        $p->brand_id = $request->prdbrand;
-        $p->category_id = $request->prdcate;
-        $p->warranty_period = $request->prdWarranty;
-        $p->short_descriptions = $request->sdescription;
-        $p->long_descriptions = $request->ldescription;
+        $p->product_title       = trim($request->prdname);
+        $p->price               = trim($request->prdprice);
+        $p->brand_id            = trim($request->prdbrand);
+        $p->category_id         = trim($request->prdcate);
+        $p->warranty_period     = trim($request->prdWarranty);
+        $p->short_descriptions  = trim($request->sdescription);
+        $p->long_descriptions   = trim($request->ldescription);
 
 
         if ($request->hasFile('featureimg')) {
@@ -162,7 +162,7 @@ class ProductController extends Controller
             $extension = $file->getClientOriginalExtension();
 
             if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
-                return redirect("admin/product/updateProduct")->with('Message', 'You can only upload image with file jpg/png/jpeg');
+                return redirect("admin/product/updateProduct")->with(['flash_level' => 'danger','flash_message' => 'You can only upload image with file jpg/png/jpeg !' ]);
             }
             $imageName = $file->getClientOriginalName();
             $file->move("img/feature/", $imageName);
@@ -177,7 +177,7 @@ class ProductController extends Controller
             $fileGL = $request->file('galleryimg');
             $ext   = $fileGL->getClientOriginalExtension();
             if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
-                return Redirect('admin/product/updateProduct')->with('Message', 'You can only upload image with file jpg/png/jpeg');
+                return Redirect('admin/product/updateProduct')->with(['flash_level' => 'danger','flash_message' => 'You can only upload multiple image with file jpg/png/jpeg !' ]);
             }
             $nameGlImg = $fileGL->getClientOriginalName();
             $fileGL->move("img/gallery", $nameGlImg);

@@ -1020,3 +1020,12 @@ li.breadcrumb-item.active {
     color: #fff!important;
     content: "/";
 }
+a.filter-li {
+    color: #ff6601;
+    font-weight: 500;
+}
+a.filter-li:hover {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}

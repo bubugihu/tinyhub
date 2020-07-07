@@ -14,7 +14,7 @@
 
                         <div class="form-group row">
                             <div class="col-6">
-                                <label class="form-control-label text-uppercase">User Name</label>
+                                <label class="form-control-label text-uppercase">User Name <span class="required">*</span></label>
                                 <input type="text" name="name" class="form-control @error('name') is-invalid @enderror">
 
                                 @error('name')
@@ -25,7 +25,7 @@
 
                             </div>
                             <div class="col-6">
-                                <label class="form-control-label text-uppercase">Full Name</label>
+                                <label class="form-control-label text-uppercase">Full Name <span class="required">*</span></label>
                                 <input type="text" name="fullname" class="form-control  @error('fullname') is-invalid @enderror">
 
                                 @error('fullname')
@@ -38,7 +38,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-6">
-                                <label class="form-control-label text-uppercase">BirthDay</label>
+                                <label class="form-control-label text-uppercase">BirthDay <span class="required">*</span></label>
                                 <input type="date" name="dob" class="form-control  @error('dob') is-invalid @enderror" min="1900-01-01" max="2006-12-31">
                                 @error('dob')
                                 <span class="invalid-feedback" role="alert">
@@ -47,7 +47,7 @@
                                 @enderror
                             </div>
                             <div class="col-6">
-                                <label class="form-control-label text-uppercase">Gender</label>
+                                <label class="form-control-label text-uppercase">Gender <span class="required">*</span></label>
                                 <div class="row">
                                     <div class="col-12 mt-1 ml-0">
                                         <div class="custom-control custom-radio custom-control-inline">
@@ -68,7 +68,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-6">
-                                <label class="form-control-label text-uppercase">Email</label>
+                                <label class="form-control-label text-uppercase">Email <span class="required">*</span></label>
                                 <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror">
 
                                 <span id="alert1" class="text-red"></span>
@@ -81,7 +81,7 @@
 
                             </div>
                             <div class="col-6">
-                                <label class="form-control-label text-uppercase">Phone Number</label>
+                                <label class="form-control-label text-uppercase">Phone Number <span class="required">*</span></label>
                                 <input type="text" name="phone" placeholder="0909113114" id="phone" class="form-control @error('phone') is-invalid @enderror">
                                 <span id="alert2" class="text-red"></span>
                                 @error('phone')
@@ -94,7 +94,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-6">
-                                <label class="form-control-label text-uppercase">Password</label>
+                                <label class="form-control-label text-uppercase">Password <span class="required">*</span></label>
                                 <input type="password" name="password" class="form-control @error('password') is-invalid @enderror">
 
                                 @error('password')
@@ -105,7 +105,7 @@
 
                             </div>
                             <div class="col-6">
-                                <label class="form-control-label text-uppercase">Confirm Password</label>
+                                <label class="form-control-label text-uppercase">Confirm Password <span class="required">*</span></label>
                                 <input type="password" name="password_confirmation" class="form-control">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -115,7 +115,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label text-uppercase">Address</label>
+                            <label class="form-control-label text-uppercase">Address <span class="required">*</span></label>
                             <textarea name="address" id="" rows="3" class="form-control @error('address') is-invalid @enderror"></textarea>
 
                             @error('address')
@@ -130,7 +130,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="form-group row mb-0">
-                        <div class="col-md-12 offset-md-4">
+                        <div class="col-md-12 text-center">
                             <button type="reset" class="btn btn-dark">
                                 {{ __('Reset') }}
                             </button>

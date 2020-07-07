@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'Create Brands')
+@section('title', 'Create New Brands - Admin')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
     <div class="container-fluid px-xl-5">
@@ -11,6 +11,11 @@
                 <h6 class="text-uppercase mb-0">Create new Brand</h6>
               </div>
               <div class="card-body">
+                  @if(Session::has('flash_message'))
+                    <div class="alert alert-{!! Session::get('flash_level') !!}">
+                    {!!Session::get('flash_message')!!}
+                    </div>
+                  @endif 
                   <form action="{{url("admin/brands/postBrands")}}" method="POST" enctype="multipart/form-data">
                       {{ csrf_field() }}
                       <div class="form-group">
