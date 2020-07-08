@@ -19,7 +19,7 @@ class TableProduct extends Migration
             $table->increments('id');   //primary key
             $table->string('product_title');
             $table->double('price');
-            $table->longText('short_descriptions')->nullable()->default('Not Description');
+            $table->longText('short_descriptions')->default('Not Description');
             $table->longText('long_descriptions')->default('Not Description');
             $table->integer('status')->default(0);           //còn hàng hay ko ? 0 hết, 1 còn
             $table->integer('sold_out')->default(0);        //số lượng đã bán
