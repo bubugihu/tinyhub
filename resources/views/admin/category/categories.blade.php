@@ -21,6 +21,7 @@
                 <thead>
                   <tr>
                     <th>Categories ID</th>
+                    <th>Categories Image</th>
                     <th>Categories Title</th>
                     <th>Description</th>
                     <th>Action</th>
@@ -30,6 +31,7 @@
                   @foreach($cates as $cate)
                   <tr>
                     <th scope="row" class="align-middle">{{$cate->id}}</th>
+                    <td class="align-middle">{{$cate->category_image}}</td>
                     <td class="align-middle">{{$cate->category_name}}</td>
                     <td class="align-middle">{{$cate->description}}</td>
                     <td class="align-middle">

@@ -14,7 +14,7 @@ class CategoryController extends Controller
     //Admin Category
     public function categories()
     {
-        $cates = Category::paginate(5);
+        $cates = Category::paginate(9);
         return view('admin.category.categories', compact('cates'));
     }
 
@@ -98,7 +98,7 @@ class CategoryController extends Controller
 
     //User Category
     public function category(){
-        $products = Product::where('status', '=', 0)->paginate(5);
+        $products = Product::where('status', '=', 0)->paginate(9);
         $message = 'a';
         return view('users.product.category', compact('products', 'message'));
     }
@@ -118,7 +118,7 @@ class CategoryController extends Controller
                     ->orderBy('product.price',$orderByPrice)
                     ->orderBy('product.product_title', $orderByName)
                     ->select('product.*', 'brand.brand_name', 'category.category_name')
-                    ->paginate(5);
+                    ->paginate(9);
         if($fromPrice > $toPrice){
             $message = 'Price is invalid !!!';
             return view('users.product.category', compact('products','message'));
@@ -134,7 +134,7 @@ class CategoryController extends Controller
     public function filterCate($in){
         $message = 'a';
         $category = Category::where('category_name',$in)->first();
-        $products = Product::where('category_id',$category->id)->where('status',0)->paginate(5);
+        $products = Product::where('category_id',$category->id)->where('status',0)->paginate(9);
         return view('users.product.category', compact('products','message'));
     }
 
@@ -142,7 +142,7 @@ class CategoryController extends Controller
     public function filterBrand($in){
         $message = 'a';
         $brand = Brands::where('brand_name',$in)->first();
-        $products = Product::where('brand_id',$brand->id)->where('status',0)->paginate(5);
+        $products = Product::where('brand_id',$brand->id)->where('status',0)->paginate(9);
         return view('users.product.category', compact('products','message'));
     }
 
@@ -156,7 +156,7 @@ class CategoryController extends Controller
                 $products = null;
                 return view('users.product.category', compact('message','products'));
             } 
-            $products = Product::where('price','>=',$fromPrice)->where('price','<=',$toPrice)->where('status',0)->paginate(5);
+            $products = Product::where('price','>=',$fromPrice)->where('price','<=',$toPrice)->where('status',0)->paginate(9);
                 if($products->count() > 0 )
                 return view('users.product.category', compact('products','message'));
 

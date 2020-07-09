@@ -30,7 +30,7 @@
                     @foreach($brand as $brand)
                     <tr>
                       <th scope="row" class="align-middle">{{$brand->id}}</th> 
-                      <td class="align-middle"><img src="{{url("img/feature/" .$brand->brand_image)}}" alt="" width="90"></td>
+                      <td class="align-middle"><img src="{{url("img/brands/" .$brand->brand_image)}}" alt="" width="90"></td>
                       <td class="align-middle">{{$brand->brand_name}}</td>
                       <td row="2" class="align-middle">{{ substr(strip_tags($brand->description), 0, 200)}}
                         {{ strlen(strip_tags($brand->description)) > 50 ? " ... ReadMore" : "" }}</td>

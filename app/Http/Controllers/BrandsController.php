@@ -23,7 +23,7 @@ class BrandsController extends Controller
             $request,
             [
                 'brandTitle'           => 'bail|required|unique:Brand,brand_name|regex:/^[a-zA-Z]{2,}/i|max:255',
-                'brandDescription'     => 'bail|required|max:255',
+                'brandDescription'     => 'required',
                 'brandimg'             => 'required',
                
             ],
@@ -31,9 +31,8 @@ class BrandsController extends Controller
                 'brandTitle.required'            => 'Brand title can not be blank !',
                 'brandTitle.unique'              => 'Brand title has already existed !',
                 'brandTitle.regex'               => 'Brand title has 2 character and must be string, can not start with number !',
-                'brandTitle.max'                 => 'Brand title has max 255 characters !',
+                'brandTitle.max'                 => 'Brand title has max 500 characters !',
                 'brandDescription.required'      => 'Brand Description can not be blank !',
-                'brandDescription.max'           => 'Brand Description has max 255 characters !s',
                 'brandimg.required'              => 'Brand Image can not be blank !',
             ]
         );
@@ -74,15 +73,14 @@ class BrandsController extends Controller
             $request,
             [
                 'brandTitle'           => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255',
-                'brandDescription'     => 'bail|required|max:255',
+                'brandDescription'     => 'required',
                
             ],
             [
                 'brandTitle.required'            => 'Brand title can not be blank !',
                 'brandTitle.regex'               => 'Brand title has 2 character and must be string, can not start with number !',
-                'brandTitle.max'                 => 'Brand title has max 255 characters !',
+                'brandTitle.max'                 => 'Brand title has max 500 characters !',
                 'brandDescription.required'      => 'Brand Description can not be blank !',
-                'brandDescription.max'           => 'Brand Description has max 255 characters !',
 
             ]
         );

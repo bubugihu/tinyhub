@@ -25,17 +25,20 @@
             </div>
             <div class="row inner-box py-3">
                 @foreach($product as $new)
-                    <div class="col-md-3">
-                        <div class="item-hp card-body card mb-3">
-                            <a href="{{ url('product-detail/'.$new->id)}}"><img src="img/feature/{{$new->feature_image}}" alt="" class="img-fluid" width="300"></a>
-                            <div class="item-pd-info m-2">
-                                <h6 class="no-margin"><a href="{{ url('product-detail/'.$new->id)}}">{{$new->product_title}}</a></h6>
-                                <p class="price-dt">$ {{$new->price}}</p>
-                                <a href="{{url('cart/addCart/'.$new->id)}}" class="cart-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                <a href="#"><button class="buynow">BUY NOW</button></a>
-                            </div>
+                <div class="col-xl-3">
+                    <div class="product_grid card-body card d-flex justify-content-center align-items-center">
+                        <div class="product_image d-flex justify-content-center align-items-center" style="min-height: 220px;">
+                            <a href="{{ url('product-detail/'.$new->id)}}" class="image ">
+                                <!-- <img class="pic_2 rounded" src="img/5.jpg" alt=""> -->
+                                <img class="img-fluid rounded" src="{{asset("img/feature/$new->feature_image")}}" alt="" width="200" height="auto">
+                            </a>
+                        </div>
+                        <div class="product_content">
+                            <h3 class="title"><a href="{{ url('product-detail/'.$new->id)}}">{{$new->product_title}}</a></h3>
+                            <div class="price">$ {{$new->price}}</div>
                         </div>
                     </div>
+                </div>
                 @endforeach
             </div>
         </div>

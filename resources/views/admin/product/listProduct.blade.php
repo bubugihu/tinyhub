@@ -33,9 +33,9 @@
                   @foreach($products as $product)
                   <tr>
                     <th scope="row">{{$product->id}}</th>
-                    <td><img src="{{asset('img/feature/'.$product->feature_image)}}" alt="" width="60"></td>
+                    <td height="90" class="align-items-center"><img src="{{asset('img/feature/'.$product->feature_image)}}" alt="" width="70" height="auto"></td>
                     <td>{{$product->product_title}}</td>
-                    <td>{{$product->price}}</td>
+                    <td>${{$product->price}}</td>
                     <td>{{$product->sold_out}}</td>
                     <td>{{$product->status}}</td>
                     <td>{{$product->created_at}}</td>
