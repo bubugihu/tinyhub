@@ -64,3 +64,9 @@
         $trail->parent('home');
         $trail->push('Cart', route('cart'));
     });
+
+    // Home > Cart 
+    Breadcrumbs::for('checkout', function ($trail) {
+        $trail->parent('home');
+        $trail->push('Checkout', route('checkout'));
+    });

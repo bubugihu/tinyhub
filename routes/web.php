@@ -38,7 +38,6 @@ Route::get('admin/customer/listCustomer', 'CustomerController@listCustomer');;
 Route::get('admin/customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
 Route::post('admin/customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
 Route::get('admin/customer/deleteCustomer/{id}', 'CustomerController@deleteCustomer');
-
 //feedback
 Route::get('admin/feedback/feedbackList', 'FeedbackController@feedbackList');
 Route::get('admin/feedback/deleteFeedback/{id}', 'FeedbackController@deleteFeedback');
@@ -54,8 +53,6 @@ Route::get('admin/product/updateProduct/{id}', 'ProductController@updateProduct'
 Route::post('admin/product/postUpdate/{id}', 'ProductController@postUpdate');
 Route::get('admin/product/deleteProduct/{id}', 'ProductController@deleteProduct');
 Route::post('users/product/createCommentUser/{idProduct}/{idCustomer}', 'ProductController@postCommentUser');
-
-
 //category
 Route::get('admin/category/categories', 'CategoryController@categories');
 Route::get('admin/category/createCategories', 'CategoryController@createCate');
@@ -73,14 +70,11 @@ Route::get('admin/order/listOrder', 'OrderController@listOrder');
 Route::get('admin/order/onOrderStatus/{id}', 'OrderController@onOrderStatus');
 Route::get('admin/order/offOrderStatus/{id}', 'OrderController@offOrderStatus');
 Route::get('admin/order/listOrderDetails/{id}', 'CartController@orderDetails');
-
 //comment
 Route::get('admin/comment/listComment', 'CommentController@listComment');
 Route::get('admin/comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
 Route::get('admin/comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
 Route::get('admin/comment/deleteComment/{id}', 'CommentController@deleteComment');
-
-
 //banner
 Route::get('admin/banners/listBanner' , 'BannerController@listBanner');
 Route::get('admin/banners/deleteBanners/{id}', 'BannerController@deleteBanners');
@@ -193,7 +187,9 @@ Route::post('cart/shopping/decreItem', 'CartController@decreCart');
 // Route::post('cart/shopping/removeItem', 'CartController@removeItem');
 Route::get('cart/shopping/removeItem/{id}', 'CartController@removeItem');
 //check out cart
-Route::get('checkout' , 'CartController@checkout')->middleware('auth');
+Route::get('checkout' , [
+    'as' => 'checkout',
+    'uses' => 'CartController@checkout'])->middleware('auth');
 //order review
 Route::post('cart/shopping/order-review', 'CartController@orderReview');
 Route::get('cart/shopping/order-review', function () {

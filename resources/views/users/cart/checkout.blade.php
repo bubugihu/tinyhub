@@ -5,17 +5,21 @@
     <div class="hero hero-page padding-small">
         <div class="container">
             <div class="row d-flex">
-                <div class="col-lg-9 ">
+                <div class="col-lg-12">
                     <h1>Check Out</h1>
-                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ Breadcrumbs::render('checkout') }}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <section class="checkout">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 mx-auto">
                     <div class="tab-content">
                         <div id="address" class="active tab-block">
                                 <!--Invoice Address -->
@@ -67,7 +71,7 @@
                                     </div>
                                 </div>
                                 <div class="CTAs d-flex justify-content-between flex-column flex-lg-row">
-                                    <a href="{{ url('cart') }}" class="btn btn-template-outlined wide prev">Back to Cart</a>
+                                    <a href="{{ url('cart') }}" class="btn btn-dark wide prev">Back to Cart</a>
                                     <button type="submit" class="btn btn-template wide next">Continue to Order Review</button>
                                 </div>
                                 </form>
@@ -76,8 +80,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 tab-content">
-                    <div class="block-body order-summary">
+                <div class="col-lg-4 tab-content mx-auto">
+                    <div class="block-body order-summary card card-body">
                         <h6 class="text-uppercase">Order Summary</h6>
                         <p>Shipping and additional costs are calculated based on values you have entered</p>
                         <ul class="order-menu list-unstyled">

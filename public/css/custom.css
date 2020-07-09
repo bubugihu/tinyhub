@@ -37,7 +37,7 @@ span.required {
 button.admin-btn:hover {
     background-color: #fff;
     border: 2px solid #000;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 button.admin-btn {
     transition: ease 0.5s;

@@ -99,10 +99,8 @@
                 
             </div><br>
             <div class="row py-3">
-                <div class="col-md-12">
-                    <nav aria-label="Page navigation">
+                <div class="col-md-12 justify-content-end">
                         {{ $products->links() }}
-                    </nav>
                 </div>
             </div>
         </div>
