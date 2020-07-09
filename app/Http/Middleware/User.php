@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
+use Illuminate\Support\Facades\Auth;
 class User
 {
     /**
@@ -14,7 +14,10 @@ class User
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {
+    {   
+        if(!Auth::check())
+        return abort(404);
+        else
         return $next($request);
     }
 }

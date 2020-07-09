@@ -18,14 +18,14 @@
 <section class="brand py-5">
     <div class="container card card-body py-5">
         @foreach ($b as $b)
-            @if(($b->id % 2) != 0)
+            @if(($stt % 2) != 0)
                 <div class="row py-5 p-4">
                     <div class="col-md-12">
                         <div class="row py-3">
                             <div class="col-md-4 text-center">
-                                <img class="img-fluid" src="{{url("img/feature/". $b->brand_image)}}" width="100%" alt="">
+                                <img  class="img-fluid" src="{{asset("img/brands/".$b->brand_image)}}" width="100%" alt="">
                             </div>
-                            <div class="col-md-8">
+                            <div id="{{$stt++}}"  class="col-md-8">
                                 <h1 class="text-uppercase">{{$b->brand_name}}</h1>
                                 <p style="text-align: justify;">{{$b->description}}</p>
                             </div>
@@ -34,11 +34,11 @@
                 @else
                     <div class="col-md-12">
                         <div class="row py-3">
-                            <div class="col-md-8">
+                            <div id="{{$stt++}}"  class="col-md-8">
                                 <h1 class="text-uppercase">{{$b->brand_name}}</h1>
                                 <p style="text-align: justify;">{{$b->description}}</p>
                             </div>
-                            <div class="col-md-4 text-center"><img class="img-fluid" src="{{url("img/feature/". $b->brand_image)}}" width="100%" alt=""></div>
+                            <div class="col-md-4 text-center"><img class="img-fluid" src="{{url("img/brands/". $b->brand_image)}}" width="100%" alt=""></div>
                         </div>
                     </div> 
                 </div>

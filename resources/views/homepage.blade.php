@@ -35,7 +35,7 @@
                   <div class="item d-flex align-items-center">
                     <div class="icon dx"><i class="fas fa-shipping-fast"></i></div>
                     <div class="text">
-                      <h6 class="no-margin text-uppercase">Free shipping &amp; return</h6><span>Free Shipping over $300</span>
+                      <h6 class="no-margin text-uppercase">Free shipping &amp; return</h6><span>Free Shipping over $30</span>
                     </div>
                   </div>
                 </div>

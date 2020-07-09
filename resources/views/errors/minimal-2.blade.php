@@ -58,14 +58,11 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            <div class="code">
-                @yield('code')
-            </div>
+            
 
             <div class="message" style="padding: 10px;">
                 @yield('message')
-                <img class="img-fluid" src="img/404.gif" alt="" width="70%"><br>
-                <a href="homepage"><button class="btn home-btn">Go to homepage</button></a>
+             
             </div>
         </div>
     </body>

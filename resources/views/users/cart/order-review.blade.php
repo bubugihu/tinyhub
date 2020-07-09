@@ -111,7 +111,7 @@
                             <p>Shipping and handling: </p>
                           </div>
                           <div class="col-md-6">
-                            <p><strong>$0.00</strong></p>
+                            <p>$<strong>0.00</strong></p>
                           </div>
                         </div>
                         <div class="row">
@@ -119,7 +119,7 @@
                             <p>Tax: </p>
                           </div>
                           <div class="col-md-6">
-                            <p><strong>${{Cart::tax()}}</strong></p>
+                            <p>$<strong>{{Cart::tax()}}</strong></p>
                           </div>
                         </div>
                         <div class="row">

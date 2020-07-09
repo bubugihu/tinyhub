@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -46,6 +46,14 @@
                 font-size: 18px;
                 text-align: center;
             }
+            .home-btn{
+                background: #f47635;
+                padding: 10px 30px;
+                border: none;
+                border-radius: 40px;
+                font-size: 17px;
+                color: #fff;
+            }
         </style>
     </head>
     <body>
@@ -56,9 +64,8 @@
 
             <div class="message" style="padding: 10px;">
                 @yield('message')
-                <img class="img-fluid" src="img/404.gif" alt="" width="70%"><br>
-                <a href="homepage"><button class="btn home-btn">Go to homepage</button></a>
+                
             </div>
         </div>
     </body>
-</html>
+</html> --}}

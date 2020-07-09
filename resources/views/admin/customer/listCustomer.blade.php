@@ -52,10 +52,21 @@
                               <div class="container">
                                 <div class="row">
                                   <div class="col-md-6">
+                                    <img src="{{asset('img/'.$customer->feature)}}" class="rounded mx-auto d-block" alt="" width="50%">
+                                  </div>
+                                  <div class="col-md-6">
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">User ID</label>
                                       <input type="text" class="form-control" value="{{$customer->id}}" readonly>
                                     </div>
+                                    <div class="form-group">
+                                      <label class="form-control-label text-uppercase">Full Name</label>
+                                      <input type="text" class="form-control" value="{{$customer->customer_name}}" readonly>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-6">
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Email</label>
                                       <input type="text" class="form-control" value="{{$customer->email}}" readonly>
@@ -71,10 +82,6 @@
                                   </div>
                                   <div class="col-md-6">
                                     <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Full Name</label>
-                                      <input type="text" class="form-control" value="{{$customer->customer_name}}" readonly>
-                                    </div>
-                                    <div class="form-group">
                                       <label class="form-control-label text-uppercase">BirthDay</label>
                                       <input type="date" class="form-control" value="{{$customer->dob}}" readonly>
                                     </div>
@@ -88,15 +95,7 @@
                                     </div>
                                   </div>
                                 </div>
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Picture</label>
-                                      <input type="text" class="form-control" value="{{$customer->feature}}" readonly>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="modal-footer">
+                                <div class="modal-footer d-flex justify-content-start">
                                   <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                                 </div>
                               </div>
@@ -106,8 +105,8 @@
                       </div>
                       <!-- Page Update Customer -->
                       <a href="{{ url('admin/customer/updateCustomer/'.$customer->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px; font-weight:100;"></i></a>
-                      <!-- Modal Delete Customer -->
-                      <a href="{{ url('admin/customer/deleteCustomer/'.$customer->id)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
+                      <!-- Modal Delete Customer With Status = 0 -->
+                      <!-- <a href="{{ url('admin/customer/deleteCustomer/'.$customer->id)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a> -->
                     </td>
                   </tr>
                   @endforeach

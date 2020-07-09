@@ -51,7 +51,9 @@ body{
     background: #fff!important;
 }
 
-.basket-header{
+ /* Cart */
+
+.basket-header {
     padding: 25px 20px;
     background: #f5f5f5;
     border-radius: 50px;

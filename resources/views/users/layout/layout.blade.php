@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,15 +26,16 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{asset("css/lightslider.css")}}">
 </head>
+
 <body>
 
-        <!-- NAV BAR --->
-        @include('users.layout.nav-bar') 
+    <!-- NAV BAR --->
+    @include('users.layout.nav-bar')
 
-        <!-- CONTENT WRAPPER CONTAINS PAGE --->
-        @yield('content')
-        <!-- FOOTER --->
-        @include('users.layout.footer')
+    <!-- CONTENT WRAPPER CONTAINS PAGE --->
+    @yield('content')
+    <!-- FOOTER --->
+    @include('users.layout.footer')
 
 
     <!-- JQUERY --->
@@ -52,4 +54,5 @@
     <!-- light Slider -->
     <script src="{{asset("js/lightslider.js")}}"></script>
 </body>
+
 </html>

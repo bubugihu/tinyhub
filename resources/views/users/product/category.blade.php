@@ -85,8 +85,8 @@
                     <div class="product_grid card-body card">
                         <div class="product_image">
                             <a href="{{ url('product-detail/'.$product->id)}}" class="image ">
-                                <img class="pic_2 rounded" src="img/5.jpg" alt="">
-                                <img class="pic_1 rounded" src="{{asset("img/feature/$product->feature_image")}}" alt="">
+                                <!-- <img class="pic_2 rounded" src="img/5.jpg" alt=""> -->
+                                <img class="rounded" src="{{asset("img/feature/$product->feature_image")}}" alt="">
                             </a>
                         </div>
                         <div class="product_content">

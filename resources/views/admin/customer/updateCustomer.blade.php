@@ -16,21 +16,21 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Full Name</label>
+                                            <label class="form-control-label text-uppercase">Full Name<span class="required">*</span></label>
                                             <input type="text" class="form-control" placeholder="{{$customer->customer_name}}" name="cus_customer_name">
                                             @if($errors->has('cus_customer_name'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('cus_customer_name')}}</small>
                                             @endif
                                         </div>
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">BirthDay</label>
+                                            <label class="form-control-label text-uppercase">BirthDay<span class="required">*</span></label>
                                             <input type="date" class="form-control" placeholder="{{$customer->dob}}" name="cus_dob">
                                             @if($errors->has('cus_dob'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('cus_dob')}}</small>
                                             @endif
                                         </div>
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Gender</label>
+                                            <label class="form-control-label text-uppercase">Gender<span class="required">*</span></label>
                                             <select class="form-control" name="cus_gender">
                                                 <option value="0">None</option>
                                                 <option value="Male">Male</option>
@@ -44,30 +44,22 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Phone</label>
+                                            <label class="form-control-label text-uppercase">Phone<span class="required">*</span></label>
                                             <input type="number" class="form-control" placeholder="{{$customer->phone}}" name="cus_phone">
                                             @if($errors->has('cus_phone'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('cus_phone')}}</small>
                                             @endif
                                         </div>
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Address</label>
+                                            <label class="form-control-label text-uppercase">Address<span class="required">*</span></label>
                                             <input type="text" class="form-control" placeholder="{{$customer->address}}" name="cus_address">
                                             @if($errors->has('cus_address'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('cus_address')}}</small>
                                             @endif
                                         </div>
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Picture</label>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">Upload</span>
-                                                </div>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputGroupFile01" name="cus_feature">
-                                                    <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
-                                                </div>
-                                            </div>
+                                            <label class="form-control-label text-uppercase">Picture <span class="required">*</span></label><br>
+                                            <input type="file" name="cus_feature"><br>
                                             @if($errors->has('cus_feature'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('cus_feature')}}</small>
                                             @endif
