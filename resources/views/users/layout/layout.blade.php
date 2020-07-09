@@ -22,10 +22,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
     <!--data table -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-    <!-- Na --->
-    <link rel="stylesheet" href="{{asset("css/product-details.css")}}">
-    <link rel="stylesheet" href="{{asset("css/product-list.css")}}">
-    <link rel="stylesheet" href="{{asset("css/google-fonts-poppins.css")}}">
     <!-- lightSlider -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{asset("css/lightslider.css")}}">

@@ -130,7 +130,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="form-group row mb-0">
-                        <div class="col-md-12 offset-md-4">
+                        <div class="col-md-12 text-center">
                             <button type="reset" class="btn btn-dark">
                                 {{ __('Reset') }}
                             </button>

@@ -4,9 +4,14 @@
 <div class="hero hero-page padding-small">
   <div class="container">
     <div class="row d-flex">
-      <div class="col-lg-9 ">
+      <div class="col-lg-12 ">
         <h1>Cart</h1>
       </div>
+      <div class="row">
+        <div class="col-md-12">
+            {{ Breadcrumbs::render('cart') }}
+        </div>
+    </div>
     </div>
   </div>
 </div>
@@ -47,8 +52,8 @@
                   <h6 class="text-center ml-4">{{++$stt}}</h6>
                 </div>
                 <div class="col-4">
-                  <div class="d-flex align-items-center"><img src="{{asset('img/feature/'.$cart->options->image)}}" alt="..." class="img-fluid" width="80">
-                    <div class="title"><a href="detail.html">
+                  <div class="d-flex align-items-center"><img src="{{asset('img/feature/'.$cart->options->image)}}" alt="..." class="img-fluid" width="60" height="60">
+                    <div class="title ml-3"><a href="detail.html">
                         <h5>{{$cart->name}}</h5><span class="text-muted">{{$cart->options->category}}</span>
                       </a></div>
                   </div>
@@ -79,27 +84,33 @@
                 </div>
                 <div class="col-2"><span>$</span><span>{{number_format($cart->price*$cart->qty, 0, '.', ',')}}</span></div>
                 <div class="col-1 ">
-                      <a href="{{url('cart/shopping/removeItem/'.$cart->rowId)}}" class="badge badge-warning p-2" onclick="return confirm('Do you want to remove ?');"><i class="delete fa fa-trash"></i></a>
+                      <a href="{{url('cart/shopping/removeItem/'.$cart->rowId)}}" class="badge badge-danger p-2" onclick="return confirm('Do you want to remove ?');"><i class="delete fa fa-trash text-white"></i></a>
                 </div>
             </div>
           </div>
+          <hr>
       @endforeach
-
     </div>
   </div>
   </div>
   <div class="container">
-    <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row">
-      <strong style="color: #fd7e14; font-weight: 600" class="btn login-btn mr-10">SubTotal:</strong>
-      <strong class="mr-200 ml-70" style="color: #fd7e14; font-weight: 600; margin-left: 70px;margin-right: 200px">${{Cart::pricetotal()}}</strong></div>
-  </div>
+      <div class="row">
+          <div class="col-md-12 justify-content-end">
+            <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row">
+              <div class="total-stick">
+                <strong class="mr-5"><span class="subtt">SubTotal:</span></strong>
+                <strong class="mr-4"><span class="subtt">${{Cart::pricetotal()}}</span></strong></div>
+              </div>
+          </div>
+          </div>
+      </div>
 </section>
 <section class="order-details no-padding-top"> 
     <div class="container">
       <div class="row">                         
         <div class="col-lg-12 text-center CTAs">
-          <a href="{{route('homepage')}}" style="margin-right: 30px" >Back to HomePage</a>
-          <a href="{{ url('checkout') }}" class="btn btn-template btn-lg wide">Proceed to checkout</a></div>
+          <a href="{{route('homepage')}}" class="btn btn-dark" style="margin-right: 30px" >Back to Homepage</a>
+          <a href="{{ url('checkout') }}" class="btn btn-template">Proceed to checkout</a></div>
       </div>
     </div>
 </section>

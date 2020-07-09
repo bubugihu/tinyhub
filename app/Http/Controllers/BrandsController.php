@@ -22,7 +22,7 @@ class BrandsController extends Controller
         $this->validate(
             $request,
             [
-                'brandTitle'           => 'bail|required|unique:Brand,brand_name|min:3|max:255',
+                'brandTitle'           => 'bail|required|unique:Brand,brand_name|regex:/^[a-zA-Z]{2,}/i|max:255',
                 'brandDescription'     => 'required',
                 'brandimg'             => 'required',
                
@@ -30,25 +30,25 @@ class BrandsController extends Controller
             [
                 'brandTitle.required'            => 'Brand title can not be blank !',
                 'brandTitle.unique'              => 'Brand title has already existed !',
-                'brandTitle.min'                 => 'Brand title has min 3 characters !',
-                'brandTitle.max'                 => 'Brand title has min 255 characters !',
+                'brandTitle.regex'               => 'Brand title has 2 character and must be string, can not start with number !',
+                'brandTitle.max'                 => 'Brand title has max 500 characters !',
                 'brandDescription.required'      => 'Brand Description can not be blank !',
                 'brandimg.required'              => 'Brand Image can not be blank !',
             ]
         );
         $b = new Brands();
-        $b->brand_name  = $request->brandTitle;
-        $b->description = $request->brandDescription;
+        $b->brand_name  = trim($request->brandTitle);
+        $b->description = trim($request->brandDescription);
 
         if ($request -> hasFile('brandimg')) {
             $file = $request -> file('brandimg');
             $ext = $file -> getClientOriginalExtension();
 
             if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
-                return redirect("admin/product/createBrands")->with('Message', 'You can only upload image with file jpg/png/jpeg');
+                return redirect("admin/product/createBrands")->with(['flash_level' => 'danger','flash_message' => 'You can only upload image with file jpg/png/jpeg !' ]);
             }
             $imageName = $file->getClientOriginalName();
-            $file->move("img/feature/", $imageName);    
+            $file->move("img/brands/", $imageName);    
             $b->brand_image = $imageName;
 
         } else {
@@ -72,30 +72,30 @@ class BrandsController extends Controller
         $this->validate(
             $request,
             [
-                'brandTitle'           => 'bail|required|min:3|max:255',
+                'brandTitle'           => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255',
                 'brandDescription'     => 'required',
                
             ],
             [
                 'brandTitle.required'            => 'Brand title can not be blank !',
-                'brandTitle.min'                 => 'Brand title has min 3 characters !',
-                'brandTitle.max'                 => 'Brand title has min 255 characters !',
+                'brandTitle.regex'               => 'Brand title has 2 character and must be string, can not start with number !',
+                'brandTitle.max'                 => 'Brand title has max 500 characters !',
                 'brandDescription.required'      => 'Brand Description can not be blank !',
 
             ]
         );
-        $b->brand_name  = $request->brandTitle;
-        $b->description = $request->brandDescription;
+        $b->brand_name  = trim($request->brandTitle);
+        $b->description = trim($request->brandDescription);
 
         if ($request -> hasFile('brandimg')) {
             $file = $request -> file('brandimg');
             $ext = $file -> getClientOriginalExtension();
-
+            
             if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
-                return redirect("admin/product/updateBrands")->with('Message', 'You can only upload image with file jpg/png/jpeg');
+                return redirect("admin/product/updateBrands")->with(['flash_level' => 'danger','flash_message' => 'You can only upload image with file jpg/png/jpeg !' ]);
             }
             $imageName = $file->getClientOriginalName();
-            $file->move("img/feature/", $imageName);    
+            $file->move("img/brands/", $imageName);    
             $b->brand_image = $imageName;
 
         } else {

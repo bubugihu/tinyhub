@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'Categories List')
+@section('title', 'Create New Category - Admin')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
   <div class="container-fluid px-xl-5">
@@ -11,6 +11,11 @@
               <h6 class="text-uppercase mb-0">Create new category</h6>
             </div>
             <div class="card-body">
+                @if(Session::has('flash_message'))
+                  <div class="alert alert-{!! Session::get('flash_level') !!}">
+                      {!!Session::get('flash_message')!!}
+                  </div>
+                @endif 
                 {{-- @include('admin.product.form-error') --}}
                 <form role="form" action="{{url("admin/category/postCate")}}" method="POST" enctype="multipart/form-data">
                   {{ csrf_field() }}

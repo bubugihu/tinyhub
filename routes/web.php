@@ -174,6 +174,10 @@ Route::get('category',[
     
 // Route::get('category', 'CategoryController@getcategories');
 Route::post('category/search', 'CategoryController@search');
+Route::get('category/search' ,[
+    'as' => 'search',
+    'uses' => 'CategoryController@category']);
+    
 Route::get('category/search' ,'CategoryController@category' );
 //search cate
 Route::get('searchCate/{in}', 'CategoryController@filterCate');
@@ -189,7 +193,9 @@ Route::get('product-detail/{id}', [
 // //example image product
 //Route::get('product-detail/{id}', 'ProductController@imageProduct');
 // check cart
-Route::get('cart', 'CartController@cart');
+Route::get('cart', [
+    'as' => 'cart',
+    'uses' => 'CartController@cart']);
 //buy now
 Route::post('cart/shopping', 'CartController@shoppingCart');
 Route::get('cart/shopping', 'CartController@cart');
@@ -206,7 +212,9 @@ Route::post('cart/shopping/decreItem', 'CartController@decreCart');
 // Route::post('cart/shopping/removeItem', 'CartController@removeItem');
 Route::get('cart/shopping/removeItem/{id}', 'CartController@removeItem');
 //check out cart
-Route::get('checkout' , 'CartController@checkout')->middleware('auth');
+Route::get('checkout' , [
+    'as' => 'checkout',
+    'uses' => 'CartController@checkout'])->middleware('auth');
 //order review
 Route::post('cart/shopping/order-review', 'CartController@orderReview');
 Route::get('cart/shopping/order-review', function () {

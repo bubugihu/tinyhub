@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'product list')
+@section('title', 'Product List - Admin')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
   <div class="container-fluid px-xl-5">
@@ -33,9 +33,9 @@
                   @foreach($products as $product)
                   <tr>
                     <th scope="row">{{$product->id}}</th>
-                    <td><img src="{{asset('img/feature/'.$product->feature_image)}}" alt="" width="60"></td>
+                    <td height="90" class="align-items-center"><img src="{{asset('img/feature/'.$product->feature_image)}}" alt="" width="70" height="auto"></td>
                     <td>{{$product->product_title}}</td>
-                    <td>{{$product->price}}</td>
+                    <td>${{$product->price}}</td>
                     <td>{{$product->sold_out}}</td>
                     <td>{{$product->status}}</td>
                     <td>{{$product->created_at}}</td>
