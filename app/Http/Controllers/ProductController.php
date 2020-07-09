@@ -119,12 +119,15 @@ class ProductController extends Controller
     // Function link to update page
     public function detailsProduct($id)
     {
+        $no=0;
         $pro = Product::join('category', 'product.category_id', '=', 'category.id')
             ->join('brand', 'product.brand_id', '=', 'brand.id')
             ->where('product.id', $id)
             ->select('category.category_name', 'brand.brand_name', 'product.*')->first();
-        $gallery = Gallery::where('product_id', $id)->get();
-        return view('admin.product.detailsProduct', compact('pro', 'gallery'));
+        $product = Product::find($id);
+        $galleryFea = Gallery::where('product_id', $id)->get();
+        $galleryThum = Gallery::where('product_id', $id)->get();
+        return view('admin.product.detailsProduct', compact('pro','product','galleryFea','galleryThum','no'));
     }
 
     // Function Update Product
@@ -219,10 +222,12 @@ class ProductController extends Controller
     public function productDetails($id)
     {
         $product = Product::find($id);
-        $gallery = Gallery::where('product_id', $id)->get();
+        $galleryFea = Gallery::where('product_id', $id)->get();
+        $galleryThum = Gallery::where('product_id', $id)->get();
         $category = Category::find($product->category_id);
         $brand = Brands::find($product->brand_id);
         $quantity = 1;
+        $no=0;
         //comment
         $comment = Comment::join('customer', 'comments.customer_id', '=', 'customer.id')
             ->join('users', 'customer.users_id', '=', 'users.id')
@@ -240,7 +245,7 @@ class ProductController extends Controller
             ->select('product.*')->take(4)->get();
 
         //End Similar Product
-        return view('users.product.productDetails', compact('product', 'gallery', 'category', 'brand', 'quantity', 'comment', 'customer', 'similar'));
+        return view('users.product.productDetails', compact('product','galleryFea','galleryThum', 'category', 'brand', 'quantity', 'comment', 'customer', 'similar','no'));
     }
 
     public function postCommentUser(Request $request, $idProduct, $idCustomer)

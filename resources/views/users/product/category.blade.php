@@ -83,10 +83,10 @@
                 @foreach($products as $product)
                 <div class="col-xl-4">
                     <div class="product_grid card-body card">
-                        <div class="product_image">
+                        <div class="product_image" >
                             <a href="{{ url('product-detail/'.$product->id)}}" class="image ">
                                 <!-- <img class="pic_2 rounded" src="img/5.jpg" alt=""> -->
-                                <img class="rounded" src="{{asset("img/feature/$product->feature_image")}}" alt="">
+                                <img style="max-width: 100%; max-height: 50%;" class="rounded" src="{{asset("img/feature/$product->feature_image")}}" alt="">
                             </a>
                         </div>
                         <div class="product_content">

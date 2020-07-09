@@ -16,7 +16,7 @@ class TableGallery extends Migration
         Schema::create('gallery', function (Blueprint $table) {
             $table->increments('id');   //primary key
             $table->integer('product_id')->unsigned();
-            $table->string('product_gallery')->nullable()->default('Not Image');
+            $table->string('product_gallery')->default('Not Image');
             $table->timestamps();
         });
     }

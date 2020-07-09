@@ -16,7 +16,7 @@
                 {!!Session::get('flash_message')!!}
               </div>
               @endif
-              <table class="table card-text" id="dbtable">
+              <table class="table card-text text-center" id="dbtable">
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -32,14 +32,14 @@
                 <tbody>
                   @foreach($products as $product)
                   <tr>
-                    <th scope="row">{{$product->id}}</th>
-                    <td><img src="{{asset('img/feature/'.$product->feature_image)}}" alt="" width="60"></td>
-                    <td>{{$product->product_title}}</td>
-                    <td>{{$product->price}}</td>
-                    <td>{{$product->sold_out}}</td>
-                    <td>{{$product->status}}</td>
-                    <td>{{$product->created_at}}</td>
-                    <td>
+                    <th scope="row" class="align-middle">{{$product->id}}</th>
+                    <td class="align-middle"><img src="{{asset('img/feature/'.$product->feature_image)}}" alt="" width="60" height="auto"></td>
+                    <td class="align-middle">{{$product->product_title}}</td>
+                    <td class="align-middle">{{$product->price}}</td>
+                    <td class="align-middle">{{$product->sold_out}}</td>
+                    <td class="align-middle">{{$product->status}}</td>
+                    <td class="align-middle">{{$product->created_at}}</td>
+                    <td class="align-middle">
                       <!-- Modal Details Product -->
                       <a href="{{url("admin/product/detailsProduct/" . $product -> id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                       <!-- Modal Update Product -->

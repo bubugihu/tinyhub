@@ -677,7 +677,7 @@ ul.list-unstyled.list-detail-prd li {
 /*** End Product Detail ***/
 
 /* Border */
-.product-slider #CarouselProduct {
+ #CarouselProduct {
     margin: 0;
     text-align: center;
     width: 100%;
@@ -703,7 +703,7 @@ ul.list-unstyled.list-detail-prd li {
 /* Frame for Product Gallery */
 .product-slider .item img {
     width: 100%;
-    height: auto;
+    /* height: auto; */
 }
 
 /* Increment & Decrement Section */
