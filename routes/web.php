@@ -22,16 +22,12 @@ Route::get('/', function () {
 
 //////////////////admin
 Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
-    
+
+    Route::group(['middleware' => ['admin']], function () {  //admin role 1
         //users
         Route::get('users/listUsers', 'UserController@listUsers');
         Route::get('users/updateUser/{id}' , 'UserController@updateUser');
         Route::post('users/postUpdateUser', 'UserController@postUpdateUser');
-
-        //customer
-        Route::get('customer/listCustomer', 'CustomerController@listCustomer');;
-        Route::get('customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
-        Route::post('customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
 
         //feedback
         Route::get('feedback/feedbackList', 'FeedbackController@feedbackList');
@@ -41,6 +37,24 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         Route::get('feedback/onStatusFeedback/{id}', 'FeedbackController@onStatus');
         Route::get('feedback/offStatusFeedback/{id}', 'FeedbackController@offStatus');
 
+        //banner
+        Route::get('banners/listBanner' , 'BannerController@listBanner');
+        Route::get('banners/deleteBanners/{id}', 'BannerController@deleteBanners');
+        Route::get('banners/createBanner', function (){
+            return view('admin.banners.createBanner');
+        });
+        Route::post('banners/postCreateBanners', 'BannerController@postCreateBanners');
+        Route::get('banners/postCreateBanners', function(){
+            return abort(404);
+        });
+        Route::get('banners/updateBanners/{id}', 'BannerController@updateBanners');
+        Route::post('banners/postUpdateBanners', 'BannerController@postUpdateBanners');
+        Route::get('banners/postUpdateBanners', function(){
+            return abort(404);
+        });
+    });
+
+    Route::group(['middleware' => ['product']], function () { //modProduct role 2
         //product
         Route::get('product/listProduct', 'ProductController@listProduct');
         Route::get('product/createProduct', 'ProductController@createProduct');
@@ -64,6 +78,13 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         Route::post('brands/postBrands' , 'BrandsController@postBrands');
         Route::get('brands/updateBrands/{id}' , 'BrandsController@updateBrands');
         Route::post('brands/postUpdateBrands/{id}' , 'BrandsController@postUpdateBrands');
+    });
+        
+    Route::group(['middleware' => ['customer']], function () { //modCustomer role 3
+        //customer
+        Route::get('customer/listCustomer', 'CustomerController@listCustomer');;
+        Route::get('customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
+        Route::post('customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
 
         //order
         Route::get('order/listOrder', 'OrderController@listOrder');
@@ -77,22 +98,8 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         Route::get('comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
         Route::get('comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
         Route::get('comment/deleteComment/{id}', 'CommentController@deleteComment');
-
-        //banner
-        Route::get('banners/listBanner' , 'BannerController@listBanner');
-        Route::get('banners/deleteBanners/{id}', 'BannerController@deleteBanners');
-        Route::get('banners/createBanner', function (){
-            return view('admin.banners.createBanner');
-        });
-        Route::post('banners/postCreateBanners', 'BannerController@postCreateBanners');
-        Route::get('banners/postCreateBanners', function(){
-            return abort(404);
-        });
-        Route::get('banners/updateBanners/{id}', 'BannerController@updateBanners');
-        Route::post('banners/postUpdateBanners', 'BannerController@postUpdateBanners');
-        Route::get('banners/postUpdateBanners', function(){
-            return abort(404);
-        });
+    });
+        
         //index
         Route::get('index', 'AdminController@index');
 
@@ -104,7 +111,7 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         //ajax Register
         Route::get('ajaxRegisterEmail/{email}', 'AjaxController@registerEmail');
         Route::get('ajaxRegisterPhone/{phone}', 'AjaxController@registerPhone');
-
+    
         });
 //end admin
 
