@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row inner-box py-4">
                 <div class="col-md-12">
-                    <h5 class="pull-left">Found {{count($product)}} products</h5>
+                    <h5 class="text-center">We found {{count($product)}} products</h5>
                     <hr>
                 </div>
             </div>
@@ -36,6 +36,7 @@
                         <div class="product_content">
                             <h3 class="title"><a href="{{ url('product-detail/'.$new->id)}}">{{$new->product_title}}</a></h3>
                             <div class="price">$ {{$new->price}}</div>
+                            <a href="{{ url('product-detail/'.$new->id)}}" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Add to cart</a>
                         </div>
                     </div>
                 </div>

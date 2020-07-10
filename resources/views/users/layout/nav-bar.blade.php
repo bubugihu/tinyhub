@@ -62,9 +62,9 @@
                 @foreach(Cart::content() as $cart)
                   <li>
                       <span class="item mb-3">
-                        <span class="item-left">
+                        <span class="item-left ml-4">
                           <img src="{{asset('img/feature/'.$cart->options->image)}}" alt="" width="50"/>
-                            <span class="item-info">
+                            <span class="item-info ml-4">
                                 <span>{{$cart->name}}</span>
                                 <span>${{$cart->price}} &nbsp; (x{{$cart->qty}})</span>
                             </span>
@@ -76,8 +76,6 @@
                   </li>
                   <li class="divider"></li>
                 @endforeach 
-
-                  
                   <li class="text-center mt-4"><a class="btn btn-dark" href="{{url('cart/shopping')}}">View Cart</a></li>
               </ul>
             </li>

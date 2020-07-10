@@ -9,8 +9,8 @@ class SearchKeyController extends Controller
 {
     public function getSearch(Request $req){
     	$product = Product::where('product_title', 'like', '%'. $req -> searchKey .'%')
-    						->orWhere('price', $req -> searchKey)
-    						->get();
+							->orWhere('price', $req -> searchKey)
+							->get();
     	return view('search', compact('product'));
     }
 }
