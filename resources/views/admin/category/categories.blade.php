@@ -36,6 +36,9 @@
                     <td class="align-middle">{{$cate->description}}</td>
                     <td class="align-middle">
                       <a href="{{url("admin/category/updateCategories/" . $cate->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px; font-weight:100;"></i></a>
+                      @if($product->where('category_id',$cate->id)->count() == 0)
+                      <a href="{{url("admin/category/deleteCategories/".$cate->id)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
+                      @endif
                     </td>
                   </tr>
                   @endforeach
