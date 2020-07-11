@@ -113,7 +113,10 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         //ajax Register
         Route::get('ajaxRegisterEmail/{email}', 'AjaxController@registerEmail');
         Route::get('ajaxRegisterPhone/{phone}', 'AjaxController@registerPhone');
-    
+
+        //Report
+        Route::get('reportcategoryAndbrand','CategoryController@reportcategoryAndbrand');
+        Route::get('reportproduct','ProductController@reportProduct');
         });
 //end admin
 Route::post('users/product/createCommentUser/{idProduct}/{idCustomer}', 'ProductController@postCommentUser');
@@ -203,8 +206,6 @@ Route::get('product-detail/{id}', [
     'uses' => 'ProductController@productDetails'
 ]);
 
-// example image product
-// Route::get('product-detail/{id}', 'ProductController@imageProduct');
 
 // check cart
 Route::get('cart', [

@@ -13,9 +13,14 @@ class CategorySeeder extends Seeder
     public function run()
     {
         DB::table('category')->insert([
-            ['category_name'=>'In Ear'],
-            ['category_name'=>'On Ear'],
-            ['category_name'=>'True Wireless'],
+            [   'category_name'     =>  'In Ear',
+                'category_image'    =>  'inEar.jpg'                        
+            ],
+            [   'category_name'     =>  'On Ear',
+                'category_image'    =>  'onEar.jpg'
+            ],
+            [   'category_name'     =>  'True Wireless',
+                'category_image'    =>  'true.jpg'],
         ]);
     }
 }

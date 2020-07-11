@@ -109,7 +109,7 @@
                     <div class="card">
                       <!-- Card image -->
                       <div class="view overlay">
-                        <img class="card-img-top" src="https://m.buro247.sg/images/lifestyle/Beoplay-H5-first-wireless-earbuds-BO-buro247-sg-CA_Buro247.sg-CR-2.jpg"
+                        <img class="card-img-top" src="{{asset('img/category/'.$c->category_image)}}"
                           alt="Card image cap">
                         <a href="{{url('searchCate/'.$c->category_name)}}">
                           <div class="mask rgba-white-slight"></div>
@@ -193,7 +193,7 @@
                                             <div class="testimonial-info">
                                                 <div class="testimonial-name">
                                                     <h5>{{$f->feed_name}}</h5>
-                                                    <span>{{$f->feed_title}}</span>
+                                                    <span>About: &nbsp;{{$f->feed_title}}</span>
                                                 </div>
                                             </div>
                                             <div class="testimonial-desc">

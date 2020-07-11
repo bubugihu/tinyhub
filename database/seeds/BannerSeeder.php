@@ -13,9 +13,9 @@ class BannerSeeder extends Seeder
     public function run()
     {
         DB::table('banner')->insert([
-            ['ban_title'=>'Dang Xuan Quang awesome product','ban_content'=>'Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerumnecessitatibus praesentium voluptatum deleniti atque corrupti.','ban_image'=>'headphone-slider2.png'],
-            ['ban_title'=>'Nguyen Duc Anh awesome product','ban_content'=>'Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerumnecessitatibus praesentium voluptatum deleniti atque corrupti.','ban_image'=>'headphone-slider1.png'],
-            ['ban_title'=>'Bui Gia Hung awesome product','ban_content'=>'Lorem ipsum dolor sit amet. Reprehenderit, qui blanditiis quidem rerumnecessitatibus praesentium voluptatum deleniti atque corrupti.','ban_image'=>'headphone-slider2.png'],
+            ['ban_title'=>'Happy Independence Day','ban_content'=>'SALE UP TO 70%','ban_image'=>'headphone-slider2.png'],
+            ['ban_title'=>'Mid-Autumn Festival','ban_content'=>'BUY 1 GET 1 FREE','ban_image'=>'headphone-slider1.png'],
+            ['ban_title'=>'Golden Week','ban_content'=>'BEST SELLING BEST SALE UP','ban_image'=>'unnamed.png'],
         ]);
     }
 }

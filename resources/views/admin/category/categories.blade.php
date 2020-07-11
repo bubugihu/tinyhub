@@ -31,7 +31,8 @@
                   @foreach($cates as $cate)
                   <tr>
                     <th scope="row" class="align-middle">{{$cate->id}}</th>
-                    <td class="align-middle">{{$cate->category_image}}</td>
+                    <td class="align-middle"><img class="card-img-top" src="{{asset('img/category/'.$cate->category_image)}}"
+                      alt="Card image cap"></td>
                     <td class="align-middle">{{$cate->category_name}}</td>
                     <td class="align-middle">{{$cate->description}}</td>
                     <td class="align-middle">
