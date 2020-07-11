@@ -1,5 +1,5 @@
 @extends('users.layout.layout')
-@section('title', 'Product Details')
+@section('title', 'Product Details - Tinyhub')
 @section('content')
 <!-- Product Title: Peoduct Details -->
 <div class="hero hero-page padding-small">
@@ -52,10 +52,10 @@
                 <p class="product_name">{{$product->product_title}}</p>
             </div>
             <div class="row">
-                <p class="product_cate">Brand: <a href="#">{{$brand->brand_name}}</a></p>
+                <p class="product_cate mb-3">Brand: <a href="#">{{$brand->brand_name}}</a></p>
             </div>
             <div class="row">
-                <p class="product_price">$ {{$product->price}}</p>
+                <p class="product_price mb-3">${{$product->price}}</p>
             </div>
             <div class="row">
                 <p class="product_description">{{$product->short_descriptions}}</p>
@@ -169,18 +169,20 @@
     <div class="row py-5">
         @foreach($similar as $similar)
         <div class="col-xl-3">
-            <div class="product_grid card-body card">
-                <div class="product_image">
+            <div class="product_grid card-body card d-flex justify-content-center align-items-center">
+                <div class="product_image d-flex justify-content-center align-items-center" style="min-height: 220px;">
                     <a href="{{ url('product-detail/'.$similar->id)}}" class="image ">
-                        <img class="rounded" src="{{asset('img/feature/'.$similar->feature_image)}}" alt="{{$similar->product_title}}">
+                        <!-- <img class="pic_2 rounded" src="img/5.jpg" alt=""> -->
+                        <img class="img-fluid rounded" src="{{asset("img/feature/$similar->feature_image")}}" alt="" width="200" height="auto">
                     </a>
                 </div>
                 <div class="product_content">
                     <h3 class="title"><a href="{{ url('product-detail/'.$similar->id)}}">{{$similar->product_title}}</a></h3>
                     <div class="price">$ {{$similar->price}}</div>
+                    <a href="{{ url('product-detail/'.$similar->id)}}" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Add to cart</a>
                 </div>
             </div>
-        </div>
+          </div>
         @endforeach
     </div>
 </div>

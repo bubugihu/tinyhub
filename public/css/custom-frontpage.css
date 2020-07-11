@@ -371,7 +371,7 @@ section.hm-5 {
 .ribbon-success {
     position: absolute;
     top: 10px;
-    left: -11px;
+    left: 2px;
     z-index: 999;
     font-size: 0.9em;
     background: #28a745;
@@ -646,9 +646,9 @@ ul.payment-list.list-inline-item.pull-right {
     padding: 20px 10px;
 }
 .product_grid .product_content .title {
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
     margin: 0 0 7px;
 }
 .product_grid .product_content .title a {
@@ -661,10 +661,10 @@ ul.payment-list.list-inline-item.pull-right {
     color: red;
 }
 .product_grid .price {
-    color: #03aae8;
-    font-size: 15px;
-    font-weight: 500;
-    margin-bottom: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #f47435;
 }
 /*** Product Detail ***/
 .product-slider {
@@ -719,13 +719,14 @@ ul.list-unstyled.list-detail-prd li {
 
 .quantity .inc-btn,
 .quantity .dec-btn {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    line-height: 30px;
+    line-height: 28px;
     border: 1px solid #999;
     text-align: center;
     cursor: pointer;
+    font-weight: 900;
 }
 
 .quantity input {
@@ -768,16 +769,16 @@ ul.list-unstyled.list-detail-prd li {
 }
 .product_cate a {
     color: #444444;
-    font-size: 20px;
+    font-size: 15px;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 2px;
 }
 .product_price {
     font-size: 24px;
     line-height: 36px;
     font-weight: 600;
-    color: #FFA400;
+    color: #ff6601;
     margin: 0px 15px;
 }
 .product_description {
@@ -995,6 +996,10 @@ ul.dropdown-cart li .item-right button{
     font-family: sans-serif;
     font-weight: bold;
 }
+span.subtt {
+    font-size: 18px;
+    font-weight: 900;
+}
 i.fa.fa-shopping-basket.fa-2x.fa-border.icon-dark.badge-cart {
     font-size: 25px;
     color: #000;
@@ -1019,4 +1024,27 @@ li.breadcrumb-item.active {
     padding-right: .5rem;
     color: #fff!important;
     content: "/";
+}
+a.filter-li {
+    color: #ff6601;
+    font-weight: 500;
+    font-size: 17px;
+}
+a.filter-li:hover {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+ul.pagination {
+    justify-content: center;
+}
+
+.product_image {
+    width: 70%;
+    height: 120px!important;
+}
+
+.product_image img {
+    width: 100%;
+    height: 100%;
 }

@@ -29,7 +29,7 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
     Route::post('users/postUpdateUser', 'UserController@postUpdateUser');
 
     //customer
-    Route::get('customer/listCustomer', 'CustomerController@listCustomer');;
+    Route::get('customer/listCustomer', 'CustomerController@listCustomer');
     Route::get('customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
     Route::post('customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
 
@@ -49,8 +49,7 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
     Route::get('product/detailsProduct/{id}', 'ProductController@detailsProduct');
     Route::post('product/postUpdate/{id}', 'ProductController@postUpdate');
     Route::get('product/deleteProduct/{id}', 'ProductController@deleteProduct');
-    
-
+    Route::post('users/product/createCommentUser/{idProduct}/{idCustomer}', 'ProductController@postCommentUser');
     //category
     Route::get('category/categories', 'CategoryController@categories');
     Route::get('category/createCategories', 'CategoryController@createCate');
@@ -95,6 +94,53 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
     });
     //index
     Route::get('index', 'AdminController@index');
+
+    //category
+    Route::get('category/categories', 'CategoryController@categories');
+    Route::get('category/createCategories', 'CategoryController@createCate');
+    Route::post('category/postCate', 'CategoryController@postCate');
+    Route::get('category/updateCategories/{id}', 'CategoryController@updateCates');
+    Route::post('category/postUpdateCate/{id}', 'CategoryController@postUpdateCate');
+
+    //brands
+    Route::get('brands/listBrands', 'BrandsController@listBrands');
+    Route::get('brands/createBrands', 'BrandsController@createBrand');
+    Route::post('brands/postBrands', 'BrandsController@postBrands');
+    Route::get('brands/updateBrands/{id}', 'BrandsController@updateBrands');
+    Route::post('brands/postUpdateBrands/{id}', 'BrandsController@postUpdateBrands');
+
+    //order
+    Route::get('order/listOrder', 'OrderController@listOrder');
+    Route::get('order/onOrderStatus/{id}', 'OrderController@onOrderStatus');
+    Route::get('order/listOrderDetails/{id}', 'CartController@orderDetails');
+    Route::get('order/deleteOrder/{id}', 'OrderController@deleteOrder');
+    Route::get('admin/order/onOrderStatus', 'OrderController@onOrderStatus111');
+
+    //comment
+    Route::get('comment/listComment', 'CommentController@listComment');
+    Route::get('comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
+    Route::get('comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
+    Route::get('comment/deleteComment/{id}', 'CommentController@deleteComment');
+
+    //banner
+    Route::get('banners/listBanner', 'BannerController@listBanner');
+    Route::get('banners/deleteBanners/{id}', 'BannerController@deleteBanners');
+    Route::get('banners/createBanner', function () {
+        return view('admin.banners.createBanner');
+    });
+    Route::post('banners/postCreateBanners', 'BannerController@postCreateBanners');
+    Route::get('banners/postCreateBanners', function () {
+        return abort(404);
+    });
+    Route::get('banners/updateBanners/{id}', 'BannerController@updateBanners');
+    Route::post('banners/postUpdateBanners', 'BannerController@postUpdateBanners');
+    Route::get('banners/postUpdateBanners', function () {
+        return abort(404);
+    });
+
+    //Report
+    route::get('reportcategoryAndbrand','CategoryController@reportcategoryAndbrand');
+    route::get('reportproduct','ProductController@reportProduct');
 
     //profile admin
     Route::get('profile/{id}', 'UserController@profileAdmin');
@@ -165,6 +211,11 @@ Route::get('category', [
 
 // Route::get('category', 'CategoryController@getcategories');
 Route::post('category/search', 'CategoryController@search');
+Route::get('category/search', [
+    'as' => 'search',
+    'uses' => 'CategoryController@category'
+]);
+
 Route::get('category/search', 'CategoryController@category');
 //search cate
 Route::get('searchCate/{in}', 'CategoryController@filterCate');
@@ -181,7 +232,10 @@ Route::get('product-detail/{id}', [
 // //example image product
 //Route::get('product-detail/{id}', 'ProductController@imageProduct');
 // check cart
-Route::get('cart', 'CartController@cart');
+Route::get('cart', [
+    'as' => 'cart',
+    'uses' => 'CartController@cart'
+]);
 //buy now
 Route::post('cart/shopping', 'CartController@shoppingCart');
 Route::get('cart/shopping', 'CartController@cart');
@@ -198,7 +252,10 @@ Route::post('cart/shopping/decreItem', 'CartController@decreCart');
 // Route::post('cart/shopping/removeItem', 'CartController@removeItem');
 Route::get('cart/shopping/removeItem/{id}', 'CartController@removeItem');
 //check out cart
-Route::get('checkout', 'CartController@checkout')->middleware('auth');
+Route::get('checkout', [
+    'as' => 'checkout',
+    'uses' => 'CartController@checkout'
+])->middleware('auth');
 //order review
 Route::post('cart/shopping/order-review', 'CartController@orderReview');
 Route::get('cart/shopping/order-review', function () {

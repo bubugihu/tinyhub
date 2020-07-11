@@ -17,7 +17,7 @@
         $trail->push('Product-Categories', route('category'));
     });
 
-    // Home > Product Detail
+    // Home > Category > Product Detail
     Breadcrumbs::for('product-detail', function ($trail, $product) {
         $trail->parent('category');
         $trail->push($product->product_title, route('product-detail', $product));
@@ -52,3 +52,21 @@
         $trail->parent('home');
         $trail->push('Contact-Us', route('contact-us'));
     }); 
+
+    // Home > Search 
+    Breadcrumbs::for('search', function ($trail) {
+        $trail->parent('home');
+        $trail->push('Search Products', route('search'));
+    }); 
+
+    // Home > Cart 
+    Breadcrumbs::for('cart', function ($trail) {
+        $trail->parent('home');
+        $trail->push('Cart', route('cart'));
+    });
+
+    // Home > Cart 
+    Breadcrumbs::for('checkout', function ($trail) {
+        $trail->parent('home');
+        $trail->push('Checkout', route('checkout'));
+    });

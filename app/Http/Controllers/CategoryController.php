@@ -33,23 +33,24 @@ class CategoryController extends Controller
         $this->validate(
             $request,
             [
-                'cateTitle'           => 'bail|required|unique:Category,category_name|min:3|max:255',
-                'cateDescription'     => 'required',
+                'cateTitle'           => 'bail|required|unique:Category,category_name|regex:/^[a-zA-Z]{2,}/i|max:255',
+                'cateDescription'     => 'bail|required|max:255;',
                
             ],
             [
                 'cateTitle.required'          => 'Category Title can not be blank !',
                 'cateTitle.unique'            => 'Category Title has already existed !',
-                'cateTitle.min'               => 'Category Title has min 3 characters !',
-                'cateTitle.max'               => 'Category Title has min 255 characters !',
+                'cateTitle.regex'             => 'Category Title has 2 character and must be string, can not start with number !',
+                'cateTitle.max'               => 'Category Title has max 255 characters !',
                 'cateDescription.required'    => 'Category Description can not be blank !',
+                'cateDescription.max'         => 'Category Description has max 255 characters !',
                 
             ]
         );
         
         $c = new Category();
-        $c->category_name = $request->cateTitle;
-        $c->description = $request->cateDescription;
+        $c->category_name = trim($request->cateTitle);
+        $c->description   = trim($request->cateDescription);
         $c->save();
 
         //session()->put('alert', 'Create Category Successful !');
@@ -71,21 +72,22 @@ class CategoryController extends Controller
         $this->validate(
             $request,
             [
-                'cateTitle'           => 'bail|required|min:3|max:255',
-                'cateDescription'     => 'required',
+                'cateTitle'           => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255',
+                'cateDescription'     => 'bail|required|max:255',
                
             ],
             [
                 'cateTitle.required'          => 'Category Title can not be blank !',
-                'cateTitle.min'               => 'Category Title has min 3 characters !',
-                'cateTitle.max'               => 'Category Title has min 255 characters !',
+                'cateTitle.regex'             => 'Category Title has 2 character and must be string, can not start with number !',
+                'cateTitle.max'               => 'Category Title has max 255 characters !',
                 'cateDescription.required'    => 'Category Description can not be blank !',
+                'cateDescription.max'         => 'Category Description has max 255 characters !',
                 
             ]
         );
         
-        $c->category_name = $request->cateTitle;
-        $c->description = $request->cateDescription;
+        $c->category_name = trim($request->cateTitle);
+        $c->description   = trim($request->cateDescription);
         $c->save();
         
         //session()->put('alert', 'Create Category Successful !');
@@ -162,4 +164,9 @@ class CategoryController extends Controller
                 return view('users.product.category', compact('products','message'));    
     }
     
+    public function reportcategoryAndbrand(){
+        $category=Category::all();
+        $brand=Brands::all();
+        return view('admin.reportCateAndBrand', compact('category','brand'));
+    }
 }

@@ -1,4 +1,5 @@
 @extends('users.layout.layout')
+@section('title', 'Home - Tinyhub')
 @section('content')
 <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
@@ -68,19 +69,23 @@
                         <h2 class="text-uppercase">Best Selling</h2>
                     </header>
                 </div>
-
+                {{-- <div class="ribbon ribbon-success text-uppercase">Best</div> --}}
                 @foreach($productGlobal as $p)
-                <div class="col-md-3">
-                    <div class="item-hp card-body card mb-3">
-                        <div class="ribbon ribbon-success text-uppercase">Best</div>
-                        <img src="{{url('img/feature/'.$p->feature_image)}}" alt="" class="img-fluid" width="100%" height="auto">
-                        <div class="item-pd-info m-2">
-                            <h6 class="no-margin ">{{$p->product_title}}</h6>
-                            <p class="price-dt">${{$p->price}}</p>
-                            <a href="{{ url('product-detail/'.$p->id)}}" class="cart-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                            <a href="{{ url('product-detail/'.$p->id)}}"><button class="buynow">BUY NOW</button></a>
-                        </div>
-                    </div>
+                <div class="col-xl-3">
+                  <div class="ribbon ribbon-success text-uppercase">Best</div>
+                  <div class="product_grid card-body card d-flex justify-content-center align-items-center">
+                      <div class="product_image d-flex justify-content-center align-items-center" style="min-height: 220px;">
+                          <a href="{{ url('product-detail/'.$p->id)}}" class="image ">
+                              <!-- <img class="pic_2 rounded" src="img/5.jpg" alt=""> -->
+                              <img class="img-fluid rounded" src="{{asset("img/feature/$p->feature_image")}}" alt="" width="200" height="auto">
+                          </a>
+                      </div>
+                      <div class="product_content">
+                          <h3 class="title"><a href="{{ url('product-detail/'.$p->id)}}">{{$p->product_title}}</a></h3>
+                          <div class="price">${{$p->price}}</div>
+                          <a href="{{ url('product-detail/'.$p->id)}}" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Add to cart</a>
+                      </div>
+                  </div>
                 </div>
                 @endforeach
             

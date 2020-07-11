@@ -1,10 +1,16 @@
 @extends('users.layout.layout')
+@section('title', 'Search - Tinyhub')
 @section('content')
     <div class="hero hero-page padding-small">
         <div class="container">
             <div class="row d-flex">
-                <div class="col-lg-9 ">
+                <div class="col-lg-12">
                     <h1>Search</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ Breadcrumbs::render('search') }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -19,17 +25,20 @@
             </div>
             <div class="row inner-box py-3">
                 @foreach($product as $new)
-                    <div class="col-md-3">
-                        <div class="item-hp card-body card mb-3">
-                            <img src="img/feature/{{$new->feature_image}}" alt="" class="img-fluid" width="300">
-                            <div class="item-pd-info m-2">
-                                <h6 class="no-margin">{{$new->product_title}}</h6>
-                                <p class="price-dt">$ {{$new->price}}</p>
-                                <a href="#" class="cart-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                                <a href="#"><button class="buynow">BUY NOW</button></a>
-                            </div>
+                <div class="col-xl-3">
+                    <div class="product_grid card-body card d-flex justify-content-center align-items-center">
+                        <div class="product_image d-flex justify-content-center align-items-center" style="min-height: 220px;">
+                            <a href="{{ url('product-detail/'.$new->id)}}" class="image ">
+                                <!-- <img class="pic_2 rounded" src="img/5.jpg" alt=""> -->
+                                <img class="img-fluid rounded" src="{{asset("img/feature/$new->feature_image")}}" alt="" width="200" height="auto">
+                            </a>
+                        </div>
+                        <div class="product_content">
+                            <h3 class="title"><a href="{{ url('product-detail/'.$new->id)}}">{{$new->product_title}}</a></h3>
+                            <div class="price">$ {{$new->price}}</div>
                         </div>
                     </div>
+                </div>
                 @endforeach
             </div>
         </div>

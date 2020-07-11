@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'Create-Banners')
+@section('title', 'Create New Banner - Admin')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
     <div class="container-fluid px-xl-5">
@@ -17,18 +17,18 @@
                         <label class="form-control-label text-uppercase">BannerTitle <span class="required">*</span></label>
                         <input type="text" class="form-control @error('title') is-invalid @enderror" name="title">
                         @error('title')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Banner Content <span class="required">*</span></label>
                         <input type="text" class="form-control @error('content') is-invalid @enderror" name="content">
                         @error('content')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror
                       </div>
                       <div class="form-group">

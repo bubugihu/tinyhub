@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'product list')
+@section('title', 'Create New Product - Admin')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
     <div class="container-fluid px-xl-5">
@@ -11,6 +11,11 @@
                 <h6 class="text-uppercase mb-0">Create new product</h6>
               </div>
               <div class="card-body">
+                    @if(Session::has('flash_message'))
+                      <div class="alert alert-{!! Session::get('flash_level') !!}">
+                          {!!Session::get('flash_message')!!}
+                      </div>
+                    @endif 
                     {{-- @include('admin.product.form-error') --}}
                     <form role="form" action="{{url("admin/product/postCreate")}}" method="POST" enctype="multipart/form-data">
                       {{ csrf_field() }}
@@ -83,14 +88,14 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Upload Feature Image: <span class="required">*</span></label><br>
-                        <input type="file" name="featureimg"><br>
+                        <input type="file" class="custom-fileip" name="featureimg"><br>
                           @if($errors->has('featureimg'))
                             <small style="color:red;font-size:14px;">{{$errors->first('featureimg')}}</small>
                           @endif
                       </div>
-                      <div class="form-group">
+                      <div class="form-group ">
                         <label class="form-control-label text-uppercase">Please press Ctrl to choose multiple images:</label><br>
-                        <input type="file" name="galleryimg" multiple>
+                        <input type="file" class="custom-fileip" name="galleryimg" multiple>
                           @if($errors->has('galleryimg'))
                             <small style="color:red;font-size:14px;">{{$errors->first('galleryimg')}}</small>
                           @endif

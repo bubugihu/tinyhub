@@ -1,5 +1,5 @@
 @extends('admin.layout.layout')
-@section('title', 'Update Catergories')
+@section('title', 'Update Category - Admin')
 @section('content')
 <div class="page-holder w-100 d-flex flex-wrap">
   <div class="container-fluid px-xl-5">
@@ -15,14 +15,14 @@
             <form role="form" action="{{url("admin/category/postUpdateCate/" . $c->id)}}" method="POST" enctype="multipart/form-data">
                   {{ csrf_field() }}
                   <div class="form-group">
-                    <label class="form-control-label text-uppercase">Category Title</label>
+                    <label class="form-control-label text-uppercase">Category Title <span class="required">*</span></label>
                   <input type="text" class="form-control" name="cateTitle" value="{{$c->category_name}}">
                     @if($errors->has('cateTitle'))
                        <small style="color:red;font-size:14px;">{{$errors->first('cateTitle')}}</small>
                     @endif
                   </div>
                   <div class="form-group">
-                    <label class="form-control-label text-uppercase">Category Description</label>
+                    <label class="form-control-label text-uppercase">Category Description <span class="required">*</span></label>
                     <textarea type="text" class="form-control" name="cateDescription">{{$c->description}}</textarea>
                     @if($errors->has('cateDescription'))
                        <small style="color:red;font-size:14px;">{{$errors->first('cateDescription')}}</small>

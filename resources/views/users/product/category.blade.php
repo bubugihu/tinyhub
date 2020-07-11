@@ -1,5 +1,5 @@
 @extends('users.layout.layout')
-@section('title', 'Category')
+@section('title', 'Category - Tinyhub')
 @section('content')
 
 <!-- Product Title -->
@@ -27,7 +27,7 @@
                     <hr width="100%" style="margin-left: 0;">
                     
                     @foreach($categoryGlobal as $c)
-                    <h6><a href="{{url('searchCate/'.$c->category_name)}}">{{$c->category_name}}</a></h6><br/>
+                    <h6><i class="fas fa-chevron-right"></i>&nbsp; <a class="filter-li btn btn-outline-dark btn-sm" href="{{url('searchCate/'.$c->category_name)}}">{{$c->category_name}}</a></h6><br/>
                     @endforeach
     
                 </div>
@@ -37,7 +37,7 @@
                     <hr width="100%" style="margin-left: 0;">
 
                     @foreach($brandGlobal as $b)
-                    <h6><a href="{{url('searchBrand/'.$b->brand_name)}}">{{$b->brand_name}}</a></h6><br/>
+                    <h6><i class="fas fa-chevron-right"></i> &nbsp;<a class="filter-li btn btn-outline-dark btn-sm" href="{{url('searchBrand/'.$b->brand_name)}}">{{$b->brand_name}}</a></h6><br/>
                     @endforeach
 
                 </div>
@@ -79,19 +79,20 @@
               <h5 class="text-center">{{$message}}</h5>
             </div>
             @endif 
-            <div class="row product_list">
+            <div class="row product_list d-flex justify-content-center">
                 @foreach($products as $product)
                 <div class="col-xl-4">
-                    <div class="product_grid card-body card">
-                        <div class="product_image" >
+                    <div class="product_grid card-body card d-flex justify-content-center align-items-center">
+                        <div class="product_image d-flex justify-content-center align-items-center" style="min-height: 220px;">
                             <a href="{{ url('product-detail/'.$product->id)}}" class="image ">
                                 <!-- <img class="pic_2 rounded" src="img/5.jpg" alt=""> -->
-                                <img style="max-width: 100%; max-height: 50%;" class="rounded" src="{{asset("img/feature/$product->feature_image")}}" alt="">
+                                <img class="img-fluid rounded" src="{{asset("img/feature/$product->feature_image")}}" alt="" width="200" height="auto">
                             </a>
                         </div>
                         <div class="product_content">
                             <h3 class="title"><a href="{{ url('product-detail/'.$product->id)}}">{{$product->product_title}}</a></h3>
                             <div class="price">$ {{$product->price}}</div>
+                            <a href="{{ url('product-detail/'.$product->id)}}" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -99,10 +100,8 @@
                 
             </div><br>
             <div class="row py-3">
-                <div class="col-md-12">
-                    <nav aria-label="Page navigation">
+                <div class="col-md-12 justify-content-end">
                         {{ $products->links() }}
-                    </nav>
                 </div>
             </div>
         </div>

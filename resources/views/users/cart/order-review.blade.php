@@ -141,7 +141,7 @@
       </div>
     </div>
     <div class="container">
-    <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row">
+    <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row py-5">
       <a href="{{ url('checkout') }}" class="btn btn-template-outlined wide">Back to Checkout</a>
       <form action="{{ url('thank-you')}}" method="post">
         @csrf

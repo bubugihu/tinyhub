@@ -15,22 +15,28 @@
                                 <div class="row">
                                     <!-- Image Feature And Gallery -->
                                     <div class="col-md-6">
-                                        <div id="CarouselProduct" class="carousel slide" data-ride="carousel" style="max-width: 100%; max-height: auto;">
-                                            <div class="carousel-inner">
-                                                <div class="carousel-item  active"> <img class="rounded" src="{{asset('img/feature/'.$product->feature_image)}}" height="auto" width="90%"> </div>
-                                                @foreach($galleryFea as $galleryFea)
-                                                <div class="carousel-item"> <img class="rounded" src="{{asset('img/gallery/'.$galleryFea->product_gallery)}}" height="auto" width="90%"> </div>
-                                                @endforeach
-                                            </div>
-                                        </div>
-                                        <div class="product-slider">
-                                            <div id="ThumbProduct" class="carousel slide" data-interval="false">
-                                                <div class="carousel-inner">
-                                                    <div class="item active">
-                                                        @foreach($galleryThum as $galleryThum)
-                                                        <div data-target="#CarouselProduct" data-slide-to="{{++$no}}" class="SubThumbProduct rounded">
-                                                            <img src="{{asset('img/gallery/'.$galleryThum->product_gallery)}}" class="rounded" width="50px" height="50px">
+                                        <div class="row">
+                                            <div class="col-md-2 d-flex justify-content-start">
+                                                <div class="product-slider">
+                                                    <div id="ThumbProduct" class="carousel slide" data-interval="false">
+                                                        <div class="carousel-inner">
+                                                            <div class="item active">
+                                                                @foreach($galleryThum as $galleryThum)
+                                                                <div data-target="#CarouselProduct" data-slide-to="{{++$no}}" class="SubThumbProduct rounded">
+                                                                    <img src="{{asset('img/gallery/'.$galleryThum->product_gallery)}}" class="rounded" width="50px" height="50px">
+                                                                </div>
+                                                                @endforeach
+                                                            </div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-10 d-flex justify-content-center">
+                                                <div id="CarouselProduct" class="carousel slide" data-ride="carousel" style="max-width: 100%; max-height: auto;">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item  active"> <img class="rounded" src="{{asset('img/feature/'.$product->feature_image)}}" height="auto" width="100%"> </div>
+                                                        @foreach($galleryFea as $galleryFea)
+                                                        <div class="carousel-item"> <img class="rounded" src="{{asset('img/gallery/'.$galleryFea->product_gallery)}}" height="auto" width="100%"> </div>
                                                         @endforeach
                                                     </div>
                                                 </div>
