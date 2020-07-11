@@ -187,4 +187,9 @@ class CategoryController extends Controller
                 return view('users.product.category', compact('products','message'));    
     }
     
+    public function reportcategoryAndbrand(){
+        $category=Category::all();
+        $brand=Brands::all();
+        return view('admin.reportCateAndBrand', compact('category','brand'));
+    }
 }

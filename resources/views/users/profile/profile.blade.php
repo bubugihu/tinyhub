@@ -4,7 +4,7 @@
 <div class="container py-5">
     <div class="row card-body py-5 mx-auto">
         <!-- Info Customer -->
-        <div class="col-md-3 card py-2">
+        <div class="col-md-3 py-2">
             <div class="profile_feature">
                 <img src="{{asset('img/'.$customer->feature)}}" alt="{{$user->name}}" class="img-fluid rounded" width="100%" height="auto">
                 <div style="margin-top:20px ;">
