@@ -40,13 +40,13 @@
         <!-- Product Info-->
         <div class="col-lg-6">
             <div class="row">
-                <p class="product_cate"><a href="#">{{$category->category_name}}</a></p>
+                <p class="product_cate"><a href="{{url('searchCate/'.$category->category_name)}}">{{$category->category_name}}</a></p>
             </div>
             <div class="row">
                 <p class="product_name">{{$product->product_title}}</p>
             </div>
             <div class="row">
-                <p class="product_cate mb-3">Brand: <a href="#">{{$brand->brand_name}}</a></p>
+                <p class="product_cate mb-3">Brand: <a href="{{url('searchBrand/'.$brand->brand_name)}}">{{$brand->brand_name}}</a></p>
             </div>
             <div class="row">
                 <p class="product_price mb-3">${{$product->price}}</p>

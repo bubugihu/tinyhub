@@ -1064,3 +1064,40 @@ ul.pagination {
 div#description {
     padding: 30px 30px;
 }
+
+.ribbon.ribbon-success.text-uppercase {
+    -webkit-animation: pulsate-fwd 0.9s ease-in-out infinite both;
+    animation: pulsate-fwd 0.9s ease-in-out infinite both;
+}
+i.fas.fa-search {
+    -webkit-animation: pulsate-fwd 0.9s ease-in-out infinite both;
+    animation: pulsate-fwd 0.9s ease-in-out infinite both;
+}
+@-webkit-keyframes pulsate-fwd {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes pulsate-fwd {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}

@@ -5,13 +5,20 @@ namespace App\Http\Controllers;
 use App\Brands;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateProductRequest;
+use App\Product;
 
 class BrandsController extends Controller
 {
     public function listBrands()
     {
         $brand = Brands::all();
-        return view('admin.brands.listBrands', compact('brand'));
+        $product = Product::all();
+        return view('admin.brands.listBrands', compact('brand', 'product'));
+    }
+
+    public function deleteBrands($id){
+        Brands::find($id)->delete();
+        return redirect() -> action('BrandsController@listBrands')->with(['flash_level' => 'success','flash_message' => 'Delete Successfully !' ]);
     }
 
     public function createBrand(){
@@ -45,7 +52,7 @@ class BrandsController extends Controller
             $ext = $file -> getClientOriginalExtension();
 
             if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
-                return redirect("admin/product/createBrands")->with(['flash_level' => 'danger','flash_message' => 'You can only upload image with file jpg/png/jpeg !' ]);
+                return redirect("admin/brands/createBrands")->with(['flash_level' => 'danger','flash_message' => 'You can only upload image with file jpg/png/jpeg !' ]);
             }
             $imageName = $file->getClientOriginalName();
             $file->move("img/brands/", $imageName);    

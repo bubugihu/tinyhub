@@ -78,7 +78,7 @@ class ProductController extends Controller
             $extension = $file->getClientOriginalExtension();
 
             if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
-                return redirect("admin/product/createProduct")->with(['flash_level' => 'danger', 'flash_message' => 'You can only upload image with file jpg/png/jpeg !']);
+                return redirect("admin/product/createProduct")->with(['flash_level' => 'danger', 'flash_message' => 'You can only upload image with file .jpg | .png | .jpeg !']);
             }
             $imageName = $file->getClientOriginalName();
             $file->move("img/feature/", $imageName);
@@ -173,7 +173,7 @@ class ProductController extends Controller
             $extension = $file->getClientOriginalExtension();
 
             if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
-                return redirect("admin/product/updateProduct")->with(['flash_level' => 'danger','flash_message' => 'You can only upload image with file jpg/png/jpeg !' ]);
+                return redirect("admin/product/updateProduct")->with(['flash_level' => 'danger','flash_message' => 'You can only upload image with file .jpg | .png | .jpeg!' ]);
             }
             $imageName = $file->getClientOriginalName();
             $file->move("img/feature/", $imageName);
@@ -188,7 +188,7 @@ class ProductController extends Controller
             $fileGL = $request->file('galleryimg');
             $ext   = $fileGL->getClientOriginalExtension();
             if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
-                return Redirect('admin/product/updateProduct')->with(['flash_level' => 'danger','flash_message' => 'You can only upload multiple image with file jpg/png/jpeg !' ]);
+                return Redirect('admin/product/updateProduct')->with(['flash_level' => 'danger','flash_message' => 'You can only upload multiple image with file .jpg | .png | .jpeg !' ]);
             }
             $nameGlImg = $fileGL->getClientOriginalName();
             $fileGL->move("img/gallery", $nameGlImg);

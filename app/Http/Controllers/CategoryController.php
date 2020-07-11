@@ -15,12 +15,18 @@ class CategoryController extends Controller
     public function categories()
     {
         $cates = Category::paginate(9);
-        return view('admin.category.categories', compact('cates'));
+        $product = Product::all();
+        return view('admin.category.categories', compact('cates','product'));
     }
 
-    public function getcategories(){
-        $cates = Category::all();
-        return view('users.product.category', compact('cates'));
+    // public function getcategories(){
+    //     $cates = Category::all();
+    //     return view('users.product.category', compact('cates'));
+    // }
+
+    public function deleteCate($id){
+        Category::find($id)->delete();
+        return redirect()->action('CategoryController@categories')->with(['flash_level' => 'success', 'flash_message' => 'Delete Successfully !']);
     }
 
     public function createCate(){
@@ -35,7 +41,7 @@ class CategoryController extends Controller
             [
                 'cateTitle'           => 'bail|required|unique:Category,category_name|regex:/^[a-zA-Z]{2,}/i|max:255',
                 'cateDescription'     => 'bail|required|max:255;',
-               
+                'cateimg'             => 'required',
             ],
             [
                 'cateTitle.required'          => 'Category Title can not be blank !',
@@ -44,6 +50,7 @@ class CategoryController extends Controller
                 'cateTitle.max'               => 'Category Title has max 255 characters !',
                 'cateDescription.required'    => 'Category Description can not be blank !',
                 'cateDescription.max'         => 'Category Description has max 255 characters !',
+                'cateimg.required'            => 'Category Image can not be blank !',
                 
             ]
         );
@@ -51,6 +58,22 @@ class CategoryController extends Controller
         $c = new Category();
         $c->category_name = trim($request->cateTitle);
         $c->description   = trim($request->cateDescription);
+
+        if ($request -> hasFile('cateimg')) {
+            $file = $request -> file('cateimg');
+            $ext = $file -> getClientOriginalExtension();
+
+            if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
+                return redirect("admin/category/createCategories")->with(['flash_level' => 'danger','flash_message' => 'You can only upload image with file .jpg | .png | .jpeg !' ]);
+            }
+            $imageName = $file->getClientOriginalName();
+            $file->move("img/category/", $imageName);    
+            $c->category_image = $imageName;
+
+        } else {
+            $imageName = "";
+        }
+
         $c->save();
 
         //session()->put('alert', 'Create Category Successful !');
@@ -88,6 +111,22 @@ class CategoryController extends Controller
         
         $c->category_name = trim($request->cateTitle);
         $c->description   = trim($request->cateDescription);
+
+        if ($request -> hasFile('cateimg')) {
+            $file = $request -> file('cateimg');
+            $ext = $file -> getClientOriginalExtension();
+
+            if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
+                return redirect("admin/category/createCategories")->with(['flash_level' => 'danger','flash_message' => 'You can only upload image with file .jpg | .png | .jpeg !' ]);
+            }
+            $imageName = $file->getClientOriginalName();
+            $file->move("img/category/", $imageName);    
+            $c->category_image = $imageName;
+
+        } else {
+            $imageName = "";
+        }
+
         $c->save();
         
         //session()->put('alert', 'Create Category Successful !');

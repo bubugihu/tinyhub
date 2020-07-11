@@ -44,11 +44,11 @@
     <script src="{{asset("plugin/bootstrap/js/bootstrap.min.js")}}"></script>
     <!-- Popper -->
     <script src="{{asset("plugin/popper.js/umd/popper.min.js")}}"></script>
-    <!-- TINY HUB JS -->
-    <script src="{{asset("js/front.js")}}"></script>
     <!-- Testimonial -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     @yield('script-section')
+    <!-- TINY HUB JS -->
+    <script src="{{asset("js/front.js")}}"></script>
     <!-- data table -->
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <!-- light Slider -->

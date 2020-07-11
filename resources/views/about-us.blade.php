@@ -63,7 +63,7 @@
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3 text-center">Bui Gia Hung</h5>
                     <p class="text-uppercase blue-text text-center"><strong>Software Engineer</strong></p>
-                    <p class="grey-text text-center">"TinyHub, cứ đến mà húp."</p>
+                    <p class="grey-text text-center">"Click vào xem, không click vào xem."</p>
                     <ul class="list-unstyled mb-0 text-center">
                         <!-- Facebook -->
                         <a class="p-2 fa-lg fb-ic">
@@ -88,7 +88,7 @@
                     </div>
                     <h5 class="font-weight-bold mt-4 mb-3 text-center">Nguyen Duc Anh</h5>
                     <p class="text-uppercase blue-text text-center"><strong>Software Engineer</strong></p>
-                    <p class="grey-text text-center">"Được thì bán, không được thì thôi."</p>
+                    <p class="grey-text text-center">"Được thì bán, không được thì bán."</p>
                     <ul class="list-unstyled mb-0 text-center">
                         <!-- Facebook -->
                         <a class="p-2 fa-lg fb-ic">

@@ -131,7 +131,8 @@
                     $(this).removeClass('open');
                 }
             }); 
-        });
+        }); 
+        
   </script>
   <script>
     if ( window.history.replaceState ) {
