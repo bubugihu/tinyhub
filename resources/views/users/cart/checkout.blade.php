@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <section class="checkout">
+    <section class="checkout pt-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7 mx-auto">
@@ -70,7 +70,7 @@
                                         <input type="text" id="note" name="note" placeholder="Note" class="form-control">
                                     </div>
                                 </div>
-                                <div class="CTAs d-flex justify-content-between flex-column flex-lg-row">
+                                <div class="CTAs d-flex justify-content-between flex-column flex-lg-row pb-5">
                                     <a href="{{ url('cart') }}" class="btn btn-dark wide prev">Back to Cart</a>
                                     <button type="submit" class="btn btn-template wide next">Continue to Order Review</button>
                                 </div>

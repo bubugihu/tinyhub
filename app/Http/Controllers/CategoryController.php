@@ -64,7 +64,7 @@ class CategoryController extends Controller
             $ext = $file -> getClientOriginalExtension();
 
             if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
-                return redirect("admin/category/createCategories")->with(['flash_level' => 'danger','flash_message' => 'You can only upload image with file jpg/png/jpeg !' ]);
+                return redirect("admin/category/createCategories")->with(['flash_level' => 'danger','flash_message' => 'You can only upload image with file .jpg | .png | .jpeg !' ]);
             }
             $imageName = $file->getClientOriginalName();
             $file->move("img/category/", $imageName);    
@@ -111,6 +111,22 @@ class CategoryController extends Controller
         
         $c->category_name = trim($request->cateTitle);
         $c->description   = trim($request->cateDescription);
+
+        if ($request -> hasFile('cateimg')) {
+            $file = $request -> file('cateimg');
+            $ext = $file -> getClientOriginalExtension();
+
+            if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
+                return redirect("admin/category/createCategories")->with(['flash_level' => 'danger','flash_message' => 'You can only upload image with file .jpg | .png | .jpeg !' ]);
+            }
+            $imageName = $file->getClientOriginalName();
+            $file->move("img/category/", $imageName);    
+            $c->category_image = $imageName;
+
+        } else {
+            $imageName = "";
+        }
+
         $c->save();
         
         //session()->put('alert', 'Create Category Successful !');

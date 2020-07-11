@@ -15,7 +15,7 @@
     </div>
   </div>
 </div>
-<section class="cart">
+<section class="cart pt-5">
   <div class="container">
     <div class="basket">
       <div class="basket-holder">
@@ -105,7 +105,7 @@
           </div>
       </div>
 </section>
-<section class="order-details no-padding-top"> 
+<section class="order-details no-padding-top pb-5"> 
     <div class="container">
       <div class="row">                         
         <div class="col-lg-12 text-center CTAs">

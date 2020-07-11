@@ -37,8 +37,8 @@
     <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
       <!-- Navbar Collapse -->
       <div id="navbarCollapse" class="collapse navbar-collapse">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a href="{{route("homepage")}}" class="nav-link">Home</a></li>
+        <ul class="nav navbar-nav mx-auto">
+          <li class="nav-item active"><a href="{{route("homepage")}}" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="{{ url('category')}}" class="nav-link">Categories</a></li>
           <li class="nav-item"><a href="{{url('brand')}}" class="nav-link">Brands </a></li>
           <li class="nav-item"><a href="{{url('about-us')}}" class="nav-link">About Us</a></li>
@@ -62,9 +62,9 @@
                 @foreach(Cart::content() as $cart)
                   <li>
                       <span class="item mb-3">
-                        <span class="item-left">
+                        <span class="item-left ml-4">
                           <img src="{{asset('img/feature/'.$cart->options->image)}}" alt="" width="50"/>
-                            <span class="item-info">
+                            <span class="item-info ml-4">
                                 <span>{{$cart->name}}</span>
                                 <span>${{$cart->price}} &nbsp; (x{{$cart->qty}})</span>
                             </span>
@@ -76,8 +76,6 @@
                   </li>
                   <li class="divider"></li>
                 @endforeach 
-
-                  
                   <li class="text-center mt-4"><a class="btn btn-dark" href="{{url('cart/shopping')}}">View Cart</a></li>
               </ul>
             </li>

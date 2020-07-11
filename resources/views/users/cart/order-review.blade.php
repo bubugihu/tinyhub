@@ -10,16 +10,16 @@
       </div>
   </div>
 </div>
-<section class="cart">
+<section class="cart pt-5">
     <div class="container">
       <div class="basket">
         <div class="basket-holder">
           <div class="basket-header tab-content">
             <div class="row">
-              <div class="col-5">Product</div>
-              <div class="col-2">Price</div>
-              <div class="col-3">Quantity</div>
-              <div class="col-2">Amount</div>
+              <div class="col-5"><h6>Product</h6></div>
+              <div class="col-2"><h6>Price</h6></div>
+              <div class="col-3"><h6>Quantity</h6></div>
+              <div class="col-2"><h6>Amount</h6></div>
               
             </div>
           </div>
@@ -29,7 +29,7 @@
             <div class="item mt-4">
               <div class="row d-flex align-items-center">
                 <div class="col-5">
-                  <div class="d-flex align-items-center"><img src="{{asset('img/feature/'.$cart->options->image)}}" alt="..." class="img-fluid" width="80">
+                  <div class="d-flex align-items-center"><img src="{{asset('img/feature/'.$cart->options->image)}}" alt="..." class="img-fluid" width="70">
                     <div class="title ml-4"><a href="detail.html">
                         <h5>{{$cart->name}}</h5><span class="text-muted">{{$cart->options->cate}}</span></a></div>
                   </div>
@@ -141,8 +141,8 @@
       </div>
     </div>
     <div class="container">
-    <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row py-5">
-      <a href="{{ url('checkout') }}" class="btn btn-template-outlined wide">Back to Checkout</a>
+    <div class="CTAs d-flex align-items-center justify-content-center justify-content-md-end flex-column flex-md-row pb-5">
+      <a href="{{ url('checkout') }}" class="btn btn-dark mr-5">Back to Checkout</a>
       <form action="{{ url('thank-you')}}" method="post">
         @csrf
       <input type="text" style="display: none" name="consignee_name" value="{{$consignee_name}}">
