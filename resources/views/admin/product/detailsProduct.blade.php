@@ -15,17 +15,29 @@
                                 <div class="row">
                                     <!-- Image Feature And Gallery -->
                                     <div class="col-md-6">
-                                        <div class="product-slider">
-                                            <div class="demo">
-                                                <div class="item d-flex justify-content-center">
-                                                    <div class="clearfix " style="width:100%; height: auto;">
-                                                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden" style="list-style: none outside none; padding-left: 0; margin: 0;">
-                                                            @foreach($gallery as $gallery)
-                                                            <li data-thumb="{{asset("img/gallery/$gallery->product_gallery")}}">
-                                                                <img src="{{asset("img/gallery/$gallery->product_gallery")}}" width="200px" height="auto" class="rounded mx-auto d-block" />
-                                                            </li>
-                                                            @endforeach
-                                                        </ul>
+                                        <div class="row">
+                                            <div class="col-md-2 d-flex justify-content-start">
+                                                <div class="product-slider">
+                                                    <div id="ThumbProduct" class="carousel slide" data-interval="false">
+                                                        <div class="carousel-inner">
+                                                            <div class="item active">
+                                                                @foreach($galleryThum as $galleryThum)
+                                                                <div data-target="#CarouselProduct" data-slide-to="{{++$no}}" class="SubThumbProduct rounded">
+                                                                    <img src="{{asset('img/gallery/'.$galleryThum->product_gallery)}}" class="rounded" width="50px" height="50px">
+                                                                </div>
+                                                                @endforeach
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-10 d-flex justify-content-center">
+                                                <div id="CarouselProduct" class="carousel slide" data-ride="carousel" style="max-width: 100%; max-height: auto;">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item  active"> <img class="rounded" src="{{asset('img/feature/'.$product->feature_image)}}" height="auto" width="100%"> </div>
+                                                        @foreach($galleryFea as $galleryFea)
+                                                        <div class="carousel-item"> <img class="rounded" src="{{asset('img/gallery/'.$galleryFea->product_gallery)}}" height="auto" width="100%"> </div>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>

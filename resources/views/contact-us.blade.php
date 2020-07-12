@@ -88,8 +88,8 @@
                                       @enderror
                                     </div>
                                     <div class="form-group text-center">
-                                      <button type="submit" class="btn login-btn">SUBMIT</button>
-                                      <button type="reset" class="btn btn-dark">RESET</button>
+                                      <button type="submit" class="btn login-btn">Send</button>
+                                      <button type="reset" class="btn btn-dark">Reset</button>
                                     </div>
                                   </form>
                             </div>

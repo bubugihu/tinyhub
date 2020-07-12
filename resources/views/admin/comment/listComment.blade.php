@@ -22,7 +22,7 @@
                     <th>No.</th>
                     <th>User Name</th>
                     <th>Product Name</th>
-                    <th>Comment</th>
+                    <th>Content</th>
                     <th>Create At</th>
                     <th>Status</th>
                     <th>Details</th>
@@ -136,7 +136,7 @@
                                   <div class="col-md-12">
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Contents</label>
-                                      <textarea name="" id="" class="form-control" value="{{$comment->cmt_content}}" readonly rows="9"></textarea>
+                                      <textarea name="" id="" class="form-control" value="" readonly rows="9">{{$comment->cmt_content}}</textarea>
                                     </div>
                                   </div>
                                 </div>

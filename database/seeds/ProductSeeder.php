@@ -14,7 +14,7 @@ class ProductSeeder extends Seeder
     public function run()
     {
         DB::table('product')->insert([
-            // In Ear - JBL
+            //--------------------------------------------------------------------In Ear - JBL
             ['product_title'=>'JBL In Ear 1',
             'price'=>110,
             'feature_image'=>'JBL-In-Ear-JIE1-1.jpg',
@@ -97,7 +97,7 @@ class ProductSeeder extends Seeder
 
            
 
-            // In Ear - Sony
+            //--------------------------------------------------------------------In Ear - Sony
             ['product_title'=>'Sony In Ear 1',
             'price'=>200,
             'feature_image'=>'Sony-In-Ear-SIE1-1.jpg',
@@ -178,10 +178,10 @@ class ProductSeeder extends Seeder
             'category_id'=>1,
             'brand_id'=>1],
 
-            // In Ear - Westone
+            //--------------------------------------------------------------------In Ear - Westone
            
 
-            //In ear Beats
+            //--------------------------------------------------------------------In ear Beats
 
             ['product_title'=>'Beats In Ear 1',
             'price'=>150,
@@ -191,7 +191,7 @@ class ProductSeeder extends Seeder
             'category_id'=>1,
             'brand_id'=>4],
 
-            //In ear Bang
+            //--------------------------------------------------------------------In ear Bang
 
             ['product_title'=>'Bang In Ear 1',
             'price'=>150,
@@ -209,7 +209,7 @@ class ProductSeeder extends Seeder
             'category_id'=>1,
             'brand_id'=>5],
             
-            // On ear JBL
+            //--------------------------------------------------------------------On ear JBL
 
             ['product_title'=>'JBL On Ear 1',
             'price'=>250,
@@ -291,7 +291,7 @@ class ProductSeeder extends Seeder
             'category_id'=>2,
             'brand_id'=>2],
 
-            //On ear sony
+            //--------------------------------------------------------------------On ear sony
 
             ['product_title'=>'Sony On Ear 1',
             'price'=>209,
@@ -374,9 +374,9 @@ class ProductSeeder extends Seeder
             'brand_id'=>1],
             
 
-        //On ear westone
+        //--------------------------------------------------------------------On ear westone
 
-        //On ear Beats
+        //--------------------------------------------------------------------On ear Beats
             
             ['product_title'=>'Beats On Ear 1',
             'price'=>290,
@@ -410,7 +410,7 @@ class ProductSeeder extends Seeder
             'category_id'=>2,
             'brand_id'=>4],
 
-        // On ear Bang    
+        //--------------------------------------------------------------------On ear Bang    
 
             ['product_title'=>'Bang On Ear 1',
             'price'=>199,
@@ -477,7 +477,7 @@ class ProductSeeder extends Seeder
             'brand_id'=>5],
 
 
-            //True Sony
+            //--------------------------------------------------------------------True Sony
             
             ['product_title'=>'Sony True Wireless 1',
             'price'=>410,
@@ -543,7 +543,7 @@ class ProductSeeder extends Seeder
             'category_id'=>3,
             'brand_id'=>1],
 
-            //True JBL
+            //--------------------------------------------------------------------True JBL
 
             ['product_title'=>'JBL True Wireless 1',
             'price'=>351,
@@ -577,7 +577,7 @@ class ProductSeeder extends Seeder
             'category_id'=>3,
             'brand_id'=>2],
             
-            //True Bang
+            //--------------------------------------------------------------------True Bang
 
             ['product_title'=>'Bang True Wireless 4',
             'price'=>312,

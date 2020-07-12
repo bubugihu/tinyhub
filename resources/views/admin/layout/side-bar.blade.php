@@ -101,7 +101,12 @@
                     </ul>
                 </div>
             </li>
-            <!-- End Comment  Module -->
+            <!-- End Comment Module -->
+            <hr><br>
+            <li class="sidebar-list-item"><a href="{{url("admin/reportproduct")}}" class="sidebar-link" style="color: darkgreen;"><i class="o-statistic-1 mr-3"></i><span>Report Product</span></a>
+            </li>
+            <li class="sidebar-list-item"><a href="{{url("admin/reportcategoryAndbrand")}}" class="sidebar-link" style="color: darkgreen;"><i class="o-statistic-1 mr-3"></i><span>Report Categories & Brands</span></a>
+            </li>
             @endif
       </ul>
       </div>

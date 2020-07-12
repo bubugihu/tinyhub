@@ -20,7 +20,7 @@ class TableOrder extends Migration
             $table->string('consignee_name');                     //người nhận hàng
             $table->string('phone_consignee', 12);
             $table->longText('note')->nullable()->default('Not Description');
-            $table->string('payment')->nullable()->default('COD');
+            $table->string('payment')->default('COD');
             $table->integer('status')->default(0);        //tiếp nhận hay ko? 0-không tiếp nhận, 1-ngược lại
             $table->integer('customer_id')->unsigned();     //Foreign key
             $table->timestamps();

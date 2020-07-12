@@ -677,7 +677,7 @@ ul.list-unstyled.list-detail-prd li {
 /*** End Product Detail ***/
 
 /* Border */
-.product-slider #CarouselProduct {
+ #CarouselProduct {
     margin: 0;
     text-align: center;
     width: 100%;
@@ -703,7 +703,7 @@ ul.list-unstyled.list-detail-prd li {
 /* Frame for Product Gallery */
 .product-slider .item img {
     width: 100%;
-    height: auto;
+    /* height: auto; */
 }
 
 /* Increment & Decrement Section */
@@ -1100,4 +1100,11 @@ i.fas.fa-search {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
+}
+
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    height: 210px!important;
 }

@@ -12,7 +12,7 @@
             </div>
             <div class="card-body">
               @if(Session::has('flash_message'))
-              <div class="text-center alert alert-{!! Session::get('flash_level') !!}">
+              <div class="alert alert-{!! Session::get('flash_level') !!}">
                 {!!Session::get('flash_message')!!}
               </div>
               @endif

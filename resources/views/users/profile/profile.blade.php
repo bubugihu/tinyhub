@@ -4,7 +4,7 @@
 <div class="container py-5">
     <div class="row card-body py-5 mx-auto">
         <!-- Info Customer -->
-        <div class="col-md-3 card py-2">
+        <div class="col-md-3 py-2">
             <div class="profile_feature">
                 <img src="{{asset('img/'.$customer->feature)}}" alt="{{$user->name}}" class="img-fluid rounded" width="100%" height="auto">
                 <div style="margin-top:20px ;">
@@ -12,12 +12,12 @@
                         <h5 class="card-title" style="margin-bottom: 0px;">{{$user->name}}</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-user" aria-hidden="true"></i> {{$customer->customer_name}}</li>
-                        <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-transgender-alt" aria-hidden="true"></i> {{$customer->gender}}</li>
-                        <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-birthday-cake" aria-hidden="true"></i> {{$customer->dob}}</li>
-                        <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-phone" aria-hidden="true"></i> {{$customer->phone}}</li>
-                        <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-home" aria-hidden="true"></i> {{$customer->address}}</li>
-                        <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-envelope" aria-hidden="true"></i> {{$user->email}}</li>
+                        <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-user mr-2" aria-hidden="true"></i> {{$customer->customer_name}}</li>
+                        <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-transgender-alt mr-2" aria-hidden="true"></i> {{$customer->gender}}</li>
+                        <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-birthday-cake mr-2" aria-hidden="true"></i> {{$customer->dob}}</li>
+                        <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-phone mr-2" aria-hidden="true"></i> {{$customer->phone}}</li>
+                        <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-home mr-2" aria-hidden="true"></i> {{$customer->address}}</li>
+                        <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-envelope mr-2" aria-hidden="true"></i> {{$user->email}}</li>
                     </ul>
                 </div>
             </div>
@@ -38,7 +38,7 @@
             <hr width="100%">
             <div class="tab-content " id="pills-tabContent">
                 @if(Session::has('flash_message'))
-                <div class="text-center alert alert-{!! Session::get('flash_level') !!}">
+                <div class="alert alert-{!! Session::get('flash_level') !!}">
                     {!!Session::get('flash_message')!!}
                 </div>
                 @endif
@@ -236,8 +236,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group d-flex justify-content-center">
-                                            <input type="submit" value="Save Change" class="btn btn-warning" style="margin-right: 15px;">
-                                            <input type="reset" value="Reset" class="btn btn-info" style="margin-left: 15px;">
+                                            <input type="submit" value="Save Change" class="btn btn-dark" style="margin-right: 15px;">
+                                            <input type="reset" value="Reset" class="btn btn-warning" style="margin-left: 15px;">
                                         </div>
                                     </div>
                                 </div>

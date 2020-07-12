@@ -58,7 +58,11 @@
             <li class="dropdown">
               <a href="#" style="padding-right: 0!important;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i data-count="{{Cart::count()}}" class="fa fa-shopping-basket fa-2x fa-border icon-dark badge-cart"></i></a>
               <ul class="dropdown-menu dropdown-cart mt-3 py-3" role="menu">
-
+                @if(Cart::instance()->count() == 0)
+                <li>
+                  <p class="text-center text-muted">No Items</p>
+                </li>
+                @else
                 @foreach(Cart::content() as $cart)
                   <li>
                       <span class="item mb-3">
@@ -70,12 +74,13 @@
                             </span>
                         </span>
                         <span class="item-right">
-                          <a href="{{url('cart/shopping/removeItem/'.$cart->rowId)}}" onclick="return confirm('Do you want to remove ?');" ><button class="badge badge-danger pull-right">X</button></a>
+                          <a href="{{url('cart/shopping/removeItem/'.$cart->rowId)}}" onclick="return confirm('Do you want to remove ?');" ><button class="badge badge-danger pull-right"><i class="fas fa-trash-alt text-white" style="font-size: 15px; font-weight:100;"></i></button></a>
                         </span>
                     </span>
                   </li>
                   <li class="divider"></li>
                 @endforeach 
+                @endif
                   <li class="text-center mt-4"><a class="btn btn-dark" href="{{url('cart/shopping')}}">View Cart</a></li>
               </ul>
             </li>

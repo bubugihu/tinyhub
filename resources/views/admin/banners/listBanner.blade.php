@@ -35,7 +35,7 @@
                     <td class="align-middle">{{$banner->ban_title}}</td>
                     <td class="align-middle">{{$banner->ban_content}}</td>
                     <td class="align-middle"><img src="{{asset('img/banner/'.$banner->ban_image)}}" alt="" width="60"></td>
-                    <td class="align-middle">{{$banner->ban_date}}</td>
+                    <td class="align-middle">{{$banner->created_at}}</td>
                     <td id="{{$stt++}}" class="align-middle">
                       <a href="{{url('admin/banners/updateBanners/'.$banner->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                       <a href="{{url('admin/banners/deleteBanners/'.$banner->id)}}" class="badge badge-danger p-2" onclick="return confirm('Do you want delete?');"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
