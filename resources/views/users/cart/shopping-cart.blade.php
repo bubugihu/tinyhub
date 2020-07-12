@@ -44,7 +44,13 @@
       </div>
       <div class="basket-body">
         <!-- Product-->
-
+        @if(Cart::instance()->count() == 0)
+          <div class="row">
+            <div class="col-md-12">
+              <p class="text-center">No Items</p>
+            </div>
+          </div>
+        @else
         @foreach(Cart::content() as $cart)
         <div class="item">
           <div class="row d-flex align-items-center">
@@ -84,12 +90,13 @@
                 </div>
                 <div class="col-2"><span>$</span><span>{{number_format($cart->price*$cart->qty, 0, '.', ',')}}</span></div>
                 <div class="col-1 ">
-                      <a href="{{url('cart/shopping/removeItem/'.$cart->rowId)}}" class="badge badge-danger p-2" onclick="return confirm('Do you want to remove ?');"><i class="delete fa fa-trash text-white"></i></a>
+                      <a href="{{url('cart/shopping/removeItem/'.$cart->rowId)}}" class="badge badge-danger p-2" onclick="return confirm('Do you want to remove ?');"><i class="fas fa-trash-alt text-white" style="font-size: 16px; font-weight:100;"></i></a>
                 </div>
             </div>
           </div>
           <hr>
       @endforeach
+      @endif
     </div>
   </div>
   </div>
