@@ -80,6 +80,10 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         Route::get('brands/updateBrands/{id}' , 'BrandsController@updateBrands');
         Route::post('brands/postUpdateBrands/{id}' , 'BrandsController@postUpdateBrands');
         Route::get('brands/deleteBrands/{id}', 'BrandsController@deleteBrands');
+
+        //report
+        route::get('reportproduct','ProductController@reportProduct');
+        route::get('reportcategoryAndbrand','CategoryController@reportcategoryAndbrand');
     });
         
     Route::group(['middleware' => ['customer']], function () { //modCustomer role 3
