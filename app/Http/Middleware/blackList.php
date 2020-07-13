@@ -16,11 +16,17 @@ class blackList
      */
     public function handle($request, Closure $next)
     {   
+        if(Auth::check())
+        {
         if(Auth::user()->role == 5)
         {
             Auth::logout();
-            return redirect()->route('contact-us')->with(['flash_level' => 'danger','flash_message' => 'You are banned. Please email Tinyhub@gmail.com for reason.' ]);
+            return redirect()->route('login')->with(['flash_level' => 'danger','flash_message' => 'You are banned. Please email Tinyhub@gmail.com for reason.' ]);
         }
+        else
+        return $next($request);
+        }
+        else
         return $next($request);
     }
 }
