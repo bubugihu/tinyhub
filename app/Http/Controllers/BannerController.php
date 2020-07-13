@@ -64,13 +64,15 @@ class BannerController extends Controller
         $b = Banner::find($request->id);
         $b->ban_title = $request->title;
         $b->ban_content = $request->content;
-        if($request->hasFile('files')){
-        $file = $request->file('files');
-        $imageName = $file->getClientOriginalName();
-        $file->move("img/banner/", $imageName);    
-        $b->ban_image = $imageName;
-        $b ->save();
-        }else
+        if($request->hasFile('files'))
+        {
+            $file = $request->file('files');
+            $imageName = $file->getClientOriginalName();
+            $file->move("img/banner/", $imageName);    
+            $b->ban_image = $imageName;
+            $b ->save();
+        }
+        else
         $b->save();
         
 

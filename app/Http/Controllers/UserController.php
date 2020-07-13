@@ -243,4 +243,18 @@ class UserController extends Controller
         $deleteCommentUser = Comment::where('comments.customer_id', $id)->where('comments.id', $idcomment)->delete();
         return redirect('admin/profile/' . $id)->with(['flash_level' => 'success', 'flash_message' => 'Delete Comment Successfully !']);
     }
+
+
+    //black list
+    public function test(Request $request){
+        $email = $request->email;
+        $password = $request->password;
+        if(User::where('email',$email)->count() == 0 )
+            return back()->with(['flash_level' => 'danger','flash_message' => 'ID or Password may be incorrect.' ]);
+        elseif(User::where('email',$email)->where('role',5)->count() > 0)
+            return back()->with(['flash_level' => 'danger','flash_message' => 'You are banned. Please email Tinyhub@gmail.com for reason.' ]);
+        elseif  (Auth::attempt(['email' => $email, 'password' => $password]))
+            return redirect()->intended('/');
+        
+    }
 }

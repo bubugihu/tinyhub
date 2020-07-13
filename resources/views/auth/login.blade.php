@@ -14,7 +14,7 @@
                                   {!!Session::get('flash_message')!!}
                                 </div>
                     @endif 
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('loginTest') }}">
                         @csrf
 
                         <div class="form-group row">

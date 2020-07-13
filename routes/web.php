@@ -19,9 +19,6 @@ Auth::routes();
 Route::get('/', function () {
     return view('homepage');
 })->name('homepage'); 
-Route::group(['middleware' => 'blackList'], function () {
-    
-   
 
 //////////////////admin
 Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
@@ -252,7 +249,7 @@ Route::post('thank-you', 'CartController@thankyou');
 //check report
 Route::get('cart/shopping/orderDetails/{id}', 'CartController@orderDetails');
 
-});
-
+//black list login
+Route::post('loginTest','UserController@test')->name('loginTest');
 
 
