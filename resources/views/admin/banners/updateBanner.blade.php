@@ -11,7 +11,7 @@
                 <h6 class="text-uppercase mb-0">Update Banner</h6>
               </div>
               <div class="card-body">
-                    {{-- @include('admin.product.form-error') --}}
+                    
                     <form role="form" action="{{url('admin/banners/postUpdateBanners')}}" method="POST" enctype="multipart/form-data">
                       {{ csrf_field() }}
                       <div class="form-group">

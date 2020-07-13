@@ -19,6 +19,13 @@
   <div class="container">
     <div class="basket">
       <div class="basket-holder">
+
+        @if(Session::has('flash_message'))
+              <div class="alert alert-{!! Session::get('flash_level') !!}">
+                {!!Session::get('flash_message')!!}
+              </div>
+        @endif
+
         <div class="basket-header ">
           <div class="row">
             <div class="col-1">

@@ -32,8 +32,12 @@
                                     @csrf
                                 <div class="row">
                                     <div class="form-group col-md-12">
-                                        <label for="firstname" class="form-label">Full Name</label>
-                                        <input type="text" id="firstname" name="consignee_name" placeholder="Enter your name" class="form-control @error('consignee_name') is-invalid @enderror">
+                                        <label for="firstname" class="form-label">Full Name<span class="required">*</span></label>
+                                        <input type="text" id="firstname" name="consignee_name" placeholder="Enter your name" class="form-control @error('consignee_name') is-invalid @enderror"
+                                        @auth
+                                          value="{{Auth::user()->roleCustomer->customer_name}}"
+                                        @endauth
+                                        >
                                         @error('consignee_name')
                                       <span class="invalid-feedback" role="alert">
                                           <strong>{{ $message }}</strong>
@@ -41,8 +45,12 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="lastname" class="form-label">Phone</label>
-                                        <input type="text" id="lastname" name="phone_consignee" placeholder="Phone" class="form-control @error('phone_consignee') is-invalid @enderror">
+                                        <label for="lastname" class="form-label">Phone<span class="required">*</span></label>
+                                        <input type="text" id="lastname" name="phone_consignee" placeholder="Phone" class="form-control @error('phone_consignee') is-invalid @enderror"
+                                        @auth
+                                          value="{{Auth::user()->roleCustomer->phone}}"
+                                        @endauth
+                                        >
                                         @error('phone_consignee')
                                       <span class="invalid-feedback" role="alert">
                                           <strong>{{ $message }}</strong>
@@ -50,15 +58,19 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="country" class="form-label pl-2">Payment</label>
+                                        <label for="country" class="form-label pl-2">Payment<span class="required">*</span></label>
                                         <select class="form-control" name="payment" id="">
                                             <option value="CoD">CoD</option>
                                             <option value="Credit Card">Credit Card</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="address" class="form-label">Address</label>
-                                        <input type="text" id="address" name="shipping_address" placeholder="Address" class="form-control @error('shipping_address') is-invalid @enderror">
+                                        <label for="address" class="form-label">Address<span class="required">*</span></label>
+                                        <input type="text" id="address" name="shipping_address" placeholder="Address" class="form-control @error('shipping_address') is-invalid @enderror"
+                                        @auth
+                                          value="{{Auth::user()->roleCustomer->address}}"
+                                        @endauth
+                                        >
                                         @error('shipping_address')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

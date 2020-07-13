@@ -35,7 +35,11 @@
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Full Name <span class="required">*</span></label>
-                                      <input type="text" class="form-control @error('feedbackName') is-invalid @enderror" name="feedbackName">
+                                      <input type="text" class="form-control @error('feedbackName') is-invalid @enderror" name="feedbackName"
+                                      @auth
+                                          value="{{Auth::user()->roleCustomer->customer_name}}"
+                                      @endauth
+                                      >
                                       @error('feedbackName')
                                       <span class="invalid-feedback" role="alert">
                                           <strong>{{ $message }}</strong>
@@ -44,7 +48,11 @@
                                     </div>
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Phone Number</label>
-                                      <input type="text" class="form-control @error('feedbackPhone') is-invalid @enderror" name="feedbackPhone">
+                                      <input type="text" class="form-control @error('feedbackPhone') is-invalid @enderror" name="feedbackPhone"
+                                      @auth
+                                          value="{{Auth::user()->roleCustomer->phone}}"
+                                      @endauth
+                                      >
                                       @error('feedbackPhone')
                                       <span class="invalid-feedback" role="alert">
                                           <strong>{{ $message }}</strong>
@@ -53,7 +61,11 @@
                                     </div>
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Email <span class="required">*</span></label>
-                                      <input type="email" class="form-control @error('feedbackEmail') is-invalid @enderror" name="feedbackEmail">
+                                      <input type="email" class="form-control @error('feedbackEmail') is-invalid @enderror" name="feedbackEmail"
+                                      @auth
+                                          value="{{Auth::user()->email}}"
+                                      @endauth
+                                      >
                                       @error('feedbackEmail')
                                       <span class="invalid-feedback" role="alert">
                                           <strong>{{ $message }}</strong>

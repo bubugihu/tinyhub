@@ -86,11 +86,14 @@ class CartController extends Controller
     public function increCart(Request $request)
     {
         $qtyNew = $request->qtyItemCart + 1;
+        if($qtyNew >20)
+            return back()->with(['flash_level' => 'danger','flash_message' => 'Quantity can not greater 20 !' ]);
         $idItem = $request->idIncreCart;
         Cart::update($idItem, [
             'qty' => $qtyNew
         ]);
         return back();
+        
     }
 
     //decre Cart

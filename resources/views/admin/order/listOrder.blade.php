@@ -44,7 +44,7 @@
                     </td>
                     <td class="align-middle">{{$order->created_at}}</td>
                     <td>
-                      <a href="{{url('cart/shopping/orderDetails/'.$order->order_id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
+                      <a target='_blank' href="{{url('cart/shopping/orderDetails/'.$order->order_id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                       <!-- Modal Delete Order With Status = 0 -->
                       @if($order->status==0)
                       <a href="{{url('admin/order/deleteOrder/'.$order->order_id)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>

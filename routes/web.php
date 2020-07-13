@@ -110,14 +110,15 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         route::get('profile/{id}/{idcommment}','UserController@deleteCommentAdmin');
         route::post('profileUpdate/{id}','UserController@postUpdateProfileAdmin');
 
-        //ajax Register
-        Route::get('ajaxRegisterEmail/{email}', 'AjaxController@registerEmail');
-        Route::get('ajaxRegisterPhone/{phone}', 'AjaxController@registerPhone');
+        
 
         //Report
         Route::get('reportcategoryAndbrand','CategoryController@reportcategoryAndbrand');
         Route::get('reportproduct','ProductController@reportProduct');
         });
+//ajax Register
+Route::get('admin/ajaxRegisterEmail/{email}', 'AjaxController@registerEmail');
+Route::get('admin/ajaxRegisterPhone/{phone}', 'AjaxController@registerPhone');
 //end admin
 Route::post('users/product/createCommentUser/{idProduct}/{idCustomer}', 'ProductController@postCommentUser');
 /////////////Blank page

@@ -225,14 +225,6 @@
             </div>
           </div>
         </div>
-        <div class="row p-4">
-          <div class="col-md-3"></div>
-          <div class="col-md-6 text-center">
-            <button class="btn login-btn" onclick="print('Invoice')">Print Invoice</button></a>
-            <a href="{{route("homepage")}}"><button type="reset" class="btn btn-dark">Back to homepage</button></a>
-          </div>
-          <div class="col-md-3"></div>
-        </div>
     </div>
 </section>
 

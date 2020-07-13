@@ -146,6 +146,14 @@ class CategoryController extends Controller
     public function search(Request $request){
         
         $orderByPrice = $orderByName = 'asc';
+        if($request->SortBy == 2 )
+        {
+            $orderByPrice = 'desc';
+        }
+        if($request->SortBy == 4)
+        {
+            $orderByName = 'desc';
+        }
         $message = 'a';
         $fromPrice = $request->input('fromPrice');
         $toPrice = $request->input('toPrice');

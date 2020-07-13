@@ -73,7 +73,7 @@
                                     @endif
                                 </td>
                                 <td class="align-middle">
-                                    <a href="{{url('cart/shopping/orderDetails/'.$order->order_id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
+                                    <a target='_blank' href="{{url('cart/shopping/orderDetails/'.$order->order_id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                                 </td>
                             </tr>
                             @endforeach
