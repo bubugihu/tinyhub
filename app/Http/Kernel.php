@@ -73,5 +73,7 @@ class Kernel extends HttpKernel
         'product'   =>  \App\Http\Middleware\ModProduct::class,
         //mod customer
         'customer'  =>  \App\Http\Middleware\ModCustomer::class,
+        //black list
+        'blackList' => \App\Http\Middleware\blackList::class,
     ];
 }

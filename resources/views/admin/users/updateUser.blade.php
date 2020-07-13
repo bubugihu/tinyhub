@@ -41,6 +41,7 @@
                                       <option value="1">Admin</option>
                                       <option value="2">Mod Customer</option>
                                       <option value="3">Mod Product</option>
+                                      <option value="5">Black List</option>
                                     </select>
                                   </div>
                               </div>   

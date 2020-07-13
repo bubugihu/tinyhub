@@ -9,6 +9,11 @@
                     <h3 class="text-center">Login</h3>
                 </div>
                 <div class="card-body">
+                    @if(Session::has('flash_message'))
+                                <div class="alert alert-{!! Session::get('flash_level') !!}">
+                                  {!!Session::get('flash_message')!!}
+                                </div>
+                    @endif 
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

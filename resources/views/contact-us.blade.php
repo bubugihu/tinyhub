@@ -82,6 +82,7 @@
                                         <option value="Guarantee">Guarantee</option>
                                         <option value="Payment">Payment</option>
                                         <option value="Website">Website</option>
+                                        <option value="Others">Black List</option>
                                         <option value="Others">Others</option>
                                       </select>
                                       @error('feedbackTitle')
