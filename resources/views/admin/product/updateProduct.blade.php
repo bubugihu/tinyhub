@@ -102,10 +102,7 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Please press Ctrl to choose multiple images:</label><br>
-                        <input type="file" name="galleryimg" multiple>
-                          @if($errors->has('galleryimg'))
-                            <small style="color:red;font-size:14px;">{{$errors->first('galleryimg')}}</small>
-                          @endif
+                        <input type="file" name="galleryimg[]" multiple>
                       </div><br>
                       <div class="form-group">
                         <button type="submit" class="btn btn-dark">Update</button>

@@ -15,7 +15,7 @@
                       <div class="alert alert-{!! Session::get('flash_level') !!}">
                           {!!Session::get('flash_message')!!}
                       </div>
-                    @endif 
+                    @endif
                     {{-- @include('admin.product.form-error') --}}
                     <form role="form" action="{{url("admin/product/postCreate")}}" method="POST" enctype="multipart/form-data">
                       {{ csrf_field() }}
@@ -27,8 +27,8 @@
                         @endif
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Price <span class="required">*</span></label>
-                        <input type="number" class="form-control" name="prdprice" min="0">
+                        <label class="form-control-label text-uppercase">Price<span class="required">*</span></label>
+                        <input type="number" class="form-control" name="prdprice" min="0" max="10000">
                         @if($errors->has('prdprice'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdprice')}}</small>
                         @endif
@@ -61,7 +61,7 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Warranty_Period <span class="required">*</span></label>
-                        <input type="number" class="form-control" name="prdWarranty" min="0">
+                        <input type="number" class="form-control" name="prdWarranty" min="6">
                         @if($errors->has('prdWarranty'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdWarranty')}}</small>
                         @endif
@@ -95,10 +95,7 @@
                       </div>
                       <div class="form-group ">
                         <label class="form-control-label text-uppercase">Please press Ctrl to choose multiple images:</label><br>
-                        <input type="file" class="custom-fileip" name="galleryimg" multiple>
-                          @if($errors->has('galleryimg'))
-                            <small style="color:red;font-size:14px;">{{$errors->first('galleryimg')}}</small>
-                          @endif
+                        <input type="file" class="custom-fileip" name="galleryimg[]" multiple>
                       </div><br>
                       <div class="form-group">
                         <button type="submit" class="btn btn-dark">Create</button>
