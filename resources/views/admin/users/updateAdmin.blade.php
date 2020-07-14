@@ -11,7 +11,7 @@
               <h3 class="text-center">Update Account</h3>
             </div>
             <div class="card-body">
-              <form method="post" action="{{url('admin/users/postUpdateUser')}}">
+              <form method="post" action="{{url('admin/users/postUpdateAdmin')}}">
                 @csrf
 
                 <div class="form-group row">

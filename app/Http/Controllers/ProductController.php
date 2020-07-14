@@ -278,7 +278,7 @@ class ProductController extends Controller
     public function reportProduct(){
         $products = Product::join('category','product.category_id','=','category.id')
                             ->join('brand','product.brand_id','=','brand.id')
-                            ->select('brand.brand_name','category.category_name','product.*')->paginate(8);
+                            ->select('brand.brand_name','category.category_name','product.*')->get();
         return view('admin.reportProduct', compact('products'));
     }
 }

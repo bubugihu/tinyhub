@@ -140,7 +140,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">User Name<span class="required">*</span></label>
-                                            <input type="text" name="profile_user_name" class="form-control">
+                                            <input type="text" name="profile_user_name" class="form-control"  value="{{$user->name}}">
                                             @if($errors->has('profile_user_name'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_user_name')}}</small>
                                             @endif
@@ -149,7 +149,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Customer Name<span class="required">*</span></label>
-                                            <input type="text" name="profile_customer_name" class="form-control">
+                                            <input type="text" name="profile_customer_name" class="form-control" value="{{$customer->customer_name}}">
                                             @if($errors->has('profile_customer_name'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_customer_name')}}</small>
                                             @endif
@@ -181,7 +181,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">DOB<span class="required">*</span></label>
-                                            <input type="date" name="profile_dob" class="form-control">
+                                            <input type="date" name="profile_dob" class="form-control" min="1900-01-01" max="2006-12-31" value="{{$customer->dob}}">
                                             @if($errors->has('profile_dob'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_dob')}}</small>
                                             @endif
@@ -193,7 +193,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Phone<span class="required">*</span></label>
-                                            <input type="number" name="profile_phone" class="form-control">
+                                            <input type="number" name="profile_phone" class="form-control" value="{{$customer->phone}}">
                                             @if($errors->has('profile_phone'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_phone')}}</small>
                                             @endif
@@ -202,7 +202,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Email<span class="required">*</span></label>
-                                            <input type="email" name="profile_email" class="form-control">
+                                            <input type="email" name="profile_email" class="form-control" value="{{$user->email}}">
                                             @if($errors->has('profile_email'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_email')}}</small>
                                             @endif
@@ -214,7 +214,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Address<span class="required">*</span></label>
-                                            <textarea name="profile_address" class="form-control" rows="4"></textarea>
+                                            <textarea name="profile_address" class="form-control" rows="4">{{$customer->address}}</textarea>
                                             @if($errors->has('profile_address'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_address')}}</small>
                                             @endif

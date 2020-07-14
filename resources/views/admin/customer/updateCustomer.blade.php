@@ -17,14 +17,14 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Full Name<span class="required">*</span></label>
-                                            <input type="text" class="form-control" placeholder="{{$customer->customer_name}}" name="cus_customer_name">
+                                            <input type="text" class="form-control" value="{{$customer->customer_name}}" name="cus_customer_name">
                                             @if($errors->has('cus_customer_name'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('cus_customer_name')}}</small>
                                             @endif
                                         </div>
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">BirthDay<span class="required">*</span></label>
-                                            <input type="date" class="form-control" placeholder="{{$customer->dob}}" name="cus_dob">
+                                            <input type="date" class="form-control" value="{{$customer->dob}}" min="1900-01-01" max="2006-12-31" name="cus_dob">
                                             @if($errors->has('cus_dob'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('cus_dob')}}</small>
                                             @endif
@@ -45,14 +45,14 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Phone<span class="required">*</span></label>
-                                            <input type="number" class="form-control" placeholder="{{$customer->phone}}" name="cus_phone">
+                                            <input type="number" class="form-control" value="{{$customer->phone}}" name="cus_phone">
                                             @if($errors->has('cus_phone'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('cus_phone')}}</small>
                                             @endif
                                         </div>
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Address<span class="required">*</span></label>
-                                            <input type="text" class="form-control" placeholder="{{$customer->address}}" name="cus_address">
+                                            <input type="text" class="form-control" value="{{$customer->address}}" name="cus_address">
                                             @if($errors->has('cus_address'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('cus_address')}}</small>
                                             @endif

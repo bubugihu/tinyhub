@@ -16,22 +16,22 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+    // List Users
     public function listUsers()
     {
-        $user = User::all();
+        $user = User::where('users.role',0)->get();
         $stt = 0;
         return view("admin.users.listUsers", compact('user', 'stt'));
     }
-    
 
-    //go to update Form
+    //Go To Update Form User
     public function updateUser($id)
     {
         $users = User::find($id);
         return view('admin.users.updateUser', compact('users'));
     }
 
-    //update user
+    //Update User
     public function postUpdateUser(Request $request, User $user)
     {
         // validate
@@ -44,6 +44,35 @@ class UserController extends Controller
         $users->save();
 
         return redirect()->action('UserController@listUsers')->with(['flash_level' => 'success', 'flash_message' => 'Update account success !']);;
+    }
+
+    public function listAdmin()
+    {
+        $userAdmin = User::whereBetween('users.role',[1, 3])->get();
+        $sttAdmin = 0;
+        return view("admin.users.listAdmin", compact('userAdmin', 'sttAdmin'));
+    }
+
+    //Go To Update Form Admin
+    public function updateAdmin($id)
+    {
+        $users = User::find($id);
+        return view('admin.users.updateAdmin', compact('users'));
+    }
+
+    //Update Admin
+    public function postUpdateAdmin(Request $request, User $user)
+    {
+        // validate
+        Validator::make($request->all(), [
+            'name'          => ['bail', 'required', 'string', 'max:255'],
+        ])->validate();
+        $users = User::find($request->id);
+        $users->name         = trim($request->name);
+        $users->role          = $request->role;
+        $users->save();
+
+        return redirect()->action('UserController@listAdmin')->with(['flash_level' => 'success', 'flash_message' => 'Update account success !']);;
     }
 
     //change profile user
@@ -189,8 +218,8 @@ class UserController extends Controller
         $order = Order::join('order_details', 'order.id', '=', 'order_details.order_id')
             ->join('product', 'order_details.product_id', '=', 'product.id')
             ->where('order.customer_id', $id)
-            ->groupBy('order_details.order_id', 'order.payment', 'order.created_at','order.status')
-            ->select('order_details.order_id', DB::raw('SUM(product.price * order_details.quantity) as total'), 'order.payment', 'order.created_at','order.status')
+            ->groupBy('order_details.order_id', 'order.payment', 'order.created_at', 'order.status')
+            ->select('order_details.order_id', DB::raw('SUM(product.price * order_details.quantity) as total'), 'order.payment', 'order.created_at', 'order.status')
             ->get();
 
         $comment = Comment::join('customer', 'comments.customer_id', '=', 'customer.id')
@@ -215,15 +244,15 @@ class UserController extends Controller
         $order = Order::join('order_details', 'order.id', '=', 'order_details.order_id')
             ->join('product', 'order_details.product_id', '=', 'product.id')
             ->where('order.customer_id', $id)
-            ->groupBy('order_details.order_id', 'order.payment', 'order.created_at','order.status')
-            ->select('order_details.order_id', DB::raw('SUM(product.price * order_details.quantity) as total'), 'order.payment', 'order.created_at','order.status')
+            ->groupBy('order_details.order_id', 'order.payment', 'order.created_at', 'order.status')
+            ->select('order_details.order_id', DB::raw('SUM(product.price * order_details.quantity) as total'), 'order.payment', 'order.created_at', 'order.status')
             ->get();
 
         $comment = Comment::join('customer', 'comments.customer_id', '=', 'customer.id')
             ->join('product', 'comments.product_id', '=', 'product.id')
             ->join('brand', 'product.brand_id', '=', 'brand.id')
             ->join('category', 'product.category_id', '=', 'category.id')
-            ->where('comments.customer_id', $id)->where('comments.cmt_status',0)
+            ->where('comments.customer_id', $id)->where('comments.cmt_status', 0)
             ->select('product.*', 'comments.*')
             ->get();
 
