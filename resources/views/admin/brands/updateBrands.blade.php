@@ -28,8 +28,8 @@
                         @endif
                       </div>
                       <div class="form-group">
-                        <label for="">Old Image</label><br>
-                        <img class="img-fluid" src="{{url("img/feature/" . $b -> brand_image)}}" alt="" width="100">
+                        <label for="">Current Image</label><br>
+                        <img class="img-fluid" src="{{url("img/brands/" . $b->brand_image)}}" alt="" width="100">
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Upload Brand Image <span class="required">*</span></label><br>

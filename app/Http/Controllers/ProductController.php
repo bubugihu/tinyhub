@@ -112,7 +112,8 @@ class ProductController extends Controller
         $p = Product::find($id);
         $cates = Category::all();
         $brand = Brands::all();
-        return view('admin.product.updateProduct', ['p' => $p, 'c' => $cates, 'b' => $brand]);
+        $gallery = Gallery::where('product_id', $id)->get();
+        return view('admin.product.updateProduct', ['p' => $p, 'c' => $cates, 'b' => $brand, 'g' => $gallery]);
     }
 
     // Function link to update page
@@ -133,7 +134,7 @@ class ProductController extends Controller
     public function postUpdate(Request $request, $id)
     {
         $p  = Product::find($id);
-        $gallery = Gallery::find($id);
+        
 
         $this->validate(
             $request,
@@ -184,21 +185,27 @@ class ProductController extends Controller
             $imageName = "";
         }
         $p->save();
+    
+        // Function gallery upload
+        $product_id = $p->id;
+        $currentimg = Gallery::where('product_id', $product_id);
+        $currentimg->delete();
 
-        $gallery = new Gallery();
-        if ($request->hasFile('galleryimg')) {
-            $fileGL = $request->file('galleryimg');
-            $ext   = $fileGL->getClientOriginalExtension();
-            if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
-                return Redirect('admin/product/updateProduct')->with(['flash_level' => 'danger','flash_message' => 'You can only upload multiple image with file .jpg | .png | .jpeg !' ]);
+        if($request->hasFile('galleryimg')){
+            foreach ($request->file('galleryimg') as $file) {
+                $product_gallery = new Gallery();
+                if (isset($file)) {
+                    $ext   = $file->getClientOriginalExtension();
+                        if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
+                            return Redirect('admin/product/createProduct')->with(['flash_level' => 'danger', 'flash_message' => 'You can only upload image with file .jpg | .png | .jpeg !']);
+                        }
+                    $product_gallery->product_gallery = $file->getClientOriginalName();
+                    $product_gallery->product_id = $product_id;
+                    $file->move("img/gallery", $file->getClientOriginalName());
+                    $product_gallery->save();
+                }
             }
-            $nameGlImg = $fileGL->getClientOriginalName();
-            $fileGL->move("img/gallery", $nameGlImg);
-            $gallery->product_gallery = $nameGlImg;
         }
-
-        $gallery->product_id = $request = $p->id;
-        $gallery->save();
 
         return redirect()->action('ProductController@listProduct')->with(['flash_level' => 'success', 'flash_message' => 'Update Successfully !']);
     }
