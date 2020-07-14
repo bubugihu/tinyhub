@@ -85,7 +85,7 @@
                     <div class="product_grid card-body card d-flex justify-content-center align-items-center">
                         <div class="product_image d-flex justify-content-center align-items-center" style="min-height: 220px;">
                             <a href="{{ url('product-detail/'.$product->id)}}" class="image ">
-                                <!-- <img class="pic_2 rounded" src="img/5.jpg" alt=""> -->
+                                
                                 <img class="img-fluid rounded" src="{{asset("img/feature/$product->feature_image")}}" alt="" width="200" height="auto">
                             </a>
                         </div>

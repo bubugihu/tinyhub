@@ -233,7 +233,8 @@ class ProductController extends Controller
             ->join('users', 'customer.users_id', '=', 'users.id')
             ->join('product', 'comments.product_id', '=', 'product.id')
             ->where('comments.product_id', $id)
-            ->where('comments.cmt_status', '0')
+            ->where('comments.cmt_status','1')
+            ->orderBy('comments.created_at', 'desc')
             ->select('users.*', 'customer.*', 'product.*', 'comments.*')->get();
         $customer = '';
         if (Auth::check()) {

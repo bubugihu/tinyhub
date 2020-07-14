@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Customers;
 use App\User;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
+use App\Comment;
 
 class AjaxController extends Controller
 {
@@ -21,4 +22,6 @@ class AjaxController extends Controller
             echo "<strong style='font-size: 11px'>The phone has already been taken.</strong>";
         }
     }
+
+   
 }

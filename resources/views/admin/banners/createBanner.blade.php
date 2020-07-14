@@ -14,7 +14,7 @@
                     <form action="{{url('admin/banners/postCreateBanners')}}" method="post" enctype="multipart/form-data">
                       {{ csrf_field() }}
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">BannerTitle <span class="required">*</span></label>
+                        <label class="form-control-label text-uppercase">Banner Title <span class="required">*</span></label>
                         <input type="text" class="form-control @error('title') is-invalid @enderror" name="title">
                         @error('title')
                             <span class="invalid-feedback" role="alert">

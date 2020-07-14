@@ -57,7 +57,7 @@ class BannerController extends Controller
             $request,
             [
                 'title'             => 'bail|required|string|min:3|max:100',
-                'content'           => 'bail|required|string|min:0|max:20000',
+                'content'           => 'bail|required|string|min:1|max:20000',
                 'files'             => 'bail|file|image|mimes:jpg,png,jpeg|max:10240',
             ],
         );

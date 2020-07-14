@@ -67,7 +67,7 @@
                 <div class="row d-flex justify-content-around align-items-center py-4">
                     <div class=" col-md-3 quantity d-flex align-items-center justify-content-center">
                         <button type="button" class="dec-btn" onclick="decre()">-</button>
-                        <input type="number" id="1" value="{{$quantity}}" name="quantityNumber" min="1" max="20" class="quantity-no rounded">
+                        <input type="number" id="1" value="{{$quantity}}" name="quantityNumber" min="1" class="quantity-no rounded">
                         <button type="button" class="inc-btn" onclick="incre()">+</button>
                     </div>
                     <div class="col-md-5">
@@ -192,7 +192,6 @@
         document.getElementById("1").stepUp(1);
         document.getElementById("2").stepUp(1);
     }
-
     function decre() {
         document.getElementById("1").stepDown(1);
         document.getElementById("2").stepDown(1);

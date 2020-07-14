@@ -23,7 +23,6 @@
                     <th>User Name</th>
                     <th>Product Name</th>
                     <th>Content</th>
-                    <th>Create At</th>
                     <th>Status</th>
                     <th>Details</th>
                   </tr>
@@ -35,34 +34,91 @@
                     <td class="align-middle">{{$comment->name}}</td>
                     <td class="align-middle">{{$comment->product_title}}</td>
                     <td class="align-middle">
-                      <a href="#Modal-Comment-Content{{$comment->id}}" class="badge badge-info p-2" data-toggle="modal"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
-                      <!-- Modal Content Customer -->
-                      <div id="Modal-Comment-Content{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade bd-example-modal-lg text-left">
-                        <div role="document" class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h4 id="exampleModalLabel" class="modal-title">Product Name: {{$comment->product_title}}</h4>
-                              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                            </div>
-                            <div class="modal-body">
-                              <div class="container">
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <div class="form-group">
-                                      <textarea name="" id="" class="form-control" placeholder="{{$comment->cmt_content}}" readonly rows="10"></textarea>
+                      <a href="#Modal-Comment-Details{{$comment->id}}" class="badge badge-info p-2" data-toggle="modal"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
+                        <!-- Modal Details Customer -->
+                        <div id="Modal-Comment-Details{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade bd-example-modal-lg text-left">
+                          <div role="document" class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 id="exampleModalLabel" class="modal-title">Details Comment</h4>
+                                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group">
+                                            <label class="form-control-label text-uppercase">User Name</label>
+                                            <input type="text" class="form-control" value="{{$comment->name}}" readonly>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <label class="form-control-label text-uppercase">Create At</label>
+                                            <input type="text" class="form-control" value="{{$comment->created_at}}" readonly>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <label class="form-control-label text-uppercase">Status</label>
+                                            <input type="text" class="form-control" 
+                                            @if($comment->cmt_status == 0)
+                                            value="OFF"
+                                            @else
+                                            value="ON"
+                                            @endif
+                                             readonly>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <div class="row">
+                                        <div class="col-md-12">
+                                          <div class="form-group">
+                                            <label class="form-control-label text-uppercase">Product Name</label>
+                                            <input type="text" class="form-control" value="{{$comment->product_title}}" readonly>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <label class="form-control-label text-uppercase">Category</label>
+                                            <input type="text" class="form-control" value="{{$comment->category_name}}" readonly>
+                                          </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <div class="form-group">
+                                            <label class="form-control-label text-uppercase">Brand</label>
+                                            <input type="text" class="form-control" value="{{$comment->brand_name}}" readonly>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-md-12">
+                                      <div class="form-group">
+                                        <label class="form-control-label text-uppercase">Contents</label>
+                                        <textarea name="" id="" class="form-control" value="" readonly rows="9">{{$comment->cmt_content}}</textarea>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
                     </td>
-                    <td class="align-middle">{{$comment->created_at}}</td>
+                    {{-- End modal --}}
                     <td class="align-middle">
                       @if($comment->cmt_status == 0)
                       <a href="{{url('admin/comment/onCommentStatus/'.$comment->id)}}"><span class="badge badge-pill badge-danger">OFF</span></a>
@@ -71,83 +127,7 @@
                       @endif
                     </td>
                     <td class="align-middle">
-                      <a href="#Modal-Comment-Details{{$comment->id}}" class="badge badge-info p-2" data-toggle="modal"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
-                      <!-- Modal Details Customer -->
-                      <div id="Modal-Comment-Details{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade bd-example-modal-lg text-left">
-                        <div role="document" class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h4 id="exampleModalLabel" class="modal-title">Details Comment</h4>
-                              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                            </div>
-                            <div class="modal-body">
-                              <div class="container">
-                                <div class="row">
-                                  <div class="col-md-6">
-                                    <div class="row">
-                                      <div class="col-md-12">
-                                        <div class="form-group">
-                                          <label class="form-control-label text-uppercase">User Name</label>
-                                          <input type="text" class="form-control" value="{{$comment->name}}" readonly>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label class="form-control-label text-uppercase">Create At</label>
-                                          <input type="text" class="form-control" value="{{$comment->created_at}}" readonly>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label class="form-control-label text-uppercase">Status</label>
-                                          <input type="text" class="form-control" value="{{$comment->cmt_status}}" readonly>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                    <div class="row">
-                                      <div class="col-md-12">
-                                        <div class="form-group">
-                                          <label class="form-control-label text-uppercase">Product Name</label>
-                                          <input type="text" class="form-control" value="{{$comment->product_title}}" readonly>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label class="form-control-label text-uppercase">Category</label>
-                                          <input type="text" class="form-control" value="{{$comment->category_name}}" readonly>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <div class="form-group">
-                                          <label class="form-control-label text-uppercase">Brand</label>
-                                          <input type="text" class="form-control" value="{{$comment->brand_name}}" readonly>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-md-12">
-                                    <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Contents</label>
-                                      <textarea name="" id="" class="form-control" value="" readonly rows="9">{{$comment->cmt_content}}</textarea>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <a href="{{ url('product-detail/'.$comment->product_id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
                       <a href="{{url('admin/comment/deleteComment/'.$comment->id)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
                     </td>
                   </tr>

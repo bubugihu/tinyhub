@@ -119,6 +119,7 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
 //ajax Register
 Route::get('admin/ajaxRegisterEmail/{email}', 'AjaxController@registerEmail');
 Route::get('admin/ajaxRegisterPhone/{phone}', 'AjaxController@registerPhone');
+
 //end admin
 Route::post('users/product/createCommentUser/{idProduct}/{idCustomer}', 'ProductController@postCommentUser');
 /////////////Blank page
