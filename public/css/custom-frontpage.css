@@ -1101,3 +1101,10 @@ i.fas.fa-search {
         transform: scale(1);
     }
 }
+
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    height: 210px!important;
+}

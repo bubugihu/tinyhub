@@ -174,27 +174,8 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-2 mb-4 mb-lg-0">
-          <div class="row align-items-center mb-3 flex-row">
-            <div class="col-lg-12">
-              <a href="{{url("admin/reportproduct")}}"><button class="col-lg-12 card-body card mb-3 align-items-center admin-btn"><i class="o-archive-folder-1" style="font-size: 40px;"></i>
-                  <h5 class="mb-0 d-flex "><span>ReportP</span></h5>
-                </button></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 mb-4 mb-lg-0">
-          <div class="row align-items-center mb-3 flex-row">
-            <div class="col-lg-12">
-              <a href="{{url("admin/reportcategoryAndbrand")}}"><button class="col-lg-12 card-body card mb-3 align-items-center admin-btn"><i class="o-trophy-1" style="font-size: 40px;"></i>
-                  <h5 class="mb-0 d-flex "><span>ReportCB</span></h5>
-                </button></a>
-            </div>
-          </div>
-        </div>
         @endif
       </div>
     </section>
   </div>
-
   @endsection

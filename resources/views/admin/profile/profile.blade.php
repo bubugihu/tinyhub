@@ -12,12 +12,12 @@
                         <h5 class="card-title" style="margin-bottom: 0px;">{{$user->name}}</h5>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-user" aria-hidden="true"></i> {{$customer->customer_name}}</li>
-                        <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-transgender-alt" aria-hidden="true"></i> {{$customer->gender}}</li>
-                        <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-birthday-cake" aria-hidden="true"></i> {{$customer->dob}}</li>
-                        <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-phone" aria-hidden="true"></i> {{$customer->phone}}</li>
-                        <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-home" aria-hidden="true"></i> {{$customer->address}}</li>
-                        <li class="list-group-item" style="font-size: 15px;"><i class="fa fa-envelope" aria-hidden="true"></i> {{$user->email}}</li>
+                        <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-user mr-2" aria-hidden="true"></i> {{$customer->customer_name}}</li>
+                        <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-transgender-alt mr-2" aria-hidden="true"></i> {{$customer->gender}}</li>
+                        <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-birthday-cake mr-2" aria-hidden="true"></i> {{$customer->dob}}</li>
+                        <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-phone mr-2" aria-hidden="true"></i> {{$customer->phone}}</li>
+                        <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-home mr-2" aria-hidden="true"></i> {{$customer->address}}</li>
+                        <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-envelope mr-2" aria-hidden="true"></i> {{$user->email}}</li>
                     </ul>
                 </div>
             </div>
@@ -38,7 +38,7 @@
             <hr width="100%">
             <div class="tab-content " id="pills-tabContent">
                 @if(Session::has('flash_message'))
-                <div class="text-center alert alert-{!! Session::get('flash_level') !!}">
+                <div class="alert alert-{!! Session::get('flash_level') !!}">
                     {!!Session::get('flash_message')!!}
                 </div>
                 @endif
@@ -140,7 +140,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">User Name<span class="required">*</span></label>
-                                            <input type="text" name="profile_user_name" class="form-control">
+                                            <input type="text" name="profile_user_name" class="form-control"  value="{{$user->name}}">
                                             @if($errors->has('profile_user_name'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_user_name')}}</small>
                                             @endif
@@ -149,7 +149,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Customer Name<span class="required">*</span></label>
-                                            <input type="text" name="profile_customer_name" class="form-control">
+                                            <input type="text" name="profile_customer_name" class="form-control" value="{{$customer->customer_name}}">
                                             @if($errors->has('profile_customer_name'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_customer_name')}}</small>
                                             @endif
@@ -181,7 +181,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">DOB<span class="required">*</span></label>
-                                            <input type="date" name="profile_dob" class="form-control">
+                                            <input type="date" name="profile_dob" class="form-control" min="1900-01-01" max="2006-12-31" value="{{$customer->dob}}">
                                             @if($errors->has('profile_dob'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_dob')}}</small>
                                             @endif
@@ -193,7 +193,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Phone<span class="required">*</span></label>
-                                            <input type="number" name="profile_phone" class="form-control">
+                                            <input type="number" name="profile_phone" class="form-control" value="{{$customer->phone}}">
                                             @if($errors->has('profile_phone'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_phone')}}</small>
                                             @endif
@@ -202,7 +202,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Email<span class="required">*</span></label>
-                                            <input type="email" name="profile_email" class="form-control">
+                                            <input type="email" name="profile_email" class="form-control" value="{{$user->email}}">
                                             @if($errors->has('profile_email'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_email')}}</small>
                                             @endif
@@ -214,7 +214,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Address<span class="required">*</span></label>
-                                            <textarea name="profile_address" class="form-control" rows="4"></textarea>
+                                            <textarea name="profile_address" class="form-control" rows="4">{{$customer->address}}</textarea>
                                             @if($errors->has('profile_address'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_address')}}</small>
                                             @endif
@@ -236,8 +236,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group d-flex justify-content-center">
-                                            <input type="submit" value="Save Change" class="btn btn-warning" style="margin-right: 15px;">
-                                            <input type="reset" value="Reset" class="btn btn-info" style="margin-left: 15px;">
+                                            <input type="submit" value="Save Change" class="btn btn-dark" style="margin-right: 15px;">
+                                            <input type="reset" value="Reset" class="btn btn-warning" style="margin-left: 15px;">
                                         </div>
                                     </div>
                                 </div>

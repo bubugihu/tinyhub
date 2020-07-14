@@ -16,58 +16,22 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+    // List Users
     public function listUsers()
     {
-        $user = User::all();
+        $user = User::where('users.role',0)->get();
         $stt = 0;
         return view("admin.users.listUsers", compact('user', 'stt'));
     }
-    // public function createUser(Request $request)
-    // {
 
-    //     //validate
-    //     $this->validate(
-    //         $request,
-    //         [
-    //             'name'          => ['bail', 'required', 'string', 'max:255'],
-    //             'email'         => ['bail', 'required', 'string', 'regex:/^[a-zA-Z0-9.!#$%&]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+[.a-zA-Z0-9]*$/i', 'max:255', 'unique:users'],
-    //             'password'      => ['bail', 'required', 'string', 'min:8', 'confirmed'],
-    //             'fullname'      => ['bail', 'required', 'string', 'max:255'],
-    //             'phone'         => ['bail', 'required', 'regex:/^0[0-9]{9}$/i', 'unique:customer'],
-    //             'dob'           => ['bail', 'required'],
-    //             'address'       => ['bail', 'required', 'string', 'max:255'],
-    //         ]
-    //     );
-    //     //
-    //     //create user
-    //     $user =   User::create([
-    //         'name'          =>  $request->name,
-    //         'email'         =>  $request->email,
-    //         'role'          =>  $request->role,
-    //         'password'      =>  Hash::make($request->password),
-    //     ]);
-
-    //     $user->roleCustomer =   Customers::create([
-    //         'customer_name' =>  $request->fullname,
-    //         'dob'           =>  $request->dob,
-    //         'gender'        =>  $request->gender,
-    //         'phone'         =>  $request->phone,
-    //         'address'       =>  $request->address,
-    //         'feature'       =>  'tinyhub-logo-footer.png',
-    //         'users_id'      =>  $user->id,
-    //     ]);
-
-    //     return redirect('admin/users/listUsers');
-    // }
-
-    //go to update Form
+    //Go To Update Form User
     public function updateUser($id)
     {
         $users = User::find($id);
         return view('admin.users.updateUser', compact('users'));
     }
 
-    //update user
+    //Update User
     public function postUpdateUser(Request $request, User $user)
     {
         // validate
@@ -80,6 +44,35 @@ class UserController extends Controller
         $users->save();
 
         return redirect()->action('UserController@listUsers')->with(['flash_level' => 'success', 'flash_message' => 'Update account success !']);;
+    }
+
+    public function listAdmin()
+    {
+        $userAdmin = User::whereBetween('users.role',[1, 3])->get();
+        $sttAdmin = 0;
+        return view("admin.users.listAdmin", compact('userAdmin', 'sttAdmin'));
+    }
+
+    //Go To Update Form Admin
+    public function updateAdmin($id)
+    {
+        $users = User::find($id);
+        return view('admin.users.updateAdmin', compact('users'));
+    }
+
+    //Update Admin
+    public function postUpdateAdmin(Request $request, User $user)
+    {
+        // validate
+        Validator::make($request->all(), [
+            'name'          => ['bail', 'required', 'string', 'max:255'],
+        ])->validate();
+        $users = User::find($request->id);
+        $users->name         = trim($request->name);
+        $users->role          = $request->role;
+        $users->save();
+
+        return redirect()->action('UserController@listAdmin')->with(['flash_level' => 'success', 'flash_message' => 'Update account success !']);;
     }
 
     //change profile user
@@ -225,8 +218,8 @@ class UserController extends Controller
         $order = Order::join('order_details', 'order.id', '=', 'order_details.order_id')
             ->join('product', 'order_details.product_id', '=', 'product.id')
             ->where('order.customer_id', $id)
-            ->groupBy('order_details.order_id', 'order.payment', 'order.created_at','order.status')
-            ->select('order_details.order_id', DB::raw('SUM(product.price * order_details.quantity) as total'), 'order.payment', 'order.created_at','order.status')
+            ->groupBy('order_details.order_id', 'order.payment', 'order.created_at', 'order.status')
+            ->select('order_details.order_id', DB::raw('SUM(product.price * order_details.quantity) as total'), 'order.payment', 'order.created_at', 'order.status')
             ->get();
 
         $comment = Comment::join('customer', 'comments.customer_id', '=', 'customer.id')
@@ -251,15 +244,15 @@ class UserController extends Controller
         $order = Order::join('order_details', 'order.id', '=', 'order_details.order_id')
             ->join('product', 'order_details.product_id', '=', 'product.id')
             ->where('order.customer_id', $id)
-            ->groupBy('order_details.order_id', 'order.payment', 'order.created_at','order.status')
-            ->select('order_details.order_id', DB::raw('SUM(product.price * order_details.quantity) as total'), 'order.payment', 'order.created_at','order.status')
+            ->groupBy('order_details.order_id', 'order.payment', 'order.created_at', 'order.status')
+            ->select('order_details.order_id', DB::raw('SUM(product.price * order_details.quantity) as total'), 'order.payment', 'order.created_at', 'order.status')
             ->get();
 
         $comment = Comment::join('customer', 'comments.customer_id', '=', 'customer.id')
             ->join('product', 'comments.product_id', '=', 'product.id')
             ->join('brand', 'product.brand_id', '=', 'brand.id')
             ->join('category', 'product.category_id', '=', 'category.id')
-            ->where('comments.customer_id', $id)->where('comments.cmt_status',0)
+            ->where('comments.customer_id', $id)->where('comments.cmt_status', 0)
             ->select('product.*', 'comments.*')
             ->get();
 
