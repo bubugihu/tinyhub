@@ -137,6 +137,7 @@ class CustomerController extends Controller
         $userA->name = $request->CC_user_name;
         $userA->email = $request->CC_email;
         $userA->password = Hash::make($request->CC_password);
+        $userA->role=$request->CC_role;
         $userA->save();
 
         $customerA->users_id = $userA->id;
