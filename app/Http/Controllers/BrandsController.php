@@ -80,6 +80,7 @@ class BrandsController extends Controller
             $request,
             [
                 'brandTitle'           => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255',
+                'brandTitle'           => 'unique:Brand,brand_name,' .$b->id,
                 'brandDescription'     => 'required',
                
             ],
@@ -87,6 +88,7 @@ class BrandsController extends Controller
                 'brandTitle.required'            => 'Brand title can not be blank !',
                 'brandTitle.regex'               => 'Brand title has 2 character and must be string, can not start with number !',
                 'brandTitle.max'                 => 'Brand title has max 500 characters !',
+                'brandTitle.unique'              => 'Brand title has already existed !',
                 'brandDescription.required'      => 'Brand Description can not be blank !',
 
             ]

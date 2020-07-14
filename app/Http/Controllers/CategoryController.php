@@ -96,6 +96,7 @@ class CategoryController extends Controller
             $request,
             [
                 'cateTitle'           => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255',
+                'cateTitle'           => 'unique:Category,category_name,' .$c->id,
                 'cateDescription'     => 'bail|required|max:255',
                
             ],
@@ -103,6 +104,7 @@ class CategoryController extends Controller
                 'cateTitle.required'          => 'Category Title can not be blank !',
                 'cateTitle.regex'             => 'Category Title has 2 character and must be string, can not start with number !',
                 'cateTitle.max'               => 'Category Title has max 255 characters !',
+                'cateTitle.unique'            => 'Category Title has already existed !',
                 'cateDescription.required'    => 'Category Description can not be blank !',
                 'cateDescription.max'         => 'Category Description has max 255 characters !',
                 

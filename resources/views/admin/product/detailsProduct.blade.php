@@ -22,7 +22,7 @@
                                                         <div class="carousel-inner">
                                                             <div class="item active">
                                                                 @foreach($galleryThum as $galleryThum)
-                                                                <div data-target="#CarouselProduct" data-slide-to="{{++$no}}" class="SubThumbProduct rounded">
+                                                                <div data-target="#CarouselProduct" data-slide-to="{{++$no}}" class="SubThumbProduct rounded mb-3">
                                                                     <img src="{{asset('img/gallery/'.$galleryThum->product_gallery)}}" class="rounded" width="50px" height="50px">
                                                                 </div>
                                                                 @endforeach
@@ -72,7 +72,7 @@
                                     </div>
                                 </div>
                                 <!-- Sold Out, Status, Category, Brand -->
-                                <div class="row">
+                                <div class="row mt-4">
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Sold Out</label>

@@ -281,6 +281,3 @@ Route::post('thank-you', 'CartController@thankyou');
 //check report
 Route::get('cart/shopping/orderDetails/{id}', 'CartController@orderDetails');
 
-route::get('asd', function () {
-    return view('test');
-});

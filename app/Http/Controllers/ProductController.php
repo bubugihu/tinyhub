@@ -10,11 +10,11 @@ use App\Brands;
 use App\Comment;
 use App\Customers;
 use App\Gallery;
+use Input;
 use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
-
 
     //Function link to product list page
     public function listProduct()
@@ -37,7 +37,7 @@ class ProductController extends Controller
             $request,
             [
                 'prdname'      => 'bail|required|unique:Product,product_title|regex:/^[a-zA-Z]{2,}/i|max:255',
-                'prdprice'     => 'bail|required|min:0|max:10000',
+                'prdprice'     => 'required',
                 'prdcate'      => 'bail|required|not_in:0',
                 'prdbrand'     => 'bail|required|not_in:0',
                 'prdWarranty'  => 'required',
@@ -52,8 +52,6 @@ class ProductController extends Controller
                 'prdname.min'                 => 'Product title has min 3 characters !',
                 'prdname.max'                 => 'Product title has max 255 characters !',
                 'prdprice.required'           => 'Price can not be blank !',
-                'prdprice.min'                => 'Price has min >= 0 !',
-                'prdprice.max'                => 'Price has max <= 10000 !',
                 'prdcate.required'            => 'Please choose one of them !',
                 'prdbrand.required'           => 'Please choose one of them !',
                 'prdWarranty.required'        => 'Warranty Period can not be blank !',
@@ -87,24 +85,25 @@ class ProductController extends Controller
             $imageName = "";
         }
         $p->save();
-        
-        $gallery = new Gallery();
-        if ($request->hasFile('galleryimg')) {
-            $fileGL = $request->file('galleryimg');
-            $ext   = $fileGL->getClientOriginalExtension();
-            if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
-                return Redirect('admin/product/createProduct')->with(['flash_level' => 'danger', 'flash_message' => 'You can only upload image with file jpg/png/jpeg !']);
+
+        // Function gallery upload
+        $product_id = $p->id;
+        if($request->hasFile('galleryimg')){
+            foreach ($request->file('galleryimg') as $file) {
+                $product_gallery = new Gallery();
+                if (isset($file)) {
+                    $ext   = $file->getClientOriginalExtension();
+                        if ($ext != 'jpg' && $ext != 'png' && $ext != 'jpeg') {
+                            return Redirect('admin/product/createProduct')->with(['flash_level' => 'danger', 'flash_message' => 'You can only upload image with file .jpg | .png | .jpeg !']);
+                        }
+                    $product_gallery->product_gallery = $file->getClientOriginalName();
+                    $product_gallery->product_id = $product_id;
+                    $file->move("img/gallery", $file->getClientOriginalName());
+                    $product_gallery->save();
+                }
             }
-            $nameGlImg = $fileGL->getClientOriginalName();
-            $fileGL->move("img/gallery", $nameGlImg);
-            $gallery->product_gallery = $nameGlImg;
         }
-
-        $gallery->product_id = $request = $p->id;
-        $gallery->save();
-
-        return redirect()->action('ProductController@listProduct')->with(['flash_level' => 'success', 'flash_message' => 'Created Successfully !']);
-        // return view('admin.product.createProduct');
+        return redirect()->action('ProductController@listProduct')->with(['flash_level' => 'success', 'flash_message' => 'Update Successfully !']);
     }
 
     // Function link to update page
