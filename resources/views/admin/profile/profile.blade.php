@@ -9,10 +9,10 @@
                 <img src="{{asset('img/'.$customer->feature)}}" alt="{{$user->name}}" class="img-fluid rounded" width="100%" height="auto">
                 <div style="margin-top:20px ;">
                     <div class="card-body text-center">
-                        <h5 class="card-title" style="margin-bottom: 0px;">{!!html_entity_decode($user->name)!!}</h5>
+                        <h5 class="card-title" style="margin-bottom: 0px;">{{$user->name}}</h5>
                         <!-- <input type="text" class="card-title form-control"  value="{{$user->name}}" width="400px" readonly> -->
                     </div>
-                    <ul class="list-group list-group-flush">
+                    <ul class="list-group list-group-flush ">
                         <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-user mr-2" aria-hidden="true"></i> {{$customer->customer_name}}</li>
                         <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-transgender-alt mr-2" aria-hidden="true"></i> {{$customer->gender}}</li>
                         <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-birthday-cake mr-2" aria-hidden="true"></i> {{$customer->dob}}</li>
@@ -141,7 +141,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">User Name<span class="required">*</span></label>
-                                            <input type="text" name="profile_user_name" class="form-control"  value="{{$user->name}}">
+                                            <input type="text" name="profile_user_name" class="form-control" value="{{$user->name}}">
                                             @if($errors->has('profile_user_name'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_user_name')}}</small>
                                             @endif

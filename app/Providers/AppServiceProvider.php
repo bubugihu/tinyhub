@@ -34,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        
         $productGlobal              = Product::orderBy('sold_out', 'desc')->limit(4)->get();
         $bannerGlobal               = Banner::all();
         $categoryGlobal             = Category::all();

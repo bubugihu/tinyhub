@@ -19,34 +19,42 @@ class ProductSeeder extends Seeder
             'price'=>110,
             'feature_image'=>'JBL-In-Ear-JIE1-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -56,34 +64,42 @@ class ProductSeeder extends Seeder
             'price'=>105,
             'feature_image'=>'JBL-In-Ear-JIE2-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -93,34 +109,42 @@ class ProductSeeder extends Seeder
             'price'=>115,
             'feature_image'=>'JBL-In-Ear-JIE3-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -130,34 +154,42 @@ class ProductSeeder extends Seeder
             'price'=>100,
             'feature_image'=>'JBL-In-Ear-JIE4-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -167,34 +199,42 @@ class ProductSeeder extends Seeder
             'price'=>109,
             'feature_image'=>'JBL-In-Ear-JIE5-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -204,34 +244,42 @@ class ProductSeeder extends Seeder
             'price'=>118,
             'feature_image'=>'JBL-In-Ear-JIE6-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -241,34 +289,42 @@ class ProductSeeder extends Seeder
             'price'=>125,
             'feature_image'=>'JBL-In-Ear-JIE7-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -278,34 +334,42 @@ class ProductSeeder extends Seeder
             'price'=>130,
             'feature_image'=>'JBL-In-Ear-JIE8-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -315,34 +379,42 @@ class ProductSeeder extends Seeder
             'price'=>135,
             'feature_image'=>'JBL-In-Ear-JIE9-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -352,34 +424,42 @@ class ProductSeeder extends Seeder
             'price'=>129,
             'feature_image'=>'JBL-In-Ear-JIE10-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -392,34 +472,42 @@ class ProductSeeder extends Seeder
             'price'=>200,
             'feature_image'=>'Sony-In-Ear-SIE1-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -429,34 +517,42 @@ class ProductSeeder extends Seeder
             'price'=>210,
             'feature_image'=>'Sony-In-Ear-SIE2-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -466,34 +562,42 @@ class ProductSeeder extends Seeder
             'price'=>205,
             'feature_image'=>'Sony-In-Ear-SIE3-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -503,34 +607,42 @@ class ProductSeeder extends Seeder
             'price'=>215,
             'feature_image'=>'Sony-In-Ear-SIE4-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -540,34 +652,42 @@ class ProductSeeder extends Seeder
             'price'=>220,
             'feature_image'=>'Sony-In-Ear-SIE5-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -577,34 +697,42 @@ class ProductSeeder extends Seeder
             'price'=>225,
             'feature_image'=>'Sony-In-Ear-SIE6-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -614,34 +742,42 @@ class ProductSeeder extends Seeder
             'price'=>209,
             'feature_image'=>'Sony-In-Ear-SIE7-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -651,34 +787,42 @@ class ProductSeeder extends Seeder
             'price'=>203,
             'feature_image'=>'Sony-In-Ear-SIE8-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -688,34 +832,42 @@ class ProductSeeder extends Seeder
             'price'=>229,
             'feature_image'=>'Sony-In-Ear-SIE9-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -725,34 +877,42 @@ class ProductSeeder extends Seeder
             'price'=>232,
             'feature_image'=>'Sony-In-Ear-SIE10-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -767,34 +927,42 @@ class ProductSeeder extends Seeder
             'price'=>150,
             'feature_image'=>'Beats-In-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -806,34 +974,42 @@ class ProductSeeder extends Seeder
             'price'=>150,
             'feature_image'=>'Bang-In-Air-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -843,34 +1019,42 @@ class ProductSeeder extends Seeder
             'price'=>120,
             'feature_image'=>'Bang-In-Air-2.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>1,
@@ -882,34 +1066,42 @@ class ProductSeeder extends Seeder
             'price'=>250,
             'feature_image'=>'JBL-On-Ear-JOE1-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -919,34 +1111,42 @@ class ProductSeeder extends Seeder
             'price'=>259,
             'feature_image'=>'JBL-On-Ear-JOE2-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -956,34 +1156,42 @@ class ProductSeeder extends Seeder
             'price'=>255,
             'feature_image'=>'JBL-On-Ear-JOE3-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -993,34 +1201,42 @@ class ProductSeeder extends Seeder
             'price'=>267,
             'feature_image'=>'JBL-On-Ear-JOE4-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1030,34 +1246,42 @@ class ProductSeeder extends Seeder
             'price'=>269,
             'feature_image'=>'JBL-On-Ear-JOE5-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1067,34 +1291,42 @@ class ProductSeeder extends Seeder
             'price'=>280,
             'feature_image'=>'JBL-On-Ear-JOE6-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1104,34 +1336,42 @@ class ProductSeeder extends Seeder
             'price'=>300,
             'feature_image'=>'JBL-On-Ear-JOE7-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1141,34 +1381,42 @@ class ProductSeeder extends Seeder
             'price'=>326,
             'feature_image'=>'JBL-On-Ear-JOE8-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1178,34 +1426,42 @@ class ProductSeeder extends Seeder
             'price'=>310,
             'feature_image'=>'JBL-On-Ear-JOE9-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1215,34 +1471,42 @@ class ProductSeeder extends Seeder
             'price'=>307,
             'feature_image'=>'JBL-On-Ear-JOE10-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1254,34 +1518,42 @@ class ProductSeeder extends Seeder
             'price'=>209,
             'feature_image'=>'Sony-On-Ear-SOE1-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1291,34 +1563,42 @@ class ProductSeeder extends Seeder
             'price'=>396,
             'feature_image'=>'Sony-On-Ear-SOE2-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1328,34 +1608,42 @@ class ProductSeeder extends Seeder
             'price'=>348,
             'feature_image'=>'Sony-On-Ear-SOE3-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1365,34 +1653,42 @@ class ProductSeeder extends Seeder
             'price'=>329,
             'feature_image'=>'Sony-On-Ear-SOE4-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1402,34 +1698,42 @@ class ProductSeeder extends Seeder
             'price'=>361,
             'feature_image'=>'Sony-On-Ear-SOE5-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1439,34 +1743,42 @@ class ProductSeeder extends Seeder
             'price'=>371,
             'feature_image'=>'Sony-On-Ear-SOE6-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1476,34 +1788,42 @@ class ProductSeeder extends Seeder
             'price'=>369,
             'feature_image'=>'Sony-On-Ear-SOE7-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1513,34 +1833,42 @@ class ProductSeeder extends Seeder
             'price'=>328,
             'feature_image'=>'Sony-On-Ear-SOE8-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1550,34 +1878,42 @@ class ProductSeeder extends Seeder
             'price'=>367,
             'feature_image'=>'Sony-On-Ear-SOE9-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1587,34 +1923,42 @@ class ProductSeeder extends Seeder
             'price'=>333,
             'feature_image'=>'Sony-On-Ear-SOE10-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1629,34 +1973,42 @@ class ProductSeeder extends Seeder
             'price'=>290,
             'feature_image'=>'Beats-On-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1666,34 +2018,42 @@ class ProductSeeder extends Seeder
             'price'=>310,
             'feature_image'=>'Beats-On-2.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1703,34 +2063,42 @@ class ProductSeeder extends Seeder
             'price'=>315,
             'feature_image'=>'Beats-On-3.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1740,34 +2108,42 @@ class ProductSeeder extends Seeder
             'price'=>323,
             'feature_image'=>'Beats-On-4.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1779,34 +2155,42 @@ class ProductSeeder extends Seeder
             'price'=>199,
             'feature_image'=>'Bang-On-Air-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1816,34 +2200,42 @@ class ProductSeeder extends Seeder
             'price'=>208,
             'feature_image'=>'Bang-On-Air-2.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1853,34 +2245,42 @@ class ProductSeeder extends Seeder
             'price'=>204,
             'feature_image'=>'Bang-On-Air-3.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1890,34 +2290,42 @@ class ProductSeeder extends Seeder
             'price'=>211,
             'feature_image'=>'Bang-On-Air-4.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1927,34 +2335,42 @@ class ProductSeeder extends Seeder
             'price'=>219,
             'feature_image'=>'Bang-On-Air-5.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -1964,34 +2380,42 @@ class ProductSeeder extends Seeder
             'price'=>215,
             'feature_image'=>'Bang-On-Air-6.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -2001,34 +2425,42 @@ class ProductSeeder extends Seeder
             'price'=>222,
             'feature_image'=>'Bang-On-Air-7.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -2038,34 +2470,42 @@ class ProductSeeder extends Seeder
             'price'=>205,
             'feature_image'=>'Bang-On-Air-8.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>2,
@@ -2078,34 +2518,42 @@ class ProductSeeder extends Seeder
             'price'=>410,
             'feature_image'=>'Sony-True-Wireless-STW1-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>3,
@@ -2115,34 +2563,42 @@ class ProductSeeder extends Seeder
             'price'=>481,
             'feature_image'=>'Sony-True-Wireless-STW2-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>3,
@@ -2152,34 +2608,42 @@ class ProductSeeder extends Seeder
             'price'=>451,
             'feature_image'=>'Sony-True-Wireless-STW3-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>3,
@@ -2189,34 +2653,42 @@ class ProductSeeder extends Seeder
             'price'=>468,
             'feature_image'=>'Sony-True-Wireless-STW4-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>3,
@@ -2226,34 +2698,42 @@ class ProductSeeder extends Seeder
             'price'=>444,
             'feature_image'=>'Sony-True-Wireless-STW5-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>3,
@@ -2263,34 +2743,42 @@ class ProductSeeder extends Seeder
             'price'=>419,
             'feature_image'=>'Sony-True-Wireless-STW6-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>3,
@@ -2300,34 +2788,42 @@ class ProductSeeder extends Seeder
             'price'=>411,
             'feature_image'=>'Sony-True-Wireless-STW7-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>3,
@@ -2337,34 +2833,42 @@ class ProductSeeder extends Seeder
             'price'=>415,
             'feature_image'=>'Sony-True-Wireless-STW8-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>3,
@@ -2376,34 +2880,42 @@ class ProductSeeder extends Seeder
             'price'=>351,
             'feature_image'=>'JBL-True-Wireless-JTW1-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>3,
@@ -2413,34 +2925,42 @@ class ProductSeeder extends Seeder
             'price'=>333,
             'feature_image'=>'JBL-True-Wireless-JTW2-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>3,
@@ -2450,34 +2970,42 @@ class ProductSeeder extends Seeder
             'price'=>368,
             'feature_image'=>'JBL-True-Wireless-JTW3-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>3,
@@ -2487,34 +3015,42 @@ class ProductSeeder extends Seeder
             'price'=>315,
             'feature_image'=>'JBL-True-Wireless-JTW4-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>3,
@@ -2526,34 +3062,42 @@ class ProductSeeder extends Seeder
             'price'=>312,
             'feature_image'=>'Bang-True-1.jpg',
             'short_descriptions' => 'The product may have minimal scratches or dents, and a battery with at least 80% capacity. Box may be generic and accessories may not be original, but will be compatible and fully functional.',
-            'long_descriptions' => '<table>
+            'long_descriptions' => '<table style="width:100%" class="table table-bordered">
+	<thead>
+		<tr>
+			<th><strong>Product Dimensions</strong></th>
+			<th>7.24 x 3.15 x 8.27 inches</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
-			<th>Package Dimensions</th>
-			<td>9.2 x 6.5 x 3.9 inches</td>
+			<td><strong>Item Weight</strong></td>
+			<td>5.6 ounces</td>
 		</tr>
 		<tr>
-			<th>Item Weight</th>
-			<td>7.6 ounces</td>
+			<td><strong>ASIN</strong></td>
+			<td>B07HBD45MP</td>
 		</tr>
 		<tr>
-			<th>Manufacturer</th>
-			<td>Beats</td>
+			<td><strong>Item model number</strong></td>
+			<td>S5PXW-L672</td>
 		</tr>
 		<tr>
-			<th>ASIN</th>
-			<td>B06Y269CZW</td>
+			<td><strong>Batteries</strong></td>
+			<td>1 Lithium Polymer batteries required. (included)</td>
 		</tr>
 		<tr>
-			<th>Item model number</th>
-			<td>MNEN2LL/A</td>
+			<td><strong>Is Discontinued By Manufacturer</strong></td>
+			<td>No</td>
 		</tr>
 		<tr>
-			<th>Batteries</th>
-			<td>1 Lithium ion batteries required.</td>
+			<td><strong>Manufacturer</strong></td>
+			<td>Default</td>
 		</tr>
 	</tbody>
 </table>
+
+<p>Experience 12 hours of battery life and rapid charge technology from light-weight headphones with a virtually indestructible headband. Riff Wireless even folds up when you&#39;re packing it on the go. It&#39;s everything you need, and nothing you don&#39;t.</p>
 
 ',
             'category_id'=>3,
