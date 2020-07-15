@@ -14,25 +14,15 @@
             </li>
 
             @if(Auth::user()->role == 1)
-            <!-- Users Module -->
-            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages1" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-profile-1 mr-3"></i><span>Users</span></a>
-                <div id="pages1" class="collapse">
+            <!-- Comment Module -->
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages9" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-paper-stack-1 mr-3"></i><span>Comment</span></a>
+                <div id="pages9" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
-                        <li class="sidebar-list-item"><a href="{{url("admin/users/listAdmin")}}" class="sidebar-link text-muted pl-lg-5">List Admin</a></li>
-                        <li class="sidebar-list-item"><a href="{{url("admin/users/listUsers")}}" class="sidebar-link text-muted pl-lg-5">List Users</a></li>
+                        <li class="sidebar-list-item"><a href="{{url("admin/comment/listComment")}}" class="sidebar-link text-muted pl-lg-5">List Comments</a></li>
                     </ul>
                 </div>
             </li>
-            <!-- End Users Module -->
-            <!-- Customers Module -->
-            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages2" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3"></i><span>Customers</span></a>
-                <div id="pages2" class="collapse">
-                    <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
-                        <li class="sidebar-list-item"><a href="{{url("admin/customer/listCustomer")}}" class="sidebar-link text-muted pl-lg-5">List Customers</a></li>
-                        <li class="sidebar-list-item"><a href="{{url("admin/customer/createAdmin")}}" class="sidebar-link text-muted pl-lg-5">Create New Admin</a></li>
-                </div>
-            </li>
-            <!-- End Customers Module -->
+            <!-- End Comment Module -->
             <!-- Banner Module -->
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages7" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-imac-screen-1 mr-3"></i><span>Banner</span></a>
                 <div id="pages7" class="collapse">
@@ -95,15 +85,25 @@
                 </div>
             </li>
             <!-- End Orders Module -->
-            <!-- Comment Module -->
-            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages9" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-paper-stack-1 mr-3"></i><span>Comment</span></a>
-                <div id="pages9" class="collapse">
+            <!-- Users Module -->
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages1" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-profile-1 mr-3"></i><span>Users</span></a>
+                <div id="pages1" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
-                        <li class="sidebar-list-item"><a href="{{url("admin/comment/listComment")}}" class="sidebar-link text-muted pl-lg-5">List Comments</a></li>
+                        <li class="sidebar-list-item"><a href="{{url("admin/users/listAdmin")}}" class="sidebar-link text-muted pl-lg-5">List Admin</a></li>
+                        <li class="sidebar-list-item"><a href="{{url("admin/users/listUsers")}}" class="sidebar-link text-muted pl-lg-5">List Users</a></li>
                     </ul>
                 </div>
             </li>
-            <!-- End Comment Module -->
+            <!-- End Users Module -->
+             <!-- Customers Module -->
+             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages2" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3"></i><span>Customers</span></a>
+                <div id="pages2" class="collapse">
+                    <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
+                        <li class="sidebar-list-item"><a href="{{url("admin/customer/listCustomer")}}" class="sidebar-link text-muted pl-lg-5">List Customers</a></li>
+                        <li class="sidebar-list-item"><a href="{{url("admin/customer/createAdmin")}}" class="sidebar-link text-muted pl-lg-5">Create New Admin</a></li>
+                </div>
+            </li>
+            <!-- End Customers Module -->
             <hr><br>
             <li class="sidebar-list-item"><a href="{{url("admin/reportproduct")}}" target="_blank" class="sidebar-link" style="color: darkgreen;"><i class="o-statistic-1 mr-3"></i><span>Report Product</span></a>
             </li>

@@ -277,13 +277,20 @@ class UserController extends Controller
     //black list
     public function test(Request $request){
         $email = $request->email;
+        // $password = Hash::make($request->password);
         $password = $request->password;
-        if(User::where('email',$email)->count() == 0 )
+        if(!(Auth::attempt(['email' => $email, 'password' => $password])))
             return back()->with(['flash_level' => 'danger','flash_message' => 'ID or Password may be incorrect.' ]);
-        elseif(User::where('email',$email)->where('role',5)->count() > 0)
-            return back()->with(['flash_level' => 'danger','flash_message' => 'You are banned. Please email Tinyhub@gmail.com for reason.' ]);
-        elseif  (Auth::attempt(['email' => $email, 'password' => $password]))
-            return redirect()->intended('/');
+
+
+        elseif(Auth::attempt(['email' => $email, 'password' => $password]))
+                if(Auth::user()->role == 5)
+                {
+                    Auth::logout();
+                    return back()->with(['flash_level' => 'danger','flash_message' => 'You are banned. Please email Tinyhub@gmail.com for reason.' ]);
+                }
+                else
+                return redirect()->intended('/');
         
     }
 }

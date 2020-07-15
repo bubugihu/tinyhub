@@ -86,9 +86,11 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         
     Route::group(['middleware' => ['customer']], function () { //modCustomer role 3
         //customer
-        Route::get('customer/listCustomer', 'CustomerController@listCustomer');;
+        Route::get('customer/listCustomer', 'CustomerController@listCustomer');
         Route::get('customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
         Route::post('customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
+        Route::get('customer/createAdmin', 'CustomerController@createAdmin');
+        Route::post('customer/postcreateAdmin', 'CustomerController@postcreateAdmin');
 
         //order
         Route::get('order/listOrder', 'OrderController@listOrder');
@@ -99,8 +101,11 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
 
         //users
         Route::get('users/listUsers', 'UserController@listUsers');
-        Route::get('users/updateUser/{id}' , 'UserController@updateUser');
+        Route::get('users/updateUser/{id}', 'UserController@updateUser');
         Route::post('users/postUpdateUser', 'UserController@postUpdateUser');
+        Route::get('users/listAdmin', 'UserController@listAdmin');
+        Route::get('users/updateAdmin/{id}', 'UserController@updateAdmin');
+        Route::post('users/postUpdateAdmin', 'UserController@postUpdateAdmin');
        
     });
         
