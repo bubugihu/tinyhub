@@ -24,10 +24,12 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
 
     Route::group(['middleware' => ['admin']], function () {  //admin role 1
-        //users
-        Route::get('users/listUsers', 'UserController@listUsers');
-        Route::get('users/updateUser/{id}' , 'UserController@updateUser');
-        Route::post('users/postUpdateUser', 'UserController@postUpdateUser');
+        
+        //comment
+         Route::get('comment/listComment', 'CommentController@listComment');
+         Route::get('comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
+         Route::get('comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
+         Route::get('comment/deleteComment/{id}', 'CommentController@deleteComment');
 
         //feedback
         Route::get('feedback/feedbackList', 'FeedbackController@feedbackList');
@@ -95,11 +97,11 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         Route::get('order/deleteOrder/{id}', 'OrderController@deleteOrder');
         Route::get('admin/order/onOrderStatus', 'OrderController@onOrderStatus111');
 
-        //comment
-        Route::get('comment/listComment', 'CommentController@listComment');
-        Route::get('comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
-        Route::get('comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
-        Route::get('comment/deleteComment/{id}', 'CommentController@deleteComment');
+        //users
+        Route::get('users/listUsers', 'UserController@listUsers');
+        Route::get('users/updateUser/{id}' , 'UserController@updateUser');
+        Route::post('users/postUpdateUser', 'UserController@postUpdateUser');
+       
     });
         
         //index
