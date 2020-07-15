@@ -87,7 +87,7 @@
         </div>
         <div class="row">
             <div class="col-lg-6 py-3">
-                <h6 class="text-uppercase"><i class="fas fa-truck"></i> SHIPPING & DELIVERY</h6>
+                <h6 class="text-uppercase" style="font-size: 12px"><i class="fas fa-truck"></i> SHIPPING & DELIVERY</h6>
                 <ul class="list-unstyled list-detail-prd">
                     <li><i class="fas fa-check-circle" style="color: green;"></i> Free Shipping Over $30</li>
                     <li><i class="fas fa-check-circle" style="color: green;"></i> Ships in 24 Hours</li>
@@ -95,7 +95,7 @@
                 </ul>
             </div>
             <div class="col-lg-6 py-3">
-                <h6 class="text-uppercase"><i class="fas fa-exchange-alt"></i> RETURNS</h6>
+                <h6 class="text-uppercase" style="font-size: 12px"><i class="fas fa-exchange-alt"></i> RETURNS</h6>
                 <ul class="list-unstyled list-detail-prd">
                     <li><i class="fas fa-check-circle" style="color: green;"></i> 7 Days Replacement Only</li>
                     <li><i class="fas fa-check-circle" style="color: green;"></i> Certified By TinyHub</li>
