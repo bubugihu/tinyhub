@@ -24,11 +24,13 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
 
     Route::group(['middleware' => ['admin']], function () {  //admin role 1
+        
         //comment
-        Route::get('comment/listComment', 'CommentController@listComment');
-        Route::get('comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
-        Route::get('comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
-        Route::get('comment/deleteComment/{id}', 'CommentController@deleteComment');
+         Route::get('comment/listComment', 'CommentController@listComment');
+         Route::get('comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
+         Route::get('comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
+         Route::get('comment/deleteComment/{id}', 'CommentController@deleteComment');
+
         //feedback
         Route::get('feedback/feedbackList', 'FeedbackController@feedbackList');
         Route::get('feedback/deleteFeedback/{id}', 'FeedbackController@deleteFeedback');

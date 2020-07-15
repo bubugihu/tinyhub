@@ -95,8 +95,8 @@
                 </div>
             </li>
             <!-- End Users Module -->
-            <!-- Customers Module -->
-            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages2" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3"></i><span>Customers</span></a>
+             <!-- Customers Module -->
+             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages2" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-user-details-1 mr-3"></i><span>Customers</span></a>
                 <div id="pages2" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
                         <li class="sidebar-list-item"><a href="{{url("admin/customer/listCustomer")}}" class="sidebar-link text-muted pl-lg-5">List Customers</a></li>
@@ -104,7 +104,6 @@
                 </div>
             </li>
             <!-- End Customers Module -->
-
             <hr><br>
             <li class="sidebar-list-item"><a href="{{url("admin/reportproduct")}}" target="_blank" class="sidebar-link" style="color: darkgreen;"><i class="o-statistic-1 mr-3"></i><span>Report Product</span></a>
             </li>
