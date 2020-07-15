@@ -18,38 +18,40 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 Route::get('/', function () {
     return view('homepage');
-})->name('homepage'); 
+})->name('homepage');
 
 //////////////////admin
 Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
 
     Route::group(['middleware' => ['admin']], function () {  //admin role 1
-        //users
-        Route::get('users/listUsers', 'UserController@listUsers');
-        Route::get('users/updateUser/{id}' , 'UserController@updateUser');
-        Route::post('users/postUpdateUser', 'UserController@postUpdateUser');
-
+        //comment
+        Route::get('comment/listComment', 'CommentController@listComment');
+        Route::get('comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
+        Route::get('comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
+        Route::get('comment/deleteComment/{id}', 'CommentController@deleteComment');
         //feedback
         Route::get('feedback/feedbackList', 'FeedbackController@feedbackList');
         Route::get('feedback/deleteFeedback/{id}', 'FeedbackController@deleteFeedback');
-        Route::get('feedback/doneFeedback/{id}' , 'FeedbackController@doneFeedback');
+        Route::get('feedback/doneFeedback/{id}', 'FeedbackController@doneFeedback');
         Route::get('feedback/pendingFeedback/{id}', 'FeedbackController@pendingFeedback');
         Route::get('feedback/onStatusFeedback/{id}', 'FeedbackController@onStatus');
         Route::get('feedback/offStatusFeedback/{id}', 'FeedbackController@offStatus');
 
         //banner
-        Route::get('banners/listBanner' , 'BannerController@listBanner');
+        Route::get('banners/listBanner', 'BannerController@listBanner');
         Route::get('banners/deleteBanners/{id}', 'BannerController@deleteBanners');
-        Route::get('banners/createBanner', function (){
+        Route::get('banners/createBanner', function () {
             return view('admin.banners.createBanner');
         });
         Route::post('banners/postCreateBanners', 'BannerController@postCreateBanners');
-        Route::get('banners/postCreateBanners', function(){
+        Route::get('banners/postCreateBanners', function () {
             return abort(404);
         });
+
+        // 404
         Route::get('banners/updateBanners/{id}', 'BannerController@updateBanners');
         Route::post('banners/postUpdateBanners', 'BannerController@postUpdateBanners');
-        Route::get('banners/postUpdateBanners', function(){
+        Route::get('banners/postUpdateBanners', function () {
             return abort(404);
         });
     });
@@ -63,7 +65,7 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         Route::get('product/detailsProduct/{id}', 'ProductController@detailsProduct');
         Route::post('product/postUpdate/{id}', 'ProductController@postUpdate');
         Route::get('product/deleteProduct/{id}', 'ProductController@deleteProduct');
-        
+
 
         //category
         Route::get('category/categories', 'CategoryController@categories');
@@ -74,48 +76,51 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         Route::get('category/deleteCategories/{id}', 'CategoryController@deleteCate');
 
         //brands
-        Route::get('brands/listBrands' , 'BrandsController@listBrands');
-        Route::get('brands/createBrands' , 'BrandsController@createBrand');
-        Route::post('brands/postBrands' , 'BrandsController@postBrands');
-        Route::get('brands/updateBrands/{id}' , 'BrandsController@updateBrands');
-        Route::post('brands/postUpdateBrands/{id}' , 'BrandsController@postUpdateBrands');
+        Route::get('brands/listBrands', 'BrandsController@listBrands');
+        Route::get('brands/createBrands', 'BrandsController@createBrand');
+        Route::post('brands/postBrands', 'BrandsController@postBrands');
+        Route::get('brands/updateBrands/{id}', 'BrandsController@updateBrands');
+        Route::post('brands/postUpdateBrands/{id}', 'BrandsController@postUpdateBrands');
         Route::get('brands/deleteBrands/{id}', 'BrandsController@deleteBrands');
     });
-        
+
     Route::group(['middleware' => ['customer']], function () { //modCustomer role 3
+
+        //users
+        Route::get('users/listUsers', 'UserController@listUsers');
+        Route::get('users/updateUser/{id}', 'UserController@updateUser');
+        Route::post('users/postUpdateUser', 'UserController@postUpdateUser');
+        Route::get('users/listAdmin', 'UserController@listAdmin');
+        Route::get('users/updateAdmin/{id}', 'UserController@updateAdmin');
+        Route::post('users/postUpdateAdmin', 'UserController@postUpdateAdmin');
         //customer
-        Route::get('customer/listCustomer', 'CustomerController@listCustomer');;
+        Route::get('customer/listCustomer', 'CustomerController@listCustomer');
         Route::get('customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
         Route::post('customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
-
+        Route::get('customer/createAdmin', 'CustomerController@createAdmin');
+        Route::post('customer/postcreateAdmin', 'CustomerController@postcreateAdmin');
         //order
         Route::get('order/listOrder', 'OrderController@listOrder');
         Route::get('order/onOrderStatus/{id}', 'OrderController@onOrderStatus');
         Route::get('order/listOrderDetails/{id}', 'CartController@orderDetails');
         Route::get('order/deleteOrder/{id}', 'OrderController@deleteOrder');
         Route::get('admin/order/onOrderStatus', 'OrderController@onOrderStatus111');
-
-        //comment
-        Route::get('comment/listComment', 'CommentController@listComment');
-        Route::get('comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
-        Route::get('comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
-        Route::get('comment/deleteComment/{id}', 'CommentController@deleteComment');
     });
-        
-        //index
-        Route::get('index', 'AdminController@index');
 
-        //profile admin
-        Route::get('profile/{id}', 'UserController@profileAdmin');
-        route::get('profile/{id}/{idcommment}','UserController@deleteCommentAdmin');
-        route::post('profileUpdate/{id}','UserController@postUpdateProfileAdmin');
+    //index
+    Route::get('index', 'AdminController@index');
 
-        
+    //profile admin
+    Route::get('profile/{id}', 'UserController@profileAdmin');
+    route::get('profile/{id}/{idcommment}', 'UserController@deleteCommentAdmin');
+    route::post('profileUpdate/{id}', 'UserController@postUpdateProfileAdmin');
 
-        //Report
-        Route::get('reportcategoryAndbrand','CategoryController@reportcategoryAndbrand');
-        Route::get('reportproduct','ProductController@reportProduct');
-        });
+
+
+    //Report
+    Route::get('reportcategoryAndbrand', 'CategoryController@reportcategoryAndbrand');
+    Route::get('reportproduct', 'ProductController@reportProduct');
+});
 //ajax Register
 Route::get('admin/ajaxRegisterEmail/{email}', 'AjaxController@registerEmail');
 Route::get('admin/ajaxRegisterPhone/{phone}', 'AjaxController@registerPhone');
@@ -173,11 +178,11 @@ Route::post('feedback/postFeedback', 'FeedbackController@postFeedback');
 //profile user
 Route::group(['prefix' => 'users/'], function () {
     Route::get('profile/{id}', 'UserController@profileUser');
-    Route::get('profile/{id}/{idcommment}','UserController@deleteCommentUser');
-    Route::post('profileUpdate/{id}','UserController@postUpdateProfileUser');
+    Route::get('profile/{id}/{idcommment}', 'UserController@deleteCommentUser');
+    Route::post('profileUpdate/{id}', 'UserController@postUpdateProfileUser');
     ///comment
-    Route::post('product/createCommentUser/{idProduct}/{idCustomer}', 'ProductController@postCommentUser'); 
-    });
+    Route::post('product/createCommentUser/{idProduct}/{idCustomer}', 'ProductController@postCommentUser');
+});
 
 //////////////category
 Route::get('category', [
@@ -251,6 +256,4 @@ Route::post('thank-you', 'CartController@thankyou');
 Route::get('cart/shopping/orderDetails/{id}', 'CartController@orderDetails');
 
 //black list login
-Route::post('loginTest','UserController@test')->name('loginTest');
-
-
+Route::post('loginTest', 'UserController@test')->name('loginTest');
