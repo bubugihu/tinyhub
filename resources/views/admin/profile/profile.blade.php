@@ -9,7 +9,8 @@
                 <img src="{{asset('img/'.$customer->feature)}}" alt="{{$user->name}}" class="img-fluid rounded" width="100%" height="auto">
                 <div style="margin-top:20px ;">
                     <div class="card-body text-center">
-                        <h5 class="card-title" style="margin-bottom: 0px;">{{$user->name}}</h5>
+                        <h5 class="card-title" style="margin-bottom: 0px;">{!!html_entity_decode($user->name)!!}</h5>
+                        <!-- <input type="text" class="card-title form-control"  value="{{$user->name}}" width="400px" readonly> -->
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item text-muted" style="font-size: 15px;"><i class="fa fa-user mr-2" aria-hidden="true"></i> {{$customer->customer_name}}</li>

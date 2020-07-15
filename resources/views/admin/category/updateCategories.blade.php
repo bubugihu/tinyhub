@@ -29,6 +29,17 @@
                     @endif
                   </div>
                   <div class="form-group">
+                    <label for="">Current Image</label><br>
+                    <img class="img-fluid" src="{{url("img/category/" . $c->category_image)}}" alt="" width="100">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-control-label text-uppercase">Upload Category Image <span class="required">*</span></label><br>
+                    <input type="file" name="cateimg"><br>
+                    @if($errors->has('cateimg'))
+                       <small style="color:red;font-size:14px;">{{$errors->first('cateimg')}}</small>
+                    @endif
+                  </div>
+                  <div class="form-group">
                     <button type="submit" class="btn btn-dark">Update</button>
                     <button type="reset" class="btn btn-warning">Reset</button>
                   </div>

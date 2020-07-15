@@ -90,7 +90,7 @@
                         </script>
                       </div>
                       <div class="form-group">
-                        <label for="">Old Image</label><br>
+                        <label for="">Current Image</label><br>
                         <img class="img-fluid" src="{{url("img/feature/" . $p -> feature_image)}}" alt="" width="100">
                       </div>
                       <div class="form-group">
@@ -99,6 +99,12 @@
                           @if($errors->has('featureimg'))
                             <small style="color:red;font-size:14px;">{{$errors->first('featureimg')}}</small>
                           @endif
+                      </div>
+                      <div class="form-group">
+                        <label for="">Current Gallery Images</label><br>
+                        @foreach ($g as $g)
+                          <img class="img-fluid mr-3" src="{{asset('img/gallery/' . $g->product_gallery)}}" alt="" width="100">
+                        @endforeach
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Please press Ctrl to choose multiple images:</label><br>
