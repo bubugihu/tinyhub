@@ -41,7 +41,8 @@ class ProductController extends Controller
             $request,
             [
                 'prdname'      => 'bail|required|unique:Product,product_title|regex:/^[a-zA-Z]{2,}/i|max:255',
-                'prdprice'     => 'required',
+                // 'prdprice'     => 'bail|required|regex:/^[0-9]{1,5}$/i',
+                'prdprice'     => 'bail|required|numeric|min:1|max:10000',
                 'prdcate'      => 'bail|required|not_in:0',
                 'prdbrand'     => 'bail|required|not_in:0',
                 'prdWarranty'  => 'required',
@@ -229,10 +230,14 @@ class ProductController extends Controller
         return view('admin.product.categories');
     }
 
-    //user product details
+    ////////////////////user product details
     public function productDetails($id)
     {
         $product = Product::find($id);
+        //
+        if($product->status == 1)
+            return abort(404);
+        else{
         $galleryFea = Gallery::where('product_id', $id)->get();
         $galleryThum = Gallery::where('product_id', $id)->get();
         $category = Category::find($product->category_id);
@@ -257,7 +262,12 @@ class ProductController extends Controller
             ->select('product.*')->take(4)->get();
 
         //End Similar Product
-        return view('users.product.productDetails', compact('product','galleryFea','galleryThum', 'category', 'brand', 'quantity', 'comment', 'customer', 'similar','no'));
+        //best seller
+        $best = Product::where('status',0)->orderBy('sold_out', 'desc')->limit(4)->get();
+        //end best
+        return view('users.product.productDetails', compact('product','galleryFea','galleryThum', 'category', 'brand', 'quantity', 'comment', 'customer', 'similar','no','best'));
+        }
+        
     }
 
     public function postCommentUser(Request $request, $idProduct, $idCustomer)

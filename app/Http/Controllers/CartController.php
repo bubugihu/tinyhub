@@ -117,7 +117,7 @@ class CartController extends Controller
     //check out cart
     public function checkout(){
         if(Cart::count() == 0)
-            return abort(404);
+            return redirect()->action('CategoryController@category');
         else 
             return view('users.cart.checkout');
     }
@@ -138,25 +138,6 @@ class CartController extends Controller
         $payment = $request->payment;
         $shipping_address = $request->shipping_address;
         $note = $request->note;
-        // $customer_id = Customers::where('users_id', (Auth::user()->id))->first()->id;
-        // $order = Order::create([
-        //     'consignee_name'    =>  $consignee_name,
-        //     'phone_consignee'   =>  $phone_consignee,
-        //     'payment'           =>  $payment,
-        //     'shipping_address'  =>  $shipping_address,
-        //     'note'              =>  $note,
-        //     'status'            =>  0,
-        //     'customer_id'       =>  $customer_id,
-        // ]);
-        // $order->save();
-
-        // foreach (Cart::content() as $orderDetails) {
-        //     OrderDetail::create([
-        //         'order_id'      => $order->id,
-        //         'product_id'    => $orderDetails->id,
-        //         'quantity'      => $orderDetails->qty,
-        //     ]);
-        // }
         
         return view('users.cart.order-review', compact('consignee_name','phone_consignee','payment','shipping_address','note'));
     }

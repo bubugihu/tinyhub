@@ -44,14 +44,14 @@
               <h6>Amount</h6>
             </div>
             <div class="col-1 text-center">
-              <h6>Remove</h6>
+              <h6 style="font-size: 14px">Remove</h6>
             </div>
           </div>
         </div>
       </div>
       <div class="basket-body">
         <!-- Product-->
-        @if(Cart::instance()->count() == 0)
+        @if(Cart::count() == 0)
           <div class="row">
             <div class="col-md-12">
               <p class="text-center">No Items</p>

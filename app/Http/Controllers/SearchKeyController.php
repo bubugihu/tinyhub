@@ -8,7 +8,8 @@ use App\Product;
 class SearchKeyController extends Controller
 {
     public function getSearch(Request $req){
-    	$product = Product::where('product_title', 'like', '%'. $req -> searchKey .'%')
+		$product = Product::where('product_title', 'like', '%'. $req -> searchKey .'%')
+							->where('status','0')
 							->orWhere('price', $req -> searchKey)
 							->get();
     	return view('search', compact('product'));

@@ -172,6 +172,25 @@
 <!-- Similar Product -->
 <div class="container">
     <div class="row py-5">
+        @if($similar->count() == 0)
+        @foreach($best as $best)
+        <div class="col-xl-3">
+            <div class="product_grid card-body card d-flex justify-content-center align-items-center">
+                <div class="product_image d-flex justify-content-center align-items-center" style="min-height: 220px;">
+                    <a href="{{ url('product-detail/'.$best->id)}}" class="image ">
+                        <!-- <img class="pic_2 rounded" src="img/5.jpg" alt=""> -->
+                        <img class="img-fluid rounded" src="{{asset("img/feature/$best->feature_image")}}" alt="" width="200" height="auto">
+                    </a>
+                </div>
+                <div class="product_content">
+                    <h3 class="title"><a href="{{ url('product-detail/'.$best->id)}}">{{$best->product_title}}</a></h3>
+                    <div class="price">$ {{$best->price}}</div>
+                    <a href="{{ url('product-detail/'.$best->id)}}" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Add to cart</a>
+                </div>
+            </div>
+          </div>
+        @endforeach
+        @else
         @foreach($similar as $similar)
         <div class="col-xl-3">
             <div class="product_grid card-body card d-flex justify-content-center align-items-center">
@@ -189,6 +208,7 @@
             </div>
           </div>
         @endforeach
+        @endif
     </div>
 </div>
 <!--  -->

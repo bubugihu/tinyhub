@@ -28,7 +28,7 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Price: <span class="required">*</span></label>
-                        <input type="number" class="form-control" name="prdprice" value="{{old('prdprice')}}" min="0" max="10000">
+                        <input type="text" class="form-control" name="prdprice" value="{{old('prdprice')}}" >
                         @if($errors->has('prdprice'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdprice')}}</small>
                         @endif

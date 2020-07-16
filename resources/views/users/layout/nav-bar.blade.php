@@ -58,7 +58,7 @@
             <li class="dropdown">
               <a href="#" style="padding-right: 0!important;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i data-count="{{Cart::count()}}" class="fa fa-shopping-basket fa-2x fa-border icon-dark badge-cart"></i></a>
               <ul class="dropdown-menu dropdown-cart mt-3 py-3" role="menu">
-                @if(Cart::instance()->count() == 0)
+                @if(Cart::count() == 0)
                 <li>
                   <p class="text-center text-muted">No Items</p>
                 </li>
