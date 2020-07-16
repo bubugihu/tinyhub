@@ -134,7 +134,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="{{url('admin/product/listProduct')}}"><button type="button" class="btn btn-primary">Back</button></a>
+                            <a href="{{url('admin/product/listProduct')}}"><button type="button" class="btn btn-dark">Back</button></a>
 
                         </div>
                     </div>

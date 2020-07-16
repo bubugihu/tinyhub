@@ -56,6 +56,7 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
     Route::post('category/postCate', 'CategoryController@postCate');
     Route::get('category/updateCategories/{id}', 'CategoryController@updateCates');
     Route::post('category/postUpdateCate/{id}', 'CategoryController@postUpdateCate');
+    Route::get('category/deleteCategories/{id}', 'CategoryController@deleteCate');
 
     //brands
     Route::get('brands/listBrands', 'BrandsController@listBrands');
@@ -63,6 +64,7 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
     Route::post('brands/postBrands', 'BrandsController@postBrands');
     Route::get('brands/updateBrands/{id}', 'BrandsController@updateBrands');
     Route::post('brands/postUpdateBrands/{id}', 'BrandsController@postUpdateBrands');
+    Route::get('brands/deleteBrands/{id}', 'BrandsController@deleteBrands');
 
     //order
     Route::get('order/listOrder', 'OrderController@listOrder');

@@ -21,14 +21,14 @@
                       {{ csrf_field() }}
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Product Title <span class="required">*</span></label>
-                        <input type="text" class="form-control" name="prdname">
+                        <input type="text" class="form-control" name="prdname" value="{{old('prdname')}}">
                         @if($errors->has('prdname'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdname')}}</small>
                         @endif
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Price<span class="required">*</span></label>
-                        <input type="number" class="form-control" name="prdprice" min="0" max="10000">
+                        <input type="number" class="form-control" name="prdprice" value="{{old('prdprice')}}" min="0" max="10000">
                         @if($errors->has('prdprice'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdprice')}}</small>
                         @endif
@@ -61,7 +61,7 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Warranty_Period <span class="required">*</span></label>
-                        <input type="number" class="form-control" name="prdWarranty" min="6">
+                        <input type="number" class="form-control" name="prdWarranty" value="{{old('prdWarranty')}} min="6">
                         @if($errors->has('prdWarranty'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdWarranty')}}</small>
                         @endif

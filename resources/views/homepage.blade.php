@@ -104,7 +104,7 @@
                 </div>
 
                 @foreach($categoryGlobal as $c)
-                <div class="col-sm-4">
+                <div class="col-sm-4 mb-5">
                    <!-- Card -->
                     <div class="card">
                       <!-- Card image -->

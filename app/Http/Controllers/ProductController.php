@@ -135,11 +135,11 @@ class ProductController extends Controller
     {
         $p  = Product::find($id);
         
-
         $this->validate(
             $request,
             [
                 'prdname'      => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255',
+                'prdname'      => 'unique:Product,product_title,' .$p->id,
                 'prdprice'     => 'bail|required|min:0|max:10000',
                 'prdcate'      => 'bail|required|not_in:0',
                 'prdbrand'     => 'bail|required|not_in:0',
@@ -150,6 +150,7 @@ class ProductController extends Controller
             [
                 'prdname.required'            => 'Product title can not be blank !',
                 'prdname.regex'               => 'Product title has 2 character and must be string, can not start with number !',
+                'prdname.unique'              => 'Product title has already existed !',
                 'prdname.max'                 => 'Product title has max 255 characters !',
                 'prdprice.required'           => 'Price can not be blank !',
                 'prdprice.min'                => 'Price has min >= 0 !',
