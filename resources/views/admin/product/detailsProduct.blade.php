@@ -65,7 +65,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="form-control-label text-uppercase">Price</label>
-                                                    <input type="text" class="form-control" value="{{$pro->price}}" readonly>
+                                                    <input type="text" class="form-control" value="${{$pro->price}}" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -103,7 +103,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Warranty Period</label>
-                                            <input type="text" class="form-control" value="{{$pro->warranty_period}}" readonly>
+                                            <input type="text" class="form-control" value="{{$pro->warranty_period}} months" readonly>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
