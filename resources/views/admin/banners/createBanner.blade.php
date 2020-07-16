@@ -15,7 +15,7 @@
                       {{ csrf_field() }}
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Banner Title <span class="required">*</span></label>
-                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title">
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{old('title')}}">
                         @error('title')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -24,7 +24,7 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Banner Content <span class="required">*</span></label>
-                        <input type="text" class="form-control @error('content') is-invalid @enderror" name="content">
+                        <input type="text" class="form-control @error('content') is-invalid @enderror" name="content" value="{{old('content')}}">
                         @error('content')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -33,7 +33,7 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Upload Feature Image: <span class="required">*</span></label><br>
-                        <input type="file" name="files"><br>
+                        <input type="file" name="files" value="{{old('files')}}"><br>
                           @error('files')
                             <strong style="color:red;font-size:14px;">{{$message}}</strong>
                           @enderror

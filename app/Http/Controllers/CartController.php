@@ -87,7 +87,7 @@ class CartController extends Controller
     {
         $qtyNew = $request->qtyItemCart + 1;
         if($qtyNew >20)
-            return back()->with(['flash_level' => 'danger','flash_message' => 'Quantity can not greater 20 !' ]);
+            return back()->with(['flash_level' => 'danger','flash_message' => 'Quantity can not greater 20 ! If you want buy more, please contact us. Thank You!' ]);
         $idItem = $request->idIncreCart;
         Cart::update($idItem, [
             'qty' => $qtyNew

@@ -9,7 +9,7 @@
           <div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between static">
             <div class="flex-grow-1 d-flex align-items-center">
               <div class="text">
-                <h6 class="mb-0">Manager</h6><span class="text-gray">{{$countManager}}&nbsp;Persons</span>
+                <h6 class="mb-0">Managers</h6><span class="text-gray">{{$countManager}}&nbsp;Persons</span>
               </div>
             </div>
           </div>
