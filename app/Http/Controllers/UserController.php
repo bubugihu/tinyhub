@@ -19,7 +19,7 @@ class UserController extends Controller
     // List Users
     public function listUsers()
     {
-        $user = User::where('users.role',0)->get();
+        $user = User::where('users.role', 0)->get();
         $stt = 0;
         return view("admin.users.listUsers", compact('user', 'stt'));
     }
@@ -48,7 +48,7 @@ class UserController extends Controller
 
     public function listAdmin()
     {
-        $userAdmin = User::whereBetween('users.role',[1, 3])->get();
+        $userAdmin = User::whereBetween('users.role', [1, 3])->get();
         $sttAdmin = 0;
         return view("admin.users.listAdmin", compact('userAdmin', 'sttAdmin'));
     }
@@ -92,7 +92,7 @@ class UserController extends Controller
                 'profile_address' => 'bail|required',
                 'profile_email' => 'bail|required|email',
                 'profile_email' => 'unique:users,email,' . $use->id,
-                'profile_feature' => 'bail|required|image',
+                // 'profile_feature' => 'bail|required|image',
 
             ],
             [
@@ -112,8 +112,8 @@ class UserController extends Controller
                 'profile_email.required' => 'Email can not blank !',
                 'profile_email.email' => 'The format must be EMAIL style',
                 'profile_email.unique' => 'Email has already existed !',
-                'profile_feature' => 'Feature can not blank !',
-                'profile_feature' => 'Feature must be the image !',
+                // 'profile_feature' => 'Feature can not blank !',
+                // 'profile_feature' => 'Feature must be the image !',
             ]
         );
         $use->name = $request->profile_user_name;
@@ -123,12 +123,25 @@ class UserController extends Controller
         $cust->phone = $request->profile_phone;
         $cust->address = $request->profile_address;
         $use->email = $request->profile_email;
+        // if ($request->hasFile('profile_feature')) {
+        //     $file = $request->file('profile_feature');
+        //     $extension = $file->getClientOriginalExtension();
+
+        //     if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
+        //         return redirect("admin/customer/updateCustomer")->with('Message', 'You can only upload image with file jpg/png/jpeg');
+        //     }
+        //     $featureCustomer = $file->getClientOriginalName();
+        //     $file->move("img/feature/", $featureCustomer);
+        //     $cust->feature = $featureCustomer;
+        // } else {
+        //     $featureCustomer = "";
+        // }
         if ($request->hasFile('profile_feature')) {
             $file = $request->file('profile_feature');
             $extension = $file->getClientOriginalExtension();
 
             if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
-                return redirect("admin/customer/updateCustomer")->with('Message', 'You can only upload image with file jpg/png/jpeg');
+                return redirect("admin/customer/updateCustomer")->with(['flash_level' => 'danger', 'flash_message' => 'You can only upload image with file .jpg | .png | .jpeg!']);
             }
             $featureCustomer = $file->getClientOriginalName();
             $file->move("img/feature/", $featureCustomer);
@@ -158,7 +171,7 @@ class UserController extends Controller
                 'profile_address' => 'bail|required',
                 'profile_email' => 'bail|required|email',
                 'profile_email' => 'unique:users,email,' . $use->id,
-                'profile_feature' => 'bail|required|image',
+                // 'profile_feature' => 'bail|required|image',
 
             ],
             [
@@ -178,8 +191,8 @@ class UserController extends Controller
                 'profile_email.required' => 'Email can not blank !',
                 'profile_email.email' => 'The format must be EMAIL style',
                 'profile_email.unique' => 'Email has already existed !',
-                'profile_feature' => 'Feature can not blank !',
-                'profile_feature' => 'Feature must be the image !',
+                // 'profile_feature' => 'Feature can not blank !',
+                // 'profile_feature' => 'Feature must be the image !',
             ]
         );
         $use->name = $request->profile_user_name;
@@ -189,12 +202,26 @@ class UserController extends Controller
         $cust->phone = $request->profile_phone;
         $cust->address = $request->profile_address;
         $use->email = $request->profile_email;
+        // if ($request->hasFile('profile_feature')) {
+        //     $file = $request->file('profile_feature');
+        //     $extension = $file->getClientOriginalExtension();
+
+        //     if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
+        //         return redirect("admin/customer/updateCustomer")->with('Message', 'You can only upload image with file jpg/png/jpeg');
+        //     }
+        //     $featureCustomer = $file->getClientOriginalName();
+        //     $file->move("img/feature/", $featureCustomer);
+        //     $cust->feature = $featureCustomer;
+        // } else {
+        //     $featureCustomer = "";
+        // }
+
         if ($request->hasFile('profile_feature')) {
             $file = $request->file('profile_feature');
             $extension = $file->getClientOriginalExtension();
 
             if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
-                return redirect("admin/customer/updateCustomer")->with('Message', 'You can only upload image with file jpg/png/jpeg');
+                return redirect("admin/customer/updateCustomer")->with(['flash_level' => 'danger', 'flash_message' => 'You can only upload image with file .jpg | .png | .jpeg!']);
             }
             $featureCustomer = $file->getClientOriginalName();
             $file->move("img/feature/", $featureCustomer);
@@ -275,22 +302,95 @@ class UserController extends Controller
 
 
     //black list
-    public function test(Request $request){
+    public function test(Request $request)
+    {
         $email = $request->email;
         // $password = Hash::make($request->password);
         $password = $request->password;
-        if(!(Auth::attempt(['email' => $email, 'password' => $password])))
-            return back()->with(['flash_level' => 'danger','flash_message' => 'ID or Password may be incorrect.' ]);
+        if (!(Auth::attempt(['email' => $email, 'password' => $password])))
+            return back()->with(['flash_level' => 'danger', 'flash_message' => 'ID or Password may be incorrect.']);
 
 
-        elseif(Auth::attempt(['email' => $email, 'password' => $password]))
-                if(Auth::user()->role == 5)
-                {
-                    Auth::logout();
-                    return back()->with(['flash_level' => 'danger','flash_message' => 'You are banned. Please email Tinyhub@gmail.com for reason.' ]);
-                }
-                else
+        elseif (Auth::attempt(['email' => $email, 'password' => $password]))
+            if (Auth::user()->role == 5) {
+                Auth::logout();
+                return back()->with(['flash_level' => 'danger', 'flash_message' => 'You are banned. Please email Tinyhub@gmail.com for reason.']);
+            } else
                 return redirect()->intended('/');
-        
+    }
+
+    public function createAdmin()
+    {
+        return view("admin.users.createAdmin");
+    }
+    // Post Create Admin
+    public function postcreateAdmin(Request $request)
+    {
+        $this->validate(
+            $request,
+            [
+                'CC_user_name' => 'bail|required|string|max:255',
+                'CC_customer_name' => 'bail|required|string|max:255',
+                'CC_gender' => 'bail|required|not_in:0',
+                'CC_dob' => 'bail|required|date',
+                'CC_phone' => 'bail|required|regex:/^0[1-9]\d{8,9}$/i|unique:Customer,phone',
+                'CC_address' => 'bail|required|string|max:255',
+                'CC_email' => 'bail|required|string|regex:/^[a-zA-Z0-9\._]+@[a-zA-Z0-9_]+\.[a-zA-Z0-9]+[\.a-zA-Z0-9]*$/i|max:255|unique:users,email',
+                'CC_feature' => 'bail|required|image',
+                'CC_confirm_password' => 'bail|required|min:8|string|required_with:CC_password|same:CC_password',
+                'CC_password' => 'bail|required|string|min:8',
+
+            ],
+            [
+                'CC_user_name.required' => 'User Name can not blank !',
+                'CC_user_name.max' => 'User Name has max 255 characters !',
+                'CC_customer_name.required' => 'Customer Name can not blank !',
+                'CC_customer_name.max' => 'Customer Name has max 255 characters !',
+                'CC_gender.required' => 'Please choose one of them !',
+                'CC_dob.required' => 'Birthday can not blank !',
+                'CC_dob.date' => 'The date of birth must be of type DATE !',
+                'CC_phone.required' => 'Phone can not blank !',
+                'CC_phone.regex' => 'Phone numbers must have at least 10 numbers and at most 11 numbers !',
+                'CC_phone.unique' => 'Phone has already existed !',
+                'CC_address.required' => 'Address can not blank !',
+                'CC_address.max' => 'Address has max 255 characters !',
+                'CC_email.required' => 'Email can not blank !',
+                'CC_email.regex' => 'The format must be EMAIL style',
+                'CC_email.max' => 'Email has max 255 characters !',
+                'CC_email.unique' => 'Email has already existed !',
+                'CC_feature.required' => 'Feature can not blank !',
+                'CC_feature.image' => 'Feature must be the image !',
+                'CC_confirm_password.required' => 'The password confirmation can not blank !',
+                'CC_confirm_password.same' => 'The password confirmation does not match.',
+                'CC_confirm_password.min' => 'The password confirmation has min 8 characters !',
+                'CC_password.required' => 'The password can not blank !',
+                'CC_password.min' => 'The password has min 8 characters !',
+
+            ]
+        );
+
+        $userA = new User();
+        $customerA = new Customers();
+
+        $userA->name = $request->CC_user_name;
+        $userA->email = $request->CC_email;
+        $userA->password = Hash::make($request->CC_password);
+        $userA->role = $request->CC_role;
+        $userA->save();
+
+        $customerA->users_id = $userA->id;
+        $customerA->customer_name = $request->CC_customer_name;
+        $customerA->gender = $request->CC_gender;
+        $customerA->dob = $request->CC_dob;
+        $customerA->phone = $request->CC_phone;
+        $customerA->address = $request->CC_address;
+
+        $file = $request->file('CC_feature');
+        $featureCustomer = $file->getClientOriginalName();
+        $file->move("img/feature/", $featureCustomer);
+        $customerA->feature = $featureCustomer;
+
+        $customerA->save();
+        return redirect()->action('UserController@listAdmin')->with(['flash_level' => 'success', 'flash_message' => 'Create New Admin Successfully !']);
     }
 }

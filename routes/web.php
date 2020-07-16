@@ -94,12 +94,13 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         Route::get('users/listAdmin', 'UserController@listAdmin');
         Route::get('users/updateAdmin/{id}', 'UserController@updateAdmin');
         Route::post('users/postUpdateAdmin', 'UserController@postUpdateAdmin');
+        Route::get('users/createAdmin', 'UserController@createAdmin');
+        Route::post('users/postcreateAdmin', 'UserController@postcreateAdmin');
         //customer
         Route::get('customer/listCustomer', 'CustomerController@listCustomer');
         Route::get('customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
         Route::post('customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
-        Route::get('customer/createAdmin', 'CustomerController@createAdmin');
-        Route::post('customer/postcreateAdmin', 'CustomerController@postcreateAdmin');
+        
         //order
         Route::get('order/listOrder', 'OrderController@listOrder');
         Route::get('order/onOrderStatus/{id}', 'OrderController@onOrderStatus');

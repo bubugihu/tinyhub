@@ -16,7 +16,7 @@
                                 {!!Session::get('flash_message')!!}
                             </div>
                             @endif
-                            <form action="{{url("admin/customer/postcreateAdmin")}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{url("admin/users/postcreateAdmin")}}" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <!-- User Name -->
