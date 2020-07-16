@@ -27,7 +27,7 @@
                     <hr width="100%" style="margin-left: 0;">
                     
                     @foreach($categoryGlobal as $c)
-                    <h6><i class="fas fa-chevron-right"></i>&nbsp; <a class="filter-li btn btn-outline-dark btn-sm" href="{{url('searchCate/'.$c->category_name)}}">{{$c->category_name}}</a></h6><br/>
+                    <h6><i class="fas fa-chevron-right"></i>&nbsp; <a class="filter-li btn btn-outline-dark btn-sm" style="text-transform: capitalize;" href="{{url('searchCate/'.$c->category_name)}}">{{$c->category_name}}</a></h6><br/>
                     @endforeach
     
                 </div>
@@ -37,7 +37,7 @@
                     <hr width="100%" style="margin-left: 0;">
 
                     @foreach($brandGlobal as $b)
-                    <h6><i class="fas fa-chevron-right"></i> &nbsp;<a class="filter-li btn btn-outline-dark btn-sm" href="{{url('searchBrand/'.$b->brand_name)}}">{{$b->brand_name}}</a></h6><br/>
+                    <h6><i class="fas fa-chevron-right"></i> &nbsp;<a class="filter-li btn btn-outline-dark btn-sm" style="text-transform: capitalize;" href="{{url('searchBrand/'.$b->brand_name)}}">{{$b->brand_name}}</a></h6><br/>
                     @endforeach
 
                 </div>

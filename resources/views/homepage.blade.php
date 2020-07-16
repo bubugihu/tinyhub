@@ -118,7 +118,7 @@
                       <!-- Card content -->
                       <div class="card-body">
                         <!-- Title -->
-                        <h4 class="card-title">{{$c->category_name}}</h4>
+                        <h4 class="card-title" style="text-transform: capitalize;">{{$c->category_name}}</h4>
                         <!-- Text -->
                         <p class="card-text">{{$c->description}}</p>
                         <!-- Button -->

@@ -49,7 +49,7 @@
                 <p class="product_cate"><a href="{{url('searchCate/'.$category->category_name)}}">{{$category->category_name}}</a></p>
             </div>
             <div class="row">
-                <p class="product_name">{{$product->product_title}}</p>
+                <p class="product_name text-uppercase">{{$product->product_title}}</p>
             </div>
             <div class="row">
                 <p class="product_cate mb-3">Brand: <a href="{{url('searchBrand/'.$brand->brand_name)}}">{{$brand->brand_name}}</a></p>

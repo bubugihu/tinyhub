@@ -270,7 +270,7 @@ class ProductController extends Controller
         }
         //end comment
         //Similar Product
-        $similar = Product::where('id', '<>', $id)->where('category_id', $product->category_id)
+        $similar = Product::where('id', '<>', $id)->where('category_id', $product->category_id)->where('status',0)
             ->select('product.*')->take(4)->get();
 
         //End Similar Product
