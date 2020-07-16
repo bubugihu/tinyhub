@@ -24,7 +24,7 @@
                     <th>Product Name</th>
                     <th>Price</th>
                     <th>Sold out</th>
-                    <th>Status</th>
+                    <th>Category</th>
                     <th>Created At</th>
                     <th>Action</th>
                   </tr>
@@ -35,34 +35,17 @@
                     <th scope="row" class="align-middle">{{$product->id}}</th>
                     <td class="align-middle"><img src="{{asset('img/feature/'.$product->feature_image)}}" alt="" width="60" height="auto"></td>
                     <td class="align-middle">{{$product->product_title}}</td>
-                    <td class="align-middle">{{$product->price}}</td>
+                    <td class="align-middle">${{$product->price}}</td>
                     <td class="align-middle">{{$product->sold_out}}</td>
-                    <td class="align-middle">{{$product->status}}</td>
+                    <td class="align-middle">{{$product->category_name}}</td>
                     <td class="align-middle">{{$product->created_at}}</td>
                     <td class="align-middle">
-                      <!-- Modal Details Product -->
-                      <a href="{{url("admin/product/detailsProduct/" . $product -> id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
-                      <!-- Modal Update Product -->
-                      <a href="{{url("admin/product/updateProduct/" . $product -> id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
-                      <!-- Modal Delete Product -->
-                      <a href="#" class="badge badge-danger p-2" data-toggle="modal" data-target="#Modal-Delete-Category"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
-                      <div id="Modal-Delete-Category" tabindex="-1" role="dialog" aria-labelledby="deletecategory" aria-hidden="true" class="modal fade bd-example-modal-lg text-left">
-                        <div role="document" class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h4 id="deletecategory" class="modal-title">Delete Product</h4>
-                              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                            </div>
-                            <div class="modal-body text-center">
-                              <h2>Are you sure you want to delete?</h2>
-                            </div>
-                            <div class="modal-footer">
-                              <a href="{{url("admin/product/deleteProduct/" . $product -> id)}}"><button type="button" class="btn btn-danger">Delete</button></a>
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <!-- Details Product -->
+                      <a href="{{url("admin/product/detailsProduct/" .$product->id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
+                      <!-- Update Product -->
+                      <a href="{{url("admin/product/updateProduct/" .$product->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
+                      <!-- Delete Product -->
+                      <a href="{{url("admin/product/deleteProduct/" .$product->id)}}" class="badge badge-danger p-2" onclick="return confirm('Do you want delete?');"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>
                     </td>
                   </tr>
                   @endforeach

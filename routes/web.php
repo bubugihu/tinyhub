@@ -50,7 +50,6 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
             return abort(404);
         });
 
-        // 404
         Route::get('banners/updateBanners/{id}', 'BannerController@updateBanners');
         Route::post('banners/postUpdateBanners', 'BannerController@postUpdateBanners');
         Route::get('banners/postUpdateBanners', function () {

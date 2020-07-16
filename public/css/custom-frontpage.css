@@ -1,8 +1,13 @@
-sbody {
+
+body {
     background-color: #fff !important;
 }
 p {
     font-size: 17px;
+    word-wrap: break-word;
+}
+h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word!important;
 }
 /* .top-right.links a {
     padding: 7px 25px;

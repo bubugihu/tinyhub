@@ -49,7 +49,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="form-control-label text-uppercase">Product ID</label>
-                                                    <input type="text" class="form-control" placeholder="{{$pro->id}}" readonly>
+                                                    <input type="text" class="form-control" value="{{$pro->id}}" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -57,7 +57,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="form-control-label text-uppercase">Product Title</label>
-                                                    <input type="text" class="form-control" placeholder="{{$pro->product_title}}" readonly>
+                                                    <input type="text" class="form-control" value="{{$pro->product_title}}" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -65,7 +65,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="form-control-label text-uppercase">Price</label>
-                                                    <input type="text" class="form-control" placeholder="{{$pro->price}}" readonly>
+                                                    <input type="text" class="form-control" value="{{$pro->price}}" readonly>
                                                 </div>
                                             </div>
                                         </div>
@@ -76,25 +76,25 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Sold Out</label>
-                                            <input type="text" class="form-control" placeholder="{{$pro->sold_out}}" readonly>
+                                            <input type="text" class="form-control" value="{{$pro->sold_out}}" readonly>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Status</label>
-                                            <input type="text" class="form-control" placeholder="{{$pro->status}}" readonly>
+                                            <input type="text" class="form-control" value="{{$pro->status}}" readonly>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Category</label>
-                                            <input type="text" class="form-control" placeholder="{{$pro->category_name}}" readonly>
+                                            <input type="text" class="form-control" value="{{$pro->category_name}}" readonly>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Brand</label>
-                                            <input type="text" class="form-control" placeholder="{{$pro->brand_name}}" readonly>
+                                            <input type="text" class="form-control" value="{{$pro->brand_name}}" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -103,13 +103,13 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Warranty Period</label>
-                                            <input type="text" class="form-control" placeholder="{{$pro->warranty_period}}" readonly>
+                                            <input type="text" class="form-control" value="{{$pro->warranty_period}}" readonly>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Create At</label>
-                                            <input type="text" class="form-control" placeholder="{{$pro->created_at}}" readonly>
+                                            <input type="text" class="form-control" value="{{$pro->created_at}}" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Short Description</label>
-                                            <input type="text" class="form-control" placeholder="{{$pro->short_descriptions}}" readonly>
+                                            <textarea name="" id="" rows="5" class="form-control" placeholder="" readonly>{{$pro->short_descriptions}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -127,14 +127,14 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Long Description</label>
-                                            <p>{!!$pro->long_descriptions!!}</p>
+                                            <textarea name="" id="" rows="5" class="form-control" placeholder="" readonly>{{$pro->long_descriptions}}</textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="{{url('admin/product/listProduct')}}"><button type="button" class="btn btn-primary">Back</button></a>
+                            <a href="{{url('admin/product/listProduct')}}"><button type="button" class="btn btn-dark">Back</button></a>
 
                         </div>
                     </div>
