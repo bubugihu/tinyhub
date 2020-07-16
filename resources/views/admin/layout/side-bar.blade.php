@@ -104,11 +104,11 @@
                 </div>
             </li>
             <!-- End Customers Module -->
+            @endif
             <hr><br>
             <li class="sidebar-list-item"><a href="{{url("admin/reportproduct")}}" target="_blank" class="sidebar-link" style="color: darkgreen;"><i class="o-statistic-1 mr-3"></i><span>Report Product</span></a>
             </li>
             <li class="sidebar-list-item"><a href="{{url("admin/reportcategoryAndbrand")}}" target="_blank" class="sidebar-link" style="color: darkgreen;"><i class="o-statistic-1 mr-3"></i><span>Report Categories & Brands</span></a>
             </li>
-            @endif
         </ul>
     </div>

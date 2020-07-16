@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="{{asset("css/lightslider.css")}}">
     <style>
         /* Cart */
+        p{
+            word-break: break-word;
+        }
         body{
             background: #fff!important;
         }
@@ -158,14 +161,14 @@
   <section class="report p-5">
     <div class="container card card-body">
         <div class="row p-4">
-          <div class="col-md-6 text-left" style="line-height: 0.7;">
+          <div class="col-md-6 text-left" >
             <img class="img-fluid" src="{{url("img/tinyhub-logo.png")}}" alt="" width="160" height="auto">
             <hr>
             <p>Website: wwww.tinyhub.com</p>
             <p>Phone Number: 020-800-456-747</p>
             <p>Email: tinyhub@gmail.com</p>
           </div>
-          <div class="col-md-6 text-left" style="line-height: 0.7;">
+          <div class="col-md-6 text-left" >
             <h2 style="color: #f47535;">Invoice</h2><br>  
             <hr>
             <p>Order Id: {{$id}}</p>
@@ -174,7 +177,7 @@
           </div>
         </div>
         <div class="row p-4">
-          <div class="col-md-6" style="line-height: 0.7;">
+          <div class="col-md-6" >
               <h4>Customer Information</h4>
               <hr>
               <p>Fullname: {{$orderDetails->customer_name}}</p>
@@ -182,12 +185,12 @@
               <p>Phone: {{$orderDetails->phone}}</p>
               <p>Address: {{$orderDetails->address}}</p>
           </div>
-          <div class="col-md-6" style="line-height: 0.7;">
+          <div class="col-md-6" >
               <h4>Receiver Information</h4>
               <hr>
               <p>Fullname: {{$orderDetails->consignee_name}}</p>
               <p>Phone: {{$orderDetails->phone_consignee}}</p>
-              <p>Receiving address: {{$orderDetails->shipping_address}}</p>
+              <p >Receiving address: {{$orderDetails->shipping_address}}</p>
           </div>
         </div>
         <div class="row p-4">

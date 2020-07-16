@@ -215,6 +215,7 @@ Route::get('product-detail/{id}', [
     'uses' => 'ProductController@productDetails'
 ]);
 
+
 //check comment
 Route::get('checkComment/{id}','ProductController@productDetails')->middleware('auth');
 
