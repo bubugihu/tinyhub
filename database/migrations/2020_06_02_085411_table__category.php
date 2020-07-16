@@ -17,7 +17,7 @@ class TableCategory extends Migration
             $table->increments('id');  //primary key
             $table->string('category_name')->unique();
             $table->string('category_image')->nullable()->default('ava-default.png');
-            $table->longText('description')->nullable()->default('Not Description');
+            $table->longText('description')->nullable()->default('No Description');
             $table->timestamps();
         });
     }
