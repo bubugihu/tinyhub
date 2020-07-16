@@ -23,7 +23,7 @@ class ProductController extends Controller
         ->join('brand', 'brand.id', '=', 'product.brand_id')
         ->where('product.status', '=', 0)
         ->select('product.*' , 'category.category_name', 'brand.brand_name')
-        ->paginate(10);
+        ->paginate(30);
         return view('admin.product.listProduct', compact('products'));
     }
 
