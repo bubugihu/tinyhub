@@ -14,15 +14,15 @@
             </li>
 
             @if(Auth::user()->role == 1)
-            <!-- Comment Module -->
-            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages9" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-paper-stack-1 mr-3"></i><span>Comment</span></a>
-                <div id="pages9" class="collapse">
+            <!-- Orders Module -->
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages8" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-survey-1 mr-3"></i><span>Orders</span></a>
+                <div id="pages8" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
-                        <li class="sidebar-list-item"><a href="{{url("admin/comment/listComment")}}" class="sidebar-link text-muted pl-lg-5">List Comments</a></li>
+                        <li class="sidebar-list-item"><a href="{{url("admin/order/listOrder")}}" class="sidebar-link text-muted pl-lg-5">List orders</a></li>
                     </ul>
                 </div>
             </li>
-            <!-- End Comment Module -->
+            <!-- End Orders Module -->
             <!-- Banner Module -->
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages7" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-imac-screen-1 mr-3"></i><span>Banner</span></a>
                 <div id="pages7" class="collapse">
@@ -76,15 +76,15 @@
             <!-- End Brand Module -->
             @endif
             @if(Auth::user()->role == 1 || Auth::user()->role == 3)
-            <!-- Orders Module -->
-            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages8" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-survey-1 mr-3"></i><span>Orders</span></a>
-                <div id="pages8" class="collapse">
+            <!-- Comment Module -->
+            <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages9" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-paper-stack-1 mr-3"></i><span>Comment</span></a>
+                <div id="pages9" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
-                        <li class="sidebar-list-item"><a href="{{url("admin/order/listOrder")}}" class="sidebar-link text-muted pl-lg-5">List orders</a></li>
+                        <li class="sidebar-list-item"><a href="{{url("admin/comment/listComment")}}" class="sidebar-link text-muted pl-lg-5">List Comments</a></li>
                     </ul>
                 </div>
             </li>
-            <!-- End Orders Module -->
+            <!-- End Comment Module -->
             <!-- Users Module -->
             <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages1" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-profile-1 mr-3"></i><span>Users</span></a>
                 <div id="pages1" class="collapse">

@@ -25,11 +25,12 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
 
     Route::group(['middleware' => ['admin']], function () {  //admin role 1
         
-        //comment
-         Route::get('comment/listComment', 'CommentController@listComment');
-         Route::get('comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
-         Route::get('comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
-         Route::get('comment/deleteComment/{id}', 'CommentController@deleteComment');
+        //order
+        Route::get('order/listOrder', 'OrderController@listOrder');
+        Route::get('order/onOrderStatus/{id}', 'OrderController@onOrderStatus');
+        Route::get('order/listOrderDetails/{id}', 'CartController@orderDetails');
+        Route::get('order/deleteOrder/{id}', 'OrderController@deleteOrder');
+        Route::get('admin/order/onOrderStatus', 'OrderController@onOrderStatus111');
 
         //feedback
         Route::get('feedback/feedbackList', 'FeedbackController@feedbackList');
@@ -100,12 +101,12 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         Route::post('customer/postUpdateCustomer/{id}', 'CustomerController@postUpdateCustomer');
         Route::get('customer/createAdmin', 'CustomerController@createAdmin');
         Route::post('customer/postcreateAdmin', 'CustomerController@postcreateAdmin');
-        //order
-        Route::get('order/listOrder', 'OrderController@listOrder');
-        Route::get('order/onOrderStatus/{id}', 'OrderController@onOrderStatus');
-        Route::get('order/listOrderDetails/{id}', 'CartController@orderDetails');
-        Route::get('order/deleteOrder/{id}', 'OrderController@deleteOrder');
-        Route::get('admin/order/onOrderStatus', 'OrderController@onOrderStatus111');
+        //comment
+        Route::get('comment/listComment', 'CommentController@listComment');
+        Route::get('comment/onCommentStatus/{id}', 'CommentController@onCommentStatus');
+        Route::get('comment/offCommentStatus/{id}', 'CommentController@offCommentStatus');
+        Route::get('comment/deleteComment/{id}', 'CommentController@deleteComment');
+        
     });
 
     //index

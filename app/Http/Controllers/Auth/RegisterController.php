@@ -58,7 +58,7 @@ class RegisterController extends Controller
             'fullname'                  => ['bail','required','regex:/^[a-zA-Z ]{2,}$/i','max:255'],
             'dob'                       => ['bail','required'],
             'phone'                     => ['bail','required','regex:/^0[1-9]\d{8,9}$/i','unique:customer'],
-            'address'                   => ['bail','required','string','max:255' ],
+            'address'                   => ['bail','required','string','min:2','max:255' ],
         ]);
     }
 

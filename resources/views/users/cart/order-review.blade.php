@@ -73,7 +73,7 @@
                                 <p>Receiving address: </p>
                               </div>
                               <div class="col-md-6">
-                                <p>{{$shipping_address}}</p>
+                                <p style="line-height:1.4">{{$shipping_address}}</p>
                               </div>
                             </div>
                             <div class="row">

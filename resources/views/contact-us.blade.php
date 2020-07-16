@@ -73,7 +73,7 @@
                                       @enderror
                                     </div>
                                     <div class="form-group">
-                                      <label class="form-control-label text-uppercase">Title</label>
+                                      <label class="form-control-label text-uppercase">Question about:</label>
                                       <select name="feedbackTitle" class="form-control @error('feedbackTitle') is-invalid @enderror" id="">
                                         <option value="Product">Product</option>
                                         <option value="Order">Order</option>

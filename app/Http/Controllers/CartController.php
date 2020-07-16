@@ -130,7 +130,7 @@ class CartController extends Controller
             [
                 'consignee_name'        =>  'bail|required|string|min:2',
                 'phone_consignee'       =>  'bail|required|regex:/^0[1-9][0-9]{8}$/i',
-                'shipping_address'      =>  'bail|required|string|min:2',
+                'shipping_address'      =>  'bail|required|string|min:2|max:255',
             ]
         );
         $consignee_name = $request->consignee_name;

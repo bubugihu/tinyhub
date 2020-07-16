@@ -18,17 +18,18 @@ class OrderController extends Controller
             ->join('product', 'order_details.product_id', '=', 'product.id')
             ->groupBy('order_details.order_id', 'order.payment', 'order.created_at', 'order.consignee_name', 'order.status')
             ->select('order_details.order_id', DB::raw('SUM(product.price * order_details.quantity) as total'), 'order.payment', 'order.created_at', 'order.consignee_name', 'order.status')
-            ->paginate(10);
+            ->paginate(20);
+        
         return view("admin.order.listOrder", compact('orders'));
     }
 
-    public function listOrderDetails($id)
-    {
-        $customer = Customers::find($id);
-        $orderDetails = Order::find($id);
+    // public function listOrderDetails($id)
+    // {
+    //     $customer = Customers::find($id);
+    //     $orderDetails = Order::find($id);
 
-        return view("users.cart.report", compact('orderDetails', 'customer'));
-    }
+    //     return view("users.cart.report", compact('orderDetails', 'customer'));
+    // }
 
     public function deleteOrder($id)
     {
@@ -40,47 +41,14 @@ class OrderController extends Controller
 
     public function onOrderStatus($id)
     {
-        $onStatus = Order::find($id);
-        $onStatus->status = 1;
-        $sold_outProduct = OrderDetail::join('product', 'order_details.product_id', '=', 'product.id')
-            ->where('order_details.order_id', $id)
-            ->groupBy('order_details.product_id')->havingRaw('SUM(order_details.quantity+product.sold_out)')
-            ->select(DB::raw('SUM(order_details.quantity+product.sold_out) as sum_sold_out'), 'order_details.product_id')
-            ->get();
-
-        $product = '';
-        foreach ($sold_outProduct as $qwe) {
-            $product = Product::find($qwe->product_id)->update(['sold_out' => $qwe->sum_sold_out]);
+         Order::find($id)->update(['status' => 1]);
+        $orderDetail = OrderDetail::where('order_id',$id)->get();
+        foreach($orderDetail as $orderDetail){
+            $sold = Product::find($orderDetail->product_id)->sold_out;
+            Product::find($orderDetail->product_id)->update(['sold_out' => ($sold+$orderDetail->quantity)]);
         }
 
-        $onStatus->save();
         return redirect()->action('OrderController@listOrder');
     }
 
-    // public function onOrderStatus111()
-    // {
-    //     $onStatus = Order::find(12);
-    //     $onStatus->status = 1;
-    //     $onStatus->save();
-    //     $sold_outProduct = OrderDetail::join('product', 'order_details.product_id', '=', 'product.id')
-    //         ->where('order_details.order_id', 12)
-    //         ->groupBy('order_details.product_id', 'product.sold_out')->havingRaw('SUM(order_details.quantity+product.sold_out)')
-    //         ->select(DB::raw('SUM(order_details.quantity+product.sold_out) as sum_sold_out'), 'order_details.product_id', 'product.sold_out')
-    //         ->get();
-    //     $search = '';
-    //     $product = '';
-    //     foreach ($sold_outProduct as $qwe) {
-    //         $product = Product::find($qwe->product_id)->update(['sold_out' => $qwe->sum_sold_out]);
-    //     }
-
-    //     return view('/test', compact('sold_outProduct', 'search'));
-    // }
-
-    // public function offOrderStatus($id)
-    // {
-    //     $offStatus = Order::find($id);
-    //     $offStatus->status = 0;
-    //     $offStatus->save();
-    //     return redirect()->action('OrderController@listOrder');
-    // }
 }
