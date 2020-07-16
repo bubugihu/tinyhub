@@ -57,7 +57,7 @@
         <div class="container">
           <div class="row d-flex align-items-center">
             <div class="text col-md-6">
-              <p>© 2020 <a href="#" target="_blank">TinyHub</a> All rights reserved.</p>
+              <p>© 2020 <span style="color:orange;">TinyHub</span> All rights reserved.</p>
             </div>
             <div class="payment col-md-6 clearfix">
               <ul class="payment-list list-inline-item pull-right">

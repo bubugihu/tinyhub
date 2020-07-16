@@ -38,7 +38,7 @@ class BrandsController extends Controller
                 'brandTitle.required'            => 'Brand title can not be blank !',
                 'brandTitle.unique'              => 'Brand title has already existed !',
                 'brandTitle.regex'               => 'Brand title has 2 character and must be string, can not start with number !',
-                'brandTitle.max'                 => 'Brand title has max 500 characters !',
+                'brandTitle.max'                 => 'Brand title has max 255 characters !',
                 'brandDescription.required'      => 'Brand Description can not be blank !',
                 'brandimg.required'              => 'Brand Image can not be blank !',
             ]
@@ -87,7 +87,7 @@ class BrandsController extends Controller
             [
                 'brandTitle.required'            => 'Brand title can not be blank !',
                 'brandTitle.regex'               => 'Brand title has 2 character and must be string, can not start with number !',
-                'brandTitle.max'                 => 'Brand title has max 500 characters !',
+                'brandTitle.max'                 => 'Brand title has max 255 characters !',
                 'brandTitle.unique'              => 'Brand title has already existed !',
                 'brandDescription.required'      => 'Brand Description can not be blank !',
 

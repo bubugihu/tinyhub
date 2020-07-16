@@ -19,11 +19,6 @@ class CategoryController extends Controller
         return view('admin.category.categories', compact('cates','product'));
     }
 
-    // public function getcategories(){
-    //     $cates = Category::all();
-    //     return view('users.product.category', compact('cates'));
-    // }
-
     public function deleteCate($id){
         Category::find($id)->delete();
         return redirect()->action('CategoryController@categories')->with(['flash_level' => 'success', 'flash_message' => 'Delete Successfully !']);
@@ -40,7 +35,7 @@ class CategoryController extends Controller
             $request,
             [
                 'cateTitle'           => 'bail|required|unique:Category,category_name|regex:/^[a-zA-Z]{2,}/i|max:255',
-                'cateDescription'     => 'bail|required|max:255;',
+                'cateDescription'     => 'bail|required|max:255',
                 'cateimg'             => 'required',
             ],
             [
@@ -51,7 +46,6 @@ class CategoryController extends Controller
                 'cateDescription.required'    => 'Category Description can not be blank !',
                 'cateDescription.max'         => 'Category Description has max 255 characters !',
                 'cateimg.required'            => 'Category Image can not be blank !',
-                
             ]
         );
         

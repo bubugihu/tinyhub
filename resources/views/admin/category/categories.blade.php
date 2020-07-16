@@ -23,7 +23,7 @@
                     <th>Categories ID</th>
                     <th>Categories Image</th>
                     <th>Categories Title</th>
-                    <th>Description</th>
+                    <th width="300">Description</th>
                     <th>Action</th>
                   </tr>
                 </thead>

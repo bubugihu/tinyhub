@@ -146,7 +146,7 @@
                                 <div class="form-group">
                                     <textarea name="postComment" id="" class="form-control" placeholder="Looks like you want to share something ?"></textarea>
                                 </div>
-                                <div class="form-group d-flex justify-content-center">
+                                <div class="form-group d-flex justify-content-start">
                                     <input type="submit" class="btn btn-success" value="Post">
                                 </div>
                             </form>
@@ -203,7 +203,7 @@
                 <div class="product_content">
                     <h3 class="title"><a href="{{ url('product-detail/'.$similar->id)}}">{{$similar->product_title}}</a></h3>
                     <div class="price">$ {{$similar->price}}</div>
-                    <a href="{{ url('product-detail/'.$similar->id)}}" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Add to cart</a>
+                    <a href="{{ url('product-detail/'.$similar->id)}}" class="btn btn-dark">Detail <i class="fas fa-angle-double-right"></i></a>
                 </div>
             </div>
           </div>

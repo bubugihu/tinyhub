@@ -117,38 +117,31 @@
                         <div class="form-group">
                             <label class="form-control-label text-uppercase">Address <span class="required">*</span></label>
                             <textarea name="address" id="" rows="3" class="form-control @error('address') is-invalid @enderror">{{old('name')}}</textarea>
-
                             @error('address')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
-
-                        </div>
-
-
-                </div>
-                <div class="card-footer">
-                    <div class="form-group row mb-0">
-                        <div class="col-md-12 text-center">
-                            <button type="reset" class="btn btn-dark">
-                                {{ __('Reset') }}
-                            </button>
-                            <button type="submit" class="btn login-btn">
-                                {{ __('Register') }}
-                            </button>
                         </div>
                     </div>
-                </div>
-
+                    <div class="card-footer">
+                        <div class="form-group row mb-0">
+                            <div class="col-md-12 text-center">
+                                <button type="reset" class="btn btn-dark">
+                                    {{ __('Reset') }}
+                                </button>
+                                <button type="submit" class="btn login-btn">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
 @endsection
-
 @section('script')
 <script>
     $(document).ready(function() {
