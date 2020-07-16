@@ -127,7 +127,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Long Description</label>
-                                            <textarea name="" id="" rows="5" class="form-control" placeholder="" readonly>{{$pro->long_descriptions}}</textarea>
+                                            <textarea name="" id="" rows="5" class="form-control" placeholder="" readonly>{!!$pro->long_descriptions!!}</textarea>
                                         </div>
                                     </div>
                                 </div>

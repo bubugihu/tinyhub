@@ -131,6 +131,7 @@
                     @guest
                     <div class="row review d-flex justify-content-center">
                         <div class="col-12 text-center">You want to comment ?? <a href="{{url('checkComment/'.$product->id)}}">Login now.</a></div>
+                    </div>
                     @endguest
                     @auth
                     <div class="row review d-flex justify-content-center">
