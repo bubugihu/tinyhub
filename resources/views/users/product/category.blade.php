@@ -92,7 +92,7 @@
                         <div class="product_content">
                             <h3 class="title"><a href="{{ url('product-detail/'.$product->id)}}">{{$product->product_title}}</a></h3>
                             <div class="price">$ {{$product->price}}</div>
-                            <a href="{{ url('product-detail/'.$product->id)}}" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Add to cart</a>
+                            <a href="{{ url('product-detail/'.$product->id)}}" class="btn btn-dark">Detail <i class="fas fa-angle-double-right"></i></a>
                         </div>
                     </div>
                 </div>

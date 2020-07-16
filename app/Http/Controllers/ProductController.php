@@ -23,7 +23,7 @@ class ProductController extends Controller
         ->join('brand', 'brand.id', '=', 'product.brand_id')
         ->where('product.status', '=', 0)
         ->select('product.*' , 'category.category_name', 'brand.brand_name')
-        ->paginate(10);
+        ->paginate(30);
         return view('admin.product.listProduct', compact('products'));
     }
 
@@ -157,7 +157,7 @@ class ProductController extends Controller
                 'prdWarranty'  => 'required',
                 'sdescription' => 'required',
                 'ldescription' => 'required',
-                'featureimg'   => 'bail|required|image|size:10240',
+                'featureimg'   => 'bail|required|image|max:10240',
             ],
             [
                 'prdname.required'            => 'Product title can not be blank !',
@@ -175,7 +175,7 @@ class ProductController extends Controller
                 'ldescription.required'       => 'Long Description can not be blank !',
                 'featureimg.required'         => 'Feature Image can not be blank !',
                 'featureimg.image'            => 'Feature Image must be image file !',
-                'featureimg.size'             => 'Feature Image must be less than 10MB !',
+                'featureimg.max'             => 'Feature Image must be less than 10MB !',
             ]
         );
 
