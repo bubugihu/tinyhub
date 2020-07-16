@@ -53,7 +53,7 @@
                   @foreach($category as $category)
                   <tr>
                     <th scope="row" class="align-middle">{{$category->id}}</th>
-                    <td class="align-middle"><img src="{{asset('img/'.$category->category_image)}}" alt="" width="70px"></td>
+                    <td class="align-middle"><img src="{{asset('img/category/'.$category->category_image)}}" alt="" width="70px"></td>
                     <td class="align-middle">{{$category->category_name}}</td>
                   </tr>
                   @endforeach

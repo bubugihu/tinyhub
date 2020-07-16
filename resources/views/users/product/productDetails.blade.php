@@ -131,6 +131,7 @@
                     @guest
                     <div class="row review d-flex justify-content-center">
                         <div class="col-12 text-center">You want to comment ?? <a href="{{url('checkComment/'.$product->id)}}">Login now.</a></div>
+                    </div>
                     @endguest
                     @auth
                     <div class="row review d-flex justify-content-center">
@@ -186,7 +187,7 @@
                     <a href="{{ url('product-detail/'.$similar->id)}}" class="btn btn-dark"><i class="fas fa-shopping-cart"></i> Add to cart</a>
                 </div>
             </div>
-          </div>
+        </div>
         @endforeach
     </div>
 </div>
@@ -196,6 +197,7 @@
         document.getElementById("1").stepUp(1);
         document.getElementById("2").stepUp(1);
     }
+
     function decre() {
         document.getElementById("1").stepDown(1);
         document.getElementById("2").stepDown(1);
