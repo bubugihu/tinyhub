@@ -30,7 +30,9 @@ class ProductController extends Controller
     // Function link to create product page
     public function createProduct()
     {
-        return view("admin.product.createProduct");
+        $cates = Category::all();
+        $brand = Brands::all();
+        return view("admin.product.createProduct", compact('cates', 'brand'));
     }
 
     // Function Create Product
@@ -41,14 +43,13 @@ class ProductController extends Controller
             $request,
             [
                 'prdname'      => 'bail|required|unique:Product,product_title|regex:/^[a-zA-Z]{2,}/i|max:255',
-                // 'prdprice'     => 'bail|required|regex:/^[0-9]{1,5}$/i',
                 'prdprice'     => 'bail|required|numeric|min:1|max:10000',
                 'prdcate'      => 'bail|required|not_in:0',
                 'prdbrand'     => 'bail|required|not_in:0',
                 'prdWarranty'  => 'required',
                 'sdescription' => 'required',
                 'ldescription' => 'required',
-                'featureimg'   => 'required',
+                'featureimg'   => 'bail|required|image|max:10240',
             ],
             [
                 'prdname.required'            => 'Product title can not be blank !',
@@ -57,12 +58,17 @@ class ProductController extends Controller
                 'prdname.min'                 => 'Product title has min 3 characters !',
                 'prdname.max'                 => 'Product title has max 255 characters !',
                 'prdprice.required'           => 'Price can not be blank !',
+                'prdprice.numeric'            => 'Price must be number !',
+                'prdprice.min'                => 'Price must be greater than 0 !',
+                'prdprice.max'                => 'Price must be less than 10000 !',
                 'prdcate.required'            => 'Please choose one of them !',
                 'prdbrand.required'           => 'Please choose one of them !',
                 'prdWarranty.required'        => 'Warranty Period can not be blank !',
                 'sdescription.required'       => 'Short Description can not be blank !',
                 'ldescription.required'       => 'Long Description can not be blank !',
                 'featureimg.required'         => 'Feature Image can not be blank !',
+                'featureimg.image'            => 'Feature Image must be image file !',
+                'featureimg.max'             => 'Feature Image must be less than 10MB !',
             ]
         );
 
@@ -145,12 +151,13 @@ class ProductController extends Controller
             [
                 'prdname'      => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255',
                 'prdname'      => 'unique:Product,product_title,' .$p->id,
-                'prdprice'     => 'bail|required|min:0|max:10000',
+                'prdprice'     => 'bail|required|numeric|min:1|max:10000',
                 'prdcate'      => 'bail|required|not_in:0',
                 'prdbrand'     => 'bail|required|not_in:0',
                 'prdWarranty'  => 'required',
                 'sdescription' => 'required',
                 'ldescription' => 'required',
+                'featureimg'   => 'bail|required|image|size:10240',
             ],
             [
                 'prdname.required'            => 'Product title can not be blank !',
@@ -158,13 +165,17 @@ class ProductController extends Controller
                 'prdname.unique'              => 'Product title has already existed !',
                 'prdname.max'                 => 'Product title has max 255 characters !',
                 'prdprice.required'           => 'Price can not be blank !',
-                'prdprice.min'                => 'Price has min >= 0 !',
-                'prdprice.max'                => 'Price has max <= 10000 !',
+                'prdprice.numeric'            => 'Price must be number !',
+                'prdprice.min'                => 'Price must be greater than 0 !',
+                'prdprice.max'                => 'Price must be less than 10000 !',
                 'prdcate.required'            => 'Please choose one of them !',
                 'prdbrand.required'           => 'Please choose one of them !',
                 'prdWarranty.required'        => 'Warranty Period can not be blank !',
                 'sdescription.required'       => 'Short Description can not be blank !',
                 'ldescription.required'       => 'Long Description can not be blank !',
+                'featureimg.required'         => 'Feature Image can not be blank !',
+                'featureimg.image'            => 'Feature Image must be image file !',
+                'featureimg.size'             => 'Feature Image must be less than 10MB !',
             ]
         );
 
@@ -195,9 +206,10 @@ class ProductController extends Controller
         // Function gallery upload
         $product_id = $p->id;
         $currentimg = Gallery::where('product_id', $product_id);
-        $currentimg->delete();
+        //$currentimg->delete();
 
         if($request->hasFile('galleryimg')){
+            $currentimg->delete();
             foreach ($request->file('galleryimg') as $file) {
                 $product_gallery = new Gallery();
                 if (isset($file)) {

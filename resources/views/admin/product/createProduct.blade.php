@@ -28,7 +28,7 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Price: <span class="required">*</span></label>
-                        <input type="text" class="form-control" name="prdprice" value="{{old('prdprice')}}" >
+                        <input type="text" class="form-control" name="prdprice" value="{{old('prdprice')}}">
                         @if($errors->has('prdprice'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdprice')}}</small>
                         @endif
@@ -36,10 +36,9 @@
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Category: <span class="required">*</span></label>
                           <select name="prdcate" class="form-control">
-                            <option value="0">None</option>
-                            <option value="1">In Ear</option>
-                            <option value="2">On Ear</option>
-                            <option value="3">True-Wireless</option>
+                            @foreach ($cates as $cate)
+                              <option value="{{$cate->id}}">{{$cate->category_name}}</option>
+                            @endforeach     
                           </select>
                           @if($errors->has('prdcate'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdcate')}}</small>
@@ -48,12 +47,9 @@
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Brands: <span class="required">*</span></label>
                           <select name="prdbrand" class="form-control">
-                            <option value="0">None</option>
-                            <option value="1">Sony</option>
-                            <option value="2">JBL</option>
-                            <option value="3">Westone</option>
-                            <option value="4">Beats</option>
-                            <option value="5">Bang & Olufsen</option>
+                            @foreach ($brand as $brand)
+                              <option value="{{$brand->id}}">{{$brand->brand_name}}</option>
+                            @endforeach 
                           </select>
                           @if($errors->has('prdbrand'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdbrand')}}</small>

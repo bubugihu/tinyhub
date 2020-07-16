@@ -72,7 +72,7 @@
                 {{-- <div class="ribbon ribbon-success text-uppercase">Best</div> --}}
                 @foreach($productGlobal as $p)
                 <div class="col-xl-3">
-                  <div class="ribbon ribbon-success text-uppercase">Best Seller</div>
+                  <div class="ribbon ribbon-success text-uppercase">Best Selling</div>
                   <div class="product_grid card-body card d-flex justify-content-center align-items-center">
                       <div class="product_image d-flex justify-content-center align-items-center" style="min-height: 220px;">
                           <a href="{{ url('product-detail/'.$p->id)}}" class="image ">
