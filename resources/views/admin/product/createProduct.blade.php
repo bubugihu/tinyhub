@@ -62,6 +62,7 @@
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Warranty_Period <span class="required">*</span></label>
                         <input type="number" class="form-control" name="prdWarranty" value="{{old('prdWarranty')}}" min="6">
+                        <em style="color:darkgreen;font-size:13px;">For example: 12 or 24 months, you can only enter a number</em><br>
                         @if($errors->has('prdWarranty'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdWarranty')}}</small>
                         @endif

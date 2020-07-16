@@ -25,7 +25,7 @@
                     <th>Price</th>
                     <th>Sold out</th>
                     <th>Category</th>
-                    <th>Created At</th>
+                    <th>Brand</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -38,7 +38,7 @@
                     <td class="align-middle">${{$product->price}}</td>
                     <td class="align-middle">{{$product->sold_out}}</td>
                     <td class="align-middle">{{$product->category_name}}</td>
-                    <td class="align-middle">{{$product->created_at}}</td>
+                    <td class="align-middle">{{$product->brand_name}}</td>
                     <td class="align-middle">
                       <!-- Details Product -->
                       <a href="{{url("admin/product/detailsProduct/" .$product->id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
