@@ -89,7 +89,7 @@
                                 <p>Note: </p>
                               </div>
                               <div class="col-md-6">
-                                <p>{{$note}}</p>
+                                <p style="line-height:1.4">{{$note}}</p>
                               </div>
                             </div>
                       </div>
