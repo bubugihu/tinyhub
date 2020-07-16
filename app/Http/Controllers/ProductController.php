@@ -20,8 +20,9 @@ class ProductController extends Controller
     public function listProduct()
     {
         $products = Product::join('category', 'category.id', '=', 'product.category_id')
+        ->join('brand', 'brand.id', '=', 'product.brand_id')
         ->where('product.status', '=', 0)
-        ->select('product.*' , 'category.category_name')
+        ->select('product.*' , 'category.category_name', 'brand.brand_name')
         ->paginate(10);
         return view('admin.product.listProduct', compact('products'));
     }
