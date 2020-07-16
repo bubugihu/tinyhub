@@ -23,25 +23,18 @@ class OrderController extends Controller
         return view("admin.order.listOrder", compact('orders'));
     }
 
-    // public function listOrderDetails($id)
-    // {
-    //     $customer = Customers::find($id);
-    //     $orderDetails = Order::find($id);
-
-    //     return view("users.cart.report", compact('orderDetails', 'customer'));
-    // }
 
     public function deleteOrder($id)
     {
-        $orderDetails = OrderDetail::where('order_id', $id)->delete();
-        $order = Order::find($id)->delete();
+        OrderDetail::where('order_id', $id)->delete();
+        Order::find($id)->delete();
 
         return redirect()->action('OrderController@listOrder')->with(['flash_level' => 'success', 'flash_message' => 'Delete Order Successfully !']);
     }
 
     public function onOrderStatus($id)
     {
-         Order::find($id)->update(['status' => 1]);
+        Order::find($id)->update(['status' => 1]);
         $orderDetail = OrderDetail::where('order_id',$id)->get();
         foreach($orderDetail as $orderDetail){
             $sold = Product::find($orderDetail->product_id)->sold_out;

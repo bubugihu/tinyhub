@@ -95,6 +95,8 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         Route::get('users/listAdmin', 'UserController@listAdmin');
         Route::get('users/updateAdmin/{id}', 'UserController@updateAdmin');
         Route::post('users/postUpdateAdmin', 'UserController@postUpdateAdmin');
+        Route::get('users/createAdmin', 'UserController@createAdmin');
+        Route::post('users/postcreateAdmin', 'UserController@postcreateAdmin');
         //customer
         Route::get('customer/listCustomer', 'CustomerController@listCustomer');
         Route::get('customer/updateCustomer/{id}', 'CustomerController@updateCustomer');
@@ -126,7 +128,6 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
 //ajax Register
 Route::get('admin/ajaxRegisterEmail/{email}', 'AjaxController@registerEmail');
 Route::get('admin/ajaxRegisterPhone/{phone}', 'AjaxController@registerPhone');
-
 //end admin
 Route::post('users/product/createCommentUser/{idProduct}/{idCustomer}', 'ProductController@postCommentUser');
 /////////////Blank page
@@ -241,7 +242,6 @@ Route::post('cart/shopping/increItem', 'CartController@increCart');
 Route::post('cart/shopping/decreItem', 'CartController@decreCart');
 
 //remove item
-// Route::post('cart/shopping/removeItem', 'CartController@removeItem');
 Route::get('cart/shopping/removeItem/{id}', 'CartController@removeItem');
 
 //check out cart

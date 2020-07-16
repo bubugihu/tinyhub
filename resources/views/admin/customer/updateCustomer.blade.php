@@ -41,8 +41,6 @@
                                             <small style="color:red;font-size:14px;">{{$errors->first('cus_gender')}}</small>
                                             @endif
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Phone<span class="required">*</span></label>
                                             <input type="number" class="form-control" value="{{$customer->phone}}" name="cus_phone">
@@ -50,15 +48,21 @@
                                             <small style="color:red;font-size:14px;">{{$errors->first('cus_phone')}}</small>
                                             @endif
                                         </div>
+                                    </div>
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Address<span class="required">*</span></label>
-                                            <input type="text" class="form-control" value="{{$customer->address}}" name="cus_address">
+                                            <textarea name="cus_address" class="form-control" rows="2">{{$customer->address}}</textarea>
                                             @if($errors->has('cus_address'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('cus_address')}}</small>
                                             @endif
                                         </div>
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Picture <span class="required">*</span></label><br>
+                                            <label class="form-control-label text-uppercase">Current Image</label><br>
+                                            <img class="img-fluid" src="{{asset('img/'.$customer->feature)}}" alt="" width="100">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-control-label text-uppercase">Picture</label><br>
                                             <input type="file" name="cus_feature"><br>
                                             @if($errors->has('cus_feature'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('cus_feature')}}</small>

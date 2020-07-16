@@ -91,6 +91,7 @@
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
                         <li class="sidebar-list-item"><a href="{{url("admin/users/listAdmin")}}" class="sidebar-link text-muted pl-lg-5">List Admin</a></li>
                         <li class="sidebar-list-item"><a href="{{url("admin/users/listUsers")}}" class="sidebar-link text-muted pl-lg-5">List Users</a></li>
+                        <li class="sidebar-list-item"><a href="{{url("admin/users/createAdmin")}}" class="sidebar-link text-muted pl-lg-5">Create New Admin</a></li>
                     </ul>
                 </div>
             </li>
@@ -100,7 +101,6 @@
                 <div id="pages2" class="collapse">
                     <ul class="sidebar-menu list-unstyled border-left border-dark border-thick">
                         <li class="sidebar-list-item"><a href="{{url("admin/customer/listCustomer")}}" class="sidebar-link text-muted pl-lg-5">List Customers</a></li>
-                        <li class="sidebar-list-item"><a href="{{url("admin/customer/createAdmin")}}" class="sidebar-link text-muted pl-lg-5">Create New Admin</a></li>
                 </div>
             </li>
             <!-- End Customers Module -->

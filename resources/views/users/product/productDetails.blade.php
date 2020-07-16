@@ -206,7 +206,7 @@
                     <a href="{{ url('product-detail/'.$similar->id)}}" class="btn btn-dark">Detail <i class="fas fa-angle-double-right"></i></a>
                 </div>
             </div>
-          </div>
+        </div>
         @endforeach
         @endif
     </div>
@@ -217,6 +217,7 @@
         document.getElementById("1").stepUp(1);
         document.getElementById("2").stepUp(1);
     }
+
     function decre() {
         document.getElementById("1").stepDown(1);
         document.getElementById("2").stepDown(1);

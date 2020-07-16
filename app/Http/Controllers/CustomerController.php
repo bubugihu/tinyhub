@@ -39,7 +39,7 @@ class CustomerController extends Controller
                 'cus_phone' =>  'bail|required|regex:/^0[1-9]\d{8,9}$/i',
                 'cus_phone' => 'unique:Customer,phone,' . $cus->id,
                 'cus_address' => 'bail|required',
-                'cus_feature' => 'bail|required|image',
+                // 'cus_feature' => 'bail|required|image',
 
             ],
             [
@@ -53,8 +53,8 @@ class CustomerController extends Controller
                 'cus_phone.regex' =>  'Phone numbers must have at least 10 numbers and at most 11 numbers !',
                 'cus_phone.unique' =>  'Phone has already existed !',
                 'cus_address.required' => 'Address can not blank !',
-                'cus_feature.required' => 'Feature can not blank !',
-                'cus_feature.image' => 'Feature must be the image !',
+                // 'cus_feature.required' => 'Feature can not blank !',
+                // 'cus_feature.image' => 'Feature must be the image !',
             ]
         );
 
@@ -63,21 +63,33 @@ class CustomerController extends Controller
         $cus->gender = $request->cus_gender;
         $cus->phone = $request->cus_phone;
         $cus->address = $request->cus_address;
+        // if ($request->hasFile('cus_feature')) {
+        //     $file = $request->file('cus_feature');
+        //     $extension = $file->getClientOriginalExtension();
+
+        //     if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
+        //         return redirect("admin/customer/updateCustomer")->with('Message', 'You can only upload image with file jpg/png/jpeg');
+        //     }
+        //     $featureCustomer = $file->getClientOriginalName();
+        //     $file->move("img/feature/", $featureCustomer);
+        //     $cus->feature = $featureCustomer;
+        // } else {
+        //     $featureCustomer = "";
+        // }
         if ($request->hasFile('cus_feature')) {
             $file = $request->file('cus_feature');
             $extension = $file->getClientOriginalExtension();
 
             if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
-                return redirect("admin/customer/updateCustomer")->with('Message', 'You can only upload image with file jpg/png/jpeg');
+                return redirect("admin/product/updateProduct")->with(['flash_level' => 'danger','flash_message' => 'You can only upload image with file .jpg | .png | .jpeg!' ]);
             }
             $featureCustomer = $file->getClientOriginalName();
             $file->move("img/feature/", $featureCustomer);
-            $cus->feature = $featureCustomer;
+            $cus->feature_image = $featureCustomer;
         } else {
             $featureCustomer = "";
         }
         $cus->save();
-
         return redirect()->action('CustomerController@listCustomer')->with(['flash_level' => 'success', 'flash_message' => 'Update Customer Successfully !']);
     }
     // Create Admin
@@ -137,7 +149,7 @@ class CustomerController extends Controller
         $userA->name = $request->CC_user_name;
         $userA->email = $request->CC_email;
         $userA->password = Hash::make($request->CC_password);
-        $userA->role=$request->CC_role;
+        $userA->role = $request->CC_role;
         $userA->save();
 
         $customerA->users_id = $userA->id;
@@ -146,7 +158,7 @@ class CustomerController extends Controller
         $customerA->dob = $request->CC_dob;
         $customerA->phone = $request->CC_phone;
         $customerA->address = $request->CC_address;
-        
+
         $file = $request->file('CC_feature');
         $featureCustomer = $file->getClientOriginalName();
         $file->move("img/feature/", $featureCustomer);

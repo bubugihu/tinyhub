@@ -73,7 +73,16 @@
                                     </div>
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Role</label>
-                                      <input type="text" class="form-control" value="{{$customer->role}}" readonly>
+                                      @if($customer->role==0)
+                                      <input type="text" class="form-control" value="User" readonly>
+                                      @elseif($customer->role == 1)
+                                      <input type="text" class="form-control" value="Admin" readonly>
+                                      @elseif($customer->role == 2)
+                                      <input type="text" class="form-control" value="Mod Customer" readonly>
+                                      @elseif($customer->role == 3)
+                                      <input type="text" class="form-control" value="Mod Product" readonly>
+                                      @endif
+                                      <!-- <input type="text" class="form-control" value="{{$customer->role}}" readonly> -->
                                     </div>
                                     <div class="form-group">
                                       <label class="form-control-label text-uppercase">Address</label>

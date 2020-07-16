@@ -163,7 +163,7 @@
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Gender<span class="required">*</span></label><br>
                                             <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" class="custom-control-input" id="customer-gender1" name="profile_gender" value="Male">
+                                                <input type="radio" class="custom-control-input" id="customer-gender1" name="profile_gender" value="Male" checked>
                                                 <label class="custom-control-label" for="customer-gender1">Male</label>
                                             </div>
                                             <div class="custom-control custom-radio custom-control-inline">
@@ -226,8 +226,12 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label class="form-control-label text-uppercase">Picture<span class="required">*</span></label><br>
-                                            <input type="file" name="profile_feature">
+                                            <label class="form-control-label text-uppercase">Current Image</label><br>
+                                            <img class="img-fluid" src="{{asset('img/'.$customer->feature)}}" alt="" width="100">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-control-label text-uppercase">Picture</label><br>
+                                            <input type="file" name="profile_feature" value="{{$customer->feature}}">
                                             @if($errors->has('profile_feature'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_feature')}}</small>
                                             @endif
