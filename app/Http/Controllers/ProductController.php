@@ -19,7 +19,10 @@ class ProductController extends Controller
     //Function link to product list page
     public function listProduct()
     {
-        $products = Product::where('status', '=', 0)->paginate(5);
+        $products = Product::join('category', 'category.id', '=', 'product.category_id')
+        ->where('product.status', '=', 0)
+        ->select('product.*' , 'category.category_name')
+        ->paginate(10);
         return view('admin.product.listProduct', compact('products'));
     }
 

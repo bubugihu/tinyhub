@@ -24,7 +24,7 @@
                     <th>Product Name</th>
                     <th>Price</th>
                     <th>Sold out</th>
-                    <th>Status</th>
+                    <th>Category</th>
                     <th>Created At</th>
                     <th>Action</th>
                   </tr>
@@ -35,9 +35,9 @@
                     <th scope="row" class="align-middle">{{$product->id}}</th>
                     <td class="align-middle"><img src="{{asset('img/feature/'.$product->feature_image)}}" alt="" width="60" height="auto"></td>
                     <td class="align-middle">{{$product->product_title}}</td>
-                    <td class="align-middle">{{$product->price}}</td>
+                    <td class="align-middle">${{$product->price}}</td>
                     <td class="align-middle">{{$product->sold_out}}</td>
-                    <td class="align-middle">{{$product->status}}</td>
+                    <td class="align-middle">{{$product->category_name}}</td>
                     <td class="align-middle">{{$product->created_at}}</td>
                     <td class="align-middle">
                       <!-- Details Product -->

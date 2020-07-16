@@ -27,14 +27,14 @@
                         @endif
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Price<span class="required">*</span></label>
+                        <label class="form-control-label text-uppercase">Price: <span class="required">*</span></label>
                         <input type="number" class="form-control" name="prdprice" value="{{old('prdprice')}}" min="0" max="10000">
                         @if($errors->has('prdprice'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdprice')}}</small>
                         @endif
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Category <span class="required">*</span></label>
+                        <label class="form-control-label text-uppercase">Category: <span class="required">*</span></label>
                           <select name="prdcate" class="form-control">
                             <option value="0">None</option>
                             <option value="1">In Ear</option>
@@ -46,7 +46,7 @@
                           @endif
                       </div>
                       <div class="form-group">
-                        <label class="form-control-label text-uppercase">Brands <span class="required">*</span></label>
+                        <label class="form-control-label text-uppercase">Brands: <span class="required">*</span></label>
                           <select name="prdbrand" class="form-control">
                             <option value="0">None</option>
                             <option value="1">Sony</option>
@@ -61,7 +61,7 @@
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Warranty_Period <span class="required">*</span></label>
-                        <input type="number" class="form-control" name="prdWarranty" value="{{old('prdWarranty')}} min="6">
+                        <input type="number" class="form-control" name="prdWarranty" value="{{old('prdWarranty')}}" min="6">
                         @if($errors->has('prdWarranty'))
                            <small style="color:red;font-size:14px;">{{$errors->first('prdWarranty')}}</small>
                         @endif
@@ -94,8 +94,9 @@
                           @endif
                       </div>
                       <div class="form-group ">
-                        <label class="form-control-label text-uppercase">Please press Ctrl to choose multiple images:</label><br>
-                        <input type="file" class="custom-fileip" name="galleryimg[]" multiple>
+                        <label class="form-control-label text-uppercase">Upload Product Gallery:</label><br>
+                        <input type="file" class="custom-fileip" name="galleryimg[]" multiple><br>
+                        <em style="color:darkgreen;font-size:13px;">Hint: Please press Ctrl to choose multiple images</em>
                       </div><br>
                       <div class="form-group">
                         <button type="submit" class="btn btn-dark">Create</button>
