@@ -9,6 +9,9 @@ p {
 h1, h2, h3, h4, h5, h6 {
     word-wrap: break-word!important;
 }
+ul li{
+    word-break: break-word;
+}
 /* .top-right.links a {
     padding: 7px 25px;
     border-radius: 40px;
