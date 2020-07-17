@@ -91,6 +91,7 @@
                                 <th scope="col">Product</th>
                                 <th scope="col">Content</th>
                                 <th scope="col">Date</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -121,6 +122,13 @@
                                     </div>
                                 </td>
                                 <td class="align-middle">{{$comment->created_at}}</td>
+                                <td class="align-middle">
+                                    @if($comment->cmt_status == 0)
+                                    <a><span class="badge badge-pill badge-danger">OFF</span></a>
+                                    @else
+                                    <a><span class="badge badge-pill badge-success">ON</span></a>
+                                    @endif
+                                </td>
                                 <td class="align-middle">
                                     <a href="{{ url('users/profile/'.$customer->id.'/'.$comment->id)}}" class="badge badge-danger p-2" onclick="return confirm('Are you sure you want to delete?')"><i class="fas fa-trash-alt" style="font-size: 16px; font-weight:100;"></i></a>
                                 </td>

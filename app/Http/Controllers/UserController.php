@@ -89,7 +89,7 @@ class UserController extends Controller
                 'profile_dob' => 'bail|required|date',
                 'profile_phone' => 'bail|required|regex:/^0[1-9]\d{8,9}$/i','unique:Customer,phone,' . $cust->id,
                 'profile_address' => 'bail|required',
-                'profile_email' => 'bail|required|email','unique:users,email,' . $use->id,
+                'profile_email' => 'bail|required|string|regex:/^[a-zA-Z0-9\._]+@[a-zA-Z0-9_]+\.[a-zA-Z0-9]+[\.a-zA-Z0-9]*$/i|max:255|unique:users,email,' . $use->id,
 
             ],
             [
@@ -103,13 +103,13 @@ class UserController extends Controller
                 'profile_dob.required' => 'Birthday can not blank !',
                 'profile_dob.date' => 'The date of birth must be of type DATE !',
                 'profile_phone.required' => 'Phone can not blank !',
-                'profile_phone.regex' => 'Phone numbers must have at least 10 numbers and at most 11 numbers !',
+                'profile_phone.regex' => 'Phone must begin 0 and has 10 or 11 digits. !',
                 'profile_phone.unique' => 'Phone has already existed !',
                 'profile_address.required' => 'Address can not blank !',
                 'profile_email.required' => 'Email can not blank !',
-                'profile_email.email' => 'The format must be EMAIL style',
+                'profile_email.regex' =>'Email is invalid format.',
+                'profile_email.max' =>'Email has max 255 characters !',
                 'profile_email.unique' => 'Email has already existed !',
-
             ]
         );
         $use->name = $request->profile_user_name;
@@ -151,7 +151,7 @@ class UserController extends Controller
                 'profile_dob' => 'bail|required|date',
                 'profile_phone' => 'bail|required|regex:/^0[1-9]\d{8,9}$/i','unique:Customer,phone,' . $cust->id,
                 'profile_address' => 'bail|required',
-                'profile_email' => 'bail|required|email','unique:users,email,' . $use->id,
+                'profile_email' => 'bail|required|string|regex:/^[a-zA-Z0-9\._]+@[a-zA-Z0-9_]+\.[a-zA-Z0-9]+[\.a-zA-Z0-9]*$/i|max:255|unique:users,email,' . $use->id,
             ],
             [
                 'profile_user_name.required' => 'User Name can not blank !',
@@ -164,11 +164,12 @@ class UserController extends Controller
                 'profile_dob.required' => 'Birthday can not blank !',
                 'profile_dob.date' => 'The date of birth must be of type DATE !',
                 'profile_phone.required' => 'Phone can not blank !',
-                'profile_phone.regex' => 'Phone numbers must have at least 10 numbers and at most 11 numbers !',
+                'profile_phone.regex' => 'Phone must begin 0 and has 10 or 11 digits. !',
                 'profile_phone.unique' => 'Phone has already existed !',
                 'profile_address.required' => 'Address can not blank !',
                 'profile_email.required' => 'Email can not blank !',
-                'profile_email.email' => 'The format must be EMAIL style',
+                'profile_email.regex' =>'Email is invalid format.',
+                'profile_email.max' =>'Email has max 255 characters !',
                 'profile_email.unique' => 'Email has already existed !',
                 
             ]
@@ -244,7 +245,8 @@ class UserController extends Controller
             ->join('product', 'comments.product_id', '=', 'product.id')
             ->join('brand', 'product.brand_id', '=', 'brand.id')
             ->join('category', 'product.category_id', '=', 'category.id')
-            ->where('comments.customer_id', $id)->where('comments.cmt_status', 0)
+            ->where('comments.customer_id', $id)
+            // ->where('comments.cmt_status', 0)
             ->select('product.*', 'comments.*')
             ->get();
 
@@ -315,7 +317,7 @@ class UserController extends Controller
                 'CC_dob.required' => 'Birthday can not blank !',
                 'CC_dob.date' => 'The date of birth must be of type DATE !',
                 'CC_phone.required' => 'Phone can not blank !',
-                'CC_phone.regex' => 'Phone numbers must have at least 10 numbers and at most 11 numbers !',
+                'CC_phone.regex' => 'Phone must begin 0 and has 10 or 11 digits. !',
                 'CC_phone.unique' => 'Phone has already existed !',
                 'CC_address.required' => 'Address can not blank !',
                 'CC_address.max' => 'Address has max 255 characters !',

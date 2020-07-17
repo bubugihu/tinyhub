@@ -36,8 +36,7 @@ class CustomerController extends Controller
                 'cus_customer_name' => 'bail|min:3|max:255|required',
                 'cus_dob'   =>  'bail|required|date',
                 'cus_gender'    =>  'bail|required|not_in:0',
-                'cus_phone' =>  'bail|required|regex:/^0[1-9]\d{8,9}$/i',
-                'cus_phone' => 'unique:Customer,phone,' . $cus->id,
+                'cus_phone' =>  'bail|required|regex:/^0[1-9]\d{8,9}$/i|unique:Customer,phone,' . $cus->id,
                 'cus_address' => 'bail|required',
                 // 'cus_feature' => 'bail|required|image',
 
@@ -50,7 +49,7 @@ class CustomerController extends Controller
                 'cus_dob.date' => 'The date of birth must be of type DATE !',
                 'cus_gender.required'    =>  'Please choose one of them !',
                 'cus_phone.required' =>  'Phone can not blank !',
-                'cus_phone.regex' =>  'Phone numbers must have at least 10 numbers and at most 11 numbers !',
+                'cus_phone.regex' =>  'Phone must begin 0 and has 10 or 11 digits. !',
                 'cus_phone.unique' =>  'Phone has already existed !',
                 'cus_address.required' => 'Address can not blank !',
                 // 'cus_feature.required' => 'Feature can not blank !',
