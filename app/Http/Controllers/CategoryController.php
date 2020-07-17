@@ -91,8 +91,8 @@ class CategoryController extends Controller
         $this->validate(
             $request,
             [
-                'cateTitle'           => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255',
-                'cateTitle'           => 'unique:Category,category_name,' .$c->id,
+                //'cateTitle'           => 'unique:Category,category_name,' .$c->id,
+                'cateTitle'           => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255|unique:Category,category_name,' .$c->id,
                 'cateDescription'     => 'bail|required|max:255',
                 'cateimg'             => 'bail|image|max:10240',
                
