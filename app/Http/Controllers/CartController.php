@@ -65,6 +65,18 @@ class CartController extends Controller
         $quantity = $request->quantityNumber;
         $product = Product::find($id);
         $category = Category::find($product->category_id)->category_name;
+        //
+
+        foreach(Cart::content() as $cartCheck){
+            if($cartCheck->id == $id){
+                $total = $cartCheck->qty + $quantity;
+                if($total > 20)
+                {
+                    return back()->with(['flash_level' => 'danger','flash_message' => 'Quantity can not greater 20 ! If you want buy more, please contact us. Thank You!' ]);
+                }
+            }
+        }
+    
         Cart::add([
             'id' => $id,
             'name' => $product->product_title,
@@ -76,8 +88,6 @@ class CartController extends Controller
                 'image' => $product->feature_image
             ],
         ]);
-
-        // return view('users.cart.shopping-cart',compact('stt'));
         return back();
     }
 

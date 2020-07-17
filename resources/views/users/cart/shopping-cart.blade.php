@@ -71,7 +71,7 @@
                       </a></div>
                   </div>
                 </div>
-                <div class="col-2"><span>$</span><input type="number" class="quantity" value="{{$cart->price}}" id="price"></div>
+                <div class="col-2"><span>$</span><input type="number" class="quantity" value="{{$cart->price}}" readonly id="price"></div>
                 <div class="col-2">
                   <div class="d-flex align-items-center">
                     <div class="quantity d-flex align-items-center">
@@ -84,7 +84,7 @@
                       </form>
 
                       {{--btn Incre item--}}
-                      <input type="number" value="{{$cart->qty}}" class="quantity-no" id="quantity" min="1">
+                      <input type="number" value="{{$cart->qty}}" class="quantity-no" readonly id="quantity" min="1">
                       <form action="{{url('cart/shopping/increItem')}}" method="POST">
                         @csrf
                         <input type="number" style="display:none" name="qtyItemCart" value="{{$cart->qty}}">
@@ -95,7 +95,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-2"><span>$</span><span>{{number_format($cart->price*$cart->qty, 0, '.', ',')}}</span></div>
+                <div class="col-2"><span>$</span><span>{{number_format($cart->price*$cart->qty, 2, '.', ',')}}</span></div>
                 <div class="col-1 ">
                       <a href="{{url('cart/shopping/removeItem/'.$cart->rowId)}}" class="badge badge-danger p-2" onclick="return confirm('Do you want to remove ?');"><i class="fas fa-trash-alt text-white" style="font-size: 16px; font-weight:100;"></i></a>
                 </div>

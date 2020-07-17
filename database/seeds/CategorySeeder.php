@@ -19,7 +19,7 @@ class CategorySeeder extends Seeder
             ],
             [   'category_name'         =>  'On Ear',
                 'category_image'        =>  'onEar.jpg',
-                'description'           =>  'On-ear headphones rest on your ears. They are smaller and lighter than over-ear headphones, making it easy to carry around. Ambient noise is still audible to a limited extent, making on-ear headphones safer',
+                'description'           =>  'On-ear headphones rest on your ears. They are smaller and lighter than over-ear headphones, making it easy to carry around. Ambient noise is still audible to a limited extent.',
             ],
             [   'category_name'         =>  'True Wireless',
                 'category_image'        =>  'true.jpg',

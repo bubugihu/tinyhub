@@ -20,14 +20,14 @@
                       {{ csrf_field() }}
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Brand Title <span class="required">*</span></label>
-                        <input type="text" class="form-control" name="brandTitle">
+                        <input type="text" class="form-control" name="brandTitle" value="{{old('brandTitle')}}">
                         @if($errors->has('brandTitle'))
                            <small style="color:red;font-size:14px;">{{$errors->first('brandTitle')}}</small>
                         @endif
                       </div>
                       <div class="form-group">
                         <label class="form-control-label text-uppercase">Description <span class="required">*</span></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="brandDescription"rows="3"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="brandDescription"rows="3">{{old('brandDescription')}}</textarea>
                         @if($errors->has('brandDescription'))
                            <small style="color:red;font-size:14px;">{{$errors->first('brandDescription')}}</small>
                         @endif

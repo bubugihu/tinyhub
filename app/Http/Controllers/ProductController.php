@@ -149,15 +149,15 @@ class ProductController extends Controller
         $this->validate(
             $request,
             [
-                'prdname'      => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255',
-                'prdname'      => 'unique:Product,product_title,' .$p->id,
+                'prdname'      => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255|unique:Product,product_title,' .$p->id,
+                // 'prdname'      => 'unique:Product,product_title,' .$p->id,
                 'prdprice'     => 'bail|required|numeric|min:1|max:10000',
                 'prdcate'      => 'bail|required|not_in:0',
                 'prdbrand'     => 'bail|required|not_in:0',
                 'prdWarranty'  => 'required',
                 'sdescription' => 'required',
                 'ldescription' => 'required',
-                'featureimg'   => 'bail|required|image|max:10240',
+                'featureimg'   => 'bail|image|max:10240',
             ],
             [
                 'prdname.required'            => 'Product title can not be blank !',
@@ -173,9 +173,8 @@ class ProductController extends Controller
                 'prdWarranty.required'        => 'Warranty Period can not be blank !',
                 'sdescription.required'       => 'Short Description can not be blank !',
                 'ldescription.required'       => 'Long Description can not be blank !',
-                'featureimg.required'         => 'Feature Image can not be blank !',
                 'featureimg.image'            => 'Feature Image must be image file !',
-                'featureimg.max'             => 'Feature Image must be less than 10MB !',
+                'featureimg.max'              => 'Feature Image must be less than 10MB !',
             ]
         );
 

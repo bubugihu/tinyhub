@@ -67,7 +67,7 @@
                 <div class="row d-flex justify-content-around align-items-center py-4">
                     <div class=" col-md-3 quantity d-flex align-items-center justify-content-center">
                         <button type="button" class="dec-btn" onclick="decre()">-</button>
-                        <input type="number" id="1" value="{{$quantity}}" name="quantityNumber" min="1" max="20" class="quantity-no rounded">
+                        <input type="number" id="1" value="{{$quantity}}" name="quantityNumber" min="1" max="20" readonly class="quantity-no rounded">
                         <button type="button" class="inc-btn" onclick="incre()">+</button>
                     </div>
                     <div class="col-md-5">
@@ -84,6 +84,11 @@
 
             </form>
             {{--End Form--}}
+            @if(Session::has('flash_message'))
+            <div class="alert alert-{!! Session::get('flash_level') !!} mt-3">
+              {!!Session::get('flash_message')!!}
+            </div>
+            @endif
         </div>
         <div class="row">
             <div class="col-lg-6 py-3">
