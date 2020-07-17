@@ -279,7 +279,8 @@ class UserController extends Controller
             ->join('product', 'comments.product_id', '=', 'product.id')
             ->join('brand', 'product.brand_id', '=', 'brand.id')
             ->join('category', 'product.category_id', '=', 'category.id')
-            ->where('comments.customer_id', $id)->where('comments.cmt_status', 0)
+            ->where('comments.customer_id', $id)
+            // ->where('comments.cmt_status', 0)
             ->select('product.*', 'comments.*')
             ->get();
 
