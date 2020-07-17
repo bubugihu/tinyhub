@@ -146,7 +146,7 @@ return [
             
         ],
         'email' => [
-            'regex' => 'Email has no special character !#$%^&*.'
+            'regex' => 'Email is invalid format.'
         ],
         'prdname' => [
             'required' => 'Product title can not be blank !'
