@@ -31,7 +31,7 @@ class BrandsController extends Controller
             [
                 'brandTitle'           => 'bail|required|unique:Brand,brand_name|regex:/^[a-zA-Z]{2,}/i|max:255',
                 'brandDescription'     => 'required',
-                'brandimg'             => 'required',
+                'brandimg'             => 'bail|required|image|max:10240',
                
             ],
             [
@@ -41,6 +41,8 @@ class BrandsController extends Controller
                 'brandTitle.max'                 => 'Brand title has max 255 characters !',
                 'brandDescription.required'      => 'Brand Description can not be blank !',
                 'brandimg.required'              => 'Brand Image can not be blank !',
+                'brandimg.image'                 => 'Brand Image must be image file !',
+                'brandimg.max'                   => 'Brand Image must be less than 10MB !',
             ]
         );
         $b = new Brands();
@@ -82,6 +84,7 @@ class BrandsController extends Controller
                 'brandTitle'           => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255',
                 'brandTitle'           => 'unique:Brand,brand_name,' .$b->id,
                 'brandDescription'     => 'required',
+                'brandimg'             => 'bail|image|max:10240',
                
             ],
             [
@@ -90,6 +93,8 @@ class BrandsController extends Controller
                 'brandTitle.max'                 => 'Brand title has max 255 characters !',
                 'brandTitle.unique'              => 'Brand title has already existed !',
                 'brandDescription.required'      => 'Brand Description can not be blank !',
+                'brandimg.image'                 => 'Brand Image must be image file !',
+                'brandimg.max'                   => 'Brand Image must be less than 10MB !',
 
             ]
         );

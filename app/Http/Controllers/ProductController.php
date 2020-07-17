@@ -157,7 +157,7 @@ class ProductController extends Controller
                 'prdWarranty'  => 'required',
                 'sdescription' => 'required',
                 'ldescription' => 'required',
-                'featureimg'   => 'bail|required|image|max:10240',
+                'featureimg'   => 'bail|image|max:10240',
             ],
             [
                 'prdname.required'            => 'Product title can not be blank !',
@@ -173,9 +173,8 @@ class ProductController extends Controller
                 'prdWarranty.required'        => 'Warranty Period can not be blank !',
                 'sdescription.required'       => 'Short Description can not be blank !',
                 'ldescription.required'       => 'Long Description can not be blank !',
-                'featureimg.required'         => 'Feature Image can not be blank !',
                 'featureimg.image'            => 'Feature Image must be image file !',
-                'featureimg.max'             => 'Feature Image must be less than 10MB !',
+                'featureimg.max'              => 'Feature Image must be less than 10MB !',
             ]
         );
 

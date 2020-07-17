@@ -21,14 +21,14 @@
                   {{ csrf_field() }}
                   <div class="form-group">
                     <label class="form-control-label text-uppercase">Category Title <span class="required">*</span></label>
-                    <input type="text" class="form-control" name="cateTitle">
+                    <input type="text" class="form-control" name="cateTitle" value="{{old('cateTitle')}}">
                     @if($errors->has('cateTitle'))
                        <small style="color:red;font-size:14px;">{{$errors->first('cateTitle')}}</small>
                     @endif
                   </div>
                   <div class="form-group">
                     <label class="form-control-label text-uppercase">Category Description <span class="required">*</span></label>
-                    <textarea type="text" class="form-control" name="cateDescription" ></textarea>
+                    <textarea type="text" class="form-control" name="cateDescription">{{old('cateDescription')}}</textarea>
                     @if($errors->has('cateDescription'))
                        <small style="color:red;font-size:14px;">{{$errors->first('cateDescription')}}</small>
                     @endif

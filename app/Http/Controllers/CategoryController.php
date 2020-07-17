@@ -36,7 +36,7 @@ class CategoryController extends Controller
             [
                 'cateTitle'           => 'bail|required|unique:Category,category_name|regex:/^[a-zA-Z]{2,}/i|max:255',
                 'cateDescription'     => 'bail|required|max:255',
-                'cateimg'             => 'required',
+                'cateimg'             => 'bail|required|image|max:10240',
             ],
             [
                 'cateTitle.required'          => 'Category Title can not be blank !',
@@ -46,6 +46,8 @@ class CategoryController extends Controller
                 'cateDescription.required'    => 'Category Description can not be blank !',
                 'cateDescription.max'         => 'Category Description has max 255 characters !',
                 'cateimg.required'            => 'Category Image can not be blank !',
+                'cateimg.image'               => 'Category Image must be image file !',
+                'cateimg.max'                 => 'Category Image must be less than 10MB !',
             ]
         );
         
@@ -92,6 +94,7 @@ class CategoryController extends Controller
                 'cateTitle'           => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255',
                 'cateTitle'           => 'unique:Category,category_name,' .$c->id,
                 'cateDescription'     => 'bail|required|max:255',
+                'cateimg'             => 'bail|image|max:10240',
                
             ],
             [
@@ -101,6 +104,8 @@ class CategoryController extends Controller
                 'cateTitle.unique'            => 'Category Title has already existed !',
                 'cateDescription.required'    => 'Category Description can not be blank !',
                 'cateDescription.max'         => 'Category Description has max 255 characters !',
+                'cateimg.image'               => 'Category Image must be image file !',
+                'cateimg.max'                 => 'Category Image must be less than 10MB !',
                 
             ]
         );
