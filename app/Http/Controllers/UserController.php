@@ -87,11 +87,9 @@ class UserController extends Controller
                 'profile_customer_name' => 'bail|required|min:3|max:255',
                 'profile_gender' => 'bail|required|not_in:0',
                 'profile_dob' => 'bail|required|date',
-                'profile_phone' => 'bail|required|regex:/^0[1-9]\d{8,9}$/i|unique:Customer,phone,' . $cust->id,
-                // 'profile_phone' => 'unique:Customer,phone,' . $cust->id,
+                'profile_phone' => 'bail|required|regex:/^0[1-9]\d{8,9}$/i','unique:Customer,phone,' . $cust->id,
                 'profile_address' => 'bail|required',
-                'profile_email' => 'bail|required|email|unique:users,email,' . $use->id,
-                // 'profile_email' => 'unique:users,email,' . $use->id,
+                'profile_email' => 'bail|required|string|regex:/^[a-zA-Z0-9\._]+@[a-zA-Z0-9_]+\.[a-zA-Z0-9]+[\.a-zA-Z0-9]*$/i|max:255|unique:users,email,' . $use->id,
 
             ],
             [
@@ -109,7 +107,8 @@ class UserController extends Controller
                 'profile_phone.unique' => 'Phone has already existed !',
                 'profile_address.required' => 'Address can not blank !',
                 'profile_email.required' => 'Email can not blank !',
-                'profile_email.email' => 'The format must be EMAIL style',
+                'profile_email.regex' =>'Email is invalid format.',
+                'profile_email.max' =>'Email has max 255 characters !',
                 'profile_email.unique' => 'Email has already existed !',
             ]
         );
@@ -120,19 +119,6 @@ class UserController extends Controller
         $cust->phone = $request->profile_phone;
         $cust->address = $request->profile_address;
         $use->email = $request->profile_email;
-        // if ($request->hasFile('profile_feature')) {
-        //     $file = $request->file('profile_feature');
-        //     $extension = $file->getClientOriginalExtension();
-
-        //     if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
-        //         return redirect("admin/customer/updateCustomer")->with('Message', 'You can only upload image with file jpg/png/jpeg');
-        //     }
-        //     $featureCustomer = $file->getClientOriginalName();
-        //     $file->move("img/feature/", $featureCustomer);
-        //     $cust->feature = $featureCustomer;
-        // } else {
-        //     $featureCustomer = "";
-        // }
         if ($request->hasFile('profile_feature')) {
             $file = $request->file('profile_feature');
             $extension = $file->getClientOriginalExtension();
@@ -163,13 +149,9 @@ class UserController extends Controller
                 'profile_customer_name' => 'bail|required|min:3|max:255',
                 'profile_gender' => 'bail|required|not_in:0',
                 'profile_dob' => 'bail|required|date',
-                'profile_phone' => 'bail|required|regex:/^0[1-9]\d{8,9}$/i|unique:Customer,phone,'. $cust->id,
-                // 'profile_phone' => 'unique:Customer,phone,' . $cust->id,
+                'profile_phone' => 'bail|required|regex:/^0[1-9]\d{8,9}$/i','unique:Customer,phone,' . $cust->id,
                 'profile_address' => 'bail|required',
-                'profile_email' => 'bail|required|email|unique:users,email,' . $use->id,
-                // 'profile_email' => 'unique:users,email,' . $use->id,
-                // 'profile_feature' => 'bail|required|image',
-
+                'profile_email' => 'bail|required|string|regex:/^[a-zA-Z0-9\._]+@[a-zA-Z0-9_]+\.[a-zA-Z0-9]+[\.a-zA-Z0-9]*$/i|max:255|unique:users,email,' . $use->id,
             ],
             [
                 'profile_user_name.required' => 'User Name can not blank !',
@@ -186,10 +168,10 @@ class UserController extends Controller
                 'profile_phone.unique' => 'Phone has already existed !',
                 'profile_address.required' => 'Address can not blank !',
                 'profile_email.required' => 'Email can not blank !',
-                'profile_email.email' => 'The format must be EMAIL style',
+                'profile_email.regex' =>'Email is invalid format.',
+                'profile_email.max' =>'Email has max 255 characters !',
                 'profile_email.unique' => 'Email has already existed !',
-                // 'profile_feature' => 'Feature can not blank !',
-                // 'profile_feature' => 'Feature must be the image !',
+                
             ]
         );
         $use->name = $request->profile_user_name;
@@ -199,19 +181,6 @@ class UserController extends Controller
         $cust->phone = $request->profile_phone;
         $cust->address = $request->profile_address;
         $use->email = $request->profile_email;
-        // if ($request->hasFile('profile_feature')) {
-        //     $file = $request->file('profile_feature');
-        //     $extension = $file->getClientOriginalExtension();
-
-        //     if ($extension != 'jpg' && $extension != 'png' && $extension != 'jpeg') {
-        //         return redirect("admin/customer/updateCustomer")->with('Message', 'You can only upload image with file jpg/png/jpeg');
-        //     }
-        //     $featureCustomer = $file->getClientOriginalName();
-        //     $file->move("img/feature/", $featureCustomer);
-        //     $cust->feature = $featureCustomer;
-        // } else {
-        //     $featureCustomer = "";
-        // }
 
         if ($request->hasFile('profile_feature')) {
             $file = $request->file('profile_feature');
@@ -348,7 +317,7 @@ class UserController extends Controller
                 'CC_dob.required' => 'Birthday can not blank !',
                 'CC_dob.date' => 'The date of birth must be of type DATE !',
                 'CC_phone.required' => 'Phone can not blank !',
-                'CC_phone.regex' => 'Phone numbers must have at least 10 numbers and at most 11 numbers !',
+                'CC_phone.regex' => 'Phone must begin 0 and has 10 or 11 digits. !',
                 'CC_phone.unique' => 'Phone has already existed !',
                 'CC_address.required' => 'Address can not blank !',
                 'CC_address.max' => 'Address has max 255 characters !',
