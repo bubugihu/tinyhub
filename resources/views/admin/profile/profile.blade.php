@@ -202,7 +202,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="form-control-label text-uppercase">Phone<span class="required">*</span></label>
-                                            <input type="number" name="profile_phone" class="form-control" value="{{$customer->phone}}">
+                                            <input type="phone" name="profile_phone" class="form-control" value="{{$customer->phone}}">
                                             @if($errors->has('profile_phone'))
                                             <small style="color:red;font-size:14px;">{{$errors->first('profile_phone')}}</small>
                                             @endif
