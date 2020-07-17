@@ -149,8 +149,8 @@ class ProductController extends Controller
         $this->validate(
             $request,
             [
+                
                 'prdname'      => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255|unique:Product,product_title,' .$p->id,
-                // 'prdname'      => 'unique:Product,product_title,' .$p->id,
                 'prdprice'     => 'bail|required|numeric|min:1|max:10000',
                 'prdcate'      => 'bail|required|not_in:0',
                 'prdbrand'     => 'bail|required|not_in:0',

@@ -81,8 +81,8 @@ class BrandsController extends Controller
         $this->validate(
             $request,
             [
-                'brandTitle'           => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255|unique:Brand,brand_name,'.$b->id,
-                // 'brandTitle'           => 'unique:Brand,brand_name,' .$b->id,
+                
+                'brandTitle'           => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255|unique:Brand,brand_name,' .$b->id,
                 'brandDescription'     => 'required',
                 'brandimg'             => 'bail|image|max:10240',
                
