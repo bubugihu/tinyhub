@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 Route::get('/', function () {
-    return view('homepage');
+    return view('index');
 })->name('homepage');
 
 //////////////////admin
