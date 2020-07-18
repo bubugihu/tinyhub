@@ -32,8 +32,8 @@
                 <tbody>
                   @foreach($products as $product)
                   <tr>
-                    <th scope="row" class="align-middle">{{$product->id}}</th>
-                    <td class="align-middle"><img src="{{asset('img/feature/'.$product->feature_image)}}" alt="" width="60" height="auto"></td>
+                    <th scope="row" class="align-middle">{{$stt}}</th>
+                    <td id="{{++$stt}}" class="align-middle"><img src="{{asset('img/feature/'.$product->feature_image)}}" alt="" width="60" height="auto"></td>
                     <td class="align-middle">{{$product->product_title}}</td>
                     <td class="align-middle">${{$product->price}}</td>
                     <td class="align-middle">{{$product->sold_out}}</td>
@@ -42,7 +42,7 @@
                     <td class="align-middle">
                       <!-- Details Product -->
                       <a href="{{url("admin/product/detailsProduct/" .$product->id)}}" class="badge badge-info p-2"><i class="fas fa-eye" style="font-size: 16px; font-weight:100;"></i></a>
-                      <!-- Update Product -->
+                      <!--  Update Product -->
                       <a href="{{url("admin/product/updateProduct/" .$product->id)}}" class="badge badge-warning p-2"><i class="fas fa-edit" style="font-size: 16px;font-weight:100;"></i></a>
                       <!-- Delete Product -->
                       <a href="{{url("admin/product/deleteProduct/" .$product->id)}}" class="badge badge-danger p-2" onclick="return confirm('Do you want delete?');"><i class="fas fa-trash-alt" style="font-size: 16px;font-weight:100;"></i></a>

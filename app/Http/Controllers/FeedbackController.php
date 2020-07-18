@@ -40,7 +40,7 @@ class FeedbackController extends Controller
     //delete feedback
     public function deleteFeedback($id){
         Feedback::find($id)->delete();
-        return redirect()->action('FeedbackController@feedbackList');
+        return redirect()->action('FeedbackController@feedbackList')->with(['flash_level' => 'success','flash_message' => 'Feedback has been deleted.' ]);;
     }
 
     //done feedback

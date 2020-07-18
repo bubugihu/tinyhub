@@ -89,6 +89,7 @@ class UserController extends Controller
                 'profile_dob' => 'bail|required|date',
                 'profile_phone' => 'bail|required|regex:/^0[1-9]\d{8,9}$/i','unique:Customer,phone,' . $cust->id,
                 'profile_address' => 'bail|required',
+                'profile_feature' => 'bail|mimes:png,jpg,jpeg',
                 'profile_email' => 'bail|required|string|regex:/^[a-zA-Z0-9\._]+@[a-zA-Z0-9_]+\.[a-zA-Z0-9]+[\.a-zA-Z0-9]*$/i|max:255|unique:users,email,' . $use->id,
 
             ],
@@ -151,6 +152,7 @@ class UserController extends Controller
                 'profile_dob' => 'bail|required|date',
                 'profile_phone' => 'bail|required|regex:/^0[1-9]\d{8,9}$/i','unique:Customer,phone,' . $cust->id,
                 'profile_address' => 'bail|required',
+                'profile_feature' => 'bail|mimes:png,jpg,jpeg',
                 'profile_email' => 'bail|required|string|regex:/^[a-zA-Z0-9\._]+@[a-zA-Z0-9_]+\.[a-zA-Z0-9]+[\.a-zA-Z0-9]*$/i|max:255|unique:users,email,' . $use->id,
             ],
             [
@@ -303,7 +305,7 @@ class UserController extends Controller
                 'CC_phone' => 'bail|required|regex:/^0[1-9]\d{8,9}$/i|unique:Customer,phone',
                 'CC_address' => 'bail|required|string|max:255',
                 'CC_email' => 'bail|required|string|regex:/^[a-zA-Z0-9\._]+@[a-zA-Z0-9_]+\.[a-zA-Z0-9]+[\.a-zA-Z0-9]*$/i|max:255|unique:users,email',
-                'CC_feature' => 'bail|required|image',
+                'CC_feature' => 'bail|required|mimes:png,jpg,jpeg',
                 'CC_confirm_password' => 'bail|required|min:8|string|required_with:CC_password|same:CC_password',
                 'CC_password' => 'bail|required|string|min:8',
 

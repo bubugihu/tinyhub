@@ -16,7 +16,17 @@
                 {!!Session::get('flash_message')!!}
               </div>
               @endif
-              <table class="table card-text text-center" id="dbtable">
+              {{-- search by order id --}}
+              <div>
+                <form action="{{url('admin/order/searchId')}}" method="get" class="mb-3">
+                  <label for="search">Search by ID:</label>
+                  <input type="number" name="searchId" id="search" min="1" style="width: 80px">
+                  <button type="submit" class="btn btn-primary">Ok</button>
+                  <a href="{{url('admin/order/listOrder')}}" class="btn btn-warning">All of List</a>
+                </form>  
+              </div>
+              {{-- end seach  --}}
+              <table class="table card-text text-center" id="">
                 <thead>
                   <tr>
                     <th>Order ID</th>

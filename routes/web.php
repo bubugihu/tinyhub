@@ -30,7 +30,7 @@ Route::group(['prefix' => 'admin/', 'middleware' => 'role'], function () {
         Route::get('order/onOrderStatus/{id}', 'OrderController@onOrderStatus');
         Route::get('order/listOrderDetails/{id}', 'CartController@orderDetails');
         Route::get('order/deleteOrder/{id}', 'OrderController@deleteOrder');
-        Route::get('admin/order/onOrderStatus', 'OrderController@onOrderStatus111');
+        Route::get('order/searchId', 'OrderController@searchId');
 
         //feedback
         Route::get('feedback/feedbackList', 'FeedbackController@feedbackList');

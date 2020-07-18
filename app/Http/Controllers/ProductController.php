@@ -18,13 +18,15 @@ class ProductController extends Controller
 
     //Function link to product list page
     public function listProduct()
-    {
+    {   
+        $stt = 1;
         $products = Product::join('category', 'category.id', '=', 'product.category_id')
         ->join('brand', 'brand.id', '=', 'product.brand_id')
         ->where('product.status', '=', 0)
         ->select('product.*' , 'category.category_name', 'brand.brand_name')
+        ->orderBy('product.id','desc')
         ->paginate(30);
-        return view('admin.product.listProduct', compact('products'));
+        return view('admin.product.listProduct', compact('products','stt'));
     }
 
     // Function link to create product page
@@ -144,20 +146,20 @@ class ProductController extends Controller
     // Function Update Product
     public function postUpdate(Request $request, $id)
     {
-        $p  = Product::find($id);
+        $pId = Product::find($id);
         
         $this->validate(
             $request,
             [
                 
-                'prdname'      => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255|unique:Product,product_title,' .$p->id,
+                'prdname'      => 'bail|required|regex:/^[a-zA-Z]{2,}/i|max:255|unique:Product,product_title,' .$pId->id,
                 'prdprice'     => 'bail|required|numeric|min:1|max:10000',
                 'prdcate'      => 'bail|required|not_in:0',
                 'prdbrand'     => 'bail|required|not_in:0',
                 'prdWarranty'  => 'required',
                 'sdescription' => 'required',
                 'ldescription' => 'required',
-                'featureimg'   => 'bail|image|max:10240',
+                'featureimg'   => 'bail|image|mimes:jpg,png,jpeg|max:10240',
             ],
             [
                 'prdname.required'            => 'Product title can not be blank !',
@@ -172,12 +174,15 @@ class ProductController extends Controller
                 'prdbrand.required'           => 'Please choose one of them !',
                 'prdWarranty.required'        => 'Warranty Period can not be blank !',
                 'sdescription.required'       => 'Short Description can not be blank !',
-                'ldescription.required'       => 'Long Description can not be blank !',
+                'ldescription.required'       => 'Long Description can not be blank !', 
                 'featureimg.image'            => 'Feature Image must be image file !',
                 'featureimg.max'              => 'Feature Image must be less than 10MB !',
             ]
         );
-
+        //set old product to hide
+        Product::where('product_title',trim($request->prdname))->update(['status' => 1]);
+        //
+        $p = new Product();
         $p->product_title       = trim($request->prdname);
         $p->price               = trim($request->prdprice);
         $p->brand_id            = trim($request->prdbrand);
@@ -197,18 +202,13 @@ class ProductController extends Controller
             $imageName = $file->getClientOriginalName();
             $file->move("img/feature/", $imageName);
             $p->feature_image = $imageName;
-        } else {
-            $imageName = "";
-        }
+            $p->save();
+        } else 
+        $p->feature_image = $pId->feature_image;
         $p->save();
     
         // Function gallery upload
-        $product_id = $p->id;
-        $currentimg = Gallery::where('product_id', $product_id);
-        //$currentimg->delete();
-
         if($request->hasFile('galleryimg')){
-            $currentimg->delete();
             foreach ($request->file('galleryimg') as $file) {
                 $product_gallery = new Gallery();
                 if (isset($file)) {
@@ -217,10 +217,18 @@ class ProductController extends Controller
                             return Redirect('admin/product/createProduct')->with(['flash_level' => 'danger', 'flash_message' => 'You can only upload image with file .jpg | .png | .jpeg !']);
                         }
                     $product_gallery->product_gallery = $file->getClientOriginalName();
-                    $product_gallery->product_id = $product_id;
+                    $product_gallery->product_id = $p->id;
                     $file->move("img/gallery", $file->getClientOriginalName());
                     $product_gallery->save();
                 }
+            }
+        }else{
+            $product_gallery = Gallery::where('product_id',$pId)->get();
+            foreach($product_gallery as $oldGallery){
+                $newGallery = new Gallery();
+                $newGallery->product_gallery = $oldGallery->product_gallery;
+                $newGallery->product_id = $p->id;
+                $newGallery->save();
             }
         }
 
