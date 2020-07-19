@@ -9,6 +9,7 @@ class Order extends Model
     protected $table = "order";
 
     // Declare primary key on table
+    public $incrementing = true;
     
     public $timestamps=true;
 
