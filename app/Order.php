@@ -10,7 +10,7 @@ class Order extends Model
 
     // Declare primary key on table
     public $incrementing = true;
-    
+    protected $primaryKey = "id";
     public $timestamps=true;
 
     protected $fillable = ['id','consignee_name','shipping_address', 'phone_consignee','note','payment', 'status', 'customer_id','created_at','updated_at'];
