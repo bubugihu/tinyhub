@@ -14,11 +14,11 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             ['name'=>'Bubu','email'=>'admin@gmail.com','password'=>Hash::make('123123123'), 'role'=> 1],
-            ['name'=>'Na','email'=>'na@gmail.com','password'=>'na123'],
-            ['name'=>'QuangMap','email'=>'quang@gmail.com','password'=>'quang123'],
-            ['name'=>'Bu','email'=>'bu@gmail.com','password'=>'bu123'],
-            ['name'=>'Thanh','email'=>'thanh@gmail.com','password'=>'thanh123'],
-            ['name'=>'Kien','email'=>'kien@gmail.com','password'=>'kien123']
+            ['name'=>'Na','email'=>'na@gmail.com','password'=>'na123', 'role'=> 0],
+            ['name'=>'QuangMap','email'=>'quang@gmail.com','password'=>'quang123', 'role'=> 0],
+            ['name'=>'Bu','email'=>'bu@gmail.com','password'=>'bu123', 'role'=> 0],
+            ['name'=>'Thanh','email'=>'thanh@gmail.com','password'=>'thanh123', 'role'=> 0],
+            ['name'=>'Kien','email'=>'kien@gmail.com','password'=>'kien123', 'role'=> 0]
         ]);
         
         DB::table('customer')->insert([
