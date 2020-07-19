@@ -35,21 +35,21 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         
-        $productGlobal              = Product::where('status',0)->orderBy('sold_out', 'desc')->limit(4)->get();
-        $bannerGlobal               = Banner::all();
-        $categoryGlobal             = Category::all();
-        $brandGlobal                = Brands::all();
-        $feedbackHomepage           = Feedback::where('feed_status', 1)->get();
-        $sttNo                      = 0;
+        // $productGlobal              = Product::where('status',0)->orderBy('sold_out', 'desc')->limit(4)->get();
+        // $bannerGlobal               = Banner::all();
+        // $categoryGlobal             = Category::all();
+        // $brandGlobal                = Brands::all();
+        // $feedbackHomepage           = Feedback::where('feed_status', 1)->get();
+        // $sttNo                      = 0;
 
 
-        View::share([
-            'categoryGlobal'        =>  $categoryGlobal,
-            'brandGlobal'           =>  $brandGlobal,
-            'feedbackHomepage'      =>  $feedbackHomepage,
-            'bannerGlobal'          =>  $bannerGlobal,
-            'productGlobal'         =>  $productGlobal,
-            'sttNo'                 =>  $sttNo,
-        ]);
+        // View::share([
+        //     'categoryGlobal'        =>  $categoryGlobal,
+        //     'brandGlobal'           =>  $brandGlobal,
+        //     'feedbackHomepage'      =>  $feedbackHomepage,
+        //     'bannerGlobal'          =>  $bannerGlobal,
+        //     'productGlobal'         =>  $productGlobal,
+        //     'sttNo'                 =>  $sttNo,
+        // ]);
     }
 }

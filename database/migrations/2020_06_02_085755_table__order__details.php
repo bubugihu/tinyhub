@@ -14,6 +14,7 @@ class TableOrderDetails extends Migration
     public function up()
     {
         Schema::create('order_details', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('quantity')->unsigned();
             $table->integer('order_id')->unsigned();        //Foreign key
             $table->integer('product_id')->unsigned();        //Foreign key
