@@ -180,7 +180,7 @@ class CartController extends Controller
             OrderDetail::create([
                 'order_id'      => $order->id,
                 'product_id'    => $orderDetails->id,
-                'quantity'      => $orderDetails->qty,
+                'quantity'      => $orderDetails->qty
             ]);
         }
 
