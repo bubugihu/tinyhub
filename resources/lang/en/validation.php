@@ -118,6 +118,8 @@ return [
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
 
+
+    
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -133,8 +135,54 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'phone' => [
+            'regex' => 'Phone must begin 0 and has 10 or 11 digits.'
+        ],
+        'fullname' => [
+            'regex' => 'FullName must be String, no number'
+        ],
+        'name' => [
+            'required' => 'User name is required.'
+            
+        ],
+        'email' => [
+            'regex' => 'Email is invalid format.'
+        ],
+        'prdname' => [
+            'required' => 'Product title can not be blank !'
+            
+        ],
+        'prdprice' => [
+            'required' => 'Product price can not be blank !'
+            
+        ],
+        'prdcate' => [
+            'not_in' => 'Product category can not be blank, please choose one of them !'
+            
+        ],
+        'prdbrand' => [
+            'not_in' => 'Product brand can not be blank, please choose one of them !'
+            
+        ],
+        'sdescription' => [
+            'required' => 'Short description can not be blank !'
+            
+        ],
+        'ldescription' => [
+            'required' => 'Long description can not be blank !'
+            
+        ],
+        'feedbackContent'=> [
+            'max'       => 'Message just only max 150 characters.'
+        ],
+        'feedbackPhone' => [
+            'regex' => 'Phone must begin 0 and has 10 or 11 digits.'
+        ],
+        'feedbackEmail' => [
+            'regex' => 'Email has no special character !#$%^&* .'
+        ],
+    
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes
@@ -146,6 +194,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+
+    ],
+    
 
 ];
