@@ -2,9 +2,10 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class TableBanner extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +14,11 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('banner', function (Blueprint $table) {
             $table->increments('id');       //Primary key
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->integer('role')->default(0);
-            $table->rememberToken();
+            $table->string('ban_title')->nullable();
+            $table->string('ban_content')->nullable();
+            $table->string('ban_image');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('banner');
     }
 }
