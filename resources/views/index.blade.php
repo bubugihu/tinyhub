@@ -9,7 +9,7 @@
         <div class="mask flex-center">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-md-7 col-12 order-md-1 order-2">
+              <div class="col-md-7 col-sm-12 order-md-1 order-2">
                 <h4>{{$bG->ban_title}}</h4>
                 <p class="text-white" style="font-size: 38px">{{$bG->ban_content}}</p>
                 <a class="btn" href="{{ url('category')}}">BUY NOW</a> </div>
@@ -31,7 +31,7 @@
         <div class="services-block">
             <div class="container">
               <div class="row">
-                <div class="col-lg-4 d-flex justify-content-center justify-content-lg-start">
+                <div class="col-lg-4 col-sm-12 d-flex  justify-content-lg-start">
                   <div class="item d-flex align-items-center">
                     <div class="icon dx"><i class="fas fa-shipping-fast"></i></div>
                     <div class="text">
@@ -39,7 +39,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 d-flex justify-content-center">
+                <div class="col-lg-4 col-sm-12 d-flex  ">
                   <div class="item d-flex align-items-center">
                     <div class="icon dx"><i class="fab fa-cc-visa"></i></div>
                     <div class="text">
@@ -47,8 +47,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 d-flex justify-content-center">
-                  <div class="item d-flex align-items-center">
+                <div class="col-lg-4 col-sm-12 d-flex  ">
+                  <div class="item d-flex align-items-center go-left">
                     <div class="icon dx"><i class="fas fa-phone-volume"></i></div>
                     <div class="text">
                       <h6 class="no-margin text-uppercase">020-800-456-747</h6><span>24/7 Available Support</span>
